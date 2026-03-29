@@ -4,15 +4,21 @@ import { motion } from "motion/react";
 import { 
   ArrowRight, ShieldAlert, Clock, 
   CheckCircle2, Zap, Lock, TrendingDown, 
-  Building2, Activity, Cpu, ShieldCheck 
+  Building2, Activity, Cpu, ShieldCheck,
+  Plus, Minus, Settings
 } from "lucide-react";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CaseStudyCarousel } from "@/components/CaseStudyCarousel";
 import { HeroVisual } from "@/components/HeroVisual";
+import { useLanguage } from "@/context/LanguageContext";
+import { useState } from "react";
 
 export default function LandingPage() {
+  const { t } = useLanguage();
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <div className="min-h-screen bg-white text-black font-poppins selection:bg-primary/30">
       {/* Navigation */}
@@ -28,23 +34,26 @@ export default function LandingPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-50 text-gray-700 text-xs font-semibold uppercase tracking-wider mb-8">
               <Building2 className="w-4 h-4 text-primary" />
-              For Teams of 10–500
+              {t.hero.badge}
             </div>
             <h1 className="text-6xl md:text-7xl font-bold tracking-tighter leading-[1.05] mb-8 text-black">
-              Stop managing <br />
-              <span className="text-gray-500">IT chaos.</span>
+              {t.hero.headline.split('.').map((part, i) => (
+                <span key={i} className={i === 1 ? "text-gray-500 block" : ""}>
+                  {part}{i === 0 ? "." : ""}
+                </span>
+              ))}
             </h1>
             <p className="text-lg text-gray-700 mb-12 max-w-md leading-relaxed">
-              We are your entire IT department. Full accountability for your infrastructure, security, and support. 
+              {t.hero.subheadline}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-xl font-medium flex items-center justify-center gap-2 transition-all shadow-sm">
-                Schedule Audit <ArrowRight className="w-5 h-5" />
+                {t.hero.cta} <ArrowRight className="w-5 h-5" />
               </button>
-              <div className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl text-sm text-gray-700 bg-gray-50">
+              <Link href="/case-studies" className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl text-sm text-gray-700 bg-gray-50 hover:bg-gray-100 transition-colors">
                 <Clock className="w-5 h-5 text-primary" />
-                15-Min Response
-              </div>
+                {t.hero.secondaryCta}
+              </Link>
             </div>
           </motion.div>
 
@@ -59,34 +68,19 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Tension & Risk Section */}
+      {/* Problem Section */}
       <section id="problem" className="py-32 bg-gray-50/50">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="max-w-2xl mb-20 mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black">Bad IT bleeds margins.</h2>
+            <div className="text-primary font-bold text-xs uppercase tracking-widest mb-4">{t.problem.badge}</div>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black">{t.problem.headline}</h2>
             <p className="text-gray-700 text-lg leading-relaxed">
-              When technology fails, business stops. The hidden costs of reactive support destroy growth.
+              {t.problem.subheadline}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: TrendingDown,
-                title: "Downtime Costs",
-                desc: "Every hour your team can't work costs thousands in lost productivity."
-              },
-              {
-                icon: ShieldAlert,
-                title: "Security Risks",
-                desc: "Ransomware targets mid-market companies lacking enterprise protection."
-              },
-              {
-                icon: Cpu,
-                title: "Stunted Growth",
-                desc: "Patchwork systems and constant firefighting prevent efficient scaling."
-              }
-            ].map((risk, i) => (
+            {t.problem.cards.map((risk, i) => (
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -96,66 +90,69 @@ export default function LandingPage() {
                 className="group p-10 rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500 text-center"
               >
                 <div className="mx-auto w-14 h-14 rounded-2xl bg-[#005F6B]/[0.08] flex items-center justify-center mb-8 transition-all duration-300 shadow-[0_0_15px_rgba(0,95,107,0.1)] group-hover:shadow-[0_0_25px_rgba(0,95,107,0.25)] group-hover:-translate-y-1">
-                  <risk.icon className="w-7 h-7 text-primary transition-transform duration-300 group-hover:scale-110" />
+                  {i === 0 ? <TrendingDown className="w-7 h-7 text-primary" /> : i === 1 ? <ShieldAlert className="w-7 h-7 text-primary" /> : <Cpu className="w-7 h-7 text-primary" />}
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-black">{risk.title}</h3>
-                <p className="text-gray-700 leading-relaxed">{risk.desc}</p>
+                <p className="text-gray-700 leading-relaxed">{risk.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Authority & Differentiation */}
-      <section id="solution" className="py-32 px-6 bg-white">
+      {/* Solution Section */}
+      <section id="solution" className="py-40 px-6 bg-white overflow-hidden">
         <div className="max-w-[1200px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8 text-black">
-                8+ Years of Excellence.
+            <div className="relative z-10">
+              <div className="text-primary font-bold text-xs uppercase tracking-widest mb-4">{t.solution.badge}</div>
+              <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-12 text-black leading-[1.1]">
+                {t.trust.headline}
               </h2>
-              <p className="text-gray-700 text-lg mb-12 leading-relaxed max-w-md">
-                We&apos;ve executed hundreds of migrations. We don&apos;t just reset passwords; we architect reliability.
+              <p className="text-gray-900 text-lg mb-16 leading-relaxed max-w-sm opacity-80">
+                {t.trust.subheadline}
               </p>
               
-              <div className="space-y-8">
-                {[
-                  { title: "Full Accountability", desc: "No vendor finger-pointing. We own the entire stack." },
-                  { title: "Proactive Architecture", desc: "We fix problems before they cause downtime." },
-                  { title: "Enterprise Security", desc: "Bank-grade security scaled for mid-market companies." }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-5">
+              <div className="space-y-12">
+                {t.trust.points.map((item, i) => (
+                  <div key={i} className="flex gap-6 group">
                     <div className="mt-1">
-                      <CheckCircle2 className="w-6 h-6 text-primary" />
+                      <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center shadow-[0_0_20px_rgba(0,95,107,0.1)] group-hover:shadow-[0_0_30px_rgba(0,95,107,0.2)] transition-all duration-500">
+                        <CheckCircle2 className="w-6 h-6 text-primary" />
+                      </div>
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold mb-2 text-black">{item.title}</h4>
-                      <p className="text-gray-700">{item.desc}</p>
+                      <h4 className="text-xl font-bold mb-3 text-black tracking-tight">{item.title}</h4>
+                      <p className="text-gray-800 leading-relaxed text-base opacity-70">{item.description}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
             
-            <div className="grid grid-cols-2 gap-6">
-              <div className="space-y-6 mt-12">
-                <div className="p-10 rounded-2xl bg-gray-50">
-                  <div className="text-5xl font-bold text-black mb-3">100%</div>
-                  <div className="text-sm text-gray-700 font-medium uppercase tracking-wider">Accountability</div>
+            <div className="relative">
+              <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div className="space-y-6 pt-16">
+                  <div className="p-10 rounded-[2.5rem] bg-neutral-50 border border-neutral-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
+                    <div className="text-6xl font-bold text-black mb-4 tracking-tighter">{t.results.cards[1].metric}</div>
+                    <div className="text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em]">{t.results.cards[1].label}</div>
+                  </div>
+                  <div className="p-10 rounded-[2.5rem] bg-primary shadow-2xl shadow-primary/30 hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-500 group">
+                    <div className="text-6xl font-bold text-white mb-4 tracking-tighter group-hover:scale-105 transition-transform">{t.results.cards[0].metric}</div>
+                    <div className="text-[10px] text-white/70 font-bold uppercase tracking-[0.2em]">{t.results.cards[0].label}</div>
+                  </div>
                 </div>
-                <div className="p-10 rounded-2xl bg-primary shadow-lg shadow-primary/20">
-                  <div className="text-5xl font-bold text-white mb-3">15m</div>
-                  <div className="text-sm text-white/90 font-medium uppercase tracking-wider">Response</div>
-                </div>
-              </div>
-              <div className="space-y-6">
-                <div className="p-10 rounded-2xl bg-gray-50">
-                  <div className="text-5xl font-bold text-black mb-3">8+</div>
-                  <div className="text-sm text-gray-700 font-medium uppercase tracking-wider">Years Exp.</div>
-                </div>
-                <div className="p-10 rounded-2xl bg-gray-50">
-                  <div className="text-5xl font-bold text-black mb-3">24/7</div>
-                  <div className="text-sm text-gray-700 font-medium uppercase tracking-wider">Monitoring</div>
+                <div className="space-y-6">
+                  <div className="p-10 rounded-[2.5rem] bg-neutral-50 border border-neutral-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
+                    <div className="text-6xl font-bold text-black mb-4 tracking-tighter">{t.results.cards[2].metric}</div>
+                    <div className="text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em]">{t.results.cards[2].label}</div>
+                  </div>
+                  <div className="p-10 rounded-[2.5rem] bg-neutral-50 border border-neutral-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
+                    <div className="text-6xl font-bold text-black mb-4 tracking-tighter">{t.results.cards[3].metric}</div>
+                    <div className="text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em]">{t.results.cards[3].label}</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -163,8 +160,75 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Case Studies Carousel */}
-      <section className="py-32 px-6 bg-white border-t border-gray-50 overflow-hidden">
+      {/* Services Section */}
+      <section id="services" className="py-32 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="max-w-2xl mb-20">
+            <div className="text-primary font-bold text-xs uppercase tracking-widest mb-4">{t.services.badge}</div>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black">{t.services.headline}</h2>
+            <p className="text-gray-700 text-lg leading-relaxed">
+              {t.services.subheadline}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {t.services.items.map((service, i) => (
+              <Link 
+                key={i} 
+                href={service.link}
+                className="group p-10 rounded-3xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+                  {i === 0 ? <Cpu className="w-6 h-6" /> : i === 1 ? <Activity className="w-6 h-6" /> : i === 2 ? <Zap className="w-6 h-6" /> : i === 3 ? <Lock className="w-6 h-6" /> : <ShieldCheck className="w-6 h-6" />}
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-black">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed mb-8">{service.description}</p>
+                <div className="flex items-center gap-2 text-primary font-bold text-sm">
+                  Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-32 bg-gray-50/50">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="max-w-2xl mb-20 mx-auto text-center">
+            <div className="text-primary font-bold text-xs uppercase tracking-widest mb-4">{t.process.badge}</div>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black">{t.process.headline}</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-12 relative">
+            {/* Connecting line */}
+            <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-gray-200 -z-10" />
+            
+            {t.process.steps.map((step, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white p-10 rounded-3xl border border-gray-100 shadow-sm text-center relative"
+              >
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                  {step.number}
+                </div>
+                <div className="mx-auto w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mb-8 mt-4">
+                  {i === 0 ? <Activity className="w-8 h-8 text-primary" /> : i === 1 ? <Settings className="w-8 h-8 text-primary" /> : <ShieldCheck className="w-8 h-8 text-primary" />}
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-black">{step.title}</h3>
+                <p className="text-gray-700 leading-relaxed">{step.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section className="py-32 px-6 bg-white overflow-hidden">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-2xl">
@@ -174,7 +238,7 @@ export default function LandingPage() {
               </p>
             </div>
             <Link href="/case-studies" className="text-black font-bold flex items-center gap-2 hover:text-primary transition-colors group">
-              View all 10 stories <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              View all stories <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
@@ -182,67 +246,51 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Pricing Clarity */}
-      <section id="pricing" className="py-32 bg-gray-50/50">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="max-w-2xl mb-20 text-center mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black">Predictable Pricing.</h2>
-            <p className="text-gray-600 text-lg">
-              Flat, predictable fees based on headcount. No hidden overages.
-            </p>
+      {/* FAQ Section */}
+      <section className="py-32 bg-white border-t border-gray-50">
+        <div className="max-w-[800px] mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-black">{t.faq.headline}</h2>
           </div>
 
-          <div className="max-w-4xl mx-auto p-10 md:p-16 rounded-3xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100/50">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div>
-                <h3 className="text-2xl font-semibold mb-4 text-black">Comprehensive IT</h3>
-                <p className="text-gray-700 mb-10 leading-relaxed">Everything you need to run securely, bundled into one invoice.</p>
-                
-                <ul className="space-y-5">
-                  {[
-                    "Unlimited Helpdesk",
-                    "24/7 Network Monitoring",
-                    "Advanced Endpoint Security",
-                    "Cloud Management",
-                    "Strategic IT Consulting"
-                  ].map((feature, i) => (
-                    <li key={i} className="flex items-center gap-4 text-gray-700 font-medium">
-                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              <div className="flex flex-col justify-center p-10 bg-gray-50 rounded-2xl">
-                <div className="text-sm text-gray-600 uppercase tracking-wider font-semibold mb-4">Starting At</div>
-                <div className="flex items-baseline gap-2 mb-4">
-                  <span className="text-6xl font-bold text-black">$150</span>
-                  <span className="text-gray-700 font-medium">/user</span>
-                </div>
-                <p className="text-sm text-gray-600 mb-10">Billed monthly. Custom quotes available for complex infrastructure.</p>
-                <button className="w-full py-4 bg-black text-white hover:bg-gray-800 rounded-xl font-medium transition-colors shadow-sm">
-                  Get a Quote
+          <div className="space-y-4">
+            {t.faq.items.map((item, i) => (
+              <div key={i} className="border border-gray-100 rounded-2xl overflow-hidden">
+                <button 
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                >
+                  <span className="text-lg font-semibold text-black">{item.question}</span>
+                  {openFaq === i ? <Minus className="w-5 h-5 text-primary" /> : <Plus className="w-5 h-5 text-gray-400" />}
                 </button>
+                <motion.div 
+                  initial={false}
+                  animate={{ height: openFaq === i ? "auto" : 0 }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-8 pb-8 text-gray-700 leading-relaxed">
+                    {item.answer}
+                  </div>
+                </motion.div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA / Lead Qualification */}
-      <section id="contact" className="py-40 px-6 bg-white">
-        <div className="max-w-[1200px] mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-8 text-black">Ready to scale?</h2>
-          <p className="text-xl text-gray-700 mb-12 max-w-xl mx-auto leading-relaxed">
-            If you have 10–500 employees and are tired of reactive support, let&apos;s talk.
+      {/* CTA Section */}
+      <section id="contact" className="py-40 px-6 bg-black text-white text-center">
+        <div className="max-w-[1200px] mx-auto">
+          <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-8">{t.cta.headline}</h2>
+          <p className="text-xl text-white/70 mb-12 max-w-xl mx-auto leading-relaxed">
+            {t.cta.subheadline}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-10 py-5 bg-primary hover:bg-primary/90 text-white rounded-xl font-medium text-lg transition-all shadow-sm">
-              Book IT Audit
+              {t.cta.button}
             </button>
-            <Link href="/case-studies" className="inline-flex items-center justify-center px-10 py-5 bg-gray-50 hover:bg-gray-100 text-black rounded-xl font-medium text-lg transition-all">
-              View Case Studies
+            <Link href="/case-studies" className="inline-flex items-center justify-center px-10 py-5 bg-white/10 hover:bg-white/20 text-white rounded-xl font-medium text-lg transition-all">
+              {t.hero.secondaryCta}
             </Link>
           </div>
         </div>

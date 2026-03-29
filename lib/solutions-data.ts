@@ -428,5 +428,245 @@ export const solutionsData = {
       result: "25% reduction in reactive IT costs and successful launch of new digital service platforms.",
       slug: "strategic-it-roadmap"
     }
+  },
+  "it-support-for-businesses": {
+    title: "IT Support for Businesses",
+    hero: "Reliable IT Support for Businesses That Can't Afford Downtime.",
+    description: "We provide professional, fast-response IT support tailored to the needs of modern businesses. From troubleshooting to strategic planning, we are your dedicated technology partner.",
+    metadata: {
+      mainKeyword: "IT support for businesses",
+      secondaryKeywords: ["business IT support", "professional IT services", "small business IT support"],
+      intent: "Commercial/Transactional"
+    },
+    problem: {
+      title: "The Frustration of Unreliable IT Support",
+      points: [
+        "Waiting hours for a response while business stops",
+        "Recurring technical issues that never seem to get fixed",
+        "Hidden costs and surprise invoices for basic support",
+        "Technicians who don't understand your business context"
+      ]
+    },
+    solution: {
+      title: "Professional Business IT Support",
+      points: [
+        "Guaranteed response times backed by strict SLAs",
+        "Permanent fixes, not just temporary workarounds",
+        "Transparent, flat-rate pricing models",
+        "Dedicated engineers who know your infrastructure"
+      ]
+    },
+    results: [
+      { metric: "15min", label: "Average Response" },
+      { metric: "98%", label: "First-Contact Resolution" },
+      { metric: "24/7", label: "Proactive Monitoring" }
+    ],
+    process: {
+      analysis: "We audit your current setup to identify immediate pain points and security gaps.",
+      implementation: "We standardize your support tools and document your entire environment.",
+      operations: "You get unlimited access to our expert helpdesk and proactive maintenance."
+    },
+    caseStudy: {
+      title: "Scaling IT Support for a Growing Law Firm",
+      companyType: "Professional Services (20-40 employees)",
+      situation: "A law firm was struggling with a solo IT contractor who couldn't keep up with their growth.",
+      problem: "Frequent network outages and slow workstation performance were impacting billable hours.",
+      decisionPoint: "A major server crash during a trial preparation was the final straw.",
+      solution: "Ecksolution-IT implemented a comprehensive business IT support plan with 24/7 monitoring.",
+      result: "100% uptime during critical periods and a 50% reduction in support tickets.",
+      slug: "it-support-for-businesses"
+    }
+  },
+  "managed-it-services": {
+    title: "Managed IT Services",
+    hero: "Your Complete Outsourced IT Department.",
+    description: "Focus on your core business while we handle the complexity of your technology. Our managed IT services provide the stability, security, and scalability you need to thrive.",
+    metadata: {
+      mainKeyword: "Managed IT Services",
+      secondaryKeywords: ["MSP", "managed services provider", "outsourced IT department"],
+      intent: "Commercial/Transactional"
+    },
+    problem: {
+      title: "The Burden of Managing Your Own IT",
+      points: [
+        "High cost of hiring and training internal IT staff",
+        "Constant distraction from core business objectives",
+        "Falling behind on security patches and updates",
+        "No clear technology roadmap for future growth"
+      ]
+    },
+    solution: {
+      title: "Fully Managed IT Services",
+      points: [
+        "Predictable monthly costs with no hidden fees",
+        "24/7/365 monitoring and management of all systems",
+        "Enterprise-grade security and compliance management",
+        "Strategic vCIO guidance to align IT with business goals"
+      ]
+    },
+    results: [
+      { metric: "30%", label: "Reduction in IT Spend" },
+      { metric: "100%", label: "Patch Compliance" },
+      { metric: "24/7", label: "Expert Management" }
+    ],
+    process: {
+      analysis: "We perform a deep-dive assessment of your business goals and current IT capabilities.",
+      implementation: "We transition your systems to our managed platform with zero disruption.",
+      operations: "We provide continuous optimization, security, and support for your entire team."
+    },
+    caseStudy: {
+      title: "Transforming IT from a Cost Center to a Growth Driver",
+      companyType: "Manufacturing (50-100 employees)",
+      situation: "A manufacturer was using reactive IT support, leading to frequent production delays.",
+      problem: "Outdated systems and lack of security were hindering their expansion plans.",
+      decisionPoint: "They needed a partner who could manage their entire IT lifecycle.",
+      solution: "Transitioned to a fully managed IT services model with Ecksolution-IT.",
+      result: "Stabilized production environment and a clear 3-year technology roadmap.",
+      slug: "managed-it-services"
+    }
+  },
+  "microsoft-365-services": {
+    title: "Microsoft 365 Services",
+    hero: "Maximize Your Productivity with Expert Microsoft 365 Management.",
+    description: "Microsoft 365 is more than just email. We help you unlock the full power of Teams, SharePoint, and advanced security features to drive collaboration and protect your data.",
+    metadata: {
+      mainKeyword: "Microsoft 365 Services",
+      secondaryKeywords: ["Office 365 support", "M365 management", "Microsoft 365 consulting"],
+      intent: "Commercial/Transactional"
+    },
+    problem: {
+      title: "Underutilized and Unsecured Microsoft 365",
+      points: [
+        "Using only a fraction of the tools you're paying for",
+        "Security gaps leaving your email vulnerable to phishing",
+        "Messy SharePoint structures making it impossible to find files",
+        "No backup for critical cloud data in OneDrive or Teams"
+      ]
+    },
+    solution: {
+      title: "Expert Microsoft 365 Management",
+      points: [
+        "Comprehensive security hardening and MFA enforcement",
+        "Structured SharePoint and Teams architecture for collaboration",
+        "Automated cloud-to-cloud backup for all M365 data",
+        "Ongoing user training to increase tool adoption"
+      ]
+    },
+    results: [
+      { metric: "100%", label: "Secure Configuration" },
+      { metric: "0%", label: "Data Loss in Cloud" },
+      { metric: "50%", label: "Improved Collaboration" }
+    ],
+    process: {
+      analysis: "We review your current M365 tenant configuration and security settings.",
+      implementation: "We apply best-practice security policies and reorganize your data structures.",
+      operations: "We provide ongoing management, support, and feature updates for your tenant."
+    },
+    caseStudy: {
+      title: "Securing and Optimizing M365 for a Financial Services Firm",
+      companyType: "Financial Services (30-50 employees)",
+      situation: "The firm was using M365 but had no central management or security policies.",
+      problem: "High risk of data leakage and inefficient document sharing processes.",
+      decisionPoint: "A near-miss phishing attempt highlighted the need for professional management.",
+      solution: "Ecksolution-IT implemented advanced security features and a structured SharePoint environment.",
+      result: "Enhanced security posture and significantly improved team productivity.",
+      slug: "microsoft-365-services"
+    }
+  },
+  "azure-hybrid-infrastructure": {
+    title: "Azure & Hybrid Infrastructure",
+    hero: "The Best of Both Worlds: Scalable, Secure Hybrid Cloud Solutions.",
+    description: "Seamlessly integrate your on-premise systems with the power of Microsoft Azure. We design and manage hybrid infrastructures that provide maximum flexibility and reliability.",
+    metadata: {
+      mainKeyword: "Azure Hybrid Infrastructure",
+      secondaryKeywords: ["Azure cloud services", "hybrid cloud solutions", "Azure migration"],
+      intent: "Commercial/Transactional"
+    },
+    problem: {
+      title: "The Limitations of On-Premise Only Infrastructure",
+      points: [
+        "High upfront costs for server hardware and maintenance",
+        "Limited scalability for remote work and growth",
+        "Difficulty implementing robust disaster recovery",
+        "Aging hardware reaching its end-of-life"
+      ]
+    },
+    solution: {
+      title: "Modern Hybrid Cloud Infrastructure",
+      points: [
+        "Seamless integration between local servers and Azure",
+        "Scalable cloud resources for apps and storage",
+        "Built-in geo-redundant disaster recovery",
+        "Reduced physical footprint and maintenance costs"
+      ]
+    },
+    results: [
+      { metric: "99.99%", label: "Infrastructure Uptime" },
+      { metric: "Infinite", label: "Scalability" },
+      { metric: "40%", label: "Lower CapEx Costs" }
+    ],
+    process: {
+      analysis: "We evaluate your current workloads to determine the ideal balance of local and cloud resources.",
+      implementation: "We build your Azure environment and establish secure, high-speed connectivity.",
+      operations: "We manage the entire hybrid environment, ensuring performance and cost-efficiency."
+    },
+    caseStudy: {
+      title: "Hybrid Cloud Migration for a Multi-Site Logistics Company",
+      companyType: "Logistics (100+ employees)",
+      situation: "The company had aging servers at multiple locations with no central management.",
+      problem: "Inconsistent performance and high risk of data loss at remote sites.",
+      decisionPoint: "A server failure at a key hub caused a 24-hour shutdown.",
+      solution: "Ecksolution-IT designed a hybrid Azure infrastructure with centralized management.",
+      result: "Improved performance across all sites and a robust, cloud-based disaster recovery plan.",
+      slug: "azure-hybrid-infrastructure"
+    }
+  },
+  "backup-and-security": {
+    title: "Backup & Security",
+    hero: "Protect Your Business with Bulletproof Backup and Multi-Layered Security.",
+    description: "Data loss and cyberattacks are the biggest threats to modern businesses. Our integrated backup and security solutions ensure your data is always safe and recoverable.",
+    metadata: {
+      mainKeyword: "Backup and Security",
+      secondaryKeywords: ["data backup services", "cybersecurity solutions", "disaster recovery"],
+      intent: "Commercial/Transactional"
+    },
+    problem: {
+      title: "The Vulnerability of Unprotected Data",
+      points: [
+        "Ransomware attacks that can bankrupt a business",
+        "Inadequate backups that fail when you need them most",
+        "Human error leading to accidental data deletion",
+        "Lack of visibility into security threats and vulnerabilities"
+      ]
+    },
+    solution: {
+      title: "Integrated Data Protection & Security",
+      points: [
+        "Immutable backups that cannot be deleted by ransomware",
+        "24/7 managed security monitoring and threat detection",
+        "Regular disaster recovery testing and simulation",
+        "Comprehensive security awareness training for staff"
+      ]
+    },
+    results: [
+      { metric: "0", label: "Successful Ransomware Attacks" },
+      { metric: "15min", label: "Recovery Time (RTO)" },
+      { metric: "100%", label: "Backup Integrity" }
+    ],
+    process: {
+      analysis: "We identify your most critical data and assess your current security vulnerabilities.",
+      implementation: "We deploy immutable backup solutions and our multi-layered security stack.",
+      operations: "We monitor your security 24/7 and perform daily backup verification."
+    },
+    caseStudy: {
+      title: "Recovering from Ransomware with Immutable Backups",
+      companyType: "Engineering Firm (40-60 employees)",
+      situation: "An engineering firm was hit by ransomware that encrypted their main server.",
+      problem: "Their traditional backups were also encrypted, leaving them with no data.",
+      decisionPoint: "They were facing a total loss of all project files and intellectual property.",
+      solution: "Ecksolution-IT had recently implemented immutable backups for them.",
+      result: "Full data recovery within 4 hours with zero ransom paid and zero data loss.",
+      slug: "backup-and-security"
+    }
   }
 };

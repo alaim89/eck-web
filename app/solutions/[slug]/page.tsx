@@ -4,6 +4,7 @@ import { solutionsData } from "@/lib/solutions-data";
 import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2, XCircle, Activity, Settings, ShieldCheck, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import type { Metadata } from "next";
 
 export function generateStaticParams() {
   return Object.keys(solutionsData).map((slug) => ({
@@ -11,13 +12,29 @@ export function generateStaticParams() {
   }));
 }
 
-export default async function SolutionPage({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const solution = solutionsData[resolvedParams.slug as keyof typeof solutionsData];
+  if (!solution) return { title: 'Not Found' };
+  return {
+    title: `${solution.title} | Ecksolution-IT`,
+    description: solution.description,
+  };
+}
+
+export default async function SolutionPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const slug = resolvedParams.slug;
+  const solution = solutionsData[slug as keyof typeof solutionsData];
 
   if (!solution) {
     notFound();
   }
+
+  // Get 3 related solutions (excluding current one)
+  const relatedSlugs = Object.keys(solutionsData)
+    .filter(s => s !== slug)
+    .slice(0, 3);
 
   return (
     <div className="min-h-screen bg-white font-sans text-black selection:bg-primary/20">
@@ -178,6 +195,35 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
                   Read full case study <ChevronRight className="w-4 h-4" />
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Solutions Section */}
+        <section className="py-24 px-6 border-t border-gray-100">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Explore Related Solutions</h2>
+                <p className="text-gray-700 text-lg">Other ways we help businesses eliminate IT risk.</p>
+              </div>
+              <Link href="/#solutions" className="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                View All Solutions <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {relatedSlugs.map((rSlug) => {
+                const s = solutionsData[rSlug as keyof typeof solutionsData];
+                return (
+                  <Link key={rSlug} href={`/solutions/${rSlug}`} className="group bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                    <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">{s.title}</h3>
+                    <p className="text-gray-600 mb-6 line-clamp-3">{s.description}</p>
+                    <div className="text-primary font-semibold flex items-center gap-2">
+                      Learn More <ChevronRight className="w-4 h-4" />
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>

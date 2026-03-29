@@ -1,8 +1,14 @@
+'use client';
+
 import { LogoIcon } from "@/components/Logo";
-import { ChevronDown, ArrowRight } from "lucide-react";
+import { ChevronDown, ArrowRight, Languages } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
+import { Language } from "@/lib/translations";
 
 export function Header() {
+  const { language, setLanguage, t } = useLanguage();
+
   return (
     <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
       <div className="max-w-[1200px] mx-auto px-6 h-20 md:h-24 flex items-center justify-between">
@@ -13,12 +19,12 @@ export function Header() {
         
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center h-full gap-8 lg:gap-10 text-sm font-medium text-gray-700">
-          <Link href="/#problem" className="hover:text-black transition-colors">The Risk</Link>
+          <Link href="/#problem" className="hover:text-black transition-colors">{t.nav.risk}</Link>
           
           {/* Mega Menu */}
           <div className="relative group h-full flex items-center">
             <button className="flex items-center gap-1 hover:text-black transition-colors h-full">
-              Solutions <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
+              {t.nav.solutions} <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
             </button>
             
             {/* Dropdown Panel */}
@@ -114,17 +120,44 @@ export function Header() {
             </div>
           </div>
 
-          <Link href="/case-studies" className="hover:text-black transition-colors">Case Studies</Link>
-          <Link href="/#pricing" className="hover:text-black transition-colors">Pricing</Link>
+          <Link href="/case-studies" className="hover:text-black transition-colors">{t.nav.caseStudies}</Link>
+          <Link href="/#pricing" className="hover:text-black transition-colors">{t.nav.pricing}</Link>
+          
+          {/* Language Switcher */}
+          <div className="relative group flex items-center h-full">
+            <button className="flex items-center gap-1.5 hover:text-black transition-colors">
+              <Languages className="w-4 h-4" />
+              <span className="uppercase">{language}</span>
+              <ChevronDown className="w-3 h-3 group-hover:rotate-180 transition-transform" />
+            </button>
+            <div className="absolute top-[calc(100%-1px)] right-0 w-32 bg-white border border-gray-100 shadow-lg rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              {(['en', 'de', 'es'] as Language[]).map((lang) => (
+                <button
+                  key={lang}
+                  onClick={() => setLanguage(lang)}
+                  className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${language === lang ? 'bg-primary/10 text-primary font-semibold' : 'hover:bg-gray-50 text-gray-700'}`}
+                >
+                  {lang === 'en' ? 'English' : lang === 'de' ? 'Deutsch' : 'Español'}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <Link href="/#contact" className="px-5 py-2.5 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors shadow-sm font-semibold">
-            Get an Audit
+            {t.nav.getAudit}
           </Link>
         </div>
 
         {/* Mobile CTA */}
-        <div className="md:hidden flex items-center">
+        <div className="md:hidden flex items-center gap-4">
+          <button 
+            onClick={() => setLanguage(language === 'en' ? 'de' : language === 'de' ? 'es' : 'en')}
+            className="p-2 text-gray-700"
+          >
+            <Languages className="w-5 h-5" />
+          </button>
           <Link href="/#contact" className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors shadow-sm text-sm font-semibold">
-            Get an Audit
+            {t.nav.getAudit}
           </Link>
         </div>
       </div>
