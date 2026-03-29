@@ -9,7 +9,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'Apex IT - Managed Services',
+  title: 'Ecksolution-IT - Managed Services',
   description: 'High-conversion landing page for an IT Managed Services Provider',
 };
 

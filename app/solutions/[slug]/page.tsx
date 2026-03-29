@@ -37,9 +37,9 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
             <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
               {solution.description}
             </p>
-            <a href="/#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all font-semibold text-lg shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5">
+            <Link href="/#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all font-semibold text-lg shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5">
               Discuss Your Needs <ArrowRight className="w-5 h-5" />
-            </a>
+            </Link>
           </div>
         </section>
 

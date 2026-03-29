@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, CheckCircle2, TrendingUp, ShieldCheck, Clock } from "lucide-react";
+import Link from "next/link";
 
 export default function CaseStudiesPage() {
   return (
@@ -9,9 +10,9 @@ export default function CaseStudiesPage() {
       
       <main className="pt-40 pb-32 px-6">
         <div className="max-w-[800px] mx-auto">
-          <a href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-black transition-colors mb-12 font-medium">
+          <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-black transition-colors mb-12 font-medium">
             <ArrowLeft className="w-4 h-4" /> Back to Home
-          </a>
+          </Link>
           
           <div className="mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-50 text-gray-600 text-xs font-semibold uppercase tracking-wider mb-6">

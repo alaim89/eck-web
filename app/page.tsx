@@ -6,6 +6,7 @@ import {
   CheckCircle2, Zap, Lock, TrendingDown, 
   Building2, Activity, Cpu, ShieldCheck 
 } from "lucide-react";
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
@@ -192,7 +193,7 @@ export default function LandingPage() {
           <div className="mb-20 text-center max-w-2xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black">Real Results.</h2>
             <p className="text-gray-500 text-lg">
-              How we've helped companies eliminate IT chaos and scale securely.
+              How we&apos;ve helped companies eliminate IT chaos and scale securely.
             </p>
           </div>
 
@@ -219,9 +220,9 @@ export default function LandingPage() {
                   <strong className="text-black font-semibold">The Outcome:</strong> Zero downtime in 18 months. Predictable IT costs and faster shipping times.
                 </p>
               </div>
-              <a href="/case-studies" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+              <Link href="/case-studies" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
                 Read full case study <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
 
             {/* Story 2 */}
@@ -246,9 +247,9 @@ export default function LandingPage() {
                   <strong className="text-black font-semibold">The Outcome:</strong> 15-minute average ticket resolution. 100% compliance audit pass rate.
                 </p>
               </div>
-              <a href="/case-studies" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+              <Link href="/case-studies" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
                 Read full case study <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -313,9 +314,9 @@ export default function LandingPage() {
             <button className="px-10 py-5 bg-primary hover:bg-primary/90 text-white rounded-xl font-medium text-lg transition-all shadow-sm">
               Book IT Audit
             </button>
-            <a href="/case-studies" className="inline-flex items-center justify-center px-10 py-5 bg-gray-50 hover:bg-gray-100 text-black rounded-xl font-medium text-lg transition-all">
+            <Link href="/case-studies" className="inline-flex items-center justify-center px-10 py-5 bg-gray-50 hover:bg-gray-100 text-black rounded-xl font-medium text-lg transition-all">
               View Case Studies
-            </a>
+            </Link>
           </div>
         </div>
       </section>
