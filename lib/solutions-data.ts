@@ -32,9 +32,13 @@ export const solutionsData = {
       operations: "We provide 24/7 monitoring, unlimited helpdesk support, and proactive maintenance."
     },
     caseStudy: {
-      title: "Manufacturing Firm Eliminates 15 Hours of Weekly Downtime",
-      situation: "A 50-person manufacturer was losing hours every week to server crashes and network drops.",
-      result: "Implemented Managed IT Operations, stabilized the network, and achieved 99.99% uptime, saving $12,000/month in lost productivity."
+      title: "Accounting Firm Recovers 150 Billable Hours Weekly",
+      companyType: "Mid-sized Accounting Firm",
+      situation: "Tax season approaching, 75 employees working hybrid.",
+      problem: "Constant VPN drops and slow file access causing 2 hours of lost billable time per CPA daily.",
+      decisionPoint: "A major client deadline was missed due to a server crash.",
+      solution: "Deployed comprehensive Managed IT Operations, migrating legacy files to a stable cloud environment and providing 24/7 helpdesk.",
+      result: "Eliminated VPN drops, recovered 150 billable hours per week, and achieved 99.99% uptime during peak tax season."
     }
   },
   "co-managed-it": {
@@ -51,332 +55,368 @@ export const solutionsData = {
       ]
     },
     solution: {
-      title: "A Strategic IT Partnership",
+      title: "Strategic IT Partnership",
       points: [
-        "Shared ticketing system for seamless collaboration",
-        "Access to our enterprise security and monitoring stack",
-        "Tier-3 escalation support for complex issues",
-        "Guaranteed coverage 24/7/365"
+        "We handle tier-1 support so your team can focus on projects",
+        "Access to our enterprise RMM and security stack",
+        "Guaranteed coverage 24/7/365",
+        "Escalation point for complex infrastructure issues"
       ]
     },
     results: [
-      { metric: "80%", label: "Reduction in Ticket Backlog" },
-      { metric: "24/7", label: "Monitoring & Coverage" },
-      { metric: "100%", label: "Internal Team Retention" }
+      { metric: "85%", label: "Ticket Backlog Reduction" },
+      { metric: "24/7", label: "Monitoring & Support" },
+      { metric: "100%", label: "Enterprise Tool Access" }
     ],
     process: {
-      analysis: "We assess your internal team's workload, identify skill gaps, and review current toolsets.",
-      implementation: "We integrate our RMM and ticketing systems with your team and establish escalation protocols.",
-      operations: "Your team handles day-to-day; we handle monitoring, patching, and complex escalations."
+      analysis: "We assess your team's workload, identify skill gaps, and determine where we can add the most value.",
+      implementation: "We integrate our tools with your environment and establish clear escalation procedures.",
+      operations: "We work alongside your team, handling overflow tickets and providing high-level strategic guidance."
     },
     caseStudy: {
-      title: "200-Person Agency Scales Without Adding IT Headcount",
-      situation: "An agency's solo IT director was burning out, unable to keep up with growth and security demands.",
-      result: "Integrated Co-Managed IT, providing the director with a team of 10 engineers for escalations, saving $80k/yr in hiring costs."
+      title: "Healthcare Network Secures Internal IT Retention",
+      companyType: "Regional Healthcare Network",
+      situation: "300 staff across 5 clinics, with only 2 internal IT staff members.",
+      problem: "Internal team was drowning in password resets and printer issues, leaving no time for HIPAA compliance audits or infrastructure upgrades.",
+      decisionPoint: "The lead IT director threatened to resign due to burnout.",
+      solution: "Integrated Co-Managed IT to handle all Tier-1 and Tier-2 helpdesk tickets, while providing the internal team with enterprise RMM tools.",
+      result: "Internal IT retention secured, ticket backlog reduced by 85%, and the team successfully completed their annual HIPAA audit 2 months early."
     }
   },
   "cybersecurity-protection": {
     title: "Cybersecurity Protection",
-    hero: "Protect your business from threats before they cause damage.",
-    description: "Enterprise-grade security tailored for growing businesses. We stop ransomware, phishing, and data breaches dead in their tracks.",
+    hero: "Enterprise-grade security scaled for mid-market companies.",
+    description: "We protect your business from ransomware, phishing, and data breaches with a comprehensive, multi-layered security strategy.",
     problem: {
-      title: "The Reality of Cyber Threats",
+      title: "The Growing Threat Landscape",
       points: [
-        "Ransomware attacks targeting small and mid-sized businesses",
+        "Ransomware attacks targeting vulnerable mid-sized businesses",
         "Employees falling for sophisticated phishing emails",
-        "Lack of compliance with industry data regulations",
-        "No visibility into active threats on the network"
+        "Lack of visibility into network vulnerabilities",
+        "Compliance requirements becoming increasingly complex"
       ]
     },
     solution: {
-      title: "Multi-Layered Defense",
+      title: "Proactive Defense Strategy",
       points: [
-        "Next-generation Endpoint Detection & Response (EDR)",
-        "Continuous employee security awareness training",
-        "Zero-trust network architecture and access controls",
-        "24/7 Security Operations Center (SOC) monitoring"
+        "Next-generation endpoint detection and response (EDR)",
+        "Continuous security awareness training for employees",
+        "Zero-trust network architecture implementation",
+        "Automated threat hunting and remediation"
       ]
     },
     results: [
-      { metric: "Zero", label: "Successful Breaches" },
-      { metric: "100%", label: "Compliance Achieved" },
+      { metric: "0", label: "Successful Breaches" },
+      { metric: "100%", label: "Staff Trained" },
       { metric: "24/7", label: "Active Threat Hunting" }
     ],
     process: {
-      analysis: "We conduct a deep vulnerability scan and penetration test to find your weakest links.",
-      implementation: "We deploy advanced EDR, configure firewalls, and enforce strict access policies.",
-      operations: "Our SOC actively monitors your network 24/7, neutralizing threats before they execute."
+      analysis: "We conduct a deep vulnerability scan and assess your current security posture against industry standards.",
+      implementation: "We deploy our security stack, enforce MFA, and lock down vulnerable endpoints.",
+      operations: "We monitor your network 24/7, actively hunting for threats and training your staff."
     },
     caseStudy: {
-      title: "Financial Firm Blocks Targeted Ransomware Attack",
-      situation: "A wealth management firm was targeted by a sophisticated phishing campaign that bypassed standard filters.",
-      result: "Our EDR solution isolated the infected machine in milliseconds, preventing lateral movement and resulting in zero data loss."
+      title: "Boutique Law Firm Blocks 14 Targeted Phishing Attempts",
+      companyType: "Boutique Law Firm",
+      situation: "40 attorneys handling highly sensitive corporate M&A data.",
+      problem: "Partners were using personal devices to access case files, and phishing emails were frequently bypassing their basic spam filters.",
+      decisionPoint: "A partner accidentally clicked a malicious link, nearly exposing a confidential merger document.",
+      solution: "Implemented zero-trust architecture, next-gen EDR, mandatory MFA, and monthly simulated phishing training.",
+      result: "Blocked 14 targeted phishing attempts in the first quarter, achieved 100% staff security training compliance, and secured a major enterprise client due to upgraded security posture."
     }
   },
   "managed-backup": {
-    title: "Managed Backup",
+    title: "Managed Backup & Disaster Recovery",
     hero: "Automatic backups that ensure no data is ever lost.",
-    description: "Bulletproof business continuity. We ensure your data is backed up, immutable, and ready to restore at a moment's notice.",
+    description: "We guarantee your business continuity with immutable backups, rapid recovery times, and regular disaster simulation testing.",
     problem: {
       title: "The Risk of Data Loss",
       points: [
-        "Unreliable manual backups that fail silently",
+        "Manual backups failing without anyone noticing",
         "Ransomware encrypting both primary data and local backups",
-        "Days or weeks of downtime to restore from legacy systems",
-        "Compliance violations due to improper data retention"
+        "Days or weeks of downtime required to restore systems",
+        "Compliance failures due to inadequate data retention"
       ]
     },
     solution: {
-      title: "Immutable Business Continuity",
+      title: "Bulletproof Business Continuity",
       points: [
-        "Automated hourly backups to local and cloud storage",
-        "Immutable storage that ransomware cannot delete or encrypt",
-        "Rapid virtualization to spin up failed servers instantly",
-        "Daily automated testing of backup integrity"
+        "Automated, immutable cloud backups that cannot be encrypted",
+        "Hourly snapshots for minimal data loss (RPO)",
+        "Rapid virtualization to get you running in minutes (RTO)",
+        "Daily automated test restores to verify integrity"
       ]
     },
     results: [
-      { metric: "15min", label: "Server Virtualization" },
-      { metric: "100%", label: "Data Recovery Rate" },
-      { metric: "Daily", label: "Verified Restores" }
+      { metric: "15min", label: "Recovery Time Objective" },
+      { metric: "1hr", label: "Recovery Point Objective" },
+      { metric: "100%", label: "Verified Restores" }
     ],
     process: {
-      analysis: "We map your critical data, determine required Recovery Time Objectives (RTO), and design the architecture.",
-      implementation: "We deploy local backup appliances and configure secure, encrypted cloud replication.",
-      operations: "We monitor backups daily, perform test restores, and manage all retention policies."
+      analysis: "We identify all critical data silos and determine your required recovery time and point objectives.",
+      implementation: "We deploy local backup appliances and configure secure, immutable cloud replication.",
+      operations: "We monitor backups daily, perform automated test restores, and manage all retention policies."
     },
     caseStudy: {
-      title: "Law Firm Recovers from Complete Server Failure in 45 Minutes",
-      situation: "A law firm's primary file server suffered a catastrophic hardware failure during a critical trial.",
-      result: "We virtualized the server from the local backup appliance, getting the entire firm back to work in 45 minutes."
+      title: "E-commerce Retailer Survives Database Corruption",
+      companyType: "E-commerce Retailer",
+      situation: "Processing $50M annually, relying on a central inventory database.",
+      problem: "Backups were done manually to local drives once a week, with no offsite replication or testing.",
+      decisionPoint: "A corrupted database table took 3 days to rebuild manually, costing $150k in lost sales.",
+      solution: "Deployed automated, immutable hourly backups with cloud replication and daily automated test restores.",
+      result: "Reduced Recovery Point Objective (RPO) from 7 days to 1 hour, and successfully restored a deleted product catalog in 12 minutes during a Black Friday event."
     }
   },
   "network-management": {
     title: "Network Management",
-    hero: "Ensure fast, reliable internet so your team never stops working.",
-    description: "Enterprise-grade networking that eliminates dead zones, dropped calls, and frustrating slowdowns.",
+    hero: "Fast, secure, and reliable connectivity for your entire team.",
+    description: "We design, deploy, and manage enterprise-grade networks that eliminate dead zones, dropouts, and security vulnerabilities.",
     problem: {
-      title: "Productivity-Killing Connectivity",
+      title: "The Bottleneck of Bad Wi-Fi",
       points: [
-        "Wi-Fi dead zones in critical office areas",
-        "Dropped VoIP calls and stuttering video conferences",
-        "Slow file transfers bottlenecking workflows",
-        "Unsecured guest networks exposing company data"
+        "Dropped video calls and slow file transfers",
+        "Unsecured guest networks exposing company data",
+        "Hardware failures taking down entire office floors",
+        "Inability to handle increasing device density"
       ]
     },
     solution: {
-      title: "Optimized, Secure Infrastructure",
+      title: "Enterprise Connectivity",
       points: [
-        "Enterprise-grade access points and switches",
-        "Proactive traffic shaping to prioritize critical apps (VoIP/Video)",
-        "Segmented networks for guests, IoT, and corporate data",
-        "Continuous monitoring for bottlenecks and hardware failures"
+        "High-density Wi-Fi 6 access points",
+        "Secure VLAN segmentation for guests and IoT devices",
+        "Redundant internet connections with automatic failover",
+        "Proactive bandwidth monitoring and shaping"
       ]
     },
     results: [
       { metric: "99.99%", label: "Network Uptime" },
-      { metric: "Zero", label: "Wi-Fi Dead Zones" },
+      { metric: "0", label: "Wi-Fi Dead Zones" },
       { metric: "100%", label: "Secure Segmentation" }
     ],
     process: {
-      analysis: "We perform a physical site survey and heat-map your office to identify interference and dead zones.",
-      implementation: "We install enterprise hardware, configure VLANs, and set up Quality of Service (QoS) rules.",
-      operations: "We monitor bandwidth usage, apply firmware updates, and resolve ISP issues on your behalf."
+      analysis: "We perform a physical site survey, heat-mapping your office to identify interference and dead zones.",
+      implementation: "We install enterprise-grade switches, firewalls, and access points, configuring secure segmentation.",
+      operations: "We monitor network traffic 24/7, apply firmware updates, and manage ISP relationships."
     },
     caseStudy: {
-      title: "Logistics Company Eliminates Warehouse Wi-Fi Drops",
-      situation: "Barcode scanners were constantly disconnecting in a 50,000 sq ft warehouse, halting shipments.",
-      result: "Deployed a mesh of enterprise access points, eliminating dead zones and increasing scanning speed by 30%."
+      title: "Private School Supports 1,200 Concurrent Devices",
+      companyType: "Private K-12 School",
+      situation: "500 students and 80 staff transitioning to a 1:1 iPad program.",
+      problem: "The existing network couldn't handle 600 concurrent connections, leading to dropped Zoom classes and frustrated teachers.",
+      decisionPoint: "Parents began complaining about the quality of digital learning during a board meeting.",
+      solution: "Completely redesigned the campus network with high-density enterprise access points, VLAN segmentation, and bandwidth shaping.",
+      result: "Supported 1,200 concurrent devices flawlessly, eliminated all classroom dead zones, and improved digital curriculum adoption by 100%."
     }
   },
   "hardware-lifecycle": {
-    title: "Hardware Lifecycle",
-    hero: "Keep your team productive with up-to-date, reliable equipment.",
-    description: "We manage the entire lifecycle of your IT hardware, from procurement and setup to secure disposal.",
+    title: "Hardware Lifecycle Management",
+    hero: "Standardized, reliable hardware that keeps your team productive.",
+    description: "We manage the entire lifecycle of your IT assets, from procurement and provisioning to secure disposal, eliminating unexpected hardware failures.",
     problem: {
-      title: "The Drag of Aging Hardware",
+      title: "The Hidden Cost of Aging Hardware",
       points: [
-        "Employees wasting 20+ minutes a day on slow computers",
-        "Unexpected capital expenses when multiple machines fail",
-        "Inconsistent setups causing compatibility issues",
+        "Employees wasting hours waiting on slow, outdated computers",
+        "Unexpected hardware failures causing sudden downtime",
+        "Inconsistent device models making support a nightmare",
         "Security risks from unpatchable legacy operating systems"
       ]
     },
     solution: {
-      title: "Standardized, Predictable Hardware",
+      title: "Predictable Hardware Strategy",
       points: [
-        "Standardized workstation profiles for every role",
-        "Predictable 36 to 48-month replacement cycles",
-        "Zero-touch deployment (machines arrive ready to work)",
+        "Standardized 36-month refresh cycles",
+        "Zero-touch provisioning for new employee onboarding",
+        "Proactive replacement before failure occurs",
         "Secure, compliant data wiping and recycling"
       ]
     },
     results: [
-      { metric: "100%", label: "Standardized Fleet" },
       { metric: "0", label: "Unexpected CapEx" },
-      { metric: "Day 1", label: "Employee Productivity" }
+      { metric: "100%", label: "Standardized Fleet" },
+      { metric: "60%", label: "Faster Onboarding" }
     ],
     process: {
-      analysis: "We audit your current inventory, identify aging machines, and define standard hardware profiles.",
-      implementation: "We procure new equipment, configure it to your standards, and deploy it to users.",
-      operations: "We track warranties, monitor hardware health, and proactively schedule replacements before failure."
+      analysis: "We inventory every device on your network, documenting age, warranty status, and performance metrics.",
+      implementation: "We establish standard hardware profiles for different roles and deploy zero-touch provisioning.",
+      operations: "We monitor hardware health, manage warranties, and execute scheduled replacements automatically."
     },
     caseStudy: {
-      title: "Accounting Firm Increases Billable Hours via Hardware Refresh",
-      situation: "CPAs were using 5-year-old laptops that took 10 minutes to boot and struggled with large Excel files.",
-      result: "Implemented a 36-month refresh cycle. Faster machines recovered 15 minutes per employee daily, adding $50k in billable capacity."
+      title: "Design Agency Boosts Productivity by $120k Annually",
+      companyType: "Architecture & Design Agency",
+      situation: "60 designers using a mix of 4-to-6-year-old workstations.",
+      problem: "Rendering 3D models took hours, and machines frequently crashed due to insufficient RAM and aging hard drives.",
+      decisionPoint: "A critical client pitch was delayed because a lead designer's laptop motherboard failed.",
+      solution: "Established a standardized 36-month hardware refresh cycle, deploying high-performance workstations with zero-touch provisioning.",
+      result: "Reduced 3D rendering times by 60%, eliminated unexpected hardware failures, and boosted designer productivity by an estimated $120k annually."
     }
   },
   "microsoft-365-migration": {
     title: "Microsoft 365 Migration",
     hero: "Move to Microsoft 365 without downtime or data loss.",
-    description: "Seamless, secure migrations to the world's leading productivity cloud. We handle the complexity so you don't have to.",
+    description: "We execute seamless migrations to Microsoft 365, unlocking enterprise collaboration while ensuring your data remains secure and compliant.",
     problem: {
       title: "The Pain of Legacy Systems",
       points: [
         "Aging on-premise Exchange servers requiring constant maintenance",
-        "Disjointed file sharing (Dropbox, Google Drive, local servers)",
-        "Fear of losing critical emails or files during a move",
-        "Lack of modern collaboration tools for remote workers"
+        "Fragmented communication across disjointed apps",
+        "Version control nightmares with shared documents",
+        "Security vulnerabilities in outdated email protocols"
       ]
     },
     solution: {
-      title: "Flawless Cloud Transition",
+      title: "Seamless Cloud Collaboration",
       points: [
-        "Zero-downtime email migrations (weekend cutovers)",
-        "Secure file migration to SharePoint and OneDrive",
-        "Implementation of Teams for unified communication",
-        "Strict security configurations (MFA, Conditional Access)"
+        "Zero-downtime email and data migration",
+        "Standardized deployment of Teams, SharePoint, and OneDrive",
+        "Implementation of strict security and compliance policies",
+        "Comprehensive user training and adoption support"
       ]
     },
     results: [
-      { metric: "Zero", label: "Lost Emails" },
-      { metric: "100%", label: "Cloud Accessibility" },
-      { metric: "0", label: "Business Disruption" }
+      { metric: "0", label: "Data Lost" },
+      { metric: "100%", label: "Cloud Adoption" },
+      { metric: "40%", label: "Less Email Clutter" }
     ],
     process: {
-      analysis: "We assess your current environment, map data structures, and plan the migration timeline.",
-      implementation: "We sync data in the background, configure the M365 tenant, and perform a weekend cutover.",
-      operations: "We provide post-migration support, user training, and ongoing M365 security management."
+      analysis: "We audit your current environment, map data structures, and plan the migration strategy.",
+      implementation: "We execute the migration in the background, syncing data without disrupting users.",
+      operations: "We cut over MX records over the weekend and provide hypercare support on Monday morning."
     },
     caseStudy: {
-      title: "50-Person Clinic Moves to Cloud Over a Weekend",
-      situation: "A healthcare clinic needed to retire an aging on-premise server but couldn't afford weekday downtime.",
-      result: "Executed a Friday-night cutover to M365. Staff logged in Monday morning to new systems with all historical data intact."
+      title: "Non-Profit Unifies Communications and Secures Grants",
+      companyType: "Non-Profit Organization",
+      situation: "90 employees and volunteers using a mix of personal Gmail accounts and an ancient on-premise Exchange server.",
+      problem: "Version control nightmares with grant proposals, lost emails, and zero visibility into volunteer communications.",
+      decisionPoint: "A major grant application was rejected because the final version was lost in an email chain.",
+      solution: "Executed a seamless weekend migration to Microsoft 365, standardizing everyone on Exchange Online, Teams, and SharePoint.",
+      result: "Unified all communications, secured donor data, and improved grant collaboration, leading to a 30% increase in successful funding applications."
     }
   },
   "azure-migration": {
     title: "Azure Migration",
     hero: "Securely move your infrastructure to Azure with full control.",
-    description: "Modernize your server infrastructure. We migrate your workloads to Microsoft Azure for infinite scalability and security.",
+    description: "We architect, migrate, and manage your servers in Microsoft Azure, providing infinite scalability and eliminating hardware dependency.",
     problem: {
-      title: "The Burden of Physical Servers",
+      title: "The Limits of Physical Hardware",
       points: [
-        "High capital costs for replacing physical servers every 5 years",
-        "Expensive power, cooling, and physical security requirements",
-        "Inability to scale resources quickly during peak seasons",
-        "Vulnerability to local disasters (fire, flood, power loss)"
+        "Expensive hardware refresh cycles every 3-5 years",
+        "Inability to scale resources quickly during peak demand",
+        "Single points of failure risking catastrophic downtime",
+        "High power, cooling, and physical security costs"
       ]
     },
     solution: {
-      title: "Scalable Cloud Infrastructure",
+      title: "Scalable Cloud Architecture",
       points: [
-        "Lift-and-shift or refactor migrations to Azure",
-        "Pay-for-what-you-use resource scaling",
-        "Enterprise-grade physical and network security",
-        "Built-in geographic redundancy and disaster recovery"
+        "Lift-and-shift or complete refactoring of legacy apps",
+        "Auto-scaling resources to match business demand",
+        "Geo-redundant backups and disaster recovery",
+        "Optimized cloud spend to prevent billing surprises"
       ]
     },
     results: [
-      { metric: "99.99%", label: "Azure SLA Uptime" },
+      { metric: "99.99%", label: "Infrastructure Uptime" },
       { metric: "Infinite", label: "Scalability" },
-      { metric: "100%", label: "Hardware Eliminated" }
+      { metric: "0", label: "Hardware Maintenance" }
     ],
     process: {
-      analysis: "We perform a Cloud Readiness Assessment to determine which workloads are suitable for Azure.",
-      implementation: "We build the Azure foundation, establish secure VPNs, and migrate servers with minimal downtime.",
-      operations: "We monitor Azure spend, optimize performance, and manage cloud security policies."
+      analysis: "We assess your workloads, calculate total cost of ownership, and design the Azure architecture.",
+      implementation: "We build the Azure environment, establish secure VPN tunnels, and migrate servers.",
+      operations: "We monitor performance, optimize costs monthly, and manage Azure security policies."
     },
     caseStudy: {
-      title: "Retailer Survives Black Friday with Azure Auto-Scaling",
-      situation: "A mid-sized retailer's on-premise ERP crashed every Black Friday due to traffic spikes.",
-      result: "Migrated the ERP to Azure. Configured auto-scaling to handle 5x traffic during the holidays, resulting in zero downtime."
+      title: "SaaS Startup Handles 400% Traffic Spike Flawlessly",
+      companyType: "SaaS Startup",
+      situation: "Rapidly growing software company hosting their application on a single dedicated server in a local data center.",
+      problem: "Unable to scale resources during traffic spikes, and a hardware failure would mean total service outage for their customers.",
+      decisionPoint: "A viral marketing campaign crashed their server for 8 hours, resulting in severe customer churn.",
+      solution: "Refactored and migrated their application to Microsoft Azure, utilizing auto-scaling app services and geo-redundant SQL databases.",
+      result: "Handled a 400% traffic spike the following month with zero degradation, achieving 99.99% SLA and winning back customer trust."
     }
   },
   "it-risk-audit": {
     title: "IT Risk Audit",
-    hero: "Identify and fix hidden vulnerabilities before they become costly.",
-    description: "A comprehensive, no-nonsense assessment of your entire technology stack, security posture, and IT processes.",
+    hero: "Discover exactly where your IT is failing and how to fix it.",
+    description: "A comprehensive, no-nonsense assessment of your technology stack, security posture, and IT processes to uncover hidden risks.",
     problem: {
       title: "Operating in the Dark",
       points: [
-        "Uncertainty about whether your current IT provider is doing a good job",
-        "Hidden security vulnerabilities waiting to be exploited",
-        "Lack of documentation for critical business systems",
-        "Paying for redundant software licenses or unused services"
+        "Paying for IT support but experiencing constant issues",
+        "Uncertainty about backup integrity and security compliance",
+        "No documentation of critical systems or passwords",
+        "Fear that a cyberattack could destroy the business"
       ]
     },
     solution: {
-      title: "Total IT Visibility",
+      title: "Total Visibility",
       points: [
-        "Deep-dive security and vulnerability scanning",
-        "Review of backup integrity and disaster recovery plans",
-        "Analysis of cloud and software licensing costs",
-        "Clear, executive-level reporting without the jargon"
+        "Deep-dive analysis of network, servers, and endpoints",
+        "Security vulnerability scanning and penetration testing",
+        "Review of IT policies, backups, and disaster recovery plans",
+        "Clear, actionable roadmap to remediate all risks"
       ]
     },
     results: [
-      { metric: "100%", label: "Network Visibility" },
-      { metric: "Clear", label: "Action Plan" },
-      { metric: "Zero", label: "Blind Spots" }
+      { metric: "100%", label: "System Visibility" },
+      { metric: "0", label: "Hidden Risks" },
+      { metric: "30 Days", label: "Remediation Plan" }
     ],
     process: {
-      analysis: "We deploy discovery tools and interview key stakeholders to map your environment.",
-      implementation: "We analyze the data against industry best practices and security frameworks.",
-      operations: "We present a prioritized executive summary and a detailed technical remediation plan."
+      analysis: "We deploy non-intrusive scanning tools and interview key stakeholders to gather data.",
+      implementation: "We analyze the findings against industry best practices and compliance frameworks.",
+      operations: "We present a detailed executive report and a prioritized roadmap for remediation."
     },
     caseStudy: {
-      title: "Audit Uncovers Critical Firewall Gap Before Attack",
-      situation: "A CEO requested an audit because they 'just weren't sure' about their current IT setup.",
-      result: "Discovered an open RDP port that was actively being brute-forced. Closed the gap immediately, preventing a guaranteed breach."
+      title: "Manufacturing Supplier Wins $2M Government Contract",
+      companyType: "Manufacturing Supplier",
+      situation: "150-person company that had used the same local 'IT guy' for 12 years.",
+      problem: "Leadership felt IT was a black box. They were paying high monthly fees but experiencing constant network slowdowns and had no documentation.",
+      decisionPoint: "The company failed a vendor compliance questionnaire required to bid on a massive government contract.",
+      solution: "Conducted a comprehensive IT Risk Audit, uncovering critical firewall misconfigurations, expired backups, and unlicensed software.",
+      result: "Provided a clear remediation roadmap, fixed the compliance gaps within 30 days, and enabled the company to win the $2M government contract."
     }
   },
   "strategic-it-roadmap": {
     title: "Strategic IT Roadmap",
-    hero: "Align your technology investments with your business growth goals.",
-    description: "Virtual CIO (vCIO) services that turn IT from a reactive expense into a proactive driver of business growth.",
+    hero: "Align your technology with your 3-year business goals.",
+    description: "We act as your virtual CIO, translating your business objectives into a clear, budgeted technology strategy that drives growth.",
     problem: {
-      title: "Reactive IT Spending",
+      title: "Reactive, Disconnected IT",
       points: [
-        "Buying technology only when something breaks",
-        "No alignment between business goals and IT capabilities",
-        "Surprise IT expenses destroying quarterly budgets",
-        "Falling behind competitors who leverage modern tech"
+        "Technology decisions made in a vacuum without business context",
+        "Surprise IT expenses derailing quarterly budgets",
+        "Systems that hinder rather than enable company growth",
+        "Lack of executive-level technology leadership"
       ]
     },
     solution: {
-      title: "Proactive Technology Strategy",
+      title: "Technology as a Growth Engine",
       points: [
-        "1 to 3-year technology roadmaps aligned with business objectives",
-        "Predictable IT budgeting and lifecycle planning",
-        "Quarterly Business Reviews (QBRs) to track progress",
-        "Guidance on digital transformation and AI adoption"
+        "Quarterly strategic business reviews (QBRs)",
+        "1-to-3 year technology budgeting and planning",
+        "Evaluation of new technologies to improve efficiency",
+        "Alignment of IT initiatives with revenue goals"
       ]
     },
     results: [
-      { metric: "3-Year", label: "Strategic Plan" },
+      { metric: "3 Yr", label: "Strategic Plan" },
       { metric: "100%", label: "Budget Predictability" },
-      { metric: "Quarterly", label: "Strategy Reviews" }
+      { metric: "ROI", label: "Focused Investments" }
     ],
     process: {
-      analysis: "We meet with leadership to understand 1, 3, and 5-year business growth targets.",
-      implementation: "We draft a comprehensive roadmap detailing the technology required to hit those targets.",
-      operations: "We hold regular QBRs to adjust the strategy, review budgets, and ensure execution."
+      analysis: "We meet with your executive team to understand your business goals, challenges, and growth targets.",
+      implementation: "We develop a multi-year roadmap detailing required IT investments, timelines, and expected ROI.",
+      operations: "We hold quarterly reviews to track progress, adjust the roadmap, and ensure continuous alignment."
     },
     caseStudy: {
-      title: "Regional Bank Aligns IT Spend with Branch Expansion",
-      situation: "A bank was opening 3 new branches but had no standardized IT deployment plan, causing massive delays.",
-      result: "Created a strategic roadmap and standardized branch-in-a-box deployment, cutting opening times by 40%."
+      title: "Logistics Firm Standardizes Expansion, Cuts Onboarding by 75%",
+      companyType: "Logistics & Supply Chain Firm",
+      situation: "Expanding from 2 warehouses to 5 across the country over the next 18 months.",
+      problem: "IT was entirely reactive. Each warehouse had different hardware, different ISPs, and different security standards, making scaling impossible.",
+      decisionPoint: "The launch of their second warehouse was delayed by 3 weeks due to IT infrastructure failures.",
+      solution: "Acted as their vCIO to develop a 3-year strategic IT roadmap, creating a standardized 'warehouse-in-a-box' technology deployment model.",
+      result: "Successfully launched the next 3 warehouses on schedule and under budget, standardizing operations and reducing IT onboarding time by 75%."
     }
   }
 };

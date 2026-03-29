@@ -37,9 +37,9 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
             <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
               {solution.description}
             </p>
-            <Link href="/#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all font-semibold text-lg shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5">
+            <a href="/#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all font-semibold text-lg shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5">
               Discuss Your Needs <ArrowRight className="w-5 h-5" />
-            </Link>
+            </a>
           </div>
         </section>
 
@@ -145,19 +145,33 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         <section className="py-24 px-6 bg-black text-white">
           <div className="max-w-[1000px] mx-auto">
             <div className="text-center mb-12">
-              <div className="text-primary font-bold tracking-wider uppercase text-sm mb-4">Real Results</div>
+              <div className="text-primary font-bold tracking-wider uppercase text-sm mb-4">Case Study: {solution.caseStudy.companyType}</div>
               <h2 className="text-3xl md:text-4xl font-bold">{solution.caseStudy.title}</h2>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 backdrop-blur-sm">
-              <div className="grid md:grid-cols-2 gap-12">
+              <div className="grid md:grid-cols-2 gap-12 mb-8">
                 <div>
                   <h3 className="text-xl font-bold mb-4 text-white/90">The Situation</h3>
                   <p className="text-gray-400 leading-relaxed">{solution.caseStudy.situation}</p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-4 text-white/90">The Result</h3>
-                  <p className="text-gray-400 leading-relaxed">{solution.caseStudy.result}</p>
+                  <h3 className="text-xl font-bold mb-4 text-white/90">The Problem</h3>
+                  <p className="text-gray-400 leading-relaxed">{solution.caseStudy.problem}</p>
                 </div>
+              </div>
+              <div className="grid md:grid-cols-2 gap-12 mb-8">
+                <div>
+                  <h3 className="text-xl font-bold mb-4 text-white/90">The Decision Point</h3>
+                  <p className="text-gray-400 leading-relaxed">{solution.caseStudy.decisionPoint}</p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-4 text-white/90">The Solution</h3>
+                  <p className="text-gray-400 leading-relaxed">{solution.caseStudy.solution}</p>
+                </div>
+              </div>
+              <div className="pt-8 border-t border-white/10">
+                <h3 className="text-xl font-bold mb-4 text-white/90">The Result</h3>
+                <p className="text-gray-400 leading-relaxed">{solution.caseStudy.result}</p>
               </div>
               <div className="mt-12 pt-8 border-t border-white/10 text-center">
                 <Link href="/case-studies" className="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-semibold">

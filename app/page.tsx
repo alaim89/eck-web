@@ -6,7 +6,6 @@ import {
   CheckCircle2, Zap, Lock, TrendingDown, 
   Building2, Activity, Cpu, ShieldCheck 
 } from "lucide-react";
-import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
@@ -193,7 +192,7 @@ export default function LandingPage() {
           <div className="mb-20 text-center max-w-2xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black">Real Results.</h2>
             <p className="text-gray-500 text-lg">
-              How we&apos;ve helped companies eliminate IT chaos and scale securely.
+              How we've helped companies eliminate IT chaos and scale securely.
             </p>
           </div>
 
@@ -205,24 +204,30 @@ export default function LandingPage() {
                   <Building2 className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-black">Logistics Firm</h3>
-                  <p className="text-sm text-gray-500">45 Employees</p>
+                  <h3 className="font-bold text-black">Financial Services Firm</h3>
+                  <p className="text-sm text-gray-500">85 Employees</p>
                 </div>
               </div>
               <div className="space-y-4 mb-8">
                 <p className="text-gray-600 leading-relaxed">
-                  <strong className="text-black font-semibold">The Problem:</strong> Frequent server crashes were delaying shipments, costing $5k/hour in downtime.
+                  <strong className="text-black font-semibold">Situation:</strong> Managing high-volume trading data across three regional offices.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  <strong className="text-black font-semibold">The Switch:</strong> Moved to Ecksolution-IT for a redundant cloud setup and proactive monitoring.
+                  <strong className="text-black font-semibold">Problem:</strong> Legacy compliance software caused daily system freezes, leading to missed trading windows.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  <strong className="text-black font-semibold">The Outcome:</strong> Zero downtime in 18 months. Predictable IT costs and faster shipping times.
+                  <strong className="text-black font-semibold">Decision Point:</strong> A 20-minute system freeze during a major market shift cost a significant client portfolio.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  <strong className="text-black font-semibold">Solution:</strong> Migrated to a high-performance, compliant cloud infrastructure with real-time failover.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  <strong className="text-black font-semibold">Result:</strong> 100% system uptime during peak trading hours and flawless SEC compliance audits.
                 </p>
               </div>
-              <Link href="/case-studies" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+              <a href="/case-studies/financial-services-it-migration" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
                 Read full case study <ArrowRight className="w-4 h-4" />
-              </Link>
+              </a>
             </div>
 
             {/* Story 2 */}
@@ -232,24 +237,30 @@ export default function LandingPage() {
                   <Activity className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-black">Healthcare Clinic</h3>
-                  <p className="text-sm text-gray-500">120 Employees</p>
+                  <h3 className="font-bold text-black">Biotech Research Lab</h3>
+                  <p className="text-sm text-gray-500">60 Researchers</p>
                 </div>
               </div>
               <div className="space-y-4 mb-8">
                 <p className="text-gray-600 leading-relaxed">
-                  <strong className="text-black font-semibold">The Problem:</strong> Internal IT was overwhelmed with password resets, ignoring critical security patches.
+                  <strong className="text-black font-semibold">Situation:</strong> Processing and analyzing massive genomic datasets daily.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  <strong className="text-black font-semibold">The Switch:</strong> Partnered with us for 24/7 helpdesk and enterprise-grade endpoint security.
+                  <strong className="text-black font-semibold">Problem:</strong> Backups were taking 48 hours to complete, bottlenecking daily research activities and leaving data vulnerable.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  <strong className="text-black font-semibold">The Outcome:</strong> 15-minute average ticket resolution. 100% compliance audit pass rate.
+                  <strong className="text-black font-semibold">Decision Point:</strong> A corrupted local server nearly wiped out 6 months of irreplaceable clinical trial data.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  <strong className="text-black font-semibold">Solution:</strong> Implemented a hybrid-cloud storage architecture with automated, immutable hourly snapshots.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  <strong className="text-black font-semibold">Result:</strong> Reduced backup times from 48 hours to 15 minutes, ensuring zero data loss for critical research.
                 </p>
               </div>
-              <Link href="/case-studies" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+              <a href="/case-studies/biotech-backup-optimization" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
                 Read full case study <ArrowRight className="w-4 h-4" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -314,9 +325,9 @@ export default function LandingPage() {
             <button className="px-10 py-5 bg-primary hover:bg-primary/90 text-white rounded-xl font-medium text-lg transition-all shadow-sm">
               Book IT Audit
             </button>
-            <Link href="/case-studies" className="inline-flex items-center justify-center px-10 py-5 bg-gray-50 hover:bg-gray-100 text-black rounded-xl font-medium text-lg transition-all">
+            <a href="/case-studies" className="inline-flex items-center justify-center px-10 py-5 bg-gray-50 hover:bg-gray-100 text-black rounded-xl font-medium text-lg transition-all">
               View Case Studies
-            </Link>
+            </a>
           </div>
         </div>
       </section>
