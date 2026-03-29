@@ -10,6 +10,7 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CaseStudyCarousel } from "@/components/CaseStudyCarousel";
+import { HeroVisual } from "@/components/HeroVisual";
 
 export default function LandingPage() {
   return (
@@ -51,35 +52,9 @@ export default function LandingPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative"
           >
-            <div className="aspect-square rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] p-10 flex flex-col justify-between border border-gray-100/50">
-              <div className="flex items-center justify-between pb-8 border-b border-gray-100">
-                <div>
-                  <div className="text-sm text-gray-600 mb-2 font-medium uppercase tracking-wider">System Status</div>
-                  <div className="text-3xl font-mono text-black flex items-center gap-3 font-semibold">
-                    <div className="w-3 h-3 rounded-full bg-primary" />
-                    99.999%
-                  </div>
-                </div>
-                <ShieldCheck className="w-10 h-10 text-primary" />
-              </div>
-              
-              <div className="space-y-4">
-                {[
-                  { label: "Threats Blocked", value: "2,405", icon: Lock },
-                  { label: "Avg Response", value: "4m 12s", icon: Zap },
-                  { label: "Health Score", value: "Optimal", icon: Activity },
-                ].map((stat, i) => (
-                  <div key={i} className="flex items-center justify-between p-5 rounded-xl bg-gray-50/80">
-                    <div className="flex items-center gap-4">
-                      <stat.icon className="w-5 h-5 text-primary" />
-                      <span className="text-gray-700 font-medium">{stat.label}</span>
-                    </div>
-                    <span className="font-mono font-semibold text-black">{stat.value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <HeroVisual />
           </motion.div>
         </div>
       </section>
@@ -87,7 +62,7 @@ export default function LandingPage() {
       {/* Tension & Risk Section */}
       <section id="problem" className="py-32 bg-gray-50/50">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="max-w-2xl mb-20">
+          <div className="max-w-2xl mb-20 mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black">Bad IT bleeds margins.</h2>
             <p className="text-gray-700 text-lg leading-relaxed">
               When technology fails, business stops. The hidden costs of reactive support destroy growth.
@@ -118,10 +93,10 @@ export default function LandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-10 rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
+                className="group p-10 rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500 text-center"
               >
-                <div className="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center mb-8">
-                  <risk.icon className="w-6 h-6 text-black" />
+                <div className="mx-auto w-14 h-14 rounded-2xl bg-[#005F6B]/[0.08] flex items-center justify-center mb-8 transition-all duration-300 shadow-[0_0_15px_rgba(0,95,107,0.1)] group-hover:shadow-[0_0_25px_rgba(0,95,107,0.25)] group-hover:-translate-y-1">
+                  <risk.icon className="w-7 h-7 text-primary transition-transform duration-300 group-hover:scale-110" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-black">{risk.title}</h3>
                 <p className="text-gray-700 leading-relaxed">{risk.desc}</p>
