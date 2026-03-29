@@ -32,13 +32,14 @@ export const solutionsData = {
       operations: "We provide 24/7 monitoring, unlimited helpdesk support, and proactive maintenance."
     },
     caseStudy: {
-      title: "Accounting Firm Recovers 150 Billable Hours Weekly",
-      companyType: "Mid-sized Accounting Firm",
-      situation: "Tax season approaching, 75 employees working hybrid.",
-      problem: "Constant VPN drops and slow file access causing 2 hours of lost billable time per CPA daily.",
-      decisionPoint: "A major client deadline was missed due to a server crash.",
-      solution: "Deployed comprehensive Managed IT Operations, migrating legacy files to a stable cloud environment and providing 24/7 helpdesk.",
-      result: "Eliminated VPN drops, recovered 150 billable hours per week, and achieved 99.99% uptime during peak tax season."
+      title: "Reliable IT operations with full responsibility",
+      companyType: "SME (30–60 employees)",
+      situation: "The company had no internal IT and relied on a single external technician who was often unavailable.",
+      problem: "Long response times, no documentation of systems, and frequent failures of critical applications.",
+      decisionPoint: "A server failure during a busy period could not be resolved for 48 hours.",
+      solution: "Implementation of full Managed IT Operations, documentation of all systems, and 24/7 monitoring.",
+      result: "Fast response times, stable systems, and a clear point of contact for all IT issues.",
+      slug: "managed-it-operations"
     }
   },
   "co-managed-it": {
@@ -74,13 +75,14 @@ export const solutionsData = {
       operations: "We work alongside your team, handling overflow tickets and providing high-level strategic guidance."
     },
     caseStudy: {
-      title: "Healthcare Network Secures Internal IT Retention",
-      companyType: "Regional Healthcare Network",
-      situation: "300 staff across 5 clinics, with only 2 internal IT staff members.",
-      problem: "Internal team was drowning in password resets and printer issues, leaving no time for HIPAA compliance audits or infrastructure upgrades.",
-      decisionPoint: "The lead IT director threatened to resign due to burnout.",
-      solution: "Integrated Co-Managed IT to handle all Tier-1 and Tier-2 helpdesk tickets, while providing the internal team with enterprise RMM tools.",
-      result: "Internal IT retention secured, ticket backlog reduced by 85%, and the team successfully completed their annual HIPAA audit 2 months early."
+      title: "Co-Managed IT for a Software Agency",
+      companyType: "Software Development Agency (20–40 employees)",
+      situation: "The agency had a skilled internal developer handling IT, but he was overwhelmed by growth.",
+      problem: "Critical infrastructure updates were neglected, and security patches were months behind.",
+      decisionPoint: "A minor security breach occurred due to an unpatched server.",
+      solution: "Ecksolution-IT implemented a Co-Managed IT model, taking over infrastructure and security while the internal dev focused on internal tools.",
+      result: "100% patch compliance, reduced internal workload, and enhanced security posture.",
+      slug: "co-managed-it"
     }
   },
   "cybersecurity-protection": {
@@ -116,13 +118,14 @@ export const solutionsData = {
       operations: "We monitor your network 24/7, actively hunting for threats and training your staff."
     },
     caseStudy: {
-      title: "Boutique Law Firm Blocks 14 Targeted Phishing Attempts",
-      companyType: "Boutique Law Firm",
-      situation: "40 attorneys handling highly sensitive corporate M&A data.",
-      problem: "Partners were using personal devices to access case files, and phishing emails were frequently bypassing their basic spam filters.",
-      decisionPoint: "A partner accidentally clicked a malicious link, nearly exposing a confidential merger document.",
-      solution: "Implemented zero-trust architecture, next-gen EDR, mandatory MFA, and monthly simulated phishing training.",
-      result: "Blocked 14 targeted phishing attempts in the first quarter, achieved 100% staff security training compliance, and secured a major enterprise client due to upgraded security posture."
+      title: "Audit-ready IT through structured security",
+      companyType: "Regulated company (50–100 employees)",
+      situation: "The company had to meet strict regulatory requirements but lacked a clear security strategy.",
+      problem: "Insecure data storage, no access control, and lack of compliance documentation.",
+      decisionPoint: "An upcoming audit required a structured IT environment.",
+      solution: "Implementation of a comprehensive security strategy, including encryption, access control, and regular audits.",
+      result: "Full compliance, improved security posture, and successful external audits.",
+      slug: "security-compliance"
     }
   },
   "managed-backup": {
@@ -158,13 +161,14 @@ export const solutionsData = {
       operations: "We monitor backups daily, perform automated test restores, and manage all retention policies."
     },
     caseStudy: {
-      title: "E-commerce Retailer Survives Database Corruption",
-      companyType: "E-commerce Retailer",
-      situation: "Processing $50M annually, relying on a central inventory database.",
-      problem: "Backups were done manually to local drives once a week, with no offsite replication or testing.",
-      decisionPoint: "A corrupted database table took 3 days to rebuild manually, costing $150k in lost sales.",
-      solution: "Deployed automated, immutable hourly backups with cloud replication and daily automated test restores.",
-      result: "Reduced Recovery Point Objective (RPO) from 7 days to 1 hour, and successfully restored a deleted product catalog in 12 minutes during a Black Friday event."
+      title: "Bulletproof Backup for a Law Firm",
+      companyType: "Law Firm (15–30 employees)",
+      situation: "The firm relied on external hard drives for backups, which were inconsistent and not off-site.",
+      problem: "A ransomware attack encrypted the local server and the connected backup drive.",
+      decisionPoint: "The firm faced permanent loss of years of client case files.",
+      solution: "Ecksolution-IT implemented a Managed Backup solution with immutable cloud storage and 15-minute recovery snapshots.",
+      result: "Full data recovery within 2 hours, zero data loss, and ongoing peace of mind.",
+      slug: "managed-backup"
     }
   },
   "network-management": {
@@ -200,13 +204,14 @@ export const solutionsData = {
       operations: "We monitor network traffic 24/7, apply firmware updates, and manage ISP relationships."
     },
     caseStudy: {
-      title: "Private School Supports 1,200 Concurrent Devices",
-      companyType: "Private K-12 School",
-      situation: "500 students and 80 staff transitioning to a 1:1 iPad program.",
-      problem: "The existing network couldn't handle 600 concurrent connections, leading to dropped Zoom classes and frustrated teachers.",
-      decisionPoint: "Parents began complaining about the quality of digital learning during a board meeting.",
-      solution: "Completely redesigned the campus network with high-density enterprise access points, VLAN segmentation, and bandwidth shaping.",
-      result: "Supported 1,200 concurrent devices flawlessly, eliminated all classroom dead zones, and improved digital curriculum adoption by 100%."
+      title: "Network Optimization for a Logistics Hub",
+      companyType: "Logistics Hub (50–100 employees)",
+      situation: "The warehouse relied on Wi-Fi for inventory tracking, but had frequent dropouts in large areas.",
+      problem: "Inventory errors and shipping delays due to handheld scanners losing connection.",
+      decisionPoint: "A major shipping error cost the company a key client.",
+      solution: "Ecksolution-IT deployed an enterprise-grade mesh network with high-density access points and 24/7 monitoring.",
+      result: "100% Wi-Fi coverage, zero connection dropouts, and improved warehouse efficiency.",
+      slug: "network-management"
     }
   },
   "hardware-lifecycle": {
@@ -242,13 +247,14 @@ export const solutionsData = {
       operations: "We monitor hardware health, manage warranties, and execute scheduled replacements automatically."
     },
     caseStudy: {
-      title: "Design Agency Boosts Productivity by $120k Annually",
-      companyType: "Architecture & Design Agency",
-      situation: "60 designers using a mix of 4-to-6-year-old workstations.",
-      problem: "Rendering 3D models took hours, and machines frequently crashed due to insufficient RAM and aging hard drives.",
-      decisionPoint: "A critical client pitch was delayed because a lead designer's laptop motherboard failed.",
-      solution: "Established a standardized 36-month hardware refresh cycle, deploying high-performance workstations with zero-touch provisioning.",
-      result: "Reduced 3D rendering times by 60%, eliminated unexpected hardware failures, and boosted designer productivity by an estimated $120k annually."
+      title: "Hardware Refresh for a Design Agency",
+      companyType: "Design Agency (25–50 employees)",
+      situation: "Architects were using a mix of old workstations, leading to frequent crashes in CAD software.",
+      problem: "High maintenance costs and lost billable hours due to hardware instability.",
+      decisionPoint: "A critical project deadline was missed because of a workstation failure.",
+      solution: "Ecksolution-IT implemented a Hardware Lifecycle Management plan with standardized high-performance workstations and a 3-year refresh cycle.",
+      result: "40% increase in rendering speed, zero hardware-related downtime, and predictable IT budgeting.",
+      slug: "hardware-lifecycle"
     }
   },
   "microsoft-365-migration": {
@@ -284,13 +290,14 @@ export const solutionsData = {
       operations: "We cut over MX records over the weekend and provide hypercare support on Monday morning."
     },
     caseStudy: {
-      title: "Non-Profit Unifies Communications and Secures Grants",
-      companyType: "Non-Profit Organization",
-      situation: "90 employees and volunteers using a mix of personal Gmail accounts and an ancient on-premise Exchange server.",
-      problem: "Version control nightmares with grant proposals, lost emails, and zero visibility into volunteer communications.",
-      decisionPoint: "A major grant application was rejected because the final version was lost in an email chain.",
-      solution: "Executed a seamless weekend migration to Microsoft 365, standardizing everyone on Exchange Online, Teams, and SharePoint.",
-      result: "Unified all communications, secured donor data, and improved grant collaboration, leading to a 30% increase in successful funding applications."
+      title: "Migration to Microsoft 365 without downtime",
+      companyType: "Mid-sized company (40–80 employees)",
+      situation: "The company used Google Workspace but lacked structure in users, access, and security.",
+      problem: "No central management, security risks, and inefficient processes.",
+      decisionPoint: "The system no longer met security and scalability requirements.",
+      solution: "Full migration to Microsoft 365, Entra ID with MFA and conditional access, structured user and permission system, and backup strategy implementation.",
+      result: "No downtime, no data loss, and full control over users and systems.",
+      slug: "microsoft-365-migration"
     }
   },
   "azure-migration": {
@@ -326,13 +333,14 @@ export const solutionsData = {
       operations: "We monitor performance, optimize costs monthly, and manage Azure security policies."
     },
     caseStudy: {
-      title: "SaaS Startup Handles 400% Traffic Spike Flawlessly",
-      companyType: "SaaS Startup",
-      situation: "Rapidly growing software company hosting their application on a single dedicated server in a local data center.",
-      problem: "Unable to scale resources during traffic spikes, and a hardware failure would mean total service outage for their customers.",
-      decisionPoint: "A viral marketing campaign crashed their server for 8 hours, resulting in severe customer churn.",
-      solution: "Refactored and migrated their application to Microsoft Azure, utilizing auto-scaling app services and geo-redundant SQL databases.",
-      result: "Handled a 400% traffic spike the following month with zero degradation, achieving 99.99% SLA and winning back customer trust."
+      title: "Stable and scalable IT with Microsoft Azure",
+      companyType: "Tech company (100–150 employees)",
+      situation: "The company operated its own servers in a data center, which were reaching their limits.",
+      problem: "High maintenance costs, lack of scalability, and no disaster recovery plan.",
+      decisionPoint: "The hardware was outdated and a major expansion was planned.",
+      solution: "Migration of all workloads to Microsoft Azure, implementation of auto-scaling, and a geo-redundant backup system.",
+      result: "Maximum scalability, 30% reduction in operating costs, and a highly available infrastructure.",
+      slug: "azure-cloud-infrastructure"
     }
   },
   "it-risk-audit": {
@@ -368,13 +376,14 @@ export const solutionsData = {
       operations: "We present a detailed executive report and a prioritized roadmap for remediation."
     },
     caseStudy: {
-      title: "Manufacturing Supplier Wins $2M Government Contract",
-      companyType: "Manufacturing Supplier",
-      situation: "150-person company that had used the same local 'IT guy' for 12 years.",
-      problem: "Leadership felt IT was a black box. They were paying high monthly fees but experiencing constant network slowdowns and had no documentation.",
-      decisionPoint: "The company failed a vendor compliance questionnaire required to bid on a massive government contract.",
-      solution: "Conducted a comprehensive IT Risk Audit, uncovering critical firewall misconfigurations, expired backups, and unlicensed software.",
-      result: "Provided a clear remediation roadmap, fixed the compliance gaps within 30 days, and enabled the company to win the $2M government contract."
+      title: "IT Risk Audit for a Manufacturing Plant",
+      companyType: "Manufacturing Plant (80–120 employees)",
+      situation: "The plant had grown rapidly but its IT infrastructure was a \"black box\" with no documentation.",
+      problem: "Fear of hidden vulnerabilities and no clear understanding of the disaster recovery capabilities.",
+      decisionPoint: "The company's insurance provider required a formal IT risk assessment for policy renewal.",
+      solution: "Ecksolution-IT performed a comprehensive IT Risk Audit, identifying 12 critical vulnerabilities and creating a remediation roadmap.",
+      result: "Successful insurance renewal, clear visibility into IT risks, and a prioritized security plan.",
+      slug: "it-risk-audit"
     }
   },
   "strategic-it-roadmap": {
@@ -410,13 +419,14 @@ export const solutionsData = {
       operations: "We hold quarterly reviews to track progress, adjust the roadmap, and ensure continuous alignment."
     },
     caseStudy: {
-      title: "Logistics Firm Standardizes Expansion, Cuts Onboarding by 75%",
-      companyType: "Logistics & Supply Chain Firm",
-      situation: "Expanding from 2 warehouses to 5 across the country over the next 18 months.",
-      problem: "IT was entirely reactive. Each warehouse had different hardware, different ISPs, and different security standards, making scaling impossible.",
-      decisionPoint: "The launch of their second warehouse was delayed by 3 weeks due to IT infrastructure failures.",
-      solution: "Acted as their vCIO to develop a 3-year strategic IT roadmap, creating a standardized 'warehouse-in-a-box' technology deployment model.",
-      result: "Successfully launched the next 3 warehouses on schedule and under budget, standardizing operations and reducing IT onboarding time by 75%."
+      title: "Strategic IT Roadmap for a Non-profit",
+      companyType: "Non-profit Organization (40–60 employees)",
+      situation: "The organization was using outdated technology that didn't align with its new 5-year strategic plan.",
+      problem: "IT spending was reactive and didn't support the organization's goal of expanding digital services.",
+      decisionPoint: "The board realized that technology was the primary barrier to achieving their mission.",
+      solution: "Ecksolution-IT acted as a virtual CIO, developing a 3-year Strategic IT Roadmap aligned with the organization's goals.",
+      result: "25% reduction in reactive IT costs and successful launch of new digital service platforms.",
+      slug: "strategic-it-roadmap"
     }
   }
 };

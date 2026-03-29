@@ -6,8 +6,10 @@ import {
   CheckCircle2, Zap, Lock, TrendingDown, 
   Building2, Activity, Cpu, ShieldCheck 
 } from "lucide-react";
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { CaseStudyCarousel } from "@/components/CaseStudyCarousel";
 
 export default function LandingPage() {
   return (
@@ -23,22 +25,22 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-50 text-gray-600 text-xs font-semibold uppercase tracking-wider mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-50 text-gray-700 text-xs font-semibold uppercase tracking-wider mb-8">
               <Building2 className="w-4 h-4 text-primary" />
               For Teams of 10–500
             </div>
             <h1 className="text-6xl md:text-7xl font-bold tracking-tighter leading-[1.05] mb-8 text-black">
               Stop managing <br />
-              <span className="text-gray-400">IT chaos.</span>
+              <span className="text-gray-500">IT chaos.</span>
             </h1>
-            <p className="text-lg text-gray-500 mb-12 max-w-md leading-relaxed">
+            <p className="text-lg text-gray-700 mb-12 max-w-md leading-relaxed">
               We are your entire IT department. Full accountability for your infrastructure, security, and support. 
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-xl font-medium flex items-center justify-center gap-2 transition-all shadow-sm">
                 Schedule Audit <ArrowRight className="w-5 h-5" />
               </button>
-              <div className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl text-sm text-gray-600 bg-gray-50">
+              <div className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl text-sm text-gray-700 bg-gray-50">
                 <Clock className="w-5 h-5 text-primary" />
                 15-Min Response
               </div>
@@ -53,7 +55,7 @@ export default function LandingPage() {
             <div className="aspect-square rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] p-10 flex flex-col justify-between border border-gray-100/50">
               <div className="flex items-center justify-between pb-8 border-b border-gray-100">
                 <div>
-                  <div className="text-sm text-gray-400 mb-2 font-medium uppercase tracking-wider">System Status</div>
+                  <div className="text-sm text-gray-600 mb-2 font-medium uppercase tracking-wider">System Status</div>
                   <div className="text-3xl font-mono text-black flex items-center gap-3 font-semibold">
                     <div className="w-3 h-3 rounded-full bg-primary" />
                     99.999%
@@ -71,7 +73,7 @@ export default function LandingPage() {
                   <div key={i} className="flex items-center justify-between p-5 rounded-xl bg-gray-50/80">
                     <div className="flex items-center gap-4">
                       <stat.icon className="w-5 h-5 text-primary" />
-                      <span className="text-gray-600 font-medium">{stat.label}</span>
+                      <span className="text-gray-700 font-medium">{stat.label}</span>
                     </div>
                     <span className="font-mono font-semibold text-black">{stat.value}</span>
                   </div>
@@ -87,7 +89,7 @@ export default function LandingPage() {
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="max-w-2xl mb-20">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black">Bad IT bleeds margins.</h2>
-            <p className="text-gray-500 text-lg leading-relaxed">
+            <p className="text-gray-700 text-lg leading-relaxed">
               When technology fails, business stops. The hidden costs of reactive support destroy growth.
             </p>
           </div>
@@ -122,7 +124,7 @@ export default function LandingPage() {
                   <risk.icon className="w-6 h-6 text-black" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-black">{risk.title}</h3>
-                <p className="text-gray-500 leading-relaxed">{risk.desc}</p>
+                <p className="text-gray-700 leading-relaxed">{risk.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -137,7 +139,7 @@ export default function LandingPage() {
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8 text-black">
                 8+ Years of Excellence.
               </h2>
-              <p className="text-gray-500 text-lg mb-12 leading-relaxed max-w-md">
+              <p className="text-gray-700 text-lg mb-12 leading-relaxed max-w-md">
                 We&apos;ve executed hundreds of migrations. We don&apos;t just reset passwords; we architect reliability.
               </p>
               
@@ -153,7 +155,7 @@ export default function LandingPage() {
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold mb-2 text-black">{item.title}</h4>
-                      <p className="text-gray-500">{item.desc}</p>
+                      <p className="text-gray-700">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -164,7 +166,7 @@ export default function LandingPage() {
               <div className="space-y-6 mt-12">
                 <div className="p-10 rounded-2xl bg-gray-50">
                   <div className="text-5xl font-bold text-black mb-3">100%</div>
-                  <div className="text-sm text-gray-500 font-medium uppercase tracking-wider">Accountability</div>
+                  <div className="text-sm text-gray-700 font-medium uppercase tracking-wider">Accountability</div>
                 </div>
                 <div className="p-10 rounded-2xl bg-primary shadow-lg shadow-primary/20">
                   <div className="text-5xl font-bold text-white mb-3">15m</div>
@@ -174,11 +176,11 @@ export default function LandingPage() {
               <div className="space-y-6">
                 <div className="p-10 rounded-2xl bg-gray-50">
                   <div className="text-5xl font-bold text-black mb-3">8+</div>
-                  <div className="text-sm text-gray-500 font-medium uppercase tracking-wider">Years Exp.</div>
+                  <div className="text-sm text-gray-700 font-medium uppercase tracking-wider">Years Exp.</div>
                 </div>
                 <div className="p-10 rounded-2xl bg-gray-50">
                   <div className="text-5xl font-bold text-black mb-3">24/7</div>
-                  <div className="text-sm text-gray-500 font-medium uppercase tracking-wider">Monitoring</div>
+                  <div className="text-sm text-gray-700 font-medium uppercase tracking-wider">Monitoring</div>
                 </div>
               </div>
             </div>
@@ -186,83 +188,22 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Short Conversion Stories */}
-      <section className="py-32 px-6 bg-white border-t border-gray-50">
+      {/* Case Studies Carousel */}
+      <section className="py-32 px-6 bg-white border-t border-gray-50 overflow-hidden">
         <div className="max-w-[1200px] mx-auto">
-          <div className="mb-20 text-center max-w-2xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black">Real Results.</h2>
-            <p className="text-gray-500 text-lg">
-              How we've helped companies eliminate IT chaos and scale securely.
-            </p>
+          <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black">Real Results.</h2>
+              <p className="text-gray-600 text-lg">
+                How we&apos;ve helped companies eliminate IT chaos and scale securely.
+              </p>
+            </div>
+            <Link href="/case-studies" className="text-black font-bold flex items-center gap-2 hover:text-primary transition-colors group">
+              View all 10 stories <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Story 1 */}
-            <div className="p-10 rounded-3xl bg-gray-50 border border-gray-100/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-shadow">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Building2 className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-black">Financial Services Firm</h3>
-                  <p className="text-sm text-gray-500">85 Employees</p>
-                </div>
-              </div>
-              <div className="space-y-4 mb-8">
-                <p className="text-gray-600 leading-relaxed">
-                  <strong className="text-black font-semibold">Situation:</strong> Managing high-volume trading data across three regional offices.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  <strong className="text-black font-semibold">Problem:</strong> Legacy compliance software caused daily system freezes, leading to missed trading windows.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  <strong className="text-black font-semibold">Decision Point:</strong> A 20-minute system freeze during a major market shift cost a significant client portfolio.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  <strong className="text-black font-semibold">Solution:</strong> Migrated to a high-performance, compliant cloud infrastructure with real-time failover.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  <strong className="text-black font-semibold">Result:</strong> 100% system uptime during peak trading hours and flawless SEC compliance audits.
-                </p>
-              </div>
-              <a href="/case-studies/financial-services-it-migration" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-                Read full case study <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-
-            {/* Story 2 */}
-            <div className="p-10 rounded-3xl bg-gray-50 border border-gray-100/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-shadow">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Activity className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-black">Biotech Research Lab</h3>
-                  <p className="text-sm text-gray-500">60 Researchers</p>
-                </div>
-              </div>
-              <div className="space-y-4 mb-8">
-                <p className="text-gray-600 leading-relaxed">
-                  <strong className="text-black font-semibold">Situation:</strong> Processing and analyzing massive genomic datasets daily.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  <strong className="text-black font-semibold">Problem:</strong> Backups were taking 48 hours to complete, bottlenecking daily research activities and leaving data vulnerable.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  <strong className="text-black font-semibold">Decision Point:</strong> A corrupted local server nearly wiped out 6 months of irreplaceable clinical trial data.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  <strong className="text-black font-semibold">Solution:</strong> Implemented a hybrid-cloud storage architecture with automated, immutable hourly snapshots.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  <strong className="text-black font-semibold">Result:</strong> Reduced backup times from 48 hours to 15 minutes, ensuring zero data loss for critical research.
-                </p>
-              </div>
-              <a href="/case-studies/biotech-backup-optimization" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-                Read full case study <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
+          <CaseStudyCarousel />
         </div>
       </section>
 
@@ -271,7 +212,7 @@ export default function LandingPage() {
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="max-w-2xl mb-20 text-center mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black">Predictable Pricing.</h2>
-            <p className="text-gray-500 text-lg">
+            <p className="text-gray-600 text-lg">
               Flat, predictable fees based on headcount. No hidden overages.
             </p>
           </div>
@@ -280,7 +221,7 @@ export default function LandingPage() {
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
                 <h3 className="text-2xl font-semibold mb-4 text-black">Comprehensive IT</h3>
-                <p className="text-gray-500 mb-10 leading-relaxed">Everything you need to run securely, bundled into one invoice.</p>
+                <p className="text-gray-700 mb-10 leading-relaxed">Everything you need to run securely, bundled into one invoice.</p>
                 
                 <ul className="space-y-5">
                   {[
@@ -290,7 +231,7 @@ export default function LandingPage() {
                     "Cloud Management",
                     "Strategic IT Consulting"
                   ].map((feature, i) => (
-                    <li key={i} className="flex items-center gap-4 text-gray-600 font-medium">
+                    <li key={i} className="flex items-center gap-4 text-gray-700 font-medium">
                       <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
                       {feature}
                     </li>
@@ -299,12 +240,12 @@ export default function LandingPage() {
               </div>
               
               <div className="flex flex-col justify-center p-10 bg-gray-50 rounded-2xl">
-                <div className="text-sm text-gray-400 uppercase tracking-wider font-semibold mb-4">Starting At</div>
+                <div className="text-sm text-gray-600 uppercase tracking-wider font-semibold mb-4">Starting At</div>
                 <div className="flex items-baseline gap-2 mb-4">
                   <span className="text-6xl font-bold text-black">$150</span>
-                  <span className="text-gray-500 font-medium">/user</span>
+                  <span className="text-gray-700 font-medium">/user</span>
                 </div>
-                <p className="text-sm text-gray-400 mb-10">Billed monthly. Custom quotes available for complex infrastructure.</p>
+                <p className="text-sm text-gray-600 mb-10">Billed monthly. Custom quotes available for complex infrastructure.</p>
                 <button className="w-full py-4 bg-black text-white hover:bg-gray-800 rounded-xl font-medium transition-colors shadow-sm">
                   Get a Quote
                 </button>
@@ -318,16 +259,16 @@ export default function LandingPage() {
       <section id="contact" className="py-40 px-6 bg-white">
         <div className="max-w-[1200px] mx-auto text-center">
           <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-8 text-black">Ready to scale?</h2>
-          <p className="text-xl text-gray-500 mb-12 max-w-xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 mb-12 max-w-xl mx-auto leading-relaxed">
             If you have 10–500 employees and are tired of reactive support, let&apos;s talk.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-10 py-5 bg-primary hover:bg-primary/90 text-white rounded-xl font-medium text-lg transition-all shadow-sm">
               Book IT Audit
             </button>
-            <a href="/case-studies" className="inline-flex items-center justify-center px-10 py-5 bg-gray-50 hover:bg-gray-100 text-black rounded-xl font-medium text-lg transition-all">
+            <Link href="/case-studies" className="inline-flex items-center justify-center px-10 py-5 bg-gray-50 hover:bg-gray-100 text-black rounded-xl font-medium text-lg transition-all">
               View Case Studies
-            </a>
+            </Link>
           </div>
         </div>
       </section>

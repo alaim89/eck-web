@@ -34,12 +34,12 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1]">
               {solution.hero}
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed">
               {solution.description}
             </p>
-            <a href="/#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all font-semibold text-lg shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5">
+            <Link href="/#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all font-semibold text-lg shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5">
               Discuss Your Needs <ArrowRight className="w-5 h-5" />
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -55,7 +55,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
                 <h2 className="text-2xl md:text-3xl font-bold mb-8">{solution.problem.title}</h2>
                 <ul className="space-y-5">
                   {solution.problem.points.map((point, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-600">
+                    <li key={i} className="flex items-start gap-3 text-gray-700">
                       <XCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
                       <span className="leading-relaxed">{point}</span>
                     </li>
@@ -87,13 +87,13 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
           <div className="max-w-[1200px] mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Clear Business Outcomes</h2>
-              <p className="text-gray-600 text-lg">What you can expect when you partner with us.</p>
+              <p className="text-gray-700 text-lg">What you can expect when you partner with us.</p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {solution.results.map((result, i) => (
                 <div key={i} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center">
                   <div className="text-4xl md:text-5xl font-bold text-primary mb-3">{result.metric}</div>
-                  <div className="text-gray-600 font-medium">{result.label}</div>
+                  <div className="text-gray-700 font-medium">{result.label}</div>
                 </div>
               ))}
             </div>
@@ -105,7 +105,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
           <div className="max-w-[1200px] mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Proven Process</h2>
-              <p className="text-gray-600 text-lg">How we deliver consistent results.</p>
+              <p className="text-gray-700 text-lg">How we deliver consistent results.</p>
             </div>
             <div className="grid md:grid-cols-3 gap-8 relative">
               {/* Connecting Line (Desktop) */}
@@ -117,7 +117,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
                   <Activity className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-center mb-4">1. Analysis</h3>
-                <p className="text-gray-600 text-center leading-relaxed">{solution.process.analysis}</p>
+                <p className="text-gray-700 text-center leading-relaxed">{solution.process.analysis}</p>
               </div>
 
               {/* Step 2 */}
@@ -126,7 +126,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
                   <Settings className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-center mb-4">2. Implementation</h3>
-                <p className="text-gray-600 text-center leading-relaxed">{solution.process.implementation}</p>
+                <p className="text-gray-700 text-center leading-relaxed">{solution.process.implementation}</p>
               </div>
 
               {/* Step 3 */}
@@ -135,7 +135,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
                   <ShieldCheck className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-center mb-4">3. Operations</h3>
-                <p className="text-gray-600 text-center leading-relaxed">{solution.process.operations}</p>
+                <p className="text-gray-700 text-center leading-relaxed">{solution.process.operations}</p>
               </div>
             </div>
           </div>
@@ -152,30 +152,30 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
               <div className="grid md:grid-cols-2 gap-12 mb-8">
                 <div>
                   <h3 className="text-xl font-bold mb-4 text-white/90">The Situation</h3>
-                  <p className="text-gray-400 leading-relaxed">{solution.caseStudy.situation}</p>
+                  <p className="text-gray-200 leading-relaxed">{solution.caseStudy.situation}</p>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-4 text-white/90">The Problem</h3>
-                  <p className="text-gray-400 leading-relaxed">{solution.caseStudy.problem}</p>
+                  <p className="text-gray-200 leading-relaxed">{solution.caseStudy.problem}</p>
                 </div>
               </div>
               <div className="grid md:grid-cols-2 gap-12 mb-8">
                 <div>
                   <h3 className="text-xl font-bold mb-4 text-white/90">The Decision Point</h3>
-                  <p className="text-gray-400 leading-relaxed">{solution.caseStudy.decisionPoint}</p>
+                  <p className="text-gray-200 leading-relaxed">{solution.caseStudy.decisionPoint}</p>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-4 text-white/90">The Solution</h3>
-                  <p className="text-gray-400 leading-relaxed">{solution.caseStudy.solution}</p>
+                  <p className="text-gray-200 leading-relaxed">{solution.caseStudy.solution}</p>
                 </div>
               </div>
               <div className="pt-8 border-t border-white/10">
                 <h3 className="text-xl font-bold mb-4 text-white/90">The Result</h3>
-                <p className="text-gray-400 leading-relaxed">{solution.caseStudy.result}</p>
+                <p className="text-gray-200 leading-relaxed">{solution.caseStudy.result}</p>
               </div>
               <div className="mt-12 pt-8 border-t border-white/10 text-center">
-                <Link href="/case-studies" className="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-semibold">
-                  Read more case studies <ChevronRight className="w-4 h-4" />
+                <Link href={`/case-studies/${solution.caseStudy.slug}`} className="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-semibold">
+                  Read full case study <ChevronRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -186,7 +186,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         <section id="contact" className="py-32 px-6 bg-primary text-white text-center">
           <div className="max-w-[800px] mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to eliminate IT risk?</h2>
-            <p className="text-xl text-white/80 mb-10">Get a comprehensive audit of your current setup. No commitment, just clarity.</p>
+            <p className="text-xl text-white/90 mb-10">Get a comprehensive audit of your current setup. No commitment, just clarity.</p>
             <a href="mailto:contact@ecksolution-it.com" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary rounded-lg hover:bg-gray-50 transition-all font-bold text-lg shadow-xl hover:-translate-y-0.5">
               Request Your IT Audit <ArrowRight className="w-5 h-5" />
             </a>

@@ -12,7 +12,7 @@ export function Header() {
         </Link>
         
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center h-full gap-8 lg:gap-10 text-sm font-medium text-gray-500">
+        <div className="hidden md:flex items-center h-full gap-8 lg:gap-10 text-sm font-medium text-gray-700">
           <Link href="/#problem" className="hover:text-black transition-colors">The Risk</Link>
           
           {/* Mega Menu */}
@@ -34,11 +34,11 @@ export function Header() {
                   <div className="space-y-6">
                     <Link href="/solutions/managed-it-operations" className="block group/item">
                       <div className="text-black font-semibold mb-1 text-base group-hover/item:text-primary transition-colors">Managed IT Operations</div>
-                      <div className="text-gray-500 text-sm leading-relaxed">We operate your IT reliably so your business runs without interruption.</div>
+                      <div className="text-gray-700 text-sm leading-relaxed">We operate your IT reliably so your business runs without interruption.</div>
                     </Link>
                     <Link href="/solutions/co-managed-it" className="block group/item">
                       <div className="text-black font-semibold mb-1 text-base group-hover/item:text-primary transition-colors">Co-Managed IT</div>
-                      <div className="text-gray-500 text-sm leading-relaxed">Empower your internal team with expert support and enterprise tools.</div>
+                      <div className="text-gray-700 text-sm leading-relaxed">Empower your internal team with expert support and enterprise tools.</div>
                     </Link>
                   </div>
                 </div>
@@ -53,60 +53,60 @@ export function Header() {
               <div className="col-span-7 grid grid-cols-2 gap-x-8 gap-y-10 py-2">
                 {/* Security & Backup */}
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-5">Security & Backup</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">Security & Backup</h3>
                   <div className="space-y-5">
                     <Link href="/solutions/cybersecurity-protection" className="block group/link">
                       <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">Cybersecurity Protection</div>
-                      <div className="text-gray-500 text-xs leading-relaxed">Protect your business from threats before they cause damage.</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">Protect your business from threats before they cause damage.</div>
                     </Link>
                     <Link href="/solutions/managed-backup" className="block group/link">
                       <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">Managed Backup</div>
-                      <div className="text-gray-500 text-xs leading-relaxed">Automatic backups that ensure no data is ever lost.</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">Automatic backups that ensure no data is ever lost.</div>
                     </Link>
                   </div>
                 </div>
 
                 {/* Infrastructure */}
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-5">Infrastructure</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">Infrastructure</h3>
                   <div className="space-y-5">
                     <Link href="/solutions/network-management" className="block group/link">
                       <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">Network Management</div>
-                      <div className="text-gray-500 text-xs leading-relaxed">Ensure fast, reliable internet so your team never stops working.</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">Ensure fast, reliable internet so your team never stops working.</div>
                     </Link>
                     <Link href="/solutions/hardware-lifecycle" className="block group/link">
                       <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">Hardware Lifecycle</div>
-                      <div className="text-gray-500 text-xs leading-relaxed">Keep your team productive with up-to-date, reliable equipment.</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">Keep your team productive with up-to-date, reliable equipment.</div>
                     </Link>
                   </div>
                 </div>
 
                 {/* Migration & Projects */}
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-5">Migration & Projects</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">Migration & Projects</h3>
                   <div className="space-y-5">
                     <Link href="/solutions/microsoft-365-migration" className="block group/link">
                       <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">Microsoft 365 Migration</div>
-                      <div className="text-gray-500 text-xs leading-relaxed">Move to Microsoft 365 without downtime or data loss.</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">Move to Microsoft 365 without downtime or data loss.</div>
                     </Link>
                     <Link href="/solutions/azure-migration" className="block group/link">
                       <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">Azure Migration</div>
-                      <div className="text-gray-500 text-xs leading-relaxed">Securely move your infrastructure to Azure with full control.</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">Securely move your infrastructure to Azure with full control.</div>
                     </Link>
                   </div>
                 </div>
 
                 {/* Entry Points */}
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-5">Entry Points</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">Entry Points</h3>
                   <div className="space-y-5">
                     <Link href="/solutions/it-risk-audit" className="block group/link">
                       <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">IT Risk Audit</div>
-                      <div className="text-gray-500 text-xs leading-relaxed">Identify and fix hidden vulnerabilities before they become costly.</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">Identify and fix hidden vulnerabilities before they become costly.</div>
                     </Link>
                     <Link href="/solutions/strategic-it-roadmap" className="block group/link">
                       <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">Strategic IT Roadmap</div>
-                      <div className="text-gray-500 text-xs leading-relaxed">Align your technology investments with your business growth goals.</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">Align your technology investments with your business growth goals.</div>
                     </Link>
                   </div>
                 </div>
