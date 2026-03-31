@@ -43,7 +43,7 @@ export default function ManagedITPage() {
   const { t } = useLanguage();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const content = t('managedItPage');
+  const content = t.managedItPage;
 
   return (
     <div className="min-h-screen bg-white text-black font-poppins selection:bg-primary/30">
@@ -311,16 +311,16 @@ export default function ManagedITPage() {
           <div className="bg-[#005F6B] rounded-[2rem] p-12 md:p-24 text-center text-white relative overflow-hidden">
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
-                {t('cta').headline}
+                {t.cta.headline}
               </h2>
               <p className="text-xl text-white/80 mb-12 leading-relaxed">
-                {t('cta').subheadline}
+                {t.cta.subheadline}
               </p>
               <Link 
                 href="/contact"
                 className="inline-block px-10 py-5 bg-white text-[#005F6B] font-bold rounded-xl hover:bg-gray-100 transition-all shadow-xl"
               >
-                {t('cta').button}
+                {t.cta.button}
               </Link>
             </div>
             {/* Abstract Background Elements */}

@@ -35,22 +35,22 @@ export function Header() {
                 <div>
                   <h3 className="text-xs font-bold uppercase tracking-wider text-primary mb-6 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-primary"></span>
-                    Core Offering
+                    {t.nav.megaMenu.core}
                   </h3>
                   <div className="space-y-6">
                     <Link href="/solutions/managed-it-services" className="block group/item">
-                      <div className="text-black font-semibold mb-1 text-base group-hover/item:text-primary transition-colors">Managed IT Operations</div>
-                      <div className="text-gray-700 text-sm leading-relaxed">We operate your IT reliably so your business runs without interruption.</div>
+                      <div className="text-black font-semibold mb-1 text-base group-hover/item:text-primary transition-colors">{t.nav.megaMenu.managedOps}</div>
+                      <div className="text-gray-700 text-sm leading-relaxed">{t.nav.megaMenu.managedOpsDesc}</div>
                     </Link>
                     <Link href="/solutions/co-managed-it" className="block group/item">
-                      <div className="text-black font-semibold mb-1 text-base group-hover/item:text-primary transition-colors">Co-Managed IT</div>
-                      <div className="text-gray-700 text-sm leading-relaxed">Empower your internal team with expert support and enterprise tools.</div>
+                      <div className="text-black font-semibold mb-1 text-base group-hover/item:text-primary transition-colors">{t.nav.megaMenu.coManaged}</div>
+                      <div className="text-gray-700 text-sm leading-relaxed">{t.nav.megaMenu.coManagedDesc}</div>
                     </Link>
                   </div>
                 </div>
                 <div className="pt-6 mt-6 border-t border-gray-200/60">
                   <Link href="/#pricing" className="text-sm font-semibold text-black hover:text-primary flex items-center gap-1 transition-colors">
-                    View predictable pricing <ArrowRight className="w-4 h-4" />
+                    {t.nav.megaMenu.pricingLink} <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
@@ -59,60 +59,60 @@ export function Header() {
               <div className="col-span-7 grid grid-cols-2 gap-x-8 gap-y-10 py-2">
                 {/* Security & Backup */}
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">Security & Backup</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">{t.nav.megaMenu.securityBackup}</h3>
                   <div className="space-y-5">
                     <Link href="/solutions/cybersecurity-protection" className="block group/link">
-                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">Cybersecurity Protection</div>
-                      <div className="text-gray-700 text-xs leading-relaxed">Protect your business from threats before they cause damage.</div>
+                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.nav.megaMenu.cybersecurity}</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">{t.nav.megaMenu.cybersecurityDesc}</div>
                     </Link>
                     <Link href="/solutions/managed-backup" className="block group/link">
-                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">Managed Backup</div>
-                      <div className="text-gray-700 text-xs leading-relaxed">Automatic backups that ensure no data is ever lost.</div>
+                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.nav.megaMenu.backup}</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">{t.nav.megaMenu.backupDesc}</div>
                     </Link>
                   </div>
                 </div>
 
                 {/* Infrastructure */}
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">Infrastructure</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">{t.nav.megaMenu.infrastructure}</h3>
                   <div className="space-y-5">
                     <Link href="/solutions/network-management" className="block group/link">
-                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">Network Management</div>
-                      <div className="text-gray-700 text-xs leading-relaxed">Ensure fast, reliable internet so your team never stops working.</div>
+                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.nav.megaMenu.network}</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">{t.nav.megaMenu.networkDesc}</div>
                     </Link>
                     <Link href="/solutions/hardware-lifecycle" className="block group/link">
-                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">Hardware Lifecycle</div>
-                      <div className="text-gray-700 text-xs leading-relaxed">Keep your team productive with up-to-date, reliable equipment.</div>
+                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.nav.megaMenu.hardware}</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">{t.nav.megaMenu.hardwareDesc}</div>
                     </Link>
                   </div>
                 </div>
 
                 {/* Migration & Projects */}
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">Migration & Projects</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">{t.nav.megaMenu.migration}</h3>
                   <div className="space-y-5">
                     <Link href="/solutions/microsoft-365-migration" className="block group/link">
-                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">Microsoft 365 Migration</div>
-                      <div className="text-gray-700 text-xs leading-relaxed">Move to Microsoft 365 without downtime or data loss.</div>
+                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.nav.megaMenu.m365Migration}</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">{t.nav.megaMenu.m365MigrationDesc}</div>
                     </Link>
                     <Link href="/solutions/azure-migration" className="block group/link">
-                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">Azure Migration</div>
-                      <div className="text-gray-700 text-xs leading-relaxed">Securely move your infrastructure to Azure with full control.</div>
+                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.nav.megaMenu.azureMigration}</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">{t.nav.megaMenu.azureMigrationDesc}</div>
                     </Link>
                   </div>
                 </div>
 
                 {/* Entry Points */}
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">Entry Points</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">{t.nav.megaMenu.entryPoints}</h3>
                   <div className="space-y-5">
                     <Link href="/solutions/it-risk-audit" className="block group/link">
-                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">IT Risk Audit</div>
-                      <div className="text-gray-700 text-xs leading-relaxed">Identify and fix hidden vulnerabilities before they become costly.</div>
+                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.nav.megaMenu.riskAudit}</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">{t.nav.megaMenu.riskAuditDesc}</div>
                     </Link>
                     <Link href="/solutions/strategic-it-roadmap" className="block group/link">
-                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">Strategic IT Roadmap</div>
-                      <div className="text-gray-700 text-xs leading-relaxed">Align your technology investments with your business growth goals.</div>
+                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.nav.megaMenu.roadmap}</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">{t.nav.megaMenu.roadmapDesc}</div>
                     </Link>
                   </div>
                 </div>

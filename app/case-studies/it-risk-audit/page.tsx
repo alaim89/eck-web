@@ -1,121 +1,219 @@
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { ArrowLeft, Building2, CheckCircle2 } from "lucide-react";
-import Link from "next/link";
+'use client';
 
-export default function CaseStudyITRiskAudit() {
+import React from 'react';
+import { motion } from 'motion/react';
+import { 
+  CheckCircle2, 
+  ArrowLeft, 
+  Building2, 
+  Users, 
+  BarChart3, 
+  ShieldCheck,
+  Search,
+  FileSearch,
+  AlertTriangle,
+  Lock
+} from 'lucide-react';
+import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
+
+export default function ITRiskAuditCaseStudy() {
+  const { t } = useLanguage();
+  const caseStudy = t.caseStudies.items[6]; // Comprehensive IT Risk Audit
+
+  if (!caseStudy || !caseStudy.details) {
+    return null;
+  }
+
   return (
-    <div className="min-h-screen bg-white text-black font-poppins selection:bg-primary/30">
-      <Header />
-      
-      <main className="pt-40 pb-32 px-6">
-        <div className="max-w-[1000px] mx-auto">
-          <Link href="/case-studies" className="inline-flex items-center gap-2 text-primary font-semibold mb-12 hover:gap-3 transition-all">
-            <ArrowLeft className="w-4 h-4" /> Back to Case Studies
+    <main className="min-h-screen bg-white pt-24 pb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Navigation */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8"
+        >
+          <Link 
+            href="/case-studies"
+            className="inline-flex items-center text-sm font-medium text-[#005F6B] hover:text-[#004d57] transition-colors"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            {t.caseStudies.backToStudies}
           </Link>
+        </motion.div>
 
-          <div className="mb-16">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <Building2 className="w-6 h-6 text-primary" />
-              </div>
-              <span className="text-gray-700 font-medium">Manufacturing Plant (80–120 employees)</span>
+        {/* Hero Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#005F6B]/10 text-[#005F6B] text-sm font-medium mb-4">
+              <ShieldCheck className="mr-2 h-4 w-4" />
+              {t.caseStudies.badge}
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-8 text-black">
-              IT Risk Audit for a Manufacturing Plant
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+              {caseStudy.title}
             </h1>
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              {caseStudy.summary}
+            </p>
+            <div className="flex flex-wrap gap-6">
+              <div className="flex items-center text-gray-700">
+                <Building2 className="mr-2 h-5 w-5 text-[#005F6B]" />
+                <span className="font-medium">{caseStudy.company}</span>
+              </div>
+            </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-100"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-[#005F6B]/20 to-transparent" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <FileSearch className="h-24 w-24 text-[#005F6B]/40" />
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Main Content */}
+          <div className="lg:col-span-2 space-y-12">
+            {/* Situation */}
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t.caseStudies.situation.title}</h2>
+              <p className="text-gray-600 leading-relaxed italic border-l-4 border-[#005F6B] pl-6 py-2">
+                &quot;{caseStudy.details.situation}&quot;
+              </p>
+            </section>
+
+            {/* Problem */}
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t.caseStudies.problem.title}</h2>
+              <ul className="space-y-4">
+                {caseStudy.details.problem.map((item, index) => (
+                  <li key={index} className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-red-50 flex items-center justify-center mr-3 mt-0.5 shrink-0">
+                      <div className="h-2 w-2 rounded-full bg-red-500" />
+                    </div>
+                    <span className="text-gray-600">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            {/* Decision Point */}
+            <section className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t.caseStudies.decisionPoint.title}</h2>
+              <p className="text-gray-600 leading-relaxed">
+                {caseStudy.details.decisionPoint}
+              </p>
+            </section>
+
+            {/* Solution */}
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">{t.caseStudies.solution.title}</h2>
+              <p className="text-gray-600 mb-8">
+                {caseStudy.details.solution.introduction}
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {caseStudy.details.solution.points.map((point, index) => (
+                  <div key={index} className="p-6 rounded-xl border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow">
+                    <h3 className="font-bold text-gray-900 mb-2 flex items-center">
+                      <CheckCircle2 className="h-5 w-5 text-[#005F6B] mr-2" />
+                      {point.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {point.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Result */}
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">{t.caseStudies.result.title}</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+                {caseStudy.details.result.metrics.map((metric, index) => (
+                  <div key={index} className="p-6 rounded-xl bg-[#005F6B] text-white text-center">
+                    <div className="text-3xl font-bold mb-1">{metric.value}</div>
+                    <div className="text-sm opacity-90">{metric.label}</div>
+                  </div>
+                ))}
+              </div>
+              <ul className="space-y-4">
+                {caseStudy.details.result.outcomes.map((outcome, index) => (
+                  <li key={index} className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-green-500 mr-3 mt-0.5 shrink-0" />
+                    <span className="text-gray-600">{outcome}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            {/* Long Term Stability */}
+            <section className="pt-8 border-t border-gray-100">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t.caseStudies.longTermStability.title}</h2>
+              <p className="text-gray-600 leading-relaxed">
+                {caseStudy.details.longTermStability}
+              </p>
+            </section>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="md:col-span-2 space-y-12">
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-black">Situation</h2>
-                <p className="text-gray-700 leading-relaxed text-lg">
-                  The plant had grown rapidly but its IT infrastructure was a &quot;black box&quot; with no documentation. This led to fear of hidden vulnerabilities and no clear understanding of the disaster recovery capabilities.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-black text-destructive">Problem</h2>
-                <ul className="space-y-4">
-                  <li className="flex gap-3 text-gray-700 leading-relaxed text-lg">
-                    <span className="text-destructive font-bold">•</span>
-                    Fear of hidden vulnerabilities and no clear understanding of the disaster recovery capabilities.
-                  </li>
-                  <li className="flex gap-3 text-gray-700 leading-relaxed text-lg">
-                    <span className="text-destructive font-bold">•</span>
-                    The company&apos;s insurance provider required a formal IT risk assessment for policy renewal.
-                  </li>
-                  <li className="flex gap-3 text-gray-700 leading-relaxed text-lg">
-                    <span className="text-destructive font-bold">•</span>
-                    No documentation of critical systems or passwords.
-                  </li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-black">Decision Point</h2>
-                <p className="text-gray-700 leading-relaxed text-lg italic border-l-4 border-primary pl-6 py-2">
-                  &quot;The company&apos;s insurance provider required a formal IT risk assessment for policy renewal, making it clear that an IT risk audit was necessary.&quot;
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-black">Solution</h2>
-                <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 space-y-4">
-                  <p className="text-gray-700 leading-relaxed text-lg">
-                    Ecksolution-IT performed a comprehensive IT Risk Audit, identifying 12 critical vulnerabilities and creating a remediation roadmap.
-                  </p>
-                  <ul className="space-y-3">
-                    {[
-                      "Comprehensive IT Risk Audit",
-                      "Vulnerability identification",
-                      "Remediation roadmap",
-                      "Disaster recovery assessment"
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3 text-gray-700">
-                        <CheckCircle2 className="w-5 h-5 text-primary" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-black text-primary">Result</h2>
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="p-6 rounded-2xl bg-primary/5 border border-primary/10">
-                    <p className="text-3xl font-bold text-primary mb-1">Successful</p>
-                    <p className="text-sm text-gray-700 uppercase tracking-wider font-semibold">Insurance Renewal</p>
-                  </div>
-                  <div className="p-6 rounded-2xl bg-primary/5 border border-primary/10">
-                    <p className="text-3xl font-bold text-primary mb-1">Clear</p>
-                    <p className="text-sm text-gray-700 uppercase tracking-wider font-semibold">Visibility Into IT Risks</p>
+          {/* Sidebar */}
+          <div className="space-y-8">
+            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+              <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center">
+                <BarChart3 className="mr-2 h-5 w-5 text-[#005F6B]" />
+                Key Outcomes
+              </h3>
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <Search className="h-5 w-5 text-[#005F6B] mr-3 mt-1 shrink-0" />
+                  <div>
+                    <div className="font-bold text-gray-900">Visibility</div>
+                    <div className="text-sm text-gray-600">Full insight into security vulnerabilities.</div>
                   </div>
                 </div>
-                <p className="mt-6 text-gray-700 leading-relaxed text-lg">
-                  The plant now has clear visibility into IT risks and a prioritized security plan.
-                </p>
-              </section>
+                <div className="flex items-start">
+                  <Lock className="h-5 w-5 text-[#005F6B] mr-3 mt-1 shrink-0" />
+                  <div>
+                    <div className="font-bold text-gray-900">Compliance</div>
+                    <div className="text-sm text-gray-600">100% regulatory alignment.</div>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <AlertTriangle className="h-5 w-5 text-[#005F6B] mr-3 mt-1 shrink-0" />
+                  <div>
+                    <div className="font-bold text-gray-900">Risk Reduction</div>
+                    <div className="text-sm text-gray-600">Proactive mitigation of threats.</div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="space-y-8">
-              <div className="p-8 rounded-3xl bg-black text-white">
-                <h3 className="text-xl font-bold mb-4">Need similar results?</h3>
-                <p className="text-gray-400 mb-6">
-                  Let&apos;s discuss how our IT Risk Audit services can protect your business.
-                </p>
-                <Link href="/contact" className="block w-full py-4 bg-primary text-white text-center rounded-xl font-bold hover:bg-primary/90 transition-colors">
-                  Book a Consultation
-                </Link>
-              </div>
+            <div className="bg-[#005F6B] rounded-2xl p-8 text-white">
+              <h3 className="text-xl font-bold mb-4">Worried about compliance?</h3>
+              <p className="text-white/80 mb-6 text-sm">
+                Our comprehensive audit will uncover hidden risks and provide a clear roadmap to security.
+              </p>
+              <Link 
+                href="/contact"
+                className="block w-full py-3 px-4 bg-white text-[#005F6B] text-center rounded-xl font-bold hover:bg-gray-50 transition-colors"
+              >
+                Book Your Audit
+              </Link>
             </div>
           </div>
         </div>
-      </main>
-
-      <Footer />
-    </div>
+      </div>
+    </main>
   );
 }

@@ -1,38 +1,26 @@
+"use client";
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { solutionsData } from "@/lib/solutions-data";
-import { notFound } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import { ArrowRight, CheckCircle2, XCircle, Activity, Settings, ShieldCheck, ChevronRight } from "lucide-react";
 import Link from "next/link";
-import type { Metadata } from "next";
+import { useLanguage } from "@/context/LanguageContext";
 
-export function generateStaticParams() {
-  return Object.keys(solutionsData).map((slug) => ({
-    slug,
-  }));
-}
-
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const resolvedParams = await params;
-  const solution = solutionsData[resolvedParams.slug as keyof typeof solutionsData];
-  if (!solution) return { title: 'Not Found' };
-  return {
-    title: `${solution.title} | Ecksolution-IT`,
-    description: solution.description,
-  };
-}
-
-export default async function SolutionPage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
-  const slug = resolvedParams.slug;
-  const solution = solutionsData[slug as keyof typeof solutionsData];
+export default function SolutionPage() {
+  const params = useParams();
+  const slug = params.slug as string;
+  const { t } = useLanguage();
+  
+  const solution = t.solutions[slug as keyof typeof t.solutions];
 
   if (!solution) {
     notFound();
   }
 
   // Get 3 related solutions (excluding current one)
-  const relatedSlugs = Object.keys(solutionsData)
+  const relatedSlugs = Object.keys(t.solutions)
     .filter(s => s !== slug)
     .slice(0, 3);
 
@@ -55,7 +43,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
               {solution.description}
             </p>
             <Link href="/#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all font-semibold text-lg shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5">
-              Discuss Your Needs <ArrowRight className="w-5 h-5" />
+              {t.common?.discussNeeds || "Discuss Your Needs"} <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </section>
@@ -71,7 +59,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-8">{solution.problem.title}</h2>
                 <ul className="space-y-5">
-                  {solution.problem.points.map((point, i) => (
+                  {solution.problem.points.map((point: string, i: number) => (
                     <li key={i} className="flex items-start gap-3 text-gray-700">
                       <XCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
                       <span className="leading-relaxed">{point}</span>
@@ -87,7 +75,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-8">{solution.solution.title}</h2>
                 <ul className="space-y-5">
-                  {solution.solution.points.map((point, i) => (
+                  {solution.solution.points.map((point: string, i: number) => (
                     <li key={i} className="flex items-start gap-3 text-white/90">
                       <CheckCircle2 className="w-5 h-5 text-white shrink-0 mt-0.5" />
                       <span className="leading-relaxed">{point}</span>
@@ -103,11 +91,11 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         <section className="py-24 px-6 bg-gray-50 border-y border-gray-100">
           <div className="max-w-[1200px] mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Clear Business Outcomes</h2>
-              <p className="text-gray-700 text-lg">What you can expect when you partner with us.</p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.common?.outcomesTitle || "Clear Business Outcomes"}</h2>
+              <p className="text-gray-700 text-lg">{t.common?.outcomesSub || "What you can expect when you partner with us."}</p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
-              {solution.results.map((result, i) => (
+              {solution.results.map((result: any, i: number) => (
                 <div key={i} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center">
                   <div className="text-4xl md:text-5xl font-bold text-primary mb-3">{result.metric}</div>
                   <div className="text-gray-700 font-medium">{result.label}</div>
@@ -121,8 +109,8 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         <section className="py-24 px-6">
           <div className="max-w-[1200px] mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Proven Process</h2>
-              <p className="text-gray-700 text-lg">How we deliver consistent results.</p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.common?.processTitle || "Our Proven Process"}</h2>
+              <p className="text-gray-700 text-lg">{t.common?.processSub || "How we deliver consistent results."}</p>
             </div>
             <div className="grid md:grid-cols-3 gap-8 relative">
               {/* Connecting Line (Desktop) */}
@@ -133,7 +121,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
                 <div className="w-16 h-16 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
                   <Activity className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-center mb-4">1. Analysis</h3>
+                <h3 className="text-xl font-bold text-center mb-4">1. {t.common?.analysis || "Analysis"}</h3>
                 <p className="text-gray-700 text-center leading-relaxed">{solution.process.analysis}</p>
               </div>
 
@@ -142,7 +130,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
                 <div className="w-16 h-16 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
                   <Settings className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-center mb-4">2. Implementation</h3>
+                <h3 className="text-xl font-bold text-center mb-4">2. {t.common?.implementation || "Implementation"}</h3>
                 <p className="text-gray-700 text-center leading-relaxed">{solution.process.implementation}</p>
               </div>
 
@@ -151,7 +139,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
                 <div className="w-16 h-16 bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
                   <ShieldCheck className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-center mb-4">3. Operations</h3>
+                <h3 className="text-xl font-bold text-center mb-4">3. {t.common?.operations || "Operations"}</h3>
                 <p className="text-gray-700 text-center leading-relaxed">{solution.process.operations}</p>
               </div>
             </div>
@@ -162,37 +150,37 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         <section className="py-24 px-6 bg-black text-white">
           <div className="max-w-[1000px] mx-auto">
             <div className="text-center mb-12">
-              <div className="text-primary font-bold tracking-wider uppercase text-sm mb-4">Case Study: {solution.caseStudy.companyType}</div>
+              <div className="text-primary font-bold tracking-wider uppercase text-sm mb-4">{t.caseStudies.badge}: {solution.caseStudy.companyType}</div>
               <h2 className="text-3xl md:text-4xl font-bold">{solution.caseStudy.title}</h2>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 backdrop-blur-sm">
               <div className="grid md:grid-cols-2 gap-12 mb-8">
                 <div>
-                  <h3 className="text-xl font-bold mb-4 text-white/90">The Situation</h3>
+                  <h3 className="text-xl font-bold mb-4 text-white/90">{t.caseStudies.situation.title}</h3>
                   <p className="text-gray-200 leading-relaxed">{solution.caseStudy.situation}</p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-4 text-white/90">The Problem</h3>
+                  <h3 className="text-xl font-bold mb-4 text-white/90">{t.caseStudies.problem.title}</h3>
                   <p className="text-gray-200 leading-relaxed">{solution.caseStudy.problem}</p>
                 </div>
               </div>
               <div className="grid md:grid-cols-2 gap-12 mb-8">
                 <div>
-                  <h3 className="text-xl font-bold mb-4 text-white/90">The Decision Point</h3>
+                  <h3 className="text-xl font-bold mb-4 text-white/90">{t.caseStudies.decisionPoint.title}</h3>
                   <p className="text-gray-200 leading-relaxed">{solution.caseStudy.decisionPoint}</p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-4 text-white/90">The Solution</h3>
+                  <h3 className="text-xl font-bold mb-4 text-white/90">{t.caseStudies.solution.title}</h3>
                   <p className="text-gray-200 leading-relaxed">{solution.caseStudy.solution}</p>
                 </div>
               </div>
               <div className="pt-8 border-t border-white/10">
-                <h3 className="text-xl font-bold mb-4 text-white/90">The Result</h3>
+                <h3 className="text-xl font-bold mb-4 text-white/90">{t.caseStudies.result.title}</h3>
                 <p className="text-gray-200 leading-relaxed">{solution.caseStudy.result}</p>
               </div>
               <div className="mt-12 pt-8 border-t border-white/10 text-center">
                 <Link href={`/case-studies/${solution.caseStudy.slug}`} className="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-semibold">
-                  Read full case study <ChevronRight className="w-4 h-4" />
+                  {t.caseStudies.readMore || "Read full case study"} <ChevronRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -204,22 +192,22 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
           <div className="max-w-[1200px] mx-auto">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Explore Related Solutions</h2>
-                <p className="text-gray-700 text-lg">Other ways we help businesses eliminate IT risk.</p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.common?.relatedSolutionsTitle || "Explore Related Solutions"}</h2>
+                <p className="text-gray-700 text-lg">{t.common?.relatedSolutionsSub || "Other ways we help businesses eliminate IT risk."}</p>
               </div>
               <Link href="/#solutions" className="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
-                View All Solutions <ArrowRight className="w-5 h-5" />
+                {t.common?.viewAllSolutions || "View All Solutions"} <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {relatedSlugs.map((rSlug) => {
-                const s = solutionsData[rSlug as keyof typeof solutionsData];
+                const s = t.solutions[rSlug as keyof typeof t.solutions];
                 return (
                   <Link key={rSlug} href={`/solutions/${rSlug}`} className="group bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
                     <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">{s.title}</h3>
                     <p className="text-gray-600 mb-6 line-clamp-3">{s.description}</p>
                     <div className="text-primary font-semibold flex items-center gap-2">
-                      Learn More <ChevronRight className="w-4 h-4" />
+                      {t.common?.learnMore || "Learn More"} <ChevronRight className="w-4 h-4" />
                     </div>
                   </Link>
                 );
@@ -231,10 +219,10 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         {/* Final CTA */}
         <section id="contact" className="py-32 px-6 bg-primary text-white text-center">
           <div className="max-w-[800px] mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to eliminate IT risk?</h2>
-            <p className="text-xl text-white/90 mb-10">Get a comprehensive audit of your current setup. No commitment, just clarity.</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">{t.common?.ctaTitle || "Ready to eliminate IT risk?"}</h2>
+            <p className="text-xl text-white/90 mb-10">{t.common?.ctaSub || "Get a comprehensive audit of your current setup. No commitment, just clarity."}</p>
             <a href="mailto:contact@ecksolution-it.com" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary rounded-lg hover:bg-gray-50 transition-all font-bold text-lg shadow-xl hover:-translate-y-0.5">
-              Request Your IT Audit <ArrowRight className="w-5 h-5" />
+              {t.common?.ctaButton || "Request Your IT Audit"} <ArrowRight className="w-5 h-5" />
             </a>
           </div>
         </section>
