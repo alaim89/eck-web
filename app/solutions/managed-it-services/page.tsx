@@ -79,7 +79,7 @@ export default function ManagedITPage() {
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
               <Link 
-                href="/contact"
+                href="/kontakt"
                 className="w-full sm:w-auto px-8 py-4 bg-[#005F6B] text-white font-bold rounded-lg hover:bg-[#004d57] transition-all flex items-center justify-center gap-2"
               >
                 {content.hero.cta}
@@ -317,7 +317,7 @@ export default function ManagedITPage() {
                 {t.cta.subheadline}
               </p>
               <Link 
-                href="/contact"
+                href="/kontakt"
                 className="inline-block px-10 py-5 bg-white text-[#005F6B] font-bold rounded-xl hover:bg-gray-100 transition-all shadow-xl"
               >
                 {t.cta.button}

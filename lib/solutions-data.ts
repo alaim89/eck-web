@@ -1,671 +1,671 @@
 export const solutionsData = {
   "managed-it-operations": {
     title: "Managed IT Operations",
-    hero: "We operate your IT reliably so your business runs without interruption.",
-    description: "Total IT accountability. We become your complete IT department, eliminating finger-pointing and ensuring your systems just work.",
+    hero: "Wir betreiben Ihre IT zuverlässig, damit Ihr Geschäft ohne Unterbrechung läuft.",
+    description: "Vollständige IT-Verantwortung. Wir werden zu Ihrer kompletten IT-Abteilung, eliminieren Schuldzuweisungen und stellen sicher, dass Ihre Systeme einfach funktionieren.",
     problem: {
-      title: "The Cost of IT Chaos",
+      title: "Die Kosten des IT-Chaos",
       points: [
-        "Unpredictable downtime halting employee productivity",
-        "Variable IT costs that destroy budget planning",
-        "Constant finger-pointing between different software vendors",
-        "Business leaders wasting time managing IT issues"
+        "Unvorhersehbare Ausfallzeiten, die die Produktivität der Mitarbeiter stoppen",
+        "Variable IT-Kosten, die die Budgetplanung zerstören",
+        "Ständige Schuldzuweisungen zwischen verschiedenen Softwareanbietern",
+        "Unternehmensleiter verschwenden Zeit mit der Verwaltung von IT-Problemen"
       ]
     },
     solution: {
-      title: "Total IT Accountability",
+      title: "Vollständige IT-Verantwortung",
       points: [
-        "One flat monthly fee for all IT support",
-        "Proactive monitoring to stop issues before they happen",
-        "Single point of contact for all technology needs",
-        "Strategic alignment with your business goals"
+        "Eine feste monatliche Gebühr für den gesamten IT-Support",
+        "Proaktive Überwachung, um Probleme zu stoppen, bevor sie entstehen",
+        "Zentraler Ansprechpartner für alle Technologieanforderungen",
+        "Strategische Ausrichtung auf Ihre Geschäftsziele"
       ]
     },
     results: [
-      { metric: "99.9%", label: "Uptime Guarantee" },
-      { metric: "15min", label: "Average Response Time" },
-      { metric: "100%", label: "Predictable IT Costs" }
+      { metric: "99,9%", label: "Systemverfügbarkeit" },
+      { metric: "Priorisiert", label: "Reaktionszeit" },
+      { metric: "100%", label: "Planbare IT-Kosten" }
     ],
     process: {
-      analysis: "We audit your current infrastructure, identify single points of failure, and document every system.",
-      implementation: "We deploy our management agents, standardize your security, and take over vendor relationships.",
-      operations: "We provide 24/7 monitoring, unlimited helpdesk support, and proactive maintenance."
+      analysis: "Wir auditieren Ihre aktuelle Infrastruktur, identifizieren Single Points of Failure und dokumentieren jedes System.",
+      implementation: "Wir setzen unsere Management-Agenten ein, standardisieren Ihre Sicherheit und übernehmen die Lieferantenbeziehungen.",
+      operations: "Wir bieten 24/7-Überwachung, schnellen Helpdesk-Support und proaktive Wartung."
     },
     caseStudy: {
-      title: "Reliable IT operations with full responsibility",
-      companyType: "SME (30–60 employees)",
-      situation: "The company had no internal IT and relied on a single external technician who was often unavailable.",
-      problem: "Long response times, no documentation of systems, and frequent failures of critical applications.",
-      decisionPoint: "A server failure during a busy period could not be resolved for 48 hours.",
-      solution: "Implementation of full Managed IT Operations, documentation of all systems, and 24/7 monitoring.",
-      result: "Fast response times, stable systems, and a clear point of contact for all IT issues.",
+      title: "Zuverlässiger IT-Betrieb mit voller Verantwortung",
+      companyType: "KMU (30–60 Mitarbeiter)",
+      situation: "Das Unternehmen hatte keine interne IT und verließ sich auf einen einzelnen externen Techniker, der oft nicht verfügbar war.",
+      problem: "Lange Reaktionszeiten, keine Dokumentation der Systeme und häufige Ausfälle kritischer Anwendungen.",
+      decisionPoint: "Ein Serverausfall während einer Stoßzeit konnte 48 Stunden lang nicht behoben werden.",
+      solution: "Implementierung von vollständigen Managed IT Operations, Dokumentation aller Systeme und 24/7-Überwachung.",
+      result: "Schnelle Reaktionszeiten, stabile Systeme und ein klarer Ansprechpartner für alle IT-Fragen.",
       slug: "managed-it-operations"
     }
   },
   "co-managed-it": {
     title: "Co-Managed IT",
-    hero: "Empower your internal team with expert support and enterprise tools.",
-    description: "We partner with your existing IT staff, providing the advanced tools, tier-3 expertise, and backup coverage they need to succeed.",
+    hero: "Stärken Sie Ihr internes Team mit Experten-Support und Enterprise-Tools.",
+    description: "Wir arbeiten partnerschaftlich mit Ihrem bestehenden IT-Personal zusammen und bieten die fortschrittlichen Tools, Tier-3-Expertise und Backup-Abdeckung, die sie für ihren Erfolg benötigen.",
     problem: {
-      title: "Overwhelmed Internal IT",
+      title: "Überfordertes internes IT-Team",
       points: [
-        "Solo IT managers drowning in basic helpdesk tickets",
-        "Lack of enterprise-grade security and monitoring tools",
-        "No coverage during vacations or sick days",
-        "Inability to focus on strategic business projects"
+        "Einzelne IT-Manager ertrinken in einfachen Helpdesk-Tickets",
+        "Mangel an Enterprise-Grade Sicherheits- und Überwachungstools",
+        "Keine Abdeckung während Urlaub oder Krankheit",
+        "Unfähigkeit, sich auf strategische Geschäftsprojekte zu konzentrieren"
       ]
     },
     solution: {
-      title: "Strategic IT Partnership",
+      title: "Strategische IT-Partnerschaft",
       points: [
-        "We handle tier-1 support so your team can focus on projects",
-        "Access to our enterprise RMM and security stack",
-        "Guaranteed coverage 24/7/365",
-        "Escalation point for complex infrastructure issues"
+        "Wir übernehmen den Tier-1-Support, damit sich Ihr Team auf Projekte konzentrieren kann",
+        "Zugang zu unserem Enterprise RMM- und Security-Stack",
+        "Garantierte Abdeckung 24/7/365",
+        "Eskalationspunkt für komplexe Infrastrukturprobleme"
       ]
     },
     results: [
-      { metric: "85%", label: "Ticket Backlog Reduction" },
-      { metric: "24/7", label: "Monitoring & Support" },
-      { metric: "100%", label: "Enterprise Tool Access" }
+      { metric: "85%", label: "Reduzierung des Ticket-Backlogs" },
+      { metric: "24/7", label: "Überwachung & Support" },
+      { metric: "100%", label: "Zugang zu Enterprise-Tools" }
     ],
     process: {
-      analysis: "We assess your team's workload, identify skill gaps, and determine where we can add the most value.",
-      implementation: "We integrate our tools with your environment and establish clear escalation procedures.",
-      operations: "We work alongside your team, handling overflow tickets and providing high-level strategic guidance."
+      analysis: "Wir bewerten die Arbeitslast Ihres Teams, identifizieren Qualifikationslücken und bestimmen, wo wir den größten Mehrwert bieten können.",
+      implementation: "Wir integrieren unsere Tools in Ihre Umgebung und legen klare Eskalationsverfahren fest.",
+      operations: "Wir arbeiten an der Seite Ihres Teams, bearbeiten Überlauf-Tickets und bieten strategische Beratung auf hohem Niveau."
     },
     caseStudy: {
-      title: "Co-Managed IT for a Software Agency",
-      companyType: "Software Development Agency (20–40 employees)",
-      situation: "The agency had a skilled internal developer handling IT, but he was overwhelmed by growth.",
-      problem: "Critical infrastructure updates were neglected, and security patches were months behind.",
-      decisionPoint: "A minor security breach occurred due to an unpatched server.",
-      solution: "Ecksolution-IT implemented a Co-Managed IT model, taking over infrastructure and security while the internal dev focused on internal tools.",
-      result: "100% patch compliance, reduced internal workload, and enhanced security posture.",
+      title: "Co-Managed IT für eine Software-Agentur",
+      companyType: "Software-Entwicklungsagentur (20–40 Mitarbeiter)",
+      situation: "Die Agentur hatte einen qualifizierten internen Entwickler, der die IT betreute, aber durch das Wachstum überfordert war.",
+      problem: "Kritische Infrastruktur-Updates wurden vernachlässigt, und Sicherheitspatches waren Monate im Rückstand.",
+      decisionPoint: "Ein kleinerer Sicherheitsvorfall ereignete sich aufgrund eines nicht gepatchten Servers.",
+      solution: "Ecksolution-IT implementierte ein Co-Managed IT-Modell, übernahm Infrastruktur und Sicherheit, während sich der interne Entwickler auf interne Tools konzentrierte.",
+      result: "100% Patch-Compliance, reduzierte interne Arbeitslast und verbesserte Sicherheitslage.",
       slug: "co-managed-it"
     }
   },
   "cybersecurity-protection": {
     title: "Cybersecurity Protection",
-    hero: "Enterprise-grade security scaled for mid-market companies.",
-    description: "We protect your business from ransomware, phishing, and data breaches with a comprehensive, multi-layered security strategy.",
+    hero: "Sicherheit auf Enterprise-Niveau, skaliert für mittelständische Unternehmen.",
+    description: "Wir schützen Ihr Unternehmen vor Ransomware, Phishing und Datenschutzverletzungen mit einer umfassenden, mehrschichtigen Sicherheitsstrategie.",
     problem: {
-      title: "The Growing Threat Landscape",
+      title: "Die wachsende Bedrohungslandschaft",
       points: [
-        "Ransomware attacks targeting vulnerable mid-sized businesses",
-        "Employees falling for sophisticated phishing emails",
-        "Lack of visibility into network vulnerabilities",
-        "Compliance requirements becoming increasingly complex"
+        "Ransomware-Angriffe auf verwundbare mittelständische Unternehmen",
+        "Mitarbeiter fallen auf raffinierte Phishing-E-Mails herein",
+        "Mangelnde Sichtbarkeit von Netzwerk-Schwachstellen",
+        "Compliance-Anforderungen werden zunehmend komplexer"
       ]
     },
     solution: {
-      title: "Proactive Defense Strategy",
+      title: "Proaktive Verteidigungsstrategie",
       points: [
-        "Next-generation endpoint detection and response (EDR)",
-        "Continuous security awareness training for employees",
-        "Zero-trust network architecture implementation",
-        "Automated threat hunting and remediation"
+        "Endpoint Detection and Response (EDR) der nächsten Generation",
+        "Kontinuierliche Security-Awareness-Schulungen für Mitarbeiter",
+        "Implementierung einer Zero-Trust-Netzwerkarchitektur",
+        "Automatisierte Bedrohungssuche und -behebung"
       ]
     },
     results: [
-      { metric: "0", label: "Successful Breaches" },
-      { metric: "100%", label: "Staff Trained" },
-      { metric: "24/7", label: "Active Threat Hunting" }
+      { metric: "0", label: "Erfolgreiche Einbrüche" },
+      { metric: "100%", label: "Geschultes Personal" },
+      { metric: "24/7", label: "Aktive Bedrohungssuche" }
     ],
     process: {
-      analysis: "We conduct a deep vulnerability scan and assess your current security posture against industry standards.",
-      implementation: "We deploy our security stack, enforce MFA, and lock down vulnerable endpoints.",
-      operations: "We monitor your network 24/7, actively hunting for threats and training your staff."
+      analysis: "Wir führen einen tiefgehenden Schwachstellenscan durch und bewerten Ihre aktuelle Sicherheitslage anhand von Branchenstandards.",
+      implementation: "Wir setzen unseren Security-Stack ein, erzwingen MFA und sichern verwundbare Endpunkte ab.",
+      operations: "Wir überwachen Ihr Netzwerk rund um die Uhr, suchen aktiv nach Bedrohungen und schulen Ihre Mitarbeiter."
     },
     caseStudy: {
-      title: "Audit-ready IT through structured security",
-      companyType: "Regulated company (50–100 employees)",
-      situation: "The company had to meet strict regulatory requirements but lacked a clear security strategy.",
-      problem: "Insecure data storage, no access control, and lack of compliance documentation.",
-      decisionPoint: "An upcoming audit required a structured IT environment.",
-      solution: "Implementation of a comprehensive security strategy, including encryption, access control, and regular audits.",
-      result: "Full compliance, improved security posture, and successful external audits.",
+      title: "Audit-bereite IT durch strukturierte Sicherheit",
+      companyType: "Reguliertes Unternehmen (50–100 Mitarbeiter)",
+      situation: "Das Unternehmen musste strenge regulatorische Anforderungen erfüllen, hatte aber keine klare Sicherheitsstrategie.",
+      problem: "Unsichere Datenspeicherung, keine Zugriffskontrolle und fehlende Compliance-Dokumentation.",
+      decisionPoint: "Ein bevorstehendes Audit erforderte eine strukturierte IT-Umgebung.",
+      solution: "Implementierung einer umfassenden Sicherheitsstrategie, einschließlich Verschlüsselung, Zugriffskontrolle und regelmäßiger Audits.",
+      result: "Vollständige Compliance, verbesserte Sicherheitslage und erfolgreiche externe Audits.",
       slug: "security-compliance"
     }
   },
   "managed-backup": {
     title: "Managed Backup & Disaster Recovery",
-    hero: "Automatic backups that ensure no data is ever lost.",
-    description: "We guarantee your business continuity with immutable backups, rapid recovery times, and regular disaster simulation testing.",
+    hero: "Automatische Backups, die sicherstellen, dass keine Daten verloren gehen.",
+    description: "Wir garantieren Ihre Geschäftskontinuität mit unveränderlichen Backups, schnellen Wiederherstellungszeiten und regelmäßigen Katastrophensimulations-Tests.",
     problem: {
-      title: "The Risk of Data Loss",
+      title: "Das Risiko von Datenverlust",
       points: [
-        "Manual backups failing without anyone noticing",
-        "Ransomware encrypting both primary data and local backups",
-        "Days or weeks of downtime required to restore systems",
-        "Compliance failures due to inadequate data retention"
+        "Manuelle Backups schlagen fehl, ohne dass es jemand merkt",
+        "Ransomware verschlüsselt sowohl Primärdaten als auch lokale Backups",
+        "Tage oder Wochen Ausfallzeit für die Systemwiederherstellung erforderlich",
+        "Compliance-Fehler aufgrund unzureichender Datenaufbewahrung"
       ]
     },
     solution: {
-      title: "Bulletproof Business Continuity",
+      title: "Unzerstörbare Geschäftskontinuität",
       points: [
-        "Automated, immutable cloud backups that cannot be encrypted",
-        "Hourly snapshots for minimal data loss (RPO)",
-        "Rapid virtualization to get you running in minutes (RTO)",
-        "Daily automated test restores to verify integrity"
+        "Automatisierte, unveränderliche Cloud-Backups, die nicht verschlüsselt werden können",
+        "Stündliche Snapshots für minimalen Datenverlust (RPO)",
+        "Schnelle Virtualisierung, um Sie in Minuten wieder einsatzbereit zu machen (RTO)",
+        "Tägliche automatisierte Test-Wiederherstellungen zur Überprüfung der Integrität"
       ]
     },
     results: [
-      { metric: "15min", label: "Recovery Time Objective" },
-      { metric: "1hr", label: "Recovery Point Objective" },
-      { metric: "100%", label: "Verified Restores" }
+      { metric: "15 Min", label: "Recovery Time Objective" },
+      { metric: "1 Std", label: "Recovery Point Objective" },
+      { metric: "100%", label: "Verifizierte Wiederherstellungen" }
     ],
     process: {
-      analysis: "We identify all critical data silos and determine your required recovery time and point objectives.",
-      implementation: "We deploy local backup appliances and configure secure, immutable cloud replication.",
-      operations: "We monitor backups daily, perform automated test restores, and manage all retention policies."
+      analysis: "Wir identifizieren alle kritischen Datensilos und bestimmen Ihre erforderlichen Wiederherstellungszeiten und -punkte.",
+      implementation: "Wir setzen lokale Backup-Appliances ein und konfigurieren eine sichere, unveränderliche Cloud-Replikation.",
+      operations: "Wir überwachen Backups täglich, führen automatisierte Test-Wiederherstellungen durch und verwalten alle Aufbewahrungsrichtlinien."
     },
     caseStudy: {
-      title: "Bulletproof Backup for a Law Firm",
-      companyType: "Law Firm (15–30 employees)",
-      situation: "The firm relied on external hard drives for backups, which were inconsistent and not off-site.",
-      problem: "A ransomware attack encrypted the local server and the connected backup drive.",
-      decisionPoint: "The firm faced permanent loss of years of client case files.",
-      solution: "Ecksolution-IT implemented a Managed Backup solution with immutable cloud storage and 15-minute recovery snapshots.",
-      result: "Full data recovery within 2 hours, zero data loss, and ongoing peace of mind.",
+      title: "Sicheres Backup für eine Anwaltskanzlei",
+      companyType: "Anwaltskanzlei (15–30 Mitarbeiter)",
+      situation: "Die Kanzlei verließ sich auf externe Festplatten für Backups, die inkonsistent und nicht extern gelagert waren.",
+      problem: "Ein Ransomware-Angriff verschlüsselte den lokalen Server und das angeschlossene Backup-Laufwerk.",
+      decisionPoint: "Die Kanzlei stand vor dem dauerhaften Verlust jahrelanger Mandantenakten.",
+      solution: "Ecksolution-IT implementierte eine Managed Backup-Lösung mit unveränderlichem Cloud-Speicher und 15-Minuten-Wiederherstellungs-Snapshots.",
+      result: "Vollständige Datenwiederherstellung innerhalb von 2 Stunden, null Datenverlust und dauerhafte Sicherheit.",
       slug: "managed-backup"
     }
   },
   "network-management": {
     title: "Network Management",
-    hero: "Fast, secure, and reliable connectivity for your entire team.",
-    description: "We design, deploy, and manage enterprise-grade networks that eliminate dead zones, dropouts, and security vulnerabilities.",
+    hero: "Schnelle, sichere und zuverlässige Konnektivität für Ihr gesamtes Team.",
+    description: "Wir entwerfen, implementieren und verwalten Netzwerke auf Enterprise-Niveau, die Funklöcher, Verbindungsabbrüche und Sicherheitslücken eliminieren.",
     problem: {
-      title: "The Bottleneck of Bad Wi-Fi",
+      title: "Der Flaschenhals durch schlechtes WLAN",
       points: [
-        "Dropped video calls and slow file transfers",
-        "Unsecured guest networks exposing company data",
-        "Hardware failures taking down entire office floors",
-        "Inability to handle increasing device density"
+        "Abgebrochene Videoanrufe und langsame Dateiübertragungen",
+        "Ungesicherte Gastnetzwerke, die Unternehmensdaten exponieren",
+        "Hardwareausfälle, die ganze Büroetagen lahmlegen",
+        "Unfähigkeit, die zunehmende Gerätedichte zu bewältigen"
       ]
     },
     solution: {
-      title: "Enterprise Connectivity",
+      title: "Enterprise Konnektivität",
       points: [
-        "High-density Wi-Fi 6 access points",
-        "Secure VLAN segmentation for guests and IoT devices",
-        "Redundant internet connections with automatic failover",
-        "Proactive bandwidth monitoring and shaping"
+        "High-Density Wi-Fi 6 Access Points",
+        "Sichere VLAN-Segmentierung für Gäste und IoT-Geräte",
+        "Redundante Internetverbindungen mit automatischem Failover",
+        "Proaktive Bandbreitenüberwachung und -steuerung"
       ]
     },
     results: [
-      { metric: "99.99%", label: "Network Uptime" },
-      { metric: "0", label: "Wi-Fi Dead Zones" },
-      { metric: "100%", label: "Secure Segmentation" }
+      { metric: "99,99%", label: "Netzwerk-Uptime" },
+      { metric: "0", label: "WLAN-Funklöcher" },
+      { metric: "100%", label: "Sichere Segmentierung" }
     ],
     process: {
-      analysis: "We perform a physical site survey, heat-mapping your office to identify interference and dead zones.",
-      implementation: "We install enterprise-grade switches, firewalls, and access points, configuring secure segmentation.",
-      operations: "We monitor network traffic 24/7, apply firmware updates, and manage ISP relationships."
+      analysis: "Wir führen eine physische Standortbesichtigung durch und erstellen eine Heatmap Ihres Büros, um Störungen und Funklöcher zu identifizieren.",
+      implementation: "Wir installieren Enterprise-Switches, Firewalls und Access Points und konfigurieren eine sichere Segmentierung.",
+      operations: "Wir überwachen den Netzwerkverkehr rund um die Uhr, spielen Firmware-Updates ein und verwalten die ISP-Beziehungen."
     },
     caseStudy: {
-      title: "Network Optimization for a Logistics Hub",
-      companyType: "Logistics Hub (50–100 employees)",
-      situation: "The warehouse relied on Wi-Fi for inventory tracking, but had frequent dropouts in large areas.",
-      problem: "Inventory errors and shipping delays due to handheld scanners losing connection.",
-      decisionPoint: "A major shipping error cost the company a key client.",
-      solution: "Ecksolution-IT deployed an enterprise-grade mesh network with high-density access points and 24/7 monitoring.",
-      result: "100% Wi-Fi coverage, zero connection dropouts, and improved warehouse efficiency.",
+      title: "Netzwerkoptimierung für ein Logistikzentrum",
+      companyType: "Logistikzentrum (50–100 Mitarbeiter)",
+      situation: "Das Lager verließ sich auf WLAN für die Bestandsverfolgung, hatte aber in großen Bereichen häufige Ausfälle.",
+      problem: "Bestandsfehler und Versandverzögerungen durch Verbindungsverlust der Handscanner.",
+      decisionPoint: "Ein schwerwiegender Versandfehler kostete das Unternehmen einen wichtigen Kunden.",
+      solution: "Ecksolution-IT implementierte ein Enterprise-Mesh-Netzwerk mit High-Density Access Points und 24/7-Überwachung.",
+      result: "100% WLAN-Abdeckung, null Verbindungsabbrüche und verbesserte Lagereffizienz.",
       slug: "network-management"
     }
   },
   "hardware-lifecycle": {
     title: "Hardware Lifecycle Management",
-    hero: "Standardized, reliable hardware that keeps your team productive.",
-    description: "We manage the entire lifecycle of your IT assets, from procurement and provisioning to secure disposal, eliminating unexpected hardware failures.",
+    hero: "Standardisierte, zuverlässige Hardware, die Ihr Team produktiv hält.",
+    description: "Wir verwalten den gesamten Lebenszyklus Ihrer IT-Assets, von der Beschaffung und Bereitstellung bis zur sicheren Entsorgung, und eliminieren unerwartete Hardwareausfälle.",
     problem: {
-      title: "The Hidden Cost of Aging Hardware",
+      title: "Die versteckten Kosten alternder Hardware",
       points: [
-        "Employees wasting hours waiting on slow, outdated computers",
-        "Unexpected hardware failures causing sudden downtime",
-        "Inconsistent device models making support a nightmare",
-        "Security risks from unpatchable legacy operating systems"
+        "Mitarbeiter verschwenden Stunden mit dem Warten auf langsame, veraltete Computer",
+        "Unerwartete Hardwareausfälle verursachen plötzliche Ausfallzeiten",
+        "Inkonsistente Gerätemodelle machen den Support zum Albtraum",
+        "Sicherheitsrisiken durch nicht mehr patchbare Legacy-Betriebssysteme"
       ]
     },
     solution: {
-      title: "Predictable Hardware Strategy",
+      title: "Vorhersehbare Hardware-Strategie",
       points: [
-        "Standardized 36-month refresh cycles",
-        "Zero-touch provisioning for new employee onboarding",
-        "Proactive replacement before failure occurs",
-        "Secure, compliant data wiping and recycling"
+        "Standardisierte 36-monatige Erneuerungszyklen",
+        "Zero-Touch-Provisioning für das Onboarding neuer Mitarbeiter",
+        "Proaktiver Austausch, bevor ein Ausfall auftritt",
+        "Sicheres, konformes Löschen von Daten und Recycling"
       ]
     },
     results: [
-      { metric: "0", label: "Unexpected CapEx" },
-      { metric: "100%", label: "Standardized Fleet" },
-      { metric: "60%", label: "Faster Onboarding" }
+      { metric: "0", label: "Unerwartete Investitionskosten" },
+      { metric: "100%", label: "Standardisierte Flotte" },
+      { metric: "60%", label: "Schnelleres Onboarding" }
     ],
     process: {
-      analysis: "We inventory every device on your network, documenting age, warranty status, and performance metrics.",
-      implementation: "We establish standard hardware profiles for different roles and deploy zero-touch provisioning.",
-      operations: "We monitor hardware health, manage warranties, and execute scheduled replacements automatically."
+      analysis: "Wir inventarisieren jedes Gerät in Ihrem Netzwerk und dokumentieren Alter, Garantiestatus und Leistungsmetriken.",
+      implementation: "Wir legen Standard-Hardwareprofile für verschiedene Rollen fest und setzen Zero-Touch-Provisioning ein.",
+      operations: "Wir überwachen den Hardwarezustand, verwalten Garantien und führen geplante Austausche automatisch durch."
     },
     caseStudy: {
-      title: "Hardware Refresh for a Design Agency",
-      companyType: "Design Agency (25–50 employees)",
-      situation: "Architects were using a mix of old workstations, leading to frequent crashes in CAD software.",
-      problem: "High maintenance costs and lost billable hours due to hardware instability.",
-      decisionPoint: "A critical project deadline was missed because of a workstation failure.",
-      solution: "Ecksolution-IT implemented a Hardware Lifecycle Management plan with standardized high-performance workstations and a 3-year refresh cycle.",
-      result: "40% increase in rendering speed, zero hardware-related downtime, and predictable IT budgeting.",
+      title: "Hardware-Refresh für eine Design-Agentur",
+      companyType: "Design-Agentur (25–50 Mitarbeiter)",
+      situation: "Architekten nutzten einen Mix aus alten Workstations, was zu häufigen Abstürzen in CAD-Software führte.",
+      problem: "Hohe Wartungskosten und verlorene abrechenbare Stunden durch Hardware-Instabilität.",
+      decisionPoint: "Eine kritische Projektfrist wurde wegen eines Workstation-Ausfalls verpasst.",
+      solution: "Ecksolution-IT implementierte einen Hardware Lifecycle Management Plan mit standardisierten Hochleistungs-Workstations und einem 3-Jahres-Erneuerungszyklus.",
+      result: "40% Steigerung der Rendering-Geschwindigkeit, null hardwarebedingte Ausfallzeiten und planbare IT-Budgets.",
       slug: "hardware-lifecycle"
     }
   },
   "microsoft-365-migration": {
     title: "Microsoft 365 Migration",
-    hero: "Move to Microsoft 365 without downtime or data loss.",
-    description: "We execute seamless migrations to Microsoft 365, unlocking enterprise collaboration while ensuring your data remains secure and compliant.",
+    hero: "Wechseln Sie zu Microsoft 365 ohne Ausfallzeiten oder Datenverlust.",
+    description: "Wir führen nahtlose Migrationen zu Microsoft 365 durch, schalten Enterprise-Zusammenarbeit frei und stellen sicher, dass Ihre Daten sicher und konform bleiben.",
     problem: {
-      title: "The Pain of Legacy Systems",
+      title: "Der Schmerz veralteter Systeme",
       points: [
-        "Aging on-premise Exchange servers requiring constant maintenance",
-        "Fragmented communication across disjointed apps",
-        "Version control nightmares with shared documents",
-        "Security vulnerabilities in outdated email protocols"
+        "Alternde On-Premise Exchange-Server, die ständige Wartung erfordern",
+        "Fragmentierte Kommunikation über unzusammenhängende Apps",
+        "Versionskontroll-Albtraum bei gemeinsam genutzten Dokumenten",
+        "Sicherheitslücken in veralteten E-Mail-Protokollen"
       ]
     },
     solution: {
-      title: "Seamless Cloud Collaboration",
+      title: "Nahtlose Cloud-Zusammenarbeit",
       points: [
-        "Zero-downtime email and data migration",
-        "Standardized deployment of Teams, SharePoint, and OneDrive",
-        "Implementation of strict security and compliance policies",
-        "Comprehensive user training and adoption support"
+        "E-Mail- und Datenmigration ohne Ausfallzeiten",
+        "Standardisierte Bereitstellung von Teams, SharePoint und OneDrive",
+        "Implementierung strenger Sicherheits- und Compliance-Richtlinien",
+        "Umfassende Benutzerschulung und Unterstützung bei der Einführung"
       ]
     },
     results: [
-      { metric: "0", label: "Data Lost" },
-      { metric: "100%", label: "Cloud Adoption" },
-      { metric: "40%", label: "Less Email Clutter" }
+      { metric: "0", label: "Datenverlust" },
+      { metric: "100%", label: "Cloud-Adoption" },
+      { metric: "40%", label: "Weniger E-Mail-Chaos" }
     ],
     process: {
-      analysis: "We audit your current environment, map data structures, and plan the migration strategy.",
-      implementation: "We execute the migration in the background, syncing data without disrupting users.",
-      operations: "We cut over MX records over the weekend and provide hypercare support on Monday morning."
+      analysis: "Wir auditieren Ihre aktuelle Umgebung, bilden Datenstrukturen ab und planen die Migrationsstrategie.",
+      implementation: "Wir führen die Migration im Hintergrund aus und synchronisieren Daten, ohne die Benutzer zu stören.",
+      operations: "Wir stellen die MX-Records am Wochenende um und bieten am Montagmorgen intensive Unterstützung."
     },
     caseStudy: {
-      title: "Migration to Microsoft 365 without downtime",
-      companyType: "Mid-sized company (40–80 employees)",
-      situation: "The company used Google Workspace but lacked structure in users, access, and security.",
-      problem: "No central management, security risks, and inefficient processes.",
-      decisionPoint: "The system no longer met security and scalability requirements.",
-      solution: "Full migration to Microsoft 365, Entra ID with MFA and conditional access, structured user and permission system, and backup strategy implementation.",
-      result: "No downtime, no data loss, and full control over users and systems.",
+      title: "Migration zu Microsoft 365 ohne Ausfallzeiten",
+      companyType: "Mittelständisches Unternehmen (40–80 Mitarbeiter)",
+      situation: "Das Unternehmen nutzte Google Workspace, hatte aber keine Struktur bei Benutzern, Zugriffen und Sicherheit.",
+      problem: "Keine zentrale Verwaltung, Sicherheitsrisiken und ineffiziente Prozesse.",
+      decisionPoint: "Das System erfüllte nicht mehr die Anforderungen an Sicherheit und Skalierbarkeit.",
+      solution: "Vollständige Migration zu Microsoft 365, Entra ID mit MFA und bedingtem Zugriff, strukturiertes Benutzer- und Berechtigungssystem sowie Implementierung einer Backup-Strategie.",
+      result: "Keine Ausfallzeiten, kein Datenverlust und volle Kontrolle über Benutzer und Systeme.",
       slug: "microsoft-365-migration"
     }
   },
   "azure-migration": {
     title: "Azure Migration",
-    hero: "Securely move your infrastructure to Azure with full control.",
-    description: "We architect, migrate, and manage your servers in Microsoft Azure, providing infinite scalability and eliminating hardware dependency.",
+    hero: "Verschieben Sie Ihre Infrastruktur sicher nach Azure mit voller Kontrolle.",
+    description: "Wir konzipieren, migrieren und verwalten Ihre Server in Microsoft Azure, bieten unendliche Skalierbarkeit und eliminieren die Hardware-Abhängigkeit.",
     problem: {
-      title: "The Limits of Physical Hardware",
+      title: "Die Grenzen physischer Hardware",
       points: [
-        "Expensive hardware refresh cycles every 3-5 years",
-        "Inability to scale resources quickly during peak demand",
-        "Single points of failure risking catastrophic downtime",
-        "High power, cooling, and physical security costs"
+        "Teure Hardware-Erneuerungszyklen alle 3-5 Jahre",
+        "Unfähigkeit, Ressourcen bei Spitzenbedarf schnell zu skalieren",
+        "Single Points of Failure riskieren katastrophale Ausfallzeiten",
+        "Hohe Kosten für Strom, Kühlung und physische Sicherheit"
       ]
     },
     solution: {
-      title: "Scalable Cloud Architecture",
+      title: "Skalierbare Cloud-Architektur",
       points: [
-        "Lift-and-shift or complete refactoring of legacy apps",
-        "Auto-scaling resources to match business demand",
-        "Geo-redundant backups and disaster recovery",
-        "Optimized cloud spend to prevent billing surprises"
+        "Lift-and-Shift oder komplettes Refactoring von Legacy-Apps",
+        "Automatische Skalierung der Ressourcen passend zum Geschäftsbedarf",
+        "Geo-redundante Backups und Disaster Recovery",
+        "Optimierte Cloud-Ausgaben zur Vermeidung von Abrechnungsüberraschungen"
       ]
     },
     results: [
-      { metric: "99.99%", label: "Infrastructure Uptime" },
-      { metric: "Infinite", label: "Scalability" },
-      { metric: "0", label: "Hardware Maintenance" }
+      { metric: "99,99%", label: "Infrastruktur-Uptime" },
+      { metric: "Unendlich", label: "Skalierbarkeit" },
+      { metric: "0", label: "Hardware-Wartung" }
     ],
     process: {
-      analysis: "We assess your workloads, calculate total cost of ownership, and design the Azure architecture.",
-      implementation: "We build the Azure environment, establish secure VPN tunnels, and migrate servers.",
-      operations: "We monitor performance, optimize costs monthly, and manage Azure security policies."
+      analysis: "Wir bewerten Ihre Workloads, berechnen die Gesamtbetriebskosten und entwerfen die Azure-Architektur.",
+      implementation: "Wir bauen die Azure-Umgebung auf, richten sichere VPN-Tunnel ein und migrieren die Server.",
+      operations: "Wir überwachen die Leistung, optimieren monatlich die Kosten und verwalten die Azure-Sicherheitsrichtlinien."
     },
     caseStudy: {
-      title: "Stable and scalable IT with Microsoft Azure",
-      companyType: "Tech company (100–150 employees)",
-      situation: "The company operated its own servers in a data center, which were reaching their limits.",
-      problem: "High maintenance costs, lack of scalability, and no disaster recovery plan.",
-      decisionPoint: "The hardware was outdated and a major expansion was planned.",
-      solution: "Migration of all workloads to Microsoft Azure, implementation of auto-scaling, and a geo-redundant backup system.",
-      result: "Maximum scalability, 30% reduction in operating costs, and a highly available infrastructure.",
+      title: "Stabile und skalierbare IT mit Microsoft Azure",
+      companyType: "Tech-Unternehmen (100–150 Mitarbeiter)",
+      situation: "Das Unternehmen betrieb eigene Server in einem Rechenzentrum, die an ihre Grenzen stießen.",
+      problem: "Hohe Wartungskosten, mangelnde Skalierbarkeit und kein Disaster-Recovery-Plan.",
+      decisionPoint: "Die Hardware war veraltet und eine größere Expansion war geplant.",
+      solution: "Migration aller Workloads zu Microsoft Azure, Implementierung von Auto-Scaling und eines geo-redundanten Backup-Systems.",
+      result: "Maximale Skalierbarkeit, 30% Reduzierung der Betriebskosten und eine hochverfügbare Infrastruktur.",
       slug: "azure-cloud-infrastructure"
     }
   },
   "it-risk-audit": {
     title: "IT Risk Audit",
-    hero: "Discover exactly where your IT is failing and how to fix it.",
-    description: "A comprehensive, no-nonsense assessment of your technology stack, security posture, and IT processes to uncover hidden risks.",
+    hero: "Entdecken Sie genau, wo Ihre IT versagt und wie Sie es beheben können.",
+    description: "Eine umfassende, sachliche Bewertung Ihres Technologie-Stacks, Ihrer Sicherheitslage und Ihrer IT-Prozesse, um versteckte Risiken aufzudecken.",
     problem: {
-      title: "Operating in the Dark",
+      title: "Betrieb im Dunkeln",
       points: [
-        "Paying for IT support but experiencing constant issues",
-        "Uncertainty about backup integrity and security compliance",
-        "No documentation of critical systems or passwords",
-        "Fear that a cyberattack could destroy the business"
+        "Zahlung für IT-Support, aber ständige Probleme",
+        "Unsicherheit über Backup-Integrität und Security-Compliance",
+        "Keine Dokumentation kritischer Systeme oder Passwörter",
+        "Angst, dass ein Cyberangriff das Unternehmen zerstören könnte"
       ]
     },
     solution: {
-      title: "Total Visibility",
+      title: "Vollständige Transparenz",
       points: [
-        "Deep-dive analysis of network, servers, and endpoints",
-        "Security vulnerability scanning and penetration testing",
-        "Review of IT policies, backups, and disaster recovery plans",
-        "Clear, actionable roadmap to remediate all risks"
+        "Tiefgehende Analyse von Netzwerk, Servern und Endpunkten",
+        "Sicherheits-Schwachstellenscan und Penetrationstests",
+        "Überprüfung von IT-Richtlinien, Backups und Disaster-Recovery-Plänen",
+        "Klarer, umsetzbarer Fahrplan zur Behebung aller Risiken"
       ]
     },
     results: [
-      { metric: "100%", label: "System Visibility" },
-      { metric: "0", label: "Hidden Risks" },
-      { metric: "30 Days", label: "Remediation Plan" }
+      { metric: "100%", label: "System-Transparenz" },
+      { metric: "0", label: "Versteckte Risiken" },
+      { metric: "30 Tage", label: "Behebungsplan" }
     ],
     process: {
-      analysis: "We deploy non-intrusive scanning tools and interview key stakeholders to gather data.",
-      implementation: "We analyze the findings against industry best practices and compliance frameworks.",
-      operations: "We present a detailed executive report and a prioritized roadmap for remediation."
+      analysis: "Wir setzen nicht-intrusive Scanning-Tools ein und befragen wichtige Stakeholder, um Daten zu sammeln.",
+      implementation: "Wir analysieren die Ergebnisse anhand von Branchen-Best-Practices und Compliance-Frameworks.",
+      operations: "Wir präsentieren einen detaillierten Executive-Bericht und einen priorisierten Fahrplan für die Behebung."
     },
     caseStudy: {
-      title: "IT Risk Audit for a Manufacturing Plant",
-      companyType: "Manufacturing Plant (80–120 employees)",
-      situation: "The plant had grown rapidly but its IT infrastructure was a \"black box\" with no documentation.",
-      problem: "Fear of hidden vulnerabilities and no clear understanding of the disaster recovery capabilities.",
-      decisionPoint: "The company's insurance provider required a formal IT risk assessment for policy renewal.",
-      solution: "Ecksolution-IT performed a comprehensive IT Risk Audit, identifying 12 critical vulnerabilities and creating a remediation roadmap.",
-      result: "Successful insurance renewal, clear visibility into IT risks, and a prioritized security plan.",
+      title: "IT Risk Audit für eine Produktionsstätte",
+      companyType: "Produktionsstätte (80–120 Mitarbeiter)",
+      situation: "Das Werk war schnell gewachsen, aber seine IT-Infrastruktur war eine \"Blackbox\" ohne Dokumentation.",
+      problem: "Angst vor versteckten Schwachstellen und kein klares Verständnis der Disaster-Recovery-Fähigkeiten.",
+      decisionPoint: "Der Versicherungsanbieter des Unternehmens forderte eine formelle IT-Risikobewertung für die Vertragserneuerung.",
+      solution: "Ecksolution-IT führte ein umfassendes IT Risk Audit durch, identifizierte 12 kritische Schwachstellen und erstellte einen Fahrplan zur Behebung.",
+      result: "Erfolgreiche Vertragserneuerung, klare Sicht auf IT-Risiken und ein priorisierter Sicherheitsplan.",
       slug: "it-risk-audit"
     }
   },
   "strategic-it-roadmap": {
-    title: "Strategic IT Roadmap",
-    hero: "Align your technology with your 3-year business goals.",
-    description: "We act as your virtual CIO, translating your business objectives into a clear, budgeted technology strategy that drives growth.",
+    title: "Strategische IT-Roadmap",
+    hero: "Richten Sie Ihre Technologie an Ihren 3-Jahres-Geschäftszielen aus.",
+    description: "Wir fungieren als Ihr virtueller CIO und übersetzen Ihre Geschäftsziele in eine klare, budgetierte Technologiestrategie, die das Wachstum vorantreibt.",
     problem: {
-      title: "Reactive, Disconnected IT",
+      title: "Reaktive, isolierte IT",
       points: [
-        "Technology decisions made in a vacuum without business context",
-        "Surprise IT expenses derailing quarterly budgets",
-        "Systems that hinder rather than enable company growth",
-        "Lack of executive-level technology leadership"
+        "Technologieentscheidungen werden im luftleeren Raum ohne Geschäftskontext getroffen",
+        "Überraschende IT-Ausgaben bringen Quartalsbudgets durcheinander",
+        "Systeme, die das Unternehmenswachstum eher behindern als fördern",
+        "Mangel an technologischer Führung auf Executive-Ebene"
       ]
     },
     solution: {
-      title: "Technology as a Growth Engine",
+      title: "Technologie als Wachstumsmotor",
       points: [
-        "Quarterly strategic business reviews (QBRs)",
-        "1-to-3 year technology budgeting and planning",
-        "Evaluation of new technologies to improve efficiency",
-        "Alignment of IT initiatives with revenue goals"
+        "Quartalsweise strategische Geschäftsbesprechungen (QBRs)",
+        "1- bis 3-jährige IT-Budgetierung und Planung",
+        "Bewertung neuer Technologien zur Effizienzsteigerung",
+        "Ausrichtung von IT-Initiativen an Umsatzzeilen"
       ]
     },
     results: [
-      { metric: "3 Yr", label: "Strategic Plan" },
-      { metric: "100%", label: "Budget Predictability" },
-      { metric: "ROI", label: "Focused Investments" }
+      { metric: "3 J.", label: "Strategischer Plan" },
+      { metric: "100%", label: "Budget-Vorhersehbarkeit" },
+      { metric: "ROI", label: "Fokussierte Investitionen" }
     ],
     process: {
-      analysis: "We meet with your executive team to understand your business goals, challenges, and growth targets.",
-      implementation: "We develop a multi-year roadmap detailing required IT investments, timelines, and expected ROI.",
-      operations: "We hold quarterly reviews to track progress, adjust the roadmap, and ensure continuous alignment."
+      analysis: "Wir treffen uns mit Ihrem Führungsteam, um Ihre Geschäftsziele, Herausforderungen und Wachstumsziele zu verstehen.",
+      implementation: "Wir entwickeln eine mehrjährige Roadmap mit Details zu erforderlichen IT-Investitionen, Zeitplänen und erwartetem ROI.",
+      operations: "Wir führen vierteljährliche Überprüfungen durch, um Fortschritte zu verfolgen, die Roadmap anzupassen und eine kontinuierliche Ausrichtung sicherzustellen."
     },
     caseStudy: {
-      title: "Strategic IT Roadmap for a Non-profit",
-      companyType: "Non-profit Organization (40–60 employees)",
-      situation: "The organization was using outdated technology that didn't align with its new 5-year strategic plan.",
-      problem: "IT spending was reactive and didn't support the organization's goal of expanding digital services.",
-      decisionPoint: "The board realized that technology was the primary barrier to achieving their mission.",
-      solution: "Ecksolution-IT acted as a virtual CIO, developing a 3-year Strategic IT Roadmap aligned with the organization's goals.",
-      result: "25% reduction in reactive IT costs and successful launch of new digital service platforms.",
+      title: "Strategische IT-Roadmap für eine Non-Profit-Organisation",
+      companyType: "Non-Profit-Organisation (40–60 Mitarbeiter)",
+      situation: "Die Organisation nutzte veraltete Technologie, die nicht mit ihrem neuen 5-Jahres-Strategieplan übereinstimmte.",
+      problem: "IT-Ausgaben waren reaktiv und unterstützten nicht das Ziel der Organisation, digitale Dienste auszuweiten.",
+      decisionPoint: "Der Vorstand erkannte, dass die Technologie das Haupthindernis für die Erreichung ihrer Mission war.",
+      solution: "Ecksolution-IT fungierte als virtueller CIO und entwickelte eine 3-jährige strategische IT-Roadmap, die an den Zielen der Organisation ausgerichtet war.",
+      result: "25% Reduzierung der reaktiven IT-Kosten und erfolgreicher Start neuer digitaler Serviceplattformen.",
       slug: "strategic-it-roadmap"
     }
   },
   "it-support-for-businesses": {
-    title: "IT Support for Businesses",
-    hero: "Reliable IT Support for Businesses That Can't Afford Downtime.",
-    description: "We provide professional, fast-response IT support tailored to the needs of modern businesses. From troubleshooting to strategic planning, we are your dedicated technology partner.",
+    title: "IT-Support für Unternehmen",
+    hero: "Zuverlässiger IT-Support für Unternehmen, die sich keine Ausfallzeiten leisten können.",
+    description: "Wir bieten professionellen IT-Support mit schnellen Reaktionszeiten, der auf die Bedürfnisse moderner Unternehmen zugeschnitten ist. Von der Fehlerbehebung bis zur strategischen Planung sind wir Ihr engagierter Technologiepartner.",
     metadata: {
-      mainKeyword: "IT support for businesses",
-      secondaryKeywords: ["business IT support", "professional IT services", "small business IT support"],
+      mainKeyword: "IT-Support für Unternehmen",
+      secondaryKeywords: ["Business IT-Support", "professionelle IT-Services", "IT-Support für KMU"],
       intent: "Commercial/Transactional"
     },
     problem: {
-      title: "The Frustration of Unreliable IT Support",
+      title: "Die Frustration über unzuverlässigen IT-Support",
       points: [
-        "Waiting hours for a response while business stops",
-        "Recurring technical issues that never seem to get fixed",
-        "Hidden costs and surprise invoices for basic support",
-        "Technicians who don't understand your business context"
+        "Stundenlanges Warten auf eine Antwort, während das Geschäft stillsteht",
+        "Wiederkehrende technische Probleme, die nie wirklich gelöst werden",
+        "Versteckte Kosten und überraschende Rechnungen für Basissupport",
+        "Techniker, die Ihren Geschäftskontext nicht verstehen"
       ]
     },
     solution: {
-      title: "Professional Business IT Support",
+      title: "Professioneller Business IT-Support",
       points: [
-        "Guaranteed response times backed by strict SLAs",
-        "Permanent fixes, not just temporary workarounds",
-        "Transparent, flat-rate pricing models",
-        "Dedicated engineers who know your infrastructure"
+        "Garantierte Reaktionszeiten, abgesichert durch strikte SLAs",
+        "Dauerhafte Lösungen statt nur temporärer Workarounds",
+        "Transparente Pauschalpreismodelle",
+        "Engagierte Ingenieure, die Ihre Infrastruktur kennen"
       ]
     },
     results: [
-      { metric: "15min", label: "Average Response" },
+      { metric: "15 Min", label: "Durchschn. Antwort" },
       { metric: "98%", label: "First-Contact Resolution" },
-      { metric: "24/7", label: "Proactive Monitoring" }
+      { metric: "24/7", label: "Proaktive Überwachung" }
     ],
     process: {
-      analysis: "We audit your current setup to identify immediate pain points and security gaps.",
-      implementation: "We standardize your support tools and document your entire environment.",
-      operations: "You get unlimited access to our expert helpdesk and proactive maintenance."
+      analysis: "Wir auditieren Ihr aktuelles Setup, um unmittelbare Schwachstellen und Sicherheitslücken zu identifizieren.",
+      implementation: "Wir standardisieren Ihre Support-Tools und dokumentieren Ihre gesamte Umgebung.",
+      operations: "Sie erhalten unbegrenzten Zugang zu unserem Experten-Helpdesk und proaktive Wartung."
     },
     caseStudy: {
-      title: "Scaling IT Support for a Growing Law Firm",
-      companyType: "Professional Services (20-40 employees)",
-      situation: "A law firm was struggling with a solo IT contractor who couldn't keep up with their growth.",
-      problem: "Frequent network outages and slow workstation performance were impacting billable hours.",
-      decisionPoint: "A major server crash during a trial preparation was the final straw.",
-      solution: "Ecksolution-IT implemented a comprehensive business IT support plan with 24/7 monitoring.",
-      result: "100% uptime during critical periods and a 50% reduction in support tickets.",
+      title: "Skalierung des IT-Supports für eine wachsende Kanzlei",
+      companyType: "Professionelle Dienstleistungen (20-40 Mitarbeiter)",
+      situation: "Eine Anwaltskanzlei kämpfte mit einem Einzel-IT-Dienstleister, der mit dem Wachstum nicht Schritt halten konnte.",
+      problem: "Häufige Netzwerkausfälle und langsame Workstation-Performance beeinträchtigten die abrechenbaren Stunden.",
+      decisionPoint: "Ein schwerer Serverabsturz während einer Prozessvorbereitung war der letzte Tropfen.",
+      solution: "Ecksolution-IT implementierte einen umfassenden Business IT-Supportplan mit 24/7-Überwachung.",
+      result: "100% Uptime während kritischer Phasen und eine Reduzierung der Support-Tickets um 50%.",
       slug: "it-support-for-businesses"
     }
   },
   "managed-it-services": {
     title: "Managed IT Services",
-    hero: "Your Complete Outsourced IT Department.",
-    description: "Focus on your core business while we handle the complexity of your technology. Our managed IT services provide the stability, security, and scalability you need to thrive.",
+    hero: "Ihre komplette externe IT-Abteilung.",
+    description: "Konzentrieren Sie sich auf Ihr Kerngeschäft, während wir die Komplexität Ihrer Technologie handhaben. Unsere Managed IT Services bieten die Stabilität, Sicherheit und Skalierbarkeit, die Sie für Ihren Erfolg benötigen.",
     metadata: {
       mainKeyword: "Managed IT Services",
-      secondaryKeywords: ["MSP", "managed services provider", "outsourced IT department"],
+      secondaryKeywords: ["MSP", "Managed Services Provider", "externe IT-Abteilung"],
       intent: "Commercial/Transactional"
     },
     problem: {
-      title: "The Burden of Managing Your Own IT",
+      title: "Die Last, die eigene IT selbst zu verwalten",
       points: [
-        "High cost of hiring and training internal IT staff",
-        "Constant distraction from core business objectives",
-        "Falling behind on security patches and updates",
-        "No clear technology roadmap for future growth"
+        "Hohe Kosten für die Einstellung und Schulung interner IT-Mitarbeiter",
+        "Ständige Ablenkung von den eigentlichen Geschäftszielen",
+        "Rückstand bei Sicherheitspatches und Updates",
+        "Keine klare Technologie-Roadmap für zukünftiges Wachstum"
       ]
     },
     solution: {
-      title: "Fully Managed IT Services",
+      title: "Vollständig verwaltete IT-Services",
       points: [
-        "Predictable monthly costs with no hidden fees",
-        "24/7/365 monitoring and management of all systems",
-        "Enterprise-grade security and compliance management",
-        "Strategic vCIO guidance to align IT with business goals"
+        "Planbare monatliche Kosten ohne versteckte Gebühren",
+        "24/7/365 Überwachung und Verwaltung aller Systeme",
+        "Enterprise-Grade Sicherheits- und Compliance-Management",
+        "Strategische vCIO-Beratung zur Ausrichtung der IT an den Geschäftszielen"
       ]
     },
     results: [
-      { metric: "30%", label: "Reduction in IT Spend" },
-      { metric: "100%", label: "Patch Compliance" },
-      { metric: "24/7", label: "Expert Management" }
+      { metric: "30%", label: "Reduzierung der IT-Ausgaben" },
+      { metric: "100%", label: "Patch-Compliance" },
+      { metric: "24/7", label: "Experten-Management" }
     ],
     process: {
-      analysis: "We perform a deep-dive assessment of your business goals and current IT capabilities.",
-      implementation: "We transition your systems to our managed platform with zero disruption.",
-      operations: "We provide continuous optimization, security, and support for your entire team."
+      analysis: "Wir führen eine tiefgehende Bewertung Ihrer Geschäftsziele und aktuellen IT-Fähigkeiten durch.",
+      implementation: "Wir überführen Ihre Systeme ohne Unterbrechung auf unsere Managed-Plattform.",
+      operations: "Wir bieten kontinuierliche Optimierung, Sicherheit und Support für Ihr gesamtes Team."
     },
     caseStudy: {
-      title: "Transforming IT from a Cost Center to a Growth Driver",
-      companyType: "Manufacturing (50-100 employees)",
-      situation: "A manufacturer was using reactive IT support, leading to frequent production delays.",
-      problem: "Outdated systems and lack of security were hindering their expansion plans.",
-      decisionPoint: "They needed a partner who could manage their entire IT lifecycle.",
-      solution: "Transitioned to a fully managed IT services model with Ecksolution-IT.",
-      result: "Stabilized production environment and a clear 3-year technology roadmap.",
+      title: "Transformation der IT vom Kostenfaktor zum Wachstumsfaktor",
+      companyType: "Produktion (50-100 Mitarbeiter)",
+      situation: "Ein Hersteller nutzte reaktiven IT-Support, was zu häufigen Produktionsverzögerungen führte.",
+      problem: "Veraltete Systeme und mangelnde Sicherheit behinderten ihre Expansionspläne.",
+      decisionPoint: "Sie brauchten einen Partner, der ihren gesamten IT-Lebenszyklus verwalten konnte.",
+      solution: "Umstellung auf ein vollständig verwaltetes IT-Service-Modell mit Ecksolution-IT.",
+      result: "Stabilisierte Produktionsumgebung und eine klare 3-Jahres-Technologie-Roadmap.",
       slug: "managed-it-services"
     }
   },
   "microsoft-365-services": {
     title: "Microsoft 365 Services",
-    hero: "Maximize Your Productivity with Expert Microsoft 365 Management.",
-    description: "Microsoft 365 is more than just email. We help you unlock the full power of Teams, SharePoint, and advanced security features to drive collaboration and protect your data.",
+    hero: "Maximieren Sie Ihre Produktivität mit Experten-Management für Microsoft 365.",
+    description: "Microsoft 365 ist mehr als nur E-Mail. Wir helfen Ihnen, die volle Leistung von Teams, SharePoint und erweiterten Sicherheitsfunktionen zu nutzen, um die Zusammenarbeit zu fördern und Ihre Daten zu schützen.",
     metadata: {
       mainKeyword: "Microsoft 365 Services",
-      secondaryKeywords: ["Office 365 support", "M365 management", "Microsoft 365 consulting"],
+      secondaryKeywords: ["Office 365 Support", "M365 Management", "Microsoft 365 Beratung"],
       intent: "Commercial/Transactional"
     },
     problem: {
-      title: "Underutilized and Unsecured Microsoft 365",
+      title: "Untergenutztes und ungesichertes Microsoft 365",
       points: [
-        "Using only a fraction of the tools you're paying for",
-        "Security gaps leaving your email vulnerable to phishing",
-        "Messy SharePoint structures making it impossible to find files",
-        "No backup for critical cloud data in OneDrive or Teams"
+        "Nutzung nur eines Bruchteils der Tools, für die Sie bezahlen",
+        "Sicherheitslücken, die Ihre E-Mails anfällig für Phishing machen",
+        "Unordentliche SharePoint-Strukturen, die das Finden von Dateien unmöglich machen",
+        "Kein Backup für kritische Cloud-Daten in OneDrive oder Teams"
       ]
     },
     solution: {
-      title: "Expert Microsoft 365 Management",
+      title: "Experten-Management für Microsoft 365",
       points: [
-        "Comprehensive security hardening and MFA enforcement",
-        "Structured SharePoint and Teams architecture for collaboration",
-        "Automated cloud-to-cloud backup for all M365 data",
-        "Ongoing user training to increase tool adoption"
+        "Umfassende Sicherheitshärtung und MFA-Erzwingung",
+        "Strukturierte SharePoint- und Teams-Architektur für die Zusammenarbeit",
+        "Automatisches Cloud-to-Cloud-Backup für alle M365-Daten",
+        "Laufende Benutzerschulungen zur Steigerung der Tool-Akzeptanz"
       ]
     },
     results: [
-      { metric: "100%", label: "Secure Configuration" },
-      { metric: "0%", label: "Data Loss in Cloud" },
-      { metric: "50%", label: "Improved Collaboration" }
+      { metric: "100%", label: "Sichere Konfiguration" },
+      { metric: "0%", label: "Datenverlust in der Cloud" },
+      { metric: "50%", label: "Verbesserte Zusammenarbeit" }
     ],
     process: {
-      analysis: "We review your current M365 tenant configuration and security settings.",
-      implementation: "We apply best-practice security policies and reorganize your data structures.",
-      operations: "We provide ongoing management, support, and feature updates for your tenant."
+      analysis: "Wir überprüfen Ihre aktuelle M365-Tenant-Konfiguration und Sicherheitseinstellungen.",
+      implementation: "Wir wenden Best-Practice-Sicherheitsrichtlinien an und reorganisieren Ihre Datenstrukturen.",
+      operations: "Wir bieten laufende Verwaltung, Support und Feature-Updates für Ihren Tenant."
     },
     caseStudy: {
-      title: "Securing and Optimizing M365 for a Financial Services Firm",
-      companyType: "Financial Services (30-50 employees)",
-      situation: "The firm was using M365 but had no central management or security policies.",
-      problem: "High risk of data leakage and inefficient document sharing processes.",
-      decisionPoint: "A near-miss phishing attempt highlighted the need for professional management.",
-      solution: "Ecksolution-IT implemented advanced security features and a structured SharePoint environment.",
-      result: "Enhanced security posture and significantly improved team productivity.",
+      title: "Sicherung und Optimierung von M365 für ein Finanzdienstleistungsunternehmen",
+      companyType: "Finanzdienstleistungen (30-50 Mitarbeiter)",
+      situation: "Das Unternehmen nutzte M365, hatte aber keine zentrale Verwaltung oder Sicherheitsrichtlinien.",
+      problem: "Hohes Risiko von Datenlecks und ineffiziente Prozesse beim Teilen von Dokumenten.",
+      decisionPoint: "Ein beinahe erfolgreicher Phishing-Versuch verdeutlichte die Notwendigkeit eines professionellen Managements.",
+      solution: "Ecksolution-IT implementierte erweiterte Sicherheitsfunktionen und eine strukturierte SharePoint-Umgebung.",
+      result: "Verbesserte Sicherheitslage und deutlich gesteigerte Teamproduktivität.",
       slug: "microsoft-365-services"
     }
   },
   "azure-hybrid-infrastructure": {
     title: "Azure & Hybrid Infrastructure",
-    hero: "The Best of Both Worlds: Scalable, Secure Hybrid Cloud Solutions.",
-    description: "Seamlessly integrate your on-premise systems with the power of Microsoft Azure. We design and manage hybrid infrastructures that provide maximum flexibility and reliability.",
+    hero: "Das Beste aus beiden Welten: Skalierbare, sichere Hybrid-Cloud-Lösungen.",
+    description: "Integrieren Sie Ihre On-Premise-Systeme nahtlos mit der Leistung von Microsoft Azure. Wir konzipieren und verwalten hybride Infrastrukturen, die maximale Flexibilität und Zuverlässigkeit bieten.",
     metadata: {
       mainKeyword: "Azure Hybrid Infrastructure",
-      secondaryKeywords: ["Azure cloud services", "hybrid cloud solutions", "Azure migration"],
+      secondaryKeywords: ["Azure Cloud Services", "Hybrid Cloud Lösungen", "Azure Migration"],
       intent: "Commercial/Transactional"
     },
     problem: {
-      title: "The Limitations of On-Premise Only Infrastructure",
+      title: "Die Grenzen einer reinen On-Premise-Infrastruktur",
       points: [
-        "High upfront costs for server hardware and maintenance",
-        "Limited scalability for remote work and growth",
-        "Difficulty implementing robust disaster recovery",
-        "Aging hardware reaching its end-of-life"
+        "Hohe Vorabkosten für Server-Hardware und Wartung",
+        "Begrenzte Skalierbarkeit für Remote-Arbeit und Wachstum",
+        "Schwierigkeiten bei der Implementierung einer robusten Disaster Recovery",
+        "Veraltete Hardware, die das Ende ihrer Lebensdauer erreicht"
       ]
     },
     solution: {
-      title: "Modern Hybrid Cloud Infrastructure",
+      title: "Moderne Hybrid-Cloud-Infrastruktur",
       points: [
-        "Seamless integration between local servers and Azure",
-        "Scalable cloud resources for apps and storage",
-        "Built-in geo-redundant disaster recovery",
-        "Reduced physical footprint and maintenance costs"
+        "Nahtlose Integration zwischen lokalen Servern und Azure",
+        "Skalierbare Cloud-Ressourcen für Apps und Speicher",
+        "Integrierte geo-redundante Disaster Recovery",
+        "Reduzierter physischer Platzbedarf und geringere Wartungskosten"
       ]
     },
     results: [
-      { metric: "99.99%", label: "Infrastructure Uptime" },
-      { metric: "Infinite", label: "Scalability" },
-      { metric: "40%", label: "Lower CapEx Costs" }
+      { metric: "99,99%", label: "Infrastruktur-Uptime" },
+      { metric: "Unendlich", label: "Skalierbarkeit" },
+      { metric: "40%", label: "Niedrigere Investitionskosten" }
     ],
     process: {
-      analysis: "We evaluate your current workloads to determine the ideal balance of local and cloud resources.",
-      implementation: "We build your Azure environment and establish secure, high-speed connectivity.",
-      operations: "We manage the entire hybrid environment, ensuring performance and cost-efficiency."
+      analysis: "Wir bewerten Ihre aktuellen Workloads, um das ideale Gleichgewicht zwischen lokalen und Cloud-Ressourcen zu ermitteln.",
+      implementation: "Wir bauen Ihre Azure-Umgebung auf und richten eine sichere Hochgeschwindigkeitsverbindung ein.",
+      operations: "Wir verwalten die gesamte Hybrid-Umgebung und stellen Leistung und Kosteneffizienz sicher."
     },
     caseStudy: {
-      title: "Hybrid Cloud Migration for a Multi-Site Logistics Company",
-      companyType: "Logistics (100+ employees)",
-      situation: "The company had aging servers at multiple locations with no central management.",
-      problem: "Inconsistent performance and high risk of data loss at remote sites.",
-      decisionPoint: "A server failure at a key hub caused a 24-hour shutdown.",
-      solution: "Ecksolution-IT designed a hybrid Azure infrastructure with centralized management.",
-      result: "Improved performance across all sites and a robust, cloud-based disaster recovery plan.",
+      title: "Hybrid-Cloud-Migration für ein Logistikunternehmen mit mehreren Standorten",
+      companyType: "Logistik (100+ Mitarbeiter)",
+      situation: "Das Unternehmen hatte alternde Server an mehreren Standorten ohne zentrale Verwaltung.",
+      problem: "Inkonsistente Leistung und hohes Risiko von Datenverlust an entfernten Standorten.",
+      decisionPoint: "Ein Serverausfall an einem wichtigen Knotenpunkt verursachte einen 24-stündigen Stillstand.",
+      solution: "Ecksolution-IT konzipierte eine hybride Azure-Infrastruktur mit zentraler Verwaltung.",
+      result: "Verbesserte Leistung an allen Standorten und ein robuster, cloudbasierter Disaster-Recovery-Plan.",
       slug: "azure-hybrid-infrastructure"
     }
   },
   "backup-and-security": {
     title: "Backup & Security",
-    hero: "Protect Your Business with Bulletproof Backup and Multi-Layered Security.",
-    description: "Data loss and cyberattacks are the biggest threats to modern businesses. Our integrated backup and security solutions ensure your data is always safe and recoverable.",
+    hero: "Schützen Sie Ihr Unternehmen mit unzerstörbarem Backup und mehrschichtiger Sicherheit.",
+    description: "Datenverlust und Cyberangriffe sind die größten Bedrohungen für moderne Unternehmen. Unsere integrierten Backup- und Sicherheitslösungen stellen sicher, dass Ihre Daten immer sicher und wiederherstellbar sind.",
     metadata: {
       mainKeyword: "Backup and Security",
-      secondaryKeywords: ["data backup services", "cybersecurity solutions", "disaster recovery"],
+      secondaryKeywords: ["Datensicherung", "Cybersecurity-Lösungen", "Disaster Recovery"],
       intent: "Commercial/Transactional"
     },
     problem: {
-      title: "The Vulnerability of Unprotected Data",
+      title: "Die Verwundbarkeit ungeschützter Daten",
       points: [
-        "Ransomware attacks that can bankrupt a business",
-        "Inadequate backups that fail when you need them most",
-        "Human error leading to accidental data deletion",
-        "Lack of visibility into security threats and vulnerabilities"
+        "Ransomware-Angriffe, die ein Unternehmen in den Ruin treiben können",
+        "Unzureichende Backups, die versagen, wenn man sie am dringendsten braucht",
+        "Menschliches Versagen, das zu versehentlichem Löschen von Daten führt",
+        "Mangelnde Sichtbarkeit von Sicherheitsbedrohungen und Schwachstellen"
       ]
     },
     solution: {
-      title: "Integrated Data Protection & Security",
+      title: "Integrierter Datenschutz & Sicherheit",
       points: [
-        "Immutable backups that cannot be deleted by ransomware",
-        "24/7 managed security monitoring and threat detection",
-        "Regular disaster recovery testing and simulation",
-        "Comprehensive security awareness training for staff"
+        "Unveränderliche Backups, die nicht von Ransomware gelöscht werden können",
+        "24/7 verwaltete Sicherheitsüberwachung und Bedrohungserkennung",
+        "Regelmäßige Disaster-Recovery-Tests und Simulationen",
+        "Umfassende Security-Awareness-Schulungen für Mitarbeiter"
       ]
     },
     results: [
-      { metric: "0", label: "Successful Ransomware Attacks" },
-      { metric: "15min", label: "Recovery Time (RTO)" },
-      { metric: "100%", label: "Backup Integrity" }
+      { metric: "0", label: "Erfolgreiche Ransomware-Angriffe" },
+      { metric: "15 Min", label: "Wiederherstellungszeit (RTO)" },
+      { metric: "100%", label: "Backup-Integrität" }
     ],
     process: {
-      analysis: "We identify your most critical data and assess your current security vulnerabilities.",
-      implementation: "We deploy immutable backup solutions and our multi-layered security stack.",
-      operations: "We monitor your security 24/7 and perform daily backup verification."
+      analysis: "Wir identifizieren Ihre kritischsten Daten und bewerten Ihre aktuellen Sicherheitslücken.",
+      implementation: "Wir setzen unveränderliche Backup-Lösungen und unseren mehrschichtigen Security-Stack ein.",
+      operations: "Wir überwachen Ihre Sicherheit rund um die Uhr und führen tägliche Backup-Verifizierungen durch."
     },
     caseStudy: {
-      title: "Recovering from Ransomware with Immutable Backups",
-      companyType: "Engineering Firm (40-60 employees)",
-      situation: "An engineering firm was hit by ransomware that encrypted their main server.",
-      problem: "Their traditional backups were also encrypted, leaving them with no data.",
-      decisionPoint: "They were facing a total loss of all project files and intellectual property.",
-      solution: "Ecksolution-IT had recently implemented immutable backups for them.",
-      result: "Full data recovery within 4 hours with zero ransom paid and zero data loss.",
+      title: "Wiederherstellung nach Ransomware mit unveränderlichen Backups",
+      companyType: "Ingenieurbüro (40-60 Mitarbeiter)",
+      situation: "Ein Ingenieurbüro wurde von Ransomware getroffen, die ihren Hauptserver verschlüsselte.",
+      problem: "Ihre herkömmlichen Backups waren ebenfalls verschlüsselt, sodass sie keine Daten mehr hatten.",
+      decisionPoint: "Sie standen vor dem totalen Verlust aller Projektdateien und des geistigen Eigentums.",
+      solution: "Ecksolution-IT hatte vor kurzem unveränderliche Backups für sie implementiert.",
+      result: "Vollständige Datenwiederherstellung innerhalb von 4 Stunden ohne Lösegeldzahlung und ohne Datenverlust.",
       slug: "backup-and-security"
     }
   }

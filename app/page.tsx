@@ -45,9 +45,9 @@ export default function LandingPage() {
                 id="hero-heading"
                 className="text-6xl md:text-7xl font-bold tracking-tighter leading-[1.05] mb-8 text-black"
               >
-                {t.hero.headline.split('.').map((part, i) => (
-                  <span key={i} className={i === 1 ? "text-gray-500 block" : ""}>
-                    {part}{i === 0 ? "." : ""}
+                {t.hero.headline.split('.').filter(Boolean).map((part: string, i: number) => (
+                  <span key={i} className={i > 0 ? "text-gray-500 block" : ""}>
+                    {part.trim()}.
                   </span>
                 ))}
               </h1>
@@ -76,7 +76,7 @@ export default function LandingPage() {
               <div className="flex flex-wrap items-center gap-8 pt-8 border-t border-gray-100">
                 <div className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-widest">
                   <ShieldCheck className="w-4 h-4 text-primary" />
-                  ISO 27001 Ready
+                  ISO 27001 Konform
                 </div>
                 <div className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-widest">
                   <Award className="w-4 h-4 text-primary" />
@@ -102,8 +102,8 @@ export default function LandingPage() {
                   <Activity className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-black">99.9% Uptime</div>
-                  <div className="text-xs text-gray-500">Real-time Monitoring</div>
+                  <div className="text-sm font-bold text-black">99,9% Uptime</div>
+                  <div className="text-xs text-gray-500">Echtzeit-Monitoring</div>
                 </div>
               </div>
             </motion.div>
@@ -145,7 +145,7 @@ export default function LandingPage() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {t.problem.cards.map((risk, i) => (
+              {t.problem.cards.map((risk: { title: string; description: string }, i: number) => (
                 <motion.div 
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
@@ -186,7 +186,7 @@ export default function LandingPage() {
                 </p>
                 
                 <div className="space-y-12">
-                  {t.trust.points.map((item, i) => (
+                  {t.trust.points.map((item: { title: string; description: string }, i: number) => (
                     <div key={i} className="flex gap-6 group">
                       <div className="mt-1">
                         <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center shadow-[0_0_20px_rgba(0,95,107,0.1)] group-hover:shadow-[0_0_30px_rgba(0,95,107,0.2)] transition-all duration-500">
@@ -253,7 +253,7 @@ export default function LandingPage() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              {t.services.items.map((service, i) => (
+              {t.services.items.map((service: { title: string; description: string; link: string }, i: number) => (
                 <Link 
                   key={i} 
                   href={service.link}
@@ -265,7 +265,7 @@ export default function LandingPage() {
                   <h3 className="text-xl font-bold mb-4 text-black">{service.title}</h3>
                   <p className="text-gray-600 leading-relaxed mb-8 flex-grow opacity-90">{service.description}</p>
                   <div className="flex items-center gap-2 text-primary font-bold text-sm">
-                    Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    Mehr erfahren <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
               ))}
@@ -302,7 +302,7 @@ export default function LandingPage() {
               {/* Connecting line */}
               <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-gray-200 -z-10" />
               
-              {t.process.steps.map((step, i) => (
+              {t.process.steps.map((step: { title: string; description: string; number: string }, i: number) => (
                 <motion.div 
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
@@ -371,7 +371,7 @@ export default function LandingPage() {
             </div>
 
             <div className="space-y-4">
-              {t.faq.items.map((item, i) => (
+              {t.faq.items.map((item: { question: string; answer: string }, i: number) => (
                 <div key={i} className="border border-gray-100 rounded-2xl overflow-hidden">
                   <button 
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
@@ -430,10 +430,10 @@ export default function LandingPage() {
                 {t.cta.button}
               </Link>
               <Link 
-                href="/case-studies" 
+                href="/kontakt" 
                 className="inline-flex items-center justify-center px-10 py-5 bg-white/10 hover:bg-white/20 text-white rounded-xl font-medium text-lg transition-all active:scale-[0.98] w-full sm:w-auto"
               >
-                {t.hero.secondaryCta}
+                Individuelle Anfrage
               </Link>
             </div>
 

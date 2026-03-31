@@ -1,13 +1,26 @@
 'use client';
 
 import { LogoIcon } from "@/components/Logo";
-import { ChevronDown, ArrowRight, Languages } from "lucide-react";
+import { ChevronDown, ArrowRight, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
-import { Language } from "@/lib/translations";
+import { useState, useRef, useEffect } from "react";
 
 export function Header() {
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
@@ -22,35 +35,46 @@ export function Header() {
           <Link href="/#problem" className="hover:text-black transition-colors">{t.nav.risk}</Link>
           
           {/* Mega Menu */}
-          <div className="relative group h-full flex items-center">
-            <button className="flex items-center gap-1 hover:text-black transition-colors h-full">
-              {t.nav.solutions} <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
+          <div className="relative h-full flex items-center" ref={menuRef}>
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onMouseEnter={() => setIsMenuOpen(true)}
+              aria-expanded={isMenuOpen}
+              aria-haspopup="true"
+              aria-controls="mega-menu"
+              className="flex items-center gap-1 hover:text-black transition-colors h-full"
+            >
+              {t.nav.solutions} <ChevronDown className={`w-4 h-4 transition-transform ${isMenuOpen ? 'rotate-180' : ''}`} />
             </button>
             
             {/* Dropdown Panel */}
-            <div className="absolute top-[calc(100%-1px)] left-1/2 -translate-x-1/2 w-[850px] bg-white border border-gray-100 shadow-[0_20px_40px_rgb(0,0,0,0.08)] rounded-2xl p-8 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 grid grid-cols-12 gap-10">
+            <div 
+              id="mega-menu"
+              onMouseLeave={() => setIsMenuOpen(false)}
+              className={`absolute top-[calc(100%-1px)] left-1/2 -translate-x-1/2 w-[850px] bg-white border border-gray-100 shadow-[0_20px_40px_rgb(0,0,0,0.08)] rounded-2xl p-8 transition-all duration-200 grid grid-cols-12 gap-10 ${isMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
+            >
               
               {/* Primary Focus: Managed Services */}
               <div className="col-span-5 bg-gray-50 rounded-xl p-6 border border-gray-100/50 flex flex-col justify-between">
                 <div>
                   <h3 className="text-xs font-bold uppercase tracking-wider text-primary mb-6 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-primary"></span>
-                    {t.nav.megaMenu.core}
+                    {t.megaMenu.core.badge}
                   </h3>
                   <div className="space-y-6">
-                    <Link href="/solutions/managed-it-services" className="block group/item">
-                      <div className="text-black font-semibold mb-1 text-base group-hover/item:text-primary transition-colors">{t.nav.megaMenu.managedOps}</div>
-                      <div className="text-gray-700 text-sm leading-relaxed">{t.nav.megaMenu.managedOpsDesc}</div>
+                    <Link href="/solutions/managed-it-services" onClick={() => setIsMenuOpen(false)} className="block group/item">
+                      <div className="text-black font-semibold mb-1 text-base group-hover/item:text-primary transition-colors">{t.megaMenu.core.managedIt.title}</div>
+                      <div className="text-gray-700 text-sm leading-relaxed">{t.megaMenu.core.managedIt.desc}</div>
                     </Link>
-                    <Link href="/solutions/co-managed-it" className="block group/item">
-                      <div className="text-black font-semibold mb-1 text-base group-hover/item:text-primary transition-colors">{t.nav.megaMenu.coManaged}</div>
-                      <div className="text-gray-700 text-sm leading-relaxed">{t.nav.megaMenu.coManagedDesc}</div>
+                    <Link href="/solutions/co-managed-it" onClick={() => setIsMenuOpen(false)} className="block group/item">
+                      <div className="text-black font-semibold mb-1 text-base group-hover/item:text-primary transition-colors">{t.megaMenu.core.coManaged.title}</div>
+                      <div className="text-gray-700 text-sm leading-relaxed">{t.megaMenu.core.coManaged.desc}</div>
                     </Link>
                   </div>
                 </div>
                 <div className="pt-6 mt-6 border-t border-gray-200/60">
-                  <Link href="/#pricing" className="text-sm font-semibold text-black hover:text-primary flex items-center gap-1 transition-colors">
-                    {t.nav.megaMenu.pricingLink} <ArrowRight className="w-4 h-4" />
+                  <Link href="/#pricing" onClick={() => setIsMenuOpen(false)} className="text-sm font-semibold text-black hover:text-primary flex items-center gap-1 transition-colors">
+                    {t.megaMenu.core.pricing} <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
@@ -59,60 +83,60 @@ export function Header() {
               <div className="col-span-7 grid grid-cols-2 gap-x-8 gap-y-10 py-2">
                 {/* Security & Backup */}
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">{t.nav.megaMenu.securityBackup}</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">{t.megaMenu.security.title}</h3>
                   <div className="space-y-5">
-                    <Link href="/solutions/cybersecurity-protection" className="block group/link">
-                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.nav.megaMenu.cybersecurity}</div>
-                      <div className="text-gray-700 text-xs leading-relaxed">{t.nav.megaMenu.cybersecurityDesc}</div>
+                    <Link href="/solutions/cybersecurity-protection" onClick={() => setIsMenuOpen(false)} className="block group/link">
+                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.megaMenu.security.cyber.title}</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">{t.megaMenu.security.cyber.desc}</div>
                     </Link>
-                    <Link href="/solutions/managed-backup" className="block group/link">
-                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.nav.megaMenu.backup}</div>
-                      <div className="text-gray-700 text-xs leading-relaxed">{t.nav.megaMenu.backupDesc}</div>
+                    <Link href="/solutions/managed-backup" onClick={() => setIsMenuOpen(false)} className="block group/link">
+                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.megaMenu.security.backup.title}</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">{t.megaMenu.security.backup.desc}</div>
                     </Link>
                   </div>
                 </div>
 
                 {/* Infrastructure */}
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">{t.nav.megaMenu.infrastructure}</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">{t.megaMenu.infrastructure.title}</h3>
                   <div className="space-y-5">
-                    <Link href="/solutions/network-management" className="block group/link">
-                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.nav.megaMenu.network}</div>
-                      <div className="text-gray-700 text-xs leading-relaxed">{t.nav.megaMenu.networkDesc}</div>
+                    <Link href="/solutions/network-management" onClick={() => setIsMenuOpen(false)} className="block group/link">
+                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.megaMenu.infrastructure.network.title}</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">{t.megaMenu.infrastructure.network.desc}</div>
                     </Link>
-                    <Link href="/solutions/hardware-lifecycle" className="block group/link">
-                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.nav.megaMenu.hardware}</div>
-                      <div className="text-gray-700 text-xs leading-relaxed">{t.nav.megaMenu.hardwareDesc}</div>
+                    <Link href="/solutions/hardware-lifecycle" onClick={() => setIsMenuOpen(false)} className="block group/link">
+                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.megaMenu.infrastructure.hardware.title}</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">{t.megaMenu.infrastructure.hardware.desc}</div>
                     </Link>
                   </div>
                 </div>
 
                 {/* Migration & Projects */}
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">{t.nav.megaMenu.migration}</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">{t.megaMenu.migration.title}</h3>
                   <div className="space-y-5">
-                    <Link href="/solutions/microsoft-365-migration" className="block group/link">
-                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.nav.megaMenu.m365Migration}</div>
-                      <div className="text-gray-700 text-xs leading-relaxed">{t.nav.megaMenu.m365MigrationDesc}</div>
+                    <Link href="/solutions/microsoft-365-migration" onClick={() => setIsMenuOpen(false)} className="block group/link">
+                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.megaMenu.migration.m365.title}</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">{t.megaMenu.migration.m365.desc}</div>
                     </Link>
-                    <Link href="/solutions/azure-migration" className="block group/link">
-                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.nav.megaMenu.azureMigration}</div>
-                      <div className="text-gray-700 text-xs leading-relaxed">{t.nav.megaMenu.azureMigrationDesc}</div>
+                    <Link href="/solutions/azure-migration" onClick={() => setIsMenuOpen(false)} className="block group/link">
+                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.megaMenu.migration.azure.title}</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">{t.megaMenu.migration.azure.desc}</div>
                     </Link>
                   </div>
                 </div>
 
                 {/* Entry Points */}
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">{t.nav.megaMenu.entryPoints}</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 mb-5">{t.megaMenu.entry.title}</h3>
                   <div className="space-y-5">
-                    <Link href="/solutions/it-risk-audit" className="block group/link">
-                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.nav.megaMenu.riskAudit}</div>
-                      <div className="text-gray-700 text-xs leading-relaxed">{t.nav.megaMenu.riskAuditDesc}</div>
+                    <Link href="/solutions/it-risk-audit" onClick={() => setIsMenuOpen(false)} className="block group/link">
+                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.megaMenu.entry.audit.title}</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">{t.megaMenu.entry.audit.desc}</div>
                     </Link>
-                    <Link href="/solutions/strategic-it-roadmap" className="block group/link">
-                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.nav.megaMenu.roadmap}</div>
-                      <div className="text-gray-700 text-xs leading-relaxed">{t.nav.megaMenu.roadmapDesc}</div>
+                    <Link href="/solutions/strategic-it-roadmap" onClick={() => setIsMenuOpen(false)} className="block group/link">
+                      <div className="text-black font-medium text-sm mb-1 group-hover/link:text-primary transition-colors">{t.megaMenu.entry.roadmap.title}</div>
+                      <div className="text-gray-700 text-xs leading-relaxed">{t.megaMenu.entry.roadmap.desc}</div>
                     </Link>
                   </div>
                 </div>
@@ -121,46 +145,41 @@ export function Header() {
           </div>
 
           <Link href="/case-studies" className="hover:text-black transition-colors">{t.nav.caseStudies}</Link>
-          <Link href="/#pricing" className="hover:text-black transition-colors">{t.nav.pricing}</Link>
+          <Link href="/kontakt" className="hover:text-black transition-colors">{t.nav.contact}</Link>
           
-          {/* Language Switcher */}
-          <div className="relative group flex items-center h-full">
-            <button className="flex items-center gap-1.5 hover:text-black transition-colors">
-              <Languages className="w-4 h-4" />
-              <span className="uppercase">{language}</span>
-              <ChevronDown className="w-3 h-3 group-hover:rotate-180 transition-transform" />
-            </button>
-            <div className="absolute top-[calc(100%-1px)] right-0 w-32 bg-white border border-gray-100 shadow-lg rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              {(['en', 'de', 'es'] as Language[]).map((lang) => (
-                <button
-                  key={lang}
-                  onClick={() => setLanguage(lang)}
-                  className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${language === lang ? 'bg-primary/10 text-primary font-semibold' : 'hover:bg-gray-50 text-gray-700'}`}
-                >
-                  {lang === 'en' ? 'English' : lang === 'de' ? 'Deutsch' : 'Español'}
-                </button>
-              ))}
-            </div>
-          </div>
-
           <Link href="/#contact" className="px-5 py-2.5 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors shadow-sm font-semibold">
             {t.nav.getAudit}
           </Link>
         </div>
 
-        {/* Mobile CTA */}
+        {/* Mobile Nav Toggle */}
         <div className="md:hidden flex items-center gap-4">
           <button 
-            onClick={() => setLanguage(language === 'en' ? 'de' : language === 'de' ? 'es' : 'en')}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Menu"
             className="p-2 text-gray-700"
           >
-            <Languages className="w-5 h-5" />
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
-          <Link href="/#contact" className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors shadow-sm text-sm font-semibold">
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-white border-t border-gray-100 p-6 space-y-6 animate-in slide-in-from-top-2 duration-200">
+          <Link href="/#problem" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-semibold text-gray-900">{t.nav.risk}</Link>
+          <div className="space-y-4">
+            <div className="text-xs font-bold uppercase tracking-wider text-primary">{t.nav.solutions}</div>
+            <Link href="/solutions/managed-it-services" onClick={() => setIsMobileMenuOpen(false)} className="block text-gray-700">{t.megaMenu.core.managedIt.title}</Link>
+            <Link href="/solutions/co-managed-it" onClick={() => setIsMobileMenuOpen(false)} className="block text-gray-700">{t.megaMenu.core.coManaged.title}</Link>
+          </div>
+          <Link href="/case-studies" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-semibold text-gray-900">{t.nav.caseStudies}</Link>
+          <Link href="/kontakt" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-semibold text-gray-900">{t.nav.contact}</Link>
+          <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full py-4 bg-black text-white text-center rounded-xl font-bold">
             {t.nav.getAudit}
           </Link>
         </div>
-      </div>
+      )}
     </nav>
   );
 }

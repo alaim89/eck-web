@@ -6,17 +6,17 @@ import { Language, translations } from '@/lib/translations';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: typeof translations['en'];
+  t: typeof translations['de'];
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('de');
 
   useEffect(() => {
     const savedLang = localStorage.getItem('language') as Language;
-    if (savedLang && (savedLang === 'en' || savedLang === 'de' || savedLang === 'es')) {
+    if (savedLang && savedLang === 'de') {
       if (savedLang !== language) {
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setLanguage(savedLang);

@@ -10,13 +10,13 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'Ecksolution-IT - Managed Services',
-  description: 'High-conversion landing page for an IT Managed Services Provider',
+  title: 'Ecksolution-IT | Professionelle Managed IT-Services für den Mittelstand',
+  description: 'Ihr Partner für verlässliche IT-Infrastruktur, Cybersecurity und Cloud-Migration. Wir übernehmen die volle Verantwortung für Ihre IT – proaktiv und sicher.',
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en" className={`${poppins.variable}`}>
+    <html lang="de" className={`${poppins.variable}`}>
       <body className="font-poppins antialiased" suppressHydrationWarning>
         <LanguageProvider>
           {children}

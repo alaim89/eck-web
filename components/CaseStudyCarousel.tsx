@@ -98,7 +98,7 @@ export function CaseStudyCarousel() {
         className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8 pt-4 px-1"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        {caseStudies.map((study, i) => (
+        {caseStudies.map((study: any, i: number) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
