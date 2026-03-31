@@ -4,92 +4,18 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'motion/react';
 import { ArrowLeft, ArrowRight, Building2, Activity, ShieldCheck, LucideIcon } from 'lucide-react';
 import Link from 'next/link';
-
-interface CaseStudy {
-  title: string;
-  company: string;
-  summary: string;
-  href: string;
-  icon: LucideIcon;
-}
-
-const caseStudies: CaseStudy[] = [
-  {
-    title: "Migration to Microsoft 365 without downtime",
-    company: "Mid-sized company (40–80 employees)",
-    summary: "How a mid-sized company transitioned from Google Workspace to a structured, secure Microsoft 365 environment with zero downtime.",
-    href: "/case-studies/microsoft-365-migration",
-    icon: Building2
-  },
-  {
-    title: "Stable and scalable IT with Microsoft Azure",
-    company: "Tech company (100–150 employees)",
-    summary: "Solving IT complexity and scalability issues by migrating to a structured Microsoft Azure cloud architecture.",
-    href: "/case-studies/azure-cloud-infrastructure",
-    icon: Activity
-  },
-  {
-    title: "Reliable IT operations with full responsibility",
-    company: "SME (30–60 employees)",
-    summary: "How an SME without an internal IT department achieved stable and predictable IT operations through a managed service model.",
-    href: "/case-studies/managed-it-operations",
-    icon: Building2
-  },
-  {
-    title: "Audit-ready IT through structured security",
-    company: "Regulated Company (50–100 employees)",
-    summary: "Achieving audit-ready IT through a structured security and governance framework for regulatory compliance.",
-    href: "/case-studies/security-compliance",
-    icon: ShieldCheck
-  },
-  {
-    title: "Co-Managed IT for a Software Agency",
-    company: "Software Agency (20–40 employees)",
-    summary: "Empowering an internal team with expert support and enterprise tools to handle rapid growth and security.",
-    href: "/case-studies/co-managed-it",
-    icon: Building2
-  },
-  {
-    title: "Bulletproof Backup for a Law Firm",
-    company: "Law Firm (15–30 employees)",
-    summary: "Ensuring business continuity with immutable backups and rapid recovery after a ransomware attack.",
-    href: "/case-studies/managed-backup",
-    icon: ShieldCheck
-  },
-  {
-    title: "Network Optimization for a Logistics Hub",
-    company: "Logistics Hub (50–100 employees)",
-    summary: "Eliminating Wi-Fi dead zones and connection dropouts to improve warehouse efficiency and shipping accuracy.",
-    href: "/case-studies/network-management",
-    icon: Activity
-  },
-  {
-    title: "Hardware Refresh for a Design Agency",
-    company: "Design Agency (25–50 employees)",
-    summary: "Implementing standardized high-performance workstations to eliminate software crashes and lost billable hours.",
-    href: "/case-studies/hardware-lifecycle",
-    icon: Building2
-  },
-  {
-    title: "IT Risk Audit for a Manufacturing Plant",
-    company: "Manufacturing Plant (80–120 employees)",
-    summary: "Uncovering hidden vulnerabilities and creating a remediation roadmap to ensure insurance compliance and security.",
-    href: "/case-studies/it-risk-audit",
-    icon: ShieldCheck
-  },
-  {
-    title: "Strategic IT Roadmap for a Non-profit",
-    company: "Non-profit (40–60 employees)",
-    summary: "Aligning technology with long-term goals to reduce reactive spending and launch new digital services.",
-    href: "/case-studies/strategic-it-roadmap",
-    icon: Activity
-  }
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export function CaseStudyCarousel() {
+  const { t } = useLanguage();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const caseStudies = t.caseStudies.items.map((item: any, i: number) => ({
+    ...item,
+    icon: i === 0 || i === 2 || i === 4 ? Building2 : i === 1 || i === 6 || i === 9 ? Activity : ShieldCheck
+  }));
 
   const checkScroll = useCallback(() => {
     if (scrollRef.current) {
@@ -196,7 +122,7 @@ export function CaseStudyCarousel() {
 
               <div className="mt-auto flex items-center justify-between">
                 <div className="flex items-center gap-2 text-black font-bold text-sm group-hover:gap-3 transition-all">
-                  Read full case study 
+                  {t.caseStudies.readMore}
                   <ArrowRight className="w-4 h-4 text-primary" />
                 </div>
                 <study.icon className="w-5 h-5 text-gray-300 group-hover:text-primary transition-colors" />

@@ -152,6 +152,115 @@ export const translations = {
       subheadline: "Get a comprehensive audit of your current setup. No commitment, just clarity.",
       button: "Request Your IT Audit",
     },
+    caseStudies: {
+      badge: "Case Studies",
+      headline: "Real Results.",
+      subheadline: "How we've helped companies eliminate IT chaos and scale securely.",
+      viewAll: "View all stories",
+      readMore: "Read full case study",
+      items: [
+        {
+          title: "Migration to Microsoft 365 without downtime",
+          company: "Mid-sized company (40–80 employees)",
+          summary: "How a mid-sized company transitioned from Google Workspace to a structured, secure Microsoft 365 environment with zero downtime.",
+          href: "/case-studies/microsoft-365-migration"
+        },
+        {
+          title: "Stable and scalable IT with Microsoft Azure",
+          company: "Tech company (100–150 employees)",
+          summary: "Solving IT complexity and scalability issues by migrating to a structured Microsoft Azure cloud architecture.",
+          href: "/case-studies/azure-cloud-infrastructure"
+        },
+        {
+          title: "Reliable IT operations with full responsibility",
+          company: "SME (30–60 employees)",
+          summary: "How an SME without an internal IT department achieved stable and predictable IT operations through a managed service model.",
+          href: "/case-studies/managed-it-operations"
+        },
+        {
+          title: "Audit-ready IT through structured security",
+          company: "Regulated Company (50–100 employees)",
+          summary: "Achieving audit-ready IT through a structured security and governance framework for regulatory compliance.",
+          href: "/case-studies/security-compliance"
+        }
+      ]
+    },
+    managedItPage: {
+      hero: {
+        badge: "Managed IT Services",
+        headline: "We don't just fix computers. We take full responsibility for your business continuity.",
+        subheadline: "Stop worrying about downtime and security breaches. We operate your entire IT infrastructure with 100% accountability and fixed monthly costs.",
+        cta: "Book a Strategy Call",
+      },
+      problem: {
+        headline: "IT is either an engine or a handbrake.",
+        subheadline: "Most companies suffer from reactive IT that only responds when something breaks. This leads to three critical failures:",
+        points: [
+          { title: "Revenue-Killing Downtime", description: "When your systems are down, your team is idle but your payroll keeps running." },
+          { title: "Security Anxiety", description: "Wondering if your backups actually work or if a single click could bankrupt the company." },
+          { title: "Budget Chaos", description: "Unpredictable IT bills that fluctuate based on how many things broke this month." }
+        ]
+      },
+      solution: {
+        headline: "Total IT Accountability.",
+        subheadline: "We move you from 'Break-Fix' to 'Managed Operations'. We own the outcome, not just the tickets.",
+        points: [
+          { title: "Zero-Downtime Focus", description: "Proactive maintenance that identifies and resolves issues before they impact your team." },
+          { title: "Fixed-Cost Guarantee", description: "One predictable monthly fee that covers everything. No surprise invoices, ever." },
+          { title: "Strategic Partnership", description: "We act as your CTO, ensuring your technology roadmap aligns with your business goals." }
+        ]
+      },
+      results: {
+        headline: "The Numbers That Matter.",
+        subheadline: "Our performance is measured by your uptime and productivity.",
+        cards: [
+          { metric: "99.9%", label: "System Uptime" },
+          { metric: "< 15m", label: "Response Time" },
+          { metric: "30%", label: "Efficiency Gain" },
+          { metric: "0", label: "Security Breaches" }
+        ]
+      },
+      services: {
+        headline: "What 'Full Responsibility' Looks Like.",
+        subheadline: "Our managed service is a complete IT department in a box.",
+        items: [
+          { title: "24/7 Monitoring & Management", description: "Continuous oversight of servers, networks, and endpoints." },
+          { title: "Unlimited Helpdesk Support", description: "Fast, professional support for your entire team whenever they need it." },
+          { title: "Cybersecurity & Compliance", description: "Advanced threat protection, encryption, and regulatory compliance management." },
+          { title: "Backup & Disaster Recovery", description: "Automated off-site backups with guaranteed recovery times." },
+          { title: "Cloud & Infrastructure", description: "Full management of Microsoft 365, Azure, and on-premise systems." },
+          { title: "IT Strategy & Consulting", description: "Regular business reviews and long-term technology planning." }
+        ]
+      },
+      process: {
+        headline: "How We Take Over.",
+        subheadline: "A seamless transition to professional IT operations.",
+        steps: [
+          { title: "Deep Audit", description: "We document every asset, license, and vulnerability in your current setup." },
+          { title: "Stabilization", description: "We fix immediate risks and standardize your systems to our high-reliability baseline." },
+          { title: "Continuous Operation", description: "We take full control, providing 24/7 management and strategic guidance." }
+        ]
+      },
+      caseStudy: {
+        headline: "Real Results for Real Businesses.",
+        company: "Logistics Leader GmbH",
+        challenge: "Frequent server crashes were delaying shipments and costing €5k per hour in lost productivity.",
+        solution: "Implemented a fully managed hybrid-cloud infrastructure with redundant failover.",
+        result: "Zero critical downtime in 24 months and a 40% reduction in IT-related support tickets."
+      },
+      philosophy: {
+        quote: "We don't sell hours. We sell uptime.",
+        author: "Ecksolution-IT Philosophy"
+      },
+      faq: {
+        headline: "Common Questions About Managed IT.",
+        items: [
+          { question: "What exactly is included in the fixed monthly fee?", answer: "Everything. All monitoring, maintenance, security updates, and unlimited helpdesk support are included. No hidden fees for 'out of scope' work." },
+          { question: "How do you ensure our data is secure?", answer: "We use enterprise-grade encryption, multi-factor authentication, and 24/7 threat monitoring. We also perform regular backup tests to ensure recovery is always possible." },
+          { question: "Can you work with our existing internal IT person?", answer: "Yes. We offer 'Co-Managed IT' where we handle the heavy lifting (servers, security, backups) while your internal person focuses on user-facing projects." }
+        ]
+      }
+    }
   },
   de: {
     nav: {
@@ -304,6 +413,115 @@ export const translations = {
       subheadline: "Erhalten Sie ein umfassendes Audit Ihres aktuellen Setups. Unverbindlich und klar.",
       button: "IT-Audit anfordern",
     },
+    caseStudies: {
+      badge: "Fallstudien",
+      headline: "Echte Ergebnisse.",
+      subheadline: "Wie wir Unternehmen geholfen haben, IT-Chaos zu beseitigen und sicher zu skalieren.",
+      viewAll: "Alle Geschichten ansehen",
+      readMore: "Vollständige Fallstudie lesen",
+      items: [
+        {
+          title: "Migration zu Microsoft 365 ohne Ausfallzeiten",
+          company: "Mittelständisches Unternehmen (40–80 Mitarbeiter)",
+          summary: "Wie ein mittelständisches Unternehmen von Google Workspace zu einer strukturierten, sicheren Microsoft 365-Umgebung ohne Ausfallzeiten wechselte.",
+          href: "/case-studies/microsoft-365-migration"
+        },
+        {
+          title: "Stabile und skalierbare IT mit Microsoft Azure",
+          company: "Tech-Unternehmen (100–150 Mitarbeiter)",
+          summary: "Lösung von IT-Komplexität und Skalierbarkeitsproblemen durch Migration zu einer strukturierten Microsoft Azure Cloud-Architektur.",
+          href: "/case-studies/azure-cloud-infrastructure"
+        },
+        {
+          title: "Zuverlässiger IT-Betrieb mit voller Verantwortung",
+          company: "KMU (30–60 Mitarbeiter)",
+          summary: "Wie ein KMU ohne interne IT-Abteilung durch ein Managed Service Modell einen stabilen und vorhersehbaren IT-Betrieb erreichte.",
+          href: "/case-studies/managed-it-operations"
+        },
+        {
+          title: "Audit-fähige IT durch strukturierte Sicherheit",
+          company: "Reguliertes Unternehmen (50–100 Mitarbeiter)",
+          summary: "Erreichung einer audit-fähigen IT durch ein strukturiertes Sicherheits- und Governance-Framework für regulatorische Compliance.",
+          href: "/case-studies/security-compliance"
+        }
+      ]
+    },
+    managedItPage: {
+      hero: {
+        badge: "Managed IT Services",
+        headline: "Wir reparieren nicht nur Computer. Wir übernehmen die volle Verantwortung für Ihren Geschäftsbetrieb.",
+        subheadline: "Hören Sie auf, sich Sorgen um Ausfallzeiten und Sicherheitslücken zu machen. Wir betreiben Ihre gesamte IT-Infrastruktur mit 100% Verantwortlichkeit und festen monatlichen Kosten.",
+        cta: "Strategiegespräch buchen",
+      },
+      problem: {
+        headline: "IT ist entweder ein Motor oder eine Handbremse.",
+        subheadline: "Die meisten Unternehmen leiden unter reaktiver IT, die nur reagiert, wenn etwas kaputt geht. Dies führt zu drei kritischen Fehlern:",
+        points: [
+          { title: "Umsatzschädigende Ausfallzeiten", description: "Wenn Ihre Systeme stehen, ist Ihr Team untätig, aber Ihre Lohnkosten laufen weiter." },
+          { title: "Sicherheitsangst", description: "Die Frage, ob Ihre Backups wirklich funktionieren oder ob ein einziger Klick das Unternehmen ruinieren könnte." },
+          { title: "Budget-Chaos", description: "Unvorhersehbare IT-Rechnungen, die schwanken, je nachdem, wie viele Dinge diesen Monat kaputt gegangen sind." }
+        ]
+      },
+      solution: {
+        headline: "Vollständige IT-Verantwortung.",
+        subheadline: "Wir führen Sie weg von 'Break-Fix' hin zu 'Managed Operations'. Wir verantworten das Ergebnis, nicht nur die Tickets.",
+        points: [
+          { title: "Fokus auf Null Ausfallzeit", description: "Proaktive Wartung, die Probleme identifiziert und löst, bevor sie Ihr Team beeinträchtigen." },
+          { title: "Festpreis-Garantie", description: "Eine planbare monatliche Gebühr, die alles abdeckt. Keine Überraschungsrechnungen, niemals." },
+          { title: "Strategische Partnerschaft", description: "Wir agieren als Ihr CTO und stellen sicher, dass Ihre Technologie-Roadmap mit Ihren Geschäftszielen übereinstimmt." }
+        ]
+      },
+      results: {
+        headline: "Die Zahlen, auf die es ankommt.",
+        subheadline: "Unsere Leistung wird an Ihrer Verfügbarkeit und Produktivität gemessen.",
+        cards: [
+          { metric: "99,9%", label: "Systemverfügbarkeit" },
+          { metric: "< 15 Min.", label: "Reaktionszeit" },
+          { metric: "30%", label: "Effizienzsteigerung" },
+          { metric: "0", label: "Sicherheitsvorfälle" }
+        ]
+      },
+      services: {
+        headline: "Was 'volle Verantwortung' bedeutet.",
+        subheadline: "Unser Managed Service ist eine komplette IT-Abteilung aus einer Hand.",
+        items: [
+          { title: "24/7 Überwachung & Management", description: "Kontinuierliche Überwachung von Servern, Netzwerken und Endgeräten." },
+          { title: "Unbegrenzter Helpdesk-Support", description: "Schneller, professioneller Support für Ihr gesamtes Team, wann immer er benötigt wird." },
+          { title: "Cybersecurity & Compliance", description: "Fortschrittlicher Bedrohungsschutz, Verschlüsselung und Management gesetzlicher Anforderungen." },
+          { title: "Backup & Disaster Recovery", description: "Automatisierte Off-Site-Backups mit garantierten Wiederherstellungszeiten." },
+          { title: "Cloud & Infrastruktur", description: "Vollständiges Management von Microsoft 365, Azure und On-Premise-Systemen." },
+          { title: "IT-Strategie & Beratung", description: "Regelmäßige Business-Reviews und langfristige Technologieplanung." }
+        ]
+      },
+      process: {
+        headline: "Wie wir übernehmen.",
+        subheadline: "Ein nahtloser Übergang zu professionellen IT-Operationen.",
+        steps: [
+          { title: "Tiefen-Audit", description: "Wir dokumentieren jedes Asset, jede Lizenz und jede Schwachstelle in Ihrem aktuellen Setup." },
+          { title: "Stabilisierung", description: "Wir beheben sofortige Risiken und standardisieren Ihre Systeme auf unser Hochverfügbarkeits-Niveau." },
+          { title: "Kontinuierlicher Betrieb", description: "Wir übernehmen die volle Kontrolle und bieten 24/7-Management sowie strategische Beratung." }
+        ]
+      },
+      caseStudy: {
+        headline: "Echte Ergebnisse für echte Unternehmen.",
+        company: "Logistik Leader GmbH",
+        challenge: "Häufige Serverabstürze verzögerten Lieferungen und kosteten 5.000 € pro Stunde an verlorener Produktivität.",
+        solution: "Implementierung einer vollständig verwalteten Hybrid-Cloud-Infrastruktur mit redundanter Ausfallsicherung.",
+        result: "Keine kritischen Ausfallzeiten in 24 Monaten und eine Reduzierung der IT-Support-Tickets um 40%."
+      },
+      philosophy: {
+        quote: "Wir verkaufen keine Stunden. Wir verkaufen Verfügbarkeit.",
+        author: "Ecksolution-IT Philosophie"
+      },
+      faq: {
+        headline: "Häufige Fragen zu Managed IT.",
+        items: [
+          { question: "Was genau ist in der festen monatlichen Gebühr enthalten?", answer: "Alles. Sämtliche Überwachung, Wartung, Sicherheitsupdates und unbegrenzter Helpdesk-Support sind enthalten. Keine versteckten Kosten." },
+          { question: "Wie stellen Sie sicher, dass unsere Daten sicher sind?", answer: "Wir verwenden Verschlüsselung auf Enterprise-Niveau, Multi-Faktor-Authentifizierung und 24/7-Bedrohungsüberwachung. Wir testen Backups regelmäßig." },
+          { question: "Können Sie mit unserem bestehenden internen IT-Mitarbeiter zusammenarbeiten?", answer: "Ja. Wir bieten 'Co-Managed IT' an, bei dem wir die schwere Arbeit (Server, Sicherheit, Backups) übernehmen, während sich Ihr interner Mitarbeiter auf Anwenderprojekte konzentriert." }
+        ]
+      }
+    }
   },
   es: {
     nav: {
@@ -456,5 +674,114 @@ export const translations = {
       subheadline: "Obtenga una auditoría completa de su configuración actual. Sin compromiso, solo claridad.",
       button: "Solicite su Auditoría de TI",
     },
+    caseStudies: {
+      badge: "Casos de Éxito",
+      headline: "Resultados Reales.",
+      subheadline: "Cómo hemos ayudado a las empresas a eliminar el caos de TI y escalar de forma segura.",
+      viewAll: "Ver todas las historias",
+      readMore: "Leer caso de éxito completo",
+      items: [
+        {
+          title: "Migración a Microsoft 365 sin tiempo de inactividad",
+          company: "Empresa mediana (40–80 empleados)",
+          summary: "Cómo una empresa mediana pasó de Google Workspace a un entorno de Microsoft 365 estructurado y seguro con cero tiempo de inactividad.",
+          href: "/case-studies/microsoft-365-migration"
+        },
+        {
+          title: "TI estable y escalable con Microsoft Azure",
+          company: "Empresa tecnológica (100–150 empleados)",
+          summary: "Resolviendo la complejidad de TI y los problemas de escalabilidad mediante la migración a una arquitectura de nube estructurada de Microsoft Azure.",
+          href: "/case-studies/azure-cloud-infrastructure"
+        },
+        {
+          title: "Operaciones de TI confiables con responsabilidad total",
+          company: "PYME (30–60 empleados)",
+          summary: "Cómo una PYME sin departamento de TI interno logró operaciones de TI estables y predecibles a través de un modelo de servicio gestionado.",
+          href: "/case-studies/managed-it-operations"
+        },
+        {
+          title: "TI lista para auditorías mediante seguridad estructurada",
+          company: "Empresa regulada (50–100 empleados)",
+          summary: "Lograr una TI lista para auditorías a través de un marco estructurado de seguridad y gobernanza para el cumplimiento normativo.",
+          href: "/case-studies/security-compliance"
+        }
+      ]
+    },
+    managedItPage: {
+      hero: {
+        badge: "Servicios de TI Gestionados",
+        headline: "No solo reparamos computadoras. Asumimos la responsabilidad total de su continuidad de negocio.",
+        subheadline: "Deje de preocuparse por el tiempo de inactividad y las brechas de seguridad. Operamos toda su infraestructura de TI con un 100% de responsabilidad y costos mensuales fijos.",
+        cta: "Reserve una Llamada Estratégica",
+      },
+      problem: {
+        headline: "La TI es un motor o un freno de mano.",
+        subheadline: "La mayoría de las empresas sufren de una TI reactiva que solo responde cuando algo se rompe. Esto conduce a tres fallos críticos:",
+        points: [
+          { title: "Tiempo de Inactividad que Mata los Ingresos", description: "Cuando sus sistemas están caídos, su equipo está inactivo pero su nómina sigue corriendo." },
+          { title: "Ansiedad por la Seguridad", description: "Preguntarse si sus copias de seguridad realmente funcionan o si un solo clic podría quebrar la empresa." },
+          { title: "Caos Presupuestario", description: "Facturas de TI impredecibles que fluctúan según cuántas cosas se rompieron este mes." }
+        ]
+      },
+      solution: {
+        headline: "Responsabilidad Total de TI.",
+        subheadline: "Lo movemos del 'Break-Fix' a las 'Operaciones Gestionadas'. Somos dueños del resultado, no solo de los tickets.",
+        points: [
+          { title: "Enfoque en Cero Tiempo de Inactividad", description: "Mantenimiento proactivo que identifica y resuelve problemas antes de que afecten a su equipo." },
+          { title: "Garantía de Costo Fijo", description: "Una tarifa mensual predecible que lo cubre todo. Sin facturas sorpresa, nunca." },
+          { title: "Asociación Estratégica", description: "Actuamos como su CTO, asegurando que su hoja de ruta tecnológica se alinee con sus objetivos comerciales." }
+        ]
+      },
+      results: {
+        headline: "Los Números que Importan.",
+        subheadline: "Nuestro desempeño se mide por su tiempo de actividad y productividad.",
+        cards: [
+          { metric: "99.9%", label: "Tiempo de Actividad" },
+          { metric: "< 15m", label: "Tiempo de Respuesta" },
+          { metric: "30%", label: "Ganancia de Eficiencia" },
+          { metric: "0", label: "Brechas de Seguridad" }
+        ]
+      },
+      services: {
+        headline: "Cómo se ve la 'Responsabilidad Total'.",
+        subheadline: "Nuestro servicio gestionado es un departamento de TI completo en una caja.",
+        items: [
+          { title: "Monitoreo y Gestión 24/7", description: "Supervisión continua de servidores, redes y terminales." },
+          { title: "Soporte de Helpdesk Ilimitado", description: "Soporte rápido y profesional para todo su equipo cuando lo necesiten." },
+          { title: "Ciberseguridad y Cumplimiento", description: "Protección avanzada contra amenazas, cifrado y gestión de cumplimiento normativo." },
+          { title: "Respaldo y Recuperación ante Desastres", description: "Copias de seguridad automatizadas fuera del sitio con tiempos de recuperación garantizados." },
+          { title: "Nube e Infraestructura", description: "Gestión completa de Microsoft 365, Azure y sistemas locales." },
+          { title: "Estrategia y Consultoría de TI", description: "Revisiones comerciales regulares y planificación tecnológica a largo plazo." }
+        ]
+      },
+      process: {
+        headline: "Cómo tomamos el control.",
+        subheadline: "Una transición fluida a operaciones de TI profesionales.",
+        steps: [
+          { title: "Auditoría Profunda", description: "Documentamos cada activo, licencia y vulnerabilidad en su configuración actual." },
+          { title: "Estabilización", description: "Corregimos los riesgos inmediatos y estandarizamos sus sistemas a nuestra base de alta fiabilidad." },
+          { title: "Operación Continua", description: "Tomamos el control total, brindando gestión 24/7 y orientación estratégica." }
+        ]
+      },
+      caseStudy: {
+        headline: "Resultados Reales para Empresas Reales.",
+        company: "Logistics Leader GmbH",
+        challenge: "Las caídas frecuentes del servidor retrasaban los envíos y costaban 5.000 € por hora en pérdida de productividad.",
+        solution: "Se implementó una infraestructura de nube híbrida totalmente gestionada con conmutación por error redundante.",
+        result: "Cero tiempo de inactividad crítico en 24 meses y una reducción del 40% en los tickets de soporte de TI."
+      },
+      philosophy: {
+        quote: "No vendemos horas. Vendemos tiempo de actividad.",
+        author: "Filosofía de Ecksolution-IT"
+      },
+      faq: {
+        headline: "Preguntas Comunes sobre TI Gestionada.",
+        items: [
+          { question: "¿Qué se incluye exactamente en la tarifa mensual fija?", answer: "Todo. Se incluye todo el monitoreo, mantenimiento, actualizaciones de seguridad y soporte de helpdesk ilimitado. Sin cargos ocultos." },
+          { question: "¿Cómo aseguran que nuestros datos estén seguros?", answer: "Utilizamos cifrado de nivel empresarial, autenticación multifactor y monitoreo de amenazas 24/7. Realizamos pruebas de respaldo regulares." },
+          { question: "¿Pueden trabajar con nuestra persona de TI interna existente?", answer: "Sí. Ofrecemos 'TI Co-Gestionada' donde manejamos el trabajo pesado (servidores, seguridad, respaldos) mientras su persona interna se enfoca en proyectos de usuario." }
+        ]
+      }
+    }
   },
 };

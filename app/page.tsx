@@ -232,13 +232,13 @@ export default function LandingPage() {
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-2xl">
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black">Real Results.</h2>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black">{t.caseStudies.headline}</h2>
               <p className="text-gray-600 text-lg">
-                How we&apos;ve helped companies eliminate IT chaos and scale securely.
+                {t.caseStudies.subheadline}
               </p>
             </div>
             <Link href="/case-studies" className="text-black font-bold flex items-center gap-2 hover:text-primary transition-colors group">
-              View all stories <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              {t.caseStudies.viewAll} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 

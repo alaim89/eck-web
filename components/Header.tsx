@@ -38,7 +38,7 @@ export function Header() {
                     Core Offering
                   </h3>
                   <div className="space-y-6">
-                    <Link href="/solutions/managed-it-operations" className="block group/item">
+                    <Link href="/solutions/managed-it-services" className="block group/item">
                       <div className="text-black font-semibold mb-1 text-base group-hover/item:text-primary transition-colors">Managed IT Operations</div>
                       <div className="text-gray-700 text-sm leading-relaxed">We operate your IT reliably so your business runs without interruption.</div>
                     </Link>
