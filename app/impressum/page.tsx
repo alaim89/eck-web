@@ -49,7 +49,8 @@ export default function ImpressumPage() {
               Kontakt
             </h2>
             <p className="text-gray-700">
-              E-Mail: <a href="mailto:info@ecksolution-it.de" className="text-primary hover:underline">info@ecksolution-it.de</a>
+              E-Mail: <a href="mailto:info@ecksolution-it.de" className="text-primary hover:underline">info@ecksolution-it.de</a><br />
+              WhatsApp: [geschäftliche Nummer eintragen oder Zeile entfernen]
             </p>
           </div>
 
@@ -74,6 +75,10 @@ export default function ImpressumPage() {
               Sophienstraße 26<br />
               80333 München
             </address>
+            <p className="text-gray-700">
+              Räumlicher Geltungsbereich:<br />
+              [bitte ergänzen, falls bekannt]
+            </p>
           </div>
 
           {/* Verantwortlich gemäß MStV */}
@@ -95,6 +100,17 @@ export default function ImpressumPage() {
             </h2>
             <p className="text-gray-700 leading-relaxed">
               Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+            </p>
+          </div>
+
+          {/* Onlinepräsenzen */}
+          <div className="space-y-4">
+            <h2 className="text-xl font-semibold text-gray-900 border-l-4 border-primary pl-4">
+              Dieses Impressum gilt auch für folgende Onlinepräsenzen
+            </h2>
+            <p className="text-gray-700">
+              [dein echtes Facebook-Profil]<br />
+              [dein echtes Instagram-Profil]
             </p>
           </div>
 
