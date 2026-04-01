@@ -21,6 +21,10 @@ export const translations = {
           title: "Co-Managed IT",
           desc: "Unterstützen Sie Ihr internes Team mit Expertenwissen und Enterprise-Tools."
         },
+        retainer: {
+          title: "IT-Architekt Retainer",
+          desc: "Sichern Sie sich kontinuierliche Expertise und proaktive Stabilität auf Abruf."
+        },
         pricing: "Preise & Pakete ansehen"
       },
       security: {
@@ -71,7 +75,7 @@ export const translations = {
     hero: {
       badge: "IT-Partner für den deutschen Mittelstand",
       headline: "Ihre IT muss einfach funktionieren. Ohne Ausfälle. Ohne Stress.",
-      subheadline: "Wir übernehmen die volle Verantwortung für Ihre IT-Infrastruktur. Proaktiv, sicher und nach vereinbartem Leistungsumfang – damit Sie und Ihr Team sich auf Ihr Kerngeschäft konzentrieren können.",
+      subheadline: "Wir übernehmen die volle Verantwortung für Ihre IT-Infrastruktur. Proaktiv, sicher und nach vereinbartem Leistungsumfang - damit Sie und Ihr Team sich auf Ihr Kerngeschäft konzentrieren können.",
       cta: "Jetzt IT-Check vereinbaren",
       secondaryCta: "Referenzprojekte ansehen",
     },
@@ -117,7 +121,7 @@ export const translations = {
       headline: "Verlässlichkeit in Zahlen",
       subheadline: "Wir messen unseren Erfolg an Ihrer Zufriedenheit und der Stabilität Ihrer Systeme.",
       cards: [
-        { metric: "Schnell", label: "Reaktionszeit" },
+        { metric: "< 2 Stunden", label: "Reaktionszeit" },
         { metric: "100%", label: "Verantwortung" },
         { metric: "8+", label: "Jahre Erfahrung" },
         { metric: "24/7", label: "Monitoring" },
@@ -126,7 +130,7 @@ export const translations = {
     services: {
       badge: "Unsere Leistungen",
       headline: "Alles aus einer Hand.",
-      subheadline: "Vom täglichen Support bis zur strategischen Cloud-Migration – wir begleiten Sie bei jedem Schritt.",
+      subheadline: "Vom täglichen Support bis zur strategischen Cloud-Migration - wir begleiten Sie bei jedem Schritt.",
       items: [
         {
           title: "Managed IT-Services",
@@ -140,7 +144,7 @@ export const translations = {
         },
         {
           title: "Microsoft 365 & Modern Work",
-          description: "Sicheres und effizientes Arbeiten von überall – perfekt eingerichtet und verwaltet.",
+          description: "Sicheres und effizientes Arbeiten von überall - perfekt eingerichtet und verwaltet.",
           link: "/solutions/microsoft-365-services"
         },
         {
@@ -199,7 +203,7 @@ export const translations = {
     },
     trust: {
       headline: "Ihr Partner für IT-Verantwortung.",
-      subheadline: "Wir verwalten nicht nur Computer – wir sichern Ihren Geschäftsbetrieb. Mit Ecksolution IT gewinnen Sie einen Partner, der IT als strategisches Werkzeug für Ihren Erfolg versteht.",
+      subheadline: "Wir verwalten nicht nur Computer - wir sichern Ihren Geschäftsbetrieb. Mit Ecksolution IT gewinnen Sie einen Partner, der IT als strategisches Werkzeug für Ihren Erfolg versteht.",
       points: [
         { title: "Kein Finger-Pointing", description: "Wir übernehmen die volle Verantwortung. Wir sind Ihr zentraler Ansprechpartner für alle IT-Themen." },
         { title: "Proaktive Stabilität", description: "Wir warten nicht auf Fehlermeldungen. Wir agieren im Hintergrund, damit Probleme gar nicht erst entstehen." },
@@ -253,15 +257,15 @@ export const translations = {
     managedItPage: {
       hero: {
         badge: "Managed IT-Services",
-        headline: "Wir reparieren nicht nur – wir garantieren Betriebssicherheit.",
-        subheadline: "Verabschieden Sie sich von unvorhersehbaren IT-Problemen. Wir betreiben Ihre Infrastruktur mit voller Verantwortung – exakt abgestimmt auf Ihren Bedarf und den vereinbarten Leistungsumfang.",
+        headline: "Wir reparieren nicht nur - wir garantieren Betriebssicherheit.",
+        subheadline: "Verabschieden Sie sich von unvorhersehbaren IT-Problemen. Wir betreiben Ihre Infrastruktur mit voller Verantwortung - exakt abgestimmt auf Ihren Bedarf und den vereinbarten Leistungsumfang.",
         cta: "Jetzt Beratungstermin buchen",
       },
       problem: {
         headline: "IT darf kein Bremsklotz sein.",
         subheadline: "Reaktive IT-Betreuung führt oft zu vermeidbaren Problemen:",
         points: [
-          { title: "Umsatzeinbußen durch Stillstand", description: "Wenn die IT steht, arbeiten Ihre Mitarbeiter nicht – die Fixkosten laufen jedoch weiter." },
+          { title: "Umsatzeinbußen durch Stillstand", description: "Wenn die IT steht, arbeiten Ihre Mitarbeiter nicht - die Fixkosten laufen jedoch weiter." },
           { title: "Sicherheitsbedenken", description: "Die ständige Sorge, ob Backups im Ernstfall wirklich funktionieren oder Daten sicher sind." },
           { title: "Unkalkulierbare Kosten", description: "Schwankende IT-Ausgaben durch unvorhersehbare Reparaturen und Notfalleinsätze außerhalb fester Budgets." }
         ]
@@ -270,7 +274,7 @@ export const translations = {
         headline: "Ganzheitliche IT-Verantwortung.",
         subheadline: "Wir wechseln von der Fehlerbehebung hin zum proaktiven Management. Wir verantworten das Ergebnis nach vereinbartem Scope.",
         points: [
-          { title: "Maximale Verfügbarkeit", description: "Durch proaktive Wartung minimieren wir Störungen, bevor sie den Arbeitsfluss stören – definiert nach Ihren SLAs." },
+          { title: "Maximale Verfügbarkeit", description: "Durch proaktive Wartung minimieren wir Störungen, bevor sie den Arbeitsfluss stören - definiert nach Ihren SLAs." },
           { title: "Kalkulierbare Budgets", description: "Sie zahlen für den gebuchten Leistungsumfang. Das gibt Ihnen volle Planungssicherheit ohne versteckte Kosten." },
           { title: "Strategische Beratung", description: "Wir begleiten Sie bei der Digitalisierung und stellen sicher, dass Ihre IT mit Ihren Zielen mitwächst." }
         ]
@@ -287,7 +291,7 @@ export const translations = {
       },
       services: {
         headline: "Leistungsumfang nach Bedarf.",
-        subheadline: "Unser Managed Service ist Ihre externe IT-Abteilung – flexibel und professionell.",
+        subheadline: "Unser Managed Service ist Ihre externe IT-Abteilung - flexibel und professionell.",
         items: [
           { title: "Monitoring & Management", description: "Lückenlose Überwachung Ihrer Server, Netzwerke und Endgeräte nach Vereinbarung." },
           { title: "Support & Helpdesk", description: "Kompetente Hilfe für Ihr Team im Rahmen des gebuchten Leistungsumfangs." },
@@ -315,7 +319,7 @@ export const translations = {
       },
       philosophy: {
         quote: "Wir verkaufen keine Stunden. Wir verkaufen Betriebssicherheit nach Maß.",
-        author: "Andreas Eckert, Ecksolution IT"
+        author: "Andreas Eckert, Ecksolution-IT"
       },
       faq: {
         headline: "Fragen zu unseren Managed Services.",

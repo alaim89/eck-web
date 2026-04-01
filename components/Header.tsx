@@ -27,7 +27,7 @@ export function Header() {
       <div className="max-w-[1200px] mx-auto px-6 h-20 md:h-24 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 md:gap-3 hover:opacity-80 transition-opacity shrink-0">
           <LogoIcon className="w-7 h-7 md:w-8 md:h-8 text-primary shrink-0" />
-          <span className="font-bold tracking-tight text-xl md:text-2xl text-black">Ecksolution<span className="text-primary">-IT</span></span>
+          <span className="font-bold tracking-tight text-xl md:text-2xl text-black">Ecksolution-IT<span className="text-primary">-IT</span></span>
         </Link>
         
         {/* Desktop Nav */}
@@ -69,6 +69,10 @@ export function Header() {
                     <Link href="/solutions/co-managed-it" onClick={() => setIsMenuOpen(false)} className="block group/item">
                       <div className="text-black font-semibold mb-1 text-base group-hover/item:text-primary transition-colors">{t.megaMenu.core.coManaged.title}</div>
                       <div className="text-gray-700 text-sm leading-relaxed">{t.megaMenu.core.coManaged.desc}</div>
+                    </Link>
+                    <Link href="/solutions/retainer" onClick={() => setIsMenuOpen(false)} className="block group/item">
+                      <div className="text-black font-semibold mb-1 text-base group-hover/item:text-primary transition-colors">{t.megaMenu.core.retainer.title}</div>
+                      <div className="text-gray-700 text-sm leading-relaxed">{t.megaMenu.core.retainer.desc}</div>
                     </Link>
                   </div>
                 </div>
@@ -145,6 +149,7 @@ export function Header() {
           </div>
 
           <Link href="/case-studies" className="hover:text-black transition-colors">{t.nav.caseStudies}</Link>
+          <Link href="/blog" className="hover:text-black transition-colors">Blog</Link>
           <Link href="/kontakt" className="hover:text-black transition-colors">{t.nav.contact}</Link>
           
           <Link href="/#contact" className="px-5 py-2.5 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors shadow-sm font-semibold">
@@ -172,7 +177,9 @@ export function Header() {
             <div className="text-xs font-bold uppercase tracking-wider text-primary">{t.nav.solutions}</div>
             <Link href="/solutions/managed-it-services" onClick={() => setIsMobileMenuOpen(false)} className="block text-gray-700">{t.megaMenu.core.managedIt.title}</Link>
             <Link href="/solutions/co-managed-it" onClick={() => setIsMobileMenuOpen(false)} className="block text-gray-700">{t.megaMenu.core.coManaged.title}</Link>
+            <Link href="/solutions/retainer" onClick={() => setIsMobileMenuOpen(false)} className="block text-gray-700">{t.megaMenu.core.retainer.title}</Link>
           </div>
+          <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-semibold text-gray-900">Blog</Link>
           <Link href="/case-studies" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-semibold text-gray-900">{t.nav.caseStudies}</Link>
           <Link href="/kontakt" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-semibold text-gray-900">{t.nav.contact}</Link>
           <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full py-4 bg-black text-white text-center rounded-xl font-bold">

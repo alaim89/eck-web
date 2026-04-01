@@ -1,128 +1,252 @@
 'use client';
 
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { 
   ArrowRight, ShieldAlert, Clock, 
   CheckCircle2, Zap, Lock, TrendingDown, 
   Building2, Activity, Cpu, ShieldCheck,
   Plus, Minus, Settings, Phone, Mail,
-  Award, CheckCircle
+  Award, CheckCircle, Users
 } from "lucide-react";
 import Link from "next/link";
+import Script from "next/script";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CaseStudyCarousel } from "@/components/CaseStudyCarousel";
 import { HeroVisual } from "@/components/HeroVisual";
+import { ResponsibilitySection } from "@/components/ResponsibilitySection";
 import { useLanguage } from "@/context/LanguageContext";
-import { useState } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
+
+const HERO_VARIANTS = [
+  {
+    subline: "Hands-on Architektur für den Mittelstand. Ich stabilisiere festgefahrene Cloud- und Infrastrukturprojekte und bringe kritische Systeme wieder auf Kurs.",
+    primaryCTA: { text: "Erstgespräch buchen", href: "https://outlook.office.com/book/EcksolutionITService@ecksolution-it.de/?ismsaljsauthenabled" },
+    secondaryCTA: { text: "Leistungen entdecken", href: "/solutions" },
+    visualType: "monitoring" as const
+  },
+  {
+    subline: "Von gewachsenen Strukturen zu sauberer Architektur: Ich begleite Migrationen, Modernisierung und technische Neuausrichtung mit Fokus auf Sicherheit und Skalierbarkeit.",
+    primaryCTA: { text: "Projekt besprechen", href: "/kontakt" },
+    secondaryCTA: { text: "Architektur ansehen", href: "/case-studies" },
+    visualType: "architecture" as const
+  },
+  {
+    subline: "Ich übernehme Verantwortung für stabile, sichere und skalierbare IT-Infrastrukturen - proaktiv, strukturiert und mit direktem Blick auf den operativen Betrieb.",
+    primaryCTA: { text: "IT-Check anfragen", href: "/kontakt" },
+    secondaryCTA: { text: "Referenzen ansehen", href: "/case-studies" },
+    visualType: "health" as const
+  },
+  {
+    subline: "Ich löse Blockaden in Microsoft-Cloud-Projekten, schaffe belastbare Strukturen und unterstütze Unternehmen bei einer nachhaltigen technischen Weiterentwicklung.",
+    primaryCTA: { text: "Cloud-Projekt starten", href: "/kontakt" },
+    secondaryCTA: { text: "Mehr erfahren", href: "/solutions" },
+    visualType: "cloud" as const
+  }
+];
 
 export default function LandingPage() {
   const { t } = useLanguage();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [currentVariant, setCurrentVariant] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const nextVariant = useCallback(() => {
+    setCurrentVariant((prev) => (prev + 1) % HERO_VARIANTS.length);
+  }, []);
+
+  useEffect(() => {
+    // Respect prefers-reduced-motion
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mediaQuery.matches) return;
+
+    if (!isPaused) {
+      timerRef.current = setInterval(nextVariant, 15000);
+    }
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [isPaused, nextVariant]);
+
+  const handleInteraction = () => {
+    setIsPaused(true);
+    if (timerRef.current) clearInterval(timerRef.current);
+  };
+
+  const variant = HERO_VARIANTS[currentVariant];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": t.faq.items.map((item: { question: string; answer: string }) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
 
   return (
     <div className="min-h-screen bg-white text-black font-poppins selection:bg-primary/30">
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Navigation */}
       <Header />
 
       <main>
         {/* Hero Section */}
         <section 
-          className="pt-48 pb-32 px-6 relative overflow-hidden"
+          className="pt-48 pb-32 px-6 relative overflow-hidden bg-white"
           aria-labelledby="hero-heading"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
         >
+          {/* Subtle Grid Background */}
+          <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
+               style={{ backgroundImage: 'radial-gradient(#005F6B 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+          
           <div className="max-w-[1200px] mx-auto grid lg:grid-cols-2 gap-20 items-center relative z-10">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-50 text-gray-700 text-xs font-semibold uppercase tracking-wider mb-8 border border-gray-100">
-                <Building2 className="w-4 h-4 text-primary" />
-                {t.hero.badge}
-              </div>
+            <div className="flex flex-col">
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-50 text-gray-700 text-xs font-semibold uppercase tracking-wider mb-8 border border-gray-100 w-fit"
+              >
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                Verfügbar für neue Projekte
+              </motion.div>
+              
               <h1 
                 id="hero-heading"
                 className="text-6xl md:text-7xl font-bold tracking-tighter leading-[1.05] mb-8 text-black"
               >
-                {t.hero.headline.split('.').filter(Boolean).map((part: string, i: number) => (
-                  <span key={i} className={i > 0 ? "text-gray-500 block" : ""}>
-                    {part.trim()}.
-                  </span>
-                ))}
+                IT-Projekte retten,<br />
+                <span className="text-gray-400">stabilisieren und skalieren.</span>
               </h1>
-              <p className="text-lg text-gray-700 mb-12 max-w-md leading-relaxed opacity-90">
-                {t.hero.subheadline}
-              </p>
+
+              <div className="relative h-[120px] md:h-[100px] mb-12">
+                <AnimatePresence mode="wait">
+                  <motion.p 
+                    key={`subline-${currentVariant}`}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-lg text-gray-700 max-w-md leading-relaxed opacity-90 absolute top-0 left-0"
+                  >
+                    {variant.subline}
+                  </motion.p>
+                </AnimatePresence>
+              </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <Link 
-                  href="https://outlook.office.com/book/EcksolutionITService@ecksolution-it.de/?ismsaljsauthenabled"
-                  target="_blank"
-                  className="px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-xl font-medium flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20 active:scale-[0.98]"
-                >
-                  {t.hero.cta} <ArrowRight className="w-5 h-5" />
-                </Link>
-                <Link 
-                  href="/case-studies" 
-                  className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl text-sm font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 transition-colors border border-gray-100 active:scale-[0.98]"
-                >
-                  <Clock className="w-5 h-5 text-primary" />
-                  {t.hero.secondaryCta}
-                </Link>
+              <div className="flex flex-col sm:flex-row gap-4 mb-16 h-[60px]">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`ctas-${currentVariant}`}
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.4 }}
+                    className="flex flex-col sm:flex-row gap-4 w-full"
+                  >
+                    <Link 
+                      href={variant.primaryCTA.href}
+                      target={variant.primaryCTA.href.startsWith('http') ? "_blank" : undefined}
+                      onClick={handleInteraction}
+                      className="px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-xl font-medium flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20 active:scale-[0.98] min-w-[200px]"
+                    >
+                      {variant.primaryCTA.text} <ArrowRight className="w-5 h-5" />
+                    </Link>
+                    <Link 
+                      href={variant.secondaryCTA.href}
+                      onClick={handleInteraction}
+                      className="flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-sm font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 transition-colors border border-gray-100 active:scale-[0.98] min-w-[200px]"
+                    >
+                      {variant.secondaryCTA.text}
+                    </Link>
+                  </motion.div>
+                </AnimatePresence>
               </div>
 
               {/* Trust Indicators */}
-              <div className="flex flex-wrap items-center gap-8 pt-8 border-t border-gray-100">
-                <div className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-widest">
-                  <ShieldCheck className="w-4 h-4 text-primary" />
-                  ISO 27001 Konform
+              <div className="flex flex-wrap items-center gap-x-12 gap-y-6 pt-12 border-t border-gray-100">
+                <div className="flex flex-col">
+                  <span className="text-2xl font-bold text-black tracking-tighter">8+ Jahre</span>
+                  <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Erfahrung</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-widest">
-                  <Award className="w-4 h-4 text-primary" />
-                  Premium Partner
+                <div className="flex flex-col">
+                  <span className="text-2xl font-bold text-black tracking-tighter">36+</span>
+                  <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Projekte realisiert</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-widest">
-                  <CheckCircle className="w-4 h-4 text-primary" />
-                  24/7 Support
+                <div className="flex flex-col">
+                  <span className="text-2xl font-bold text-black tracking-tighter">25+</span>
+                  <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Kunden weltweit</span>
                 </div>
               </div>
-            </motion.div>
 
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative hidden lg:block"
-            >
-              <HeroVisual />
-              {/* Floating Trust Card */}
-              <div className="absolute -bottom-10 -left-10 bg-white p-6 rounded-2xl shadow-2xl border border-gray-100 flex items-center gap-4 animate-bounce-slow">
+              {/* Navigation Dots */}
+              <div className="flex gap-2 mt-12">
+                {HERO_VARIANTS.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      setCurrentVariant(i);
+                      handleInteraction();
+                    }}
+                    className={`h-1.5 rounded-full transition-all duration-500 ${currentVariant === i ? 'w-8 bg-primary' : 'w-2 bg-gray-200 hover:bg-gray-300'}`}
+                    aria-label={`Gehe zu Variante ${i + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="relative hidden lg:block">
+              <motion.div
+                key={`visual-${currentVariant}`}
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+              >
+                <HeroVisual type={variant.visualType} />
+              </motion.div>
+              
+              {/* Floating Trust Card - Static but high quality */}
+              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-2xl border border-gray-100 flex items-center gap-4 z-20">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Activity className="w-6 h-6 text-primary" />
+                  <ShieldCheck className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-black">99,9% Uptime</div>
-                  <div className="text-xs text-gray-500">Echtzeit-Monitoring</div>
+                  <div className="text-sm font-bold text-black">Enterprise Security</div>
+                  <div className="text-xs text-gray-500">Architektur nach Maß</div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
+
 
         {/* Social Proof / Trust Bar */}
         <section className="py-12 border-y border-gray-50 bg-gray-50/30">
           <div className="max-w-[1200px] mx-auto px-6">
             <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
               {/* Placeholder for partner logos - using text for professional look */}
-              <div className="text-xl font-bold tracking-tighter">MICROSOFT</div>
-              <div className="text-xl font-bold tracking-tighter">DELL TECHNOLOGIES</div>
-              <div className="text-xl font-bold tracking-tighter">HEWLETT PACKARD</div>
+              <div className="text-xl font-bold tracking-tighter">MICROSOFT PARTNER</div>
+              <div className="text-xl font-bold tracking-tighter">LENOVO TECHNOLOGIES</div>
+              <div className="text-xl font-bold tracking-tighter">IONOS AGENCY Partner</div>
               <div className="text-xl font-bold tracking-tighter">VEEAM SOFTWARE</div>
-              <div className="text-xl font-bold tracking-tighter">SOPHOS</div>
+              <div className="text-xl font-bold tracking-tighter">SOPHOS PARTNER</div>
+              <div className="text-xl font-bold tracking-tighter">ALLIANZ FÜR CYBER-SICHERHEIT</div>
             </div>
           </div>
         </section>
+
+        <ResponsibilitySection />
 
         {/* Problem Section */}
         <section 
@@ -445,7 +569,7 @@ export default function LandingPage() {
                 </div>
                 <div className="text-left">
                   <div className="text-xs text-white/40 uppercase font-bold tracking-widest">Rufen Sie uns an</div>
-                  <div className="text-lg font-semibold">+49 (0) 5436 2449900</div>
+                  <div className="text-lg font-semibold">+49 (0) 176 34580607</div>
                 </div>
               </div>
               <div className="flex items-center gap-4 group cursor-pointer">

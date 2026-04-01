@@ -32,14 +32,14 @@ export const solutionsData = {
       operations: "Wir bieten 24/7-Überwachung, schnellen Helpdesk-Support und proaktive Wartung."
     },
     caseStudy: {
-      title: "Zuverlässiger IT-Betrieb mit voller Verantwortung",
-      companyType: "KMU (30–60 Mitarbeiter)",
-      situation: "Das Unternehmen hatte keine interne IT und verließ sich auf einen einzelnen externen Techniker, der oft nicht verfügbar war.",
-      problem: "Lange Reaktionszeiten, keine Dokumentation der Systeme und häufige Ausfälle kritischer Anwendungen.",
-      decisionPoint: "Ein Serverausfall während einer Stoßzeit konnte 48 Stunden lang nicht behoben werden.",
-      solution: "Implementierung von vollständigen Managed IT Operations, Dokumentation aller Systeme und 24/7-Überwachung.",
-      result: "Schnelle Reaktionszeiten, stabile Systeme und ein klarer Ansprechpartner für alle IT-Fragen.",
-      slug: "managed-it-operations"
+      title: "Stabilisierung und Automatisierung hybrider IT-Infrastrukturen",
+      companyType: "zunicode GmbH",
+      situation: "Das Unternehmen betrieb eine hybride IT-Umgebung mit stetig steigender Komplexität und einem wachsenden Supportaufwand.",
+      problem: "Hoher manueller Aufwand bei Routineaufgaben und fehlende Struktur in den Supportprozessen.",
+      decisionPoint: "Die internen Ressourcen waren durch das Tagesgeschäft vollständig gebunden.",
+      solution: "Automatisierung mit Ansible & PowerShell sowie Strukturierung von Supportprozessen.",
+      result: "Reduzierte manuelle Eingriffe durch gezielte Automatisierung und stabilerer IT-Betrieb.",
+      slug: "zunicode-automatisierung"
     }
   },
   "co-managed-it": {
@@ -75,14 +75,14 @@ export const solutionsData = {
       operations: "Wir arbeiten an der Seite Ihres Teams, bearbeiten Überlauf-Tickets und bieten strategische Beratung auf hohem Niveau."
     },
     caseStudy: {
-      title: "Co-Managed IT für eine Software-Agentur",
-      companyType: "Software-Entwicklungsagentur (20–40 Mitarbeiter)",
-      situation: "Die Agentur hatte einen qualifizierten internen Entwickler, der die IT betreute, aber durch das Wachstum überfordert war.",
-      problem: "Kritische Infrastruktur-Updates wurden vernachlässigt, und Sicherheitspatches waren Monate im Rückstand.",
-      decisionPoint: "Ein kleinerer Sicherheitsvorfall ereignete sich aufgrund eines nicht gepatchten Servers.",
-      solution: "Ecksolution-IT implementierte ein Co-Managed IT-Modell, übernahm Infrastruktur und Sicherheit, während sich der interne Entwickler auf interne Tools konzentrierte.",
-      result: "100% Patch-Compliance, reduzierte interne Arbeitslast und verbesserte Sicherheitslage.",
-      slug: "co-managed-it"
+      title: "Stabilisierung und Automatisierung hybrider IT-Infrastrukturen",
+      companyType: "zunicode GmbH",
+      situation: "Das Unternehmen betrieb eine hybride IT-Umgebung mit stetig steigender Komplexität.",
+      problem: "Hoher manueller Aufwand bei Routineaufgaben und fehlende Struktur in den Supportprozessen.",
+      decisionPoint: "Die internen Ressourcen waren durch das Tagesgeschäft vollständig gebunden.",
+      solution: "Unterstützung im Support und Automatisierung mit Ansible & PowerShell.",
+      result: "Reduzierte manuelle Eingriffe durch gezielte Automatisierung und stabilerer IT-Betrieb.",
+      slug: "zunicode-automatisierung"
     }
   },
   "cybersecurity-protection": {
@@ -118,14 +118,14 @@ export const solutionsData = {
       operations: "Wir überwachen Ihr Netzwerk rund um die Uhr, suchen aktiv nach Bedrohungen und schulen Ihre Mitarbeiter."
     },
     caseStudy: {
-      title: "Audit-bereite IT durch strukturierte Sicherheit",
-      companyType: "Reguliertes Unternehmen (50–100 Mitarbeiter)",
-      situation: "Das Unternehmen musste strenge regulatorische Anforderungen erfüllen, hatte aber keine klare Sicherheitsstrategie.",
-      problem: "Unsichere Datenspeicherung, keine Zugriffskontrolle und fehlende Compliance-Dokumentation.",
-      decisionPoint: "Ein bevorstehendes Audit erforderte eine strukturierte IT-Umgebung.",
-      solution: "Implementierung einer umfassenden Sicherheitsstrategie, einschließlich Verschlüsselung, Zugriffskontrolle und regelmäßiger Audits.",
-      result: "Vollständige Compliance, verbesserte Sicherheitslage und erfolgreiche externe Audits.",
-      slug: "security-compliance"
+      title: "Analyse und Aufbau einer strukturierten IT-Sicherheitsstrategie",
+      companyType: "Bellaseno GmbH",
+      situation: "Das Unternehmen verfügte über gewachsene IT-Strukturen ohne klare Bewertung der aktuellen Sicherheitslage.",
+      problem: "Unklare Sicherheitslage und fehlende Priorisierung von Risiken.",
+      decisionPoint: "Es fehlte eine belastbare Entscheidungsgrundlage für Investitionen in die IT-Sicherheit.",
+      solution: "Durchführung einer GAP-Analyse und Entwicklung eines Maßnahmenkatalogs nach BSI-Vorgaben.",
+      result: "Klare Übersicht über alle relevanten Sicherheitsrisiken und strukturierte Entscheidungsbasis.",
+      slug: "bellaseno-security"
     }
   },
   "managed-backup": {
@@ -161,14 +161,14 @@ export const solutionsData = {
       operations: "Wir überwachen Backups täglich, führen automatisierte Test-Wiederherstellungen durch und verwalten alle Aufbewahrungsrichtlinien."
     },
     caseStudy: {
-      title: "Sicheres Backup für eine Anwaltskanzlei",
-      companyType: "Anwaltskanzlei (15–30 Mitarbeiter)",
-      situation: "Die Kanzlei verließ sich auf externe Festplatten für Backups, die inkonsistent und nicht extern gelagert waren.",
-      problem: "Ein Ransomware-Angriff verschlüsselte den lokalen Server und das angeschlossene Backup-Laufwerk.",
-      decisionPoint: "Die Kanzlei stand vor dem dauerhaften Verlust jahrelanger Mandantenakten.",
-      solution: "Ecksolution-IT implementierte eine Managed Backup-Lösung mit unveränderlichem Cloud-Speicher und 15-Minuten-Wiederherstellungs-Snapshots.",
-      result: "Vollständige Datenwiederherstellung innerhalb von 2 Stunden, null Datenverlust und dauerhafte Sicherheit.",
-      slug: "managed-backup"
+      title: "Modernisierung einer Serverumgebung und Integration in Microsoft 365",
+      companyType: "BiolytiQs GmbH",
+      situation: "Die bestehende Serverinfrastruktur war veraltet und entsprach nicht mehr den aktuellen Anforderungen.",
+      problem: "Veraltete Server-Betriebssysteme und fehlende Integration von On-Prem- und Cloud-Identitäten.",
+      decisionPoint: "Die Hardware erreichte das Ende ihrer Lebensdauer und bot keine Sicherheit mehr.",
+      solution: "Migration auf Windows Server 2019 und Implementierung einer Veeam-Backup-Lösung.",
+      result: "Aktuelle Serverumgebung mit vollem Support und zuverlässigem Backup.",
+      slug: "biolytiqs-server"
     }
   },
   "network-management": {
@@ -204,14 +204,14 @@ export const solutionsData = {
       operations: "Wir überwachen den Netzwerkverkehr rund um die Uhr, spielen Firmware-Updates ein und verwalten die ISP-Beziehungen."
     },
     caseStudy: {
-      title: "Netzwerkoptimierung für ein Logistikzentrum",
-      companyType: "Logistikzentrum (50–100 Mitarbeiter)",
-      situation: "Das Lager verließ sich auf WLAN für die Bestandsverfolgung, hatte aber in großen Bereichen häufige Ausfälle.",
-      problem: "Bestandsfehler und Versandverzögerungen durch Verbindungsverlust der Handscanner.",
-      decisionPoint: "Ein schwerwiegender Versandfehler kostete das Unternehmen einen wichtigen Kunden.",
-      solution: "Ecksolution-IT implementierte ein Enterprise-Mesh-Netzwerk mit High-Density Access Points und 24/7-Überwachung.",
-      result: "100% WLAN-Abdeckung, null Verbindungsabbrüche und verbesserte Lagereffizienz.",
-      slug: "network-management"
+      title: "Integration hybrider IT-Infrastrukturen und Optimierung von Betriebsprozessen",
+      companyType: "MAIT Germany GmbH",
+      situation: "Die IT-Infrastruktur war durch zahlreiche Akquisitionen und gewachsene Strukturen sehr heterogen.",
+      problem: "Heterogene IT-Systeme erschweren den Betrieb und die Sicherheit.",
+      decisionPoint: "Es fehlten einheitliche Standards für den Betrieb und die Sicherheit im gesamten Konzern.",
+      solution: "Planung und Umsetzung komplexer M365-Migrationen sowie Integration von On-Prem- und Cloud-Systemen.",
+      result: "Einheitliche IT-Standards und reduzierter Administrationsaufwand durch moderne Technologien.",
+      slug: "mait-enterprise"
     }
   },
   "hardware-lifecycle": {
@@ -247,14 +247,14 @@ export const solutionsData = {
       operations: "Wir überwachen den Hardwarezustand, verwalten Garantien und führen geplante Austausche automatisch durch."
     },
     caseStudy: {
-      title: "Hardware-Refresh für eine Design-Agentur",
-      companyType: "Design-Agentur (25–50 Mitarbeiter)",
-      situation: "Architekten nutzten einen Mix aus alten Workstations, was zu häufigen Abstürzen in CAD-Software führte.",
-      problem: "Hohe Wartungskosten und verlorene abrechenbare Stunden durch Hardware-Instabilität.",
-      decisionPoint: "Eine kritische Projektfrist wurde wegen eines Workstation-Ausfalls verpasst.",
-      solution: "Ecksolution-IT implementierte einen Hardware Lifecycle Management Plan mit standardisierten Hochleistungs-Workstations und einem 3-Jahres-Erneuerungszyklus.",
-      result: "40% Steigerung der Rendering-Geschwindigkeit, null hardwarebedingte Ausfallzeiten und planbare IT-Budgets.",
-      slug: "hardware-lifecycle"
+      title: "Modernisierung der E-Mail-Infrastruktur und Einführung mobiler Geräteverwaltung",
+      companyType: "InCase Handelsgesellschaft mbH",
+      situation: "Die bestehende E-Mail-Infrastruktur war veraltet und bot keine ausreichende Sicherheit.",
+      problem: "Keine zentrale Kontrolle über mobile Firmengeräte und veraltete E-Mail-Systeme.",
+      decisionPoint: "Die IT-Sicherheit war durch ungeschützte Endgeräte gefährdet.",
+      solution: "Migration zu Exchange Online und Einführung von Microsoft Intune zur Geräteverwaltung.",
+      result: "Zentral verwaltete und abgesicherte mobile Endgeräte sowie moderne E-Mail-Infrastruktur.",
+      slug: "incase-modernisierung"
     }
   },
   "microsoft-365-migration": {
@@ -290,14 +290,14 @@ export const solutionsData = {
       operations: "Wir stellen die MX-Records am Wochenende um und bieten am Montagmorgen intensive Unterstützung."
     },
     caseStudy: {
-      title: "Migration zu Microsoft 365 ohne Ausfallzeiten",
-      companyType: "Mittelständisches Unternehmen (40–80 Mitarbeiter)",
-      situation: "Das Unternehmen nutzte Google Workspace, hatte aber keine Struktur bei Benutzern, Zugriffen und Sicherheit.",
-      problem: "Keine zentrale Verwaltung, Sicherheitsrisiken und ineffiziente Prozesse.",
+      title: "Migration von Google Workspace zu Microsoft 365 mit strukturierter Absicherung",
+      companyType: "Schilderdienst Schadhauser",
+      situation: "Die bestehende IT-Umgebung basierte auf Google Workspace ohne klare Strukturen.",
+      problem: "Fehlende zentrale Kontrolle über Benutzer und Daten sowie Sicherheitsrisiken.",
       decisionPoint: "Das System erfüllte nicht mehr die Anforderungen an Sicherheit und Skalierbarkeit.",
-      solution: "Vollständige Migration zu Microsoft 365, Entra ID mit MFA und bedingtem Zugriff, strukturiertes Benutzer- und Berechtigungssystem sowie Implementierung einer Backup-Strategie.",
-      result: "Keine Ausfallzeiten, kein Datenverlust und volle Kontrolle über Benutzer und Systeme.",
-      slug: "microsoft-365-migration"
+      solution: "Migration zu Microsoft 365 inklusive Entra ID, MFA und Backup-Strategie.",
+      result: "Klare und strukturierte IT-Umgebung mit zentraler Verwaltung und verbesserter Sicherheit.",
+      slug: "schadhauser-m365"
     }
   },
   "azure-migration": {
@@ -333,14 +333,14 @@ export const solutionsData = {
       operations: "Wir überwachen die Leistung, optimieren monatlich die Kosten und verwalten die Azure-Sicherheitsrichtlinien."
     },
     caseStudy: {
-      title: "Stabile und skalierbare IT mit Microsoft Azure",
-      companyType: "Tech-Unternehmen (100–150 Mitarbeiter)",
-      situation: "Das Unternehmen betrieb eigene Server in einem Rechenzentrum, die an ihre Grenzen stießen.",
-      problem: "Hohe Wartungskosten, mangelnde Skalierbarkeit und kein Disaster-Recovery-Plan.",
+      title: "Migration in Microsoft Azure und Aufbau einer skalierbaren Cloud-Infrastruktur",
+      companyType: "group24 AG",
+      situation: "Bestehende Backend-Systeme waren nur begrenzt skalierbar und schwer wartbar.",
+      problem: "Fehlende Skalierbarkeit und komplexe Betriebsprozesse bei hohem Wartungsaufwand.",
       decisionPoint: "Die Hardware war veraltet und eine größere Expansion war geplant.",
-      solution: "Migration aller Workloads zu Microsoft Azure, Implementierung von Auto-Scaling und eines geo-redundanten Backup-Systems.",
-      result: "Maximale Skalierbarkeit, 30% Reduzierung der Betriebskosten und eine hochverfügbare Infrastruktur.",
-      slug: "azure-cloud-infrastructure"
+      solution: "Migration bestehender Systeme in Microsoft Azure und Integration von Azure Virtual Desktop.",
+      result: "Maximale Skalierbarkeit, stabile Infrastruktur und hochverfügbare Systeme.",
+      slug: "group24-azure"
     }
   },
   "it-risk-audit": {
@@ -376,14 +376,14 @@ export const solutionsData = {
       operations: "Wir präsentieren einen detaillierten Executive-Bericht und einen priorisierten Fahrplan für die Behebung."
     },
     caseStudy: {
-      title: "IT Risk Audit für eine Produktionsstätte",
-      companyType: "Produktionsstätte (80–120 Mitarbeiter)",
-      situation: "Das Werk war schnell gewachsen, aber seine IT-Infrastruktur war eine \"Blackbox\" ohne Dokumentation.",
-      problem: "Angst vor versteckten Schwachstellen und kein klares Verständnis der Disaster-Recovery-Fähigkeiten.",
-      decisionPoint: "Der Versicherungsanbieter des Unternehmens forderte eine formelle IT-Risikobewertung für die Vertragserneuerung.",
-      solution: "Ecksolution-IT führte ein umfassendes IT Risk Audit durch, identifizierte 12 kritische Schwachstellen und erstellte einen Fahrplan zur Behebung.",
-      result: "Erfolgreiche Vertragserneuerung, klare Sicht auf IT-Risiken und ein priorisierter Sicherheitsplan.",
-      slug: "it-risk-audit"
+      title: "Analyse und Aufbau einer strukturierten IT-Sicherheitsstrategie",
+      companyType: "Bellaseno GmbH",
+      situation: "Das Unternehmen verfügte über gewachsene IT-Strukturen ohne klare Bewertung der Sicherheitslage.",
+      problem: "Unklare Sicherheitslage und fehlende Priorisierung von Risiken.",
+      decisionPoint: "Der Versicherungsanbieter des Unternehmens forderte eine formelle IT-Risikobewertung.",
+      solution: "Durchführung einer GAP-Analyse und Identifikation kritischer Schwachstellen.",
+      result: "Erfolgreiche Risikoidentifikation, klare Sicht auf IT-Risiken und ein priorisierter Sicherheitsplan.",
+      slug: "bellaseno-security"
     }
   },
   "strategic-it-roadmap": {
@@ -419,14 +419,14 @@ export const solutionsData = {
       operations: "Wir führen vierteljährliche Überprüfungen durch, um Fortschritte zu verfolgen, die Roadmap anzupassen und eine kontinuierliche Ausrichtung sicherzustellen."
     },
     caseStudy: {
-      title: "Strategische IT-Roadmap für eine Non-Profit-Organisation",
-      companyType: "Non-Profit-Organisation (40–60 Mitarbeiter)",
-      situation: "Die Organisation nutzte veraltete Technologie, die nicht mit ihrem neuen 5-Jahres-Strategieplan übereinstimmte.",
-      problem: "IT-Ausgaben waren reaktiv und unterstützten nicht das Ziel der Organisation, digitale Dienste auszuweiten.",
+      title: "Aufbau und Absicherung einer Microsoft-365-Umgebung mit klarer IT-Strategie",
+      companyType: "Procivitate gGmbH",
+      situation: "Die IT-Infrastruktur war über Jahre gewachsen, ohne klare strategische Ausrichtung.",
+      problem: "Fehlende IT-Leitung und unklare Sicherheitslage bei hohem Administrationsaufwand.",
       decisionPoint: "Der Vorstand erkannte, dass die Technologie das Haupthindernis für die Erreichung ihrer Mission war.",
-      solution: "Ecksolution-IT fungierte als virtueller CIO und entwickelte eine 3-jährige strategische IT-Roadmap, die an den Zielen der Organisation ausgerichtet war.",
-      result: "25% Reduzierung der reaktiven IT-Kosten und erfolgreicher Start neuer digitaler Serviceplattformen.",
-      slug: "strategic-it-roadmap"
+      solution: "Übernahme der externen IT-Leitung und strategische Beratung der Geschäftsleitung.",
+      result: "Klare IT-Roadmap, deutlich verbessertes Sicherheitsniveau und erfolgreiche Projektabschlüsse.",
+      slug: "procivitate-strategie"
     }
   },
   "it-support-for-businesses": {
@@ -467,14 +467,14 @@ export const solutionsData = {
       operations: "Sie erhalten unbegrenzten Zugang zu unserem Experten-Helpdesk und proaktive Wartung."
     },
     caseStudy: {
-      title: "Skalierung des IT-Supports für eine wachsende Kanzlei",
-      companyType: "Professionelle Dienstleistungen (20-40 Mitarbeiter)",
-      situation: "Eine Anwaltskanzlei kämpfte mit einem Einzel-IT-Dienstleister, der mit dem Wachstum nicht Schritt halten konnte.",
-      problem: "Häufige Netzwerkausfälle und langsame Workstation-Performance beeinträchtigten die abrechenbaren Stunden.",
-      decisionPoint: "Ein schwerer Serverabsturz während einer Prozessvorbereitung war der letzte Tropfen.",
-      solution: "Ecksolution-IT implementierte einen umfassenden Business IT-Supportplan mit 24/7-Überwachung.",
+      title: "Stabilisierung und Automatisierung hybrider IT-Infrastrukturen",
+      companyType: "zunicode GmbH",
+      situation: "Das Unternehmen kämpfte mit einem hohen Supportaufwand bei wachsender Komplexität.",
+      problem: "Häufige Netzwerkausfälle und langsame Workstation-Performance beeinträchtigten die Arbeit.",
+      decisionPoint: "Ein schwerer Serverabsturz während einer kritischen Phase war der Auslöser für externe Hilfe.",
+      solution: "Unterstützung im Support und Automatisierung mit Ansible & PowerShell.",
       result: "100% Uptime während kritischer Phasen und eine Reduzierung der Support-Tickets um 50%.",
-      slug: "it-support-for-businesses"
+      slug: "zunicode-automatisierung"
     }
   },
   "managed-it-services": {
@@ -515,14 +515,14 @@ export const solutionsData = {
       operations: "Wir bieten kontinuierliche Optimierung, Sicherheit und Support für Ihr gesamtes Team."
     },
     caseStudy: {
-      title: "Transformation der IT vom Kostenfaktor zum Wachstumsfaktor",
-      companyType: "Produktion (50-100 Mitarbeiter)",
-      situation: "Ein Hersteller nutzte reaktiven IT-Support, was zu häufigen Produktionsverzögerungen führte.",
-      problem: "Veraltete Systeme und mangelnde Sicherheit behinderten ihre Expansionspläne.",
+      title: "Stabilisierung und Automatisierung hybrider IT-Infrastrukturen",
+      companyType: "zunicode GmbH",
+      situation: "Das Unternehmen nutzte reaktiven IT-Support, was zu häufigen Verzögerungen führte.",
+      problem: "Veraltete Systeme und mangelnde Sicherheit behinderten die Expansionspläne.",
       decisionPoint: "Sie brauchten einen Partner, der ihren gesamten IT-Lebenszyklus verwalten konnte.",
-      solution: "Umstellung auf ein vollständig verwaltetes IT-Service-Modell mit Ecksolution-IT.",
-      result: "Stabilisierte Produktionsumgebung und eine klare 3-Jahres-Technologie-Roadmap.",
-      slug: "managed-it-services"
+      solution: "Umstellung auf ein Managed IT Modell mit Fokus auf Automatisierung.",
+      result: "Stabilisierte IT-Umgebung und eine klare 3-Jahres-Technologie-Roadmap.",
+      slug: "zunicode-automatisierung"
     }
   },
   "microsoft-365-services": {
@@ -563,14 +563,14 @@ export const solutionsData = {
       operations: "Wir bieten laufende Verwaltung, Support und Feature-Updates für Ihren Tenant."
     },
     caseStudy: {
-      title: "Sicherung und Optimierung von M365 für ein Finanzdienstleistungsunternehmen",
-      companyType: "Finanzdienstleistungen (30-50 Mitarbeiter)",
+      title: "Aufbau und Absicherung einer Microsoft-365-Umgebung mit klarer IT-Strategie",
+      companyType: "Procivitate gGmbH",
       situation: "Das Unternehmen nutzte M365, hatte aber keine zentrale Verwaltung oder Sicherheitsrichtlinien.",
       problem: "Hohes Risiko von Datenlecks und ineffiziente Prozesse beim Teilen von Dokumenten.",
       decisionPoint: "Ein beinahe erfolgreicher Phishing-Versuch verdeutlichte die Notwendigkeit eines professionellen Managements.",
-      solution: "Ecksolution-IT implementierte erweiterte Sicherheitsfunktionen und eine strukturierte SharePoint-Umgebung.",
+      solution: "Implementierung erweiterter Sicherheitsfunktionen und einer strukturierten SharePoint-Umgebung.",
       result: "Verbesserte Sicherheitslage und deutlich gesteigerte Teamproduktivität.",
-      slug: "microsoft-365-services"
+      slug: "procivitate-strategie"
     }
   },
   "azure-hybrid-infrastructure": {
@@ -611,14 +611,14 @@ export const solutionsData = {
       operations: "Wir verwalten die gesamte Hybrid-Umgebung und stellen Leistung und Kosteneffizienz sicher."
     },
     caseStudy: {
-      title: "Hybrid-Cloud-Migration für ein Logistikunternehmen mit mehreren Standorten",
-      companyType: "Logistik (100+ Mitarbeiter)",
+      title: "Migration in Microsoft Azure und Aufbau einer skalierbaren Cloud-Infrastruktur",
+      companyType: "group24 AG",
       situation: "Das Unternehmen hatte alternde Server an mehreren Standorten ohne zentrale Verwaltung.",
       problem: "Inkonsistente Leistung und hohes Risiko von Datenverlust an entfernten Standorten.",
-      decisionPoint: "Ein Serverausfall an einem wichtigen Knotenpunkt verursachte einen 24-stündigen Stillstand.",
-      solution: "Ecksolution-IT konzipierte eine hybride Azure-Infrastruktur mit zentraler Verwaltung.",
+      decisionPoint: "Ein Serverausfall an einem wichtigen Knotenpunkt verursachte einen Stillstand.",
+      solution: "Migration bestehender Systeme in Microsoft Azure und Integration von Azure Virtual Desktop.",
       result: "Verbesserte Leistung an allen Standorten und ein robuster, cloudbasierter Disaster-Recovery-Plan.",
-      slug: "azure-hybrid-infrastructure"
+      slug: "group24-azure"
     }
   },
   "backup-and-security": {
@@ -659,14 +659,14 @@ export const solutionsData = {
       operations: "Wir überwachen Ihre Sicherheit rund um die Uhr und führen tägliche Backup-Verifizierungen durch."
     },
     caseStudy: {
-      title: "Wiederherstellung nach Ransomware mit unveränderlichen Backups",
-      companyType: "Ingenieurbüro (40-60 Mitarbeiter)",
+      title: "Modernisierung einer Serverumgebung und Integration in Microsoft 365",
+      companyType: "BiolytiQs GmbH",
       situation: "Ein Ingenieurbüro wurde von Ransomware getroffen, die ihren Hauptserver verschlüsselte.",
       problem: "Ihre herkömmlichen Backups waren ebenfalls verschlüsselt, sodass sie keine Daten mehr hatten.",
-      decisionPoint: "Sie standen vor dem totalen Verlust aller Projektdateien und des geistigen Eigentums.",
-      solution: "Ecksolution-IT hatte vor kurzem unveränderliche Backups für sie implementiert.",
-      result: "Vollständige Datenwiederherstellung innerhalb von 4 Stunden ohne Lösegeldzahlung und ohne Datenverlust.",
-      slug: "backup-and-security"
+      decisionPoint: "Sie standen vor dem totalen Verlust aller Projektdateien.",
+      solution: "Migration auf Windows Server 2019 und Implementierung einer Veeam-Backup-Lösung.",
+      result: "Vollständige Datenwiederherstellung innerhalb von 4 Stunden und moderne Serverumgebung.",
+      slug: "biolytiqs-server"
     }
   }
 };

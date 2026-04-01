@@ -197,7 +197,7 @@ export default function ImpressumClient() {
                     </div>
                     <div>
                       <p className="text-xs text-gray-400 uppercase tracking-widest font-bold">WhatsApp</p>
-                      <p className="text-gray-500 italic">Geschäftliche Nummer</p>
+                      <p className="text-gray-500 italic">+49176 34580607</p>
                     </div>
                   </div>
                 </div>
@@ -267,9 +267,9 @@ export default function ImpressumClient() {
                   <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Onlinepräsenzen</h3>
                   <p className="text-gray-600 mb-4">Dieses Impressum gilt auch für folgende Onlinepräsenzen:</p>
                   <div className="flex flex-wrap gap-4">
-                    <span className="px-4 py-2 rounded-lg bg-white border border-gray-100 text-sm font-medium text-gray-700">Facebook</span>
-                    <span className="px-4 py-2 rounded-lg bg-white border border-gray-100 text-sm font-medium text-gray-700">Instagram</span>
-                    <span className="px-4 py-2 rounded-lg bg-white border border-gray-100 text-sm font-medium text-gray-700">LinkedIn</span>
+                    <span className="px-4 py-2 rounded-lg bg-white border border-gray-100 text-sm font-medium text-gray-700">https://www.freelancermap.de/profil/systems-engineer-244881</span>
+                    <span className="px-4 py-2 rounded-lg bg-white border border-gray-100 text-sm font-medium text-gray-700">https://www.freelance.de/freelancer/EcksolutionIT</span>
+                    <span className="px-4 py-2 rounded-lg bg-white border border-gray-100 text-sm font-medium text-gray-700">https://www.linkedin.com/company/ecksolution-it</span>
                   </div>
                 </div>
               </div>
