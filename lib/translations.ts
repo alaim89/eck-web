@@ -119,12 +119,12 @@ export const translations = {
     },
     results: {
       headline: "Verlässlichkeit in Zahlen",
-      subheadline: "Wir messen unseren Erfolg an Ihrer Zufriedenheit und der Stabilität Ihrer Systeme.",
+      subheadline: "Operative Verantwortung, schnelle Reaktion und stabile Systeme – sichtbar gemacht in klaren Kennzahlen.",
       cards: [
-        { metric: "< 2 Stunden", label: "Reaktionszeit" },
-        { metric: "100%", label: "Verantwortung" },
-        { metric: "8+", label: "Jahre Erfahrung" },
-        { metric: "24/7", label: "Monitoring" },
+        { metric: "< 2h", label: "Reaktionszeit", variant: "primary" },
+        { metric: "24/7", label: "Monitoring", variant: "secondary" },
+        { metric: "8+", label: "Jahre Erfahrung", variant: "secondary" },
+        { metric: "100%", label: "Ownership", variant: "status" },
       ],
     },
     services: {
