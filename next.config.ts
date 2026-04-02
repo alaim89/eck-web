@@ -21,6 +21,85 @@ const nextConfig: NextConfig = {
   },
   output: 'standalone',
   transpilePackages: ['motion'],
+  async redirects() {
+    return [
+      {
+        source: '/hybrid-it-infrastruktur',
+        destination: '/solutions/hybrid-it-infrastruktur',
+        permanent: true,
+      },
+      {
+        source: '/managed-it-services',
+        destination: '/solutions/managed-it-service',
+        permanent: true,
+      },
+      {
+        source: '/solutions/managed-it-services',
+        destination: '/solutions/managed-it-service',
+        permanent: true,
+      },
+      {
+        source: '/solutions/it-support-for-businesses',
+        destination: '/solutions/managed-it-service',
+        permanent: true,
+      },
+      {
+        source: '/solutions/managed-it-operations',
+        destination: '/solutions/managed-it-service',
+        permanent: true,
+      },
+      {
+        source: '/solutions/cybersecurity-protection',
+        destination: '/solutions/it-sicherheit',
+        permanent: true,
+      },
+      {
+        source: '/solutions/backup-and-security',
+        destination: '/solutions/it-sicherheit',
+        permanent: true,
+      },
+      {
+        source: '/solutions/network-management',
+        destination: '/solutions/netzwerk-management',
+        permanent: true,
+      },
+      {
+        source: '/solutions/hardware-lifecycle',
+        destination: '/solutions/hardware-client-management',
+        permanent: true,
+      },
+      {
+        source: '/solutions/it-risk-audit',
+        destination: '/solutions/it-risiko-audit',
+        permanent: true,
+      },
+      {
+        source: '/solutions/strategic-it-roadmap',
+        destination: '/solutions/strategische-it-betreuung',
+        permanent: true,
+      },
+      {
+        source: '/solutions/microsoft-365-services',
+        destination: '/solutions/microsoft-365-migration',
+        permanent: true,
+      },
+      {
+        source: '/solutions/azure-hybrid-infrastructure',
+        destination: '/solutions/azure-hybrid-betreuung',
+        permanent: true,
+      },
+      {
+        source: '/retainer',
+        destination: '/solutions/externer-it-verantwortlicher',
+        permanent: true,
+      },
+      {
+        source: '/solutions/retainer',
+        destination: '/solutions/externer-it-verantwortlicher',
+        permanent: true,
+      },
+    ];
+  },
   webpack: (config, {dev}) => {
     // HMR is disabled in AI Studio via DISABLE_HMR env var.
     // Do not modifyâfile watching is disabled to prevent flickering during agent edits.

@@ -1,130 +1,646 @@
 export const solutionsData = {
-  "managed-it-operations": {
-    title: "Managed IT Operations",
-    hero: "Wir betreiben Ihre IT zuverlässig, damit Ihr Geschäft ohne Unterbrechung läuft.",
-    description: "Vollständige IT-Verantwortung. Wir werden zu Ihrer kompletten IT-Abteilung, eliminieren Schuldzuweisungen und stellen sicher, dass Ihre Systeme einfach funktionieren.",
+  "hybrid-it-infrastruktur": {
+    title: "Hybride IT-Infrastruktur",
+    hero: "Linux, Microsoft 365 und Azure nahtlos integriert.",
+    description: "Wir betreuen Ihre hybride IT-Infrastruktur – stabil, sicher und planbar. Wir verbinden das Beste aus On-Premise und Cloud für maximale Effizienz.",
     problem: {
-      title: "Die Kosten des IT-Chaos",
+      title: "Komplexität in der hybriden Welt",
       points: [
-        "Unvorhersehbare Ausfallzeiten, die die Produktivität der Mitarbeiter stoppen",
-        "Variable IT-Kosten, die die Budgetplanung zerstören",
-        "Ständige Schuldzuweisungen zwischen verschiedenen Softwareanbietern",
-        "Unternehmensleiter verschwenden Zeit mit der Verwaltung von IT-Problemen"
+        "Inkonsistente Datenbestände zwischen Cloud und On-Premise",
+        "Sicherheitsrisiken durch unklare Schnittstellen",
+        "Hoher Administrationsaufwand für verschiedene Systeme",
+        "Mangelnde Performance bei der Daten-Synchronisation"
       ]
     },
     solution: {
-      title: "Vollständige IT-Verantwortung",
+      title: "Nahtlose Hybrid-Integration",
       points: [
-        "Eine feste monatliche Gebühr für den gesamten IT-Support",
-        "Proaktive Überwachung, um Probleme zu stoppen, bevor sie entstehen",
-        "Zentraler Ansprechpartner für alle Technologieanforderungen",
-        "Strategische Ausrichtung auf Ihre Geschäftsziele"
+        "Zentrale Verwaltung von Identitäten und Zugriffen",
+        "Optimierte Datenflüsse zwischen allen Standorten",
+        "Einheitliches Sicherheitskonzept für alle Umgebungen",
+        "Zukunftssichere Architektur für Linux & Windows"
       ]
     },
     results: [
-      { metric: "99,9%", label: "Systemverfügbarkeit" },
-      { metric: "Priorisiert", label: "Reaktionszeit" },
-      { metric: "100%", label: "Planbare IT-Kosten" }
+      { metric: "100%", label: "Datenkonsistenz" },
+      { metric: "40%", label: "Weniger Admin-Aufwand" },
+      { metric: "99,9%", label: "Verfügbarkeit" }
     ],
     process: {
-      analysis: "Wir auditieren Ihre aktuelle Infrastruktur, identifizieren Single Points of Failure und dokumentieren jedes System.",
-      implementation: "Wir setzen unsere Management-Agenten ein, standardisieren Ihre Sicherheit und übernehmen die Lieferantenbeziehungen.",
-      operations: "Wir bieten 24/7-Überwachung, schnellen Helpdesk-Support und proaktive Wartung."
-    },
-    caseStudy: {
-      title: "Stabilisierung und Automatisierung hybrider IT-Infrastrukturen",
-      companyType: "zunicode GmbH",
-      situation: "Das Unternehmen betrieb eine hybride IT-Umgebung mit stetig steigender Komplexität und einem wachsenden Supportaufwand.",
-      problem: "Hoher manueller Aufwand bei Routineaufgaben und fehlende Struktur in den Supportprozessen.",
-      decisionPoint: "Die internen Ressourcen waren durch das Tagesgeschäft vollständig gebunden.",
-      solution: "Automatisierung mit Ansible & PowerShell sowie Strukturierung von Supportprozessen.",
-      result: "Reduzierte manuelle Eingriffe durch gezielte Automatisierung und stabilerer IT-Betrieb.",
-      slug: "zunicode-automatisierung"
-    }
-  },
-  "co-managed-it": {
-    title: "Co-Managed IT",
-    hero: "Stärken Sie Ihr internes Team mit Experten-Support und Enterprise-Tools.",
-    description: "Wir arbeiten partnerschaftlich mit Ihrem bestehenden IT-Personal zusammen und bieten die fortschrittlichen Tools, Tier-3-Expertise und Backup-Abdeckung, die sie für ihren Erfolg benötigen.",
-    problem: {
-      title: "Überfordertes internes IT-Team",
-      points: [
-        "Einzelne IT-Manager ertrinken in einfachen Helpdesk-Tickets",
-        "Mangel an Enterprise-Grade Sicherheits- und Überwachungstools",
-        "Keine Abdeckung während Urlaub oder Krankheit",
-        "Unfähigkeit, sich auf strategische Geschäftsprojekte zu konzentrieren"
-      ]
-    },
-    solution: {
-      title: "Strategische IT-Partnerschaft",
-      points: [
-        "Wir übernehmen den Tier-1-Support, damit sich Ihr Team auf Projekte konzentrieren kann",
-        "Zugang zu unserem Enterprise RMM- und Security-Stack",
-        "Garantierte Abdeckung 24/7/365",
-        "Eskalationspunkt für komplexe Infrastrukturprobleme"
-      ]
-    },
-    results: [
-      { metric: "85%", label: "Reduzierung des Ticket-Backlogs" },
-      { metric: "24/7", label: "Überwachung & Support" },
-      { metric: "100%", label: "Zugang zu Enterprise-Tools" }
-    ],
-    process: {
-      analysis: "Wir bewerten die Arbeitslast Ihres Teams, identifizieren Qualifikationslücken und bestimmen, wo wir den größten Mehrwert bieten können.",
-      implementation: "Wir integrieren unsere Tools in Ihre Umgebung und legen klare Eskalationsverfahren fest.",
-      operations: "Wir arbeiten an der Seite Ihres Teams, bearbeiten Überlauf-Tickets und bieten strategische Beratung auf hohem Niveau."
+      analysis: "Wir analysieren Ihre bestehende Infrastruktur und identifizieren Optimierungspotenziale für die Hybrid-Cloud.",
+      implementation: "Wir implementieren die notwendigen Schnittstellen und migrieren Ihre Workloads kontrolliert.",
+      operations: "Wir übernehmen den laufenden Betrieb und sorgen für kontinuierliche Optimierung und Sicherheit."
     },
     caseStudy: {
       title: "Stabilisierung und Automatisierung hybrider IT-Infrastrukturen",
       companyType: "zunicode GmbH",
       situation: "Das Unternehmen betrieb eine hybride IT-Umgebung mit stetig steigender Komplexität.",
-      problem: "Hoher manueller Aufwand bei Routineaufgaben und fehlende Struktur in den Supportprozessen.",
+      problem: "Hoher manueller Aufwand bei Routineaufgaben und fehlende Struktur.",
       decisionPoint: "Die internen Ressourcen waren durch das Tagesgeschäft vollständig gebunden.",
-      solution: "Unterstützung im Support und Automatisierung mit Ansible & PowerShell.",
-      result: "Reduzierte manuelle Eingriffe durch gezielte Automatisierung und stabilerer IT-Betrieb.",
+      solution: "Automatisierung mit Ansible & PowerShell sowie Strukturierung der Prozesse.",
+      result: "Reduzierte manuelle Eingriffe und stabilerer IT-Betrieb.",
       slug: "zunicode-automatisierung"
     }
   },
-  "cybersecurity-protection": {
-    title: "Cybersecurity Protection",
-    hero: "Sicherheit auf Enterprise-Niveau, skaliert für mittelständische Unternehmen.",
-    description: "Wir schützen Ihr Unternehmen vor Ransomware, Phishing und Datenschutzverletzungen mit einer umfassenden, mehrschichtigen Sicherheitsstrategie.",
+  "managed-it-service": {
+    title: "Managed IT-Service",
+    hero: "Professioneller IT-Betrieb mit voller Verantwortung.",
+    description: "Wir übernehmen die volle Verantwortung für Ihre IT-Infrastruktur. Proaktiv, sicher und nach vereinbartem Leistungsumfang.",
     problem: {
-      title: "Die wachsende Bedrohungslandschaft",
+      title: "IT als ständiger Unruheherd",
       points: [
-        "Ransomware-Angriffe auf verwundbare mittelständische Unternehmen",
-        "Mitarbeiter fallen auf raffinierte Phishing-E-Mails herein",
-        "Mangelnde Sichtbarkeit von Netzwerk-Schwachstellen",
-        "Compliance-Anforderungen werden zunehmend komplexer"
+        "Unvorhersehbare IT-Kosten durch reaktives Handeln",
+        "Mangelnde Expertise für komplexe Sicherheitsfragen",
+        "Lange Ausfallzeiten bei technischen Problemen",
+        "Keine strategische Weiterentwicklung der IT"
       ]
     },
     solution: {
-      title: "Proaktive Verteidigungsstrategie",
+      title: "Proaktives IT-Management",
       points: [
-        "Endpoint Detection and Response (EDR) der nächsten Generation",
-        "Kontinuierliche Security-Awareness-Schulungen für Mitarbeiter",
-        "Implementierung einer Zero-Trust-Netzwerkarchitektur",
-        "Automatisierte Bedrohungssuche und -behebung"
+        "Feste monatliche Pauschale für volle Kostentransparenz",
+        "24/7 Monitoring und proaktive Fehlerbehebung",
+        "Regelmäßige Sicherheits-Updates und Patch-Management",
+        "Strategische Beratung durch Ihren persönlichen vCIO"
       ]
     },
     results: [
-      { metric: "0", label: "Erfolgreiche Einbrüche" },
-      { metric: "100%", label: "Geschultes Personal" },
-      { metric: "24/7", label: "Aktive Bedrohungssuche" }
+      { metric: "30%", label: "Kostenersparnis" },
+      { metric: "99,9%", label: "System-Uptime" },
+      { metric: "100%", label: "Fokus aufs Kerngeschäft" }
     ],
     process: {
-      analysis: "Wir führen einen tiefgehenden Schwachstellenscan durch und bewerten Ihre aktuelle Sicherheitslage anhand von Branchenstandards.",
-      implementation: "Wir setzen unseren Security-Stack ein, erzwingen MFA und sichern verwundbare Endpunkte ab.",
-      operations: "Wir überwachen Ihr Netzwerk rund um die Uhr, suchen aktiv nach Bedrohungen und schulen Ihre Mitarbeiter."
+      analysis: "Wir führen ein umfassendes Audit Ihrer IT durch und definieren gemeinsam die Service-Level.",
+      implementation: "Wir standardisieren Ihre Systeme und führen unsere Management-Tools ein.",
+      operations: "Wir betreiben Ihre IT proaktiv und berichten regelmäßig über den Status."
+    },
+    caseStudy: {
+      title: "Stabilisierung und Automatisierung hybrider IT-Infrastrukturen",
+      companyType: "zunicode GmbH",
+      situation: "Das Unternehmen nutzte reaktiven IT-Support, was zu häufigen Verzögerungen führte.",
+      problem: "Veraltete Systeme und mangelnde Sicherheit behinderten die Expansion.",
+      decisionPoint: "Sie brauchten einen Partner für den gesamten IT-Lebenszyklus.",
+      solution: "Umstellung auf Managed IT Services mit Fokus auf Automatisierung.",
+      result: "Stabilisierte IT-Umgebung und klare Technologie-Roadmap.",
+      slug: "zunicode-automatisierung"
+    }
+  },
+  "externer-it-verantwortlicher": {
+    title: "Externer IT-Verantwortlicher",
+    hero: "Strategische IT-Leitung für Ihr Unternehmen.",
+    description: "Sichern Sie sich die Expertise eines erfahrenen IT-Leiters, ohne die Kosten für eine Vollzeitstelle. Wir steuern Ihre IT-Strategie und Projekte.",
+    problem: {
+      title: "Fehlende strategische Führung",
+      points: [
+        "IT-Entscheidungen ohne langfristige Strategie",
+        "Keine Kontrolle über IT-Budgets und Investitionen",
+        "Schwierigkeiten bei der Steuerung externer Dienstleister",
+        "Mangelnde Ausrichtung der IT an den Geschäftszielen"
+      ]
+    },
+    solution: {
+      title: "Ihre IT-Leitung auf Abruf",
+      points: [
+        "Entwicklung und Umsetzung einer IT-Roadmap",
+        "Budgetplanung und Optimierung der IT-Kosten",
+        "Projektleitung für komplexe IT-Vorhaben",
+        "Regelmäßige Berichterstattung an die Geschäftsführung"
+      ]
+    },
+    results: [
+      { metric: "100%", label: "Strategische Klarheit" },
+      { metric: "20%", label: "Budget-Optimierung" },
+      { metric: "Top", label: "Projekt-Erfolgsquote" }
+    ],
+    process: {
+      analysis: "Wir analysieren Ihre Geschäftsziele und den aktuellen Stand Ihrer IT.",
+      implementation: "Wir erstellen eine detaillierte IT-Roadmap und definieren Verantwortlichkeiten.",
+      operations: "Wir steuern Ihre IT-Projekte und beraten Sie regelmäßig in allen IT-Fragen."
+    },
+    caseStudy: {
+      title: "Aufbau und Absicherung einer Microsoft-365-Umgebung",
+      companyType: "Procivitate gGmbH",
+      situation: "Die IT-Infrastruktur war über Jahre gewachsen, ohne klare strategische Ausrichtung.",
+      problem: "Fehlende IT-Leitung und unklare Sicherheitslage.",
+      decisionPoint: "Der Vorstand erkannte die Notwendigkeit einer professionellen IT-Steuerung.",
+      solution: "Übernahme der externen IT-Leitung und strategische Beratung.",
+      result: "Klare IT-Roadmap und deutlich verbessertes Sicherheitsniveau.",
+      slug: "procivitate-strategie"
+    }
+  },
+  "it-sicherheit": {
+    title: "IT-Sicherheit für Unternehmen",
+    hero: "Ganzheitlicher Schutz vor Cyber-Bedrohungen.",
+    description: "Wir schützen Ihre Unternehmensdaten mit einem mehrschichtigen Sicherheitskonzept. Von der Prävention bis zur schnellen Reaktion im Ernstfall.",
+    problem: {
+      title: "Die Gefahr ist real",
+      points: [
+        "Tägliche Angriffe durch Ransomware und Phishing",
+        "Schwachstellen in veralteter Software und Hardware",
+        "Mangelndes Sicherheitsbewusstsein der Mitarbeiter",
+        "Fehlende Compliance mit gesetzlichen Vorgaben (DSGVO)"
+      ]
+    },
+    solution: {
+      title: "Mehrschichtige Verteidigung",
+      points: [
+        "Endpoint Detection and Response (EDR) der nächsten Generation",
+        "Regelmäßige Sicherheits-Audits und Schwachstellen-Scans",
+        "Security-Awareness-Schulungen für Ihr Team",
+        "Implementierung von Zero-Trust-Architekturen"
+      ]
+    },
+    results: [
+      { metric: "0", label: "Erfolgreiche Angriffe" },
+      { metric: "100%", label: "Compliance-Erfüllung" },
+      { metric: "24/7", label: "Aktive Überwachung" }
+    ],
+    process: {
+      analysis: "Wir führen eine umfassende Risikoanalyse durch und identifizieren Schwachstellen.",
+      implementation: "Wir implementieren die notwendigen Sicherheitslösungen und härten Ihre Systeme.",
+      operations: "Wir überwachen Ihre IT kontinuierlich und reagieren sofort auf Anomalien."
     },
     caseStudy: {
       title: "Analyse und Aufbau einer strukturierten IT-Sicherheitsstrategie",
       companyType: "Bellaseno GmbH",
-      situation: "Das Unternehmen verfügte über gewachsene IT-Strukturen ohne klare Bewertung der aktuellen Sicherheitslage.",
+      situation: "Das Unternehmen verfügte über gewachsene IT-Strukturen ohne klare Sicherheitsbewertung.",
       problem: "Unklare Sicherheitslage und fehlende Priorisierung von Risiken.",
-      decisionPoint: "Es fehlte eine belastbare Entscheidungsgrundlage für Investitionen in die IT-Sicherheit.",
-      solution: "Durchführung einer GAP-Analyse und Entwicklung eines Maßnahmenkatalogs nach BSI-Vorgaben.",
-      result: "Klare Übersicht über alle relevanten Sicherheitsrisiken und strukturierte Entscheidungsbasis.",
+      decisionPoint: "Es fehlte eine belastbare Entscheidungsgrundlage für Investitionen.",
+      solution: "Durchführung einer GAP-Analyse und Entwicklung eines Maßnahmenkatalogs.",
+      result: "Klare Übersicht über Risiken und strukturierte Entscheidungsbasis.",
+      slug: "bellaseno-security"
+    }
+  },
+  "endpoint-firewall-security": {
+    title: "Endpoint & Firewall Security",
+    hero: "Schutz für alle Geräte und Netzwerke.",
+    description: "Sichern Sie jeden Endpunkt und jede Netzwerkverbindung ab. Wir bieten modernste Firewall-Lösungen und Endpoint-Protection für maximale Sicherheit.",
+    problem: {
+      title: "Offene Tore für Angreifer",
+      points: [
+        "Ungeschützte Laptops und Mobilgeräte im Homeoffice",
+        "Veraltete Firewalls ohne moderne Bedrohungserkennung",
+        "Unkontrollierter Datenabfluss durch fehlende Segmentierung",
+        "Mangelnde Sichtbarkeit von Angriffen auf Endgeräte"
+      ]
+    },
+    solution: {
+      title: "Umfassender Netzwerkschutz",
+      points: [
+        "Next-Generation Firewalls mit Deep Packet Inspection",
+        "Zentral verwaltete Endpoint-Security (Antivirus & EDR)",
+        "Sichere VPN-Verbindungen für mobiles Arbeiten",
+        "Netzwerk-Segmentierung zur Schadensbegrenzung"
+      ]
+    },
+    results: [
+      { metric: "100%", label: "Endpunkt-Abdeckung" },
+      { metric: "Realtime", label: "Bedrohungserkennung" },
+      { metric: "Sicher", label: "Remote-Arbeit" }
+    ],
+    process: {
+      analysis: "Wir prüfen Ihre aktuelle Netzwerkarchitektur und den Schutzstatus Ihrer Endgeräte.",
+      implementation: "Wir installieren moderne Firewalls und rollen Endpoint-Protection auf allen Geräten aus.",
+      operations: "Wir verwalten Ihre Sicherheitsrichtlinien und reagieren auf Sicherheitsereignisse."
+    },
+    caseStudy: {
+      title: "Modernisierung der E-Mail-Infrastruktur und Geräteverwaltung",
+      companyType: "InCase Handelsgesellschaft mbH",
+      situation: "Keine zentrale Kontrolle über mobile Firmengeräte.",
+      problem: "Die IT-Sicherheit war durch ungeschützte Endgeräte gefährdet.",
+      decisionPoint: "Notwendigkeit einer zentralen Verwaltungslösung.",
+      solution: "Einführung von Microsoft Intune zur Geräteverwaltung.",
+      result: "Zentral verwaltete und abgesicherte mobile Endgeräte.",
+      slug: "incase-modernisierung"
+    }
+  },
+  "disaster-recovery": {
+    title: "Disaster Recovery",
+    hero: "Schnelle Wiederherstellung im Ernstfall.",
+    description: "Ein Notfallplan ist gut, eine funktionierende Wiederherstellung ist besser. Wir sorgen dafür, dass Ihr Betrieb nach einem Ausfall in kürzester Zeit wieder läuft.",
+    problem: {
+      title: "Der Albtraum des Totalausfalls",
+      points: [
+        "Keine getesteten Wiederherstellungspläne vorhanden",
+        "Lange Ausfallzeiten kosten massiv Geld und Vertrauen",
+        "Datenverlust durch fehlerhafte oder veraltete Backups",
+        "Unklarheit über Verantwortlichkeiten im Krisenfall"
+      ]
+    },
+    solution: {
+      title: "Garantierte Geschäftskontinuität",
+      points: [
+        "Detaillierte Disaster-Recovery-Pläne (DRP)",
+        "Regelmäßige Wiederherstellungstests und Simulationen",
+        "Cloud-basierte Recovery-Umgebungen für schnellen Start",
+        "Definierte RTOs und RPOs für alle kritischen Systeme"
+      ]
+    },
+    results: [
+      { metric: "< 4 Std", label: "Wiederherstellungszeit" },
+      { metric: "100%", label: "Datenintegrität" },
+      { metric: "Sicher", label: "Krisenfestigkeit" }
+    ],
+    process: {
+      analysis: "Wir identifizieren Ihre geschäftskritischen Prozesse und definieren Wiederherstellungsziele.",
+      implementation: "Wir bauen die notwendige Infrastruktur auf und erstellen den Notfallplan.",
+      operations: "Wir führen regelmäßige Tests durch und halten den Plan aktuell."
+    },
+    caseStudy: {
+      title: "Modernisierung einer Serverumgebung und Backup-Strategie",
+      companyType: "BiolytiQs GmbH",
+      situation: "Veraltete Serverumgebung ohne moderne Backup-Lösung.",
+      problem: "Hohes Risiko von Datenverlust bei Hardwaredefekt.",
+      decisionPoint: "Hardware erreichte das Ende ihrer Lebensdauer.",
+      solution: "Migration auf neue Server und Veeam-Backup-Lösung.",
+      result: "Zuverlässiges Backup und schnelle Wiederherstellungsmöglichkeit.",
+      slug: "biolytiqs-server"
+    }
+  },
+  "netzwerk-management": {
+    title: "Netzwerk-Management",
+    hero: "Stabile und performante Unternehmensnetzwerke.",
+    description: "Wir sorgen für eine reibungslose Vernetzung Ihrer Standorte und Mitarbeiter. Sicher, schnell und jederzeit verfügbar.",
+    problem: {
+      title: "Instabile Verbindungen bremsen aus",
+      points: [
+        "Häufige WLAN-Abbrüche und langsame Internetverbindungen",
+        "Sicherheitsrisiken durch unverschlüsselte Netzwerksegmente",
+        "Schwierigkeiten bei der Anbindung von Homeoffice-Mitarbeitern",
+        "Mangelnde Übersicht über die Netzwerkauslastung"
+      ]
+    },
+    solution: {
+      title: "Intelligente Netzwerksteuerung",
+      points: [
+        "Planung und Aufbau von High-Performance WLAN-Netzwerken",
+        "Sichere Standortvernetzung via SD-WAN oder VPN",
+        "Kontinuierliches Monitoring der Netzwerkperformance",
+        "Segmentierung des Netzwerks für erhöhte Sicherheit"
+      ]
+    },
+    results: [
+      { metric: "99,9%", label: "Netzwerk-Uptime" },
+      { metric: "Top", label: "WLAN-Abdeckung" },
+      { metric: "Sicher", label: "Standortvernetzung" }
+    ],
+    process: {
+      analysis: "Wir führen eine WLAN-Ausleuchtung und Netzwerkanalyse durch.",
+      implementation: "Wir installieren moderne Netzwerkkomponenten und konfigurieren die Segmente.",
+      operations: "Wir überwachen Ihr Netzwerk rund um die Uhr und optimieren die Performance."
+    },
+    caseStudy: {
+      title: "Integration hybrider IT-Infrastrukturen",
+      companyType: "MAIT Germany GmbH",
+      situation: "Heterogene IT-Infrastruktur durch zahlreiche Akquisitionen.",
+      problem: "Unterschiedliche Netzwerkstandards erschwerten den Betrieb.",
+      decisionPoint: "Notwendigkeit einheitlicher Konzernstandards.",
+      solution: "Integration von On-Prem- und Cloud-Systemen sowie Standardisierung.",
+      result: "Einheitliche Standards und reduzierter Administrationsaufwand.",
+      slug: "mait-enterprise"
+    }
+  },
+  "hardware-client-management": {
+    title: "Hardware & Client Management",
+    hero: "Lifecycle-Management für Ihre Endgeräte.",
+    description: "Wir kümmern uns um Ihre Hardware von der Beschaffung bis zur Entsorgung. Damit Ihre Mitarbeiter immer mit optimalen Geräten arbeiten können.",
+    problem: {
+      title: "Chaos bei der Geräteverwaltung",
+      points: [
+        "Veraltete Laptops bremsen die Mitarbeiterproduktivität",
+        "Keine Übersicht über Garantiezeiten und Hardware-Alter",
+        "Hoher Aufwand beim Onboarding neuer Mitarbeiter",
+        "Sicherheitsrisiken durch nicht verwaltete Endgeräte"
+      ]
+    },
+    solution: {
+      title: "Standardisierte Hardware-Prozesse",
+      points: [
+        "Zentrale Beschaffung und Konfiguration (Zero-Touch)",
+        "Automatisierte Softwareverteilung und Patch-Management",
+        "Proaktiver Austausch veralteter Hardware",
+        "Sichere Datenlöschung bei Geräterückgabe"
+      ]
+    },
+    results: [
+      { metric: "100%", label: "Geräte-Inventur" },
+      { metric: "Schnell", label: "Mitarbeiter-Onboarding" },
+      { metric: "0", label: "Hardware-Ausfälle" }
+    ],
+    process: {
+      analysis: "Wir erfassen Ihren aktuellen Hardwarebestand und definieren Standards.",
+      implementation: "Wir führen eine Client-Management-Lösung ein und automatisieren das Setup.",
+      operations: "Wir verwalten den gesamten Lebenszyklus Ihrer Geräte proaktiv."
+    },
+    caseStudy: {
+      title: "Einführung mobiler Geräteverwaltung",
+      companyType: "InCase Handelsgesellschaft mbH",
+      situation: "Keine zentrale Kontrolle über mobile Firmengeräte.",
+      problem: "Sicherheitsrisiken durch ungeschützte Endgeräte.",
+      decisionPoint: "Wunsch nach moderner E-Mail-Infrastruktur und Sicherheit.",
+      solution: "Migration zu Exchange Online und Einführung von Microsoft Intune.",
+      result: "Zentral verwaltete und abgesicherte mobile Endgeräte.",
+      slug: "incase-modernisierung"
+    }
+  },
+  "azure-hybrid-betreuung": {
+    title: "Azure Hybrid Betreuung",
+    hero: "Spezialisierte Betreuung Ihrer Azure-Umgebung.",
+    description: "Nutzen Sie die volle Power der Microsoft Cloud. Wir betreuen Ihre Azure-Infrastruktur und sorgen für optimale Performance und Kostenkontrolle.",
+    problem: {
+      title: "Komplexität der Cloud-Verwaltung",
+      points: [
+        "Explodierende Cloud-Kosten durch fehlende Optimierung",
+        "Sicherheitslücken in der Cloud-Konfiguration",
+        "Schwierigkeiten bei der Integration mit lokalen Systemen",
+        "Mangel an internem Azure-Fachwissen"
+      ]
+    },
+    solution: {
+      title: "Azure-Expertise für Ihr Unternehmen",
+      points: [
+        "Kontinuierliche Kostenoptimierung (FinOps)",
+        "Sicherheits-Härtung nach Azure-Best-Practices",
+        "Betreuung von Azure Virtual Desktop und Cloud-Servern",
+        "Nahtlose Anbindung an Ihre lokale Infrastruktur"
+      ]
+    },
+    results: [
+      { metric: "25%", label: "Kostenersparnis" },
+      { metric: "Top", label: "Cloud-Performance" },
+      { metric: "Sicher", label: "Azure-Konfiguration" }
+    ],
+    process: {
+      analysis: "Wir prüfen Ihre aktuelle Azure-Umgebung auf Kosten und Sicherheit.",
+      implementation: "Wir optimieren die Konfiguration und implementieren Monitoring-Tools.",
+      operations: "Wir betreuen Ihre Azure-Ressourcen laufend und beraten Sie bei Erweiterungen."
+    },
+    caseStudy: {
+      title: "Migration in Microsoft Azure",
+      companyType: "group24 AG",
+      situation: "Backend-Systeme waren schwer skalierbar und wartbar.",
+      problem: "Hardware war veraltet, Expansion geplant.",
+      decisionPoint: "Notwendigkeit einer skalierbaren Cloud-Infrastruktur.",
+      solution: "Migration in Azure und Integration von Azure Virtual Desktop.",
+      result: "Maximale Skalierbarkeit und stabile Infrastruktur.",
+      slug: "group24-azure"
+    }
+  },
+  "hybrid-cloud-transformation": {
+    title: "Hybrid Cloud Transformation",
+    hero: "Strategische Transformation Ihrer IT.",
+    description: "Wir begleiten Sie auf dem Weg in die Cloud. Schritt für Schritt, sicher und perfekt auf Ihre Geschäftsziele abgestimmt.",
+    problem: {
+      title: "Stillstand durch veraltete Strukturen",
+      points: [
+        "Inflexible IT-Systeme verhindern Innovation",
+        "Hohe Wartungskosten für veraltete Rechenzentren",
+        "Angst vor Datenverlust bei der Cloud-Migration",
+        "Unklare Roadmap für die digitale Transformation"
+      ]
+    },
+    solution: {
+      title: "Ihr Weg in die Cloud-Zukunft",
+      points: [
+        "Entwicklung einer individuellen Cloud-Strategie",
+        "Schrittweise Migration kritischer Workloads",
+        "Aufbau einer hybriden Cloud-Architektur",
+        "Schulung Ihrer Mitarbeiter für die neue Umgebung"
+      ]
+    },
+    results: [
+      { metric: "100%", label: "Transformations-Erfolg" },
+      { metric: "Hoch", label: "Innovationskraft" },
+      { metric: "Flexibel", label: "IT-Infrastruktur" }
+    ],
+    process: {
+      analysis: "Wir bewerten Ihre IT-Landschaft und definieren die Cloud-Ziele.",
+      implementation: "Wir führen die Transformation in kontrollierten Phasen durch.",
+      operations: "Wir unterstützen Sie beim Betrieb der neuen Hybrid-Cloud-Umgebung."
+    },
+    caseStudy: {
+      title: "Migration in Microsoft Azure",
+      companyType: "group24 AG",
+      situation: "Veraltete Hardware und komplexe Betriebsprozesse.",
+      problem: "Fehlende Skalierbarkeit für geplante Expansion.",
+      decisionPoint: "Entscheidung für eine grundlegende Cloud-Transformation.",
+      solution: "Migration bestehender Systeme in Microsoft Azure.",
+      result: "Stabile, hochverfügbare und skalierbare Systeme.",
+      slug: "group24-azure"
+    }
+  },
+  "it-projekte-mit-slas": {
+    title: "IT-Projekte mit festen SLAs",
+    hero: "Planbare Umsetzung Ihrer IT-Vorhaben.",
+    description: "Wir realisieren Ihre IT-Projekte termingerecht und zum Festpreis. Mit klaren Service-Level-Agreements für höchste Qualität.",
+    problem: {
+      title: "Projekte ohne Ende und Budget",
+      points: [
+        "Uferlose Projektlaufzeiten ohne klare Ergebnisse",
+        "Explodierende Kosten durch unklare Anforderungen",
+        "Mangelnde Qualität bei der Umsetzung",
+        "Fehlende Dokumentation nach Projektabschluss"
+      ]
+    },
+    solution: {
+      title: "Ergebnisorientiertes Projektmanagement",
+      points: [
+        "Detaillierte Planung mit festen Meilensteinen",
+        "Verbindliche Festpreisangebote für volle Kontrolle",
+        "Garantierte Service-Level während und nach dem Projekt",
+        "Vollständige Dokumentation und Übergabe"
+      ]
+    },
+    results: [
+      { metric: "100%", label: "Termintreue" },
+      { metric: "Fix", label: "Budget-Garantie" },
+      { metric: "Top", label: "Umsetzungsqualität" }
+    ],
+    process: {
+      analysis: "Wir definieren gemeinsam die Projektziele und Anforderungen.",
+      implementation: "Wir setzen das Projekt nach dem vereinbarten Zeitplan um.",
+      operations: "Wir übergeben das Projekt and sichern den Betrieb durch SLAs ab."
+    },
+    caseStudy: {
+      title: "Migration von Google Workspace zu Microsoft 365",
+      companyType: "Schilderdienst Schadhauser",
+      situation: "Veraltete IT-Umgebung ohne klare Strukturen.",
+      problem: "Fehlende zentrale Kontrolle und Sicherheitsrisiken.",
+      decisionPoint: "Notwendigkeit einer strukturierten Migration.",
+      solution: "Projektbasierte Migration zu Microsoft 365 mit festem Zeitplan.",
+      result: "Klare und strukturierte IT-Umgebung innerhalb des Zeitrahmens.",
+      slug: "schadhauser-m365"
+    }
+  },
+  "it-risiko-audit": {
+    title: "IT-Risiko-Audit",
+    hero: "Schwachstellen finden und gezielt beheben.",
+    description: "Wissen Sie, wie sicher Ihre IT wirklich ist? Unser Audit deckt versteckte Risiken auf und gibt Ihnen klare Handlungsempfehlungen.",
+    problem: {
+      title: "Das Risiko des Unbekannten",
+      points: [
+        "Unsicherheit über den tatsächlichen Sicherheitsstatus",
+        "Versteckte Schwachstellen in Netzwerk und Servern",
+        "Ungetestete Backups, die im Ernstfall versagen könnten",
+        "Compliance-Risiken durch fehlende Dokumentation"
+      ]
+    },
+    solution: {
+      title: "Vollständige IT-Transparenz",
+      points: [
+        "Umfassender Check von Infrastruktur und Sicherheit",
+        "Prüfung der Backup-Integrität und Wiederherstellbarkeit",
+        "Analyse der IT-Prozesse und Dokumentation",
+        "Priorisierter Maßnahmenplan zur Risikominimierung"
+      ]
+    },
+    results: [
+      { metric: "100%", label: "Risiko-Transparenz" },
+      { metric: "Klar", label: "Handlungsempfehlungen" },
+      { metric: "Sicher", label: "Entscheidungsbasis" }
+    ],
+    process: {
+      analysis: "Wir führen eine detaillierte Bestandsaufnahme Ihrer IT durch.",
+      implementation: "Wir analysieren die Daten und bewerten die Risiken.",
+      operations: "Wir präsentieren die Ergebnisse und unterstützen bei der Behebung."
+    },
+    caseStudy: {
+      title: "Analyse und Aufbau einer IT-Sicherheitsstrategie",
+      companyType: "Bellaseno GmbH",
+      situation: "Gewachsene IT-Strukturen ohne klare Sicherheitsbewertung.",
+      problem: "Unklare Sicherheitslage und fehlende Priorisierung.",
+      decisionPoint: "Bedarf an einer belastbaren Entscheidungsgrundlage.",
+      solution: "Durchführung einer GAP-Analyse und Risikoidentifikation.",
+      result: "Klare Übersicht über Risiken und strukturierte Entscheidungsbasis.",
+      slug: "bellaseno-security"
+    }
+  },
+  "strategische-it-betreuung": {
+    title: "Strategische IT-Betreuung",
+    hero: "Langfristige Planung Ihrer IT-Landschaft.",
+    description: "Wir denken heute schon an morgen. Mit unserer strategischen Betreuung richten wir Ihre IT optimal auf Ihre zukünftigen Geschäftsziele aus.",
+    problem: {
+      title: "IT als Wachstumsbremse",
+      points: [
+        "Veraltete Systeme verhindern neue Geschäftsmodelle",
+        "Keine Planung für zukünftige Kapazitätsbedarfe",
+        "Technologie-Entscheidungen ohne strategischen Fokus",
+        "Mangelnde Flexibilität bei Marktveränderungen"
+      ]
+    },
+    solution: {
+      title: "Zukunftssichere IT-Strategie",
+      points: [
+        "Regelmäßige Strategie-Gespräche auf Management-Ebene",
+        "Entwicklung einer langfristigen IT-Roadmap",
+        "Beratung zu neuen Technologien und Trends",
+        "Kontinuierliche Anpassung der IT an das Wachstum"
+      ]
+    },
+    results: [
+      { metric: "3 J.", label: "Planungshorizont" },
+      { metric: "Top", label: "Zukunftsfähigkeit" },
+      { metric: "100%", label: "Business-Alignment" }
+    ],
+    process: {
+      analysis: "Wir verstehen Ihre Geschäftsstrategie und die Anforderungen der Fachbereiche.",
+      implementation: "Wir entwickeln eine darauf abgestimmte IT-Strategie.",
+      operations: "Wir begleiten die Umsetzung und passen die Strategie laufend an."
+    },
+    caseStudy: {
+      title: "Aufbau einer Microsoft-365-Umgebung mit klarer IT-Strategie",
+      companyType: "Procivitate gGmbH",
+      situation: "IT-Infrastruktur ohne klare strategische Ausrichtung.",
+      problem: "Fehlende IT-Leitung und unklare Sicherheitslage.",
+      decisionPoint: "Wunsch nach professioneller IT-Steuerung.",
+      solution: "Übernahme der externen IT-Leitung und strategische Beratung.",
+      result: "Klare IT-Roadmap und verbessertes Sicherheitsniveau.",
+      slug: "procivitate-strategie"
+    }
+  },
+  "microsoft-365-compliance-betreuung": {
+    title: "Microsoft 365 Compliance Betreuung",
+    hero: "Rechtssichere Nutzung von M365.",
+    description: "Wir sorgen dafür, dass Sie Microsoft 365 datenschutzkonform und sicher nutzen. Wir konfigurieren Ihre Compliance-Einstellungen nach höchsten Standards.",
+    problem: {
+      title: "Compliance-Falle Cloud",
+      points: [
+        "Unsicherheit über die DSGVO-konforme Nutzung von M365",
+        "Fehlende Kontrolle über den Datenabfluss (DLP)",
+        "Unzureichende Archivierung geschäftskritischer E-Mails",
+        "Mangelnde Übersicht über externe Freigaben"
+      ]
+    },
+    solution: {
+      title: "Sichere & Konforme Cloud",
+      points: [
+        "Konfiguration von Data Loss Prevention (DLP) Richtlinien",
+        "Einrichtung rechtssicherer E-Mail-Archivierung",
+        "Überwachung und Steuerung externer Zugriffe",
+        "Regelmäßige Compliance-Reports und Audits"
+      ]
+    },
+    results: [
+      { metric: "100%", label: "DSGVO-Compliance" },
+      { metric: "Sicher", label: "Datenarchivierung" },
+      { metric: "Klar", label: "Zugriffskontrolle" }
+    ],
+    process: {
+      analysis: "Wir prüfen Ihre aktuellen M365-Einstellungen auf Compliance-Lücken.",
+      implementation: "Wir setzen die notwendigen Richtlinien und Archivierungslösungen um.",
+      operations: "Wir überwachen die Einhaltung der Richtlinien und passen sie bei Bedarf an."
+    },
+    caseStudy: {
+      title: "Aufbau und Absicherung einer Microsoft-365-Umgebung",
+      companyType: "Procivitate gGmbH",
+      situation: "Keine zentralen Compliance- oder Sicherheitsrichtlinien.",
+      problem: "Hohes Risiko von Datenlecks und ineffiziente Prozesse.",
+      decisionPoint: "Notwendigkeit eines professionellen Managements.",
+      solution: "Implementierung erweiterter Sicherheits- und Compliance-Funktionen.",
+      result: "Verbesserte Sicherheitslage und gesteigerte Teamproduktivität.",
+      slug: "procivitate-strategie"
+    }
+  },
+  "it-governance-risikomanagement": {
+    title: "IT-Governance & Risikomanagement",
+    hero: "Strukturierte IT-Prozesse und Sicherheit.",
+    description: "Wir etablieren klare Regeln und Prozesse für Ihre IT. Damit minimieren wir Risiken und stellen die Einhaltung aller Vorgaben sicher.",
+    problem: {
+      title: "Wildwuchs in der IT-Landschaft",
+      points: [
+        "Unklare Verantwortlichkeiten bei IT-Entscheidungen",
+        "Fehlende Standards für IT-Sicherheit und Betrieb",
+        "Kein systematisches Management von IT-Risiken",
+        "Schwierigkeiten bei der Erfüllung regulatorischer Anforderungen"
+      ]
+    },
+    solution: {
+      title: "Strukturierte IT-Steuerung",
+      points: [
+        "Aufbau eines IT-Governance-Frameworks",
+        "Etablierung eines kontinuierlichen Risikomanagements",
+        "Definition von IT-Richtlinien und Standards",
+        "Überwachung der Einhaltung (Compliance-Monitoring)"
+      ]
+    },
+    results: [
+      { metric: "Top", label: "Prozessqualität" },
+      { metric: "Min.", label: "IT-Risiken" },
+      { metric: "100%", label: "Governance-Konformität" }
+    ],
+    process: {
+      analysis: "Wir analysieren Ihre bestehenden IT-Prozesse und regulatorischen Anforderungen.",
+      implementation: "Wir definieren das Governance-Modell und führen Risikomanagement-Prozesse ein.",
+      operations: "Wir unterstützen Sie bei der laufenden Steuerung und Überwachung der IT."
+    },
+    caseStudy: {
+      title: "Analyse und Aufbau einer IT-Sicherheitsstrategie",
+      companyType: "Bellaseno GmbH",
+      situation: "Gewachsene IT-Strukturen ohne klare Governance.",
+      problem: "Unklare Sicherheitslage und fehlende Priorisierung.",
+      decisionPoint: "Bedarf an einer strukturierten Entscheidungsbasis.",
+      solution: "Durchführung einer GAP-Analyse und Entwicklung eines Maßnahmenkatalogs.",
+      result: "Klare Übersicht über Risiken und strukturierte Entscheidungsbasis.",
       slug: "bellaseno-security"
     }
   },
@@ -161,100 +677,14 @@ export const solutionsData = {
       operations: "Wir überwachen Backups täglich, führen automatisierte Test-Wiederherstellungen durch und verwalten alle Aufbewahrungsrichtlinien."
     },
     caseStudy: {
-      title: "Modernisierung einer Serverumgebung und Integration in Microsoft 365",
+      title: "Modernisierung einer Serverumgebung und Backup-Strategie",
       companyType: "BiolytiQs GmbH",
-      situation: "Die bestehende Serverinfrastruktur war veraltet und entsprach nicht mehr den aktuellen Anforderungen.",
-      problem: "Veraltete Server-Betriebssysteme und fehlende Integration von On-Prem- und Cloud-Identitäten.",
-      decisionPoint: "Die Hardware erreichte das Ende ihrer Lebensdauer und bot keine Sicherheit mehr.",
-      solution: "Migration auf Windows Server 2019 und Implementierung einer Veeam-Backup-Lösung.",
-      result: "Aktuelle Serverumgebung mit vollem Support und zuverlässigem Backup.",
+      situation: "Veraltete Serverumgebung ohne moderne Backup-Lösung.",
+      problem: "Hohes Risiko von Datenverlust bei Hardwaredefekt.",
+      decisionPoint: "Hardware erreichte das Ende ihrer Lebensdauer.",
+      solution: "Migration auf neue Server und Veeam-Backup-Lösung.",
+      result: "Zuverlässiges Backup und schnelle Wiederherstellungsmöglichkeit.",
       slug: "biolytiqs-server"
-    }
-  },
-  "network-management": {
-    title: "Network Management",
-    hero: "Schnelle, sichere und zuverlässige Konnektivität für Ihr gesamtes Team.",
-    description: "Wir entwerfen, implementieren und verwalten Netzwerke auf Enterprise-Niveau, die Funklöcher, Verbindungsabbrüche und Sicherheitslücken eliminieren.",
-    problem: {
-      title: "Der Flaschenhals durch schlechtes WLAN",
-      points: [
-        "Abgebrochene Videoanrufe und langsame Dateiübertragungen",
-        "Ungesicherte Gastnetzwerke, die Unternehmensdaten exponieren",
-        "Hardwareausfälle, die ganze Büroetagen lahmlegen",
-        "Unfähigkeit, die zunehmende Gerätedichte zu bewältigen"
-      ]
-    },
-    solution: {
-      title: "Enterprise Konnektivität",
-      points: [
-        "High-Density Wi-Fi 6 Access Points",
-        "Sichere VLAN-Segmentierung für Gäste und IoT-Geräte",
-        "Redundante Internetverbindungen mit automatischem Failover",
-        "Proaktive Bandbreitenüberwachung und -steuerung"
-      ]
-    },
-    results: [
-      { metric: "99,99%", label: "Netzwerk-Uptime" },
-      { metric: "0", label: "WLAN-Funklöcher" },
-      { metric: "100%", label: "Sichere Segmentierung" }
-    ],
-    process: {
-      analysis: "Wir führen eine physische Standortbesichtigung durch und erstellen eine Heatmap Ihres Büros, um Störungen und Funklöcher zu identifizieren.",
-      implementation: "Wir installieren Enterprise-Switches, Firewalls und Access Points und konfigurieren eine sichere Segmentierung.",
-      operations: "Wir überwachen den Netzwerkverkehr rund um die Uhr, spielen Firmware-Updates ein und verwalten die ISP-Beziehungen."
-    },
-    caseStudy: {
-      title: "Integration hybrider IT-Infrastrukturen und Optimierung von Betriebsprozessen",
-      companyType: "MAIT Germany GmbH",
-      situation: "Die IT-Infrastruktur war durch zahlreiche Akquisitionen und gewachsene Strukturen sehr heterogen.",
-      problem: "Heterogene IT-Systeme erschweren den Betrieb und die Sicherheit.",
-      decisionPoint: "Es fehlten einheitliche Standards für den Betrieb und die Sicherheit im gesamten Konzern.",
-      solution: "Planung und Umsetzung komplexer M365-Migrationen sowie Integration von On-Prem- und Cloud-Systemen.",
-      result: "Einheitliche IT-Standards und reduzierter Administrationsaufwand durch moderne Technologien.",
-      slug: "mait-enterprise"
-    }
-  },
-  "hardware-lifecycle": {
-    title: "Hardware Lifecycle Management",
-    hero: "Standardisierte, zuverlässige Hardware, die Ihr Team produktiv hält.",
-    description: "Wir verwalten den gesamten Lebenszyklus Ihrer IT-Assets, von der Beschaffung und Bereitstellung bis zur sicheren Entsorgung, und eliminieren unerwartete Hardwareausfälle.",
-    problem: {
-      title: "Die versteckten Kosten alternder Hardware",
-      points: [
-        "Mitarbeiter verschwenden Stunden mit dem Warten auf langsame, veraltete Computer",
-        "Unerwartete Hardwareausfälle verursachen plötzliche Ausfallzeiten",
-        "Inkonsistente Gerätemodelle machen den Support zum Albtraum",
-        "Sicherheitsrisiken durch nicht mehr patchbare Legacy-Betriebssysteme"
-      ]
-    },
-    solution: {
-      title: "Vorhersehbare Hardware-Strategie",
-      points: [
-        "Standardisierte 36-monatige Erneuerungszyklen",
-        "Zero-Touch-Provisioning für das Onboarding neuer Mitarbeiter",
-        "Proaktiver Austausch, bevor ein Ausfall auftritt",
-        "Sicheres, konformes Löschen von Daten und Recycling"
-      ]
-    },
-    results: [
-      { metric: "0", label: "Unerwartete Investitionskosten" },
-      { metric: "100%", label: "Standardisierte Flotte" },
-      { metric: "60%", label: "Schnelleres Onboarding" }
-    ],
-    process: {
-      analysis: "Wir inventarisieren jedes Gerät in Ihrem Netzwerk und dokumentieren Alter, Garantiestatus und Leistungsmetriken.",
-      implementation: "Wir legen Standard-Hardwareprofile für verschiedene Rollen fest und setzen Zero-Touch-Provisioning ein.",
-      operations: "Wir überwachen den Hardwarezustand, verwalten Garantien und führen geplante Austausche automatisch durch."
-    },
-    caseStudy: {
-      title: "Modernisierung der E-Mail-Infrastruktur und Einführung mobiler Geräteverwaltung",
-      companyType: "InCase Handelsgesellschaft mbH",
-      situation: "Die bestehende E-Mail-Infrastruktur war veraltet und bot keine ausreichende Sicherheit.",
-      problem: "Keine zentrale Kontrolle über mobile Firmengeräte und veraltete E-Mail-Systeme.",
-      decisionPoint: "Die IT-Sicherheit war durch ungeschützte Endgeräte gefährdet.",
-      solution: "Migration zu Exchange Online und Einführung von Microsoft Intune zur Geräteverwaltung.",
-      result: "Zentral verwaltete und abgesicherte mobile Endgeräte sowie moderne E-Mail-Infrastruktur.",
-      slug: "incase-modernisierung"
     }
   },
   "microsoft-365-migration": {
@@ -333,340 +763,14 @@ export const solutionsData = {
       operations: "Wir überwachen die Leistung, optimieren monatlich die Kosten und verwalten die Azure-Sicherheitsrichtlinien."
     },
     caseStudy: {
-      title: "Migration in Microsoft Azure und Aufbau einer skalierbaren Cloud-Infrastruktur",
+      title: "Migration in Microsoft Azure",
       companyType: "group24 AG",
-      situation: "Bestehende Backend-Systeme waren nur begrenzt skalierbar und schwer wartbar.",
-      problem: "Fehlende Skalierbarkeit und komplexe Betriebsprozesse bei hohem Wartungsaufwand.",
-      decisionPoint: "Die Hardware war veraltet und eine größere Expansion war geplant.",
-      solution: "Migration bestehender Systeme in Microsoft Azure und Integration von Azure Virtual Desktop.",
-      result: "Maximale Skalierbarkeit, stabile Infrastruktur und hochverfügbare Systeme.",
+      situation: "Backend-Systeme waren schwer skalierbar und wartbar.",
+      problem: "Hardware war veraltet, Expansion geplant.",
+      decisionPoint: "Notwendigkeit einer skalierbaren Cloud-Infrastruktur.",
+      solution: "Migration in Azure und Integration von Azure Virtual Desktop.",
+      result: "Maximale Skalierbarkeit und stabile Infrastruktur.",
       slug: "group24-azure"
-    }
-  },
-  "it-risk-audit": {
-    title: "IT Risk Audit",
-    hero: "Entdecken Sie genau, wo Ihre IT versagt und wie Sie es beheben können.",
-    description: "Eine umfassende, sachliche Bewertung Ihres Technologie-Stacks, Ihrer Sicherheitslage und Ihrer IT-Prozesse, um versteckte Risiken aufzudecken.",
-    problem: {
-      title: "Betrieb im Dunkeln",
-      points: [
-        "Zahlung für IT-Support, aber ständige Probleme",
-        "Unsicherheit über Backup-Integrität und Security-Compliance",
-        "Keine Dokumentation kritischer Systeme oder Passwörter",
-        "Angst, dass ein Cyberangriff das Unternehmen zerstören könnte"
-      ]
-    },
-    solution: {
-      title: "Vollständige Transparenz",
-      points: [
-        "Tiefgehende Analyse von Netzwerk, Servern und Endpunkten",
-        "Sicherheits-Schwachstellenscan und Penetrationstests",
-        "Überprüfung von IT-Richtlinien, Backups und Disaster-Recovery-Plänen",
-        "Klarer, umsetzbarer Fahrplan zur Behebung aller Risiken"
-      ]
-    },
-    results: [
-      { metric: "100%", label: "System-Transparenz" },
-      { metric: "0", label: "Versteckte Risiken" },
-      { metric: "30 Tage", label: "Behebungsplan" }
-    ],
-    process: {
-      analysis: "Wir setzen nicht-intrusive Scanning-Tools ein und befragen wichtige Stakeholder, um Daten zu sammeln.",
-      implementation: "Wir analysieren die Ergebnisse anhand von Branchen-Best-Practices und Compliance-Frameworks.",
-      operations: "Wir präsentieren einen detaillierten Executive-Bericht und einen priorisierten Fahrplan für die Behebung."
-    },
-    caseStudy: {
-      title: "Analyse und Aufbau einer strukturierten IT-Sicherheitsstrategie",
-      companyType: "Bellaseno GmbH",
-      situation: "Das Unternehmen verfügte über gewachsene IT-Strukturen ohne klare Bewertung der Sicherheitslage.",
-      problem: "Unklare Sicherheitslage und fehlende Priorisierung von Risiken.",
-      decisionPoint: "Der Versicherungsanbieter des Unternehmens forderte eine formelle IT-Risikobewertung.",
-      solution: "Durchführung einer GAP-Analyse und Identifikation kritischer Schwachstellen.",
-      result: "Erfolgreiche Risikoidentifikation, klare Sicht auf IT-Risiken und ein priorisierter Sicherheitsplan.",
-      slug: "bellaseno-security"
-    }
-  },
-  "strategic-it-roadmap": {
-    title: "Strategische IT-Roadmap",
-    hero: "Richten Sie Ihre Technologie an Ihren 3-Jahres-Geschäftszielen aus.",
-    description: "Wir fungieren als Ihr virtueller CIO und übersetzen Ihre Geschäftsziele in eine klare, budgetierte Technologiestrategie, die das Wachstum vorantreibt.",
-    problem: {
-      title: "Reaktive, isolierte IT",
-      points: [
-        "Technologieentscheidungen werden im luftleeren Raum ohne Geschäftskontext getroffen",
-        "Überraschende IT-Ausgaben bringen Quartalsbudgets durcheinander",
-        "Systeme, die das Unternehmenswachstum eher behindern als fördern",
-        "Mangel an technologischer Führung auf Executive-Ebene"
-      ]
-    },
-    solution: {
-      title: "Technologie als Wachstumsmotor",
-      points: [
-        "Quartalsweise strategische Geschäftsbesprechungen (QBRs)",
-        "1- bis 3-jährige IT-Budgetierung und Planung",
-        "Bewertung neuer Technologien zur Effizienzsteigerung",
-        "Ausrichtung von IT-Initiativen an Umsatzzeilen"
-      ]
-    },
-    results: [
-      { metric: "3 J.", label: "Strategischer Plan" },
-      { metric: "100%", label: "Budget-Vorhersehbarkeit" },
-      { metric: "ROI", label: "Fokussierte Investitionen" }
-    ],
-    process: {
-      analysis: "Wir treffen uns mit Ihrem Führungsteam, um Ihre Geschäftsziele, Herausforderungen und Wachstumsziele zu verstehen.",
-      implementation: "Wir entwickeln eine mehrjährige Roadmap mit Details zu erforderlichen IT-Investitionen, Zeitplänen und erwartetem ROI.",
-      operations: "Wir führen vierteljährliche Überprüfungen durch, um Fortschritte zu verfolgen, die Roadmap anzupassen und eine kontinuierliche Ausrichtung sicherzustellen."
-    },
-    caseStudy: {
-      title: "Aufbau und Absicherung einer Microsoft-365-Umgebung mit klarer IT-Strategie",
-      companyType: "Procivitate gGmbH",
-      situation: "Die IT-Infrastruktur war über Jahre gewachsen, ohne klare strategische Ausrichtung.",
-      problem: "Fehlende IT-Leitung und unklare Sicherheitslage bei hohem Administrationsaufwand.",
-      decisionPoint: "Der Vorstand erkannte, dass die Technologie das Haupthindernis für die Erreichung ihrer Mission war.",
-      solution: "Übernahme der externen IT-Leitung und strategische Beratung der Geschäftsleitung.",
-      result: "Klare IT-Roadmap, deutlich verbessertes Sicherheitsniveau und erfolgreiche Projektabschlüsse.",
-      slug: "procivitate-strategie"
-    }
-  },
-  "it-support-for-businesses": {
-    title: "IT-Support für Unternehmen",
-    hero: "Zuverlässiger IT-Support für Unternehmen, die sich keine Ausfallzeiten leisten können.",
-    description: "Wir bieten professionellen IT-Support mit schnellen Reaktionszeiten, der auf die Bedürfnisse moderner Unternehmen zugeschnitten ist. Von der Fehlerbehebung bis zur strategischen Planung sind wir Ihr engagierter Technologiepartner.",
-    metadata: {
-      mainKeyword: "IT-Support für Unternehmen",
-      secondaryKeywords: ["Business IT-Support", "professionelle IT-Services", "IT-Support für KMU"],
-      intent: "Commercial/Transactional"
-    },
-    problem: {
-      title: "Die Frustration über unzuverlässigen IT-Support",
-      points: [
-        "Stundenlanges Warten auf eine Antwort, während das Geschäft stillsteht",
-        "Wiederkehrende technische Probleme, die nie wirklich gelöst werden",
-        "Versteckte Kosten und überraschende Rechnungen für Basissupport",
-        "Techniker, die Ihren Geschäftskontext nicht verstehen"
-      ]
-    },
-    solution: {
-      title: "Professioneller Business IT-Support",
-      points: [
-        "Garantierte Reaktionszeiten, abgesichert durch strikte SLAs",
-        "Dauerhafte Lösungen statt nur temporärer Workarounds",
-        "Transparente Pauschalpreismodelle",
-        "Engagierte Ingenieure, die Ihre Infrastruktur kennen"
-      ]
-    },
-    results: [
-      { metric: "15 Min", label: "Durchschn. Antwort" },
-      { metric: "98%", label: "First-Contact Resolution" },
-      { metric: "24/7", label: "Proaktive Überwachung" }
-    ],
-    process: {
-      analysis: "Wir auditieren Ihr aktuelles Setup, um unmittelbare Schwachstellen und Sicherheitslücken zu identifizieren.",
-      implementation: "Wir standardisieren Ihre Support-Tools und dokumentieren Ihre gesamte Umgebung.",
-      operations: "Sie erhalten unbegrenzten Zugang zu unserem Experten-Helpdesk und proaktive Wartung."
-    },
-    caseStudy: {
-      title: "Stabilisierung und Automatisierung hybrider IT-Infrastrukturen",
-      companyType: "zunicode GmbH",
-      situation: "Das Unternehmen kämpfte mit einem hohen Supportaufwand bei wachsender Komplexität.",
-      problem: "Häufige Netzwerkausfälle und langsame Workstation-Performance beeinträchtigten die Arbeit.",
-      decisionPoint: "Ein schwerer Serverabsturz während einer kritischen Phase war der Auslöser für externe Hilfe.",
-      solution: "Unterstützung im Support und Automatisierung mit Ansible & PowerShell.",
-      result: "100% Uptime während kritischer Phasen und eine Reduzierung der Support-Tickets um 50%.",
-      slug: "zunicode-automatisierung"
-    }
-  },
-  "managed-it-services": {
-    title: "Managed IT Services",
-    hero: "Ihre komplette externe IT-Abteilung.",
-    description: "Konzentrieren Sie sich auf Ihr Kerngeschäft, während wir die Komplexität Ihrer Technologie handhaben. Unsere Managed IT Services bieten die Stabilität, Sicherheit und Skalierbarkeit, die Sie für Ihren Erfolg benötigen.",
-    metadata: {
-      mainKeyword: "Managed IT Services",
-      secondaryKeywords: ["MSP", "Managed Services Provider", "externe IT-Abteilung"],
-      intent: "Commercial/Transactional"
-    },
-    problem: {
-      title: "Die Last, die eigene IT selbst zu verwalten",
-      points: [
-        "Hohe Kosten für die Einstellung und Schulung interner IT-Mitarbeiter",
-        "Ständige Ablenkung von den eigentlichen Geschäftszielen",
-        "Rückstand bei Sicherheitspatches und Updates",
-        "Keine klare Technologie-Roadmap für zukünftiges Wachstum"
-      ]
-    },
-    solution: {
-      title: "Vollständig verwaltete IT-Services",
-      points: [
-        "Planbare monatliche Kosten ohne versteckte Gebühren",
-        "24/7/365 Überwachung und Verwaltung aller Systeme",
-        "Enterprise-Grade Sicherheits- und Compliance-Management",
-        "Strategische vCIO-Beratung zur Ausrichtung der IT an den Geschäftszielen"
-      ]
-    },
-    results: [
-      { metric: "30%", label: "Reduzierung der IT-Ausgaben" },
-      { metric: "100%", label: "Patch-Compliance" },
-      { metric: "24/7", label: "Experten-Management" }
-    ],
-    process: {
-      analysis: "Wir führen eine tiefgehende Bewertung Ihrer Geschäftsziele und aktuellen IT-Fähigkeiten durch.",
-      implementation: "Wir überführen Ihre Systeme ohne Unterbrechung auf unsere Managed-Plattform.",
-      operations: "Wir bieten kontinuierliche Optimierung, Sicherheit und Support für Ihr gesamtes Team."
-    },
-    caseStudy: {
-      title: "Stabilisierung und Automatisierung hybrider IT-Infrastrukturen",
-      companyType: "zunicode GmbH",
-      situation: "Das Unternehmen nutzte reaktiven IT-Support, was zu häufigen Verzögerungen führte.",
-      problem: "Veraltete Systeme und mangelnde Sicherheit behinderten die Expansionspläne.",
-      decisionPoint: "Sie brauchten einen Partner, der ihren gesamten IT-Lebenszyklus verwalten konnte.",
-      solution: "Umstellung auf ein Managed IT Modell mit Fokus auf Automatisierung.",
-      result: "Stabilisierte IT-Umgebung und eine klare 3-Jahres-Technologie-Roadmap.",
-      slug: "zunicode-automatisierung"
-    }
-  },
-  "microsoft-365-services": {
-    title: "Microsoft 365 Services",
-    hero: "Maximieren Sie Ihre Produktivität mit Experten-Management für Microsoft 365.",
-    description: "Microsoft 365 ist mehr als nur E-Mail. Wir helfen Ihnen, die volle Leistung von Teams, SharePoint und erweiterten Sicherheitsfunktionen zu nutzen, um die Zusammenarbeit zu fördern und Ihre Daten zu schützen.",
-    metadata: {
-      mainKeyword: "Microsoft 365 Services",
-      secondaryKeywords: ["Office 365 Support", "M365 Management", "Microsoft 365 Beratung"],
-      intent: "Commercial/Transactional"
-    },
-    problem: {
-      title: "Untergenutztes und ungesichertes Microsoft 365",
-      points: [
-        "Nutzung nur eines Bruchteils der Tools, für die Sie bezahlen",
-        "Sicherheitslücken, die Ihre E-Mails anfällig für Phishing machen",
-        "Unordentliche SharePoint-Strukturen, die das Finden von Dateien unmöglich machen",
-        "Kein Backup für kritische Cloud-Daten in OneDrive oder Teams"
-      ]
-    },
-    solution: {
-      title: "Experten-Management für Microsoft 365",
-      points: [
-        "Umfassende Sicherheitshärtung und MFA-Erzwingung",
-        "Strukturierte SharePoint- und Teams-Architektur für die Zusammenarbeit",
-        "Automatisches Cloud-to-Cloud-Backup für alle M365-Daten",
-        "Laufende Benutzerschulungen zur Steigerung der Tool-Akzeptanz"
-      ]
-    },
-    results: [
-      { metric: "100%", label: "Sichere Konfiguration" },
-      { metric: "0%", label: "Datenverlust in der Cloud" },
-      { metric: "50%", label: "Verbesserte Zusammenarbeit" }
-    ],
-    process: {
-      analysis: "Wir überprüfen Ihre aktuelle M365-Tenant-Konfiguration und Sicherheitseinstellungen.",
-      implementation: "Wir wenden Best-Practice-Sicherheitsrichtlinien an und reorganisieren Ihre Datenstrukturen.",
-      operations: "Wir bieten laufende Verwaltung, Support und Feature-Updates für Ihren Tenant."
-    },
-    caseStudy: {
-      title: "Aufbau und Absicherung einer Microsoft-365-Umgebung mit klarer IT-Strategie",
-      companyType: "Procivitate gGmbH",
-      situation: "Das Unternehmen nutzte M365, hatte aber keine zentrale Verwaltung oder Sicherheitsrichtlinien.",
-      problem: "Hohes Risiko von Datenlecks und ineffiziente Prozesse beim Teilen von Dokumenten.",
-      decisionPoint: "Ein beinahe erfolgreicher Phishing-Versuch verdeutlichte die Notwendigkeit eines professionellen Managements.",
-      solution: "Implementierung erweiterter Sicherheitsfunktionen und einer strukturierten SharePoint-Umgebung.",
-      result: "Verbesserte Sicherheitslage und deutlich gesteigerte Teamproduktivität.",
-      slug: "procivitate-strategie"
-    }
-  },
-  "azure-hybrid-infrastructure": {
-    title: "Azure & Hybrid Infrastructure",
-    hero: "Das Beste aus beiden Welten: Skalierbare, sichere Hybrid-Cloud-Lösungen.",
-    description: "Integrieren Sie Ihre On-Premise-Systeme nahtlos mit der Leistung von Microsoft Azure. Wir konzipieren und verwalten hybride Infrastrukturen, die maximale Flexibilität und Zuverlässigkeit bieten.",
-    metadata: {
-      mainKeyword: "Azure Hybrid Infrastructure",
-      secondaryKeywords: ["Azure Cloud Services", "Hybrid Cloud Lösungen", "Azure Migration"],
-      intent: "Commercial/Transactional"
-    },
-    problem: {
-      title: "Die Grenzen einer reinen On-Premise-Infrastruktur",
-      points: [
-        "Hohe Vorabkosten für Server-Hardware und Wartung",
-        "Begrenzte Skalierbarkeit für Remote-Arbeit und Wachstum",
-        "Schwierigkeiten bei der Implementierung einer robusten Disaster Recovery",
-        "Veraltete Hardware, die das Ende ihrer Lebensdauer erreicht"
-      ]
-    },
-    solution: {
-      title: "Moderne Hybrid-Cloud-Infrastruktur",
-      points: [
-        "Nahtlose Integration zwischen lokalen Servern und Azure",
-        "Skalierbare Cloud-Ressourcen für Apps und Speicher",
-        "Integrierte geo-redundante Disaster Recovery",
-        "Reduzierter physischer Platzbedarf und geringere Wartungskosten"
-      ]
-    },
-    results: [
-      { metric: "99,99%", label: "Infrastruktur-Uptime" },
-      { metric: "Unendlich", label: "Skalierbarkeit" },
-      { metric: "40%", label: "Niedrigere Investitionskosten" }
-    ],
-    process: {
-      analysis: "Wir bewerten Ihre aktuellen Workloads, um das ideale Gleichgewicht zwischen lokalen und Cloud-Ressourcen zu ermitteln.",
-      implementation: "Wir bauen Ihre Azure-Umgebung auf und richten eine sichere Hochgeschwindigkeitsverbindung ein.",
-      operations: "Wir verwalten die gesamte Hybrid-Umgebung und stellen Leistung und Kosteneffizienz sicher."
-    },
-    caseStudy: {
-      title: "Migration in Microsoft Azure und Aufbau einer skalierbaren Cloud-Infrastruktur",
-      companyType: "group24 AG",
-      situation: "Das Unternehmen hatte alternde Server an mehreren Standorten ohne zentrale Verwaltung.",
-      problem: "Inkonsistente Leistung und hohes Risiko von Datenverlust an entfernten Standorten.",
-      decisionPoint: "Ein Serverausfall an einem wichtigen Knotenpunkt verursachte einen Stillstand.",
-      solution: "Migration bestehender Systeme in Microsoft Azure und Integration von Azure Virtual Desktop.",
-      result: "Verbesserte Leistung an allen Standorten und ein robuster, cloudbasierter Disaster-Recovery-Plan.",
-      slug: "group24-azure"
-    }
-  },
-  "backup-and-security": {
-    title: "Backup & Security",
-    hero: "Schützen Sie Ihr Unternehmen mit unzerstörbarem Backup und mehrschichtiger Sicherheit.",
-    description: "Datenverlust und Cyberangriffe sind die größten Bedrohungen für moderne Unternehmen. Unsere integrierten Backup- und Sicherheitslösungen stellen sicher, dass Ihre Daten immer sicher und wiederherstellbar sind.",
-    metadata: {
-      mainKeyword: "Backup and Security",
-      secondaryKeywords: ["Datensicherung", "Cybersecurity-Lösungen", "Disaster Recovery"],
-      intent: "Commercial/Transactional"
-    },
-    problem: {
-      title: "Die Verwundbarkeit ungeschützter Daten",
-      points: [
-        "Ransomware-Angriffe, die ein Unternehmen in den Ruin treiben können",
-        "Unzureichende Backups, die versagen, wenn man sie am dringendsten braucht",
-        "Menschliches Versagen, das zu versehentlichem Löschen von Daten führt",
-        "Mangelnde Sichtbarkeit von Sicherheitsbedrohungen und Schwachstellen"
-      ]
-    },
-    solution: {
-      title: "Integrierter Datenschutz & Sicherheit",
-      points: [
-        "Unveränderliche Backups, die nicht von Ransomware gelöscht werden können",
-        "24/7 verwaltete Sicherheitsüberwachung und Bedrohungserkennung",
-        "Regelmäßige Disaster-Recovery-Tests und Simulationen",
-        "Umfassende Security-Awareness-Schulungen für Mitarbeiter"
-      ]
-    },
-    results: [
-      { metric: "0", label: "Erfolgreiche Ransomware-Angriffe" },
-      { metric: "15 Min", label: "Wiederherstellungszeit (RTO)" },
-      { metric: "100%", label: "Backup-Integrität" }
-    ],
-    process: {
-      analysis: "Wir identifizieren Ihre kritischsten Daten und bewerten Ihre aktuellen Sicherheitslücken.",
-      implementation: "Wir setzen unveränderliche Backup-Lösungen und unseren mehrschichtigen Security-Stack ein.",
-      operations: "Wir überwachen Ihre Sicherheit rund um die Uhr und führen tägliche Backup-Verifizierungen durch."
-    },
-    caseStudy: {
-      title: "Modernisierung einer Serverumgebung und Integration in Microsoft 365",
-      companyType: "BiolytiQs GmbH",
-      situation: "Ein Ingenieurbüro wurde von Ransomware getroffen, die ihren Hauptserver verschlüsselte.",
-      problem: "Ihre herkömmlichen Backups waren ebenfalls verschlüsselt, sodass sie keine Daten mehr hatten.",
-      decisionPoint: "Sie standen vor dem totalen Verlust aller Projektdateien.",
-      solution: "Migration auf Windows Server 2019 und Implementierung einer Veeam-Backup-Lösung.",
-      result: "Vollständige Datenwiederherstellung innerhalb von 4 Stunden und moderne Serverumgebung.",
-      slug: "biolytiqs-server"
     }
   }
 };

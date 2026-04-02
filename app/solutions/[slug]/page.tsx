@@ -233,7 +233,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
           <div className="max-w-[800px] mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Bereit, IT-Risiken zu eliminieren?</h2>
             <p className="text-xl text-white/90 mb-10">Erhalten Sie ein umfassendes Audit Ihres aktuellen Setups. Unverbindlich und klar.</p>
-            <a href="mailto:contact@ecksolution-it.com" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary rounded-lg hover:bg-gray-50 transition-all font-bold text-lg shadow-xl hover:-translate-y-0.5">
+            <a href="mailto:info@ecksolution-it.de" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary rounded-lg hover:bg-gray-50 transition-all font-bold text-lg shadow-xl hover:-translate-y-0.5">
               IT-Audit anfordern <ArrowRight className="w-5 h-5" />
             </a>
           </div>

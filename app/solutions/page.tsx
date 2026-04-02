@@ -9,26 +9,50 @@ import { motion } from "motion/react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const iconMap: Record<string, any> = {
-  "managed-it-operations": Activity,
-  "co-managed-it": Headset,
-  "cybersecurity-protection": Lock,
   "managed-backup": Database,
-  "network-management": Activity,
-  "hardware-lifecycle": Settings,
   "microsoft-365-migration": Zap,
   "azure-migration": Cloud,
-  "it-risk-audit": ShieldCheck,
-  "strategic-it-roadmap": Cpu,
-  "it-support-for-businesses": Activity,
-  "managed-it-services": Server,
-  "microsoft-365-services": Zap,
-  "azure-hybrid-infrastructure": Cloud,
-  "backup-and-security": Lock
+  "hybrid-it-infrastruktur": Server,
+  "managed-it-service": Activity,
+  "externer-it-verantwortlicher": ShieldCheck,
+  "it-sicherheit": Lock,
+  "endpoint-firewall-security": ShieldCheck,
+  "disaster-recovery": Database,
+  "netzwerk-management": Activity,
+  "hardware-client-management": Settings,
+  "azure-hybrid-betreuung": Cloud,
+  "hybrid-cloud-transformation": Zap,
+  "it-projekte-mit-slas": Settings,
+  "it-risiko-audit": ShieldCheck,
+  "strategische-it-betreuung": Cpu,
+  "microsoft-365-compliance-betreuung": Lock,
+  "it-governance-risikomanagement": ShieldCheck
 };
 
 export default function SolutionsIndexPage() {
   const { t } = useLanguage();
-  const slugs = Object.keys(solutionsData);
+  const featuredSlugs = [
+    "managed-it-service",
+    "externer-it-verantwortlicher",
+    "it-sicherheit",
+    "it-risiko-audit",
+    "strategische-it-betreuung",
+    "hybrid-it-infrastruktur",
+    "managed-backup",
+    "azure-migration",
+    "endpoint-firewall-security",
+    "disaster-recovery",
+    "netzwerk-management",
+    "hardware-client-management",
+    "azure-hybrid-betreuung",
+    "microsoft-365-migration",
+    "hybrid-cloud-transformation",
+    "it-projekte-mit-slas",
+    "microsoft-365-compliance-betreuung",
+    "it-governance-risikomanagement"
+  ];
+
+  const slugs = Object.keys(solutionsData).filter(slug => featuredSlugs.includes(slug));
 
   return (
     <div className="min-h-screen bg-white font-sans text-black selection:bg-primary/20">

@@ -13,64 +13,127 @@ export const translations = {
     megaMenu: {
       core: {
         badge: "Kernleistungen",
-        managedIt: {
-          title: "Managed IT-Operations",
-          desc: "Wir betreiben Ihre IT zuverlässig, damit Ihr Betrieb störungsfrei läuft."
-        },
-        coManaged: {
-          title: "Co-Managed IT",
-          desc: "Unterstützen Sie Ihr internes Team mit Expertenwissen und Enterprise-Tools."
-        },
-        retainer: {
-          title: "IT-Architekt Retainer",
-          desc: "Sichern Sie sich kontinuierliche Expertise und proaktive Stabilität auf Abruf."
-        },
+        items: [
+          {
+            title: "Hybride IT-Infrastruktur",
+            desc: "Linux, Microsoft 365 und Azure nahtlos integriert.",
+            href: "/solutions/hybrid-it-infrastruktur"
+          },
+          {
+            title: "Managed IT-Service",
+            desc: "Professioneller IT-Betrieb mit voller Verantwortung.",
+            href: "/solutions/managed-it-service"
+          },
+          {
+            title: "Externer IT-Verantwortlicher",
+            desc: "Strategische IT-Leitung für Ihr Unternehmen.",
+            href: "/solutions/externer-it-verantwortlicher"
+          }
+        ],
         pricing: "Preise & Pakete ansehen"
       },
-      security: {
-        title: "Sicherheit & Backup",
-        cyber: {
-          title: "Cybersecurity-Schutz",
-          desc: "Schützen Sie Ihr Unternehmen vor Bedrohungen, bevor sie Schaden anrichten."
+      categories: [
+        {
+          title: "Sicherheit & Backup",
+          items: [
+            {
+              title: "IT-Sicherheit für Unternehmen",
+              desc: "Ganzheitlicher Schutz vor Cyber-Bedrohungen.",
+              href: "/solutions/it-sicherheit"
+            },
+            {
+              title: "Managed Backup",
+              desc: "Automatisierte Datensicherung und Überwachung.",
+              href: "/solutions/managed-backup"
+            },
+            {
+              title: "Endpoint & Firewall Security",
+              desc: "Schutz für alle Geräte und Netzwerke.",
+              href: "/solutions/endpoint-firewall-security"
+            },
+            {
+              title: "Disaster Recovery",
+              desc: "Schnelle Wiederherstellung im Ernstfall.",
+              href: "/solutions/disaster-recovery"
+            }
+          ]
         },
-        backup: {
-          title: "Managed Backup",
-          desc: "Automatische Backups, die garantieren, dass keine Daten verloren gehen."
-        }
-      },
-      infrastructure: {
-        title: "Infrastruktur",
-        network: {
-          title: "Netzwerk-Management",
-          desc: "Sorgen Sie für schnelles, zuverlässiges Internet für Ihr gesamtes Team."
+        {
+          title: "Infrastruktur",
+          items: [
+            {
+              title: "Hybride IT-Infrastruktur",
+              desc: "Optimale Verbindung von On-Premise und Cloud.",
+              href: "/solutions/hybrid-it-infrastruktur"
+            },
+            {
+              title: "Netzwerk-Management",
+              desc: "Stabile und performante Unternehmensnetzwerke.",
+              href: "/solutions/netzwerk-management"
+            },
+            {
+              title: "Hardware & Client Management",
+              desc: "Lifecycle-Management für Ihre Endgeräte.",
+              href: "/solutions/hardware-client-management"
+            },
+            {
+              title: "Azure Hybrid Betreuung",
+              desc: "Spezialisierte Betreuung Ihrer Azure-Umgebung.",
+              href: "/solutions/azure-hybrid-betreuung"
+            }
+          ]
         },
-        hardware: {
-          title: "Hardware-Lifecycle",
-          desc: "Halten Sie Ihr Team produktiv mit aktueller und verlässlicher Hardware."
-        }
-      },
-      migration: {
-        title: "Migration & Projekte",
-        m365: {
-          title: "Microsoft 365 Migration",
-          desc: "Wechseln Sie zu Microsoft 365 ohne Ausfallzeiten oder Datenverlust."
+        {
+          title: "Migration & Projekte",
+          items: [
+            {
+              title: "Microsoft 365 Migration",
+              desc: "Reibungsloser Wechsel in die M365-Welt.",
+              href: "/solutions/microsoft-365-migration"
+            },
+            {
+              title: "Azure Migration",
+              desc: "Sicherer Umzug Ihrer Server in die Cloud.",
+              href: "/solutions/azure-migration"
+            },
+            {
+              title: "Hybrid Cloud Transformation",
+              desc: "Strategische Transformation Ihrer IT.",
+              href: "/solutions/hybrid-cloud-transformation"
+            },
+            {
+              title: "IT-Projekte mit festen SLAs",
+              desc: "Planbare Umsetzung Ihrer IT-Vorhaben.",
+              href: "/solutions/it-projekte-mit-slas"
+            }
+          ]
         },
-        azure: {
-          title: "Azure Migration",
-          desc: "Verschieben Sie Ihre Infrastruktur sicher und kontrolliert in die Cloud."
+        {
+          title: "Einstieg / Beratung",
+          items: [
+            {
+              title: "IT-Risiko-Audit",
+              desc: "Schwachstellen finden und gezielt beheben.",
+              href: "/solutions/it-risiko-audit"
+            },
+            {
+              title: "Strategische IT-Betreuung",
+              desc: "Langfristige Planung Ihrer IT-Landschaft.",
+              href: "/solutions/strategische-it-betreuung"
+            },
+            {
+              title: "Microsoft 365 Compliance Betreuung",
+              desc: "Rechtssichere Nutzung von M365.",
+              href: "/solutions/microsoft-365-compliance-betreuung"
+            },
+            {
+              title: "IT-Governance & Risikomanagement",
+              desc: "Strukturierte IT-Prozesse und Sicherheit.",
+              href: "/solutions/it-governance-risikomanagement"
+            }
+          ]
         }
-      },
-      entry: {
-        title: "Einstieg",
-        audit: {
-          title: "IT-Risiko-Audit",
-          desc: "Identifizieren und beheben Sie versteckte Schwachstellen proaktiv."
-        },
-        roadmap: {
-          title: "Strategische IT-Roadmap",
-          desc: "Richten Sie Ihre IT-Investitionen an Ihren Wachstumszielen aus."
-        }
-      }
+      ]
     },
     hero: {
       badge: "IT-Partner für den deutschen Mittelstand",
@@ -135,27 +198,27 @@ export const translations = {
         {
           title: "Managed IT-Services",
           description: "Professioneller IT-Betrieb nach vereinbartem Scope und SLA für maximale Stabilität.",
-          link: "/solutions/managed-it-services"
+          link: "/solutions/managed-it-service"
         },
         {
           title: "IT-Support für Unternehmen",
           description: "Schnelle und kompetente Hilfe für Ihr Team bei allen technischen Fragen.",
-          link: "/solutions/it-support-for-businesses"
+          link: "/solutions/managed-it-service"
         },
         {
           title: "Microsoft 365 & Modern Work",
-          description: "Sicheres und effizientes Arbeiten von überall - perfekt eingerichtet und verwaltet.",
-          link: "/solutions/microsoft-365-services"
+          description: "Sichere und effizientes Arbeiten von überall - perfekt eingerichtet und verwaltet.",
+          link: "/solutions/microsoft-365-migration"
         },
         {
           title: "Cloud-Infrastruktur (Azure)",
           description: "Skalierbare und hochverfügbare Lösungen für Ihre Server und Anwendungen.",
-          link: "/solutions/azure-hybrid-infrastructure"
+          link: "/solutions/azure-migration"
         },
         {
           title: "IT-Sicherheit & Backup",
           description: "Schutz vor Cyber-Angriffen und garantierte Datenwiederherstellung im Ernstfall.",
-          link: "/solutions/backup-security"
+          link: "/solutions/it-sicherheit"
         }
       ]
     },
@@ -328,6 +391,91 @@ export const translations = {
           { question: "Wie sicher sind unsere Daten bei Ihnen?", answer: "Wir setzen auf modernste Verschlüsselung, MFA und regelmäßige Audits. Ihre Daten bleiben in Ihrem Hoheitsbereich." },
           { question: "Gibt es eine Mindestlaufzeit?", answer: "Wir setzen auf langfristige Partnerschaften. Die Vertragslaufzeiten werden individuell nach Vereinbarung festgelegt." }
         ]
+      }
+    },
+    hybridItPage: {
+      hero: {
+        badge: "Hybride IT-Infrastruktur",
+        headline: "Hybride IT-Infrastruktur, die einfach funktioniert",
+        subheadline: "Wir betreuen Ihre IT aus Linux, Microsoft 365 und Azure – stabil, sicher und planbar. Ohne Ausfälle, ohne Chaos.",
+        cta: "Kostenloses Erstgespräch",
+        secondaryCta: "IT-Analyse anfordern"
+      },
+      problem: {
+        badge: "Die Herausforderung",
+        headline: "Ihre IT ist über Jahre gewachsen – aber nicht strukturiert?",
+        subheadline: "Das Ergebnis: Unsicherheit, Ausfälle und unnötige Kosten.",
+        points: [
+          { title: "Systeme passen nicht sauber zusammen", description: "Inkompatibilitäten zwischen verschiedenen Plattformen führen zu Reibungsverlusten." },
+          { title: "Sicherheitslücken entstehen unbemerkt", description: "Gewachsene Strukturen sind oft schwer zu überblicken und abzusichern." },
+          { title: "Probleme kosten Zeit und Nerven", description: "Ständige Fehlersuche bindet wertvolle Ressourcen in Ihrem Unternehmen." },
+          { title: "Niemand übernimmt Verantwortung", description: "Bei Problemen schieben sich verschiedene Dienstleister oft gegenseitig die Schuld zu." }
+        ]
+      },
+      solution: {
+        badge: "Die Lösung",
+        headline: "Wir übernehmen Ihre hybride IT-Infrastruktur – komplett",
+        subheadline: "Wir sorgen dafür, dass alles zusammen funktioniert:",
+        points: [
+          { title: "Linux- & Microsoft-Integration", description: "Saubere Verbindung beider Welten für maximale Flexibilität." },
+          { title: "Microsoft 365 Betreuung", description: "Sichere Einrichtung und laufende Verwaltung Ihrer Cloud-Arbeitsplätze." },
+          { title: "Azure Cloud-Erweiterung", description: "Flexible Skalierung Ihrer Infrastruktur durch gezielten Cloud-Einsatz." },
+          { title: "Zentrale Steuerung", description: "Klare Prozesse und ein fester Ansprechpartner für alle IT-Belange." }
+        ],
+        footer: "Sie haben einen Ansprechpartner – wir kümmern uns um den Rest."
+      },
+      services: {
+        badge: "Leistungen",
+        headline: "Das übernehmen wir für Sie:",
+        subheadline: "Ganzheitliche Betreuung Ihrer hybriden Infrastruktur.",
+        items: [
+          { title: "Aufbau & Optimierung", description: "Strukturierung und Modernisierung Ihrer hybriden IT-Landschaft." },
+          { title: "Migration in Hybrid Cloud", description: "Sicherer Umzug Ihrer Systeme in die Azure Cloud." },
+          { title: "Betrieb & Monitoring", description: "24/7 Überwachung für maximale Verfügbarkeit Ihrer Systeme." },
+          { title: "M365 Betreuung", description: "Absicherung und Verwaltung Ihrer Microsoft 365 Umgebung." },
+          { title: "Backup & Recovery", description: "Garantierte Datensicherheit durch moderne Disaster-Recovery-Konzepte." },
+          { title: "Endpoint & Firewall", description: "Umfassender Schutz für alle Geräte und Netzwerkzugänge." }
+        ]
+      },
+      benefits: {
+        badge: "Ihr Nutzen",
+        headline: "Was sich für Sie konkret verbessert:",
+        items: [
+          { title: "Weniger Ausfälle", description: "Höhere Produktivität durch stabilere Systeme." },
+          { title: "Mehr Sicherheit", description: "Schutz Ihrer Unternehmensdaten auf Enterprise-Niveau." },
+          { title: "Klare IT-Struktur", description: "Transparenz und Ordnung in Ihrer gewachsenen IT." },
+          { title: "Planbare Kosten", description: "Keine bösen Überraschungen durch fixe Service-Pakete." },
+          { title: "Weniger Stress", description: "Entlastung für Sie und Ihr Team im Arbeitsalltag." }
+        ]
+      },
+      positioning: {
+        headline: "Kein klassischer IT-Dienstleister",
+        text: "Wir arbeiten wie ein externer IT-Verantwortlicher. Wir denken Ihre IT nicht nur technisch – sondern so, dass sie Ihr Unternehmen unterstützt."
+      },
+      trust: {
+        badge: "Vertrauen",
+        headline: "Warum Unternehmen mit uns arbeiten:",
+        points: [
+          { title: "Spezialisierung auf hybride IT", description: "Tiefes Expertenwissen in Linux und Microsoft Umgebungen." },
+          { title: "Feste Ansprechpartner", description: "Keine wechselnden Techniker, sondern jemand, der Ihre IT kennt." },
+          { title: "Klare SLAs", description: "Verbindliche Reaktionszeiten und definierte Service-Level." },
+          { title: "Proaktive Betreuung", description: "Wir agieren, bevor Probleme Ihren Betrieb stören." }
+        ]
+      },
+      process: {
+        badge: "Prozess",
+        headline: "So arbeiten wir:",
+        steps: [
+          { title: "Analyse", description: "Wir prüfen Ihre aktuelle IT auf Herz und Nieren." },
+          { title: "Planung", description: "Entwicklung einer stabilen und zukunftssicheren Struktur." },
+          { title: "Umsetzung", description: "Fachgerechte Migration und Implementierung der neuen Lösung." },
+          { title: "Betreuung", description: "Laufende Überwachung und Optimierung Ihres IT-Betriebs." }
+        ]
+      },
+      cta: {
+        headline: "Lassen Sie uns Ihre IT analysieren",
+        subheadline: "In einem kostenlosen Erstgespräch zeigen wir Ihnen, wo Ihre IT Risiken hat und wie wir sie stabiler machen.",
+        button: "Termin vereinbaren"
       }
     },
     footer: {
