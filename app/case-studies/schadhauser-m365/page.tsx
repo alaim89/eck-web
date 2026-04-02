@@ -1,7 +1,14 @@
+import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, CheckCircle2, Building2, AlertTriangle, Settings, TrendingUp } from "lucide-react";
 import Link from "next/link";
+
+export const metadata = getMetadata({
+  title: "Case Study: Schilderdienst Schadhauser - M365 Migration",
+  description: "Migration von Google Workspace zu Microsoft 365 mit strukturierter Absicherung für den Schilderdienst Schadhauser.",
+  canonical: "/case-studies/schadhauser-m365",
+});
 
 export default function CaseStudySchadhauser() {
   return (

@@ -1,7 +1,14 @@
+import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, CheckCircle2, Users, AlertTriangle, Settings, TrendingUp } from "lucide-react";
 import Link from "next/link";
+
+export const metadata = getMetadata({
+  title: "Case Study: zunicode GmbH - IT-Automatisierung",
+  description: "Stabilisierung und Automatisierung hybrider IT-Infrastrukturen mit Ansible & PowerShell für die zunicode GmbH.",
+  canonical: "/case-studies/zunicode-automatisierung",
+});
 
 export default function CaseStudyZunicode() {
   return (

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2, XCircle, Activity, Settings, ShieldCheck, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return Object.keys(solutionsData).map((slug) => ({
@@ -15,11 +16,19 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const solution = solutionsData[resolvedParams.slug as keyof typeof solutionsData];
-  if (!solution) return { title: 'Not Found' };
-  return {
-    title: `${solution.title} | Ecksolution-IT`,
-    description: solution.description,
-  };
+  
+  if (!solution) return getMetadata({ title: 'Lösung nicht gefunden' });
+  
+  // Construct a more descriptive SEO description if the one in data is too short
+  const seoDescription = solution.description.length < 140 
+    ? `${solution.description} Profitieren Sie von unserer Expertise in ${solution.title} für maximale Sicherheit und Effizienz in Ihrem Unternehmen.`
+    : solution.description;
+
+  return getMetadata({
+    title: solution.title,
+    description: seoDescription,
+    canonical: `/solutions/${resolvedParams.slug}`,
+  });
 }
 
 export default async function SolutionPage({ params }: { params: Promise<{ slug: string }> }) {

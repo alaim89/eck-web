@@ -80,12 +80,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/solutions/microsoft-365-services',
-        destination: '/solutions/microsoft-365-migration',
+        destination: '/solutions/microsoft-365-compliance-betreuung',
         permanent: true,
       },
       {
         source: '/solutions/azure-hybrid-infrastructure',
         destination: '/solutions/azure-hybrid-betreuung',
+        permanent: true,
+      },
+      {
+        source: '/solutions/backup-security',
+        destination: '/solutions/it-sicherheit',
         permanent: true,
       },
       {

@@ -208,12 +208,12 @@ export const translations = {
         {
           title: "Microsoft 365 & Modern Work",
           description: "Sichere und effizientes Arbeiten von überall - perfekt eingerichtet und verwaltet.",
-          link: "/solutions/microsoft-365-migration"
+          link: "/solutions/microsoft-365-compliance-betreuung"
         },
         {
           title: "Cloud-Infrastruktur (Azure)",
           description: "Skalierbare und hochverfügbare Lösungen für Ihre Server und Anwendungen.",
-          link: "/solutions/azure-migration"
+          link: "/solutions/azure-hybrid-betreuung"
         },
         {
           title: "IT-Sicherheit & Backup",

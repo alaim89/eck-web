@@ -1,7 +1,14 @@
+import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, CheckCircle2, ShieldCheck, AlertTriangle, Settings, TrendingUp } from "lucide-react";
 import Link from "next/link";
+
+export const metadata = getMetadata({
+  title: "Case Study: Bellaseno GmbH - IT-Sicherheitsstrategie",
+  description: "Erfahren Sie, wie wir für die Bellaseno GmbH eine strukturierte IT-Sicherheitsstrategie aufgebaut und kritische Schwachstellen identifiziert haben.",
+  canonical: "/case-studies/bellaseno-security",
+});
 
 export default function CaseStudyBellaseno() {
   return (

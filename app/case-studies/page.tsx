@@ -1,7 +1,14 @@
+import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ArrowRight, Building2, Activity, ShieldCheck, Database, Users, Mail } from "lucide-react";
 import Link from "next/link";
+
+export const metadata = getMetadata({
+  title: "Case Studies & Erfolgsgeschichten",
+  description: "Erfahren Sie, wie wir Unternehmen dabei geholfen haben, ihre IT-Infrastruktur zu modernisieren, Sicherheit zu erhöhen und digitale Prozesse zu optimieren.",
+  canonical: "/case-studies",
+});
 
 export default function CaseStudiesIndex() {
   return (

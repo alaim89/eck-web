@@ -1,7 +1,14 @@
+import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, CheckCircle2, Database, AlertTriangle, Settings, TrendingUp } from "lucide-react";
 import Link from "next/link";
+
+export const metadata = getMetadata({
+  title: "Case Study: MAIT Germany GmbH - Enterprise IT Integration",
+  description: "Integration hybrider IT-Infrastrukturen und Optimierung von Betriebsprozessen für die MAIT Germany GmbH.",
+  canonical: "/case-studies/mait-enterprise",
+});
 
 export default function CaseStudyMait() {
   return (

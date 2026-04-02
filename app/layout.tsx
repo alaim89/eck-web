@@ -9,10 +9,9 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
-export const metadata: Metadata = {
-  title: 'Ecksolution-IT | Professionelle Managed IT-Services für den Mittelstand',
-  description: 'Ihr Partner für verlässliche IT-Infrastruktur, Cybersecurity und Cloud-Migration. Wir übernehmen die volle Verantwortung für Ihre IT – proaktiv und sicher.',
-};
+import { getMetadata } from '@/lib/seo';
+
+export const metadata = getMetadata();
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (

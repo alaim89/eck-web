@@ -1,7 +1,14 @@
+import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, CheckCircle2, Activity, AlertTriangle, Settings, TrendingUp } from "lucide-react";
 import Link from "next/link";
+
+export const metadata = getMetadata({
+  title: "Case Study: group24 AG - Azure Cloud Migration",
+  description: "Erfahren Sie, wie wir die group24 AG bei der Migration in Microsoft Azure und dem Aufbau einer skalierbaren Cloud-Infrastruktur unterstützt haben.",
+  canonical: "/case-studies/group24-azure",
+});
 
 export default function CaseStudyGroup24() {
   return (

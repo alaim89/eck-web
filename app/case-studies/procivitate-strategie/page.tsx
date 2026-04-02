@@ -1,7 +1,14 @@
+import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, CheckCircle2, Activity, AlertTriangle, Settings, TrendingUp } from "lucide-react";
 import Link from "next/link";
+
+export const metadata = getMetadata({
+  title: "Case Study: Procivitate gGmbH - IT-Strategie & M365",
+  description: "Aufbau und Absicherung einer Microsoft-365-Umgebung mit klarer IT-Strategie für die Procivitate gGmbH.",
+  canonical: "/case-studies/procivitate-strategie",
+});
 
 export default function CaseStudyProcivitate() {
   return (

@@ -1,7 +1,14 @@
+import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, CheckCircle2, Database, AlertTriangle, Settings, TrendingUp } from "lucide-react";
 import Link from "next/link";
+
+export const metadata = getMetadata({
+  title: "Case Study: BiolytiQs GmbH - Server-Modernisierung",
+  description: "Migration auf Windows Server 2019 und Integration in Microsoft 365 für die BiolytiQs GmbH.",
+  canonical: "/case-studies/biolytiqs-server",
+});
 
 export default function CaseStudyBiolytiqs() {
   return (

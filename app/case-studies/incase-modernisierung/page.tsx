@@ -1,7 +1,14 @@
+import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, CheckCircle2, Mail, AlertTriangle, Settings, TrendingUp } from "lucide-react";
 import Link from "next/link";
+
+export const metadata = getMetadata({
+  title: "Case Study: InCase Handelsgesellschaft - M365 Modernisierung",
+  description: "Modernisierung der E-Mail-Infrastruktur und Einführung mobiler Geräteverwaltung für die InCase Handelsgesellschaft mbH.",
+  canonical: "/case-studies/incase-modernisierung",
+});
 
 export default function CaseStudyInCase() {
   return (
