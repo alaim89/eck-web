@@ -6,6 +6,9 @@ export const translations = {
       risk: "Das Risiko",
       solutions: "Lösungen",
       caseStudies: "Referenzen",
+      support: "Support",
+      customerPortal: "Kundenportal",
+      remoteMaintenance: "Fernwartung",
       pricing: "Preise",
       contact: "Kontakt",
       getAudit: "IT-Check anfordern",
@@ -285,174 +288,21 @@ export const translations = {
       viewAll: "Alle Referenzen ansehen",
       readMore: "Vollständigen Bericht lesen",
     },
-    managedItPage: {
-      hero: {
-        badge: "Managed IT-Services",
-        headline: "Wir reparieren nicht nur - wir garantieren Betriebssicherheit.",
-        subheadline: "Verabschieden Sie sich von unvorhersehbaren IT-Problemen. Wir betreiben Ihre Infrastruktur mit voller Verantwortung - exakt abgestimmt auf Ihren Bedarf und den vereinbarten Leistungsumfang.",
-        cta: "Jetzt Beratungstermin buchen",
-      },
-      problem: {
-        headline: "IT darf kein Bremsklotz sein.",
-        subheadline: "Reaktive IT-Betreuung führt oft zu vermeidbaren Problemen:",
-        points: [
-          { title: "Umsatzeinbußen durch Stillstand", description: "Wenn die IT steht, arbeiten Ihre Mitarbeiter nicht - die Fixkosten laufen jedoch weiter." },
-          { title: "Sicherheitsbedenken", description: "Die ständige Sorge, ob Backups im Ernstfall wirklich funktionieren oder Daten sicher sind." },
-          { title: "Unkalkulierbare Kosten", description: "Schwankende IT-Ausgaben durch unvorhersehbare Reparaturen und Notfalleinsätze außerhalb fester Budgets." }
-        ]
-      },
-      solution: {
-        headline: "Ganzheitliche IT-Verantwortung.",
-        subheadline: "Wir wechseln von der Fehlerbehebung hin zum proaktiven Management. Wir verantworten das Ergebnis nach vereinbartem Scope.",
-        points: [
-          { title: "Maximale Verfügbarkeit", description: "Durch proaktive Wartung minimieren wir Störungen, bevor sie den Arbeitsfluss stören - definiert nach Ihren SLAs." },
-          { title: "Kalkulierbare Budgets", description: "Sie zahlen für den gebuchten Leistungsumfang. Das gibt Ihnen volle Planungssicherheit ohne versteckte Kosten." },
-          { title: "Strategische Beratung", description: "Wir begleiten Sie bei der Digitalisierung und stellen sicher, dass Ihre IT mit Ihren Zielen mitwächst." }
-        ]
-      },
-      results: {
-        headline: "Zahlen, die für sich sprechen.",
-        subheadline: "Unser Erfolg misst sich an Ihrer Stabilität und Produktivität.",
-        cards: [
-          { metric: "SLA-basiert", label: "Verfügbarkeit" },
-          { metric: "Schnell", label: "Reaktionszeit" },
-          { metric: "Effizient", label: "IT-Betrieb" },
-          { metric: "Geprüft", label: "Sicherheit" }
-        ]
-      },
-      services: {
-        headline: "Leistungsumfang nach Bedarf.",
-        subheadline: "Unser Managed Service ist Ihre externe IT-Abteilung - flexibel und professionell.",
-        items: [
-          { title: "Monitoring & Management", description: "Lückenlose Überwachung Ihrer Server, Netzwerke und Endgeräte nach Vereinbarung." },
-          { title: "Support & Helpdesk", description: "Kompetente Hilfe für Ihr Team im Rahmen des gebuchten Leistungsumfangs." },
-          { title: "Cybersecurity & Compliance", description: "Moderner Schutz vor Bedrohungen und Einhaltung gesetzlicher Vorgaben nach Scope." },
-          { title: "Backup & Disaster Recovery", description: "Automatisierte Datensicherung mit regelmäßigen Wiederherstellungstests." },
-          { title: "Cloud & Infrastruktur", description: "Verwaltung von Microsoft 365, Azure und lokalen Systemen nach SLA." },
-          { title: "IT-Strategie & Consulting", description: "Regelmäßige Planungstermine zur Optimierung Ihrer IT-Landschaft." }
-        ]
-      },
-      process: {
-        headline: "Der Weg zur Partnerschaft.",
-        subheadline: "Ein strukturierter Übergang zu professionellen IT-Operations.",
-        steps: [
-          { title: "Tiefen-Audit", description: "Wir dokumentieren den Ist-Zustand und identifizieren kritische Schwachstellen." },
-          { title: "Stabilisierung", description: "Wir beheben akute Risiken und bringen Ihre IT auf den vereinbarten Standard." },
-          { title: "Regelbetrieb", description: "Wir übernehmen die vereinbarte Verantwortung und sorgen für einen reibungslosen Alltag." }
-        ]
-      },
-      caseStudy: {
-        headline: "Erfolge aus der Praxis.",
-        company: "Logistik-Unternehmen Region Nord",
-        challenge: "Häufige Serverausfälle blockierten die Abwicklung und verursachten hohe Produktivitätsverluste.",
-        solution: "Umstellung auf eine Managed Hybrid-Cloud mit redundanter Anbindung nach SLA.",
-        result: "Keine kritischen Ausfälle seit 24 Monaten und signifikant weniger Support-Anfragen."
-      },
-      philosophy: {
-        quote: "Wir verkaufen keine Stunden. Wir verkaufen Betriebssicherheit nach Maß.",
-        author: "Andreas Eckert, Ecksolution-IT"
-      },
-      faq: {
-        headline: "Fragen zu unseren Managed Services.",
-        items: [
-          { question: "Welche Leistungen sind abgedeckt?", answer: "Der Leistungsumfang wird individuell nach Scope und SLA vereinbart. Typischerweise sind Monitoring, Wartung und Support für die definierten Systeme enthalten." },
-          { question: "Wie sicher sind unsere Daten bei Ihnen?", answer: "Wir setzen auf modernste Verschlüsselung, MFA und regelmäßige Audits. Ihre Daten bleiben in Ihrem Hoheitsbereich." },
-          { question: "Gibt es eine Mindestlaufzeit?", answer: "Wir setzen auf langfristige Partnerschaften. Die Vertragslaufzeiten werden individuell nach Vereinbarung festgelegt." }
-        ]
-      }
-    },
-    hybridItPage: {
-      hero: {
-        badge: "Hybride IT-Infrastruktur",
-        headline: "Hybride IT-Infrastruktur, die einfach funktioniert",
-        subheadline: "Wir betreuen Ihre IT aus Linux, Microsoft 365 und Azure – stabil, sicher und planbar. Ohne Ausfälle, ohne Chaos.",
-        cta: "Kostenloses Erstgespräch",
-        secondaryCta: "IT-Analyse anfordern"
-      },
-      problem: {
-        badge: "Die Herausforderung",
-        headline: "Ihre IT ist über Jahre gewachsen – aber nicht strukturiert?",
-        subheadline: "Das Ergebnis: Unsicherheit, Ausfälle und unnötige Kosten.",
-        points: [
-          { title: "Systeme passen nicht sauber zusammen", description: "Inkompatibilitäten zwischen verschiedenen Plattformen führen zu Reibungsverlusten." },
-          { title: "Sicherheitslücken entstehen unbemerkt", description: "Gewachsene Strukturen sind oft schwer zu überblicken und abzusichern." },
-          { title: "Probleme kosten Zeit und Nerven", description: "Ständige Fehlersuche bindet wertvolle Ressourcen in Ihrem Unternehmen." },
-          { title: "Niemand übernimmt Verantwortung", description: "Bei Problemen schieben sich verschiedene Dienstleister oft gegenseitig die Schuld zu." }
-        ]
-      },
-      solution: {
-        badge: "Die Lösung",
-        headline: "Wir übernehmen Ihre hybride IT-Infrastruktur – komplett",
-        subheadline: "Wir sorgen dafür, dass alles zusammen funktioniert:",
-        points: [
-          { title: "Linux- & Microsoft-Integration", description: "Saubere Verbindung beider Welten für maximale Flexibilität." },
-          { title: "Microsoft 365 Betreuung", description: "Sichere Einrichtung und laufende Verwaltung Ihrer Cloud-Arbeitsplätze." },
-          { title: "Azure Cloud-Erweiterung", description: "Flexible Skalierung Ihrer Infrastruktur durch gezielten Cloud-Einsatz." },
-          { title: "Zentrale Steuerung", description: "Klare Prozesse und ein fester Ansprechpartner für alle IT-Belange." }
-        ],
-        footer: "Sie haben einen Ansprechpartner – wir kümmern uns um den Rest."
-      },
-      services: {
-        badge: "Leistungen",
-        headline: "Das übernehmen wir für Sie:",
-        subheadline: "Ganzheitliche Betreuung Ihrer hybriden Infrastruktur.",
-        items: [
-          { title: "Aufbau & Optimierung", description: "Strukturierung und Modernisierung Ihrer hybriden IT-Landschaft." },
-          { title: "Migration in Hybrid Cloud", description: "Sicherer Umzug Ihrer Systeme in die Azure Cloud." },
-          { title: "Betrieb & Monitoring", description: "24/7 Überwachung für maximale Verfügbarkeit Ihrer Systeme." },
-          { title: "M365 Betreuung", description: "Absicherung und Verwaltung Ihrer Microsoft 365 Umgebung." },
-          { title: "Backup & Recovery", description: "Garantierte Datensicherheit durch moderne Disaster-Recovery-Konzepte." },
-          { title: "Endpoint & Firewall", description: "Umfassender Schutz für alle Geräte und Netzwerkzugänge." }
-        ]
-      },
-      benefits: {
-        badge: "Ihr Nutzen",
-        headline: "Was sich für Sie konkret verbessert:",
-        items: [
-          { title: "Weniger Ausfälle", description: "Höhere Produktivität durch stabilere Systeme." },
-          { title: "Mehr Sicherheit", description: "Schutz Ihrer Unternehmensdaten auf Enterprise-Niveau." },
-          { title: "Klare IT-Struktur", description: "Transparenz und Ordnung in Ihrer gewachsenen IT." },
-          { title: "Planbare Kosten", description: "Keine bösen Überraschungen durch fixe Service-Pakete." },
-          { title: "Weniger Stress", description: "Entlastung für Sie und Ihr Team im Arbeitsalltag." }
-        ]
-      },
-      positioning: {
-        headline: "Kein klassischer IT-Dienstleister",
-        text: "Wir arbeiten wie ein externer IT-Verantwortlicher. Wir denken Ihre IT nicht nur technisch – sondern so, dass sie Ihr Unternehmen unterstützt."
-      },
-      trust: {
-        badge: "Vertrauen",
-        headline: "Warum Unternehmen mit uns arbeiten:",
-        points: [
-          { title: "Spezialisierung auf hybride IT", description: "Tiefes Expertenwissen in Linux und Microsoft Umgebungen." },
-          { title: "Feste Ansprechpartner", description: "Keine wechselnden Techniker, sondern jemand, der Ihre IT kennt." },
-          { title: "Klare SLAs", description: "Verbindliche Reaktionszeiten und definierte Service-Level." },
-          { title: "Proaktive Betreuung", description: "Wir agieren, bevor Probleme Ihren Betrieb stören." }
-        ]
-      },
-      process: {
-        badge: "Prozess",
-        headline: "So arbeiten wir:",
-        steps: [
-          { title: "Analyse", description: "Wir prüfen Ihre aktuelle IT auf Herz und Nieren." },
-          { title: "Planung", description: "Entwicklung einer stabilen und zukunftssicheren Struktur." },
-          { title: "Umsetzung", description: "Fachgerechte Migration und Implementierung der neuen Lösung." },
-          { title: "Betreuung", description: "Laufende Überwachung und Optimierung Ihres IT-Betriebs." }
-        ]
-      },
-      cta: {
-        headline: "Lassen Sie uns Ihre IT analysieren",
-        subheadline: "In einem kostenlosen Erstgespräch zeigen wir Ihnen, wo Ihre IT Risiken hat und wie wir sie stabiler machen.",
-        button: "Termin vereinbaren"
-      }
-    },
     footer: {
       description: "Professionelle IT-Services für den deutschen Mittelstand. Zuverlässig, sicher und auf Augenhöhe.",
       copyright: "© {year} Ecksolution-IT Managed Services.",
       links: {
         contact: "Kontakt",
+        support: "Support",
+        customerPortal: "Kundenportal",
+        remoteMaintenance: "Fernwartung",
         imprint: "Impressum",
         privacy: "Datenschutz"
+      },
+      categories: {
+        support: "Support",
+        contact: "Kontakt",
+        legal: "Rechtliches"
       },
       cta: {
         hint: "Bereit für den nächsten Schritt?",

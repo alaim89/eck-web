@@ -71,7 +71,7 @@ export function Header() {
                   </div>
                 </div>
                 <div className="pt-6 mt-6 border-t border-gray-200/60">
-                  <Link href="/#pricing" onClick={() => setIsMenuOpen(false)} className="text-sm font-semibold text-black hover:text-primary flex items-center gap-1 transition-colors">
+                  <Link href="/#contact" onClick={() => setIsMenuOpen(false)} className="text-sm font-semibold text-black hover:text-primary flex items-center gap-1 transition-colors">
                     {t.megaMenu.core.pricing} <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -98,6 +98,14 @@ export function Header() {
 
           <Link href="/case-studies" className="hover:text-black transition-colors">{t.nav.caseStudies}</Link>
           <Link href="/blog" className="hover:text-black transition-colors">Blog</Link>
+          <a 
+            href="https://marketplace.ecksolution-it.de/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hover:text-black transition-colors"
+          >
+            {t.nav.customerPortal}
+          </a>
           <Link href="/kontakt" className="hover:text-black transition-colors">{t.nav.contact}</Link>
           
           <Link href="/#contact" className="px-5 py-2.5 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors shadow-sm font-semibold">
@@ -139,6 +147,15 @@ export function Header() {
           </div>
           <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-semibold text-gray-900">Blog</Link>
           <Link href="/case-studies" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-semibold text-gray-900">{t.nav.caseStudies}</Link>
+          <a 
+            href="https://marketplace.ecksolution-it.de/" 
+            onClick={() => setIsMobileMenuOpen(false)} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="block text-lg font-semibold text-gray-900"
+          >
+            {t.nav.customerPortal}
+          </a>
           <Link href="/kontakt" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-semibold text-gray-900">{t.nav.contact}</Link>
           <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full py-4 bg-black text-white text-center rounded-xl font-bold">
             {t.nav.getAudit}

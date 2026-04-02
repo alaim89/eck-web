@@ -226,7 +226,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">Weitere Lösungen entdecken</h2>
                 <p className="text-gray-700 text-lg">Wie wir Unternehmen helfen, IT-Risiken zu eliminieren.</p>
               </div>
-              <Link href="/#solutions" className="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+              <Link href="/solutions" className="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
                 Alle Lösungen ansehen <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
