@@ -1,72 +1,49 @@
-export type FaqItem = {
-  question: string;
-  answer: string;
+import { 
+  managedItFaqs, 
+  hybridItFaqs, 
+  microsoftFaqs, 
+  securityFaqs, 
+  backupFaqs,
+  FaqItem
+} from "./faqs";
+
+export type Solution = {
+  title: string;
+  hero: string;
+  description: string;
+  problem: {
+    title: string;
+    points: string[];
+  };
+  solution: {
+    title: string;
+    points: string[];
+  };
+  features: string[];
+  benefits: string[];
+  results: {
+    metric: string;
+    label: string;
+  }[];
+  process: {
+    analysis: string;
+    implementation: string;
+    operations: string;
+  };
+  caseStudy: {
+    title: string;
+    companyType: string;
+    situation: string;
+    problem: string;
+    decisionPoint: string;
+    solution: string;
+    result: string;
+    slug: string;
+  };
+  faq?: FaqItem[];
 };
 
-const commonFaqs: FaqItem[] = [
-  {
-    question: "Was sind Managed IT Dienstleistungen für kleine und mittlere Unternehmen?",
-    answer: "Managed IT Dienstleistungen bedeuten, dass Ihre IT dauerhaft betreut wird – nicht erst im Problemfall. Systeme werden überwacht, aktualisiert und abgesichert. Gerade für kleine und mittlere Unternehmen sorgt das für weniger Ausfälle und einen stabilen Arbeitsalltag."
-  },
-  {
-    question: "Für welche Unternehmen lohnt sich ein externer IT-Verantwortlicher?",
-    answer: "Vor allem für Unternehmen ohne eigene IT-Abteilung oder mit wachsender IT. Wenn Systeme komplexer werden und Probleme Zeit kosten, sorgt ein externer IT-Verantwortlicher für Struktur und übernimmt die Verantwortung für den Betrieb."
-  },
-  {
-    question: "Was bedeutet strategische IT-Betreuung für Unternehmen?",
-    answer: "Strategische IT-Betreuung bedeutet, dass Ihre IT nicht nur funktioniert, sondern mit dem Unternehmen mitwächst. Systeme werden so aufgebaut, dass sie stabil laufen, Risiken reduziert werden und neue Anforderungen sauber integriert werden können."
-  },
-  {
-    question: "Was ist eine hybride IT-Infrastruktur aus Linux und Microsoft?",
-    answer: "Eine hybride IT-Infrastruktur verbindet lokale Systeme wie Linux-Server mit Cloud-Diensten wie Microsoft 365 oder Azure. Viele Unternehmen haben genau diese Mischung – oft ohne klare Struktur. Ziel ist, dass alles sauber zusammenspielt und im Alltag zuverlässig funktioniert."
-  },
-  {
-    question: "Wie funktioniert die Betreuung einer hybriden IT-Infrastruktur?",
-    answer: "Die Systeme werden zentral überwacht, abgestimmt und kontinuierlich optimiert. Wichtig ist, dass Cloud- und On-Prem-Systeme nicht parallel nebeneinander laufen, sondern als eine saubere Infrastruktur funktionieren."
-  },
-  {
-    question: "Was umfasst ein Hybrid Cloud Managed Service?",
-    answer: "Ein Hybrid Cloud Managed Service beinhaltet die Betreuung von Cloud- und lokalen Systemen inklusive Monitoring, Updates, Sicherheit und Betrieb. Ziel ist eine stabile Umgebung, in der alles zuverlässig zusammenarbeitet."
-  },
-  {
-    question: "Was beinhaltet eine Hybrid Cloud Transformation und Migration?",
-    answer: "Bestehende Systeme werden schrittweise modernisiert und in eine hybride Umgebung überführt. Wichtig ist dabei eine klare Struktur, damit Migrationen nicht zu Chaos, Ausfällen oder Datenverlust führen."
-  },
-  {
-    question: "Wie funktioniert die kontinuierliche Betreuung von Microsoft 365?",
-    answer: "Microsoft 365 wird nicht nur eingerichtet, sondern laufend betreut. Benutzer, Berechtigungen und Sicherheitsrichtlinien werden gepflegt und an neue Anforderungen angepasst, damit die Umgebung stabil und sicher bleibt."
-  },
-  {
-    question: "Was umfasst Microsoft 365 Compliance und Security?",
-    answer: "Dazu gehören Zugriffskontrollen, Multi-Faktor-Authentifizierung, Richtlinien und Sicherheitsmechanismen. Ohne saubere Konfiguration entstehen schnell Sicherheitslücken – oft unbemerkt im Alltag."
-  },
-  {
-    question: "Warum ist IT-Sicherheitsbetreuung für Unternehmen wichtig?",
-    answer: "IT-Sicherheit ist kein einmaliges Projekt. Systeme müssen kontinuierlich überwacht und angepasst werden. Ohne laufende Betreuung entstehen Risiken, die oft erst sichtbar werden, wenn bereits Schaden entstanden ist."
-  },
-  {
-    question: "Was gehört zu Endpoint- und Firewall-Schutz?",
-    answer: "Endpoint- und Firewall-Schutz sichert Endgeräte und Netzwerke ab. Dazu gehören Zugriffskontrollen, Geräteschutz und klare Firewall-Regeln, die unbefugte Zugriffe verhindern."
-  },
-  {
-    question: "Was bedeutet IT-Sicherheit für kritische Umgebungen (KRITIS)?",
-    answer: "In kritischen Infrastrukturen gelten besonders hohe Anforderungen. Systeme müssen stabil, überwacht und nach klaren Sicherheitsrichtlinien betrieben werden, um Ausfälle und Sicherheitsvorfälle zu vermeiden."
-  },
-  {
-    question: "Wie funktioniert Backup und Disaster Recovery in Unternehmen?",
-    answer: "Backup und Disaster Recovery sorgen dafür, dass Daten im Notfall schnell wiederhergestellt werden können. Ohne klare Strategie kann ein Ausfall den gesamten Betrieb stilllegen – genau das wird damit verhindert."
-  },
-  {
-    question: "Wie unterstützt IT-Governance und Risikomanagement Geschäftsführer?",
-    answer: "IT-Governance schafft klare Strukturen und Verantwortlichkeiten. Risikomanagement hilft, Probleme früh zu erkennen und zu vermeiden, bevor sie den Geschäftsbetrieb beeinflussen."
-  },
-  {
-    question: "Wie funktionieren IT Professional Services mit festen SLAs?",
-    answer: "IT Professional Services mit SLAs definieren klare Reaktionszeiten und Leistungen. Unternehmen wissen genau, wann Unterstützung erfolgt und vermeiden unnötige Verzögerungen im Betrieb."
-  }
-];
-
-export const solutionsData = {
+export const solutionsData: Record<string, Solution> = {
   "hybrid-it-infrastruktur": {
     title: "Hybride IT-Infrastruktur",
     hero: "Linux, Microsoft 365 und Azure nahtlos integriert.",
@@ -120,7 +97,7 @@ export const solutionsData = {
       result: "Reduzierte manuelle Eingriffe und stabilerer IT-Betrieb.",
       slug: "zunicode-automatisierung"
     },
-    faq: commonFaqs
+    faq: hybridItFaqs
   },
   "managed-it-service": {
     title: "Managed IT-Service",
@@ -175,7 +152,7 @@ export const solutionsData = {
       result: "Stabilisierte IT-Umgebung und klare Technologie-Roadmap.",
       slug: "zunicode-automatisierung"
     },
-    faq: commonFaqs
+    faq: managedItFaqs
   },
   "externer-it-verantwortlicher": {
     title: "Externer IT-Verantwortlicher",
@@ -284,7 +261,7 @@ export const solutionsData = {
       result: "Klare Übersicht über Risiken und strukturierte Entscheidungsbasis.",
       slug: "bellaseno-security"
     },
-    faq: commonFaqs
+    faq: securityFaqs
   },
   "endpoint-firewall-security": {
     title: "Endpoint & Firewall Security",
@@ -338,7 +315,8 @@ export const solutionsData = {
       solution: "Einführung von Microsoft Intune zur Geräteverwaltung.",
       result: "Zentral verwaltete und abgesicherte mobile Endgeräte.",
       slug: "incase-modernisierung"
-    }
+    },
+    faq: securityFaqs
   },
   "disaster-recovery": {
     title: "Disaster Recovery",
@@ -393,7 +371,7 @@ export const solutionsData = {
       result: "Zuverlässiges Backup und schnelle Wiederherstellungsmöglichkeit.",
       slug: "biolytiqs-server"
     },
-    faq: commonFaqs
+    faq: backupFaqs
   },
   "netzwerk-management": {
     title: "Netzwerk-Management",
@@ -555,7 +533,8 @@ export const solutionsData = {
       solution: "Migration in Azure und Integration von Azure Virtual Desktop.",
       result: "Maximale Skalierbarkeit und stabile Infrastruktur.",
       slug: "group24-azure"
-    }
+    },
+    faq: hybridItFaqs
   },
   "hybrid-cloud-transformation": {
     title: "Hybrid Cloud Transformation",
@@ -609,7 +588,8 @@ export const solutionsData = {
       solution: "Migration bestehender Systeme in Microsoft Azure.",
       result: "Stabile, hochverfügbare und skalierbare Systeme.",
       slug: "group24-azure"
-    }
+    },
+    faq: hybridItFaqs
   },
   "it-projekte-mit-slas": {
     title: "IT-Projekte mit festen SLAs",
@@ -663,8 +643,7 @@ export const solutionsData = {
       solution: "Projektbasierte Migration zu Microsoft 365 mit festem Zeitplan.",
       result: "Klare und strukturierte IT-Umgebung innerhalb des Zeitrahmens.",
       slug: "schadhauser-m365"
-    },
-    faq: commonFaqs
+    }
   },
   "it-risiko-audit": {
     title: "IT-Risiko-Audit",
@@ -827,7 +806,7 @@ export const solutionsData = {
       result: "Verbesserte Sicherheitslage und gesteigerte Teamproduktivität.",
       slug: "procivitate-strategie"
     },
-    faq: commonFaqs
+    faq: microsoftFaqs
   },
   "it-governance-risikomanagement": {
     title: "IT-Governance & Risikomanagement",
@@ -936,7 +915,7 @@ export const solutionsData = {
       result: "Zuverlässiges Backup und schnelle Wiederherstellungsmöglichkeit.",
       slug: "biolytiqs-server"
     },
-    faq: commonFaqs
+    faq: backupFaqs
   },
   "microsoft-365-migration": {
     title: "Microsoft 365 Migration",
@@ -991,7 +970,7 @@ export const solutionsData = {
       result: "Klare und strukturierte IT-Umgebung mit zentraler Verwaltung und verbesserter Sicherheit.",
       slug: "schadhauser-m365"
     },
-    faq: commonFaqs
+    faq: microsoftFaqs
   },
   "azure-migration": {
     title: "Azure Migration",

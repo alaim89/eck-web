@@ -256,7 +256,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
               id="faq-schema"
               type="application/ld+json"
               dangerouslySetInnerHTML={{
-                __html: JSON.stringify(getFaqSchema(solution.faq)),
+                __html: JSON.stringify(getFaqSchema(solution.faq, `/solutions/${slug}`)),
               }}
             />
           </>

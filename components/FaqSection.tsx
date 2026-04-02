@@ -11,9 +11,10 @@ type FaqItem = {
 interface FaqSectionProps {
   title: string;
   items: FaqItem[];
+  sectionId?: string;
 }
 
-export function FaqSection({ title, items }: FaqSectionProps) {
+export function FaqSection({ title, items, sectionId = "faq" }: FaqSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {
@@ -21,9 +22,9 @@ export function FaqSection({ title, items }: FaqSectionProps) {
   };
 
   return (
-    <section className="py-24 px-6 bg-white border-t border-gray-100">
+    <section id={sectionId} className="py-24 px-6 bg-white border-t border-gray-100">
       <div className="max-w-[800px] mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">{title}</h2>
+        <h2 id={`${sectionId}-heading`} className="text-3xl md:text-4xl font-bold mb-12 text-center">{title}</h2>
         <div className="space-y-4">
           {items.map((item, index) => (
             <div 
@@ -34,7 +35,8 @@ export function FaqSection({ title, items }: FaqSectionProps) {
                 onClick={() => toggle(index)}
                 className="w-full flex items-center justify-between p-6 text-left focus:outline-none group"
                 aria-expanded={openIndex === index}
-                aria-controls={`faq-answer-${index}`}
+                aria-controls={`${sectionId}-answer-${index}`}
+                id={`${sectionId}-question-${index}`}
               >
                 <span className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">
                   {item.question}
@@ -46,11 +48,12 @@ export function FaqSection({ title, items }: FaqSectionProps) {
                 />
               </button>
               <div
-                id={`faq-answer-${index}`}
+                id={`${sectionId}-answer-${index}`}
                 className={`transition-all duration-300 ease-in-out ${
                   openIndex === index ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
                 } overflow-hidden`}
                 role="region"
+                aria-labelledby={`${sectionId}-question-${index}`}
               >
                 <div className="p-6 pt-0 text-gray-700 leading-relaxed text-lg border-t border-gray-50">
                   {item.answer}

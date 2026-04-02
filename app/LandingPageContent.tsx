@@ -17,6 +17,7 @@ import { HeroVisual } from "@/components/HeroVisual";
 import { useLanguage } from "@/context/LanguageContext";
 import { useState, useEffect, useCallback, useRef } from "react";
 import { getOrganizationSchema } from "@/lib/jsonld";
+import { getFaqSchema } from "@/lib/seo";
 
 const HERO_VARIANTS = [
   {
@@ -76,18 +77,7 @@ export default function LandingPageContent() {
 
   const variant = HERO_VARIANTS[currentVariant];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": t.faq.items.map((item: { question: string; answer: string }) => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  };
+  const faqSchema = getFaqSchema(t.faq.items, "/");
 
   const organizationSchema = getOrganizationSchema();
 
