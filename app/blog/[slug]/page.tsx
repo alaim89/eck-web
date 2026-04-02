@@ -7,7 +7,7 @@ const BLOG_POSTS = {
     title: "Cloud-Migration für den Mittelstand: Ein Leitfaden für 2024",
     date: "20. März 2024",
     readTime: "8 min",
-    author: "André Ecke",
+    author: "Andreas Eckert",
     category: "Cloud & Infrastruktur",
     image: "https://picsum.photos/seed/cloud/1200/600",
     content: `
@@ -48,7 +48,7 @@ const BLOG_POSTS = {
     title: "IT-Sicherheit: Warum Prävention günstiger ist als jeder Notfalleinsatz",
     date: "12. März 2024",
     readTime: "6 min",
-    author: "André Ecke",
+    author: "Andreas Eckert",
     category: "Security",
     image: "https://picsum.photos/seed/security/1200/600",
     content: `
@@ -71,7 +71,7 @@ const BLOG_POSTS = {
     title: "Managed Services vs. Inhouse-IT: Die richtige Balance finden",
     date: "05. März 2024",
     readTime: "7 min",
-    author: "André Ecke",
+    author: "Andreas Eckert",
     category: "Strategie",
     image: "https://picsum.photos/seed/strategy/1200/600",
     content: `
