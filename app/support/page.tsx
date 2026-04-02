@@ -2,6 +2,7 @@ import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Monitor, Layout, ArrowRight, Download, ExternalLink } from "lucide-react";
+import { SupportDownloadButton } from "@/components/SupportDownloadButton";
 
 export const metadata = getMetadata({
   title: "Support & Kundenportal",
@@ -35,15 +36,7 @@ export default function SupportPage() {
               <p className="text-gray-700 text-lg leading-relaxed mb-10 flex-grow">
                 Wenn wir Sie zur Fernwartung auffordern, können Sie hier das Support-Tool herunterladen und die Verbindung starten.
               </p>
-              <a 
-                href="https://gw52.pcvisit.de/v1/hosted/jumplink?productid=18&func=download&productrole=guestSetup&host=gw52.pcvisit.de&companyid=3978521533&gateway=lb3.pcvisit.de"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/10 active:scale-[0.98] w-full justify-center md:w-auto"
-              >
-                Fernwartung herunterladen
-                <Download className="w-5 h-5" />
-              </a>
+              <SupportDownloadButton />
             </section>
 
             {/* Kundenportal Section */}

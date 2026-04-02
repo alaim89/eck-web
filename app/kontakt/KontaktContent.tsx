@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from "motion/react";
-import { Mail, Phone, MessageSquare, Calendar, ArrowRight, CheckCircle2, Building2, Users, Wallet, MessageCircle } from "lucide-react";
+import { Mail, Phone, MessageSquare, Calendar, ArrowRight, CheckCircle2, Building2, Users, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -21,6 +21,11 @@ export default function KontaktContent() {
         'send_to': 'AW-CONVERSION_ID/LABEL',
         'value': 1.0,
         'currency': 'EUR'
+      });
+      
+      (window as any).gtag("event", "generate_lead", {
+        event_category: "Kontakt",
+        event_label: "Formular abgeschickt"
       });
     }
 
@@ -161,30 +166,16 @@ export default function KontaktContent() {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Mitarbeiteranzahl</label>
-                      <div className="relative">
-                        <Users className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                        <select className="w-full pl-14 pr-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none appearance-none">
-                          <option>1-10 Mitarbeiter</option>
-                          <option>11-50 Mitarbeiter</option>
-                          <option>51-250 Mitarbeiter</option>
-                          <option>250+ Mitarbeiter</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Projekt-Budget</label>
-                      <div className="relative">
-                        <Wallet className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                        <select className="w-full pl-14 pr-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none appearance-none">
-                          <option>Unter 5.000 €</option>
-                          <option>5.000 € - 20.000 €</option>
-                          <option>20.000 € - 50.000 €</option>
-                          <option>50.000 € +</option>
-                        </select>
-                      </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Mitarbeiteranzahl</label>
+                    <div className="relative">
+                      <Users className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <select className="w-full pl-14 pr-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none appearance-none">
+                        <option>1-10 Mitarbeiter</option>
+                        <option>11-50 Mitarbeiter</option>
+                        <option>51-250 Mitarbeiter</option>
+                        <option>250+ Mitarbeiter</option>
+                      </select>
                     </div>
                   </div>
 
@@ -194,7 +185,7 @@ export default function KontaktContent() {
                       <MessageCircle className="absolute left-6 top-6 w-5 h-5 text-gray-400" />
                       <textarea 
                         rows={4}
-                        placeholder="Beschreiben Sie kurz Ihre aktuelle Herausforderung..."
+                        placeholder="Beschreiben Sie kurz Ihre aktuelle IT-Herausforderung (z. B. Ausfälle, Migration, Sicherheit)..."
                         className="w-full pl-14 pr-6 py-6 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none resize-none"
                       />
                     </div>
@@ -203,18 +194,34 @@ export default function KontaktContent() {
                   <button 
                     type="submit"
                     disabled={formState === 'submitting'}
+                    onClick={() => {
+                      if (typeof window !== "undefined" && (window as any).gtag) {
+                        (window as any).gtag("event", "click", {
+                          event_category: "CTA",
+                          event_label: "Kontaktformular Button"
+                        });
+                      }
+                    }}
                     className="w-full py-5 bg-primary hover:bg-primary/90 text-white rounded-2xl font-bold text-lg transition-all shadow-xl shadow-primary/20 active:scale-[0.99] disabled:opacity-70 flex items-center justify-center gap-3"
                   >
                     {formState === 'submitting' ? (
                       <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                     ) : (
-                      <>Anfrage jetzt senden <ArrowRight className="w-5 h-5" /></>
+                      <>Kostenlose IT-Einschätzung anfordern <ArrowRight className="w-5 h-5" /></>
                     )}
                   </button>
                   
-                  <p className="text-center text-xs text-gray-400">
-                    Mit dem Absenden akzeptieren Sie unsere <Link href="/datenschutz" className="underline hover:text-primary">Datenschutzerklärung</Link>.
-                  </p>
+                  <div className="text-center text-xs text-gray-400 space-y-1">
+                    <p>• Antwort innerhalb von 24h</p>
+                    <p>• 100% unverbindlich</p>
+                    <p>• Keine Weitergabe Ihrer Daten</p>
+                    <p>
+                      Mit dem Absenden akzeptieren Sie unsere{" "}
+                      <Link href="/datenschutz" className="underline hover:text-primary">
+                        Datenschutzerklärung
+                      </Link>
+                    </p>
+                  </div>
                 </form>
               )}
             </motion.div>

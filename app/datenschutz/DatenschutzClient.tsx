@@ -638,9 +638,19 @@ export default function DatenschutzClient() {
                 <h3>Widerruf</h3>
                 <p>
                   Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft
-                  widerrufen, indem Sie die Cookie-Einstellungen [HIER DEN LINK ZU DEN
-                  EINSTELLUNGSMÖGLICHKEITEN DES CONSENT-TOOLS SETZEN] aufrufen und dort
-                  Ihre Auswahl ändern. Die Rechtmäßigkeit der aufgrund der Einwilligung
+                  widerrufen, indem Sie Ihre Cookie-Einstellungen zurücksetzen. Klicken Sie dazu auf die folgende Schaltfläche:
+                </p>
+                <button
+                  onClick={() => {
+                    localStorage.removeItem("cookie-consent-v1");
+                    window.location.reload();
+                  }}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-xl font-bold transition-all active:scale-[0.98] mb-6"
+                >
+                  Cookie-Einstellungen zurücksetzen
+                </button>
+                <p>
+                  Die Rechtmäßigkeit der aufgrund der Einwilligung
                   bis zum Widerruf erfolgten Verarbeitung bleibt davon unberührt.
                 </p>
                 <p>
