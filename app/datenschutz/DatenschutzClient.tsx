@@ -256,6 +256,11 @@ export default function DatenschutzClient() {
                   Fragen zum Thema personenbezogene Daten können Sie sich jederzeit über
                   die im Impressum aufgeführten Kontaktmöglichkeiten an uns wenden.
                 </p>
+
+                <h3>Dauer der Speicherung</h3>
+                <p>
+                  Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z.B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe.
+                </p>
               </div>
             </section>
 
@@ -518,18 +523,18 @@ export default function DatenschutzClient() {
                 </p>
 
                 <p>
-                  [OPTIONAL: Wir nutzen die Funktion User-ID. Mithilfe der User ID können
+                  Wir nutzen die Funktion User-ID. Mithilfe der User ID können
                   wir einer oder mehreren Sitzungen (und den Aktivitäten innerhalb dieser
                   Sitzungen) eine eindeutige, dauerhafte ID zuweisen und Nutzerverhalten
-                  geräteübergreifend analysieren.]
+                  geräteübergreifend analysieren.
                 </p>
 
                 <p>
-                  [OPTIONAL: Wir nutzen Google Signale. Damit werden in Google Analytics
+                  Wir nutzen Google Signale. Damit werden in Google Analytics
                   zusätzliche Informationen zu Nutzern erfasst, die personalisierte
                   Anzeigen aktiviert haben (Interessen und demographische Daten) und
                   Anzeigen können in geräteübergreifenden Remarketing-Kampagnen an diese
-                  Nutzer ausgeliefert werden.]
+                  Nutzer ausgeliefert werden.
                 </p>
 
                 <p>
@@ -589,11 +594,10 @@ export default function DatenschutzClient() {
                 <h3>Zwecke der Verarbeitung</h3>
                 <p>
                   Im Auftrag des Betreibers dieser Website wird Google diese
-                  Informationen benutzen, um Ihre [pseudonyme [NICHT BEI NUTZUNG VON
-                  USER-ID]] Nutzung der Website auszuwerten und um Reports über die
+                  Informationen benutzen, um Ihre Nutzung der Website auszuwerten und um Reports über die
                   Website-Aktivitäten zusammenzustellen. Die durch Google Analytics
                   bereitgestellten Reports dienen der Analyse der Leistung unserer Website
-                  [OPTIONAL: und des Erfolgs unserer Marketing-Kampagnen].
+                  und des Erfolgs unserer Marketing-Kampagnen.
                 </p>
 
                 <h3>Empfänger</h3>
@@ -623,8 +627,8 @@ export default function DatenschutzClient() {
 
                 <h3>Speicherdauer</h3>
                 <p>
-                  Die von uns gesendeten und mit Cookies verknüpften Daten werden nach 2
-                  [ODER: 14 Monaten] automatisch gelöscht. Die maximale Lebensdauer der
+                  Die von uns gesendeten und mit Cookies verknüpften Daten werden nach 
+                  14 Monaten automatisch gelöscht. Die maximale Lebensdauer der
                   Google Analytics Cookies beträgt 2 Jahre. Die Löschung von Daten, deren
                   Aufbewahrungsdauer erreicht ist, erfolgt automatisch einmal im Monat.
                 </p>
@@ -997,6 +1001,34 @@ export default function DatenschutzClient() {
                     Google Datenschutzbestimmungen
                   </a>
                   .
+                </p>
+
+                <h3>Fernwartung (pcvisit)</h3>
+                <p>
+                  Für den technischen Support nutzen wir das Fernwartungs-Tool der pcvisit Software AG, Kuhnertstr. 16, 01129 Dresden. 
+                  Wenn Sie eine Fernwartungssitzung starten, wird eine Verbindung zu den Servern von pcvisit hergestellt. 
+                  Dabei werden technische Daten übertragen, die für den Aufbau und Betrieb der Fernwartung erforderlich sind.
+                </p>
+                <p>
+                  Die Nutzung von pcvisit erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer effizienten Kundenbetreuung). 
+                  Die Verantwortung für die datenschutzkonforme Verarbeitung während der Fernwartungssitzung liegt beim jeweiligen Diensteanbieter. 
+                  Weitere Informationen finden Sie in der Datenschutzerklärung von pcvisit:{" "}
+                  <a
+                    href="https://www.pcvisit.de/datenschutz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary no-underline hover:underline"
+                  >
+                    pcvisit Datenschutzerklärung
+                  </a>.
+                </p>
+
+                <h3>Kundenportal (Marketplace)</h3>
+                <p>
+                  Wir bieten unseren Kunden Zugang zu einem Marketplace-Portal (https://marketplace.ecksolution-it.de/). 
+                  Beim Besuch und der Nutzung dieses Portals werden Daten zur Bereitstellung der dortigen Services verarbeitet. 
+                  Die Verarbeitung erfolgt zur Vertragserfüllung oder Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO). 
+                  Für die Inhalte und die Datenverarbeitung auf dem Portal ist der jeweilige Betreiber verantwortlich, sofern wir dort nur als Vermittler auftreten.
                 </p>
               </div>
             </section>
