@@ -119,12 +119,12 @@ export const translations = {
     },
     results: {
       headline: "Verlässlichkeit in Zahlen",
-      subheadline: "Operative Verantwortung, schnelle Reaktion und stabile Systeme – sichtbar gemacht in klaren Kennzahlen.",
+      subheadline: "Operative Verantwortung, schnelle Reaktion und stabile Systeme - sichtbar gemacht in klaren Kennzahlen.",
       cards: [
         { metric: "< 2h", label: "Reaktionszeit", variant: "primary" },
         { metric: "24/7", label: "Monitoring", variant: "secondary" },
         { metric: "8+", label: "Jahre Erfahrung", variant: "secondary" },
-        { metric: "100%", label: "Ownership", variant: "status" },
+        { metric: "100%", label: "Verantwortung", variant: "status" },
       ],
     },
     services: {
@@ -205,8 +205,8 @@ export const translations = {
       headline: "Ihr Partner für IT-Verantwortung.",
       subheadline: "Wir verwalten nicht nur Computer - wir sichern Ihren Geschäftsbetrieb. Mit Ecksolution IT gewinnen Sie einen Partner, der IT als strategisches Werkzeug für Ihren Erfolg versteht.",
       points: [
-        { title: "Kein Finger-Pointing", description: "Wir übernehmen die volle Verantwortung. Wir sind Ihr zentraler Ansprechpartner für alle IT-Themen." },
-        { title: "Proaktive Stabilität", description: "Wir warten nicht auf Fehlermeldungen. Wir agieren im Hintergrund, damit Probleme gar nicht erst entstehen." },
+        { title: "100% Verantwortung, kein Finger-Pointing", description: "Wir übernehmen die volle Verantwortung. Wir sind Ihr zentraler Ansprechpartner für alle IT-Themen." },
+        { title: "Proaktive Stabilität statt reaktiver Feuerwehr", description: "Wir warten nicht auf Fehlermeldungen. Wir agieren im Hintergrund, damit Probleme gar nicht erst entstehen." },
         { title: "Beratung auf Augenhöhe", description: "Wir sprechen kein 'Fachchinesisch'. Wir beraten Sie verständlich und herstellerunabhängig." }
       ]
     },

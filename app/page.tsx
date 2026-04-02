@@ -14,7 +14,6 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CaseStudyCarousel } from "@/components/CaseStudyCarousel";
 import { HeroVisual } from "@/components/HeroVisual";
-import { ResponsibilitySection } from "@/components/ResponsibilitySection";
 import { useLanguage } from "@/context/LanguageContext";
 import { useState, useEffect, useCallback, useRef } from "react";
 
@@ -246,8 +245,6 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <ResponsibilitySection />
-
         {/* Problem Section */}
         <section 
           id="problem" 
@@ -290,71 +287,285 @@ export default function LandingPage() {
         </section>
 
         {/* Solution Section */}
-        <section 
-          id="solution" 
-          className="py-40 px-6 bg-white overflow-hidden"
-          aria-labelledby="solution-heading"
+<section
+  id="solution"
+  className="py-40 px-6 bg-white overflow-hidden"
+  aria-labelledby="solution-heading"
+>
+  <div className="max-w-[1200px] mx-auto">
+    <div className="grid lg:grid-cols-[1fr_1.2fr] gap-24 items-center">
+      
+      {/* Left Content */}
+      <div className="relative z-10">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <div className="max-w-[1200px] mx-auto">
-            <div className="grid lg:grid-cols-2 gap-24 items-center">
-              <div className="relative z-10">
-                <div className="text-primary font-bold text-xs uppercase tracking-widest mb-4">{t.solution.badge}</div>
-                <h2 
-                  id="solution-heading"
-                  className="text-5xl md:text-6xl font-bold tracking-tight mb-12 text-black leading-[1.1]"
-                >
-                  {t.trust.headline}
-                </h2>
-                <p className="text-gray-900 text-lg mb-16 leading-relaxed max-w-sm opacity-80">
-                  {t.trust.subheadline}
-                </p>
-                
-                <div className="space-y-12">
-                  {t.trust.points.map((item: { title: string; description: string }, i: number) => (
-                    <div key={i} className="flex gap-6 group">
-                      <div className="mt-1">
-                        <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center shadow-[0_0_20px_rgba(0,95,107,0.1)] group-hover:shadow-[0_0_30px_rgba(0,95,107,0.2)] transition-all duration-500">
-                          <CheckCircle2 className="w-6 h-6 text-primary" />
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-bold mb-3 text-black tracking-tight">{item.title}</h4>
-                        <p className="text-gray-800 leading-relaxed text-base opacity-70">{item.description}</p>
-                      </div>
+          <div className="text-primary font-bold text-xs uppercase tracking-widest mb-4">
+            {t.solution.badge}
+          </div>
+
+          <h2
+            id="solution-heading"
+            className="text-5xl md:text-6xl font-bold tracking-tight mb-10 text-black leading-[1.1]"
+          >
+            {t.trust.headline}
+          </h2>
+
+          <p className="text-gray-600 text-lg mb-16 leading-relaxed max-w-md opacity-90">
+            {t.trust.subheadline}
+          </p>
+
+          <div className="space-y-10">
+            {t.trust.points.map(
+              (
+                item: { title: string; description: string },
+                i: number
+              ) => (
+                <div key={i} className="flex gap-6 group">
+                  <div className="mt-1 shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 grid place-items-center transition-all duration-500 group-hover:border-primary/25 group-hover:bg-white group-hover:shadow-[0_0_0_1px_rgba(0,95,107,0.06),0_10px_30px_rgba(0,95,107,0.08)]">
+                      <CheckCircle2 className="w-5 h-5 text-primary" />
                     </div>
-                  ))}
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-bold mb-2 text-black tracking-tight">
+                      {item.title}
+                    </h4>
+                    <p className="text-gray-500 leading-relaxed text-sm opacity-80 max-w-[42ch]">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
+              )
+            )}
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Right KPI Cluster */}
+      <div className="relative flex justify-center items-center min-h-[680px]">
+        
+        {/* Background Glow + Grid */}
+        <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
+          {/* Ambient Brand Glow */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,95,107,0.16)_0%,rgba(0,95,107,0.10)_28%,rgba(0,95,107,0.05)_52%,transparent_74%)]" />
+
+          {/* Center Focus Glow */}
+          <div className="absolute inset-[12%] rounded-full bg-[radial-gradient(circle_at_center,rgba(0,95,107,0.14)_0%,rgba(0,95,107,0.08)_35%,transparent_72%)] blur-3xl" />
+
+          {/* Dot Grid */}
+          <div className="w-[78%] h-[78%] bg-[radial-gradient(#dfe5e7_1px,transparent_1px)] [background-size:32px_32px] opacity-70" />
+
+          {/* Soft Fades */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white/80" />
+        </div>
+
+        {/* KPI Dashboard Layout */}
+        <div className="relative w-full max-w-[720px] mx-auto grid grid-cols-12 gap-6 px-8 py-6">
+          
+          {/* Card 1: Reaktionszeit */}
+          <div className="col-span-7 group relative">
+            <div className="relative overflow-hidden p-8 rounded-[2rem] bg-white border border-gray-100 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-500 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_20px_40px_rgba(0,95,107,0.10)]">
+            <div className="pointer-events-none absolute inset-0 rounded-[2rem] opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top,rgba(0,95,107,0.10),transparent_58%)]" />
+            <div className="pointer-events-none absolute -inset-px rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_0_1px_rgba(0,95,107,0.12),0_0_28px_rgba(0,95,107,0.10)]" />
+
+            <div className="relative z-10 flex items-center justify-between mb-6">
+              <div className="w-11 h-11 rounded-xl bg-primary/10 grid place-items-center">
+                <Clock className="w-5 h-5 text-primary" />
               </div>
-              
-              <div className="relative">
-                <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
-                
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="space-y-6 pt-16">
-                    <div className="p-10 rounded-[2.5rem] bg-neutral-50 border border-neutral-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
-                      <div className="text-6xl font-bold text-black mb-4 tracking-tighter">{t.results.cards[1].metric}</div>
-                      <div className="text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em]">{t.results.cards[1].label}</div>
-                    </div>
-                    <div className="p-10 rounded-[2.5rem] bg-primary shadow-2xl shadow-primary/30 hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-500 group">
-                      <div className="text-6xl font-bold text-white mb-4 tracking-tighter group-hover:scale-105 transition-transform">{t.results.cards[0].metric}</div>
-                      <div className="text-[10px] text-white/70 font-bold uppercase tracking-[0.2em]">{t.results.cards[0].label}</div>
-                    </div>
-                  </div>
-                  <div className="space-y-6">
-                    <div className="p-10 rounded-[2.5rem] bg-neutral-50 border border-neutral-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
-                      <div className="text-6xl font-bold text-black mb-4 tracking-tighter">{t.results.cards[2].metric}</div>
-                      <div className="text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em]">{t.results.cards[2].label}</div>
-                    </div>
-                    <div className="p-10 rounded-[2.5rem] bg-neutral-50 border border-neutral-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
-                      <div className="text-6xl font-bold text-black mb-4 tracking-tighter">{t.results.cards[3].metric}</div>
-                      <div className="text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em]">{t.results.cards[3].label}</div>
-                    </div>
-                  </div>
+              <div className="flex items-center gap-2 px-2.5 py-1 rounded-md bg-primary/10 text-[10px] font-bold text-primary uppercase tracking-wider">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                Live
+              </div>
+            </div>
+
+            <div className="relative z-10 flex items-end justify-between mb-3">
+              <div className="text-5xl font-bold text-black tracking-tighter">
+                {t.results.cards[0].metric}
+              </div>
+              <div className="text-[11px] text-gray-400 font-medium uppercase tracking-[0.18em]">
+                SLA Response
+              </div>
+            </div>
+
+            <div className="relative z-10 text-xs text-gray-400 font-bold uppercase tracking-widest mb-5">
+              {t.results.cards[0].label}
+            </div>
+
+            <div className="relative z-10 space-y-3">
+              <div className="flex items-center justify-between text-[11px] text-gray-500 uppercase tracking-[0.18em]">
+                <span>Status</span>
+                <span className="text-primary font-semibold">Operational</span>
+              </div>
+
+              <div className="h-1.5 rounded-full bg-gray-100 overflow-hidden">
+                <div className="h-full w-[78%] bg-primary rounded-full" />
+              </div>
+
+              <div className="grid grid-cols-3 gap-3 pt-1">
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.18em] text-gray-400">Queue</div>
+                  <div className="text-sm font-semibold text-black">Low</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.18em] text-gray-400">Coverage</div>
+                  <div className="text-sm font-semibold text-black">24/7</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.18em] text-gray-400">Priority</div>
+                  <div className="text-sm font-semibold text-black">P1–P3</div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+
+        {/* Card 2: Monitoring */}
+          <div className="col-span-5 mt-10 group relative">
+            <div className="relative overflow-hidden p-8 rounded-[2rem] bg-white border border-gray-100 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-500 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_20px_40px_rgba(0,95,107,0.10)]">
+            <div className="pointer-events-none absolute inset-0 rounded-[2rem] opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top,rgba(0,95,107,0.08),transparent_58%)]" />
+            <div className="pointer-events-none absolute -inset-px rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_0_1px_rgba(0,95,107,0.10),0_0_24px_rgba(0,95,107,0.08)]" />
+
+            <div className="w-11 h-11 rounded-xl bg-primary/10 grid place-items-center mb-6">
+              <Activity className="w-5 h-5 text-primary" />
+            </div>
+
+            <div className="text-4xl font-bold text-black mb-2 tracking-tighter">
+              {t.results.cards[1].metric}
+            </div>
+            <div className="text-xs text-gray-400 font-bold uppercase tracking-widest mb-5">
+              {t.results.cards[1].label}
+            </div>
+
+            <div className="space-y-3">
+              <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-gray-500">
+                <span>Signals</span>
+                <span className="text-primary font-semibold">Active</span>
+              </div>
+
+              <div className="flex items-end gap-1 h-10">
+                <span className="w-2 h-[35%] rounded-full bg-primary/20" />
+                <span className="w-2 h-[52%] rounded-full bg-primary/30" />
+                <span className="w-2 h-[42%] rounded-full bg-primary/40" />
+                <span className="w-2 h-[76%] rounded-full bg-primary/60" />
+                <span className="w-2 h-[58%] rounded-full bg-primary/50" />
+                <span className="w-2 h-[88%] rounded-full bg-primary/80" />
+                <span className="w-2 h-[70%] rounded-full bg-primary" />
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 pt-1">
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.18em] text-gray-400">Alerts</div>
+                  <div className="text-sm font-semibold text-black">0 critical</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.18em] text-gray-400">Checks</div>
+                  <div className="text-sm font-semibold text-black">Realtime</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Card 3: Erfahrung */}
+          <div className="col-span-5 -mt-4 group relative">
+            <div className="relative overflow-hidden p-8 rounded-[2rem] bg-white border border-gray-100 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-500 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_20px_40px_rgba(0,95,107,0.10)]">
+            <div className="pointer-events-none absolute inset-0 rounded-[2rem] opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top,rgba(0,95,107,0.08),transparent_58%)]" />
+            <div className="pointer-events-none absolute -inset-px rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_0_1px_rgba(0,95,107,0.10),0_0_24px_rgba(0,95,107,0.08)]" />
+
+            <div className="w-11 h-11 rounded-xl bg-primary/10 grid place-items-center mb-6">
+              <Award className="w-5 h-5 text-primary" />
+            </div>
+
+            <div className="text-4xl font-bold text-black mb-2 tracking-tighter">
+              {t.results.cards[2].metric}
+            </div>
+            <div className="text-xs text-gray-400 font-bold uppercase tracking-widest mb-5">
+              {t.results.cards[2].label}
+            </div>
+
+            <div className="space-y-3">
+              <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-gray-500">
+                <span>Track Record</span>
+                <span className="text-primary font-semibold">Verified</span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div className="rounded-xl bg-gray-50 px-3 py-2">
+                  <div className="text-[10px] uppercase tracking-[0.18em] text-gray-400">Projects</div>
+                  <div className="text-sm font-semibold text-black">36+</div>
+                </div>
+                <div className="rounded-xl bg-gray-50 px-3 py-2">
+                  <div className="text-[10px] uppercase tracking-[0.18em] text-gray-400">Clients</div>
+                  <div className="text-sm font-semibold text-black">25+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Card 4: Verantwortung */}
+          <div className="col-span-7 group relative">
+            <div className="relative overflow-hidden p-8 rounded-[2.5rem] bg-white border border-gray-100 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-500 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_20px_40px_rgba(0,95,107,0.10)]">
+            <div className="pointer-events-none absolute inset-0 rounded-[2.5rem] opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top,rgba(0,95,107,0.10),transparent_58%)]" />
+            <div className="pointer-events-none absolute -inset-px rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_0_1px_rgba(0,95,107,0.12),0_0_30px_rgba(0,95,107,0.10)]" />
+
+            <div className="relative z-10 flex items-center justify-between mb-6">
+              <div className="flex items-center gap-4">
+                <div className="w-11 h-11 rounded-xl bg-primary/10 grid place-items-center">
+                  <ShieldCheck className="w-5 h-5 text-primary" />
+                </div>
+
+                <div className="h-1.5 w-24 bg-gray-100 rounded-full overflow-hidden">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "100%" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.8 }}
+                    className="h-full bg-primary"
+                  />
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-primary">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                Active
+              </div>
+            </div>
+
+            <div className="relative z-10 text-5xl font-bold text-black mb-2 tracking-tighter">
+              {t.results.cards[3].metric}
+            </div>
+            <div className="relative z-10 text-xs text-gray-400 font-bold uppercase tracking-widest mb-5">
+              {t.results.cards[3].label}
+            </div>
+
+            <div className="relative z-10 grid grid-cols-3 gap-3">
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.18em] text-gray-400">Ownership</div>
+                <div className="text-sm font-semibold text-black">End-to-end</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.18em] text-gray-400">Escalation</div>
+                <div className="text-sm font-semibold text-black">Direct</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.18em] text-gray-400">Status</div>
+                <div className="text-sm font-semibold text-primary">Stable</div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Services Section */}
         <section 
