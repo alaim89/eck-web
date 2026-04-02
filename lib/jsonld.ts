@@ -18,7 +18,8 @@ export function getOrganizationSchema() {
     },
     "sameAs": [
       siteConfig.social.linkedin,
-      siteConfig.social.twitter,
+      siteConfig.social.freelancermap,
+      siteConfig.social.freelance,
     ],
     "address": {
       "@type": "PostalAddress",

@@ -5,20 +5,21 @@ export const siteConfig = {
   baseUrl: "https://ecksolution-it.de",
   defaultTitle: "IT-Betreuung & Managed Services für den Mittelstand",
   titleTemplate: "%s | Ecksolution IT",
-  defaultDescription: "Professionelle IT-Betreuung, Cybersecurity und Cloud-Lösungen für den Mittelstand. Wir übernehmen die volle Verantwortung für Ihre IT – proaktiv und sicher.",
+  defaultDescription: "Professionelle IT-Betreuung, Cybersecurity und Cloud-Lösungen für den Mittelstand. Wir übernehmen die volle Verantwortung für Ihre IT - proaktiv und sicher.",
   contact: {
     email: "info@ecksolution-it.de",
-    phone: "+49 (0) 176 34580607",
+    phone: "+49 176 34580607",
     address: {
-      street: "Musterstraße 1",
-      zip: "12345",
-      city: "Musterstadt",
+      street: "Auf dem Esch 15",
+      zip: "49638",
+      city: "Nortrup",
       country: "Deutschland"
     }
   },
   social: {
     linkedin: "https://linkedin.com/company/ecksolution-it",
-    twitter: "https://twitter.com/ecksolution_it"
+    freelancermap: "https://www.freelancermap.de/profil/systems-engineer-244881",
+    freelance: "https://www.freelance.de/freelancer/EcksolutionIT"
   }
 };
 

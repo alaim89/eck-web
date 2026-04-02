@@ -2,9 +2,19 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'motion/react';
-import { ArrowLeft, ArrowRight, Building2, Activity, ShieldCheck, LucideIcon } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Building2, Activity, ShieldCheck, Database, Users, Mail, Shield, LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
+import { caseStudies as allCaseStudies } from '@/lib/case-studies-data';
+
+const iconMap: Record<string, LucideIcon> = {
+  building: Building2,
+  activity: Activity,
+  shield: Shield,
+  database: Database,
+  users: Users,
+  mail: Mail,
+};
 
 export function CaseStudyCarousel() {
   const { t } = useLanguage();
@@ -12,10 +22,13 @@ export function CaseStudyCarousel() {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
-  const caseStudies = t.caseStudies.items.map((item: any, i: number) => ({
-    ...item,
-    icon: i === 0 || i === 2 || i === 4 ? Building2 : i === 1 || i === 6 || i === 9 ? Activity : ShieldCheck
-  }));
+  const featuredCaseStudies = allCaseStudies
+    .filter((study) => study.featured)
+    .map((study) => ({
+      ...study,
+      href: `/case-studies/${study.slug}`,
+      icon: iconMap[study.icon] || ShieldCheck,
+    }));
 
   const checkScroll = useCallback(() => {
     if (scrollRef.current) {
@@ -98,7 +111,7 @@ export function CaseStudyCarousel() {
         className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8 pt-4 px-1"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        {caseStudies.map((study: any, i: number) => (
+        {featuredCaseStudies.map((study: any, i: number) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}

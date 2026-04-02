@@ -284,38 +284,6 @@ export const translations = {
       subheadline: "Erfahren Sie, wie wir Unternehmen dabei unterstützt haben, ihre IT-Infrastruktur zu professionalisieren.",
       viewAll: "Alle Referenzen ansehen",
       readMore: "Vollständigen Bericht lesen",
-      items: [
-        {
-          title: "Migration von Google Workspace zu Microsoft 365 mit strukturierter Absicherung",
-          company: "Mittelständisches Unternehmen",
-          summary: "Migration aller Benutzer, Mails und Daten nach Microsoft 365 inklusive Entra ID, MFA und Backup-Strategie.",
-          href: "/case-studies/microsoft-365-migration"
-        },
-        {
-          title: "Aufbau einer skalierbaren Azure-Infrastruktur und Betrieb moderner Cloud-Systeme",
-          company: "group24 AG",
-          summary: "Migration von Backend-Systemen in Microsoft Azure, Automatisierung und Integration von Azure Virtual Desktop.",
-          href: "/case-studies/azure-cloud-platform"
-        },
-        {
-          title: "IT-Sicherheitsanalyse und Aufbau einer strukturierten Sicherheitsorganisation",
-          company: "Bellaseno GmbH",
-          summary: "Durchführung einer GAP-Analyse, Identifikation kritischer Schwachstellen und Entwicklung eines Maßnahmenkatalogs.",
-          href: "/case-studies/it-compliance-security"
-        },
-        {
-          title: "Modernisierung einer Serverumgebung und Einführung einer zuverlässigen Backup-Strategie",
-          company: "BiolytiQs + MAIT",
-          summary: "Migration auf Windows Server 2019, Integration mit Microsoft 365 und Aufbau einer Veeam-Backup-Lösung.",
-          href: "/case-studies/backup-infrastruktur-modernisierung"
-        },
-        {
-          title: "Co-Managed IT: Gemeinsamer Betrieb der IT-Infrastruktur",
-          company: "zunicode + Procivitate",
-          summary: "Entlastung interner IT-Teams durch 24/7 Monitoring, Patch-Management und Second-Level Support für maximale Sicherheit.",
-          href: "/case-studies/co-managed-betrieb"
-        }
-      ]
     },
     managedItPage: {
       hero: {

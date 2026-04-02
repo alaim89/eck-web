@@ -21,6 +21,17 @@ export const solutionsData = {
         "Zukunftssichere Architektur für Linux & Windows"
       ]
     },
+    features: [
+      "Integration von Linux & Windows",
+      "Azure Hybrid Cloud Setup",
+      "Active Directory Synchronisierung",
+      "Sichere Standortvernetzung"
+    ],
+    benefits: [
+      "Maximale Flexibilität",
+      "Hohe Ausfallsicherheit",
+      "Zukunftssichere IT-Architektur"
+    ],
     results: [
       { metric: "100%", label: "Datenkonsistenz" },
       { metric: "40%", label: "Weniger Admin-Aufwand" },
@@ -64,6 +75,17 @@ export const solutionsData = {
         "Strategische Beratung durch Ihren persönlichen vCIO"
       ]
     },
+    features: [
+      "24/7 Monitoring & Alerting",
+      "Proaktives Patch-Management",
+      "Helpdesk für Mitarbeiter",
+      "Regelmäßige IT-Health-Checks"
+    ],
+    benefits: [
+      "Planbare IT-Kosten",
+      "Höchste Systemverfügbarkeit",
+      "Entlastung interner Ressourcen"
+    ],
     results: [
       { metric: "30%", label: "Kostenersparnis" },
       { metric: "99,9%", label: "System-Uptime" },
@@ -107,6 +129,17 @@ export const solutionsData = {
         "Regelmäßige Berichterstattung an die Geschäftsführung"
       ]
     },
+    features: [
+      "Strategische IT-Beratung",
+      "Budgetplanung & Controlling",
+      "Projektleitung & Steuerung",
+      "Dienstleister-Management"
+    ],
+    benefits: [
+      "Professionelle IT-Leitung",
+      "Optimierte IT-Investitionen",
+      "Klare Technologie-Roadmap"
+    ],
     results: [
       { metric: "100%", label: "Strategische Klarheit" },
       { metric: "20%", label: "Budget-Optimierung" },
@@ -150,6 +183,17 @@ export const solutionsData = {
         "Implementierung von Zero-Trust-Architekturen"
       ]
     },
+    features: [
+      "Managed Firewall & EDR",
+      "Vulnerability Scanning",
+      "Security Awareness Training",
+      "Incident Response Planung"
+    ],
+    benefits: [
+      "Schutz vor Ransomware",
+      "DSGVO-Compliance",
+      "Minimiertes Haftungsrisiko"
+    ],
     results: [
       { metric: "0", label: "Erfolgreiche Angriffe" },
       { metric: "100%", label: "Compliance-Erfüllung" },
@@ -193,6 +237,17 @@ export const solutionsData = {
         "Netzwerk-Segmentierung zur Schadensbegrenzung"
       ]
     },
+    features: [
+      "Next-Gen Firewall Setup",
+      "Endpoint Protection (EDR)",
+      "Sicheres VPN & Remote Access",
+      "Web-Content-Filtering"
+    ],
+    benefits: [
+      "Sicheres Homeoffice",
+      "Schutz aller Endgeräte",
+      "Transparenz im Netzwerkverkehr"
+    ],
     results: [
       { metric: "100%", label: "Endpunkt-Abdeckung" },
       { metric: "Realtime", label: "Bedrohungserkennung" },
@@ -236,6 +291,17 @@ export const solutionsData = {
         "Definierte RTOs und RPOs für alle kritischen Systeme"
       ]
     },
+    features: [
+      "Backup-Integritätsprüfung",
+      "Disaster Recovery Planung",
+      "Wiederherstellungs-Simulationen",
+      "Offsite-Replikation"
+    ],
+    benefits: [
+      "Minimale Ausfallzeiten",
+      "Garantierte Datenrettung",
+      "Geschäftskontinuität"
+    ],
     results: [
       { metric: "< 4 Std", label: "Wiederherstellungszeit" },
       { metric: "100%", label: "Datenintegrität" },
@@ -279,6 +345,17 @@ export const solutionsData = {
         "Segmentierung des Netzwerks für erhöhte Sicherheit"
       ]
     },
+    features: [
+      "WLAN-Ausleuchtung & Planung",
+      "Switch- & Router-Management",
+      "Netzwerk-Segmentierung",
+      "Performance-Monitoring"
+    ],
+    benefits: [
+      "Stabile Verbindungen",
+      "Optimale Performance",
+      "Sichere Netzwerkstruktur"
+    ],
     results: [
       { metric: "99,9%", label: "Netzwerk-Uptime" },
       { metric: "Top", label: "WLAN-Abdeckung" },
@@ -322,6 +399,17 @@ export const solutionsData = {
         "Sichere Datenlöschung bei Geräterückgabe"
       ]
     },
+    features: [
+      "Automatisierte Bereitstellung",
+      "Software-Verteilung",
+      "Hardware-Lifecycle-Management",
+      "Inventarisierung & Asset-Tracking"
+    ],
+    benefits: [
+      "Schnelles Onboarding",
+      "Aktuelle & sichere Software",
+      "Geringer Supportaufwand"
+    ],
     results: [
       { metric: "100%", label: "Geräte-Inventur" },
       { metric: "Schnell", label: "Mitarbeiter-Onboarding" },
@@ -365,6 +453,17 @@ export const solutionsData = {
         "Nahtlose Anbindung an Ihre lokale Infrastruktur"
       ]
     },
+    features: [
+      "Azure Resource Management",
+      "Identity & Access Management",
+      "Cloud-Kosten-Optimierung",
+      "Azure Virtual Desktop Support"
+    ],
+    benefits: [
+      "Skalierbare Infrastruktur",
+      "Optimale Cloud-Kosten",
+      "Maximale Performance"
+    ],
     results: [
       { metric: "25%", label: "Kostenersparnis" },
       { metric: "Top", label: "Cloud-Performance" },
@@ -408,6 +507,17 @@ export const solutionsData = {
         "Schulung Ihrer Mitarbeiter für die neue Umgebung"
       ]
     },
+    features: [
+      "Cloud-Readiness-Analyse",
+      "Migrations-Strategie",
+      "Hybrid-Cloud-Architektur",
+      "Post-Migration Support"
+    ],
+    benefits: [
+      "Sichere Cloud-Migration",
+      "Moderne IT-Infrastruktur",
+      "Steigerung der Agilität"
+    ],
     results: [
       { metric: "100%", label: "Transformations-Erfolg" },
       { metric: "Hoch", label: "Innovationskraft" },
@@ -451,6 +561,17 @@ export const solutionsData = {
         "Vollständige Dokumentation und Übergabe"
       ]
     },
+    features: [
+      "Festpreis-Garantie",
+      "Meilenstein-Planung",
+      "Qualitätssicherung",
+      "Projektdokumentation"
+    ],
+    benefits: [
+      "Volle Kostenkontrolle",
+      "Termingerechte Lieferung",
+      "Höchste Umsetzungsqualität"
+    ],
     results: [
       { metric: "100%", label: "Termintreue" },
       { metric: "Fix", label: "Budget-Garantie" },
@@ -494,6 +615,17 @@ export const solutionsData = {
         "Priorisierter Maßnahmenplan zur Risikominimierung"
       ]
     },
+    features: [
+      "Infrastruktur-Check",
+      "Sicherheits-Audit",
+      "Backup-Validierung",
+      "Maßnahmenkatalog"
+    ],
+    benefits: [
+      "Transparente Risikolage",
+      "Klare Priorisierung",
+      "Sichere Entscheidungsbasis"
+    ],
     results: [
       { metric: "100%", label: "Risiko-Transparenz" },
       { metric: "Klar", label: "Handlungsempfehlungen" },
@@ -537,6 +669,17 @@ export const solutionsData = {
         "Kontinuierliche Anpassung der IT an das Wachstum"
       ]
     },
+    features: [
+      "IT-Roadmap Erstellung",
+      "Technologie-Scouting",
+      "Business-IT Alignment",
+      "Digitalisierungs-Beratung"
+    ],
+    benefits: [
+      "Zukunftssichere IT",
+      "Unterstützung der Geschäftsziele",
+      "Wettbewerbsvorteile"
+    ],
     results: [
       { metric: "3 J.", label: "Planungshorizont" },
       { metric: "Top", label: "Zukunftsfähigkeit" },
@@ -580,6 +723,17 @@ export const solutionsData = {
         "Regelmäßige Compliance-Reports und Audits"
       ]
     },
+    features: [
+      "DLP-Konfiguration",
+      "E-Mail-Archivierung",
+      "Conditional Access Setup",
+      "Compliance-Reporting"
+    ],
+    benefits: [
+      "Rechtssichere Cloud-Nutzung",
+      "Schutz sensibler Daten",
+      "Audit-Sicherheit"
+    ],
     results: [
       { metric: "100%", label: "DSGVO-Compliance" },
       { metric: "Sicher", label: "Datenarchivierung" },
@@ -623,6 +777,17 @@ export const solutionsData = {
         "Überwachung der Einhaltung (Compliance-Monitoring)"
       ]
     },
+    features: [
+      "IT-Governance-Framework",
+      "Risikomanagement-Prozesse",
+      "IT-Richtlinien & Standards",
+      "Compliance-Monitoring"
+    ],
+    benefits: [
+      "Strukturierte IT-Prozesse",
+      "Minimierte IT-Risiken",
+      "Governance-Konformität"
+    ],
     results: [
       { metric: "Top", label: "Prozessqualität" },
       { metric: "Min.", label: "IT-Risiken" },
@@ -666,6 +831,17 @@ export const solutionsData = {
         "Tägliche automatisierte Test-Wiederherstellungen zur Überprüfung der Integrität"
       ]
     },
+    features: [
+      "Unveränderliche Backups",
+      "Stündliche Snapshots",
+      "Automatisierte Tests",
+      "Cloud-Replikation"
+    ],
+    benefits: [
+      "Schutz vor Ransomware",
+      "Schnelle Wiederherstellung",
+      "100% Datenintegrität"
+    ],
     results: [
       { metric: "15 Min", label: "Recovery Time Objective" },
       { metric: "1 Std", label: "Recovery Point Objective" },
@@ -709,6 +885,17 @@ export const solutionsData = {
         "Umfassende Benutzerschulung und Unterstützung bei der Einführung"
       ]
     },
+    features: [
+      "Exchange Online Migration",
+      "Teams & SharePoint Setup",
+      "Sicherheits-Härtung",
+      "Benutzerschulung"
+    ],
+    benefits: [
+      "Kein Datenverlust",
+      "Moderne Zusammenarbeit",
+      "Geringere IT-Komplexität"
+    ],
     results: [
       { metric: "0", label: "Datenverlust" },
       { metric: "100%", label: "Cloud-Adoption" },
@@ -752,6 +939,17 @@ export const solutionsData = {
         "Optimierte Cloud-Ausgaben zur Vermeidung von Abrechnungsüberraschungen"
       ]
     },
+    features: [
+      "Server-Migration (Lift & Shift)",
+      "Azure Landing Zone Setup",
+      "Kosten-Analyse",
+      "Performance-Tuning"
+    ],
+    benefits: [
+      "Hardware-Unabhängigkeit",
+      "Globale Skalierbarkeit",
+      "Hohe Verfügbarkeit"
+    ],
     results: [
       { metric: "99,99%", label: "Infrastruktur-Uptime" },
       { metric: "Unendlich", label: "Skalierbarkeit" },
