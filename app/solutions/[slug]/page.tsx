@@ -5,7 +5,9 @@ import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2, XCircle, Activity, Settings, ShieldCheck, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getMetadata } from "@/lib/seo";
+import { getMetadata, getFaqSchema } from "@/lib/seo";
+import { FaqSection } from "@/components/FaqSection";
+import Script from "next/script";
 
 export function generateStaticParams() {
   return Object.keys(solutionsData).map((slug) => ({
@@ -246,6 +248,19 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
             </div>
           </div>
         </section>
+
+        {solution.faq && (
+          <>
+            <FaqSection title="Häufig gestellte Fragen" items={solution.faq} />
+            <Script
+              id="faq-schema"
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(getFaqSchema(solution.faq)),
+              }}
+            />
+          </>
+        )}
 
         {/* 8. Final CTA Section */}
         <section id="contact" className="py-32 px-6 bg-primary text-white text-center">

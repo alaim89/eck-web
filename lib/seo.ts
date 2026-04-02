@@ -87,3 +87,39 @@ export function getMetadata({
     },
   };
 }
+
+/**
+ * Generates FAQ Schema (JSON-LD) for SEO.
+ 
+export function getFaqSchema(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": items.map((item) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer,
+      },
+    })),
+  };
+}
+*/
+export function getFaqSchema(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://ecksolution-it.de/#faq",
+    "inLanguage": "de",
+    "mainEntity": items.map((item, index) => ({
+      "@type": "Question",
+      "@id": `https://ecksolution-it.de/#faq-question-${index + 1}`,
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer,
+      },
+    })),
+  };
+}
