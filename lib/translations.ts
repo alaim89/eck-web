@@ -10,8 +10,8 @@ export const translations = {
       customerPortal: "Kundenportal",
       remoteMaintenance: "Fernwartung",
       pricing: "Preise",
-      contact: "Kontakt",
-      getAudit: "IT-Check anfordern",
+      contact: "IT-Einschätzung",
+      getAudit: "IT-Check starten",
     },
     megaMenu: {
       core: {
@@ -142,7 +142,7 @@ export const translations = {
       badge: "IT-Partner für den deutschen Mittelstand",
       headline: "Ihre IT muss einfach funktionieren. Ohne Ausfälle. Ohne Stress.",
       subheadline: "Wir übernehmen die volle Verantwortung für Ihre IT-Infrastruktur. Proaktiv, sicher und nach vereinbartem Leistungsumfang - damit Sie und Ihr Team sich auf Ihr Kerngeschäft konzentrieren können.",
-      cta: "Jetzt IT-Check vereinbaren",
+      cta: "Kostenlose IT-Einschätzung anfordern",
       secondaryCta: "Referenzprojekte ansehen",
     },
     problem: {
@@ -279,7 +279,7 @@ export const translations = {
     cta: {
       headline: "Machen Sie Schluss mit IT-Sorgen.",
       subheadline: "Lassen Sie uns in einem kurzen Gespräch klären, wie wir Ihre IT sicherer und effizienter machen können.",
-      button: "Jetzt Erstgespräch vereinbaren",
+      button: "Erstgespräch sichern",
     },
     caseStudies: {
       badge: "Referenzen",
@@ -292,7 +292,7 @@ export const translations = {
       description: "Professionelle IT-Services für den deutschen Mittelstand. Zuverlässig, sicher und auf Augenhöhe.",
       copyright: "© {year} Ecksolution-IT Managed Services.",
       links: {
-        contact: "Kontakt",
+        contact: "Kostenlose IT-Einschätzung anfordern",
         support: "Support",
         customerPortal: "Kundenportal",
         remoteMaintenance: "Fernwartung",
@@ -306,7 +306,7 @@ export const translations = {
       },
       cta: {
         hint: "Bereit für den nächsten Schritt?",
-        button: "Termin buchen"
+        button: "Erstgespräch sichern"
       }
     }
   }

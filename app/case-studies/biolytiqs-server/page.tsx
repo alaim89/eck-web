@@ -110,7 +110,7 @@ export default function CaseStudyBiolytiqs() {
                   Wir modernisieren Ihre Serverumgebung und sorgen für eine nahtlose Integration in die Cloud.
                 </p>
                 <Link href="/kontakt" className="block w-full py-4 bg-primary text-white text-center rounded-xl font-bold hover:bg-primary/90 transition-colors">
-                  Jetzt anfragen
+                  Kostenlose IT-Einschätzung anfordern
                 </Link>
               </div>
             </div>

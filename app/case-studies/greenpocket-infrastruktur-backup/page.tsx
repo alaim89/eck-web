@@ -117,7 +117,7 @@ export default function CaseStudyStartupInfrastructure() {
                   Wir helfen dabei, eine IT-Basis zu schaffen, die im Alltag funktioniert und mit dem Unternehmen mitwachsen kann.
                 </p>
                 <Link href="/kontakt" className="block w-full py-4 bg-primary text-white text-center rounded-xl font-bold hover:bg-primary/90 transition-colors">
-                  Jetzt anfragen
+                  Kostenlose IT-Einschätzung anfordern
                 </Link>
               </div>
             </div>

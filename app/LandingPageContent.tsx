@@ -22,26 +22,26 @@ import { getFaqSchema } from "@/lib/seo";
 const HERO_VARIANTS = [
   {
     subline: "Hands-on Architektur für den Mittelstand. Ich stabilisiere festgefahrene Cloud- und Infrastrukturprojekte und bringe kritische Systeme wieder auf Kurs.",
-    primaryCTA: { text: "Erstgespräch buchen", href: "https://outlook.office.com/book/EcksolutionITService@ecksolution-it.de/?ismsaljsauthenabled" },
-    secondaryCTA: { text: "Leistungen entdecken", href: "/solutions" },
+    primaryCTA: { text: "Kostenlose IT-Einschätzung anfordern", href: "https://outlook.office.com/book/EcksolutionITService@ecksolution-it.de/?ismsaljsauthenabled" },
+    secondaryCTA: { text: "Erstgespräch sichern", href: "/solutions" },
     visualType: "monitoring" as const
   },
   {
     subline: "Von gewachsenen Strukturen zu sauberer Architektur: Ich begleite Migrationen, Modernisierung und technische Neuausrichtung mit Fokus auf Sicherheit und Skalierbarkeit.",
-    primaryCTA: { text: "Projekt besprechen", href: "/kontakt" },
-    secondaryCTA: { text: "Architektur ansehen", href: "/case-studies" },
+    primaryCTA: { text: "IT-Check starten", href: "/kontakt" },
+    secondaryCTA: { text: "Referenzen ansehen", href: "/case-studies" },
     visualType: "architecture" as const
   },
   {
     subline: "Ich übernehme Verantwortung für stabile, sichere und skalierbare IT-Infrastrukturen - proaktiv, strukturiert und mit direktem Blick auf den operativen Betrieb.",
-    primaryCTA: { text: "IT-Check anfragen", href: "/kontakt" },
+    primaryCTA: { text: "IT-Check starten", href: "/kontakt" },
     secondaryCTA: { text: "Referenzen ansehen", href: "/case-studies" },
     visualType: "health" as const
   },
   {
     subline: "Ich löse Blockaden in Microsoft-Cloud-Projekten, schaffe belastbare Strukturen und unterstütze Unternehmen bei einer nachhaltigen technischen Weiterentwicklung.",
-    primaryCTA: { text: "Cloud-Projekt starten", href: "/kontakt" },
-    secondaryCTA: { text: "Mehr erfahren", href: "/solutions" },
+    primaryCTA: { text: "Kostenlose IT-Einschätzung anfordern", href: "/kontakt" },
+    secondaryCTA: { text: "IT-Check starten", href: "/solutions" },
     visualType: "cloud" as const
   }
 ];
@@ -598,7 +598,7 @@ export default function LandingPageContent() {
                   <h3 className="text-xl font-bold mb-4 text-black">{service.title}</h3>
                   <p className="text-gray-600 leading-relaxed mb-8 flex-grow opacity-90">{service.description}</p>
                   <div className="flex items-center gap-2 text-primary font-bold text-sm">
-                    Mehr erfahren <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    IT-Check starten <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
               ))}
@@ -766,7 +766,7 @@ export default function LandingPageContent() {
                 href="/kontakt" 
                 className="inline-flex items-center justify-center px-10 py-5 bg-white/10 hover:bg-white/20 text-white rounded-xl font-medium text-lg transition-all active:scale-[0.98] w-full sm:w-auto"
               >
-                Individuelle Anfrage
+                Erstgespräch sichern
               </Link>
             </div>
 

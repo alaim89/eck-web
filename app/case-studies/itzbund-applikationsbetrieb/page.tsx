@@ -117,7 +117,7 @@ export default function CaseStudyITZBund() {
                   Wir unterstützen Sie dabei, komplexe Applikationslandschaften zu stabilisieren, zu härten und effizient zu betreiben.
                 </p>
                 <Link href="/kontakt" className="block w-full py-4 bg-primary text-white text-center rounded-xl font-bold hover:bg-primary/90 transition-colors">
-                  Jetzt anfragen
+                  Kostenlose IT-Einschätzung anfordern
                 </Link>
               </div>
             </div>

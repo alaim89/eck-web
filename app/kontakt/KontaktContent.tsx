@@ -103,7 +103,7 @@ export default function KontaktContent() {
                       target="_blank"
                       className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all"
                     >
-                      Termin jetzt buchen <ArrowRight className="w-5 h-5" />
+                      Erstgespräch sichern <ArrowRight className="w-5 h-5" />
                     </Link>
                   </div>
                 </motion.div>

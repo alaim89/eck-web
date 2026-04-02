@@ -114,7 +114,7 @@ export default function CaseStudyBellaseno() {
                   Lassen Sie uns gemeinsam Ihre IT-Sicherheitslage analysieren und eine Strategie entwickeln, die zu Ihrem Unternehmen passt.
                 </p>
                 <Link href="/kontakt" className="block w-full py-4 bg-primary text-white text-center rounded-xl font-bold hover:bg-primary/90 transition-colors">
-                  Jetzt anfragen
+                  Kostenlose IT-Einschätzung anfordern
                 </Link>
               </div>
             </div>

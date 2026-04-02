@@ -110,7 +110,7 @@ export default function CaseStudyInCase() {
                   Wir helfen Ihnen dabei, Ihre E-Mail-Infrastruktur zu modernisieren und mobile Geräte sicher zu verwalten.
                 </p>
                 <Link href="/kontakt" className="block w-full py-4 bg-primary text-white text-center rounded-xl font-bold hover:bg-primary/90 transition-colors">
-                  Jetzt anfragen
+                  Kostenlose IT-Einschätzung anfordern
                 </Link>
               </div>
             </div>

@@ -103,7 +103,7 @@ export default function SolutionsIndexContent() {
                         {solution.description}
                       </p>
                       <div className="mt-auto flex items-center gap-2 text-primary font-bold text-sm">
-                        Details ansehen <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        IT-Check starten <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </Link>
                   </motion.div>
@@ -119,7 +119,7 @@ export default function SolutionsIndexContent() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Nicht sicher, was Sie brauchen?</h2>
             <p className="text-xl text-white/90 mb-10">Lassen Sie uns gemeinsam Ihre IT-Infrastruktur analysieren und die beste Strategie für Ihr Unternehmen entwickeln.</p>
             <Link href="/kontakt" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary rounded-lg hover:bg-gray-50 transition-all font-bold text-lg shadow-xl hover:-translate-y-0.5">
-              Kostenlose Erstberatung <ArrowRight className="w-5 h-5" />
+              Kostenlose IT-Einschätzung anfordern <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </section>

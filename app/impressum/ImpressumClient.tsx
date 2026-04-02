@@ -117,7 +117,7 @@ export default function ImpressumClient() {
                   href="/#contact"
                   className="text-sm font-semibold text-primary flex items-center gap-2 hover:gap-3 transition-all"
                 >
-                  Zum Kontakt <ChevronRight className="w-4 h-4" />
+                  Kostenlose IT-Einschätzung anfordern <ChevronRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>

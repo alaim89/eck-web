@@ -66,7 +66,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
               {solution.description}
             </p>
             <Link href="/#contact" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all font-semibold text-lg shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5">
-              Kostenlose Erstberatung <ArrowRight className="w-5 h-5" />
+              Kostenlose IT-Einschätzung anfordern <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </section>
@@ -240,7 +240,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
                     <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">{s.title}</h3>
                     <p className="text-gray-600 mb-6 line-clamp-3">{s.description}</p>
                     <div className="text-primary font-semibold flex items-center gap-2">
-                      Mehr erfahren <ChevronRight className="w-4 h-4" />
+                      IT-Check starten <ChevronRight className="w-4 h-4" />
                     </div>
                   </Link>
                 );
@@ -268,7 +268,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Bereit, IT-Risiken zu eliminieren?</h2>
             <p className="text-xl text-white/90 mb-10">Erhalten Sie ein umfassendes Audit Ihres aktuellen Setups. Unverbindlich und klar.</p>
             <a href="mailto:info@ecksolution-it.de" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary rounded-lg hover:bg-gray-50 transition-all font-bold text-lg shadow-xl hover:-translate-y-0.5">
-              IT-Audit anfordern <ArrowRight className="w-5 h-5" />
+              IT-Check starten <ArrowRight className="w-5 h-5" />
             </a>
           </div>
         </section>

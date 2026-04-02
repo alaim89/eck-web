@@ -113,7 +113,7 @@ export default function CaseStudyGroup24() {
                   Wir unterstützen Sie bei der Planung und Umsetzung Ihrer Azure-Strategie – sicher, effizient und zukunftsorientiert.
                 </p>
                 <Link href="/kontakt" className="block w-full py-4 bg-primary text-white text-center rounded-xl font-bold hover:bg-primary/90 transition-colors">
-                  Jetzt anfragen
+                  Kostenlose IT-Einschätzung anfordern
                 </Link>
               </div>
             </div>

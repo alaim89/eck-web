@@ -109,7 +109,7 @@ export default function CaseStudyZunicode() {
                   Wir helfen Ihnen dabei, Ihre IT-Prozesse zu automatisieren und die Effizienz Ihres Teams zu steigern.
                 </p>
                 <Link href="/kontakt" className="block w-full py-4 bg-primary text-white text-center rounded-xl font-bold hover:bg-primary/90 transition-colors">
-                  Jetzt anfragen
+                  Kostenlose IT-Einschätzung anfordern
                 </Link>
               </div>
             </div>
