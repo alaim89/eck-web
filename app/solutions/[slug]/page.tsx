@@ -89,6 +89,15 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
           </div>
         </section>
 
+        <div className="mt-10 text-center">
+          <p className="text-gray-700 mb-3">
+            Kommt Ihnen das bekannt vor?
+          </p>
+          <a href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
+            Jetzt IT-Check anfordern
+          </a>
+        </div>
+
         {/* 4. Lösungs Section */}
         <section className="py-24 px-6 bg-primary text-white">
           <div className="max-w-[800px] mx-auto">
@@ -152,6 +161,15 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
             </div>
           </div>
         </section>
+
+        <div className="mt-10 text-center">
+          <p className="text-gray-700 mb-3">
+            Kommt Ihnen das bekannt vor?
+          </p>
+          <a href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
+            Jetzt IT-Check anfordern
+          </a>
+        </div>
 
         {/* 6. Nutzen / Benefits Section */}
         <section className="py-24 px-6 bg-white">
@@ -219,6 +237,15 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
             </div>
           </div>
         </section>
+
+        <div className="mt-10 text-center">
+          <p className="text-gray-700 mb-3">
+            Kommt Ihnen das bekannt vor?
+          </p>
+          <a href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
+            Jetzt IT-Check anfordern
+          </a>
+        </div>
 
         {/* Related Solutions */}
         <section className="py-24 px-6 border-t border-gray-100">

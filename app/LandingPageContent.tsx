@@ -284,6 +284,15 @@ export default function LandingPageContent() {
           </div>
         </section>
 
+        <div className="mt-10 text-center">
+          <p className="text-gray-700 mb-3">
+            Kommt Ihnen das bekannt vor?
+          </p>
+          <a href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
+            Jetzt IT-Check anfordern
+          </a>
+        </div>
+
         {/* Solution Section */}
 <section
   id="solution"
@@ -615,6 +624,15 @@ export default function LandingPageContent() {
           </div>
         </section>
 
+        <div className="mt-10 text-center">
+          <p className="text-gray-700 mb-3">
+            Kommt Ihnen das bekannt vor?
+          </p>
+          <a href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
+            Jetzt IT-Check anfordern
+          </a>
+        </div>
+
         {/* Process Section */}
         <section 
           className="py-32 bg-gray-50/50"
@@ -687,6 +705,15 @@ export default function LandingPageContent() {
             <CaseStudyCarousel />
           </div>
         </section>
+
+        <div className="mt-10 text-center">
+          <p className="text-gray-700 mb-3">
+            Kommt Ihnen das bekannt vor?
+          </p>
+          <a href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
+            Jetzt IT-Check anfordern
+          </a>
+        </div>
 
         {/* FAQ Section */}
         <section 
