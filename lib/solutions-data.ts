@@ -51,19 +51,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "Komplexität in der hybriden Welt",
       points: [
-        "Inkonsistente Datenbestände zwischen Cloud und On-Premise",
-        "Sicherheitsrisiken durch unklare Schnittstellen",
-        "Hoher Administrationsaufwand für verschiedene Systeme",
-        "Mangelnde Performance bei der Daten-Synchronisation"
+        "Dateninkonsistenzen zwischen Cloud und Lokal führen zu Fehlentscheidungen und zeitaufwendigen manuellen Korrekturen.",
+        "Undefinierte Schnittstellen schaffen gefährliche Einfallstore für Cyber-Angriffe und gefährden Ihre Datenintegrität.",
+        "Getrennte Insellösungen binden wertvolle IT-Ressourcen in der Verwaltung, statt Innovation zu fördern.",
+        "Langsame Synchronisationsprozesse bremsen die Zusammenarbeit im Team und verzögern geschäftskritische Abläufe."
       ]
     },
     solution: {
       title: "Nahtlose Hybrid-Integration",
       points: [
-        "Zentrale Verwaltung von Identitäten und Zugriffen",
-        "Optimierte Datenflüsse zwischen allen Standorten",
-        "Einheitliches Sicherheitskonzept für alle Umgebungen",
-        "Zukunftssichere Architektur für Linux & Windows"
+        "Sie verwalten Identitäten und Zugriffe zentral und sicher über alle Plattformen hinweg.",
+        "Sie profitieren von reibungslosen Datenflüssen zwischen Cloud und lokalen Standorten.",
+        "Sie erhalten ein durchgängiges Sicherheitskonzept, das alle Ihre IT-Umgebungen schützt.",
+        "Sie gewinnen eine flexible Architektur, die Linux und Windows stabil vereint."
       ]
     },
     features: [
@@ -90,11 +90,11 @@ export const solutionsData: Record<string, Solution> = {
     caseStudy: {
       title: "Stabilisierung und Automatisierung hybrider IT-Infrastrukturen",
       companyType: "zunicode GmbH",
-      situation: "Das Unternehmen betrieb eine hybride IT-Umgebung mit stetig steigender Komplexität.",
-      problem: "Hoher manueller Aufwand bei Routineaufgaben und fehlende Struktur.",
+      situation: "Hybride IT-Umgebung mit stetig steigender Komplexität und reaktivem Support.",
+      problem: "Hoher manueller Aufwand bei Routineaufgaben, fehlende Struktur und häufige Verzögerungen im Betrieb.",
       decisionPoint: "Die internen Ressourcen waren durch das Tagesgeschäft vollständig gebunden.",
-      solution: "Automatisierung mit Ansible & PowerShell sowie Strukturierung der Prozesse.",
-      result: "Reduzierte manuelle Eingriffe und stabilerer IT-Betrieb.",
+      solution: "Umstellung auf Managed IT Services mit Fokus auf Automatisierung mittels Ansible & PowerShell.",
+      result: "Stabile Infrastruktur mit deutlich reduziertem Supportaufwand und keine kritischen Ausfälle seit der Umstellung.",
       slug: "zunicode-automatisierung"
     },
     faq: hybridItFaqs
@@ -106,19 +106,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "IT als ständiger Unruheherd",
       points: [
-        "Unvorhersehbare IT-Kosten durch reaktives Handeln",
-        "Mangelnde Expertise für komplexe Sicherheitsfragen",
-        "Lange Ausfallzeiten bei technischen Problemen",
-        "Keine strategische Weiterentwicklung der IT"
+        "Reaktive IT-Betreuung führt zu unkalkulierbaren Kostenexplosionen bei jedem technischen Zwischenfall.",
+        "Fehlendes Spezialwissen bei Cyber-Bedrohungen erhöht das Risiko für Ransomware-Angriffe massiv.",
+        "Stundenlange Systemausfälle stoppen die Wertschöpfungskette und verursachen hohe finanzielle Verluste.",
+        "Veraltete IT-Strukturen ohne Roadmap verhindern die Skalierung Ihres Unternehmens und bremsen das Wachstum."
       ]
     },
     solution: {
       title: "Proaktives IT-Management",
       points: [
-        "Feste monatliche Pauschale für volle Kostentransparenz",
-        "24/7 Monitoring und proaktive Fehlerbehebung",
-        "Regelmäßige Sicherheits-Updates und Patch-Management",
-        "Strategische Beratung durch Ihren persönlichen vCIO"
+        "Sie gewinnen volle Budgetsicherheit durch eine transparente monatliche IT-Pauschale.",
+        "Sie arbeiten unterbrechungsfrei dank kontinuierlicher Überwachung und proaktiver Entstörung.",
+        "Sie erhalten stets aktuelle und sichere Systeme durch automatisiertes Patch-Management.",
+        "Sie sichern Ihren Unternehmenserfolg durch eine strategische IT-Beratung auf Augenhöhe."
       ]
     },
     features: [
@@ -146,10 +146,10 @@ export const solutionsData: Record<string, Solution> = {
       title: "Stabilisierung und Automatisierung hybrider IT-Infrastrukturen",
       companyType: "zunicode GmbH",
       situation: "Das Unternehmen nutzte reaktiven IT-Support, was zu häufigen Verzögerungen führte.",
-      problem: "Veraltete Systeme und mangelnde Sicherheit behinderten die Expansion.",
+      problem: "Veraltete Systeme und mangelnde Sicherheit behinderten die Expansion und gefährdeten die Datenintegrität.",
       decisionPoint: "Sie brauchten einen Partner für den gesamten IT-Lebenszyklus.",
       solution: "Umstellung auf Managed IT Services mit Fokus auf Automatisierung.",
-      result: "Stabilisierte IT-Umgebung und klare Technologie-Roadmap.",
+      result: "Stabile Infrastruktur mit deutlich reduziertem Supportaufwand und keine kritischen Ausfälle seit der Umstellung.",
       slug: "zunicode-automatisierung"
     },
     faq: managedItFaqs
@@ -161,19 +161,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "Fehlende strategische Führung",
       points: [
-        "IT-Entscheidungen ohne langfristige Strategie",
-        "Keine Kontrolle über IT-Budgets und Investitionen",
-        "Schwierigkeiten bei der Steuerung externer Dienstleister",
-        "Mangelnde Ausrichtung der IT an den Geschäftszielen"
+        "IT-Investitionen ohne klare Strategie führen zu Fehlinvestitionen und technologischen Sackgassen.",
+        "Mangelnde Budgetkontrolle führt zu unkontrolliert steigenden IT-Ausgaben ohne messbaren Mehrwert.",
+        "Fehlende Fachaufsicht über Dienstleister führt zu überteuerten Verträgen und unzureichender Servicequalität.",
+        "Eine IT, die nicht die Geschäftsziele unterstützt, wird zum teuren Kostenfaktor statt zum Wachstumstreiber."
       ]
     },
     solution: {
       title: "Ihre IT-Leitung auf Abruf",
       points: [
-        "Entwicklung und Umsetzung einer IT-Roadmap",
-        "Budgetplanung und Optimierung der IT-Kosten",
-        "Projektleitung für komplexe IT-Vorhaben",
-        "Regelmäßige Berichterstattung an die Geschäftsführung"
+        "Sie erhalten eine klare technologische Roadmap, die Ihre Geschäftsziele unterstützt.",
+        "Sie profitieren von einer optimierten Budgetplanung und signifikant reduzierten IT-Kosten.",
+        "Sie sichern den Erfolg komplexer IT-Projekte durch eine professionelle externe Leitung.",
+        "Sie gewinnen volle Transparenz über Ihre IT-Lage durch regelmäßige Management-Reports."
       ]
     },
     features: [
@@ -200,11 +200,11 @@ export const solutionsData: Record<string, Solution> = {
     caseStudy: {
       title: "Aufbau und Absicherung einer Microsoft-365-Umgebung",
       companyType: "Procivitate gGmbH",
-      situation: "Die IT-Infrastruktur war über Jahre gewachsen, ohne klare strategische Ausrichtung.",
-      problem: "Fehlende IT-Leitung und unklare Sicherheitslage.",
+      situation: "Über Jahre gewachsene IT-Infrastruktur ohne klare strategische Ausrichtung.",
+      problem: "Fehlende IT-Leitung, unklare Sicherheitslage und hohes Risiko von Datenlecks bei ineffizienten Prozessen.",
       decisionPoint: "Der Vorstand erkannte die Notwendigkeit einer professionellen IT-Steuerung.",
-      solution: "Übernahme der externen IT-Leitung und strategische Beratung.",
-      result: "Klare IT-Roadmap und deutlich verbessertes Sicherheitsniveau.",
+      solution: "Übernahme der externen IT-Leitung, Implementierung erweiterter Sicherheitsfunktionen und Entwicklung einer IT-Roadmap.",
+      result: "Klare IT-Roadmap für die nächsten 3 Jahre, deutlich verbessertes Sicherheitsniveau und gesteigerte Teamproduktivität.",
       slug: "procivitate-strategie"
     }
   },
@@ -215,19 +215,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "Die Gefahr ist real",
       points: [
-        "Tägliche Angriffe durch Ransomware und Phishing",
-        "Schwachstellen in veralteter Software und Hardware",
-        "Mangelndes Sicherheitsbewusstsein der Mitarbeiter",
-        "Fehlende Compliance mit gesetzlichen Vorgaben (DSGVO)"
+        "Ransomware-Angriffe können Ihren Betrieb wochenlang lähmen und die Existenz Ihres Unternehmens bedrohen.",
+        "Ungepatchte Sicherheitslücken laden Hacker ein und führen zu massiven Reputationsschäden bei Datenlecks.",
+        "Menschliche Fehler sind das größte Risiko; ohne Schulung bleibt Ihr Team das schwächste Glied der Kette.",
+        "Verstöße gegen die DSGVO ziehen empfindliche Bußgelder nach sich und gefährden das Kundenvertrauen."
       ]
     },
     solution: {
       title: "Mehrschichtige Verteidigung",
       points: [
-        "Endpoint Detection and Response (EDR) der nächsten Generation",
-        "Regelmäßige Sicherheits-Audits und Schwachstellen-Scans",
-        "Security-Awareness-Schulungen für Ihr Team",
-        "Implementierung von Zero-Trust-Architekturen"
+        "Sie schützen Ihre Endgeräte zuverlässig vor modernen Cyber-Angriffen und Ransomware.",
+        "Sie minimieren Risiken durch regelmäßige Audits, die Schwachstellen sofort aufdecken.",
+        "Sie stärken Ihre Sicherheit durch ein Team, das Bedrohungen erkennt und richtig reagiert.",
+        "Sie erhalten eine moderne Sicherheitsarchitektur, die den Zugriff auf Ihre Daten streng kontrolliert."
       ]
     },
     features: [
@@ -254,11 +254,11 @@ export const solutionsData: Record<string, Solution> = {
     caseStudy: {
       title: "Analyse und Aufbau einer strukturierten IT-Sicherheitsstrategie",
       companyType: "Bellaseno GmbH",
-      situation: "Das Unternehmen verfügte über gewachsene IT-Strukturen ohne klare Sicherheitsbewertung.",
-      problem: "Unklare Sicherheitslage und fehlende Priorisierung von Risiken.",
+      situation: "Gewachsene IT-Strukturen ohne klare Sicherheitsbewertung oder Governance.",
+      problem: "Unklare Sicherheitslage, fehlende Priorisierung von Risiken und unkalkulierbare IT-Kosten.",
       decisionPoint: "Es fehlte eine belastbare Entscheidungsgrundlage für Investitionen.",
-      solution: "Durchführung einer GAP-Analyse und Entwicklung eines Maßnahmenkatalogs.",
-      result: "Klare Übersicht über Risiken und strukturierte Entscheidungsbasis.",
+      solution: "Durchführung einer GAP-Analyse, Risikoidentifikation und Entwicklung eines priorisierten Maßnahmenkatalogs.",
+      result: "Vollständige Transparenz über die Risikolage, eine belastbare Entscheidungsbasis für Investitionen und ein strukturierter Fahrplan.",
       slug: "bellaseno-security"
     },
     faq: securityFaqs
@@ -270,19 +270,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "Offene Tore für Angreifer",
       points: [
-        "Ungeschützte Laptops und Mobilgeräte im Homeoffice",
-        "Veraltete Firewalls ohne moderne Bedrohungserkennung",
-        "Unkontrollierter Datenabfluss durch fehlende Segmentierung",
-        "Mangelnde Sichtbarkeit von Angriffen auf Endgeräte"
+        "Ungeschützte Endgeräte im Homeoffice sind ein leichtes Ziel für Angreifer und gefährden das gesamte Firmennetzwerk.",
+        "Veraltete Firewalls erkennen moderne Angriffe nicht und bieten nur eine trügerische Sicherheit.",
+        "Fehlende Netzwerksegmentierung ermöglicht es Angreifern, sich ungehindert im Unternehmen auszubreiten.",
+        "Ohne zentrale Überwachung bleiben Angriffe auf Endgeräte oft wochenlang unbemerkt, bis der Schaden irreparabel ist."
       ]
     },
     solution: {
       title: "Umfassender Netzwerkschutz",
       points: [
-        "Next-Generation Firewalls mit Deep Packet Inspection",
-        "Zentral verwaltete Endpoint-Security (Antivirus & EDR)",
-        "Sichere VPN-Verbindungen für mobiles Arbeiten",
-        "Netzwerk-Segmentierung zur Schadensbegrenzung"
+        "Sie sichern Ihr Netzwerk durch intelligente Firewalls, die Bedrohungen in Echtzeit blockieren.",
+        "Sie erhalten eine zentrale Kontrolle über die Sicherheit aller Firmen-Laptops und Mobilgeräte.",
+        "Sie ermöglichen Ihrem Team sicheres und performantes Arbeiten von jedem Standort aus.",
+        "Sie begrenzen potenzielle Schäden durch eine strukturierte Aufteilung Ihres Netzwerks."
       ]
     },
     features: [
@@ -309,11 +309,11 @@ export const solutionsData: Record<string, Solution> = {
     caseStudy: {
       title: "Modernisierung der E-Mail-Infrastruktur und Geräteverwaltung",
       companyType: "InCase Handelsgesellschaft mbH",
-      situation: "Keine zentrale Kontrolle über mobile Firmengeräte.",
-      problem: "Die IT-Sicherheit war durch ungeschützte Endgeräte gefährdet.",
+      situation: "Keine zentrale Kontrolle über mobile Firmengeräte und veraltete E-Mail-Infrastruktur.",
+      problem: "Sicherheitsrisiken durch ungeschützte Endgeräte, fehlende Kontrolle über Datenflüsse und hohes Risiko von Datenlecks.",
       decisionPoint: "Notwendigkeit einer zentralen Verwaltungslösung.",
-      solution: "Einführung von Microsoft Intune zur Geräteverwaltung.",
-      result: "Zentral verwaltete und abgesicherte mobile Endgeräte.",
+      solution: "Migration zu Exchange Online und Einführung von Microsoft Intune zur zentralen Geräteverwaltung.",
+      result: "100% Abdeckung aller mobilen Endgeräte in der zentralen Verwaltung und drastisch reduziertes Risiko von Datenverlusten.",
       slug: "incase-modernisierung"
     },
     faq: securityFaqs
@@ -325,19 +325,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "Der Albtraum des Totalausfalls",
       points: [
-        "Keine getesteten Wiederherstellungspläne vorhanden",
-        "Lange Ausfallzeiten kosten massiv Geld und Vertrauen",
-        "Datenverlust durch fehlerhafte oder veraltete Backups",
-        "Unklarheit über Verantwortlichkeiten im Krisenfall"
+        "Fehlende oder ungetestete Notfallpläne führen im Ernstfall zu Chaos und verlängern den Stillstand unnötig.",
+        "Jeder Tag ohne funktionierende IT kostet massiv Umsatz und zerstört das Vertrauen Ihrer Kunden nachhaltig.",
+        "Datenverlust durch unzuverlässige Backups kann die jahrelange Arbeit Ihres Unternehmens in Sekunden vernichten.",
+        "Unklare Zuständigkeiten im Krisenfall verzögern die Rettungsmaßnahmen und erhöhen den Gesamtschaden."
       ]
     },
     solution: {
       title: "Garantierte Geschäftskontinuität",
       points: [
-        "Detaillierte Disaster-Recovery-Pläne (DRP)",
-        "Regelmäßige Wiederherstellungstests und Simulationen",
-        "Cloud-basierte Recovery-Umgebungen für schnellen Start",
-        "Definierte RTOs und RPOs für alle kritischen Systeme"
+        "Sie gewinnen Sicherheit durch einen praxiserprobten Notfallplan für den Ernstfall.",
+        "Sie vertrauen auf eine funktionierende Rettung durch regelmäßige Wiederherstellungstests.",
+        "Sie minimieren Stillstandszeiten durch eine sofort einsatzbereite Cloud-Ersatzumgebung.",
+        "Sie erhalten garantierte Zeitrahmen für die Wiederaufnahme Ihres Geschäftsbetriebs."
       ]
     },
     features: [
@@ -365,10 +365,10 @@ export const solutionsData: Record<string, Solution> = {
       title: "Modernisierung einer Serverumgebung und Backup-Strategie",
       companyType: "BiolytiQs GmbH",
       situation: "Veraltete Serverumgebung ohne moderne Backup-Lösung.",
-      problem: "Hohes Risiko von Datenverlust bei Hardwaredefekt.",
+      problem: "Hohes Risiko von Datenverlust bei Hardwaredefekt bedrohte die kontinuierliche Verfügbarkeit kritischer Daten.",
       decisionPoint: "Hardware erreichte das Ende ihrer Lebensdauer.",
-      solution: "Migration auf neue Server und Veeam-Backup-Lösung.",
-      result: "Zuverlässiges Backup und schnelle Wiederherstellungsmöglichkeit.",
+      solution: "Migration auf neue, leistungsfähige Serverhardware und Implementierung einer Veeam-Backup-Lösung.",
+      result: "Stabile Infrastruktur mit zuverlässigem Backup-Konzept und garantierter Wiederherstellbarkeit innerhalb weniger Stunden.",
       slug: "biolytiqs-server"
     },
     faq: backupFaqs
@@ -380,19 +380,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "Instabile Verbindungen bremsen aus",
       points: [
-        "Häufige WLAN-Abbrüche und langsame Internetverbindungen",
-        "Sicherheitsrisiken durch unverschlüsselte Netzwerksegmente",
-        "Schwierigkeiten bei der Anbindung von Homeoffice-Mitarbeitern",
-        "Mangelnde Übersicht über die Netzwerkauslastung"
+        "Instabile WLAN-Verbindungen und langsame Netzwerke bremsen die Produktivität und sorgen für Frust im Team.",
+        "Offene Netzwerksegmente ermöglichen Spionage und Datendiebstahl durch unbefugte Dritte.",
+        "Komplizierte oder unsichere Homeoffice-Anbindungen behindern flexibles Arbeiten und schaffen Sicherheitslücken.",
+        "Fehlende Transparenz über die Netzlast führt zu Engpässen, die geschäftskritische Anwendungen blockieren."
       ]
     },
     solution: {
       title: "Intelligente Netzwerksteuerung",
       points: [
-        "Planung und Aufbau von High-Performance WLAN-Netzwerken",
-        "Sichere Standortvernetzung via SD-WAN oder VPN",
-        "Kontinuierliches Monitoring der Netzwerkperformance",
-        "Segmentierung des Netzwerks für erhöhte Sicherheit"
+        "Sie profitieren von einem schnellen und stabilen WLAN in allen Unternehmensbereichen.",
+        "Sie vernetzen Ihre Standorte sicher und performant für eine reibungslose Zusammenarbeit.",
+        "Sie vermeiden Engpässe durch eine proaktive Überwachung Ihrer Netzwerk-Performance.",
+        "Sie schützen sensible Datenbereiche durch eine intelligente Trennung Ihrer Netzwerke."
       ]
     },
     features: [
@@ -419,11 +419,11 @@ export const solutionsData: Record<string, Solution> = {
     caseStudy: {
       title: "Integration hybrider IT-Infrastrukturen",
       companyType: "MAIT Germany GmbH",
-      situation: "Heterogene IT-Infrastruktur durch zahlreiche Akquisitionen.",
-      problem: "Unterschiedliche Netzwerkstandards erschwerten den Betrieb.",
+      situation: "Heterogene IT-Infrastruktur durch zahlreiche Akquisitionen mit unterschiedlichen Netzwerkstandards.",
+      problem: "Erschwerter Betrieb, häufige Verbindungsprobleme und hoher Administrationsaufwand durch fehlende Standards.",
       decisionPoint: "Notwendigkeit einheitlicher Konzernstandards.",
-      solution: "Integration von On-Prem- und Cloud-Systemen sowie Standardisierung.",
-      result: "Einheitliche Standards und reduzierter Administrationsaufwand.",
+      solution: "Integration von On-Prem- und Cloud-Systemen sowie Etablierung einheitlicher Konzernstandards im Netzwerkbereich.",
+      result: "Einheitliche Netzwerkstandards über alle Standorte, signifikant reduzierter Administrationsaufwand und stabile Standortvernetzung.",
       slug: "mait-enterprise"
     }
   },
@@ -434,19 +434,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "Chaos bei der Geräteverwaltung",
       points: [
-        "Veraltete Laptops bremsen die Mitarbeiterproduktivität",
-        "Keine Übersicht über Garantiezeiten und Hardware-Alter",
-        "Hoher Aufwand beim Onboarding neuer Mitarbeiter",
-        "Sicherheitsrisiken durch nicht verwaltete Endgeräte"
+        "Veraltete Hardware führt zu Frust bei Mitarbeitern und mindert die Arbeitsleistung durch lange Ladezeiten.",
+        "Fehlende Lifecycle-Planung führt zu unvorhersehbaren Ausfällen und teuren Ad-hoc-Neuanschaffungen.",
+        "Manuelles Einrichten von Geräten bindet wertvolle Zeit und verzögert den Start neuer Teammitglieder.",
+        "Nicht verwaltete 'Schatten-IT' auf Endgeräten ist ein unkontrollierbares Sicherheitsrisiko für Ihr Unternehmen."
       ]
     },
     solution: {
       title: "Standardisierte Hardware-Prozesse",
       points: [
-        "Zentrale Beschaffung und Konfiguration (Zero-Touch)",
-        "Automatisierte Softwareverteilung und Patch-Management",
-        "Proaktiver Austausch veralteter Hardware",
-        "Sichere Datenlöschung bei Geräterückgabe"
+        "Sie beschleunigen das Onboarding durch fertig konfigurierte Geräte für neue Mitarbeiter.",
+        "Sie sparen Zeit durch eine automatisierte Verteilung von Software und Sicherheits-Updates.",
+        "Sie erhalten eine stets leistungsfähige Hardware-Flotte durch vorausschauenden Austausch.",
+        "Sie erfüllen alle Datenschutzvorgaben durch eine zertifizierte Löschung Ihrer Altgeräte."
       ]
     },
     features: [
@@ -473,11 +473,11 @@ export const solutionsData: Record<string, Solution> = {
     caseStudy: {
       title: "Einführung mobiler Geräteverwaltung",
       companyType: "InCase Handelsgesellschaft mbH",
-      situation: "Keine zentrale Kontrolle über mobile Firmengeräte.",
-      problem: "Sicherheitsrisiken durch ungeschützte Endgeräte.",
+      situation: "Keine zentrale Kontrolle über mobile Firmengeräte und veraltete E-Mail-Infrastruktur.",
+      problem: "Sicherheitsrisiken durch ungeschützte Endgeräte, fehlende Kontrolle über Datenflüsse und hohes Risiko von Datenlecks.",
       decisionPoint: "Wunsch nach moderner E-Mail-Infrastruktur und Sicherheit.",
       solution: "Migration zu Exchange Online und Einführung von Microsoft Intune.",
-      result: "Zentral verwaltete und abgesicherte mobile Endgeräte.",
+      result: "100% Abdeckung aller mobilen Endgeräte in der zentralen Verwaltung und drastisch reduziertes Risiko von Datenverlusten.",
       slug: "incase-modernisierung"
     }
   },
@@ -488,19 +488,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "Komplexität der Cloud-Verwaltung",
       points: [
-        "Explodierende Cloud-Kosten durch fehlende Optimierung",
-        "Sicherheitslücken in der Cloud-Konfiguration",
-        "Schwierigkeiten bei der Integration mit lokalen Systemen",
-        "Mangel an internem Azure-Fachwissen"
+        "Unkontrolliert steigende Cloud-Kosten durch fehlende Optimierung belasten Ihr IT-Budget ohne Mehrwert.",
+        "Fehlerhafte Cloud-Konfigurationen schaffen Sicherheitslücken, die oft erst nach einem Datenleck entdeckt werden.",
+        "Mangelhafte Integration zwischen Cloud und On-Premise führt zu ineffizienten Workflows und Datenverlustrisiken.",
+        "Fehlendes Azure-Spezialwissen im Team führt zu riskanten Fehlkonfigurationen und technologischem Stillstand."
       ]
     },
     solution: {
       title: "Azure-Expertise für Ihr Unternehmen",
       points: [
-        "Kontinuierliche Kostenoptimierung (FinOps)",
-        "Sicherheits-Härtung nach Azure-Best-Practices",
-        "Betreuung von Azure Virtual Desktop und Cloud-Servern",
-        "Nahtlose Anbindung an Ihre lokale Infrastruktur"
+        "Sie reduzieren Ihre Cloud-Ausgaben durch eine kontinuierliche Kosten-Optimierung.",
+        "Sie profitieren von einer maximal abgesicherten Azure-Umgebung nach höchsten Standards.",
+        "Sie erhalten einen stabilen Betrieb Ihrer Cloud-Server und virtuellen Arbeitsplätze.",
+        "Sie nutzen die Vorteile der Cloud ohne Brüche in Ihrer bestehenden IT-Infrastruktur."
       ]
     },
     features: [
@@ -527,11 +527,11 @@ export const solutionsData: Record<string, Solution> = {
     caseStudy: {
       title: "Migration in Microsoft Azure",
       companyType: "group24 AG",
-      situation: "Backend-Systeme waren schwer skalierbar und wartbar.",
-      problem: "Hardware war veraltet, Expansion geplant.",
+      situation: "Backend-Systeme waren schwer skalierbar, wartbar und basierten auf veralteter Hardware.",
+      problem: "Die veraltete Hardware verhinderte die geplante Expansion und führte zu häufigen Systemausfällen.",
       decisionPoint: "Notwendigkeit einer skalierbaren Cloud-Infrastruktur.",
-      solution: "Migration in Azure und Integration von Azure Virtual Desktop.",
-      result: "Maximale Skalierbarkeit und stabile Infrastruktur.",
+      solution: "Vollständige Migration bestehender Systeme in Microsoft Azure inklusive Integration von Azure Virtual Desktop.",
+      result: "Maximale Skalierbarkeit für zukünftiges Wachstum, stabile Infrastruktur ohne Hardware-Abhängigkeit und optimierte Betriebskosten.",
       slug: "group24-azure"
     },
     faq: hybridItFaqs
@@ -543,19 +543,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "Stillstand durch veraltete Strukturen",
       points: [
-        "Inflexible IT-Systeme verhindern Innovation",
-        "Hohe Wartungskosten für veraltete Rechenzentren",
-        "Angst vor Datenverlust bei der Cloud-Migration",
-        "Unklare Roadmap für die digitale Transformation"
+        "Veraltete, unflexible IT-Strukturen bremsen die Innovationskraft und mindern Ihre Wettbewerbsfähigkeit.",
+        "Die Instandhaltung veralteter Rechenzentren verschlingt Budgets, die in moderne Cloud-Lösungen gehören.",
+        "Unstrukturierte Migrationsversuche bergen hohe Risiken für Datenverlust und langwierige Betriebsunterbrechungen.",
+        "Ohne klare Transformations-Roadmap bleibt die Digitalisierung ein teures Experiment ohne Geschäftserfolg."
       ]
     },
     solution: {
       title: "Ihr Weg in die Cloud-Zukunft",
       points: [
-        "Entwicklung einer individuellen Cloud-Strategie",
-        "Schrittweise Migration kritischer Workloads",
-        "Aufbau einer hybriden Cloud-Architektur",
-        "Schulung Ihrer Mitarbeiter für die neue Umgebung"
+        "Sie erhalten eine maßgeschneiderte Cloud-Strategie, die exakt zu Ihrem Unternehmen passt.",
+        "Sie migrieren Ihre Systeme ohne Betriebsunterbrechung in eine moderne Cloud-Umgebung.",
+        "Sie profitieren von der Flexibilität einer Hybrid-Cloud bei voller Kontrolle über Ihre Daten.",
+        "Sie befähigen Ihr Team zur effizienten Nutzung der neuen technologischen Möglichkeiten."
       ]
     },
     features: [
@@ -582,11 +582,11 @@ export const solutionsData: Record<string, Solution> = {
     caseStudy: {
       title: "Migration in Microsoft Azure",
       companyType: "group24 AG",
-      situation: "Veraltete Hardware und komplexe Betriebsprozesse.",
-      problem: "Fehlende Skalierbarkeit für geplante Expansion.",
+      situation: "Backend-Systeme waren schwer skalierbar, wartbar und basierten auf veralteter Hardware.",
+      problem: "Fehlende Skalierbarkeit für die geplante Expansion und hohe Wartungskosten der Altsysteme.",
       decisionPoint: "Entscheidung für eine grundlegende Cloud-Transformation.",
-      solution: "Migration bestehender Systeme in Microsoft Azure.",
-      result: "Stabile, hochverfügbare und skalierbare Systeme.",
+      solution: "Vollständige Migration bestehender Systeme in Microsoft Azure.",
+      result: "Maximale Skalierbarkeit für zukünftiges Wachstum, stabile Infrastruktur ohne Hardware-Abhängigkeit und optimierte Betriebskosten.",
       slug: "group24-azure"
     },
     faq: hybridItFaqs
@@ -598,19 +598,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "Projekte ohne Ende und Budget",
       points: [
-        "Uferlose Projektlaufzeiten ohne klare Ergebnisse",
-        "Explodierende Kosten durch unklare Anforderungen",
-        "Mangelnde Qualität bei der Umsetzung",
-        "Fehlende Dokumentation nach Projektabschluss"
+        "Endlose Projektlaufzeiten ohne greifbare Ergebnisse binden Ressourcen und verzögern Geschäftsentscheidungen.",
+        "Unklare Anforderungen führen zu massiven Kostenüberschreitungen und gefährden die Wirtschaftlichkeit.",
+        "Mangelhafte technische Umsetzung führt zu instabilen Systemen, die im Betrieb hohe Folgekosten verursachen.",
+        "Fehlende Dokumentation macht Sie abhängig von Einzelpersonen und erschwert die spätere Wartung."
       ]
     },
     solution: {
       title: "Ergebnisorientiertes Projektmanagement",
       points: [
-        "Detaillierte Planung mit festen Meilensteinen",
-        "Verbindliche Festpreisangebote für volle Kontrolle",
-        "Garantierte Service-Level während und nach dem Projekt",
-        "Vollständige Dokumentation und Übergabe"
+        "Sie erhalten Planungssicherheit durch klare Meilensteine und Termingarantien.",
+        "Sie behalten die volle Kostenkontrolle durch verbindliche Festpreisangebote.",
+        "Sie profitieren von einer garantierten Umsetzungsqualität durch messbare Service-Level.",
+        "Sie sichern Ihr Wissen durch eine lückenlose Dokumentation aller Projektschritte."
       ]
     },
     features: [
@@ -637,11 +637,11 @@ export const solutionsData: Record<string, Solution> = {
     caseStudy: {
       title: "Migration von Google Workspace zu Microsoft 365",
       companyType: "Schilderdienst Schadhauser",
-      situation: "Veraltete IT-Umgebung ohne klare Strukturen.",
-      problem: "Fehlende zentrale Kontrolle und Sicherheitsrisiken.",
+      situation: "Bestehende IT-Umgebung basierte auf Google Workspace ohne klare Strukturen oder zentrale Kontrolle.",
+      problem: "Sicherheitsrisiken bei der Zusammenarbeit, fehlende Kontrolle über Benutzerdaten und ineffiziente Arbeitsabläufe.",
       decisionPoint: "Notwendigkeit einer strukturierten Migration.",
-      solution: "Projektbasierte Migration zu Microsoft 365 mit festem Zeitplan.",
-      result: "Klare und strukturierte IT-Umgebung innerhalb des Zeitrahmens.",
+      solution: "Projektbasierte Migration zu Microsoft 365 inklusive Entra ID, MFA und einer durchdachten Backup-Strategie.",
+      result: "Klare und strukturierte IT-Umgebung mit zentraler Verwaltung, verbesserte Sicherheit und keine Datenverluste während der Migration.",
       slug: "schadhauser-m365"
     }
   },
@@ -652,19 +652,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "Das Risiko des Unbekannten",
       points: [
-        "Unsicherheit über den tatsächlichen Sicherheitsstatus",
-        "Versteckte Schwachstellen in Netzwerk und Servern",
-        "Ungetestete Backups, die im Ernstfall versagen könnten",
-        "Compliance-Risiken durch fehlende Dokumentation"
+        "Die Unkenntnis über den eigenen Sicherheitsstatus ist ein massives Haftungsrisiko für die Geschäftsführung.",
+        "Unerkannte Schwachstellen in Ihrer Infrastruktur sind eine tickende Zeitbombe für Ihren Geschäftsbetrieb.",
+        "Sich auf ungetestete Backups zu verlassen, ist riskant und führt im Ernstfall zum Totalverlust Ihrer Daten.",
+        "Lückenhafte IT-Dokumentation führt bei Audits zu rechtlichen Problemen und gefährdet Zertifizierungen."
       ]
     },
     solution: {
       title: "Vollständige IT-Transparenz",
       points: [
-        "Umfassender Check von Infrastruktur und Sicherheit",
-        "Prüfung der Backup-Integrität und Wiederherstellbarkeit",
-        "Analyse der IT-Prozesse und Dokumentation",
-        "Priorisierter Maßnahmenplan zur Risikominimierung"
+        "Sie gewinnen volle Transparenz über den aktuellen Sicherheitsstatus Ihrer IT.",
+        "Sie erhalten Gewissheit über die Funktionsfähigkeit Ihrer Datensicherung.",
+        "Sie decken Schwachstellen in Ihren IT-Prozessen auf, bevor diese zum Problem werden.",
+        "Sie erhalten einen klaren Fahrplan zur gezielten Beseitigung Ihrer größten IT-Risiken."
       ]
     },
     features: [
@@ -691,11 +691,11 @@ export const solutionsData: Record<string, Solution> = {
     caseStudy: {
       title: "Analyse und Aufbau einer IT-Sicherheitsstrategie",
       companyType: "Bellaseno GmbH",
-      situation: "Gewachsene IT-Strukturen ohne klare Sicherheitsbewertung.",
-      problem: "Unklare Sicherheitslage und fehlende Priorisierung.",
+      situation: "Gewachsene IT-Strukturen ohne klare Sicherheitsbewertung oder Governance.",
+      problem: "Eine unklare Sicherheitslage und fehlende Priorisierung machten gezielte IT-Investitionen unmöglich.",
       decisionPoint: "Bedarf an einer belastbaren Entscheidungsgrundlage.",
-      solution: "Durchführung einer GAP-Analyse und Risikoidentifikation.",
-      result: "Klare Übersicht über Risiken und strukturierte Entscheidungsbasis.",
+      solution: "Durchführung einer GAP-Analyse, Risikoidentifikation und Entwicklung eines priorisierten Maßnahmenkatalogs.",
+      result: "Vollständige Transparenz über die Risikolage, eine belastbare Entscheidungsbasis für Investitionen und ein strukturierter Fahrplan.",
       slug: "bellaseno-security"
     }
   },
@@ -706,19 +706,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "IT als Wachstumsbremse",
       points: [
-        "Veraltete Systeme verhindern neue Geschäftsmodelle",
-        "Keine Planung für zukünftige Kapazitätsbedarfe",
-        "Technologie-Entscheidungen ohne strategischen Fokus",
-        "Mangelnde Flexibilität bei Marktveränderungen"
+        "Veraltete IT-Systeme blockieren die Entwicklung neuer Geschäftsmodelle und mindern Ihre Marktfähigkeit.",
+        "Mangelnde Kapazitätsplanung führt zu plötzlichen Systemüberlastungen und teuren Hardware-Käufen.",
+        "Technologie-Entscheidungen ohne strategischen Fokus führen zu einem ineffizienten Wildwuchs an Software.",
+        "Eine starre IT-Infrastruktur verhindert schnelle Reaktionen auf Marktveränderungen und kostet Marktanteile."
       ]
     },
     solution: {
       title: "Zukunftssichere IT-Strategie",
       points: [
-        "Regelmäßige Strategie-Gespräche auf Management-Ebene",
-        "Entwicklung einer langfristigen IT-Roadmap",
-        "Beratung zu neuen Technologien und Trends",
-        "Kontinuierliche Anpassung der IT an das Wachstum"
+        "Sie sichern Ihren Vorsprung durch eine IT-Beratung auf Geschäftsführungsebene.",
+        "Sie erhalten einen langfristigen Plan für die technologische Entwicklung Ihres Hauses.",
+        "Sie profitieren frühzeitig von neuen Technologien, die Ihr Geschäft voranbringen.",
+        "Sie gewinnen eine IT-Landschaft, die flexibel mit Ihren Anforderungen mitwächst."
       ]
     },
     features: [
@@ -745,11 +745,11 @@ export const solutionsData: Record<string, Solution> = {
     caseStudy: {
       title: "Aufbau einer Microsoft-365-Umgebung mit klarer IT-Strategie",
       companyType: "Procivitate gGmbH",
-      situation: "IT-Infrastruktur ohne klare strategische Ausrichtung.",
-      problem: "Fehlende IT-Leitung und unklare Sicherheitslage.",
+      situation: "Über Jahre gewachsene IT-Infrastruktur ohne klare strategische Ausrichtung.",
+      problem: "Fehlende IT-Leitung, unklare Sicherheitslage und hohes Risiko von Datenlecks bei ineffizienten Prozessen.",
       decisionPoint: "Wunsch nach professioneller IT-Steuerung.",
-      solution: "Übernahme der externen IT-Leitung und strategische Beratung.",
-      result: "Klare IT-Roadmap und verbessertes Sicherheitsniveau.",
+      solution: "Übernahme der externen IT-Leitung, Implementierung erweiterter Sicherheitsfunktionen und Entwicklung einer IT-Roadmap.",
+      result: "Klare IT-Roadmap für die nächsten 3 Jahre, deutlich verbessertes Sicherheitsniveau und gesteigerte Teamproduktivität.",
       slug: "procivitate-strategie"
     }
   },
@@ -760,19 +760,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "Compliance-Falle Cloud",
       points: [
-        "Unsicherheit über die DSGVO-konforme Nutzung von M365",
-        "Fehlende Kontrolle über den Datenabfluss (DLP)",
-        "Unzureichende Archivierung geschäftskritischer E-Mails",
-        "Mangelnde Übersicht über externe Freigaben"
+        "Die unsichere Nutzung von Microsoft 365 birgt hohe rechtliche Risiken und kann zu massiven Bußgeldern führen.",
+        "Ohne Data Loss Prevention verlassen sensible Unternehmensdaten unkontrolliert das Haus und gefährden Ihr Know-how.",
+        "Lückenhafte E-Mail-Archivierung verstößt gegen gesetzliche Aufbewahrungspflichten und erschwert die Beweisführung.",
+        "Unkontrollierte externe Freigaben schaffen dauerhafte Sicherheitslücken und ermöglichen unbefugten Zugriff."
       ]
     },
     solution: {
       title: "Sichere & Konforme Cloud",
       points: [
-        "Konfiguration von Data Loss Prevention (DLP) Richtlinien",
-        "Einrichtung rechtssicherer E-Mail-Archivierung",
-        "Überwachung und Steuerung externer Zugriffe",
-        "Regelmäßige Compliance-Reports und Audits"
+        "Sie schützen sensible Unternehmensdaten vor unkontrolliertem Abfluss nach außen.",
+        "Sie erfüllen alle gesetzlichen Vorgaben zur revisionssicheren E-Mail-Archivierung.",
+        "Sie behalten die volle Kontrolle darüber, wer auf Ihre Cloud-Daten zugreifen darf.",
+        "Sie erhalten die notwendige Dokumentation für Datenschutz-Audits und Zertifizierungen."
       ]
     },
     features: [
@@ -799,11 +799,11 @@ export const solutionsData: Record<string, Solution> = {
     caseStudy: {
       title: "Aufbau und Absicherung einer Microsoft-365-Umgebung",
       companyType: "Procivitate gGmbH",
-      situation: "Keine zentralen Compliance- oder Sicherheitsrichtlinien.",
-      problem: "Hohes Risiko von Datenlecks und ineffiziente Prozesse.",
+      situation: "Über Jahre gewachsene IT-Infrastruktur ohne klare strategische Ausrichtung.",
+      problem: "Hohes Risiko von Datenlecks und ineffiziente Prozesse gefährdeten die Compliance-Vorgaben.",
       decisionPoint: "Notwendigkeit eines professionellen Managements.",
-      solution: "Implementierung erweiterter Sicherheits- und Compliance-Funktionen.",
-      result: "Verbesserte Sicherheitslage und gesteigerte Teamproduktivität.",
+      solution: "Implementierung erweiterter Sicherheits- und Compliance-Funktionen sowie Entwicklung einer IT-Roadmap.",
+      result: "Klare IT-Roadmap für die nächsten 3 Jahre, deutlich verbessertes Sicherheitsniveau und gesteigerte Teamproduktivität.",
       slug: "procivitate-strategie"
     },
     faq: microsoftFaqs
@@ -815,19 +815,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "Wildwuchs in der IT-Landschaft",
       points: [
-        "Unklare Verantwortlichkeiten bei IT-Entscheidungen",
-        "Fehlende Standards für IT-Sicherheit und Betrieb",
-        "Kein systematisches Management von IT-Risiken",
-        "Schwierigkeiten bei der Erfüllung regulatorischer Anforderungen"
+        "Unklare Verantwortlichkeiten bei IT-Entscheidungen führen zu Verzögerungen und riskanten Fehlentwicklungen.",
+        "Fehlende IT-Standards schaffen ein unkontrollierbares Sicherheitsrisiko und erhöhen die Betriebskosten massiv.",
+        "Ohne systematisches Risikomanagement bleibt Ihre IT eine 'Black Box' mit unkalkulierbaren Gefahren.",
+        "Die Nichteinhaltung regulatorischer Vorgaben führt zu rechtlichen Konsequenzen und gefährdet Ihre Marktposition."
       ]
     },
     solution: {
       title: "Strukturierte IT-Steuerung",
       points: [
-        "Aufbau eines IT-Governance-Frameworks",
-        "Etablierung eines kontinuierlichen Risikomanagements",
-        "Definition von IT-Richtlinien und Standards",
-        "Überwachung der Einhaltung (Compliance-Monitoring)"
+        "Sie erhalten klare Strukturen und Verantwortlichkeiten für Ihre gesamte IT-Steuerung.",
+        "Sie minimieren Geschäftsrisiken durch ein systematisches IT-Risikomanagement.",
+        "Sie sichern die Qualität Ihres IT-Betriebs durch verbindliche Standards und Richtlinien.",
+        "Sie gewährleisten die Einhaltung aller regulatorischen Vorgaben durch aktives Monitoring."
       ]
     },
     features: [
@@ -854,11 +854,11 @@ export const solutionsData: Record<string, Solution> = {
     caseStudy: {
       title: "Analyse und Aufbau einer IT-Sicherheitsstrategie",
       companyType: "Bellaseno GmbH",
-      situation: "Gewachsene IT-Strukturen ohne klare Governance.",
-      problem: "Unklare Sicherheitslage und fehlende Priorisierung.",
+      situation: "Gewachsene IT-Strukturen ohne klare Sicherheitsbewertung oder Governance.",
+      problem: "Unklare Sicherheitslage, fehlende Priorisierung von Risiken und unkalkulierbare IT-Kosten.",
       decisionPoint: "Bedarf an einer strukturierten Entscheidungsbasis.",
-      solution: "Durchführung einer GAP-Analyse und Entwicklung eines Maßnahmenkatalogs.",
-      result: "Klare Übersicht über Risiken und strukturierte Entscheidungsbasis.",
+      solution: "Durchführung einer GAP-Analyse, Risikoidentifikation und Entwicklung eines priorisierten Maßnahmenkatalogs.",
+      result: "Vollständige Transparenz über die Risikolage, eine belastbare Entscheidungsbasis für Investitionen und ein strukturierter Fahrplan.",
       slug: "bellaseno-security"
     }
   },
@@ -869,19 +869,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "Das Risiko von Datenverlust",
       points: [
-        "Manuelle Backups schlagen fehl, ohne dass es jemand merkt",
-        "Ransomware verschlüsselt sowohl Primärdaten als auch lokale Backups",
-        "Tage oder Wochen Ausfallzeit für die Systemwiederherstellung erforderlich",
-        "Compliance-Fehler aufgrund unzureichender Datenaufbewahrung"
+        "Unbemerkte Backup-Fehler sind eine Katastrophe auf Raten, die erst im Ernstfall zum Totalverlust führt.",
+        "Moderne Ransomware zielt gezielt auf Backups ab; ohne Schutz der Sicherung ist Ihre Existenz bedroht.",
+        "Wochenlange Wiederherstellungszeiten nach einem Datenverlust bedeuten das wirtschaftliche Aus für viele Unternehmen.",
+        "Lückenhafte Datenaufbewahrung führt zu massiven Problemen bei Audits und rechtlichen Auseinandersetzungen."
       ]
     },
     solution: {
       title: "Unzerstörbare Geschäftskontinuität",
       points: [
-        "Automatisierte, unveränderliche Cloud-Backups, die nicht verschlüsselt werden können",
-        "Stündliche Snapshots für minimalen Datenverlust (RPO)",
-        "Schnelle Virtualisierung, um Sie in Minuten wieder einsatzbereit zu machen (RTO)",
-        "Tägliche automatisierte Test-Wiederherstellungen zur Überprüfung der Integrität"
+        "Sie erhalten Ransomware-sichere Backups, die vor jeder Manipulation geschützt sind.",
+        "Sie minimieren Datenverluste durch engmaschige Sicherungen in stündlichen Intervallen.",
+        "Sie sichern Ihre Geschäftskontinuität durch eine Wiederherstellung in wenigen Minuten.",
+        "Sie vertrauen auf Ihre Datenrettung durch täglich verifizierte Wiederherstellungstests."
       ]
     },
     features: [
@@ -909,10 +909,10 @@ export const solutionsData: Record<string, Solution> = {
       title: "Modernisierung einer Serverumgebung und Backup-Strategie",
       companyType: "BiolytiQs GmbH",
       situation: "Veraltete Serverumgebung ohne moderne Backup-Lösung.",
-      problem: "Hohes Risiko von Datenverlust bei Hardwaredefekt.",
+      problem: "Hohes Risiko von Datenverlust bei Hardwaredefekt bedrohte die kontinuierliche Verfügbarkeit kritischer Daten.",
       decisionPoint: "Hardware erreichte das Ende ihrer Lebensdauer.",
-      solution: "Migration auf neue Server und Veeam-Backup-Lösung.",
-      result: "Zuverlässiges Backup und schnelle Wiederherstellungsmöglichkeit.",
+      solution: "Migration auf neue, leistungsfähige Serverhardware und Implementierung einer Veeam-Backup-Lösung.",
+      result: "Stabile Infrastruktur mit zuverlässigem Backup-Konzept und garantierter Wiederherstellbarkeit innerhalb weniger Stunden.",
       slug: "biolytiqs-server"
     },
     faq: backupFaqs
@@ -924,19 +924,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "Der Schmerz veralteter Systeme",
       points: [
-        "Alternde On-Premise Exchange-Server, die ständige Wartung erfordern",
-        "Fragmentierte Kommunikation über unzusammenhängende Apps",
-        "Versionskontroll-Albtraum bei gemeinsam genutzten Dokumenten",
-        "Sicherheitslücken in veralteten E-Mail-Protokollen"
+        "Veraltete lokale Server verursachen hohe Wartungskosten und riskieren plötzliche Kommunikationsausfälle.",
+        "Verstreute Kommunikationstools behindern den Informationsfluss und führen zu ineffizienten Doppelarbeiten.",
+        "Chaos bei Dokumentenversionen führt zu Fehlern in der Bearbeitung und kostet wertvolle Zeit bei der Suche.",
+        "Veraltete E-Mail-Systeme sind ein leichtes Ziel für Phishing und Datendiebstahl, was Ihre Reputation gefährdet."
       ]
     },
     solution: {
       title: "Nahtlose Cloud-Zusammenarbeit",
       points: [
-        "E-Mail- und Datenmigration ohne Ausfallzeiten",
-        "Standardisierte Bereitstellung von Teams, SharePoint und OneDrive",
-        "Implementierung strenger Sicherheits- und Compliance-Richtlinien",
-        "Umfassende Benutzerschulung und Unterstützung bei der Einführung"
+        "Sie wechseln reibungslos zu Microsoft 365 ohne Unterbrechung Ihres Tagesgeschäfts.",
+        "Sie profitieren sofort von einer modernen Zusammenarbeit über Teams und SharePoint.",
+        "Sie erhalten eine vorkonfigurierte Cloud-Umgebung nach höchsten Sicherheitsstandards.",
+        "Sie sichern die Akzeptanz im Team durch eine praxisnahe Begleitung der Einführung."
       ]
     },
     features: [
@@ -963,11 +963,11 @@ export const solutionsData: Record<string, Solution> = {
     caseStudy: {
       title: "Migration von Google Workspace zu Microsoft 365 mit strukturierter Absicherung",
       companyType: "Schilderdienst Schadhauser",
-      situation: "Die bestehende IT-Umgebung basierte auf Google Workspace ohne klare Strukturen.",
-      problem: "Fehlende zentrale Kontrolle über Benutzer und Daten sowie Sicherheitsrisiken.",
+      situation: "Bestehende IT-Umgebung basierte auf Google Workspace ohne klare Strukturen oder zentrale Kontrolle.",
+      problem: "Sicherheitsrisiken bei der Zusammenarbeit, fehlende Kontrolle über Benutzerdaten und ineffiziente Arbeitsabläufe.",
       decisionPoint: "Das System erfüllte nicht mehr die Anforderungen an Sicherheit und Skalierbarkeit.",
-      solution: "Migration zu Microsoft 365 inklusive Entra ID, MFA und Backup-Strategie.",
-      result: "Klare und strukturierte IT-Umgebung mit zentraler Verwaltung und verbesserter Sicherheit.",
+      solution: "Projektbasierte Migration zu Microsoft 365 inklusive Entra ID, MFA und einer durchdachten Backup-Strategie.",
+      result: "Klare und strukturierte IT-Umgebung mit zentraler Verwaltung, verbesserte Sicherheit und keine Datenverluste während der Migration.",
       slug: "schadhauser-m365"
     },
     faq: microsoftFaqs
@@ -979,19 +979,19 @@ export const solutionsData: Record<string, Solution> = {
     problem: {
       title: "Die Grenzen physischer Hardware",
       points: [
-        "Teure Hardware-Erneuerungszyklen alle 3-5 Jahre",
-        "Unfähigkeit, Ressourcen bei Spitzenbedarf schnell zu skalieren",
-        "Single Points of Failure riskieren katastrophale Ausfallzeiten",
-        "Hohe Kosten für Strom, Kühlung und physische Sicherheit"
+        "Regelmäßige, teure Hardware-Investitionen binden Kapital, das für Ihr eigentliches Kerngeschäft fehlt.",
+        "Eine starre Infrastruktur verhindert schnelles Wachstum und lässt Sie bei Lastspitzen handlungsunfähig werden.",
+        "Einzelne Schwachstellen in der Hardware riskieren einen Totalausfall Ihres Betriebs mit massiven Folgen.",
+        "Die hohen Betriebskosten für eigene Serverräume belasten Ihre Marge ohne technologischen Mehrwert."
       ]
     },
     solution: {
       title: "Skalierbare Cloud-Architektur",
       points: [
-        "Lift-and-Shift oder komplettes Refactoring von Legacy-Apps",
-        "Automatische Skalierung der Ressourcen passend zum Geschäftsbedarf",
-        "Geo-redundante Backups und Disaster Recovery",
-        "Optimierte Cloud-Ausgaben zur Vermeidung von Abrechnungsüberraschungen"
+        "Sie befreien sich von Hardware-Abhängigkeiten durch einen sicheren Umzug in die Cloud.",
+        "Sie gewinnen maximale Flexibilität durch Ressourcen, die sich Ihrem Bedarf anpassen.",
+        "Sie profitieren von höchster Ausfallsicherheit durch geo-redundante Datenspeicherung.",
+        "Sie behalten die volle Kostenkontrolle durch eine optimierte Cloud-Abrechnung."
       ]
     },
     features: [
@@ -1018,11 +1018,11 @@ export const solutionsData: Record<string, Solution> = {
     caseStudy: {
       title: "Migration in Microsoft Azure",
       companyType: "group24 AG",
-      situation: "Backend-Systeme waren schwer skalierbar und wartbar.",
-      problem: "Hardware war veraltet, Expansion geplant.",
+      situation: "Backend-Systeme waren schwer skalierbar, wartbar und basierten auf veralteter Hardware.",
+      problem: "Die veraltete Hardware verhinderte die geplante Expansion und führte zu häufigen Systemausfällen.",
       decisionPoint: "Notwendigkeit einer skalierbaren Cloud-Infrastruktur.",
-      solution: "Migration in Azure und Integration von Azure Virtual Desktop.",
-      result: "Maximale Skalierbarkeit und stabile Infrastruktur.",
+      solution: "Vollständige Migration bestehender Systeme in Microsoft Azure inklusive Integration von Azure Virtual Desktop.",
+      result: "Maximale Skalierbarkeit für zukünftiges Wachstum, stabile Infrastruktur ohne Hardware-Abhängigkeit und optimierte Betriebskosten.",
       slug: "group24-azure"
     }
   }

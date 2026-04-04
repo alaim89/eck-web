@@ -281,17 +281,17 @@ export default function LandingPageContent() {
                 </motion.div>
               ))}
             </div>
+
+            <div className="mt-10 text-center">
+              <p className="text-gray-700 mb-3">
+                Kommt Ihnen das bekannt vor?
+              </p>
+              <Link href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
+                Jetzt IT-Check anfordern
+              </Link>
+            </div>
           </div>
         </section>
-
-        <div className="mt-10 text-center">
-          <p className="text-gray-700 mb-3">
-            Kommt Ihnen das bekannt vor?
-          </p>
-          <a href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
-            Jetzt IT-Check anfordern
-          </a>
-        </div>
 
         {/* Solution Section */}
 <section
@@ -621,17 +621,17 @@ export default function LandingPageContent() {
                 Alle Lösungen ansehen <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
+
+            <div className="mt-10 text-center">
+              <p className="text-gray-700 mb-3">
+                Kommt Ihnen das bekannt vor?
+              </p>
+              <Link href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
+                Jetzt IT-Check anfordern
+              </Link>
+            </div>
           </div>
         </section>
-
-        <div className="mt-10 text-center">
-          <p className="text-gray-700 mb-3">
-            Kommt Ihnen das bekannt vor?
-          </p>
-          <a href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
-            Jetzt IT-Check anfordern
-          </a>
-        </div>
 
         {/* Process Section */}
         <section 
@@ -703,17 +703,17 @@ export default function LandingPageContent() {
             </div>
 
             <CaseStudyCarousel />
+
+            <div className="mt-10 text-center">
+              <p className="text-gray-700 mb-3">
+                Kommt Ihnen das bekannt vor?
+              </p>
+              <Link href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
+                Jetzt IT-Check anfordern
+              </Link>
+            </div>
           </div>
         </section>
-
-        <div className="mt-10 text-center">
-          <p className="text-gray-700 mb-3">
-            Kommt Ihnen das bekannt vor?
-          </p>
-          <a href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
-            Jetzt IT-Check anfordern
-          </a>
-        </div>
 
         {/* FAQ Section */}
         <section 

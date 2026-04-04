@@ -215,12 +215,6 @@ export default function KontaktContent() {
                     <p>• Antwort innerhalb von 24h</p>
                     <p>• 100% unverbindlich</p>
                     <p>• Keine Weitergabe Ihrer Daten</p>
-                    <p>
-                      Mit dem Absenden akzeptieren Sie unsere{" "}
-                      <Link href="/datenschutz" className="underline hover:text-primary">
-                        Datenschutzerklärung
-                      </Link>
-                    </p>
                   </div>
                 </form>
               )}

@@ -147,39 +147,39 @@ export const translations = {
     },
     problem: {
       badge: "Die Herausforderung",
-      headline: "IT-Probleme kosten Zeit, Geld und Nerven.",
-      subheadline: "Wenn die Technik streikt, steht der Betrieb still. Wir beenden das reaktive 'Feuerlöschen' und sorgen für dauerhafte Stabilität.",
+      headline: "IT-Ausfälle stoppen Prozesse und verursachen direkte Kosten.",
+      subheadline: "Jeder Stillstand mindert Ihre Produktivität. Wir beenden das reaktive 'Feuerlöschen' und sichern Ihren Geschäftsbetrieb proaktiv ab.",
       cards: [
         {
           title: "Teure Stillstandszeiten",
-          description: "Jeder Systemausfall stoppt Ihre Prozesse und verursacht Kosten, während Ihre Mitarbeiter nicht produktiv arbeiten können.",
+          description: "Systemausfälle unterbrechen wertschöpfende Prozesse und führen zu hohen Opportunitätskosten durch unproduktive Mitarbeiter.",
         },
         {
           title: "Versteckte Sicherheitsrisiken",
-          description: "Veraltete Systeme und lückenhafte Backups sind eine Gefahr für Ihre Unternehmensdaten und die gesetzliche Compliance.",
+          description: "Sicherheitslücken und ungetestete Backups gefährden Ihre Existenzgrundlage und führen zu massiven Haftungsrisiken bei Datenverlust.",
         },
         {
           title: "Unvorhersehbare Kosten",
-          description: "Notfalleinsätze und spontane Reparaturen machen Ihre IT-Ausgaben unkalkulierbar und belasten Ihr Budget.",
+          description: "Reaktive IT-Reparaturen und Notfalleinsätze sprengen Budgets und machen Ihre IT-Kosten zu einem unkalkulierbaren Geschäftsrisiko.",
         },
       ],
     },
     solution: {
       badge: "Unser Ansatz",
-      headline: "Echte Verantwortung statt nur Support.",
-      subheadline: "Wir flicken keine Symptome, sondern schaffen ein stabiles Fundament für Ihr Unternehmen.",
+      headline: "Ihr Unternehmen profitiert von digitaler Stabilität.",
+      subheadline: "Sie erhalten eine IT-Infrastruktur, die mit Ihrem Erfolg mitwächst und Ausfälle minimiert.",
       points: [
         {
-          title: "Wir sind Ihre IT-Abteilung",
-          description: "Wir übernehmen die volle Verantwortung für Ihren gesamten IT-Stack. Kein 'Finger-Pointing' mehr zwischen verschiedenen Dienstleistern.",
+          title: "Eine vollständige IT-Abteilung an Ihrer Seite",
+          description: "Sie gewinnen einen zentralen Ansprechpartner, der die volle Verantwortung für Ihre Technik übernimmt und Reibungsverluste eliminiert.",
         },
         {
-          title: "Probleme lösen, bevor sie entstehen",
-          description: "Durch kontinuierliches Monitoring erkennen wir Engpässe frühzeitig und beheben sie im Hintergrund, ohne Ihren Arbeitsalltag zu stören.",
+          title: "Störungsfreies Arbeiten durch proaktive Wartung",
+          description: "Sie profitieren von Systemen, die im Hintergrund optimiert werden, bevor Engpässe Ihren Betriebsablauf unterbrechen können.",
         },
         {
-          title: "Sicherheit auf Enterprise-Niveau",
-          description: "Wir implementieren bewährte Sicherheitsstandards, die exakt auf die Bedürfnisse und Budgets des Mittelstands zugeschnitten sind.",
+          title: "Geprüfte Sicherheit für Ihren Mittelstand",
+          description: "Sie erhalten ein Schutzniveau, das Ihre Daten zuverlässig sichert und alle gesetzlichen Compliance-Vorgaben erfüllt.",
         },
       ],
     },
@@ -292,7 +292,8 @@ export const translations = {
       description: "Professionelle IT-Services für den deutschen Mittelstand. Zuverlässig, sicher und auf Augenhöhe.",
       copyright: "© {year} Ecksolution-IT Managed Services.",
       links: {
-        contact: "Kostenlose IT-Einschätzung anfordern",
+        contact: "Kontakt",
+        caseStudies: "Referenzen",
         support: "Support",
         customerPortal: "Kundenportal",
         remoteMaintenance: "Fernwartung",
@@ -300,8 +301,8 @@ export const translations = {
         privacy: "Datenschutz"
       },
       categories: {
+        company: "Unternehmen",
         support: "Support",
-        contact: "Kontakt",
         legal: "Rechtliches"
       },
       cta: {

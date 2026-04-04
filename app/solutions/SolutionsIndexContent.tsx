@@ -110,6 +110,15 @@ export default function SolutionsIndexContent() {
                 );
               })}
             </div>
+
+            <div className="mt-10 text-center">
+              <p className="text-gray-700 mb-3">
+                Kommt Ihnen das bekannt vor?
+              </p>
+              <Link href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
+                Jetzt IT-Check anfordern
+              </Link>
+            </div>
           </div>
         </section>
 

@@ -24,6 +24,15 @@ export function Footer() {
             </p>
           </div>
 
+          {/* Company Links */}
+          <div className="flex flex-col gap-4">
+            <h3 className="font-bold text-black uppercase tracking-widest text-[10px]">{t.footer.categories.company}</h3>
+            <nav className="flex flex-col gap-3" aria-label="Unternehmens Links">
+              <Link href="/kontakt" className="hover:text-primary transition-colors font-medium">{t.footer.links.contact}</Link>
+              <Link href="/referenzen" className="hover:text-primary transition-colors font-medium">{t.footer.links.caseStudies}</Link>
+            </nav>
+          </div>
+
           {/* Support Links */}
           <div className="flex flex-col gap-4">
             <h3 className="font-bold text-black uppercase tracking-widest text-[10px]">{t.footer.categories.support}</h3>
@@ -37,14 +46,6 @@ export function Footer() {
               >
                 {t.footer.links.customerPortal}
               </a>
-            </nav>
-          </div>
-
-          {/* Contact Links */}
-          <div className="flex flex-col gap-4">
-            <h3 className="font-bold text-black uppercase tracking-widest text-[10px]">{t.footer.categories.contact}</h3>
-            <nav className="flex flex-col gap-3" aria-label="Kontakt Links">
-              <Link href="/kontakt" className="hover:text-primary transition-colors font-medium">{t.footer.links.contact}</Link>
             </nav>
           </div>
 
