@@ -144,7 +144,7 @@ export default function LandingPageContent() {
                 </AnimatePresence>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 mb-16 h-[60px]">
+              <div className="flex flex-col sm:flex-row gap-4 mb-16">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={`ctas-${currentVariant}`}

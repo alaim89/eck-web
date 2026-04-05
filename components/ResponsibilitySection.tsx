@@ -6,35 +6,33 @@ import { CheckCircle2, ShieldCheck, Clock, Activity, Award } from "lucide-react"
 export function ResponsibilitySection() {
   const benefits = [
     {
-      title: "100% Verantwortung, kein Finger-Pointing",
-      description: "Wir stehen für unsere Ergebnisse ein und lösen Probleme ganzheitlich.",
+      title: "Einer übernimmt. Nicht fünf.",
+      description: "Wenn etwas nicht läuft, will niemand hören, wer schuld ist. Ich übernehme die Verantwortung und kümmere mich darum, dass es wieder funktioniert.",
       icon: ShieldCheck
     },
     {
-      title: "Proaktive Stabilität statt reaktiver Feuerwehr",
-      description: "Durch vorausschauende Planung verhindern wir Ausfälle, bevor sie entstehen.",
+      title: "Probleme vorher sehen, nicht danach reagieren",
+      description: "Die meisten Ausfälle kündigen sich an. Ich räume die Dinge auf, die später Probleme machen würden, bevor sie kritisch werden.",
       icon: Activity
     },
     {
-      title: "Beratung auf Augenhöhe",
-      description: "Wir sprechen Ihre Sprache - technisch präzise und geschäftlich relevant.",
+      title: "Klare Entscheidungen statt Abstimmungsschleifen",
+      description: "Wenn keiner entscheidet, steht alles. Ich treffe Architekturentscheidungen und setze sie direkt um – damit es vorangeht.",
       icon: Award
     }
   ];
 
   const stats = [
-    { label: "Verantwortung", value: "100%", icon: ShieldCheck },
-    { label: "Erfahrung", value: "8+ Jahre", icon: Award },
-    { label: "Monitoring", value: "24/7", icon: Activity },
-    { label: "Reaktionszeit", value: "< 2h", icon: Clock }
+    { label: "Verantwortung", value: "eine Person", icon: ShieldCheck },
+    { label: "Erfahrung", value: "aus echten Projekten", icon: Award },
+    { label: "Monitoring", value: "immer im Blick", icon: Activity },
+    { label: "Reaktionszeit", value: "direkt erreichbar", icon: Clock }
   ];
 
   return (
     <section className="py-24 md:py-32 bg-white overflow-hidden" id="responsibility">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          
-          {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -45,13 +43,13 @@ export function ResponsibilitySection() {
               Wir übernehmen Verantwortung für Ihre IT.
             </h2>
             <p className="text-lg text-gray-600 mb-12 leading-relaxed max-w-xl">
-              Wir sichern nicht nur Systeme – wir sichern Ihren Geschäftsbetrieb. 
+              Wir sichern nicht nur Systeme - wir sichern Ihren Geschäftsbetrieb.
               Ein zentraler Ansprechpartner für stabile und sichere IT.
             </p>
 
             <div className="space-y-8">
               {benefits.map((benefit, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +69,6 @@ export function ResponsibilitySection() {
             </div>
           </motion.div>
 
-          {/* Right Stats Grid */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -99,7 +96,6 @@ export function ResponsibilitySection() {
               </motion.div>
             ))}
           </motion.div>
-
         </div>
       </div>
     </section>

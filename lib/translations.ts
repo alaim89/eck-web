@@ -3,13 +3,13 @@ export type Language = 'de';
 export const translations = {
   de: {
     nav: {
-      risk: "Das Risiko",
-      solutions: "Lösungen",
-      caseStudies: "Referenzen",
-      support: "Support",
+      risk: "Wenn IT feststeckt",
+      solutions: "Typische Situationen",
+      caseStudies: "Praxisbeispiele",
+      support: "Laufender Betrieb",
       customerPortal: "Kundenportal",
       remoteMaintenance: "Fernwartung",
-      pricing: "Preise",
+      pricing: "Zusammenarbeit",
       contact: "IT-Einschätzung",
       getAudit: "IT-Check starten",
     },
@@ -184,43 +184,43 @@ export const translations = {
       ],
     },
     results: {
-      headline: "Verlässlichkeit in Zahlen",
-      subheadline: "Operative Verantwortung, schnelle Reaktion und stabile Systeme - sichtbar gemacht in klaren Kennzahlen.",
+      headline: "Verlässlichkeit im Betrieb",
+      subheadline: "Wenn Systeme sauber laufen, merkt man es im Alltag, nicht in PowerPoint.",
       cards: [
-        { metric: "< 2h", label: "Reaktionszeit", variant: "primary" },
-        { metric: "24/7", label: "Monitoring", variant: "secondary" },
-        { metric: "8+", label: "Jahre Erfahrung", variant: "secondary" },
-        { metric: "100%", label: "Verantwortung", variant: "status" },
+        { metric: "< 2h", label: "Reaktion, wenn es wirklich kritisch ist", variant: "primary" },
+        { metric: "24/7", label: "Überblick über kritische Systeme", variant: "secondary" },
+        { metric: "direkt", label: "kein Ticketsystem, kein Weiterreichen", variant: "secondary" },
+        { metric: "klar", label: "Verantwortung liegt bei einer Person", variant: "status" },
       ],
     },
     services: {
-      badge: "Unsere Leistungen",
-      headline: "Alles aus einer Hand.",
-      subheadline: "Vom täglichen Support bis zur strategischen Cloud-Migration - wir begleiten Sie bei jedem Schritt.",
+      badge: "Leistungen",
+      headline: "Wenn IT nicht mehr sauber läuft.",
+      subheadline: "Ich unterstütze Unternehmen, wenn Migrationen feststecken, Systeme nicht sauber zusammenspielen oder die IT im Alltag mehr bremst als hilft.",
       items: [
         {
           title: "Managed IT-Services",
-          description: "Professioneller IT-Betrieb nach vereinbartem Scope und SLA für maximale Stabilität.",
+          description: "Nach der Stabilisierung sorge ich dafür, dass Ihre IT im Alltag zuverlässig läuft und Probleme gar nicht erst ständig wieder auftauchen.",
           link: "/solutions/managed-it-service"
         },
         {
           title: "IT-Support für Unternehmen",
-          description: "Schnelle und kompetente Hilfe für Ihr Team bei allen technischen Fragen.",
+          description: "Wenn im Tagesgeschäft zu viel liegen bleibt, unterstütze ich Ihr Team schnell und direkt – ohne unnötige Schleifen und ohne neues Chaos.",
           link: "/solutions/managed-it-service"
         },
         {
           title: "Microsoft 365 & Modern Work",
-          description: "Sichere und effizientes Arbeiten von überall - perfekt eingerichtet und verwaltet.",
+          description: "Ich bringe Microsoft 365 in einen Zustand, der sauber funktioniert, sicher aufgebaut ist und im Alltag wirklich entlastet.",
           link: "/solutions/microsoft-365-compliance-betreuung"
         },
         {
           title: "Cloud-Infrastruktur (Azure)",
-          description: "Skalierbare und hochverfügbare Lösungen für Ihre Server und Anwendungen.",
+          description: "Ich unterstütze bei Azure-Umgebungen, die wachsen sollen, ohne unübersichtlich zu werden oder später zum Risiko zu werden.",
           link: "/solutions/azure-hybrid-betreuung"
         },
         {
           title: "IT-Sicherheit & Backup",
-          description: "Schutz vor Cyber-Angriffen und garantierte Datenwiederherstellung im Ernstfall.",
+          description: "Ich helfe dabei, Sicherheitslücken und Wiederherstellung nicht länger aufzuschieben, sondern sauber und praxistauglich umzusetzen.",
           link: "/solutions/it-sicherheit"
         }
       ]
@@ -268,25 +268,34 @@ export const translations = {
       ],
     },
     trust: {
-      headline: "Ihr Partner für IT-Verantwortung.",
-      subheadline: "Wir verwalten nicht nur Computer - wir sichern Ihren Geschäftsbetrieb. Mit Ecksolution IT gewinnen Sie einen Partner, der IT als strategisches Werkzeug für Ihren Erfolg versteht.",
+      headline: "Wir übernehmen Verantwortung für Ihre IT.",
+      subheadline: "Wir sichern nicht nur Systeme, wir sichern Ihren Geschäftsbetrieb. Ein zentraler Ansprechpartner für stabile und sichere IT.",
       points: [
-        { title: "100% Verantwortung, kein Finger-Pointing", description: "Wir übernehmen die volle Verantwortung. Wir sind Ihr zentraler Ansprechpartner für alle IT-Themen." },
-        { title: "Proaktive Stabilität statt reaktiver Feuerwehr", description: "Wir warten nicht auf Fehlermeldungen. Wir agieren im Hintergrund, damit Probleme gar nicht erst entstehen." },
-        { title: "Beratung auf Augenhöhe", description: "Wir sprechen kein 'Fachchinesisch'. Wir beraten Sie verständlich und herstellerunabhängig." }
+        {
+          title: "Einer übernimmt. Nicht fünf.",
+          description: "Wenn etwas nicht läuft, will niemand hören, wer schuld ist. Ich übernehme die Verantwortung und kümmere mich darum, dass es wieder funktioniert."
+        },
+        {
+          title: "Probleme vorher sehen, nicht danach reagieren",
+          description: "Die meisten Ausfälle kündigen sich an. Ich räume die Dinge auf, die später Probleme machen würden, bevor sie kritisch werden."
+        },
+        {
+          title: "Klare Entscheidungen statt Abstimmungsschleifen",
+          description: "Wenn keiner entscheidet, steht alles. Ich treffe Architekturentscheidungen und setze sie direkt um, damit es vorangeht."
+        }
       ]
     },
     cta: {
-      headline: "Machen Sie Schluss mit IT-Sorgen.",
-      subheadline: "Lassen Sie uns in einem kurzen Gespräch klären, wie wir Ihre IT sicherer und effizienter machen können.",
-      button: "Erstgespräch sichern",
+      headline: "Läuft Ihre IT wirklich stabil oder nur irgendwie?",
+      subheadline: "In 30 Minuten sehen wir, ob irgendwo ein Risiko steckt oder alles sauber läuft. Ohne Verpflichtung.",
+      button: "Kurz prüfen lassen",
     },
     caseStudies: {
-      badge: "Referenzen",
-      headline: "Erfolgsgeschichten.",
-      subheadline: "Erfahren Sie, wie wir Unternehmen dabei unterstützt haben, ihre IT-Infrastruktur zu professionalisieren.",
-      viewAll: "Alle Referenzen ansehen",
-      readMore: "Vollständigen Bericht lesen",
+      badge: "Praxisbeispiele",
+      headline: "Wenn IT plötzlich wieder funktioniert.",
+      subheadline: "Echte Projekte, die festgesteckt haben und wie sie wieder sauber laufen.",
+      viewAll: "Alle Fälle ansehen",
+      readMore: "Fall ansehen",
     },
     footer: {
       description: "Professionelle IT-Services für den deutschen Mittelstand. Zuverlässig, sicher und auf Augenhöhe.",
@@ -306,8 +315,8 @@ export const translations = {
         legal: "Rechtliches"
       },
       cta: {
-        hint: "Bereit für den nächsten Schritt?",
-        button: "Erstgespräch sichern"
+        hint: "Unsicher, ob alles sauber läuft?",
+        button: "Kurz prüfen lassen"
       }
     }
   }
