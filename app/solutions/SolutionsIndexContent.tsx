@@ -113,10 +113,10 @@ export default function SolutionsIndexContent() {
             </div>
 
             <div className="mt-10 text-center">
-              <p className="text-gray-700 mb-3">
+              <p className="text-gray-700 mb-3 font-medium">
                 Kommt Ihnen das bekannt vor?
               </p>
-              <Link href="/kontakt" className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-all active:scale-[0.98] shadow-sm shadow-emerald-900/10">
+              <Link href="/kontakt" className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-all active:scale-[0.98] shadow-lg shadow-primary/20">
                 Jetzt IT-Check anfordern
               </Link>
             </div>

@@ -275,20 +275,20 @@ export default function LandingPageContent() {
                   transition={{ delay: i * 0.1 }}
                   className="group p-10 rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] border border-transparent hover:border-primary/10 transition-all duration-500 text-center"
                 >
-                  <div className="mx-auto w-14 h-14 rounded-2xl bg-[#005F6B]/[0.08] flex items-center justify-center mb-8 transition-all duration-300 shadow-[0_0_15px_rgba(0,95,107,0.1)] group-hover:shadow-[0_0_25px_rgba(0,95,107,0.25)] group-hover:-translate-y-1">
+                  <div className="mx-auto w-14 h-14 rounded-2xl bg-primary/[0.08] flex items-center justify-center mb-8 transition-all duration-300 shadow-[0_0_15px_rgba(0,95,107,0.1)] group-hover:shadow-[0_0_25px_rgba(0,95,107,0.25)] group-hover:-translate-y-1">
                     {i === 0 ? <TrendingDown className="w-7 h-7 text-primary" /> : i === 1 ? <ShieldAlert className="w-7 h-7 text-primary" /> : <Cpu className="w-7 h-7 text-primary" />}
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 text-black">{risk.title}</h3>
-                  <p className="text-gray-700 leading-relaxed opacity-80">{risk.description}</p>
+                  <h3 className="text-xl font-semibold mb-4 text-black tracking-tight">{risk.title}</h3>
+                  <p className="text-gray-700 leading-relaxed opacity-80 font-light">{risk.description}</p>
                 </motion.div>
               ))}
             </div>
 
             <div className="mt-10 text-center">
-              <p className="text-gray-700 mb-3">
+              <p className="text-gray-700 mb-3 font-medium">
                 Kommt Ihnen das bekannt vor?
               </p>
-              <Link href="/kontakt" className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-all active:scale-[0.98] shadow-sm shadow-emerald-900/10">
+              <Link href="/kontakt" className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-all active:scale-[0.98] shadow-lg shadow-primary/20">
                 Jetzt IT-Check anfordern
               </Link>
             </div>
@@ -625,10 +625,10 @@ export default function LandingPageContent() {
             </div>
 
             <div className="mt-10 text-center">
-              <p className="text-gray-700 mb-3">
+              <p className="text-gray-700 mb-3 font-medium">
                 Kommt Ihnen das bekannt vor?
               </p>
-              <Link href="/kontakt" className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-all active:scale-[0.98] shadow-sm shadow-emerald-900/10">
+              <Link href="/kontakt" className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-all active:scale-[0.98] shadow-lg shadow-primary/20">
                 Jetzt IT-Check anfordern
               </Link>
             </div>
@@ -697,7 +697,7 @@ export default function LandingPageContent() {
             </p>
             <Link 
               href="/kontakt" 
-              className="inline-flex items-center gap-3 px-8 py-4 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-900/20 active:scale-[0.98]"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 active:scale-[0.98]"
             >
               Jetzt IT-Check anfordern
             </Link>
