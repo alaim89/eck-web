@@ -24,10 +24,10 @@ export default function CaseStudiesIndex() {
               <ShieldCheck className="w-3 h-3" />
               Erfolgsgeschichten
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-8 text-black">
+            <h1 className="title-h1 mb-8">
               Erfolgsgeschichten unserer Kunden
             </h1>
-            <p className="text-xl text-gray-700 leading-relaxed">
+            <p className="lead-text mx-auto">
               Erfahren Sie, wie Ecksolution-IT Unternehmen dabei geholfen hat, IT-Chaos zu beseitigen, Daten zu sichern und mit Vertrauen zu skalieren.
             </p>
           </div>

@@ -80,14 +80,14 @@ export function CaseStudyCarousel() {
   };
 
   return (
-    <div className="relative group">
+    <div className="relative">
       {/* Navigation Arrows */}
       <div className="absolute -top-16 right-0 flex gap-2">
         <button
           onClick={() => scroll('left')}
           disabled={!canScrollLeft}
-          className={`p-3 rounded-full border border-gray-200 transition-all ${
-            canScrollLeft ? 'bg-white text-black hover:bg-gray-50' : 'bg-gray-50 text-gray-300 cursor-not-allowed'
+          className={`p-3 rounded-full border border-slate-200 transition-all ${
+            canScrollLeft ? 'bg-white text-slate-900 hover:bg-slate-50 shadow-sm' : 'bg-slate-50 text-slate-300 cursor-not-allowed'
           }`}
           aria-label="Scroll left"
         >
@@ -96,8 +96,8 @@ export function CaseStudyCarousel() {
         <button
           onClick={() => scroll('right')}
           disabled={!canScrollRight}
-          className={`p-3 rounded-full border border-gray-200 transition-all ${
-            canScrollRight ? 'bg-white text-black hover:bg-gray-50' : 'bg-gray-50 text-gray-300 cursor-not-allowed'
+          className={`p-3 rounded-full border border-slate-200 transition-all ${
+            canScrollRight ? 'bg-white text-slate-900 hover:bg-slate-50 shadow-sm' : 'bg-slate-50 text-slate-300 cursor-not-allowed'
           }`}
           aria-label="Scroll right"
         >
@@ -108,7 +108,7 @@ export function CaseStudyCarousel() {
       {/* Carousel Container */}
       <div
         ref={scrollRef}
-        className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8 pt-4 px-1"
+        className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-16 pt-10 px-10 -mx-10"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {featuredCaseStudies.map((study: any, i: number) => (
@@ -122,35 +122,35 @@ export function CaseStudyCarousel() {
           >
             <Link 
               href={study.href}
-              className="group relative block h-full p-8 md:p-10 rounded-[2.5rem] bg-white border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_32px_64px_-16px_rgba(16,185,129,0.12)] transition-all duration-700 hover:-translate-y-2 flex flex-col overflow-hidden"
+              className="surface-card p-10 flex flex-col group h-full"
             >
               {/* Subtle Gradient Glow on Hover */}
-              <div className="absolute -inset-px bg-gradient-to-br from-emerald-500/0 via-teal-500/0 to-cyan-500/0 group-hover:from-emerald-500/10 group-hover:via-teal-500/5 group-hover:to-cyan-500/10 transition-all duration-700 rounded-[2.5rem] pointer-events-none" />
+              <div className="glow-accent -inset-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               
               <div className="relative z-10">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500">
-                    <study.icon className="w-6 h-6 text-emerald-600 group-hover:text-white transition-colors" />
+                <div className="flex items-center justify-between mb-8">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/[0.05] flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner">
+                    <study.icon className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
                   </div>
-                  <div className="text-[10px] font-bold text-emerald-600 uppercase tracking-widest px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-100">
+                  <div className="text-[9px] font-bold text-primary uppercase tracking-[0.15em] px-3 py-1.5 rounded-full bg-primary/[0.03] border border-primary/10 shadow-sm">
                     Case Study
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold mb-2 text-gray-900 leading-tight group-hover:text-emerald-700 transition-colors duration-300">
+                <h3 className="text-2xl font-bold mb-3 text-slate-900 leading-tight group-hover:text-primary transition-colors duration-300 tracking-tight">
                   {study.title}
                 </h3>
-                <div className="text-sm text-gray-500 font-medium mb-6 flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-emerald-400" />
+                <div className="text-xs text-slate-400 font-bold uppercase tracking-[0.2em] mb-8 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />
                   {study.company}
                 </div>
                 
-                <p className="text-gray-600 leading-relaxed mb-8 line-clamp-3 text-base opacity-90">
+                <p className="text-slate-600 leading-relaxed mb-10 line-clamp-3 text-base opacity-90 font-light">
                   {study.summary}
                 </p>
 
-                <div className="mt-auto flex items-center justify-between pt-6 border-t border-gray-50">
-                  <div className="flex items-center gap-2 text-emerald-600 font-bold text-sm group-hover:gap-3 transition-all">
+                <div className="mt-auto flex items-center justify-between pt-8 border-t border-slate-50">
+                  <div className="brand-link text-sm">
                     {t.caseStudies.readMore}
                     <ArrowRight className="w-4 h-4" />
                   </div>

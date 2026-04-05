@@ -18,15 +18,14 @@ export function CaseStudyAutomationSection({
   description
 }: CaseStudyAutomationSectionProps) {
   return (
-    <section className="relative py-32 px-6 overflow-hidden bg-white">
+    <section className="section-container bg-white">
       {/* Automation Background Aesthetic */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Subtle Grid */}
-        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:40px_40px] opacity-40" />
+        <div className="network-grid opacity-[0.03]" />
         
         {/* Branded Glow Blobs */}
-        <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-primary/[0.03] rounded-full blur-[120px] -translate-y-1/2" />
-        <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-primary/[0.05] rounded-full blur-[120px] translate-y-1/2" />
+        <div className="glow-accent top-0 right-1/4 w-[600px] h-[600px] -translate-y-1/2 opacity-20" />
+        <div className="glow-accent bottom-0 left-1/4 w-[600px] h-[600px] translate-y-1/2 opacity-30" />
         
         {/* Flow Lines (SVG) */}
         <svg className="absolute inset-0 w-full h-full opacity-[0.1]" xmlns="http://www.w3.org/2000/svg">
@@ -35,19 +34,19 @@ export function CaseStudyAutomationSection({
         </svg>
       </div>
 
-      <div className="max-w-[1200px] mx-auto relative z-10">
-        <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div className="max-w-2xl">
+      <div className="page-container relative z-10">
+        <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-12">
+          <div className="max-w-3xl">
             {badge && (
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/[0.05] border border-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest mb-6">
-                <Network className="w-3 h-3" />
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-primary/[0.03] border border-primary/10 text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-8 shadow-sm">
+                <Network className="w-3.5 h-3.5" />
                 {badge}
               </div>
             )}
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6 text-gray-900 leading-tight">
+            <h2 className="title-h2 mb-8">
               {title}
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed opacity-90 font-light">
+            <p className="lead-text max-w-2xl">
               {description}
             </p>
           </div>

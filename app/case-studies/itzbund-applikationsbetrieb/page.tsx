@@ -104,7 +104,7 @@ export default function CaseStudyITZBund() {
                 </div>
               </section>
 
-              <TechStack technologies={["RHEL", "Linux", "Middleware", "MySQL", "PostgreSQL", "Apache", "Nginx", "BSI IT-Grundschutz", "Shell Scripting", "Monitoring Tools"]} />
+              <TechStack technologies={["RHEL", "Linux", "Middleware", "MySQL", "PostgreSQL", "Apache", "Nginx", "BSI IT-Grundschutz", "Shell Scripting", "Monitoring Tools", "Tomcat", "JBoss", "SuSe Enterprise", "SUSE to RHEL Migration", "Confluence"]} />
             </div>
 
             <div className="space-y-8">

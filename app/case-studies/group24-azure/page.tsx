@@ -107,7 +107,7 @@ export default function CaseStudyGroup24() {
                 </p>
               </section>
 
-              <TechStack technologies={["Azure", "Azure Virtual Desktop", "AVD", "Cloud Migration", "Automation", "Security"]} />
+              <TechStack technologies={["Azure", "Azure Virtual Desktop", "Azure Linux", "Cloud Migration", "Automation", "Security", "Refactor", "SQL Migration"]} />
             </div>
 
             <div className="space-y-8">

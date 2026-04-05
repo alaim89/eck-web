@@ -123,10 +123,10 @@ export default function LandingPageContent() {
               
               <h1 
                 id="hero-heading"
-                className="text-6xl md:text-7xl font-bold tracking-tighter leading-[1.05] mb-8 text-black"
+                className="title-h1 mb-8"
               >
                 IT-Projekte retten,<br />
-                <span className="text-gray-400">stabilisieren und skalieren.</span>
+                <span className="text-slate-400">stabilisieren und skalieren.</span>
               </h1>
 
               <div className="relative h-[120px] md:h-[100px] mb-12">
@@ -137,7 +137,7 @@ export default function LandingPageContent() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.5 }}
-                    className="text-lg text-gray-700 max-w-md leading-relaxed opacity-90 absolute top-0 left-0"
+                    className="lead-text max-w-md absolute top-0 left-0"
                   >
                     {variant.subline}
                   </motion.p>
@@ -252,15 +252,15 @@ export default function LandingPageContent() {
           aria-labelledby="problem-heading"
         >
           <div className="max-w-[1200px] mx-auto px-6">
-            <div className="max-w-2xl mb-20 mx-auto text-center">
-              <div className="text-primary font-bold text-xs uppercase tracking-widest mb-4">{t.problem.badge}</div>
+            <div className="max-w-3xl mb-20 mx-auto text-center">
+              <div className="text-primary font-bold text-[10px] uppercase tracking-[0.2em] mb-4">{t.problem.badge}</div>
               <h2 
                 id="problem-heading"
-                className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black"
+                className="title-h2 mb-6"
               >
                 {t.problem.headline}
               </h2>
-              <p className="text-gray-700 text-lg leading-relaxed opacity-80">
+              <p className="lead-text mx-auto">
                 {t.problem.subheadline}
               </p>
             </div>
@@ -318,12 +318,12 @@ export default function LandingPageContent() {
 
           <h2
             id="solution-heading"
-            className="text-5xl md:text-6xl font-bold tracking-tight mb-10 text-black leading-[1.1]"
+            className="title-h2 mb-10"
           >
             {t.trust.headline}
           </h2>
 
-          <p className="text-gray-600 text-lg mb-16 leading-relaxed max-w-md opacity-90">
+          <p className="lead-text mb-16 max-w-md">
             {t.trust.subheadline}
           </p>
 
@@ -583,15 +583,15 @@ export default function LandingPageContent() {
           aria-labelledby="services-heading"
         >
           <div className="max-w-[1200px] mx-auto px-6">
-            <div className="max-w-2xl mb-20">
-              <div className="text-primary font-bold text-xs uppercase tracking-widest mb-4">{t.services.badge}</div>
+            <div className="max-w-3xl mb-20">
+              <div className="text-primary font-bold text-[10px] uppercase tracking-[0.2em] mb-4">{t.services.badge}</div>
               <h2 
                 id="services-heading"
-                className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black"
+                className="title-h2 mb-6"
               >
                 {t.services.headline}
               </h2>
-              <p className="text-gray-700 text-lg leading-relaxed opacity-80">
+              <p className="lead-text">
                 {t.services.subheadline}
               </p>
             </div>
@@ -641,11 +641,11 @@ export default function LandingPageContent() {
           aria-labelledby="process-heading"
         >
           <div className="max-w-[1200px] mx-auto px-6">
-            <div className="max-w-2xl mb-20 mx-auto text-center">
-              <div className="text-primary font-bold text-xs uppercase tracking-widest mb-4">{t.process.badge}</div>
+            <div className="max-w-3xl mb-20 mx-auto text-center">
+              <div className="text-primary font-bold text-[10px] uppercase tracking-[0.2em] mb-4">{t.process.badge}</div>
               <h2 
                 id="process-heading"
-                className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black"
+                className="title-h2 mb-6"
               >
                 {t.process.headline}
               </h2>
@@ -713,7 +713,7 @@ export default function LandingPageContent() {
             <div className="text-center mb-20">
               <h2 
                 id="faq-heading"
-                className="text-4xl md:text-5xl font-bold tracking-tight text-black"
+                className="title-h2"
               >
                 {t.faq.headline}
               </h2>

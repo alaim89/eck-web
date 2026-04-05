@@ -104,7 +104,7 @@ export default function CaseStudyInCase() {
                 </div>
               </section>
 
-              <TechStack technologies={["Exchange Online", "Microsoft Intune", "MDM", "Microsoft 365", "Security", "Cloud Migration"]} />
+              <TechStack technologies={["Exchange Online", "Microsoft Intune", "Cisco Meraki", "Microsoft 365", "Security", "Cloud Migration", "Collaboration", "SharePoint Online", "Microsoft Hybrid"]} />
             </div>
 
             <div className="space-y-8">

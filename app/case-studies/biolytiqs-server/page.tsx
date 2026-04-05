@@ -104,7 +104,7 @@ export default function CaseStudyBiolytiqs() {
                 </div>
               </section>
 
-              <TechStack technologies={["Windows Server 2019", "Hyper-V", "Entra ID", "Microsoft 365", "Veeam", "Backup Strategy"]} />
+              <TechStack technologies={["Windows Server 2019", "Hyper-V", "Entra ID", "Microsoft 365", "Veeam", "Backup Strategy", "SBS 2011", "Firewall", "Migration"]} />
             </div>
 
             <div className="space-y-8">

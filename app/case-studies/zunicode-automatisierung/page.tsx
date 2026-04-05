@@ -103,7 +103,7 @@ export default function CaseStudyZunicode() {
                 </div>
               </section>
 
-              <TechStack technologies={["IT-Automatisierung", "Ansible", "PowerShell", "Hybrid IT", "Support Processes"]} />
+              <TechStack technologies={["IT-Automatisierung", "Ansible", "PowerShell", "Hybrid IT", "Support Processes", "Mattermost", "Docker"]} />
             </div>
 
             <div className="space-y-8">

@@ -37,22 +37,21 @@ export const CTASection: React.FC<CTASectionProps> = ({
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className={`relative overflow-hidden p-8 rounded-3xl bg-gradient-to-br from-primary via-primary/95 to-[#004a54] text-white shadow-xl shadow-primary/10 ${className}`}
+        className={`brand-surface-gradient p-10 rounded-[2.5rem] shadow-premium group ${className}`}
       >
         {/* Network Pattern Overlay */}
-        <div className="absolute inset-0 opacity-[0.05] pointer-events-none" 
-             style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }} />
+        <div className="network-grid opacity-[0.08]" />
         
         {/* Subtle Glows */}
-        <div className="absolute -top-24 -right-24 w-48 h-48 bg-white/10 rounded-full blur-[60px]" />
-        <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-primary/20 rounded-full blur-[60px]" />
+        <div className="glow-accent -top-24 -right-24 w-64 h-64 opacity-20" />
+        <div className="glow-accent -bottom-24 -left-24 w-64 h-64 bg-white/10 opacity-10" />
         
         <div className="relative z-10">
-          <h3 className="text-xl font-bold mb-4 tracking-tight">{title}</h3>
-          <p className="text-white/80 mb-6 leading-relaxed text-sm">{description}</p>
+          <h3 className="title-h3 mb-4 text-white">{title}</h3>
+          <p className="text-white/80 mb-8 leading-relaxed font-light max-w-[45ch]">{description}</p>
           <Link 
             href={buttonHref} 
-            className="block w-full py-4 bg-white text-primary text-center rounded-xl font-bold hover:bg-white/90 transition-all shadow-lg shadow-primary/20 active:scale-[0.98]"
+            className="block w-full py-4 bg-white text-primary text-center rounded-xl font-bold hover:bg-white/90 transition-all shadow-lg hover:shadow-xl active:scale-[0.98]"
           >
             {buttonText}
           </Link>
@@ -62,53 +61,40 @@ export const CTASection: React.FC<CTASectionProps> = ({
   }
 
   return (
-    <section id={id} className={`relative overflow-hidden py-24 px-6 rounded-[3rem] bg-gradient-to-br from-primary via-[#00545e] to-[#004a54] text-white text-center ${className}`}>
+    <section id={id} className={`brand-surface-gradient section-container rounded-[4rem] mx-4 md:mx-8 mb-12 shadow-2xl ${className}`}>
       {/* Network/Flow Pattern */}
-      <div className="absolute inset-0 z-0 opacity-[0.07] pointer-events-none">
-        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M0 20 Q 25 15 50 20 T 100 20" fill="none" stroke="white" strokeWidth="0.1" />
-          <path d="M0 50 Q 25 45 50 50 T 100 50" fill="none" stroke="white" strokeWidth="0.1" />
-          <path d="M0 80 Q 25 75 50 80 T 100 80" fill="none" stroke="white" strokeWidth="0.1" />
-          <circle cx="20" cy="20" r="0.5" fill="white" />
-          <circle cx="50" cy="20" r="0.5" fill="white" />
-          <circle cx="80" cy="20" r="0.5" fill="white" />
-          <circle cx="35" cy="50" r="0.5" fill="white" />
-          <circle cx="65" cy="50" r="0.5" fill="white" />
-          <circle cx="20" cy="80" r="0.5" fill="white" />
-          <circle cx="50" cy="80" r="0.5" fill="white" />
-          <circle cx="80" cy="80" r="0.5" fill="white" />
-        </svg>
-      </div>
+      <div className="network-grid opacity-[0.06]" />
 
       {/* Glow Elements */}
-      <div className="absolute top-0 left-1/4 w-[30rem] h-[30rem] bg-white/5 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[30rem] h-[30rem] bg-primary/20 rounded-full blur-[120px] translate-y-1/2 pointer-events-none" />
+      <div className="glow-accent top-0 left-1/4 w-[40rem] h-[40rem] -translate-y-1/2 opacity-20" />
+      <div className="glow-accent bottom-0 right-1/4 w-[40rem] h-[40rem] translate-y-1/2 opacity-30" />
       
-      <div className="relative z-10 max-w-4xl mx-auto">
+      <div className="page-container relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center"
         >
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-8 leading-[1.1]">
+          <h2 className="title-h1 text-white mb-8 max-w-4xl mx-auto">
             {title}
           </h2>
-          <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="lead-text text-white/80 mb-12 mx-auto">
             {description}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link 
               href={buttonHref}
-              className="px-10 py-5 bg-white text-primary hover:bg-white/90 rounded-xl font-bold text-lg transition-all shadow-xl shadow-primary/30 active:scale-[0.98] w-full sm:w-auto"
+              className="px-12 py-5 bg-white text-primary hover:bg-white/90 rounded-xl font-bold text-lg transition-all shadow-2xl shadow-primary/40 hover:shadow-white/20 active:scale-[0.98] w-full sm:w-auto"
             >
               {buttonText}
             </Link>
             {secondaryButtonText && secondaryButtonHref && (
               <Link 
                 href={secondaryButtonHref} 
-                className="inline-flex items-center justify-center px-10 py-5 bg-white/10 hover:bg-white/20 text-white rounded-xl font-bold text-lg transition-all active:scale-[0.98] w-full sm:w-auto border border-white/20 backdrop-blur-sm"
+                className="inline-flex items-center justify-center px-12 py-5 bg-white/10 hover:bg-white/20 text-white rounded-xl font-bold text-lg transition-all active:scale-[0.98] w-full sm:w-auto border border-white/20 backdrop-blur-md"
               >
                 {secondaryButtonText}
               </Link>
@@ -116,23 +102,23 @@ export const CTASection: React.FC<CTASectionProps> = ({
           </div>
 
           {showContactOptions && (
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 pt-12 mt-16 border-t border-white/10">
-              <div className="flex items-center gap-4 group cursor-pointer">
-                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all">
-                  <Phone className="w-5 h-5" />
+            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 pt-16 mt-20 border-t border-white/10">
+              <div className="flex items-center gap-5 group cursor-pointer">
+                <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all duration-500 shadow-inner">
+                  <Phone className="w-6 h-6" />
                 </div>
                 <div className="text-left">
-                  <div className="text-[10px] text-white/40 uppercase font-bold tracking-[0.2em]">Rufen Sie uns an</div>
-                  <div className="text-lg font-semibold tracking-tight">+49 (0) 176 34580607</div>
+                  <div className="text-[11px] text-white/40 uppercase font-bold tracking-[0.25em] mb-1">Rufen Sie uns an</div>
+                  <div className="text-xl font-semibold tracking-tight">0176 34580607</div>
                 </div>
               </div>
-              <div className="flex items-center gap-4 group cursor-pointer">
-                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all">
-                  <Mail className="w-5 h-5" />
+              <div className="flex items-center gap-5 group cursor-pointer">
+                <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all duration-500 shadow-inner">
+                  <Mail className="w-6 h-6" />
                 </div>
                 <div className="text-left">
-                  <div className="text-[10px] text-white/40 uppercase font-bold tracking-[0.2em]">Schreiben Sie uns</div>
-                  <div className="text-lg font-semibold tracking-tight">info@ecksolution-it.de</div>
+                  <div className="text-[11px] text-white/40 uppercase font-bold tracking-[0.25em] mb-1">Schreiben Sie uns</div>
+                  <div className="text-xl font-semibold tracking-tight">info@ecksolution-it.de</div>
                 </div>
               </div>
             </div>

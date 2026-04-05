@@ -27,47 +27,37 @@ export function CaseStudyPreviewSection({
   slug
 }: CaseStudyPreviewSectionProps) {
   return (
-    <section className="relative py-32 px-6 overflow-hidden bg-white">
+    <section className="section-container bg-white">
       {/* Automation Background Aesthetic */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Subtle Grid */}
-        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:40px_40px] opacity-40" />
+        <div className="network-grid opacity-[0.03]" />
         
         {/* Branded Glow Blobs */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/[0.03] rounded-full blur-[120px] -translate-y-1/2" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary/[0.05] rounded-full blur-[120px] translate-y-1/2" />
+        <div className="glow-accent top-0 left-1/4 w-[600px] h-[600px] -translate-y-1/2 opacity-20" />
+        <div className="glow-accent bottom-0 right-1/4 w-[600px] h-[600px] translate-y-1/2 opacity-30" />
         
         {/* Flow Lines (SVG) */}
-        <svg className="absolute inset-0 w-full h-full opacity-[0.15]" xmlns="http://www.w3.org/2000/svg">
+        <svg className="absolute inset-0 w-full h-full opacity-[0.1]" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <linearGradient id="flow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <linearGradient id="flow-gradient-preview" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#005F6B" stopOpacity="0" />
               <stop offset="50%" stopColor="#005F6B" stopOpacity="1" />
               <stop offset="100%" stopColor="#005F6B" stopOpacity="0" />
             </linearGradient>
           </defs>
-          <path d="M-100 100 Q 200 150 400 100 T 900 150" fill="none" stroke="url(#flow-gradient)" strokeWidth="2" strokeDasharray="10 10">
-            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="10s" repeatCount="indefinite" />
-          </path>
-          <path d="M-100 400 Q 300 350 600 450 T 1200 400" fill="none" stroke="url(#flow-gradient)" strokeWidth="2" strokeDasharray="10 10">
-            <animate attributeName="stroke-dashoffset" from="0" to="100" dur="15s" repeatCount="indefinite" />
+          <path d="M-100 150 Q 300 200 500 150 T 1100 200" fill="none" stroke="url(#flow-gradient-preview)" strokeWidth="1.5" strokeDasharray="12 12">
+            <animate attributeName="stroke-dashoffset" from="120" to="0" dur="12s" repeatCount="indefinite" />
           </path>
         </svg>
-
-        {/* Connected Nodes Motif */}
-        <div className="absolute top-20 left-10 w-2 h-2 rounded-full bg-primary/20" />
-        <div className="absolute top-20 left-10 w-20 h-px bg-gradient-to-r from-primary/20 to-transparent" />
-        <div className="absolute bottom-40 right-20 w-3 h-3 rounded-full bg-primary/20" />
-        <div className="absolute bottom-40 right-20 w-px h-24 bg-gradient-to-t from-primary/20 to-transparent" />
       </div>
 
-      <div className="max-w-[1100px] mx-auto relative z-10">
-        <div className="text-center mb-16">
+      <div className="page-container relative z-10">
+        <div className="text-center mb-20">
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/[0.05] border border-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6"
+            className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-primary/[0.03] border border-primary/10 text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-8 shadow-sm"
           >
             <Network className="w-3.5 h-3.5" />
             Case Study: {companyType}
@@ -76,8 +66,8 @@ export function CaseStudyPreviewSection({
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold tracking-tighter text-gray-900 mb-6 leading-tight"
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="title-h2 mb-6 max-w-4xl mx-auto"
           >
             {title}
           </motion.h2>
@@ -85,87 +75,87 @@ export function CaseStudyPreviewSection({
 
         {/* Premium Floating Card */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
           className="group relative"
         >
           {/* Outer Glow Effect */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 rounded-[2.5rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+          <div className="absolute -inset-6 bg-gradient-to-r from-primary/5 via-accent-cyan/10 to-primary/5 rounded-[3.5rem] blur-3xl opacity-0 group-hover:opacity-100 transition-all duration-1000" />
           
-          <div className="relative bg-white/80 backdrop-blur-xl border border-white shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)] rounded-[2rem] overflow-hidden">
+          <div className="surface-card overflow-hidden bg-white/90 backdrop-blur-xl">
             {/* Subtle Inner Border Gradient */}
-            <div className="absolute inset-0 rounded-[2rem] border border-primary/5 pointer-events-none" />
+            <div className="absolute inset-0 rounded-[2.5rem] border border-primary/5 pointer-events-none" />
             
-            <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+            <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-100">
               {/* Left Column */}
-              <div className="p-8 md:p-12 space-y-12">
+              <div className="p-10 md:p-14 space-y-14">
                 <div className="relative">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 rounded-lg bg-primary/[0.05] flex items-center justify-center">
-                      <Activity className="w-4 h-4 text-primary" />
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-10 h-10 rounded-xl bg-primary/[0.05] flex items-center justify-center shadow-inner">
+                      <Activity className="w-5 h-5 text-primary" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 uppercase tracking-tight">Die Ausgangslage</h3>
+                    <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wider">Die Ausgangslage</h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed font-light">{situation}</p>
+                  <p className="text-slate-600 leading-relaxed font-light text-lg">{situation}</p>
                 </div>
 
                 <div className="relative">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center">
-                      <Zap className="w-4 h-4 text-red-500" />
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center shadow-inner">
+                      <Zap className="w-5 h-5 text-red-500" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 uppercase tracking-tight">Das Problem</h3>
+                    <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wider">Das Problem</h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed font-light">{problem}</p>
+                  <p className="text-slate-600 leading-relaxed font-light text-lg">{problem}</p>
                 </div>
               </div>
 
               {/* Right Column */}
-              <div className="p-8 md:p-12 space-y-12 bg-gray-50/30">
+              <div className="p-10 md:p-14 space-y-14 bg-slate-50/40">
                 <div className="relative">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center">
-                      <Cpu className="w-4 h-4 text-blue-600" />
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shadow-inner">
+                      <Cpu className="w-5 h-5 text-blue-600" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 uppercase tracking-tight">Die Lösung</h3>
+                    <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wider">Die Lösung</h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed font-light">{solution}</p>
+                  <p className="text-slate-600 leading-relaxed font-light text-lg">{solution}</p>
                 </div>
 
                 <div className="relative">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                      <ChevronRight className="w-4 h-4 text-white" />
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
+                      <ChevronRight className="w-5 h-5 text-white" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 uppercase tracking-tight">Das Ergebnis</h3>
+                    <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wider">Das Ergebnis</h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed font-medium">{result}</p>
+                  <p className="text-slate-900 leading-relaxed font-medium text-xl">{result}</p>
                 </div>
               </div>
             </div>
 
             {/* Footer Link */}
-            <div className="p-6 bg-white border-t border-gray-100 text-center">
+            <div className="p-8 bg-white border-t border-slate-100 text-center">
               <Link 
                 href={`/case-studies/${slug}`} 
-                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-all font-bold group/link"
+                className="brand-link text-lg"
               >
                 Vollständige Case Study lesen 
-                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
           </div>
         </motion.div>
 
-        <div className="mt-16 text-center">
-          <p className="text-gray-500 mb-6 font-medium">
+        <div className="mt-20 text-center">
+          <p className="text-slate-500 mb-8 font-medium tracking-wide">
             Kommt Ihnen das bekannt vor?
           </p>
           <Link 
             href="/kontakt" 
-            className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 active:scale-[0.98]"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-white rounded-2xl font-bold text-lg hover:bg-primary-dark transition-all shadow-2xl shadow-primary/30 active:scale-[0.98] hover:-translate-y-1"
           >
             Jetzt IT-Check anfordern
           </Link>
