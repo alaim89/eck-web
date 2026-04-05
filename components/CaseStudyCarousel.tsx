@@ -122,23 +122,39 @@ export function CaseStudyCarousel() {
           >
             <Link 
               href={study.href}
-              className="group block h-full p-8 md:p-10 rounded-3xl bg-gray-50 border border-gray-100/50 hover:bg-white hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 flex flex-col"
+              className="group relative block h-full p-8 md:p-10 rounded-[2.5rem] bg-white border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_32px_64px_-16px_rgba(16,185,129,0.12)] transition-all duration-700 hover:-translate-y-2 flex flex-col overflow-hidden"
             >
-              <h3 className="text-2xl font-bold mb-2 text-black leading-tight group-hover:text-primary transition-colors duration-300">
-                {study.title}
-              </h3>
-              <div className="text-sm text-gray-600 font-medium mb-6">{study.company}</div>
+              {/* Subtle Gradient Glow on Hover */}
+              <div className="absolute -inset-px bg-gradient-to-br from-emerald-500/0 via-teal-500/0 to-cyan-500/0 group-hover:from-emerald-500/10 group-hover:via-teal-500/5 group-hover:to-cyan-500/10 transition-all duration-700 rounded-[2.5rem] pointer-events-none" />
               
-              <p className="text-gray-600 leading-relaxed mb-8 line-clamp-3 text-base">
-                {study.summary}
-              </p>
-
-              <div className="mt-auto flex items-center justify-between">
-                <div className="flex items-center gap-2 text-black font-bold text-sm group-hover:gap-3 transition-all">
-                  {t.caseStudies.readMore}
-                  <ArrowRight className="w-4 h-4 text-primary" />
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500">
+                    <study.icon className="w-6 h-6 text-emerald-600 group-hover:text-white transition-colors" />
+                  </div>
+                  <div className="text-[10px] font-bold text-emerald-600 uppercase tracking-widest px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-100">
+                    Case Study
+                  </div>
                 </div>
-                <study.icon className="w-5 h-5 text-gray-300 group-hover:text-primary transition-colors" />
+
+                <h3 className="text-2xl font-bold mb-2 text-gray-900 leading-tight group-hover:text-emerald-700 transition-colors duration-300">
+                  {study.title}
+                </h3>
+                <div className="text-sm text-gray-500 font-medium mb-6 flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-emerald-400" />
+                  {study.company}
+                </div>
+                
+                <p className="text-gray-600 leading-relaxed mb-8 line-clamp-3 text-base opacity-90">
+                  {study.summary}
+                </p>
+
+                <div className="mt-auto flex items-center justify-between pt-6 border-t border-gray-50">
+                  <div className="flex items-center gap-2 text-emerald-600 font-bold text-sm group-hover:gap-3 transition-all">
+                    {t.caseStudies.readMore}
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </div>
               </div>
             </Link>
           </motion.div>

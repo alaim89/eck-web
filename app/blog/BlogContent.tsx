@@ -158,28 +158,29 @@ export default function BlogContent() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-32 p-12 md:p-20 rounded-[3rem] bg-black text-white text-center relative overflow-hidden"
+            className="mt-32 p-12 md:p-20 rounded-[3rem] bg-gradient-to-br from-emerald-600 via-teal-700 to-emerald-800 text-white text-center relative overflow-hidden shadow-2xl shadow-emerald-900/20"
           >
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
-              <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/40 rounded-full blur-[120px]" />
-            </div>
+            {/* Glow Elements */}
+            <div className="absolute top-0 left-1/4 w-[30rem] h-[30rem] bg-emerald-400/20 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
+            <div className="absolute bottom-0 right-1/4 w-[30rem] h-[30rem] bg-teal-400/20 rounded-full blur-[120px] translate-y-1/2 pointer-events-none" />
+            
             <div className="relative z-10 max-w-2xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Bleiben Sie informiert.</h2>
-              <p className="text-white/70 text-lg mb-10">
+              <p className="text-white/80 text-lg mb-10 leading-relaxed">
                 Erhalten Sie monatlich exklusive Einblicke in IT-Strategien und Technologietrends direkt in Ihr Postfach.
               </p>
-              <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto relative z-20">
                 <input 
                   type="email" 
                   placeholder="Ihre E-Mail-Adresse"
-                  className="flex-grow px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                  className="flex-grow px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all backdrop-blur-sm"
                   required
                 />
-                <button className="px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-xl font-bold transition-all active:scale-[0.98]">
+                <button className="px-8 py-4 bg-white text-emerald-700 hover:bg-emerald-50 rounded-xl font-bold transition-all active:scale-[0.98] shadow-lg shadow-emerald-900/20">
                   Anmelden
                 </button>
               </form>
-              <p className="mt-6 text-xs text-white/40">
+              <p className="mt-8 text-xs text-white/50 font-medium tracking-wide">
                 Kein Spam. Abmeldung jederzeit möglich.
               </p>
             </div>

@@ -2,6 +2,7 @@
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { CTASection } from "@/components/CTASection";
 import { solutionsData } from "@/lib/solutions-data";
 import { ArrowRight, ChevronRight, ShieldCheck, Zap, Activity, Lock, Cpu, Server, Database, Cloud, Settings, Headset } from "lucide-react";
 import Link from "next/link";
@@ -115,7 +116,7 @@ export default function SolutionsIndexContent() {
               <p className="text-gray-700 mb-3">
                 Kommt Ihnen das bekannt vor?
               </p>
-              <Link href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
+              <Link href="/kontakt" className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-all active:scale-[0.98] shadow-sm shadow-emerald-900/10">
                 Jetzt IT-Check anfordern
               </Link>
             </div>
@@ -123,15 +124,12 @@ export default function SolutionsIndexContent() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-32 px-6 bg-primary text-white text-center">
-          <div className="max-w-[800px] mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Nicht sicher, was Sie brauchen?</h2>
-            <p className="text-xl text-white/90 mb-10">Lassen Sie uns gemeinsam Ihre IT-Infrastruktur analysieren und die beste Strategie für Ihr Unternehmen entwickeln.</p>
-            <Link href="/kontakt" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary rounded-lg hover:bg-gray-50 transition-all font-bold text-lg shadow-xl hover:-translate-y-0.5">
-              Kostenlose IT-Einschätzung anfordern <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
-        </section>
+        <CTASection 
+          title="Nicht sicher, was Sie brauchen?"
+          description="Lassen Sie uns gemeinsam Ihre IT-Infrastruktur analysieren und die beste Strategie für Ihr Unternehmen entwickeln."
+          buttonText="Kostenlose IT-Einschätzung anfordern"
+          buttonHref="/kontakt"
+        />
       </main>
       
       <Footer />

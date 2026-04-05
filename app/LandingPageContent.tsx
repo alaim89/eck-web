@@ -12,6 +12,8 @@ import Link from "next/link";
 import Script from "next/script";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { CTASection } from "@/components/CTASection";
+import { CaseStudyAutomationSection } from "@/components/CaseStudyAutomationSection";
 import { CaseStudyCarousel } from "@/components/CaseStudyCarousel";
 import { HeroVisual } from "@/components/HeroVisual";
 import { useLanguage } from "@/context/LanguageContext";
@@ -286,7 +288,7 @@ export default function LandingPageContent() {
               <p className="text-gray-700 mb-3">
                 Kommt Ihnen das bekannt vor?
               </p>
-              <Link href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
+              <Link href="/kontakt" className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-all active:scale-[0.98] shadow-sm shadow-emerald-900/10">
                 Jetzt IT-Check anfordern
               </Link>
             </div>
@@ -626,7 +628,7 @@ export default function LandingPageContent() {
               <p className="text-gray-700 mb-3">
                 Kommt Ihnen das bekannt vor?
               </p>
-              <Link href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
+              <Link href="/kontakt" className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-all active:scale-[0.98] shadow-sm shadow-emerald-900/10">
                 Jetzt IT-Check anfordern
               </Link>
             </div>
@@ -677,43 +679,30 @@ export default function LandingPageContent() {
         </section>
 
         {/* Case Studies Section */}
-        <section 
-          className="py-32 px-6 bg-white overflow-hidden"
-          aria-labelledby="case-studies-heading"
+        <CaseStudyAutomationSection
+          badge={t.caseStudies.badge || "Erfolgsgeschichten"}
+          title={t.caseStudies.headline}
+          description={t.caseStudies.subheadline}
         >
-          <div className="max-w-[1200px] mx-auto">
-            <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
-              <div className="max-w-2xl">
-                <h2 
-                  id="case-studies-heading"
-                  className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-black"
-                >
-                  {t.caseStudies.headline}
-                </h2>
-                <p className="text-gray-600 text-lg opacity-90">
-                  {t.caseStudies.subheadline}
-                </p>
-              </div>
-              <Link 
-                href="/case-studies" 
-                className="text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:text-primary transition-colors group"
-              >
-                {t.caseStudies.viewAll} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+          <div className="relative">
+            <div className="absolute -top-16 right-0 flex gap-2 z-20">
+              {/* Navigation arrows are handled inside CaseStudyCarousel, but we can add extra context here if needed */}
             </div>
-
             <CaseStudyCarousel />
-
-            <div className="mt-10 text-center">
-              <p className="text-gray-700 mb-3">
-                Kommt Ihnen das bekannt vor?
-              </p>
-              <Link href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
-                Jetzt IT-Check anfordern
-              </Link>
-            </div>
           </div>
-        </section>
+
+          <div className="mt-16 text-center">
+            <p className="text-gray-500 mb-6 font-medium">
+              Kommt Ihnen das bekannt vor?
+            </p>
+            <Link 
+              href="/kontakt" 
+              className="inline-flex items-center gap-3 px-8 py-4 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-900/20 active:scale-[0.98]"
+            >
+              Jetzt IT-Check anfordern
+            </Link>
+          </div>
+        </CaseStudyAutomationSection>
 
         {/* FAQ Section */}
         <section 
@@ -759,67 +748,16 @@ export default function LandingPageContent() {
         </section>
 
         {/* CTA Section */}
-        <section 
-          id="contact" 
-          className="py-40 px-6 bg-black text-white text-center relative overflow-hidden"
-          aria-labelledby="cta-heading"
-        >
-          {/* Background Accents */}
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
-            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-          </div>
-
-          <div className="max-w-[1200px] mx-auto relative z-10">
-            <h2 
-              id="cta-heading"
-              className="text-5xl md:text-6xl font-bold tracking-tight mb-8"
-            >
-              {t.cta.headline}
-            </h2>
-            <p className="text-xl text-white/70 mb-12 max-w-xl mx-auto leading-relaxed">
-              {t.cta.subheadline}
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Link 
-                href="https://outlook.office.com/book/EcksolutionITService@ecksolution-it.de/?ismsaljsauthenabled"
-                target="_blank"
-                className="px-10 py-5 bg-primary hover:bg-primary/90 text-white rounded-xl font-medium text-lg transition-all shadow-xl shadow-primary/20 active:scale-[0.98] w-full sm:w-auto"
-              >
-                {t.cta.button}
-              </Link>
-              <Link 
-                href="/kontakt" 
-                className="inline-flex items-center justify-center px-10 py-5 bg-white/10 hover:bg-white/20 text-white rounded-xl font-medium text-lg transition-all active:scale-[0.98] w-full sm:w-auto"
-              >
-                Erstgespräch sichern
-              </Link>
-            </div>
-
-            {/* Direct Contact Options */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 pt-12 border-t border-white/10">
-              <div className="flex items-center gap-4 group cursor-pointer">
-                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary transition-colors">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div className="text-left">
-                  <div className="text-xs text-white/40 uppercase font-bold tracking-widest">Rufen Sie uns an</div>
-                  <div className="text-lg font-semibold">+49 (0) 176 34580607</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-4 group cursor-pointer">
-                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary transition-colors">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div className="text-left">
-                  <div className="text-xs text-white/40 uppercase font-bold tracking-widest">Schreiben Sie uns</div>
-                  <div className="text-lg font-semibold">info@ecksolution-it.de</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CTASection 
+          id="contact"
+          title={t.cta.headline}
+          description={t.cta.subheadline}
+          buttonText={t.cta.button}
+          buttonHref="https://outlook.office.com/book/EcksolutionITService@ecksolution-it.de/?ismsaljsauthenabled"
+          secondaryButtonText="Kontakt aufnehmen"
+          secondaryButtonHref="/kontakt"
+          showContactOptions={true}
+        />
       </main>
 
       <Footer />

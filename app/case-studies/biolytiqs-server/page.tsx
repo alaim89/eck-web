@@ -1,7 +1,9 @@
 import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { ArrowLeft, CheckCircle2, Database, AlertTriangle, Settings, TrendingUp } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Database, AlertTriangle, Settings, TrendingUp, Cpu } from "lucide-react";
+import { TechStack } from "@/components/TechStack";
+import { CTASection } from "@/components/CTASection";
 import Link from "next/link";
 
 export const metadata = getMetadata({
@@ -101,18 +103,18 @@ export default function CaseStudyBiolytiqs() {
                   </div>
                 </div>
               </section>
+
+              <TechStack technologies={["Windows Server 2019", "Hyper-V", "Entra ID", "Microsoft 365", "Veeam", "Backup Strategy"]} />
             </div>
 
             <div className="space-y-8">
-              <div className="p-8 rounded-3xl bg-black text-white">
-                <h3 className="text-xl font-bold mb-4">Server-Update nötig?</h3>
-                <p className="text-gray-400 mb-6">
-                  Wir modernisieren Ihre Serverumgebung und sorgen für eine nahtlose Integration in die Cloud.
-                </p>
-                <Link href="/kontakt" className="block w-full py-4 bg-primary text-white text-center rounded-xl font-bold hover:bg-primary/90 transition-colors">
-                  Kostenlose IT-Einschätzung anfordern
-                </Link>
-              </div>
+              <CTASection 
+                variant="card"
+                title="Server-Update nötig?"
+                description="Wir modernisieren Ihre Serverumgebung und sorgen für eine nahtlose Integration in die Cloud."
+                buttonText="Kostenlose IT-Einschätzung anfordern"
+                buttonHref="/kontakt"
+              />
             </div>
           </div>
         </div>

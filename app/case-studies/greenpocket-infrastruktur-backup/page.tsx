@@ -1,7 +1,9 @@
 import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { ArrowLeft, CheckCircle2, Database, AlertTriangle, Settings, TrendingUp } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Database, AlertTriangle, Settings, TrendingUp, Cpu } from "lucide-react";
+import { TechStack } from "@/components/TechStack";
+import { CTASection } from "@/components/CTASection";
 import Link from "next/link";
 
 export const metadata = getMetadata({
@@ -102,24 +104,17 @@ export default function CaseStudyStartupInfrastructure() {
                 </div>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4 text-black">Technologien</h2>
-                <p className="text-gray-700 leading-relaxed text-lg">
-                  Linux, Windows Server, GitLab, Jira, Confluence, Mattermost, Active Directory, DNS, DHCP, pfSense, Veeam
-                </p>
-              </section>
+              <TechStack technologies={["Linux", "Windows Server", "GitLab", "Jira", "Confluence", "Mattermost", "Active Directory", "DNS", "DHCP", "pfSense", "Veeam"]} />
             </div>
 
             <div className="space-y-8">
-              <div className="p-8 rounded-3xl bg-black text-white">
-                <h3 className="text-xl font-bold mb-4">Infrastruktur neu aufsetzen?</h3>
-                <p className="text-gray-400 mb-6">
-                  Wir helfen dabei, eine IT-Basis zu schaffen, die im Alltag funktioniert und mit dem Unternehmen mitwachsen kann.
-                </p>
-                <Link href="/kontakt" className="block w-full py-4 bg-primary text-white text-center rounded-xl font-bold hover:bg-primary/90 transition-colors">
-                  Kostenlose IT-Einschätzung anfordern
-                </Link>
-              </div>
+              <CTASection 
+                variant="card"
+                title="Infrastruktur neu aufsetzen?"
+                description="Wir helfen dabei, eine IT-Basis zu schaffen, die im Alltag funktioniert und mit dem Unternehmen mitwachsen kann."
+                buttonText="Kostenlose IT-Einschätzung anfordern"
+                buttonHref="/kontakt"
+              />
             </div>
           </div>
         </div>

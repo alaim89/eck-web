@@ -1,7 +1,9 @@
 import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { ArrowLeft, CheckCircle2, Users, AlertTriangle, Settings, TrendingUp } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Users, AlertTriangle, Settings, TrendingUp, Cpu } from "lucide-react";
+import { TechStack } from "@/components/TechStack";
+import { CTASection } from "@/components/CTASection";
 import Link from "next/link";
 
 export const metadata = getMetadata({
@@ -100,18 +102,18 @@ export default function CaseStudyZunicode() {
                   </div>
                 </div>
               </section>
+
+              <TechStack technologies={["IT-Automatisierung", "Ansible", "PowerShell", "Hybrid IT", "Support Processes"]} />
             </div>
 
             <div className="space-y-8">
-              <div className="p-8 rounded-3xl bg-black text-white">
-                <h3 className="text-xl font-bold mb-4">IT-Betrieb optimieren?</h3>
-                <p className="text-gray-400 mb-6">
-                  Wir helfen Ihnen dabei, Ihre IT-Prozesse zu automatisieren und die Effizienz Ihres Teams zu steigern.
-                </p>
-                <Link href="/kontakt" className="block w-full py-4 bg-primary text-white text-center rounded-xl font-bold hover:bg-primary/90 transition-colors">
-                  Kostenlose IT-Einschätzung anfordern
-                </Link>
-              </div>
+              <CTASection 
+                variant="card"
+                title="IT-Betrieb optimieren?"
+                description="Wir helfen Ihnen dabei, Ihre IT-Prozesse zu automatisieren und die Effizienz Ihres Teams zu steigern."
+                buttonText="Kostenlose IT-Einschätzung anfordern"
+                buttonHref="/kontakt"
+              />
             </div>
           </div>
         </div>

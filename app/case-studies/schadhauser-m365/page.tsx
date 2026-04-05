@@ -1,7 +1,9 @@
 import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { ArrowLeft, CheckCircle2, Building2, AlertTriangle, Settings, TrendingUp } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Building2, AlertTriangle, Settings, TrendingUp, Cpu } from "lucide-react";
+import { TechStack } from "@/components/TechStack";
+import { CTASection } from "@/components/CTASection";
 import Link from "next/link";
 
 export const metadata = getMetadata({
@@ -101,18 +103,18 @@ export default function CaseStudySchadhauser() {
                   </div>
                 </div>
               </section>
+
+              <TechStack technologies={["Google Workspace", "Microsoft 365", "Entra ID", "MFA", "Conditional Access", "DNS"]} />
             </div>
 
             <div className="space-y-8">
-              <div className="p-8 rounded-3xl bg-black text-white">
-                <h3 className="text-xl font-bold mb-4">M365 Migration geplant?</h3>
-                <p className="text-gray-400 mb-6">
-                  Wir begleiten Sie bei Ihrem Wechsel zu Microsoft 365 – sicher, strukturiert und ohne Datenverlust.
-                </p>
-                <Link href="/kontakt" className="block w-full py-4 bg-primary text-white text-center rounded-xl font-bold hover:bg-primary/90 transition-colors">
-                  Kostenlose IT-Einschätzung anfordern
-                </Link>
-              </div>
+              <CTASection 
+                variant="card"
+                title="M365 Migration geplant?"
+                description="Wir begleiten Sie bei Ihrem Wechsel zu Microsoft 365 – sicher, strukturiert und ohne Datenverlust."
+                buttonText="Kostenlose IT-Einschätzung anfordern"
+                buttonHref="/kontakt"
+              />
             </div>
           </div>
         </div>

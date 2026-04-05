@@ -89,19 +89,22 @@ export default function KontaktContent() {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="p-8 rounded-3xl bg-black text-white relative overflow-hidden group"
+                  className="p-8 rounded-3xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white relative overflow-hidden group shadow-xl shadow-emerald-900/10"
                 >
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl -mr-16 -mt-16" />
+                  {/* Subtle Glow Effects */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-white/30 transition-colors duration-500" />
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-emerald-400/20 rounded-full blur-2xl -ml-12 -mb-12" />
+                  
                   <div className="relative z-10">
-                    <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center mb-6">
-                      <Calendar className="w-6 h-6" />
+                    <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center mb-6 border border-white/20">
+                      <Calendar className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-xl font-bold mb-4">Direkte Terminbuchung</h3>
-                    <p className="text-white/60 mb-8 leading-relaxed">Wählen Sie direkt einen passenden Termin für ein 15-minütiges Erstgespräch via Microsoft Bookings.</p>
+                    <p className="text-white/80 mb-8 leading-relaxed">Wählen Sie direkt einen passenden Termin für ein 15-minütiges Erstgespräch via Microsoft Bookings.</p>
                     <Link 
                       href="https://outlook.office.com/book/EcksolutionITService@ecksolution-it.de/?ismsaljsauthenabled"
                       target="_blank"
-                      className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all"
+                      className="inline-flex items-center gap-2 bg-white text-emerald-700 px-6 py-3 rounded-xl font-bold hover:bg-emerald-50 transition-all shadow-lg hover:-translate-y-0.5 active:scale-[0.98]"
                     >
                       Erstgespräch sichern <ArrowRight className="w-5 h-5" />
                     </Link>
@@ -171,9 +174,11 @@ export default function KontaktContent() {
                     <div className="relative">
                       <Users className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                       <select className="w-full pl-14 pr-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none appearance-none">
-                        <option>1-10 Mitarbeiter</option>
-                        <option>11-50 Mitarbeiter</option>
-                        <option>51-250 Mitarbeiter</option>
+                        <option>1-5 Mitarbeiter</option>
+                        <option>6-10 Mitarbeiter</option>
+                        <option>10-50 Mitarbeiter</option>
+                        <option>50-150 Mitarbeiter</option>
+                        <option>150-250 Mitarbeiter</option>
                         <option>250+ Mitarbeiter</option>
                       </select>
                     </div>

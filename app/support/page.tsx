@@ -52,7 +52,7 @@ export default function SupportPage() {
                 href="https://marketplace.ecksolution-it.de/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white rounded-xl font-bold hover:bg-gray-900 transition-all shadow-lg shadow-black/10 active:scale-[0.98] w-full justify-center md:w-auto"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-900/10 active:scale-[0.98] w-full justify-center md:w-auto"
               >
                 Zum Kundenportal
                 <ExternalLink className="w-5 h-5" />

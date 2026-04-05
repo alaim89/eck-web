@@ -1,7 +1,9 @@
 import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { ArrowLeft, CheckCircle2, Activity, AlertTriangle, Settings, TrendingUp } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Activity, AlertTriangle, Settings, TrendingUp, Cpu } from "lucide-react";
+import { TechStack } from "@/components/TechStack";
+import { CTASection } from "@/components/CTASection";
 import Link from "next/link";
 
 export const metadata = getMetadata({
@@ -101,18 +103,18 @@ export default function CaseStudyProcivitate() {
                   </div>
                 </div>
               </section>
+
+              <TechStack technologies={["Microsoft 365", "IT-Strategie", "IT-Leitung", "Compliance", "Security", "Cloud Security"]} />
             </div>
 
             <div className="space-y-8">
-              <div className="p-8 rounded-3xl bg-black text-white">
-                <h3 className="text-xl font-bold mb-4">IT-Strategie benötigt?</h3>
-                <p className="text-gray-400 mb-6">
-                  Wir unterstützen Sie als externe IT-Leitung bei der strategischen Planung und operativen Umsetzung Ihrer IT-Projekte.
-                </p>
-                <Link href="/kontakt" className="block w-full py-4 bg-primary text-white text-center rounded-xl font-bold hover:bg-primary/90 transition-colors">
-                  Kostenlose IT-Einschätzung anfordern
-                </Link>
-              </div>
+              <CTASection 
+                variant="card"
+                title="IT-Strategie benötigt?"
+                description="Wir unterstützen Sie als externe IT-Leitung bei der strategischen Planung und operativen Umsetzung Ihrer IT-Projekte."
+                buttonText="Kostenlose IT-Einschätzung anfordern"
+                buttonHref="/kontakt"
+              />
             </div>
           </div>
         </div>

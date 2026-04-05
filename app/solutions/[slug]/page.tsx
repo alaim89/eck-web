@@ -7,6 +7,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getMetadata, getFaqSchema } from "@/lib/seo";
 import { FaqSection } from "@/components/FaqSection";
+import { CaseStudyPreviewSection } from "@/components/CaseStudyPreviewSection";
+import { CTASection } from "@/components/CTASection";
 import Script from "next/script";
 
 export function generateStaticParams() {
@@ -91,7 +93,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
               <p className="text-gray-700 mb-3">
                 Kommt Ihnen das bekannt vor?
               </p>
-              <Link href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
+              <Link href="/kontakt" className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-all active:scale-[0.98] shadow-sm shadow-emerald-900/10">
                 Jetzt IT-Check anfordern
               </Link>
             </div>
@@ -164,7 +166,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
               <p className="text-gray-700 mb-3">
                 Kommt Ihnen das bekannt vor?
               </p>
-              <Link href="/kontakt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold">
+              <Link href="/kontakt" className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-all active:scale-[0.98] shadow-sm shadow-emerald-900/10">
                 Jetzt IT-Check anfordern
               </Link>
             </div>
@@ -198,54 +200,16 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         </section>
 
         {/* 7. Trust Section (Case Study) */}
-        <section className="py-24 px-6 bg-black text-white">
-          <div className="max-w-[1000px] mx-auto">
-            <div className="text-center mb-12">
-              <div className="text-primary font-bold tracking-wider uppercase text-sm mb-4">Case Study: {solution.caseStudy.companyType}</div>
-              <h2 className="text-3xl md:text-4xl font-bold">{solution.caseStudy.title}</h2>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 backdrop-blur-sm">
-              <div className="grid md:grid-cols-2 gap-12 mb-8">
-                <div>
-                  <h3 className="text-xl font-bold mb-4 text-white/90">Die Ausgangslage</h3>
-                  <p className="text-gray-200 leading-relaxed">{solution.caseStudy.situation}</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-4 text-white/90">Das Problem</h3>
-                  <p className="text-gray-200 leading-relaxed">{solution.caseStudy.problem}</p>
-                </div>
-              </div>
-              <div className="grid md:grid-cols-2 gap-12 mb-8">
-                <div>
-                  <h3 className="text-xl font-bold mb-4 text-white/90">Der Wendepunkt</h3>
-                  <p className="text-gray-200 leading-relaxed">{solution.caseStudy.decisionPoint}</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-4 text-white/90">Die Lösung</h3>
-                  <p className="text-gray-200 leading-relaxed">{solution.caseStudy.solution}</p>
-                </div>
-              </div>
-              <div className="pt-8 border-t border-white/10">
-                <h3 className="text-xl font-bold mb-4 text-white/90">Das Ergebnis</h3>
-                <p className="text-gray-200 leading-relaxed">{solution.caseStudy.result}</p>
-              </div>
-              <div className="mt-12 pt-8 border-t border-white/10 text-center">
-                <Link href={`/case-studies/${solution.caseStudy.slug}`} className="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-semibold">
-                  Vollständige Case Study lesen <ChevronRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="mt-10 text-center">
-              <p className="text-white/70 mb-3">
-                Kommt Ihnen das bekannt vor?
-              </p>
-              <Link href="/kontakt" className="inline-block bg-white text-black px-6 py-3 rounded-lg font-semibold">
-                Jetzt IT-Check anfordern
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CaseStudyPreviewSection 
+          title={solution.caseStudy.title}
+          companyType={solution.caseStudy.companyType}
+          situation={solution.caseStudy.situation}
+          problem={solution.caseStudy.problem}
+          decisionPoint={solution.caseStudy.decisionPoint}
+          solution={solution.caseStudy.solution}
+          result={solution.caseStudy.result}
+          slug={solution.caseStudy.slug}
+        />
 
         {/* Related Solutions */}
         <section className="py-24 px-6 border-t border-gray-100">
@@ -290,15 +254,13 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         )}
 
         {/* 8. Final CTA Section */}
-        <section id="contact" className="py-32 px-6 bg-primary text-white text-center">
-          <div className="max-w-[800px] mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Bereit, IT-Risiken zu eliminieren?</h2>
-            <p className="text-xl text-white/90 mb-10">Erhalten Sie ein umfassendes Audit Ihres aktuellen Setups. Unverbindlich und klar.</p>
-            <a href="mailto:info@ecksolution-it.de" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary rounded-lg hover:bg-gray-50 transition-all font-bold text-lg shadow-xl hover:-translate-y-0.5">
-              IT-Check starten <ArrowRight className="w-5 h-5" />
-            </a>
-          </div>
-        </section>
+        <CTASection 
+          id="contact"
+          title="Bereit, IT-Risiken zu eliminieren?"
+          description="Erhalten Sie ein umfassendes Audit Ihres aktuellen Setups. Unverbindlich und klar."
+          buttonText="IT-Check starten"
+          buttonHref="/kontakt"
+        />
       </main>
       
       <Footer />

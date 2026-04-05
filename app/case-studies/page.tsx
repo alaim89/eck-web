@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ArrowRight, Building2, Activity, ShieldCheck, Database, Users, Mail, Shield } from "lucide-react";
 import Link from "next/link";
+import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { caseStudies } from "@/lib/case-studies-data";
 
 export const metadata = getMetadata({
@@ -10,15 +11,6 @@ export const metadata = getMetadata({
   description: "Erfahren Sie, wie wir Unternehmen dabei geholfen haben, ihre IT-Infrastruktur zu modernisieren, Sicherheit zu erhöhen und digitale Prozesse zu optimieren.",
   canonical: "/case-studies",
 });
-
-const iconMap = {
-  shield: Shield,
-  activity: Activity,
-  database: Database,
-  users: Users,
-  building: Building2,
-  mail: Mail,
-};
 
 export default function CaseStudiesIndex() {
   return (
@@ -28,6 +20,10 @@ export default function CaseStudiesIndex() {
       <main className="pt-40 pb-32 px-6">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-20 text-center max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-[10px] font-bold uppercase tracking-widest mb-6">
+              <ShieldCheck className="w-3 h-3" />
+              Erfolgsgeschichten
+            </div>
             <h1 className="text-5xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-8 text-black">
               Erfolgsgeschichten unserer Kunden
             </h1>
@@ -37,35 +33,17 @@ export default function CaseStudiesIndex() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {caseStudies.map((study) => {
-              const Icon = iconMap[study.icon] || Shield;
-              return (
-                <Link 
-                  key={study.slug}
-                  href={`/case-studies/${study.slug}`} 
-                  className="group block p-10 rounded-3xl bg-gray-50 border border-gray-100/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all hover:-translate-y-1"
-                >
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-black">{study.company}</h3>
-                      <p className="text-sm text-gray-700">{study.category}</p>
-                    </div>
-                  </div>
-                  <h4 className="text-xl font-bold mb-4 text-black group-hover:text-primary transition-colors">
-                    {study.title}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed mb-8">
-                    {study.summary}
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
-                    Vollständige Case Study lesen <ArrowRight className="w-4 h-4" />
-                  </span>
-                </Link>
-              );
-            })}
+            {caseStudies.map((study) => (
+              <CaseStudyCard 
+                key={study.slug}
+                slug={study.slug}
+                company={study.company}
+                category={study.category}
+                title={study.title}
+                summary={study.summary}
+                iconName={study.icon}
+              />
+            ))}
           </div>
         </div>
       </main>

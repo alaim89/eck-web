@@ -1,7 +1,9 @@
 import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { ArrowLeft, CheckCircle2, ShieldCheck, AlertTriangle, Settings, TrendingUp } from "lucide-react";
+import { ArrowLeft, CheckCircle2, ShieldCheck, AlertTriangle, Settings, TrendingUp, Cpu } from "lucide-react";
+import { TechStack } from "@/components/TechStack";
+import { CTASection } from "@/components/CTASection";
 import Link from "next/link";
 
 export const metadata = getMetadata({
@@ -105,18 +107,18 @@ export default function CaseStudyBellaseno() {
                   Durch die priorisierte Maßnahmenplanung wurde eine nachhaltige Sicherheitsstruktur im Unternehmen etabliert, die sowohl regulatorische Anforderungen erfüllt als auch den Geschäftsbetrieb schützt.
                 </p>
               </section>
+
+              <TechStack technologies={["GAP-Analyse", "Risikomanagement", "BSI IT-Grundschutz", "Compliance", "Governance", "Security Strategy"]} />
             </div>
 
             <div className="space-y-8">
-              <div className="p-8 rounded-3xl bg-black text-white">
-                <h3 className="text-xl font-bold mb-4">Sicherheit für Ihr KMU?</h3>
-                <p className="text-gray-400 mb-6">
-                  Lassen Sie uns gemeinsam Ihre IT-Sicherheitslage analysieren und eine Strategie entwickeln, die zu Ihrem Unternehmen passt.
-                </p>
-                <Link href="/kontakt" className="block w-full py-4 bg-primary text-white text-center rounded-xl font-bold hover:bg-primary/90 transition-colors">
-                  Kostenlose IT-Einschätzung anfordern
-                </Link>
-              </div>
+              <CTASection 
+                variant="card"
+                title="Sicherheit für Ihr KMU?"
+                description="Lassen Sie uns gemeinsam Ihre IT-Sicherheitslage analysieren und eine Strategie entwickeln, die zu Ihrem Unternehmen passt."
+                buttonText="Kostenlose IT-Einschätzung anfordern"
+                buttonHref="/kontakt"
+              />
             </div>
           </div>
         </div>

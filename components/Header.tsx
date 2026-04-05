@@ -108,7 +108,7 @@ export function Header() {
           </a>
           <Link href="/kontakt" className="hover:text-black transition-colors">{t.nav.contact}</Link>
           
-          <Link href="/#contact" className="px-5 py-2.5 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors shadow-sm font-semibold">
+          <Link href="/#contact" className="px-5 py-2.5 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-all shadow-sm shadow-emerald-900/10 font-semibold active:scale-[0.98]">
             {t.nav.getAudit}
           </Link>
         </div>
@@ -157,7 +157,7 @@ export function Header() {
             {t.nav.customerPortal}
           </a>
           <Link href="/kontakt" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-semibold text-gray-900">{t.nav.contact}</Link>
-          <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full py-4 bg-black text-white text-center rounded-xl font-bold">
+          <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full py-4 bg-emerald-600 text-white text-center rounded-xl font-bold active:scale-[0.98]">
             {t.nav.getAudit}
           </Link>
         </div>
