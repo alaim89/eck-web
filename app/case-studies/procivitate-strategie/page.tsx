@@ -1,14 +1,22 @@
 import { getMetadata } from "@/lib/seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { ArrowLeft, CheckCircle2, Activity, AlertTriangle, Settings, TrendingUp, Cpu } from "lucide-react";
+import {
+  ArrowLeft,
+  CheckCircle2,
+  Activity,
+  AlertTriangle,
+  Settings,
+  TrendingUp,
+} from "lucide-react";
 import { TechStack } from "@/components/TechStack";
 import { CTASection } from "@/components/CTASection";
 import Link from "next/link";
 
 export const metadata = getMetadata({
-  title: "Case Study: Procivitate gGmbH - IT-Strategie & M365",
-  description: "Aufbau und Absicherung einer Microsoft-365-Umgebung mit klarer IT-Strategie für die Procivitate gGmbH.",
+  title: "Case Study: Procivitate gGmbH, Microsoft 365 sauber aufgebaut und abgesichert",
+  description:
+    "Wie eine Microsoft-365-Umgebung mit klarer Führung, sauberer Struktur und höherer Sicherheit aufgebaut und weiterentwickelt wurde.",
   canonical: "/case-studies/procivitate-strategie",
 });
 
@@ -16,11 +24,14 @@ export default function CaseStudyProcivitate() {
   return (
     <div className="min-h-screen bg-white text-black font-poppins selection:bg-primary/30">
       <Header />
-      
+
       <main className="pt-40 pb-32 px-6">
         <div className="max-w-[1000px] mx-auto">
-          <Link href="/case-studies" className="inline-flex items-center gap-2 text-primary font-semibold mb-12 hover:gap-3 transition-all">
-            <ArrowLeft className="w-4 h-4" /> Zurück zu den Case Studies
+          <Link
+            href="/case-studies"
+            className="inline-flex items-center gap-2 text-primary font-semibold mb-12 hover:gap-3 transition-all"
+          >
+            <ArrowLeft className="w-4 h-4" /> Zurück zu den Praxisbeispielen
           </Link>
 
           <div className="mb-16">
@@ -30,9 +41,16 @@ export default function CaseStudyProcivitate() {
               </div>
               <span className="text-gray-700 font-medium">Procivitate gGmbH</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-8 text-black">
-              Aufbau und Absicherung einer Microsoft-365-Umgebung mit klarer IT-Strategie
+
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-black">
+              Microsoft 365 sauber aufgebaut - mit klarer Führung, mehr Sicherheit und weniger Unklarheit im Alltag
             </h1>
+
+            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
+              Die Umgebung sollte moderner werden, die Zusammenarbeit einfacher und die Sicherheit
+              sauber aufgestellt. Das eigentliche Problem war aber nicht nur die Technik, sondern
+              fehlende Führung bei Entscheidungen, Struktur und Weiterentwicklung.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-12">
@@ -42,7 +60,10 @@ export default function CaseStudyProcivitate() {
                   <TrendingUp className="w-6 h-6 text-primary" /> Ausgangssituation
                 </h2>
                 <p className="text-gray-700 leading-relaxed text-lg">
-                  Das Unternehmen benötigte eine moderne IT-Infrastruktur auf Basis von Microsoft 365, um die Zusammenarbeit zu verbessern und gleichzeitig hohe Sicherheitsstandards zu erfüllen.
+                  Es wurde eine moderne Microsoft-365-Umgebung benötigt, die Zusammenarbeit,
+                  Verwaltung und Sicherheit sauber zusammenbringt. Gleichzeitig fehlte intern eine
+                  klare IT-Führung, um Entscheidungen strukturiert zu treffen und die Umgebung
+                  nachhaltig aufzubauen.
                 </p>
               </section>
 
@@ -53,15 +74,15 @@ export default function CaseStudyProcivitate() {
                 <ul className="space-y-4">
                   <li className="flex gap-3 text-gray-700 leading-relaxed text-lg">
                     <span className="text-red-500 font-bold">•</span>
-                    Fehlende IT-Leitung und strategische Ausrichtung.
+                    Es fehlte eine klare IT-Leitung, die technische Entscheidungen einordnet und sauber priorisiert.
                   </li>
                   <li className="flex gap-3 text-gray-700 leading-relaxed text-lg">
                     <span className="text-red-500 font-bold">•</span>
-                    Sicherheitsrisiken durch unzureichend konfigurierte Cloud-Dienste.
+                    Cloud-Dienste waren nicht durchgängig so konfiguriert, dass Sicherheit und Alltag sauber zusammenpassen.
                   </li>
                   <li className="flex gap-3 text-gray-700 leading-relaxed text-lg">
                     <span className="text-red-500 font-bold">•</span>
-                    Komplexität bei der Verwaltung von Benutzerrechten und Daten.
+                    Benutzerrechte, Daten und Richtlinien wurden zunehmend komplex und schwer überschaubar.
                   </li>
                 </ul>
               </section>
@@ -71,13 +92,19 @@ export default function CaseStudyProcivitate() {
                   <Settings className="w-6 h-6 text-primary" /> Umsetzung
                 </h2>
                 <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 space-y-4">
+                  <p className="text-gray-700 leading-relaxed">
+                    Die Microsoft-365-Umgebung wurde nicht nur technisch aufgebaut, sondern mit klarer
+                    Führung und nachvollziehbaren Entscheidungen strukturiert weiterentwickelt. So
+                    konnten Sicherheit, Verwaltung und tägliche Nutzung sauber zusammengeführt werden.
+                  </p>
+
                   <ul className="space-y-3">
                     {[
                       "Steuerung von Microsoft-365-Projekten als externe IT-Leitung",
-                      "Kontinuierliche Sicherheitsbewertungen und Härtung der Umgebung",
-                      "Strategische Beratung der Geschäftsleitung zu IT-Investitionen",
-                      "Implementierung von Compliance-Richtlinien für den Datenschutz",
-                      "Aufbau eines effizienten IT-Supports für die Mitarbeiter"
+                      "Kontinuierliche Sicherheitsbewertungen und gezielte Härtung der Umgebung",
+                      "Strategische Beratung der Geschäftsleitung bei IT-Entscheidungen und Investitionen",
+                      "Umsetzung von Compliance-Richtlinien für Datenschutz und sichere Zusammenarbeit",
+                      "Aufbau eines praxistauglichen IT-Supports für die Mitarbeiter",
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-3 text-gray-700">
                         <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
@@ -92,27 +119,47 @@ export default function CaseStudyProcivitate() {
                 <h2 className="text-2xl font-bold mb-4 text-black flex items-center gap-2 text-primary">
                   <CheckCircle2 className="w-6 h-6" /> Ergebnis
                 </h2>
+
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="p-6 rounded-2xl bg-primary/5 border border-primary/10">
-                    <h4 className="font-bold text-black mb-2">Strategie</h4>
-                    <p className="text-sm text-gray-700">Klare IT-Roadmap und fundierte Entscheidungen auf Management-Ebene.</p>
+                    <h4 className="font-bold text-black mb-2">Mehr Klarheit</h4>
+                    <p className="text-sm text-gray-700">
+                      Entscheidungen konnten fundierter getroffen werden, weil die IT strukturiert geführt wurde.
+                    </p>
                   </div>
+
                   <div className="p-6 rounded-2xl bg-primary/5 border border-primary/10">
-                    <h4 className="font-bold text-black mb-2">Sicherheit</h4>
-                    <p className="text-sm text-gray-700">Abgesicherte Cloud-Umgebung nach aktuellen Standards.</p>
+                    <h4 className="font-bold text-black mb-2">Mehr Sicherheit</h4>
+                    <p className="text-sm text-gray-700">
+                      Die Microsoft-365-Umgebung wurde sauber abgesichert und an aktuelle Anforderungen angepasst.
+                    </p>
                   </div>
                 </div>
+
+                <p className="mt-6 text-gray-700 leading-relaxed text-lg">
+                  Das Ergebnis ist eine Umgebung, die im Alltag besser funktioniert, sicherer aufgebaut
+                  ist und nicht mehr von Einzelentscheidungen oder Improvisation abhängt.
+                </p>
               </section>
 
-              <TechStack technologies={["Microsoft 365", "IT-Strategie", "IT-Leitung", "Compliance", "Security", "Cloud Security"]} />
+              <TechStack
+                technologies={[
+                  "Microsoft 365",
+                  "IT-Strategie",
+                  "Externe IT-Leitung",
+                  "Compliance",
+                  "Security",
+                  "Cloud Security",
+                ]}
+              />
             </div>
 
             <div className="space-y-8">
-              <CTASection 
+              <CTASection
                 variant="card"
-                title="IT-Strategie benötigt?"
-                description="Wir unterstützen Sie als externe IT-Leitung bei der strategischen Planung und operativen Umsetzung Ihrer IT-Projekte."
-                buttonText="Kostenlose IT-Einschätzung anfordern"
+                title="Fehlt bei Ihnen die klare IT-Führung?"
+                description="Wenn Entscheidungen liegen bleiben, Microsoft 365 gewachsen ist und niemand das Ganze sauber steuert, schauen wir uns das gemeinsam an."
+                buttonText="Kurz abstimmen"
                 buttonHref="/kontakt"
               />
             </div>
