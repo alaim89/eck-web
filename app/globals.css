@@ -2,5 +2,62 @@
 
 @theme {
   --color-primary: #005F6B;
+  --color-primary-dark: #004a54;
+  --color-primary-light: #f0f7f8;
+  
   --font-poppins: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-poppins antialiased text-slate-900 leading-relaxed bg-white selection:bg-primary/10 selection:text-primary;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-slate-900 tracking-tight;
+  }
+}
+
+@utility page-container {
+  @apply max-w-[1200px] mx-auto px-6;
+}
+
+@utility section-container {
+  @apply py-24 md:py-32;
+}
+
+@utility title-h1 {
+  @apply text-5xl md:text-7xl font-bold tracking-tighter leading-[1.05] text-slate-900;
+}
+
+@utility title-h2 {
+  @apply text-4xl md:text-5xl font-bold tracking-tight leading-[1.2] text-slate-900;
+}
+
+@utility title-h3 {
+  @apply text-2xl md:text-3xl font-bold tracking-tight text-slate-900;
+}
+
+@utility lead-text {
+  @apply text-lg md:text-xl text-slate-600 leading-relaxed font-light;
+}
+
+@utility body-text {
+  @apply text-base text-slate-700 leading-relaxed;
+}
+
+@utility surface-card {
+  @apply bg-white border border-slate-100 rounded-3xl shadow-sm transition-all duration-300 hover:shadow-xl hover:border-primary/10;
+}
+
+@utility brand-surface-subtle {
+  @apply bg-primary/[0.02] border-y border-primary/5;
+}
+
+@utility brand-surface-gradient {
+  @apply bg-gradient-to-br from-primary via-primary/95 to-primary-dark text-white;
+}
+
+@utility brand-link {
+  @apply text-primary font-semibold hover:text-primary-dark transition-colors inline-flex items-center gap-1;
 }
