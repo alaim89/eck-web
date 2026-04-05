@@ -37,6 +37,7 @@ const techIcons: Record<string, any> = {
   'Backup': Database,
   'Disaster Recovery': Activity,
   'Veeam': Database,
+  'Bacula': Database,
   'Sophos': Shield,
   'Firewall': Lock,
   'Endpoint Protection': Shield,
@@ -85,6 +86,7 @@ const techIcons: Record<string, any> = {
   'Risikomanagement': AlertTriangle,
   'Security Strategy': Shield,
   'Backup Strategy': Database,
+  'OpnSense': Shield,
 };
 
 export function TechStack({ technologies, title = "Technologien" }: TechStackProps) {

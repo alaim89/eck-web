@@ -49,7 +49,15 @@ export default function CaseStudyProcivitate() {
             <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
               Die Umgebung sollte moderner werden, die Zusammenarbeit einfacher und die Sicherheit
               sauber aufgestellt. Das eigentliche Problem war aber nicht nur die Technik, sondern
-              fehlende Führung bei Entscheidungen, Struktur und Weiterentwicklung.
+              fehlende Führung bei Entscheidungen, Struktur und Weiterentwicklung. Gerade in so einer
+              Situation braucht es nicht nur Tools, sondern eine klare{" "}
+              <Link
+                href="/microsoft-365-betreuung"
+                className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
+              >
+                Microsoft 365 Betreuung
+              </Link>
+              , die den Alltag wirklich entlastet.
             </p>
           </div>
 
@@ -85,6 +93,17 @@ export default function CaseStudyProcivitate() {
                     Benutzerrechte, Daten und Richtlinien wurden zunehmend komplex und schwer überschaubar.
                   </li>
                 </ul>
+
+                <p className="mt-6 text-gray-700 leading-relaxed text-lg">
+                  Wenn intern niemand technische Entscheidungen sauber priorisiert, braucht es oft einen{" "}
+                  <Link
+                    href="/externer-it-verantwortlicher"
+                    className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
+                  >
+                    externen IT-Verantwortlichen
+                  </Link>
+                  , der Struktur reinbringt und Verantwortung übernimmt.
+                </p>
               </section>
 
               <section>
@@ -96,6 +115,14 @@ export default function CaseStudyProcivitate() {
                     Die Microsoft-365-Umgebung wurde nicht nur technisch aufgebaut, sondern mit klarer
                     Führung und nachvollziehbaren Entscheidungen strukturiert weiterentwickelt. So
                     konnten Sicherheit, Verwaltung und tägliche Nutzung sauber zusammengeführt werden.
+                    Gerade in solchen Situationen ist eine saubere{" "}
+                    <Link
+                      href="/microsoft-365-betreuung"
+                      className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
+                    >
+                      Microsoft 365 Betreuung
+                    </Link>{" "}
+                    entscheidend.
                   </p>
 
                   <ul className="space-y-3">
@@ -138,7 +165,16 @@ export default function CaseStudyProcivitate() {
 
                 <p className="mt-6 text-gray-700 leading-relaxed text-lg">
                   Das Ergebnis ist eine Umgebung, die im Alltag besser funktioniert, sicherer aufgebaut
-                  ist und nicht mehr von Einzelentscheidungen oder Improvisation abhängt.
+                  ist und nicht mehr von Einzelentscheidungen oder Improvisation abhängt. Wenn dabei
+                  vor allem Sicherheit, Richtlinien und saubere Konfigurationen Thema sind, hilft eine
+                  klare{" "}
+                  <Link
+                    href="/it-sicherheitsbetreuung"
+                    className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
+                  >
+                    IT-Sicherheitsbetreuung
+                  </Link>
+                  .
                 </p>
               </section>
 
@@ -159,7 +195,7 @@ export default function CaseStudyProcivitate() {
                 variant="card"
                 title="Fehlt bei Ihnen die klare IT-Führung?"
                 description="Wenn Entscheidungen liegen bleiben, Microsoft 365 gewachsen ist und niemand das Ganze sauber steuert, schauen wir uns das gemeinsam an."
-                buttonText="Kurz abstimmen"
+                buttonText="Situation kurz einordnen"
                 buttonHref="/kontakt"
               />
             </div>

@@ -49,7 +49,15 @@ export default function CaseStudyInfrastructure() {
             <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
               Die bestehende Umgebung war über Jahre gewachsen. Vieles funktionierte, aber nur mit
               hohem manuellem Aufwand, verteilter Verantwortung und Plattformen, die nicht mehr sauber
-              zusammenpassten. Ziel war eine Infrastruktur, die konsistenter läuft und im Alltag besser beherrschbar ist.
+              zusammenpassten. Ziel war eine Infrastruktur, die konsistenter läuft und im Alltag besser
+              beherrschbar ist. Genau in solchen Situationen hilft eine saubere{" "}
+              <Link
+                href="/it-infrastruktur-betreuung"
+                className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
+              >
+                Betreuung der IT-Infrastruktur
+              </Link>
+              , die nicht nur Systeme verwaltet, sondern Struktur in den Betrieb bringt.
             </p>
           </div>
 
@@ -84,6 +92,18 @@ export default function CaseStudyInfrastructure() {
                     Es wurde eine moderne Virtualisierungslösung gebraucht, die stabil läuft und langfristig tragfähig ist.
                   </li>
                 </ul>
+
+                <p className="mt-6 text-gray-700 leading-relaxed text-lg">
+                  Wenn Plattformen gewachsen sind, vieles irgendwie läuft und jede Änderung mehr Aufwand
+                  erzeugt als nötig, braucht es oft einen{" "}
+                  <Link
+                    href="/externer-it-verantwortlicher"
+                    className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
+                  >
+                    externen IT-Verantwortlichen
+                  </Link>
+                  , der Entscheidungen bündelt und technische Richtung vorgibt.
+                </p>
               </section>
 
               <section>
@@ -94,6 +114,25 @@ export default function CaseStudyInfrastructure() {
                   <p className="text-gray-700 leading-relaxed">
                     Die Infrastruktur wurde konsolidiert, auf eine moderne Virtualisierungsbasis überführt
                     und zentrale Betriebsprozesse konsequent standardisiert und automatisiert.
+                  </p>
+
+                  <p className="text-gray-700 leading-relaxed">
+                    Die Umsetzung erfolgte direkt im Projektumfeld und in enger Abstimmung mit bestehenden
+                    Teams. In dieser Phase wurde gezielt Unterstützung eingebunden, um Konsolidierung,
+                    Automatisierung und Betrieb schnell zusammenzuführen, ohne laufende Abläufe unnötig
+                    zu stören.
+                  </p>
+
+                  <p className="text-gray-700 leading-relaxed">
+                    Besonders bei Standardisierung, Absicherung und langfristiger Betriebsfähigkeit zeigte
+                    sich, wie wichtig eine klare{" "}
+                    <Link
+                      href="/it-sicherheitsbetreuung"
+                      className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
+                    >
+                      IT-Sicherheitsbetreuung
+                    </Link>
+                    {" "}und eine saubere Betriebsstruktur sind.
                   </p>
 
                   <ul className="space-y-3">
@@ -134,7 +173,15 @@ export default function CaseStudyInfrastructure() {
 
                 <p className="mt-6 text-gray-700 leading-relaxed text-lg">
                   Das Ergebnis ist eine konsistentere Infrastruktur, die im Alltag besser beherrschbar ist,
-                  Änderungen sauberer zulässt und den laufenden Betriebsaufwand spürbar reduziert.
+                  Änderungen sauberer zulässt und den laufenden Betriebsaufwand spürbar reduziert. Genau
+                  dort zeigt sich, wie wichtig eine strukturierte{" "}
+                  <Link
+                    href="/it-infrastruktur-betreuung"
+                    className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
+                  >
+                    Infrastruktur-Betreuung
+                  </Link>
+                  {" "}ist, die nicht nur reagiert, sondern die Umgebung langfristig tragfähig macht.
                 </p>
               </section>
 
@@ -162,7 +209,7 @@ export default function CaseStudyInfrastructure() {
                 variant="card"
                 title="Ist Ihre Infrastruktur zu aufwendig geworden?"
                 description="Wenn im Betrieb zu viel manuell läuft, Plattformen gewachsen sind und Änderungen unnötig kompliziert werden, schauen wir uns das gemeinsam an."
-                buttonText="IT-Situation einschätzen"
+                buttonText="Kurz abstimmen"
                 buttonHref="/kontakt"
               />
             </div>

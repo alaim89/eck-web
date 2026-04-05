@@ -43,13 +43,21 @@ export default function CaseStudyITZBund() {
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-[1.1] mb-6 text-black">
-              Komplexe Linux-Applikationsplattform stabilisiert, im laufenden Betrieb und unter hohen Sicherheitsanforderungen
+              Komplexe Linux-Applikationsplattform stabilisiert - im laufenden Betrieb und unter hohen Sicherheitsanforderungen
             </h1>
 
             <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
               Die bestehende Plattform war über Jahre gewachsen und technisch anspruchsvoll. Ziel war es,
               den Betrieb zuverlässig abzusichern, kritische Systeme kontrolliert weiterzuentwickeln und
-              Migrationen umzusetzen, ohne die Stabilität der produktiven Umgebung zu gefährden.
+              Migrationen umzusetzen, ohne die Stabilität der produktiven Umgebung zu gefährden. Genau in
+              solchen Situationen braucht es eine saubere{" "}
+              <Link
+                href="/it-infrastruktur-betreuung"
+                className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
+              >
+                Betreuung komplexer IT-Infrastrukturen
+              </Link>
+              , die nicht nur auf einzelne Systeme schaut, sondern auf das Ganze.
             </p>
           </div>
 
@@ -85,6 +93,18 @@ export default function CaseStudyITZBund() {
                     Gleichzeitig mussten strenge Sicherheitsvorgaben eingehalten und Härtungsmaßnahmen konsequent umgesetzt werden.
                   </li>
                 </ul>
+
+                <p className="mt-6 text-gray-700 leading-relaxed text-lg">
+                  Wenn Plattformen so gewachsen sind, dass Änderungen sofort Abstimmung, Risiko und
+                  Unsicherheit erzeugen, braucht es oft einen{" "}
+                  <Link
+                    href="/externer-it-verantwortlicher"
+                    className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
+                  >
+                    externen IT-Verantwortlichen
+                  </Link>
+                  , der Prioritäten setzt und die technische Richtung sauber führt.
+                </p>
               </section>
 
               <section>
@@ -95,7 +115,15 @@ export default function CaseStudyITZBund() {
                   <p className="text-gray-700 leading-relaxed">
                     Die Plattform wurde im laufenden Betrieb stabilisiert, technisch weiterentwickelt und
                     gezielt gehärtet. Dabei lag der Fokus nicht nur auf dem Betrieb selbst, sondern auch auf
-                    sauberer Migration, Performance und nachvollziehbaren Prozessen.
+                    sauberer Migration, Performance und nachvollziehbaren Prozessen. Besonders bei
+                    Sicherheitsvorgaben und Härtung war eine klare{" "}
+                    <Link
+                      href="/it-sicherheitsbetreuung"
+                      className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
+                    >
+                      IT-Sicherheitsbetreuung
+                    </Link>{" "}
+                    entscheidend.
                   </p>
 
                   <ul className="space-y-3">
@@ -138,7 +166,15 @@ export default function CaseStudyITZBund() {
 
                 <p className="mt-6 text-gray-700 leading-relaxed text-lg">
                   Das Ergebnis ist eine belastbare Applikationsplattform, die im laufenden Betrieb besser
-                  beherrschbar ist, höhere Anforderungen sauber abbildet und gleichzeitig den Sicherheitsvorgaben gerecht wird.
+                  beherrschbar ist, höhere Anforderungen sauber abbildet und gleichzeitig den
+                  Sicherheitsvorgaben gerecht wird. Genau dort zeigt sich, wie wichtig eine strukturierte{" "}
+                  <Link
+                    href="/it-infrastruktur-betreuung"
+                    className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
+                  >
+                    Infrastruktur-Betreuung
+                  </Link>{" "}
+                  ist, die nicht nur reagiert, sondern das Gesamtsystem stabil hält.
                 </p>
               </section>
 
