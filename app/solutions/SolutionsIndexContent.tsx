@@ -4,7 +4,18 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CTASection } from "@/components/CTASection";
 import { solutionsData } from "@/lib/solutions-data";
-import { ArrowRight, ChevronRight, ShieldCheck, Zap, Activity, Lock, Cpu, Server, Database, Cloud, Settings, Headset } from "lucide-react";
+import {
+  ChevronRight,
+  ShieldCheck,
+  Zap,
+  Activity,
+  Lock,
+  Cpu,
+  Server,
+  Database,
+  Cloud,
+  Settings,
+} from "lucide-react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { useLanguage } from "@/context/LanguageContext";
@@ -27,11 +38,12 @@ const iconMap: Record<string, any> = {
   "it-risiko-audit": ShieldCheck,
   "strategische-it-betreuung": Cpu,
   "microsoft-365-compliance-betreuung": Lock,
-  "it-governance-risikomanagement": ShieldCheck
+  "it-governance-risikomanagement": ShieldCheck,
 };
 
 export default function SolutionsIndexContent() {
   const { t } = useLanguage();
+
   const featuredSlugs = [
     "managed-it-service",
     "externer-it-verantwortlicher",
@@ -50,15 +62,17 @@ export default function SolutionsIndexContent() {
     "hybrid-cloud-transformation",
     "it-projekte-mit-slas",
     "microsoft-365-compliance-betreuung",
-    "it-governance-risikomanagement"
+    "it-governance-risikomanagement",
   ];
 
-  const slugs = Object.keys(solutionsData).filter(slug => featuredSlugs.includes(slug));
+  const slugs = Object.keys(solutionsData).filter((slug) =>
+    featuredSlugs.includes(slug)
+  );
 
   return (
     <div className="min-h-screen bg-white font-sans text-black selection:bg-primary/20">
       <Header />
-      
+
       <main className="pt-24 md:pt-32">
         {/* Hero Section */}
         <section className="py-20 md:py-32 px-6 bg-gray-50 border-b border-gray-100">
@@ -67,23 +81,47 @@ export default function SolutionsIndexContent() {
               <span className="w-2 h-2 rounded-full bg-primary"></span>
               {t.nav.solutions}
             </div>
+
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1]">
-              Maßgeschneiderte IT-Lösungen für Ihren Erfolg
+              IT-Lösungen für Unternehmen,
+              <br />
+              deren Systeme nicht einfach nur laufen sollen
             </h1>
+
             <p className="text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Wir bieten ein breites Spektrum an IT-Services, die darauf ausgelegt sind, Ihre Infrastruktur zu stabilisieren, Ihre Sicherheit zu erhöhen und Ihr Wachstum zu fördern.
+              Wenn IT gewachsen ist, Projekte festhängen oder der Betrieb zu viel
+              Reibung erzeugt, braucht es keine weitere Folie. Sondern eine klare
+              Lösung, die Sicherheit, Struktur und Alltag wieder zusammenbringt.
             </p>
+
+            <Link
+              href="/kontakt"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all font-semibold text-lg shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5"
+            >
+              Situation kurz einordnen <ChevronRight className="w-5 h-5" />
+            </Link>
           </div>
         </section>
 
         {/* Solutions Grid */}
         <section className="py-24 px-6">
           <div className="max-w-[1200px] mx-auto">
+            <div className="max-w-3xl mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Typische Situationen, in denen ich unterstütze
+              </h2>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                Nicht alles ist ein großes Transformationsprojekt. Oft geht es
+                darum, gewachsene Strukturen wieder beherrschbar zu machen,
+                Risiken sichtbar zu bekommen und den Betrieb sauber aufzustellen.
+              </p>
+            </div>
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {slugs.map((slug, i) => {
                 const solution = solutionsData[slug as keyof typeof solutionsData];
                 const Icon = iconMap[slug] || Activity;
-                
+
                 return (
                   <motion.div
                     key={slug}
@@ -92,19 +130,24 @@ export default function SolutionsIndexContent() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05 }}
                   >
-                    <Link 
+                    <Link
                       href={`/solutions/${slug}`}
                       className="group block h-full p-8 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
                     >
                       <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">{solution.title}</h3>
+
+                      <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">
+                        {solution.title}
+                      </h3>
+
                       <p className="text-gray-600 mb-8 line-clamp-3 leading-relaxed">
                         {solution.description}
                       </p>
+
                       <div className="mt-auto flex items-center gap-2 text-primary font-bold text-sm">
-                        IT-Check starten <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        Mehr dazu <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </Link>
                   </motion.div>
@@ -112,26 +155,29 @@ export default function SolutionsIndexContent() {
               })}
             </div>
 
-            <div className="mt-10 text-center">
+            <div className="mt-12 text-center">
               <p className="text-gray-700 mb-3 font-medium">
-                Kommt Ihnen das bekannt vor?
+                Klingt nach Ihrer Situation?
               </p>
-              <Link href="/kontakt" className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-all active:scale-[0.98] shadow-lg shadow-primary/20">
-                Jetzt IT-Check anfordern
+              <Link
+                href="/kontakt"
+                className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-all active:scale-[0.98] shadow-lg shadow-primary/20"
+              >
+                Einmal gemeinsam draufschauen
               </Link>
             </div>
           </div>
         </section>
 
         {/* Final CTA */}
-        <CTASection 
-          title="Nicht sicher, was Sie brauchen?"
-          description="Lassen Sie uns gemeinsam Ihre IT-Infrastruktur analysieren und die beste Strategie für Ihr Unternehmen entwickeln."
-          buttonText="Kostenlose IT-Einschätzung anfordern"
+        <CTASection
+          title="Nicht sicher, wo Sie anfangen sollen?"
+          description="Oft reichen 15–30 Minuten, um zu sehen, wo es wirklich hakt und was zuerst angegangen werden sollte."
+          buttonText="Kurz abstimmen"
           buttonHref="/kontakt"
         />
       </main>
-      
+
       <Footer />
     </div>
   );

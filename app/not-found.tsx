@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { ArrowRight, Home, Terminal, Search, ShieldCheck } from "lucide-react";
 
 export const metadata = getMetadata({
-  title: "404 – Seite nicht gefunden",
+  title: "404 - Seite nicht gefunden",
   description: "Die angeforderte Seite konnte nicht gefunden werden. Wir bringen Sie zurück auf den richtigen Pfad.",
   robots: { index: false },
 });
@@ -24,7 +24,7 @@ export default function NotFound() {
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 leading-[1.1] text-black">
-            404 – Diese Route existiert nicht
+            404 - Diese Route existiert nicht
           </h1>
           
           <p className="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed max-w-2xl mx-auto">

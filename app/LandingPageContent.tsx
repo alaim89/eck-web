@@ -24,28 +24,28 @@ import { getFaqSchema } from "@/lib/seo";
 const HERO_VARIANTS = [
   {
     subline: "Hands-on Architektur für den Mittelstand. Ich stabilisiere festgefahrene Cloud- und Infrastrukturprojekte und bringe kritische Systeme wieder auf Kurs.",
-    primaryCTA: { text: "Kostenlose IT-Einschätzung anfordern", href: "https://outlook.office.com/book/EcksolutionITService@ecksolution-it.de/?ismsaljsauthenabled" },
+    primaryCTA: { text: "Klarheit über Ihre IT bekommen", href: "https://outlook.office.com/book/EcksolutionITService@ecksolution-it.de/?ismsaljsauthenabled" },
     secondaryCTA: { text: "Erstgespräch sichern", href: "/solutions" },
     visualType: "monitoring" as const
   },
   {
-    subline: "Von gewachsenen Strukturen zu sauberer Architektur: Ich begleite Migrationen, Modernisierung und technische Neuausrichtung mit Fokus auf Sicherheit und Skalierbarkeit.",
-    primaryCTA: { text: "IT-Check starten", href: "/kontakt" },
-    secondaryCTA: { text: "Referenzen ansehen", href: "/case-studies" },
+    subline: "Das Problem ist selten die Technik. Sondern fehlende Struktur und Entscheidungen. Ich bringe beides zusammen und sorge dafür, dass Ihre IT wieder kontrollierbar wird.",
+    primaryCTA: { text: "Kurz abstimmen", href: "/kontakt" },
+    secondaryCTA: { text: "Einblicke ansehen", href: "/case-studies" },
     visualType: "architecture" as const
   },
   {
-    subline: "Ich übernehme Verantwortung für stabile, sichere und skalierbare IT-Infrastrukturen - proaktiv, strukturiert und mit direktem Blick auf den operativen Betrieb.",
-    primaryCTA: { text: "IT-Check starten", href: "/kontakt" },
-    secondaryCTA: { text: "Referenzen ansehen", href: "/case-studies" },
+    subline: "Die meisten IT-Systeme laufen. Aber nur mit Aufwand. Ich bringe Struktur rein und sorge dafür, dass Betrieb, Sicherheit und Weiterentwicklung wieder zusammenpassen.",
+    primaryCTA: { text: "Kurz draufschauen", href: "/kontakt" },
+    secondaryCTA: { text: "Praxisbeispiele ansehen", href: "/case-studies" },
     visualType: "health" as const
   },
   {
-    subline: "Ich löse Blockaden in Microsoft-Cloud-Projekten, schaffe belastbare Strukturen und unterstütze Unternehmen bei einer nachhaltigen technischen Weiterentwicklung.",
-    primaryCTA: { text: "Kostenlose IT-Einschätzung anfordern", href: "/kontakt" },
-    secondaryCTA: { text: "IT-Check starten", href: "/solutions" },
+    subline: "Wenn Migrationen oder Cloud-Projekte feststecken, liegt es selten an der Technik. Ich gehe operativ rein, bringe Struktur rein und sorge dafür, dass es wieder vorwärts geht.",
+    primaryCTA: { text: "Kurz abstimmen", href: "/kontakt" },
+    secondaryCTA: { text: "So gehe ich vor", href: "/solutions" },
     visualType: "cloud" as const
-  }
+  },
 ];
 
 export default function LandingPageContent() {
@@ -229,19 +229,155 @@ export default function LandingPageContent() {
           </div>
         </section>
 
+        {/* Social Proof / Trust Bar — final refined */}
+        <section className="relative py-12 border-y border-gray-100 bg-white overflow-hidden">
+          {/* subtle grid background */}
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+            <div
+              className="w-full h-full"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.1) 1px, transparent 1px)",
+                backgroundSize: "28px 28px",
+              }}
+            />
+          </div>
 
-        {/* Social Proof / Trust Bar */}
-        <section className="py-12 border-y border-gray-50 bg-gray-50/30">
-          <div className="max-w-[1200px] mx-auto px-6">
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-              {/* Placeholder for partner logos - using text for professional look */}
-              <div className="text-xl font-bold tracking-tighter">MICROSOFT PARTNER</div>
-              <div className="text-xl font-bold tracking-tighter">LENOVO TECHNOLOGIES</div>
-              <div className="text-xl font-bold tracking-tighter">IONOS AGENCY Partner</div>
-              <div className="text-xl font-bold tracking-tighter">VEEAM SOFTWARE</div>
-              <div className="text-xl font-bold tracking-tighter">SOPHOS PARTNER</div>
-              <div className="text-xl font-bold tracking-tighter">ALLIANZ FÜR CYBER-SICHERHEIT</div>
+          <div className="relative max-w-[1120px] mx-auto px-6">
+            
+            {/* Intro */}
+            <div className="max-w-3xl mb-10 mx-auto text-center">
+              <p className="text-xs uppercase tracking-[0.18em] text-primary font-semibold mb-3">
+                Stack im Einsatz
+              </p>
+
+              <p className="text-gray-900 text-[1.05rem] md:text-[1.35rem] leading-relaxed font-medium max-w-3xl mx-auto">
+                Das ist die Infrastruktur, mit der ich arbeite - im{" "}
+                <Link
+                  href="/solutions/microsoft-365-migration"
+                  className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
+                >
+                  Betrieb
+                </Link>
+                , in{" "}
+                <Link
+                  href="/solutions/azure-hybrid-betreuung"
+                  className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
+                >
+                  Migrationen
+                </Link>{" "}
+                und wenn es kritisch wird.
+              </p>
             </div>
+
+            {/* Cards */}
+            <div className="grid md:grid-cols-3 gap-4">
+              
+              {/* Card 1 */}
+              <div className="rounded-3xl border border-gray-200/80 bg-white/95 backdrop-blur-sm p-5 shadow-[0_10px_28px_rgba(0,0,0,0.035)]">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                    <Cpu className="w-5 h-5 text-primary" />
+                  </div>
+                  <Link
+                    href="/solutions/hybrid-cloud-transformation"
+                    className="text-xs uppercase tracking-[0.16em] text-gray-500 font-semibold hover:text-primary transition-colors"
+                  >
+                    Cloud & Collaboration
+                  </Link>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {["Microsoft", "Azure", "M365", "AvePoint"].map((item, index) => (
+                    <span
+                      key={item}
+                      className={
+                        index === 1 || index === 2
+                          ? "inline-flex items-center rounded-xl border border-primary/20 bg-primary/5 px-3 py-2 text-sm font-medium text-primary"
+                          : "inline-flex items-center rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-700"
+                      }
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="rounded-3xl border border-gray-200/80 bg-white/95 backdrop-blur-sm p-5 shadow-[0_10px_28px_rgba(0,0,0,0.035)]">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                    <ShieldAlert className="w-5 h-5 text-primary" />
+                  </div>
+                  <Link
+                    href="/solutions/it-sicherheit"
+                    className="text-xs uppercase tracking-[0.16em] text-gray-500 font-semibold hover:text-primary transition-colors"
+                  >
+                    Security & Backup
+                  </Link>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {["Veeam", "Bacula", "Borg", "Sophos", "OPNsense", "Acronis"].map((item, index) => (
+                    <span
+                      key={item}
+                      className={
+                        index === 0 || index === 3
+                          ? "inline-flex items-center rounded-xl border border-primary/20 bg-primary/5 px-3 py-2 text-sm font-medium text-primary"
+                          : "inline-flex items-center rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-700"
+                      }
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Card 3 */}
+              <div className="rounded-3xl border border-gray-200/80 bg-white/95 backdrop-blur-sm p-5 shadow-[0_10px_28px_rgba(0,0,0,0.035)]">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                    <Settings className="w-5 h-5 text-primary" />
+                  </div>
+                  <Link
+                    href="/solutions/netzwerk-management"
+                    className="text-xs uppercase tracking-[0.16em] text-gray-500 font-semibold hover:text-primary transition-colors"
+                  >
+                    Infrastruktur & Netzwerk
+                  </Link>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {["Red Hat", "Ubuntu", "MikroTik", "HPE Aruba"].map((item, index) => (
+                    <span
+                      key={item}
+                      className={
+                        index === 0 || index === 1
+                          ? "inline-flex items-center rounded-xl border border-primary/20 bg-primary/5 px-3 py-2 text-sm font-medium text-primary"
+                          : "inline-flex items-center rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-700"
+                      }
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Row */}
+            <div className="mt-6 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+              <p className="text-sm text-gray-500">
+                Mitglied in der Allianz für Cybersicherheit.
+              </p>
+
+              <Link
+                href="/kontakt"
+                className="text-sm text-primary font-semibold underline underline-offset-4 hover:no-underline"
+              >
+                Mehr zur Sicherheitsbetreuung
+              </Link>
+            </div>
+
           </div>
         </section>
 
@@ -288,8 +424,11 @@ export default function LandingPageContent() {
               <p className="text-gray-700 mb-3 font-medium">
                 Kommt Ihnen das bekannt vor?
               </p>
-              <Link href="/kontakt" className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-all active:scale-[0.98] shadow-lg shadow-primary/20">
-                Jetzt IT-Check anfordern
+              <Link 
+                href="/kontakt" 
+                className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-all active:scale-[0.98] shadow-lg shadow-primary/20"
+              >
+                Lassen Sie uns kurz draufschauen
               </Link>
             </div>
           </div>
@@ -458,6 +597,7 @@ export default function LandingPageContent() {
               </div>
 
               <div className="flex items-end gap-1 h-10">
+                <span className="w-2 h-[15%] rounded-full bg-primary/20" />
                 <span className="w-2 h-[35%] rounded-full bg-primary/20" />
                 <span className="w-2 h-[52%] rounded-full bg-primary/30" />
                 <span className="w-2 h-[42%] rounded-full bg-primary/40" />
@@ -609,7 +749,7 @@ export default function LandingPageContent() {
                   <h3 className="text-xl font-bold mb-4 text-black">{service.title}</h3>
                   <p className="text-gray-600 leading-relaxed mb-8 flex-grow opacity-90">{service.description}</p>
                   <div className="flex items-center gap-2 text-primary font-bold text-sm">
-                    IT-Check starten <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    Schauen wir uns Ihre IT kurz an <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
               ))}
@@ -629,7 +769,7 @@ export default function LandingPageContent() {
                 Kommt Ihnen das bekannt vor?
               </p>
               <Link href="/kontakt" className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-all active:scale-[0.98] shadow-lg shadow-primary/20">
-                Jetzt IT-Check anfordern
+                Einmal gemeinsam draufschauen
               </Link>
             </div>
           </div>

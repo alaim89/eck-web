@@ -85,6 +85,24 @@ const BLOG_POSTS = {
       </p>
     `
   }
+    "entra-join-vpn-abloesen": {
+    title: "Managed Services vs. Inhouse-IT: Die richtige Balance finden",
+    date: "05. März 2024",
+    readTime: "7 min",
+    author: "Andreas Eckert",
+    category: "Strategie",
+    image: "https://picsum.photos/seed/strategy/1200/600",
+    content: `
+      <p className="text-xl font-medium text-gray-900 mb-8 leading-relaxed">
+        Die Frage ist nicht "Entweder-oder", sondern "Wie viel von beidem?". Ein hybrider Ansatz kombiniert internes Domänenwissen mit externer Spezialisierung.
+      </p>
+      
+      <h2 className="text-3xl font-bold text-black mt-16 mb-8 tracking-tight">Vorteile von Managed Services</h2>
+      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+        Planbare Kosten, 24/7 Verfügbarkeit und Zugriff auf Expertenwissen, das man intern kaum vorhalten kann.
+      </p>
+    `
+  }
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
