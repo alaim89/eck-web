@@ -84,22 +84,45 @@ const BLOG_POSTS = {
         Planbare Kosten, 24/7 Verfügbarkeit und Zugriff auf Expertenwissen, das man intern kaum vorhalten kann.
       </p>
     `
-  }
-    "entra-join-vpn-abloesen": {
-    title: "Managed Services vs. Inhouse-IT: Die richtige Balance finden",
-    date: "05. März 2024",
-    readTime: "7 min",
+  },
+  "entra-join-vpn-abloesen": {
+    title: "Weg mit dem VPN: Warum „Entra Join Only“ der neue Standard ist",
+    date: "28. März 2024",
+    readTime: "6 min",
     author: "Andreas Eckert",
-    category: "Strategie",
-    image: "https://picsum.photos/seed/strategy/1200/600",
+    category: "Cloud & Infrastruktur",
+    image: "https://picsum.photos/seed/network/1200/600",
     content: `
       <p className="text-xl font-medium text-gray-900 mb-8 leading-relaxed">
-        Die Frage ist nicht "Entweder-oder", sondern "Wie viel von beidem?". Ein hybrider Ansatz kombiniert internes Domänenwissen mit externer Spezialisierung.
+        Viele Unternehmen arbeiten noch immer mit VPN-Zugängen, nur um auf Systeme zuzugreifen oder Updates zu verteilen. Das funktioniert – aber es bremst.
       </p>
       
-      <h2 className="text-3xl font-bold text-black mt-16 mb-8 tracking-tight">Vorteile von Managed Services</h2>
+      <h2 className="text-3xl font-bold text-black mt-16 mb-8 tracking-tight">Was bedeutet „Entra Join Only“?</h2>
       <p className="text-gray-700 text-lg leading-relaxed mb-8">
-        Planbare Kosten, 24/7 Verfügbarkeit und Zugriff auf Expertenwissen, das man intern kaum vorhalten kann.
+        Statt Geräte in ein klassisches Firmennetz einzubinden, werden sie direkt in die Cloud integriert. Eine saubere hybride IT-Infrastruktur ist dafür die Grundlage.
+      </p>
+      
+      <ul className="space-y-4 text-gray-700 mb-12">
+        <li className="flex gap-3"><span className="text-primary font-bold">•</span> Keine lokalen Server-Abhängigkeiten</li>
+        <li className="flex gap-3"><span className="text-primary font-bold">•</span> Zentrale Verwaltung über Entra ID</li>
+        <li className="flex gap-3"><span className="text-primary font-bold">•</span> Richtlinien & Updates direkt aus der Cloud</li>
+      </ul>
+
+      <h2 className="text-3xl font-bold text-black mt-16 mb-8 tracking-tight">Die wichtigsten Vorteile</h2>
+      <div className="grid md:grid-cols-2 gap-8 my-12">
+        <div className="p-8 rounded-3xl bg-gray-50 border border-gray-100">
+          <h3 className="text-xl font-bold mb-4 text-black">Arbeiten ohne VPN</h3>
+          <p className="text-gray-600">Kein Einwählen mehr. Kein „VPN ist langsam“. Zugriff und Updates laufen direkt über die Cloud.</p>
+        </div>
+        <div className="p-8 rounded-3xl bg-gray-50 border border-gray-100">
+          <h3 className="text-xl font-bold mb-4 text-black">Mehr Sicherheit</h3>
+          <p className="text-gray-600">Geräte sind nicht mehr Teil eines flachen Netzwerks. Zugriff basiert auf Identität und Zustand (Zero Trust).</p>
+        </div>
+      </div>
+
+      <h2 className="text-3xl font-bold text-black mt-16 mb-8 tracking-tight">Fazit</h2>
+      <p className="text-gray-700 text-lg leading-relaxed mb-8">
+        VPN war lange Standard. Heute ist es oft eher ein Umweg. Mit Entra Join verschiebt sich der Fokus: von Netzwerken hin zu Identität, Struktur und Kontrolle.
       </p>
     `
   }

@@ -9,6 +9,16 @@ import { Footer } from "@/components/Footer";
 
 const BLOG_POSTS = [
   {
+    slug: "entra-join-vpn-abloesen",
+    title: "Weg mit dem VPN: Warum „Entra Join Only“ der neue Standard ist",
+    excerpt: "Warum klassische VPN-Lösungen ausbremsen und wie Microsoft Entra Join Unternehmen sicherer, flexibler und wartungsärmer macht.",
+    date: "28. März 2024",
+    readTime: "6 min",
+    author: "Andreas Eckert",
+    category: "Cloud & Infrastruktur",
+    image: "https://picsum.photos/seed/network/800/500"
+  },
+  {
     slug: "cloud-migration-mittelstand-2024",
     title: "Cloud-Migration für den Mittelstand: Ein Leitfaden für 2024",
     excerpt: "Erfahren Sie, wie mittelständische Unternehmen den Umstieg in die Cloud sicher und kosteneffizient gestalten können, ohne den laufenden Betrieb zu gefährden.",
