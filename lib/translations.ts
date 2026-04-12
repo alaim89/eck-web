@@ -189,7 +189,7 @@ export const translations = {
       cards: [
         { metric: "< 2h", label: "Reaktion, wenn es wirklich kritisch ist", variant: "primary" },
         { metric: "24/7", label: "Überblick über kritische Systeme", variant: "secondary" },
-        { metric: "direkt", label: "kein Ticketsystem, kein Weiterreichen", variant: "secondary" },
+        { metric: "strukturiert", label: "Ticketsystem mit klarer Zuständigkeit", variant: "secondary" },
         { metric: "klar", label: "Verantwortung liegt bei einer Person", variant: "status" },
       ],
     },
