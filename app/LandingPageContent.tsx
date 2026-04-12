@@ -129,7 +129,7 @@ export default function LandingPageContent() {
                 <span className="text-slate-400">stabilisieren und skalieren.</span>
               </h1>
 
-              <div className="relative h-[120px] md:h-[100px] mb-12">
+              <div className="relative min-h-[160px] md:min-h-[145px] mb-12">
                 <AnimatePresence mode="wait">
                   <motion.p 
                     key={`subline-${currentVariant}`}
