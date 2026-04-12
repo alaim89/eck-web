@@ -53,6 +53,13 @@ export default function LandingPageContent() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [currentVariant, setCurrentVariant] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [activeStack, setActiveStack] = useState(0);
+
+  const activeTagClass =
+    "inline-flex items-center rounded-xl border border-primary/20 bg-primary/5 px-3 py-2 text-sm font-medium text-primary transition-all duration-700";
+
+  const inactiveTagClass =
+    "inline-flex items-center rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-700 transition-all duration-700";
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const nextVariant = useCallback(() => {
@@ -71,6 +78,14 @@ export default function LandingPageContent() {
       if (timerRef.current) clearInterval(timerRef.current);
     };
   }, [isPaused, nextVariant]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStack((prev) => (prev + 1) % 2);
+    }, 15000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleInteraction = () => {
     setIsPaused(true);
@@ -288,18 +303,21 @@ export default function LandingPageContent() {
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  {["Microsoft", "Azure", "M365", "AvePoint"].map((item, index) => (
-                    <span
-                      key={item}
-                      className={
-                        index === 1 || index === 2
-                          ? "inline-flex items-center rounded-xl border border-primary/20 bg-primary/5 px-3 py-2 text-sm font-medium text-primary"
-                          : "inline-flex items-center rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-700"
-                      }
-                    >
-                      {item}
-                    </span>
-                  ))}
+                  {["Microsoft", "Azure", "M365", "AvePoint"].map((item, index) => {
+                    const isActive =
+                      activeStack === 0
+                        ? index === 1 || index === 2
+                        : index === 0 || index === 3;
+
+                    return (
+                      <span
+                        key={item}
+                        className={isActive ? activeTagClass : inactiveTagClass}
+                      >
+                        {item}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -318,18 +336,21 @@ export default function LandingPageContent() {
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  {["Veeam", "Bacula", "Borg", "Sophos", "OPNsense", "Acronis"].map((item, index) => (
-                    <span
-                      key={item}
-                      className={
-                        index === 0 || index === 3
-                          ? "inline-flex items-center rounded-xl border border-primary/20 bg-primary/5 px-3 py-2 text-sm font-medium text-primary"
-                          : "inline-flex items-center rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-700"
-                      }
-                    >
-                      {item}
-                    </span>
-                  ))}
+                  {["Veeam", "Bacula", "Borg", "Sophos", "OPNsense", "Acronis"].map((item, index) => {
+                    const isActive =
+                      activeStack === 0
+                        ? index === 0 || index === 3
+                        : index === 4 || index === 5;
+
+                    return (
+                      <span
+                        key={item}
+                        className={isActive ? activeTagClass : inactiveTagClass}
+                      >
+                        {item}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -348,18 +369,21 @@ export default function LandingPageContent() {
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  {["Red Hat", "Ubuntu", "MikroTik", "HPE Aruba"].map((item, index) => (
-                    <span
-                      key={item}
-                      className={
-                        index === 0 || index === 1
-                          ? "inline-flex items-center rounded-xl border border-primary/20 bg-primary/5 px-3 py-2 text-sm font-medium text-primary"
-                          : "inline-flex items-center rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-700"
-                      }
-                    >
-                      {item}
-                    </span>
-                  ))}
+                  {["Red Hat", "Ubuntu", "MikroTik", "HPE Aruba"].map((item, index) => {
+                    const isActive =
+                      activeStack === 0
+                        ? index === 0 || index === 1
+                        : index === 2 || index === 3;
+
+                    return (
+                      <span
+                        key={item}
+                        className={isActive ? activeTagClass : inactiveTagClass}
+                      >
+                        {item}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             </div>
