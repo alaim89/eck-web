@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { redirect } from 'next/navigation'
 import { isAdminAuthDisabled } from '@/lib/iam/auth'
 
 const errorMessages: Record<string, string> = {
@@ -13,23 +13,12 @@ export default async function AdminLoginPage({
 }: {
   searchParams: Promise<{ error?: string }>
 }) {
+  if (isAdminAuthDisabled()) {
+    redirect('/admin')
+  }
+
   const params = await searchParams
   const error = params.error ? errorMessages[params.error] || 'Anmeldung fehlgeschlagen.' : null
-  const authDisabled = isAdminAuthDisabled()
-
-  if (authDisabled) {
-    return (
-      <main className="mx-auto max-w-2xl px-6 py-20">
-        <h1 className="text-2xl font-semibold">Admin Login temporär deaktiviert</h1>
-        <p className="mt-3 text-sm text-gray-600">
-          Der Login ist per <code>ADMIN_AUTH_DISABLED=true</code> übergangsweise ausgeschaltet.
-        </p>
-        <Link href="/admin" className="mt-6 inline-flex rounded-md bg-primary px-4 py-2 text-sm font-medium text-white">
-          Direkt zum Admin-Bereich
-        </Link>
-      </main>
-    )
-  }
 
   return (
     <main className="mx-auto max-w-2xl px-6 py-20">
