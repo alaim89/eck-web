@@ -6,13 +6,6 @@ import { useEffect, useState } from 'react';
 import { getStoredConsent, CookieConsent } from '@/lib/cookie-consent';
 import { getGtagConsentState } from '@/lib/consent-manager';
 
-declare global {
-  interface Window {
-    dataLayer: unknown[];
-    gtag: (...args: unknown[]) => void;
-  }
-}
-
 function gtagPush(...args: unknown[]) {
   if (typeof window === 'undefined') return;
   window.dataLayer = window.dataLayer ?? [];

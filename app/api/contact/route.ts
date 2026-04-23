@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { z } from 'zod';
+import { logger } from '@/lib/logger';
 
 // In-memory rate limit: max 5 submissions per IP per hour
 const RATE_WINDOW_MS = 60 * 60 * 1000;
@@ -42,6 +43,7 @@ export async function POST(req: NextRequest) {
   const ip = forwarded ? forwarded.split(',')[0].trim() : 'unknown';
 
   if (!checkRateLimit(ip)) {
+    logger.warn('contact.rate_limited', { ip });
     return NextResponse.json(
       { error: 'Zu viele Anfragen. Bitte versuchen Sie es in einer Stunde erneut.' },
       { status: 429 },
@@ -52,12 +54,14 @@ export async function POST(req: NextRequest) {
   try {
     body = await req.json();
   } catch {
+    logger.warn('contact.invalid_json', { ip });
     return NextResponse.json({ error: 'Ungültige Anfrage.' }, { status: 400 });
   }
 
   const result = contactSchema.safeParse(body);
   if (!result.success) {
     const first = result.error.issues[0];
+    logger.warn('contact.validation_failed', { ip, field: first?.path?.join('.'), message: first?.message });
     return NextResponse.json(
       { error: `Validierungsfehler: ${first?.message ?? 'Ungültige Eingabe.'}` },
       { status: 422 },
@@ -69,7 +73,7 @@ export async function POST(req: NextRequest) {
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO_EMAIL } = process.env;
 
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
-    console.error('[contact] SMTP not configured — set SMTP_HOST, SMTP_USER, SMTP_PASS');
+    logger.error('contact.smtp_unconfigured', { missing: [!SMTP_HOST && 'SMTP_HOST', !SMTP_USER && 'SMTP_USER', !SMTP_PASS && 'SMTP_PASS'].filter(Boolean) });
     return NextResponse.json(
       {
         error:
@@ -123,10 +127,10 @@ export async function POST(req: NextRequest) {
       subject: `Neue Anfrage von ${name} (${company || 'k.A.'}) – Ecksolution`,
       html,
     });
-    console.log(`[contact] mail sent: ${email} → ${toEmail}`);
+    logger.info('contact.sent', { email, company: company || undefined, employees, to: toEmail });
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error('[contact] sendMail failed:', err);
+    logger.error('contact.send_failed', { email, error: err instanceof Error ? err.message : String(err) });
     return NextResponse.json(
       {
         error:
