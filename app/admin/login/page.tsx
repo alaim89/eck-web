@@ -1,10 +1,29 @@
-export default function AdminLoginPage() {
+const errorMessages: Record<string, string> = {
+  invalid_credentials: 'Ungültige Dummy-Kennung.',
+  invalid_token: 'Ungültiger Bootstrap-Token.',
+  email_not_mapped: 'E-Mail ist nicht für Bootstrap freigeschaltet.',
+}
+
+export default async function AdminLoginPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ error?: string }>
+}) {
+  const params = await searchParams
+  const error = params.error ? errorMessages[params.error] || 'Anmeldung fehlgeschlagen.' : null
+
   return (
     <main className="mx-auto max-w-2xl px-6 py-20">
       <h1 className="text-2xl font-semibold">Admin Login</h1>
       <p className="mt-2 text-sm text-gray-600">
         Für interne Nutzung: entweder Dummy-Kennung (E-Mail/Passwort) oder Bootstrap-Token.
       </p>
+
+      {error ? (
+        <p className="mt-4 rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
+          {error}
+        </p>
+      ) : null}
 
       <section className="mt-8 grid gap-8 md:grid-cols-2">
         <form action="/api/admin/auth/login" method="POST" className="space-y-4 rounded-lg border border-gray-200 p-4">

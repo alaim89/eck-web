@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
-import { ADMIN_USER_COOKIE, getBootstrapRoleMap } from '@/lib/iam/auth'
+import { ADMIN_ROLE_COOKIE, ADMIN_USER_COOKIE, getBootstrapRoleMap } from '@/lib/iam/auth'
 
 export async function POST(request: Request) {
   const formData = await request.formData()
@@ -9,19 +9,25 @@ export async function POST(request: Request) {
 
   const expectedToken = process.env.ADMIN_BOOTSTRAP_TOKEN
   if (!expectedToken || token !== expectedToken) {
-    return NextResponse.json({ error: 'invalid_token' }, { status: 401 })
+    return NextResponse.redirect(new URL('/admin/login?error=invalid_token', request.url))
   }
 
   const roleMap = getBootstrapRoleMap()
-  if (!email || !roleMap[email]) {
-    return NextResponse.json(
-      { error: 'email_not_mapped', message: 'Email is not present in IAM_BOOTSTRAP_ROLE_MAP' },
-      { status: 400 }
-    )
+  const role = roleMap[email]
+  if (!email || !role) {
+    return NextResponse.redirect(new URL('/admin/login?error=email_not_mapped', request.url))
   }
 
   const cookieStore = await cookies()
   cookieStore.set(ADMIN_USER_COOKIE, email, {
+    httpOnly: true,
+    sameSite: 'lax',
+    secure: process.env.NODE_ENV === 'production',
+    path: '/',
+    maxAge: 60 * 60 * 8,
+  })
+
+  cookieStore.set(ADMIN_ROLE_COOKIE, role, {
     httpOnly: true,
     sameSite: 'lax',
     secure: process.env.NODE_ENV === 'production',
