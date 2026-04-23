@@ -16,7 +16,14 @@ export function CookieConsentBanner() {
     const stored = getStoredConsent();
     if (!stored) {
       setIsVisible(true);
+    } else {
+      setConsent(stored);
     }
+
+    // Listen for manual open trigger
+    const handleOpen = () => setIsVisible(true);
+    window.addEventListener('open-cookie-settings', handleOpen);
+    return () => window.removeEventListener('open-cookie-settings', handleOpen);
   }, []);
 
   const handleAcceptAll = () => {
@@ -24,9 +31,8 @@ export function CookieConsentBanner() {
     saveConsent(newConsent);
   };
 
-  const handleAcceptNecessary = () => {
-    const newConsent = { necessary: true, analytics: false };
-    saveConsent(newConsent);
+  const handleSaveChoice = () => {
+    saveConsent(consent);
   };
 
   const saveConsent = (newConsent: CookieConsent) => {
@@ -68,6 +74,7 @@ export function CookieConsentBanner() {
             </div>
             <label className="relative inline-flex items-center cursor-pointer">
               <input 
+                id="analytics-consent"
                 type="checkbox" 
                 className="sr-only peer" 
                 checked={consent.analytics}
@@ -80,10 +87,10 @@ export function CookieConsentBanner() {
 
         <div className="grid grid-cols-2 gap-3">
           <button 
-            onClick={handleAcceptNecessary}
-            className="px-4 py-3 text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-xl transition-colors"
+            onClick={handleSaveChoice}
+            className="px-4 py-3 text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-xl transition-colors border border-slate-100"
           >
-            Nur notwendige
+            Auswahl speichern
           </button>
           <button 
             onClick={handleAcceptAll}
@@ -98,26 +105,16 @@ export function CookieConsentBanner() {
 }
 
 export function RevokeConsent() {
-  const [hasConsent, setHasConsent] = useState(false);
-
-  useEffect(() => {
-    const stored = getStoredConsent();
-    if (stored) setHasConsent(true);
-  }, []);
-
-  const handleRevoke = () => {
-    localStorage.removeItem('eeksolution_cookie_consent');
-    window.location.reload();
+  const handleOpenSettings = () => {
+    window.dispatchEvent(new CustomEvent('open-cookie-settings'));
   };
-
-  if (!hasConsent) return null;
 
   return (
     <button 
-      onClick={handleRevoke}
-      className="text-slate-400 hover:text-red-500 transition-colors text-xs font-medium"
+      onClick={handleOpenSettings}
+      className="text-slate-400 hover:text-primary transition-colors text-xs font-medium"
     >
-      Cookie-Einstellungen zurücksetzen
+      Cookie-Einstellungen
     </button>
   );
 }

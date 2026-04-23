@@ -1,6 +1,7 @@
 import { LogoIcon } from "@/components/Logo";
 import Link from "next/link";
 import { translations } from "@/lib/translations";
+import { RevokeConsent } from "@/components/CookieConsent";
 
 export function Footer() {
   const t = translations.de;
@@ -53,6 +54,7 @@ export function Footer() {
             <nav className="flex flex-col gap-3" aria-label="Rechtliche Links">
               <Link href="/impressum" className="hover:text-primary transition-colors font-medium">{t.footer.links.imprint}</Link>
               <Link href="/datenschutz" className="hover:text-primary transition-colors font-medium">{t.footer.links.privacy}</Link>
+              <RevokeConsent />
             </nav>
           </div>
 

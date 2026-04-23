@@ -52,7 +52,7 @@ export default function CaseStudyITZBund() {
               Migrationen umzusetzen, ohne die Stabilität der produktiven Umgebung zu gefährden. Genau in
               solchen Situationen braucht es eine saubere{" "}
               <Link
-                href="/it-infrastruktur-betreuung"
+                href="/solutions/hybrid-it-infrastruktur"
                 className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
               >
                 Betreuung komplexer IT-Infrastrukturen
@@ -118,7 +118,7 @@ export default function CaseStudyITZBund() {
                     sauberer Migration, Performance und nachvollziehbaren Prozessen. Besonders bei
                     Sicherheitsvorgaben und Härtung war eine klare{" "}
                     <Link
-                      href="/it-sicherheitsbetreuung"
+                      href="/solutions/it-sicherheit"
                       className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                     >
                       IT-Sicherheitsbetreuung
@@ -169,7 +169,7 @@ export default function CaseStudyITZBund() {
                   beherrschbar ist, höhere Anforderungen sauber abbildet und gleichzeitig den
                   Sicherheitsvorgaben gerecht wird. Genau dort zeigt sich, wie wichtig eine strukturierte{" "}
                   <Link
-                    href="/it-infrastruktur-betreuung"
+                    href="/solutions/hybrid-it-infrastruktur"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     Infrastruktur-Betreuung

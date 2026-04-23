@@ -138,8 +138,10 @@ export default function KontaktContent() {
                 <form onSubmit={handleSubmit} className="space-y-8">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Name</label>
+                      <label htmlFor="full-name" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Name</label>
                       <input 
+                        id="full-name"
+                        name="full-name"
                         type="text" 
                         required
                         placeholder="Max Mustermann"
@@ -147,8 +149,10 @@ export default function KontaktContent() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">E-Mail</label>
+                      <label htmlFor="email" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">E-Mail</label>
                       <input 
+                        id="email"
+                        name="email"
                         type="email" 
                         required
                         placeholder="max@unternehmen.de"
@@ -158,10 +162,12 @@ export default function KontaktContent() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Unternehmen</label>
+                    <label htmlFor="company" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Unternehmen</label>
                     <div className="relative">
                       <Building2 className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                       <input 
+                        id="company"
+                        name="company"
                         type="text" 
                         placeholder="Muster GmbH"
                         className="w-full pl-14 pr-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none"
@@ -170,25 +176,31 @@ export default function KontaktContent() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Mitarbeiteranzahl</label>
+                    <label htmlFor="employees" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Mitarbeiteranzahl</label>
                     <div className="relative">
                       <Users className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                      <select className="w-full pl-14 pr-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none appearance-none">
-                        <option>1-5 Mitarbeiter</option>
-                        <option>6-10 Mitarbeiter</option>
-                        <option>10-50 Mitarbeiter</option>
-                        <option>50-150 Mitarbeiter</option>
-                        <option>150-250 Mitarbeiter</option>
-                        <option>250+ Mitarbeiter</option>
+                      <select 
+                        id="employees"
+                        name="employees"
+                        className="w-full pl-14 pr-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none appearance-none"
+                      >
+                        <option value="1-5">1-5 Mitarbeiter</option>
+                        <option value="6-10">6-10 Mitarbeiter</option>
+                        <option value="10-50">10-50 Mitarbeiter</option>
+                        <option value="50-150">50-150 Mitarbeiter</option>
+                        <option value="150-250">150-250 Mitarbeiter</option>
+                        <option value="250+">250+ Mitarbeiter</option>
                       </select>
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Ihr Anliegen</label>
+                    <label htmlFor="message" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Ihr Anliegen</label>
                     <div className="relative">
                       <MessageCircle className="absolute left-6 top-6 w-5 h-5 text-gray-400" />
                       <textarea 
+                        id="message"
+                        name="message"
                         rows={4}
                         placeholder="Beschreiben Sie kurz Ihre aktuelle IT-Herausforderung (z. B. Ausfälle, Migration, Sicherheit)..."
                         className="w-full pl-14 pr-6 py-6 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none resize-none"

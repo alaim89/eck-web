@@ -17,7 +17,7 @@ export const metadata = getMetadata({
   title: "Case Study: Greenpocket - Infrastruktur für Wachstum stabil aufgebaut",
   description:
     "Wie eine wachsende IT-Infrastruktur strukturiert aufgebaut, stabil betrieben und mit Backup und Recovery sauber abgesichert wurde.",
-  canonical: "/case-studies/startup-infrastruktur-backup",
+  canonical: "/case-studies/greenpocket-infrastruktur-backup",
 });
 
 export default function CaseStudyStartupInfrastructure() {
@@ -100,7 +100,7 @@ export default function CaseStudyStartupInfrastructure() {
                   Gerade wenn Wachstum schneller ist als die Struktur dahinter, entstehen Risiken im
                   Betrieb. In solchen Situationen ist eine klare{" "}
                   <Link
-                    href="/backup-disaster-recovery"
+                    href="/solutions/managed-backup"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     Backup- und Recovery-Strategie
@@ -129,7 +129,7 @@ export default function CaseStudyStartupInfrastructure() {
                     zum Problem wird. Deshalb wurde die Umgebung von Anfang an so aufgebaut, dass
                     Betrieb, Skalierung und Sicherheit sauber zusammenspielen - inklusive klarer{" "}
                     <Link
-                      href="/it-sicherheitsbetreuung"
+                      href="/solutions/it-sicherheit"
                       className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                     >
                       IT-Sicherheitsbetreuung
@@ -179,7 +179,7 @@ export default function CaseStudyStartupInfrastructure() {
                   Das Ergebnis ist eine Infrastruktur, die nicht nur technisch funktioniert,
                   sondern im Alltag ruhig läuft. Genau dort zeigt sich, wie wichtig eine saubere{" "}
                   <Link
-                    href="/it-infrastruktur-betreuung"
+                    href="/solutions/hybrid-it-infrastruktur"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     Infrastruktur-Betreuung

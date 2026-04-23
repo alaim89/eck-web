@@ -52,7 +52,7 @@ export default function CaseStudyProcivitate() {
               fehlende Führung bei Entscheidungen, Struktur und Weiterentwicklung. Gerade in so einer
               Situation braucht es nicht nur Tools, sondern eine klare{" "}
               <Link
-                href="/microsoft-365-betreuung"
+                href="/solutions/microsoft-365-migration"
                 className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
               >
                 Microsoft 365 Betreuung
@@ -117,7 +117,7 @@ export default function CaseStudyProcivitate() {
                     konnten Sicherheit, Verwaltung und tägliche Nutzung sauber zusammengeführt werden.
                     Gerade in solchen Situationen ist eine saubere{" "}
                     <Link
-                      href="/microsoft-365-betreuung"
+                      href="/solutions/microsoft-365-migration"
                       className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                     >
                       Microsoft 365 Betreuung
@@ -169,7 +169,7 @@ export default function CaseStudyProcivitate() {
                   vor allem Sicherheit, Richtlinien und saubere Konfigurationen Thema sind, hilft eine
                   klare{" "}
                   <Link
-                    href="/it-sicherheitsbetreuung"
+                    href="/solutions/it-sicherheit"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     IT-Sicherheitsbetreuung

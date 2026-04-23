@@ -165,7 +165,7 @@ export default function CaseStudyGroup24() {
                   Das Ergebnis ist eine Infrastruktur, die stabil läuft, mit dem Unternehmen mitwachsen kann
                   und eine moderne Arbeitsweise ermöglicht. Genau hier zeigt sich, wie wichtig eine saubere{" "}
                   <Link
-                    href="/it-infrastruktur-betreuung"
+                    href="/solutions/hybrid-it-infrastruktur"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     Betreuung hybrider IT-Infrastrukturen

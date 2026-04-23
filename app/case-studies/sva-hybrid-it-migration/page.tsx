@@ -17,7 +17,7 @@ export const metadata = getMetadata({
   title: "Case Study: Hybride IT-Landschaft strukturiert und Migrationen stabil umgesetzt",
   description:
     "Wie eine gewachsene hybride IT-Landschaft strukturiert, Migrationen kontrolliert umgesetzt und der Betrieb stabil gehalten wurde.",
-  canonical: "/case-studies/hybrid-it-migration",
+  canonical: "/case-studies/sva-hybrid-it-migration",
 });
 
 export default function CaseStudyHybridIT() {
@@ -51,7 +51,7 @@ export default function CaseStudyHybridIT() {
               vieles funktionierte, aber nur mit viel Abstimmung und ohne klare Linie. Ziel war es,
               die Umgebung wieder beherrschbar zu machen und in eine saubere{" "}
               <Link
-                href="/it-infrastruktur-betreuung"
+                href="/solutions/hybrid-it-infrastruktur"
                 className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
               >
                 Hybrid-IT-Struktur
@@ -130,7 +130,7 @@ export default function CaseStudyHybridIT() {
                     gesamten Umgebung. Besonders bei Sicherheit und Stabilität zeigte sich, wie wichtig
                     eine klare{" "}
                     <Link
-                      href="/it-sicherheitsbetreuung"
+                      href="/solutions/it-sicherheit"
                       className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                     >
                       IT-Sicherheitsbetreuung
@@ -182,7 +182,7 @@ export default function CaseStudyHybridIT() {
                   Das Ergebnis ist eine Umgebung, die im Alltag ruhiger läuft und Veränderungen besser
                   verkraftet. Genau dort zeigt sich, wie wichtig eine strukturierte{" "}
                   <Link
-                    href="/it-infrastruktur-betreuung"
+                    href="/solutions/hybrid-it-infrastruktur"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     Betreuung hybrider IT-Infrastrukturen

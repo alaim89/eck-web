@@ -52,7 +52,7 @@ export default function CaseStudyZunicode() {
               das Tagesgeschäft band zu viele Ressourcen. Ziel war eine Umgebung, die im Betrieb
               ruhiger läuft und durch klare{" "}
               <Link
-                href="/it-infrastruktur-betreuung"
+                href="/solutions/hybrid-it-infrastruktur"
                 className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
               >
                 IT-Infrastruktur-Betreuung
@@ -126,7 +126,7 @@ export default function CaseStudyZunicode() {
                     Automatisierung und Zuständigkeiten sauber zusammenpassen, entsteht ein stabilerer
                     Betrieb. Genau dort hilft eine strukturierte{" "}
                     <Link
-                      href="/it-sicherheitsbetreuung"
+                      href="/solutions/it-sicherheit"
                       className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                     >
                       IT-Sicherheitsbetreuung
@@ -178,7 +178,7 @@ export default function CaseStudyZunicode() {
                   dominieren und das interne Team wieder mehr Luft für wichtige Themen hat. Genau dort
                   zeigt sich, wie wertvoll eine saubere{" "}
                   <Link
-                    href="/it-infrastruktur-betreuung"
+                    href="/solutions/hybrid-it-infrastruktur"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     Betreuung hybrider IT-Infrastrukturen

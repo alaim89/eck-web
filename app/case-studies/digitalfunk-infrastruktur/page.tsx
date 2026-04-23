@@ -52,7 +52,7 @@ export default function CaseStudyInfrastructure() {
               zusammenpassten. Ziel war eine Infrastruktur, die konsistenter läuft und im Alltag besser
               beherrschbar ist. Genau in solchen Situationen hilft eine saubere{" "}
               <Link
-                href="/it-infrastruktur-betreuung"
+                href="/solutions/hybrid-it-infrastruktur"
                 className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
               >
                 Betreuung der IT-Infrastruktur
@@ -127,7 +127,7 @@ export default function CaseStudyInfrastructure() {
                     Besonders bei Standardisierung, Absicherung und langfristiger Betriebsfähigkeit zeigte
                     sich, wie wichtig eine klare{" "}
                     <Link
-                      href="/it-sicherheitsbetreuung"
+                      href="/solutions/it-sicherheit"
                       className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                     >
                       IT-Sicherheitsbetreuung
@@ -176,7 +176,7 @@ export default function CaseStudyInfrastructure() {
                   Änderungen sauberer zulässt und den laufenden Betriebsaufwand spürbar reduziert. Genau
                   dort zeigt sich, wie wichtig eine strukturierte{" "}
                   <Link
-                    href="/it-infrastruktur-betreuung"
+                    href="/solutions/hybrid-it-infrastruktur"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     Infrastruktur-Betreuung

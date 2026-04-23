@@ -52,7 +52,7 @@ export default function CaseStudyBiolytiqs() {
               verbinden und gleichzeitig eine belastbare Absicherung für Daten und Betrieb aufzubauen.
               Genau an solchen Stellen braucht es eine klare{" "}
               <Link
-                href="/it-infrastruktur-betreuung"
+                href="/solutions/hybrid-it-infrastruktur"
                 className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
               >
                 Betreuung der IT-Infrastruktur
@@ -98,7 +98,7 @@ export default function CaseStudyBiolytiqs() {
                   Absicherung nicht mehr sauber zusammenpassen, wird aus Alltag schnell Risiko. Gerade
                   dann braucht es eine strukturierte{" "}
                   <Link
-                    href="/it-sicherheitsbetreuung"
+                    href="/solutions/it-sicherheit"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     IT-Sicherheitsbetreuung
@@ -118,7 +118,7 @@ export default function CaseStudyBiolytiqs() {
                     aufgebaut und die Datensicherung auf ein belastbares Niveau gebracht. Für die
                     tägliche Zusammenarbeit war dabei auch eine stabile{" "}
                     <Link
-                      href="/microsoft-365-betreuung"
+                      href="/solutions/microsoft-365-migration"
                       className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                     >
                       Microsoft 365 Betreuung
@@ -167,7 +167,7 @@ export default function CaseStudyBiolytiqs() {
                   verlässlicher funktioniert. Gerade beim Thema Ausfallsicherheit zeigt sich, wie wichtig
                   eine saubere{" "}
                   <Link
-                    href="/backup-disaster-recovery"
+                    href="/solutions/managed-backup"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     Backup- und Disaster-Recovery-Betreuung
