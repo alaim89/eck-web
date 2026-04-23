@@ -13,8 +13,13 @@ function gtagPush(...args: unknown[]) {
   window.gtag(...args);
 }
 
+const getInitialAnalyticsConsent = () => {
+  if (typeof window === 'undefined') return false;
+  return getStoredConsent()?.analytics ?? false;
+};
+
 export function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_ID: string }) {
-  const [analyticsConsent, setAnalyticsConsent] = useState(false);
+  const [analyticsConsent, setAnalyticsConsent] = useState(getInitialAnalyticsConsent);
 
   useEffect(() => {
     // Initialize gtag stub and set consent defaults (all denied until user chooses)
@@ -23,7 +28,6 @@ export function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_ID: stri
     const stored = getStoredConsent();
     if (stored) {
       gtagPush('consent', 'update', getGtagConsentState(stored));
-      setAnalyticsConsent(stored.analytics);
     }
 
     const handleUpdate = (e: Event) => {
