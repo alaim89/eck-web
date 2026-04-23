@@ -16,6 +16,7 @@ export class AuthError extends Error {
 const DEFAULT_ROLE: Role = 'editor'
 const DEFAULT_EMAIL = 'anonymous@local'
 export const ADMIN_USER_COOKIE = 'admin_user_email'
+export const ADMIN_ROLE_COOKIE = 'admin_user_role'
 
 const parseRole = (value: string | null): Role => {
   if (!value) return DEFAULT_ROLE
@@ -90,14 +91,15 @@ export const getRequestUser = async (): Promise<AuthUser> => {
   const requestCookies = await cookies()
 
   const cookieEmail = requestCookies.get(ADMIN_USER_COOKIE)?.value?.toLowerCase()
+  const cookieRole = requestCookies.get(ADMIN_ROLE_COOKIE)?.value || null
 
   if (cookieEmail) {
     const headerReader = createHeaderReader({
       'x-user-email': cookieEmail,
-      'x-user-role': requestHeaders.get('x-user-role'),
+      'x-user-role': cookieRole || requestHeaders.get('x-user-role'),
     })
 
-    return resolveUserFromHeaders(headerReader)
+    return resolveUserFromHeaders(headerReader, { allowRoleHeader: true })
   }
 
   return resolveUserFromHeaders(requestHeaders)

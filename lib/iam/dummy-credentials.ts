@@ -1,6 +1,19 @@
+import { type Role, roles } from '@/lib/iam/permissions'
+
 export type DummyCredential = {
   email: string
   password: string
+  role: Role
+}
+
+const DEFAULT_ROLE: Role = 'editor'
+
+const parseRole = (value: unknown): Role => {
+  const role = String(value || '').trim()
+  if ((roles as readonly string[]).includes(role)) {
+    return role as Role
+  }
+  return DEFAULT_ROLE
 }
 
 export const parseDummyCredentials = (rawValue: string | undefined): DummyCredential[] => {
@@ -13,6 +26,7 @@ export const parseDummyCredentials = (rawValue: string | undefined): DummyCreden
       .map((entry) => ({
         email: String(entry.email || '').trim().toLowerCase(),
         password: String(entry.password || ''),
+        role: parseRole(entry.role),
       }))
       .filter((entry) => entry.email.length > 0 && entry.password.length > 0)
   } catch {

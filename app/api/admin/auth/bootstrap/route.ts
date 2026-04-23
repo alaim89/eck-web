@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
-import { ADMIN_USER_COOKIE, getBootstrapRoleMap } from '@/lib/iam/auth'
+import { ADMIN_ROLE_COOKIE, ADMIN_USER_COOKIE, getBootstrapRoleMap } from '@/lib/iam/auth'
+import { appendAuditLog } from '@/lib/ops/audit-log'
 
 export async function POST(request: Request) {
   const formData = await request.formData()
@@ -9,15 +10,29 @@ export async function POST(request: Request) {
 
   const expectedToken = process.env.ADMIN_BOOTSTRAP_TOKEN
   if (!expectedToken || token !== expectedToken) {
-    return NextResponse.json({ error: 'invalid_token' }, { status: 401 })
+    appendAuditLog({
+      level: 'warn',
+      actor: email || 'anonymous',
+      action: 'admin.bootstrap.failed',
+      objectType: 'session',
+      details: { reason: 'invalid_token' },
+    })
+
+    return NextResponse.redirect(new URL('/admin/login?error=invalid_token', request.url), { status: 303 })
   }
 
   const roleMap = getBootstrapRoleMap()
-  if (!email || !roleMap[email]) {
-    return NextResponse.json(
-      { error: 'email_not_mapped', message: 'Email is not present in IAM_BOOTSTRAP_ROLE_MAP' },
-      { status: 400 }
-    )
+  const role = roleMap[email]
+  if (!email || !role) {
+    appendAuditLog({
+      level: 'warn',
+      actor: email || 'anonymous',
+      action: 'admin.bootstrap.failed',
+      objectType: 'session',
+      details: { reason: 'email_not_mapped' },
+    })
+
+    return NextResponse.redirect(new URL('/admin/login?error=email_not_mapped', request.url), { status: 303 })
   }
 
   const cookieStore = await cookies()
@@ -29,5 +44,21 @@ export async function POST(request: Request) {
     maxAge: 60 * 60 * 8,
   })
 
-  return NextResponse.redirect(new URL('/admin', request.url))
+  cookieStore.set(ADMIN_ROLE_COOKIE, role, {
+    httpOnly: true,
+    sameSite: 'lax',
+    secure: process.env.NODE_ENV === 'production',
+    path: '/',
+    maxAge: 60 * 60 * 8,
+  })
+
+  appendAuditLog({
+    level: 'info',
+    actor: email,
+    action: 'admin.bootstrap.succeeded',
+    objectType: 'session',
+    details: { role },
+  })
+
+  return NextResponse.redirect(new URL('/admin', request.url), { status: 303 })
 }
