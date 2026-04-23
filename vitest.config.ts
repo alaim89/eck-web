@@ -10,6 +10,7 @@ export default defineConfig({
     setupFiles: ['./vitest.setup.ts'],
     include: ['__tests__/**/*.{test,spec}.{ts,tsx}'],
     exclude: ['e2e/**', 'node_modules/**'],
+    css: { modules: { classNameStrategy: 'non-scoped' } },
     coverage: {
       provider: 'v8',
       include: ['lib/**', 'app/api/**', 'components/**'],
@@ -21,5 +22,4 @@ export default defineConfig({
       '@': path.resolve(__dirname, '.'),
     },
   },
-  css: false,
 });

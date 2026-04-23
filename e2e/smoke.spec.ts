@@ -62,3 +62,12 @@ test('404 page shows for unknown route', async ({ page }) => {
   // Next.js returns 404 for unknown routes
   expect(response?.status()).toBe(404);
 });
+
+test('/api/health returns { status: "ok" }', async ({ request }) => {
+  const res = await request.get('/api/health');
+  expect(res.ok()).toBe(true);
+  const body = await res.json();
+  expect(body.status).toBe('ok');
+  expect(typeof body.timestamp).toBe('string');
+  expect(typeof body.uptime).toBe('number');
+});
