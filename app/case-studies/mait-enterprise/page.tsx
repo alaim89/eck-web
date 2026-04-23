@@ -51,7 +51,7 @@ export default function CaseStudyMait() {
               Vieles funktionierte, aber nur mit hohem Abstimmungsaufwand zwischen Teams und ohne klare Struktur.
               Genau in solchen Situationen hilft eine saubere{" "}
               <Link
-                href="/it-infrastruktur-betreuung"
+                href="/solutions/hybrid-it-infrastruktur"
                 className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
               >
                 Betreuung hybrider IT-Infrastrukturen
@@ -115,7 +115,7 @@ export default function CaseStudyMait() {
                     Besonders wichtig war dabei die Integration von Microsoft-365-Komponenten in eine
                     stabile Gesamtstruktur durch gezielte{" "}
                     <Link
-                      href="/microsoft-365-betreuung"
+                      href="/solutions/microsoft-365-migration"
                       className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                     >
                       Microsoft 365 Betreuung
@@ -163,7 +163,7 @@ export default function CaseStudyMait() {
                   Die Umgebung ist heute nicht nur integriert, sondern im Alltag deutlich einfacher steuerbar.
                   Gerade im Zusammenspiel von Cloud, On-Prem und Sicherheit spielt eine klare{" "}
                   <Link
-                    href="/it-sicherheitsbetreuung"
+                    href="/solutions/it-sicherheit"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     IT-Sicherheitsbetreuung

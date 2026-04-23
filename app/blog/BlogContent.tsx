@@ -1,56 +1,13 @@
-'use client';
-
-import { motion } from "motion/react";
 import { ArrowRight, Calendar, Clock, User, Tag } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-
-const BLOG_POSTS = [
-  {
-    slug: "entra-join-vpn-abloesen",
-    title: "Weg mit dem VPN: Warum „Entra Join Only“ der neue Standard ist",
-    excerpt: "Warum klassische VPN-Lösungen ausbremsen und wie Microsoft Entra Join Unternehmen sicherer, flexibler und wartungsärmer macht.",
-    date: "28. März 2024",
-    readTime: "6 min",
-    author: "Andreas Eckert",
-    category: "Cloud & Infrastruktur",
-    image: "https://picsum.photos/seed/network/800/500"
-  },
-  {
-    slug: "cloud-migration-mittelstand-2024",
-    title: "Cloud-Migration für den Mittelstand: Ein Leitfaden für 2024",
-    excerpt: "Erfahren Sie, wie mittelständische Unternehmen den Umstieg in die Cloud sicher und kosteneffizient gestalten können, ohne den laufenden Betrieb zu gefährden.",
-    date: "20. März 2024",
-    readTime: "8 min",
-    author: "Andreas Eckert",
-    category: "Cloud & Infrastruktur",
-    image: "https://picsum.photos/seed/cloud/800/500"
-  },
-  {
-    slug: "it-sicherheit-praevention-vs-reaktion",
-    title: "IT-Sicherheit: Warum Prävention günstiger ist als jeder Notfalleinsatz",
-    excerpt: "Reaktive IT-Sicherheit kostet nicht nur Nerven, sondern auch bares Geld. Wir zeigen auf, warum proaktive Stabilität die beste Versicherung für Ihr Unternehmen ist.",
-    date: "12. März 2024",
-    readTime: "6 min",
-    author: "Andreas Eckert",
-    category: "Security",
-    image: "https://picsum.photos/seed/security/800/500"
-  },
-  {
-    slug: "managed-services-vs-inhouse-it",
-    title: "Managed Services vs. Inhouse-IT: Die richtige Balance finden",
-    excerpt: "Wann macht es Sinn, IT-Aufgaben auszulagern? Ein objektiver Vergleich zwischen internen Ressourcen und externer Expertise für maximale Effizienz.",
-    date: "05. März 2024",
-    readTime: "7 min",
-    author: "Andreas Eckert",
-    category: "Strategie",
-    image: "https://picsum.photos/seed/strategy/800/500"
-  }
-];
+import { BLOG_POSTS } from "@/lib/blog-data";
+import { translations } from "@/lib/translations";
 
 export default function BlogContent() {
+  const t = translations.de;
   return (
     <div className="min-h-screen bg-white text-black font-poppins selection:bg-primary/30">
       <Header />
@@ -59,38 +16,19 @@ export default function BlogContent() {
         <div className="max-w-[1200px] mx-auto">
           {/* Header */}
           <div className="max-w-3xl mb-20">
-            <motion.div 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-primary font-bold text-xs uppercase tracking-widest mb-4"
-            >
+            <div className="text-primary font-bold text-xs uppercase tracking-widest mb-4">
               Wissen & Einblicke
-            </motion.div>
-            <motion.h1 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-5xl md:text-6xl font-bold tracking-tight mb-8 text-black leading-[1.1]"
-            >
+            </div>
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-8 text-black leading-[1.1]">
               IT-Strategie für Entscheider.
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-xl text-gray-600 leading-relaxed opacity-90"
-            >
+            </h1>
+            <p className="text-xl text-gray-600 leading-relaxed opacity-90">
               Praxisnahe Tipps, tiefgehende Analysen und aktuelle Trends aus den Bereichen Cloud-Architektur, IT-Sicherheit und digitale Transformation.
-            </motion.p>
+            </p>
           </div>
 
           {/* Featured Post */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="mb-24"
-          >
+          <div className="mb-24">
             <Link href={`/blog/${BLOG_POSTS[0].slug}`} className="group block relative overflow-hidden rounded-[2.5rem] bg-gray-50 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500">
               <div className="grid lg:grid-cols-2 items-center">
                 <div className="relative h-full min-h-[300px] overflow-hidden">
@@ -123,17 +61,12 @@ export default function BlogContent() {
                 </div>
               </div>
             </Link>
-          </motion.div>
+          </div>
 
           {/* Grid */}
           <div className="grid md:grid-cols-2 gap-12">
             {BLOG_POSTS.slice(1).map((post, i) => (
-              <motion.div
-                key={post.slug}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 + i * 0.1 }}
-              >
+              <div key={post.slug}>
                 <Link href={`/blog/${post.slug}`} className="group block h-full">
                   <div className="relative aspect-[16/10] overflow-hidden rounded-3xl mb-8 bg-gray-100 border border-gray-100 shadow-sm transition-all duration-500 group-hover:shadow-xl">
                     <Image 
@@ -159,17 +92,12 @@ export default function BlogContent() {
                     Weiterlesen <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* Newsletter / CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-32 p-12 md:p-20 rounded-[3rem] bg-gradient-to-br from-emerald-600 via-teal-700 to-emerald-800 text-white text-center relative overflow-hidden shadow-2xl shadow-emerald-900/20"
-          >
+          <div className="mt-32 p-12 md:p-20 rounded-[3rem] bg-gradient-to-br from-emerald-600 via-teal-700 to-emerald-800 text-white text-center relative overflow-hidden shadow-2xl shadow-emerald-900/20">
             {/* Glow Elements */}
             <div className="absolute top-0 left-1/4 w-[30rem] h-[30rem] bg-emerald-400/20 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
             <div className="absolute bottom-0 right-1/4 w-[30rem] h-[30rem] bg-teal-400/20 rounded-full blur-[120px] translate-y-1/2 pointer-events-none" />
@@ -194,7 +122,7 @@ export default function BlogContent() {
                 Kein Spam. Abmeldung jederzeit möglich.
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </main>
 

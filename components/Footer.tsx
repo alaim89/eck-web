@@ -1,11 +1,9 @@
-'use client';
-
 import { LogoIcon } from "@/components/Logo";
 import Link from "next/link";
-import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/lib/translations";
 
 export function Footer() {
-  const { t } = useLanguage();
+  const t = translations.de;
   const currentYear = new Date().getFullYear();
 
   return (

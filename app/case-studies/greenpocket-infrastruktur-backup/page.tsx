@@ -51,7 +51,7 @@ export default function CaseStudyStartupInfrastructure() {
               Die IT sollte mit dem Unternehmen mitwachsen, ohne im Alltag immer komplexer zu werden.
               Dafür brauchte es nicht nur einzelne Systeme, sondern eine saubere{" "}
               <Link
-                href="/it-infrastruktur-betreuung"
+                href="/solutions/hybrid-it-infrastruktur"
                 className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
               >
                 Struktur in der IT-Infrastruktur

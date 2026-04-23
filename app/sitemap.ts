@@ -1,6 +1,8 @@
 import { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site-config";
 import { solutionsData } from "@/lib/solutions-data";
+import { BLOG_POSTS } from "@/lib/blog-data";
+import { caseStudies } from "@/lib/case-studies-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.baseUrl;
@@ -29,5 +31,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...solutionRoutes];
+  // Dynamische Blog-Seiten
+  const blogRoutes = BLOG_POSTS.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  // Dynamische Case-Study-Seiten
+  const caseStudyRoutes = caseStudies.map((study) => ({
+    url: `${baseUrl}/case-studies/${study.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...solutionRoutes, ...blogRoutes, ...caseStudyRoutes];
 }

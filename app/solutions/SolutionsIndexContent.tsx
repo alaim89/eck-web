@@ -1,5 +1,3 @@
-'use client';
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CTASection } from "@/components/CTASection";
@@ -17,8 +15,7 @@ import {
   Settings,
 } from "lucide-react";
 import Link from "next/link";
-import { motion } from "motion/react";
-import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/lib/translations";
 
 const iconMap: Record<string, any> = {
   "managed-backup": Database,
@@ -42,7 +39,7 @@ const iconMap: Record<string, any> = {
 };
 
 export default function SolutionsIndexContent() {
-  const { t } = useLanguage();
+  const t = translations.de;
 
   const featuredSlugs = [
     "managed-it-service",
@@ -123,13 +120,7 @@ export default function SolutionsIndexContent() {
                 const Icon = iconMap[slug] || Activity;
 
                 return (
-                  <motion.div
-                    key={slug}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.05 }}
-                  >
+                  <div key={slug}>
                     <Link
                       href={`/solutions/${slug}`}
                       className="group block h-full p-8 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
@@ -150,7 +141,7 @@ export default function SolutionsIndexContent() {
                         Mehr dazu <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </Link>
-                  </motion.div>
+                  </div>
                 );
               })}
             </div>
