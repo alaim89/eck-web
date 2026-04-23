@@ -115,7 +115,7 @@ export default function CaseStudyGroup24() {
                     nicht reicht. Entscheidend ist, dass Architektur, Betrieb und Sicherheit sauber
                     zusammenspielen. Genau hier liegt der Unterschied einer funktionierenden{" "}
                     <Link
-                      href="/azure-hybrid-betreuung"
+                      href="/solutions/azure-hybrid-betreuung"
                       className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                     >
                       Azure Hybrid Betreuung

@@ -39,7 +39,6 @@ export function CaseStudyAutomationSection({
           <div className="max-w-3xl">
             {badge && (
               <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-primary/[0.03] border border-primary/10 text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-8 shadow-sm">
-                <Network className="w-3.5 h-3.5" />
                 {badge}
               </div>
             )}

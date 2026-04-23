@@ -97,7 +97,7 @@ export default function CaseStudyInfrastructure() {
                   Wenn Plattformen gewachsen sind, vieles irgendwie läuft und jede Änderung mehr Aufwand
                   erzeugt als nötig, braucht es oft einen{" "}
                   <Link
-                    href="/externer-it-verantwortlicher"
+                    href="/solutions/externer-it-verantwortlicher"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     externen IT-Verantwortlichen

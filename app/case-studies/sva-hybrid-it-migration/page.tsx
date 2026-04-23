@@ -100,7 +100,7 @@ export default function CaseStudyHybridIT() {
                   In solchen Umgebungen fehlt oft nicht Technik, sondern klare Führung. Genau dort hilft
                   ein{" "}
                   <Link
-                    href="/externer-it-verantwortlicher"
+                    href="/solutions/externer-it-verantwortlicher"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     klarer IT-Verantwortlicher

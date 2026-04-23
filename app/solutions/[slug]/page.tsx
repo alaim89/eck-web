@@ -65,7 +65,7 @@ export default async function SolutionPage({
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-black selection:bg-primary/20">
+    <div className="min-h-screen bg-white font-poppins text-black selection:bg-primary/20">
       <Header />
 
       <main className="pt-24 md:pt-32">
@@ -97,10 +97,6 @@ export default async function SolutionPage({
         {/* Problem Section */}
         <section className="py-24 px-6 bg-white">
           <div className="max-w-[800px] mx-auto">
-            <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-8">
-              <XCircle className="w-6 h-6 text-red-500" />
-            </div>
-
             <h2 className="text-3xl md:text-4xl font-bold mb-8">
               {solution.problem.title}
             </h2>
@@ -134,10 +130,6 @@ export default async function SolutionPage({
         {/* Lösungs Section */}
         <section className="py-24 px-6 bg-primary text-white">
           <div className="max-w-[800px] mx-auto">
-            <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-8">
-              <CheckCircle2 className="w-6 h-6 text-white" />
-            </div>
-
             <h2 className="text-3xl md:text-4xl font-bold mb-8">
               {solution.solution.title}
             </h2>

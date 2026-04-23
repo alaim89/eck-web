@@ -70,7 +70,7 @@ export default function SolutionsIndexContent() {
   );
 
   return (
-    <div className="min-h-screen bg-white font-sans text-black selection:bg-primary/20">
+    <div className="min-h-screen bg-white font-poppins text-black selection:bg-primary/20">
       <Header />
 
       <main className="pt-24 md:pt-32">
@@ -108,7 +108,7 @@ export default function SolutionsIndexContent() {
           <div className="max-w-[1200px] mx-auto">
             <div className="max-w-3xl mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Typische Situationen, in denen ich unterstütze
+                Typische Situationen, in denen wir als Team unterstützen
               </h2>
               <p className="text-gray-700 text-lg leading-relaxed">
                 Nicht alles ist ein großes Transformationsprojekt. Oft geht es

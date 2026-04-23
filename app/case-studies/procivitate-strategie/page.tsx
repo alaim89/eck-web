@@ -97,7 +97,7 @@ export default function CaseStudyProcivitate() {
                 <p className="mt-6 text-gray-700 leading-relaxed text-lg">
                   Wenn intern niemand technische Entscheidungen sauber priorisiert, braucht es oft einen{" "}
                   <Link
-                    href="/externer-it-verantwortlicher"
+                    href="/solutions/externer-it-verantwortlicher"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     externen IT-Verantwortlichen

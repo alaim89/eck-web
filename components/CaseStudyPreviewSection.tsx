@@ -59,7 +59,6 @@ export function CaseStudyPreviewSection({
             viewport={{ once: true }}
             className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-primary/[0.03] border border-primary/10 text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-8 shadow-sm"
           >
-            <Network className="w-3.5 h-3.5" />
             Case Study: {companyType}
           </motion.div>
           <motion.h2

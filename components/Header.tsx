@@ -23,19 +23,19 @@ export function Header() {
   }, []);
 
   return (
-    <nav className="fixed top-0 w-full bg-white z-50 border-b border-slate-100/80">
-      <div className="page-container h-16 md:h-18 flex items-center justify-between">
+    <nav className="fixed top-0 w-full bg-white z-50 border-b border-slate-100/80 font-poppins">
+      <div className="page-container h-20 flex items-center justify-between">
         {/* Brand Area */}
         <div className="flex items-center gap-10">
           <Link href="/" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity shrink-0 group">
             <div className="w-9 h-9 rounded-lg bg-primary/[0.05] flex items-center justify-center group-hover:scale-105 transition-transform shadow-inner">
               <LogoIcon className="w-5 h-5 text-primary shrink-0" />
             </div>
-            <span className="font-bold tracking-tighter text-lg md:text-xl text-slate-900">Ecksolution<span className="text-primary">-IT</span></span>
+            <span className="font-bold tracking-tighter text-xl text-slate-900">Ecksolution<span className="text-primary">-IT</span></span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8 text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">
+          <div className="hidden md:flex items-center gap-8 text-[11px] font-bold text-slate-500 uppercase tracking-[0.2em]">
             {/* Mega Menu */}
             <div className="relative h-full flex items-center" ref={menuRef}>
               <button 
@@ -53,7 +53,7 @@ export function Header() {
               <div 
                 id="mega-menu"
                 onMouseLeave={() => setIsMenuOpen(false)}
-                className={`absolute top-full left-0 w-[760px] glass-panel p-10 transition-all duration-500 grid grid-cols-3 gap-12 ${isMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
+                className={`absolute top-full left-0 w-[760px] glass-panel p-10 transition-all duration-500 grid grid-cols-3 gap-12 ${isMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-1'}`}
               >
                 {/* Column 1: Core & Security */}
                 <div className="space-y-12">
@@ -152,7 +152,7 @@ export function Header() {
 
         {/* Right Area: CTA & Mobile Toggle */}
         <div className="flex items-center gap-4">
-          <Link href="/#contact" className="hidden md:inline-flex items-center justify-center px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-all shadow-sm font-bold text-[10px] uppercase tracking-[0.15em] active:scale-[0.98]">
+          <Link href="/#contact" className="hidden md:inline-flex items-center justify-center px-5 py-2.5 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-all shadow-sm font-bold text-[11px] uppercase tracking-[0.15em] active:scale-[0.98]">
             {t.nav.getAudit}
           </Link>
 

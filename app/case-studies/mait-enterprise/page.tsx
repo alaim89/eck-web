@@ -95,7 +95,7 @@ export default function CaseStudyMait() {
                   Wenn mehrere Systeme zusammenkommen und niemand die Gesamtstruktur sauber steuert,
                   braucht es oft einen{" "}
                   <Link
-                    href="/externer-it-verantwortlicher"
+                    href="/solutions/externer-it-verantwortlicher"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     externen IT-Verantwortlichen

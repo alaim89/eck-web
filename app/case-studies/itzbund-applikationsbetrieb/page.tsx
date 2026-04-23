@@ -98,7 +98,7 @@ export default function CaseStudyITZBund() {
                   Wenn Plattformen so gewachsen sind, dass Änderungen sofort Abstimmung, Risiko und
                   Unsicherheit erzeugen, braucht es oft einen{" "}
                   <Link
-                    href="/externer-it-verantwortlicher"
+                    href="/solutions/externer-it-verantwortlicher"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     externen IT-Verantwortlichen

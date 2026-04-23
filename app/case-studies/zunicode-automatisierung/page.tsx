@@ -98,7 +98,7 @@ export default function CaseStudyZunicode() {
                   Wenn Routineaufgaben den Betrieb dominieren und Verbesserungen immer wieder liegen bleiben,
                   braucht es oft einen{" "}
                   <Link
-                    href="/externer-it-verantwortlicher"
+                    href="/solutions/externer-it-verantwortlicher"
                     className="text-primary font-semibold underline underline-offset-4 hover:no-underline"
                   >
                     klaren IT-Verantwortlichen

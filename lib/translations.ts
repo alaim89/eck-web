@@ -170,8 +170,8 @@ export const translations = {
       subheadline: "Sie erhalten eine IT-Infrastruktur, die mit Ihrem Erfolg mitwächst und Ausfälle minimiert.",
       points: [
         {
-          title: "Eine vollständige IT-Abteilung an Ihrer Seite",
-          description: "Sie gewinnen einen zentralen Ansprechpartner, der die volle Verantwortung für Ihre Technik übernimmt und Reibungsverluste eliminiert.",
+          title: "Ein fester IT-Partner an Ihrer Seite",
+          description: "Sie gewinnen einen verlässlichen Partner, der als eingespieltes Team die volle Verantwortung für Ihre Technik übernimmt und Reibungsverluste eliminiert.",
         },
         {
           title: "Störungsfreies Arbeiten durch proaktive Wartung",
@@ -190,37 +190,37 @@ export const translations = {
         { metric: "< 2h", label: "Reaktion, wenn es wirklich kritisch ist", variant: "primary" },
         { metric: "24/7", label: "Überblick über kritische Systeme", variant: "secondary" },
         { metric: "36+", label: "Projekte stabilisiert und umgesetzt", variant: "secondary" },
-        { metric: "klar", label: "Verantwortung liegt bei einer Person", variant: "status" },
+        { metric: "klar", label: "Zentrale Verantwortung & Kontrolle", variant: "status" },
       ],
     },
     services: {
       badge: "Leistungen",
       headline: "Wenn IT nicht mehr sauber läuft.",
-      subheadline: "Ich unterstütze Unternehmen, wenn Migrationen feststecken, Systeme nicht sauber zusammenspielen oder die IT im Alltag mehr bremst als hilft.",
+      subheadline: "Wir unterstützen Unternehmen gemeinsam mit einem Netzwerk spezialisierter IT-Experten, wenn Migrationen feststecken, Systeme nicht sauber zusammenspielen oder die IT im Alltag mehr bremst als hilft.",
       items: [
         {
           title: "Managed IT-Services",
-          description: "Nach der Stabilisierung sorge ich dafür, dass Ihre IT im Alltag zuverlässig läuft und Probleme gar nicht erst ständig wieder auftauchen.",
+          description: "Nach der Stabilisierung sorgen wir dafür, dass Ihre IT im Alltag zuverlässig läuft und Probleme gar nicht erst ständig wieder auftauchen.",
           link: "/solutions/managed-it-service"
         },
         {
           title: "IT-Support für Unternehmen",
-          description: "Wenn im Tagesgeschäft zu viel liegen bleibt, unterstütze ich Ihr Team schnell und direkt – ohne unnötige Schleifen und ohne neues Chaos.",
+          description: "Wenn im Tagesgeschäft zu viel liegen bleibt, unterstützen wir Ihr Team schnell und direkt – ohne unnötige Schleifen und ohne neues Chaos.",
           link: "/solutions/managed-it-service"
         },
         {
           title: "Microsoft 365 & Modern Work",
-          description: "Ich bringe Microsoft 365 in einen Zustand, der sauber funktioniert, sicher aufgebaut ist und im Alltag wirklich entlastet.",
+          description: "Wir bringen Microsoft 365 in einen Zustand, der sauber funktioniert, sicher aufgebaut ist und im Alltag wirklich entlastet.",
           link: "/solutions/microsoft-365-compliance-betreuung"
         },
         {
           title: "Cloud-Infrastruktur (Azure)",
-          description: "Ich unterstütze bei Azure-Umgebungen, die wachsen sollen, ohne unübersichtlich zu werden oder später zum Risiko zu werden.",
+          description: "Wir unterstützen bei Azure-Umgebungen, die wachsen sollen, ohne unübersichtlich zu werden oder später zum Risiko zu werden.",
           link: "/solutions/azure-hybrid-betreuung"
         },
         {
           title: "IT-Sicherheit & Backup",
-          description: "Ich helfe dabei, Sicherheitslücken und Wiederherstellung nicht länger aufzuschieben, sondern sauber und praxistauglich umzusetzen.",
+          description: "Wir helfen dabei, Sicherheitslücken und Wiederherstellung nicht länger aufzuschieben, sondern sauber und praxistauglich umzusetzen.",
           link: "/solutions/it-sicherheit"
         }
       ]
@@ -269,26 +269,26 @@ export const translations = {
     },
     trust: {
       headline: "Wir übernehmen Verantwortung für Ihre IT.",
-      subheadline: "Wir sichern nicht nur Systeme, wir sichern Ihren Geschäftsbetrieb. Ein zentraler Ansprechpartner für stabile und sichere IT.",
+      subheadline: "Wir sichern nicht nur Systeme, wir sichern Ihren Geschäftsbetrieb. Ihr eingespieltes Team für stabile und sichere IT.",
       points: [
         {
           title: "Einer übernimmt. Nicht fünf.",
-          description: "Wenn etwas nicht läuft, will niemand hören, wer schuld ist. Ich übernehme die Verantwortung und kümmere mich darum, dass es wieder funktioniert."
+          description: "Wenn etwas nicht läuft, will niemand hören, wer schuld ist. Wir übernehmen als Team die Verantwortung und kümmern uns darum, dass es wieder funktioniert."
         },
         {
           title: "Probleme vorher sehen, nicht danach reagieren",
-          description: "Die meisten Ausfälle kündigen sich an. Ich räume die Dinge auf, die später Probleme machen würden, bevor sie kritisch werden."
+          description: "Die meisten Ausfälle kündigen sich an. Wir räumen die Dinge auf, die später Probleme machen würden, bevor sie kritisch werden."
         },
         {
           title: "Klare Entscheidungen statt Abstimmungsschleifen",
-          description: "Wenn keiner entscheidet, steht alles. Ich treffe Architekturentscheidungen und setze sie direkt um, damit es vorangeht."
+          description: "Wenn keiner entscheidet, steht alles. Wir treffen Architekturentscheidungen und setzen sie direkt um, damit es vorangeht."
         }
       ]
     },
     cta: {
       headline: "Läuft Ihre IT wirklich stabil oder nur irgendwie?",
       subheadline: "In 30 Minuten sehen wir, ob irgendwo ein Risiko steckt oder alles sauber läuft. Ohne Verpflichtung.",
-      button: "Kurz prüfen lassen",
+      button: "IT-Check starten",
     },
     caseStudies: {
       badge: "Praxisbeispiele",
@@ -316,7 +316,7 @@ export const translations = {
       },
       cta: {
         hint: "Unsicher, ob alles sauber läuft?",
-        button: "Kurz prüfen lassen"
+        button: "IT-Check starten"
       }
     }
   }
