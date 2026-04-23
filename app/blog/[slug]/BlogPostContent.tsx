@@ -1,4 +1,7 @@
-import { ArrowLeft, User, Linkedin, Twitter, Mail } from "lucide-react";
+'use client';
+
+import { motion } from "motion/react";
+import { ArrowLeft, Calendar, Clock, User, Tag, Share2, Linkedin, Twitter, Mail } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
