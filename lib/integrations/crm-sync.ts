@@ -89,3 +89,14 @@ export const resetCrmSyncState = () => {
   jobQueue.length = 0
   jobsByIdempotency.clear()
 }
+
+
+export const getCrmSyncSummary = () => {
+  const jobs = getCrmSyncJobs()
+  return {
+    total: jobs.length,
+    queued: jobs.filter((job) => job.status === 'queued').length,
+    sent: jobs.filter((job) => job.status === 'sent').length,
+    skippedTest: jobs.filter((job) => job.status === 'skipped_test').length,
+  }
+}

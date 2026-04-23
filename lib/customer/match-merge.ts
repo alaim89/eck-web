@@ -150,3 +150,13 @@ export const resolveReviewItem = (params: {
 export const resetReviewQueue = () => {
   reviewQueue.clear()
 }
+
+
+export const getReviewQueueSummary = () => {
+  const items = listReviewQueue()
+  return {
+    total: items.length,
+    open: items.filter((item) => !item.resolution).length,
+    resolved: items.filter((item) => Boolean(item.resolution)).length,
+  }
+}

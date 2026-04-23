@@ -4,6 +4,7 @@ import {
   resolveReviewItem,
   resetReviewQueue,
   scoreCustomerMatch,
+  getReviewQueueSummary,
 } from '@/lib/customer/match-merge'
 
 describe('customer match merge', () => {
@@ -55,6 +56,10 @@ describe('customer match merge', () => {
         expect(resolved.item.resolution).toBe('MERGE')
       }
     }
+
+    const summary = getReviewQueueSummary()
+    expect(summary.total).toBe(1)
+    expect(summary.resolved).toBe(1)
   })
 
   it('returns ignore for test data and low score create candidates', () => {

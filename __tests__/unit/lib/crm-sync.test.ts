@@ -4,6 +4,7 @@ import {
   processNextCrmSyncJob,
   queueLeadForCrmSync,
   resetCrmSyncState,
+  getCrmSyncSummary,
 } from '@/lib/integrations/crm-sync'
 
 describe('crm sync queue', () => {
@@ -88,5 +89,10 @@ describe('crm sync queue', () => {
     }
 
     expect(getCrmSyncJobs().length).toBe(2)
+
+    const summary = getCrmSyncSummary()
+    expect(summary.total).toBe(2)
+    expect(summary.skippedTest).toBe(1)
+    expect(summary.sent).toBe(1)
   })
 })

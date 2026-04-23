@@ -42,3 +42,10 @@ export const listAuditLogs = (options?: { action?: string; actor?: string; limit
 export const resetAuditLogs = () => {
   auditLogEntries.length = 0
 }
+
+
+export const getAuditLogSummary = () => ({
+  total: auditLogEntries.length,
+  latestAction: auditLogEntries[0]?.action || null,
+  latestAt: auditLogEntries[0]?.createdAt || null,
+})
