@@ -1,4 +1,5 @@
-import { getRequestUser } from '@/lib/iam/auth'
+import Link from 'next/link'
+import { AuthError, type AuthUser, getRequestUser } from '@/lib/iam/auth'
 
 const adminModules = [
   'Dashboard',
@@ -16,7 +17,30 @@ const adminModules = [
 ]
 
 export default async function AdminPage() {
-  const user = await getRequestUser()
+  let user: AuthUser | null = null
+  let authMessage: string | null = null
+
+  try {
+    user = await getRequestUser()
+  } catch (error) {
+    authMessage =
+      error instanceof AuthError ? error.message : 'Authentication could not be resolved.'
+  }
+
+  if (!user) {
+    return (
+      <main className="mx-auto max-w-2xl px-6 py-20">
+        <h1 className="text-2xl font-semibold">Admin-Zugriff erforderlich</h1>
+        <p className="mt-3 text-sm text-gray-600">{authMessage}</p>
+        <Link
+          href="/admin/login"
+          className="mt-6 inline-flex rounded-md bg-primary px-4 py-2 text-sm font-medium text-white"
+        >
+          Zum Admin-Login
+        </Link>
+      </main>
+    )
+  }
 
   return (
     <main className="mx-auto max-w-5xl px-6 py-12">

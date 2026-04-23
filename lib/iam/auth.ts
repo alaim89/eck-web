@@ -1,4 +1,4 @@
-import { headers } from 'next/headers'
+import { cookies, headers } from 'next/headers'
 import { type Role, roles } from '@/lib/iam/permissions'
 
 export type AuthUser = {
@@ -15,6 +15,7 @@ export class AuthError extends Error {
 
 const DEFAULT_ROLE: Role = 'editor'
 const DEFAULT_EMAIL = 'anonymous@local'
+export const ADMIN_USER_COOKIE = 'admin_user_email'
 
 const parseRole = (value: string | null): Role => {
   if (!value) return DEFAULT_ROLE
@@ -24,7 +25,7 @@ const parseRole = (value: string | null): Role => {
   return DEFAULT_ROLE
 }
 
-const parseBootstrapRoleMap = (rawValue: string | undefined): Record<string, Role> => {
+export const parseBootstrapRoleMap = (rawValue: string | undefined): Record<string, Role> => {
   if (!rawValue) return {}
 
   try {
@@ -40,6 +41,8 @@ const parseBootstrapRoleMap = (rawValue: string | undefined): Record<string, Rol
   }
 }
 
+export const getBootstrapRoleMap = () => parseBootstrapRoleMap(process.env.IAM_BOOTSTRAP_ROLE_MAP)
+
 export const resolveUserFromHeaders = (
   requestHeaders: Pick<Headers, 'get'>,
   options?: {
@@ -51,7 +54,7 @@ export const resolveUserFromHeaders = (
   const email = (requestHeaders.get('x-user-email') || DEFAULT_EMAIL).toLowerCase()
   const roleHeader = requestHeaders.get('x-user-role')
 
-  const roleMap = options?.roleMap ?? parseBootstrapRoleMap(process.env.IAM_BOOTSTRAP_ROLE_MAP)
+  const roleMap = options?.roleMap ?? getBootstrapRoleMap()
 
   if (roleMap[email]) {
     return { email, role: roleMap[email] }
@@ -78,7 +81,24 @@ export const resolveUserFromHeaders = (
   throw new AuthError('No role assignment found for request user')
 }
 
+const createHeaderReader = (source: Record<string, string | null>): Pick<Headers, 'get'> => ({
+  get: (key: string) => source[key.toLowerCase()] ?? null,
+})
+
 export const getRequestUser = async (): Promise<AuthUser> => {
   const requestHeaders = await headers()
+  const requestCookies = await cookies()
+
+  const cookieEmail = requestCookies.get(ADMIN_USER_COOKIE)?.value?.toLowerCase()
+
+  if (cookieEmail) {
+    const headerReader = createHeaderReader({
+      'x-user-email': cookieEmail,
+      'x-user-role': requestHeaders.get('x-user-role'),
+    })
+
+    return resolveUserFromHeaders(headerReader)
+  }
+
   return resolveUserFromHeaders(requestHeaders)
 }
