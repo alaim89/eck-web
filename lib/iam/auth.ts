@@ -44,6 +44,8 @@ export const parseBootstrapRoleMap = (rawValue: string | undefined): Record<stri
 
 export const getBootstrapRoleMap = () => parseBootstrapRoleMap(process.env.IAM_BOOTSTRAP_ROLE_MAP)
 
+export const isAdminAuthDisabled = () => process.env.ADMIN_AUTH_DISABLED === 'true'
+
 export const resolveUserFromHeaders = (
   requestHeaders: Pick<Headers, 'get'>,
   options?: {
@@ -87,6 +89,13 @@ const createHeaderReader = (source: Record<string, string | null>): Pick<Headers
 })
 
 export const getRequestUser = async (): Promise<AuthUser> => {
+  if (isAdminAuthDisabled()) {
+    return {
+      email: process.env.ADMIN_AUTH_DISABLED_EMAIL || 'admin-disabled@local',
+      role: 'super_admin',
+    }
+  }
+
   const requestHeaders = await headers()
   const requestCookies = await cookies()
 
