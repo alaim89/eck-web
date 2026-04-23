@@ -1,0 +1,64 @@
+import { cookies } from 'next/headers'
+import { NextResponse } from 'next/server'
+import { ADMIN_ROLE_COOKIE, ADMIN_USER_COOKIE, getBootstrapRoleMap } from '@/lib/iam/auth'
+import { appendAuditLog } from '@/lib/ops/audit-log'
+
+export async function POST(request: Request) {
+  const formData = await request.formData()
+  const email = String(formData.get('email') || '').trim().toLowerCase()
+  const token = String(formData.get('token') || '').trim()
+
+  const expectedToken = process.env.ADMIN_BOOTSTRAP_TOKEN
+  if (!expectedToken || token !== expectedToken) {
+    appendAuditLog({
+      level: 'warn',
+      actor: email || 'anonymous',
+      action: 'admin.bootstrap.failed',
+      objectType: 'session',
+      details: { reason: 'invalid_token' },
+    })
+
+    return NextResponse.redirect(new URL('/admin/login?error=invalid_token', request.url), { status: 303 })
+  }
+
+  const roleMap = getBootstrapRoleMap()
+  const role = roleMap[email]
+  if (!email || !role) {
+    appendAuditLog({
+      level: 'warn',
+      actor: email || 'anonymous',
+      action: 'admin.bootstrap.failed',
+      objectType: 'session',
+      details: { reason: 'email_not_mapped' },
+    })
+
+    return NextResponse.redirect(new URL('/admin/login?error=email_not_mapped', request.url), { status: 303 })
+  }
+
+  const cookieStore = await cookies()
+  cookieStore.set(ADMIN_USER_COOKIE, email, {
+    httpOnly: true,
+    sameSite: 'lax',
+    secure: process.env.NODE_ENV === 'production',
+    path: '/',
+    maxAge: 60 * 60 * 8,
+  })
+
+  cookieStore.set(ADMIN_ROLE_COOKIE, role, {
+    httpOnly: true,
+    sameSite: 'lax',
+    secure: process.env.NODE_ENV === 'production',
+    path: '/',
+    maxAge: 60 * 60 * 8,
+  })
+
+  appendAuditLog({
+    level: 'info',
+    actor: email,
+    action: 'admin.bootstrap.succeeded',
+    objectType: 'session',
+    details: { role },
+  })
+
+  return NextResponse.redirect(new URL('/admin', request.url), { status: 303 })
+}
