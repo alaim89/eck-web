@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { queueLeadForCrmSync } from '@/lib/integrations/crm-sync'
 import { registerLeadSubmission, validateLeadPayload } from '@/lib/lead/intake'
 
 export async function POST(
@@ -35,14 +36,20 @@ export async function POST(
   }
 
   const registered = registerLeadSubmission(formId, result, idempotencyKey)
+  const crmQueueResult = queueLeadForCrmSync({
+    idempotencyKey,
+    leadReference: registered.leadReference,
+    payload: result,
+  })
 
   return NextResponse.json({
     ok: true,
     status: registered.status,
     leadReference: registered.leadReference,
     crmSync: {
-      state: 'queued',
-      reason: 'Phase 3 foundation: CRM connector pending',
+      state: crmQueueResult.job.status,
+      jobId: crmQueueResult.job.jobId,
+      duplicateJob: crmQueueResult.duplicate,
     },
   })
 }

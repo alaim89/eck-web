@@ -50,6 +50,12 @@ export default async function AdminPage() {
         <span className="font-medium">{user.role}</span>
       </p>
 
+      <form action="/api/admin/auth/logout" method="POST" className="mt-3">
+        <button type="submit" className="rounded-md border border-gray-300 px-3 py-1 text-xs">
+          Abmelden
+        </button>
+      </form>
+
       <section className="mt-8 grid gap-3 sm:grid-cols-2">
         {adminModules.map((moduleName) => (
           <article key={moduleName} className="rounded-lg border border-gray-200 p-4">
