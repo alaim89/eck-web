@@ -1,19 +1,20 @@
 import Link from 'next/link'
 import { AuthError, type AuthUser, getRequestUser } from '@/lib/iam/auth'
 
-const adminModules = [
-  'Dashboard',
-  'Seiten / Landingpages',
-  'Kampagnen',
-  'Templates',
-  'Medien / Assets',
-  'Formulare',
-  'Leads / CRM-Übergaben',
-  'Kunden / Zuordnungen',
-  'Benutzer',
-  'Rollen / Rechte',
-  'Systemeinstellungen',
-  'Sync-Logs / Integrationsstatus',
+const adminModules: Array<{ name: string; href: string }> = [
+  { name: 'Dashboard', href: '/admin' },
+  { name: 'Seiten / Landingpages', href: '/admin' },
+  { name: 'Kampagnen', href: '/admin' },
+  { name: 'Templates', href: '/admin' },
+  { name: 'Medien / Assets', href: '/admin' },
+  { name: 'Formulare', href: '/admin' },
+  { name: 'Leads / CRM-Übergaben', href: '/admin' },
+  { name: 'Kunden / Zuordnungen', href: '/admin' },
+  { name: 'Benutzer', href: '/admin' },
+  { name: 'Rollen / Rechte', href: '/admin' },
+  { name: 'Systemeinstellungen', href: '/admin' },
+  { name: 'Sync-Logs / Integrationsstatus', href: '/admin/integrations' },
+  { name: 'Audit Logs', href: '/admin/audit' },
 ]
 
 export default async function AdminPage() {
@@ -57,10 +58,14 @@ export default async function AdminPage() {
       </form>
 
       <section className="mt-8 grid gap-3 sm:grid-cols-2">
-        {adminModules.map((moduleName) => (
-          <article key={moduleName} className="rounded-lg border border-gray-200 p-4">
-            <h2 className="text-base font-medium">{moduleName}</h2>
-          </article>
+        {adminModules.map((module) => (
+          <Link
+            key={module.name}
+            href={module.href}
+            className="rounded-lg border border-gray-200 p-4 transition-colors hover:bg-gray-50"
+          >
+            <h2 className="text-base font-medium">{module.name}</h2>
+          </Link>
         ))}
       </section>
 

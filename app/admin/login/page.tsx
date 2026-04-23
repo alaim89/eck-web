@@ -2,6 +2,7 @@ const errorMessages: Record<string, string> = {
   invalid_credentials: 'Ungültige Dummy-Kennung.',
   invalid_token: 'Ungültiger Bootstrap-Token.',
   email_not_mapped: 'E-Mail ist nicht für Bootstrap freigeschaltet.',
+  credentials_not_configured: 'Keine Dummy-Kennungen konfiguriert. Bitte ADMIN_DUMMY_USERS_JSON setzen.',
 }
 
 export default async function AdminLoginPage({

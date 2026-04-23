@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { requirePermission } from '@/lib/iam/guard'
 import { resolveReviewItem, type ReviewResolution } from '@/lib/customer/match-merge'
+import { appendAuditLog } from '@/lib/ops/audit-log'
 
 export async function POST(
   request: Request,
@@ -28,6 +29,19 @@ export async function POST(
   if (!result.ok) {
     return NextResponse.json({ error: result.reason }, { status: 404 })
   }
+
+  appendAuditLog({
+    level: 'info',
+    actor: access.user.email,
+    action: 'customer.review.resolved',
+    objectType: 'customer_review',
+    objectId: reviewId,
+    details: {
+      resolution: body.resolution,
+      matchedCustomerId: result.item.matchedCustomerId,
+      confidence: result.item.confidence,
+    },
+  })
 
   return NextResponse.json({
     ok: true,
