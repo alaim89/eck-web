@@ -57,7 +57,7 @@ export function ContactForm() {
           event_label: 'Formular erfolgreich abgeschickt',
         });
 
-        Optional: Google Ads Conversion
+        // Optional: Google Ads Conversion
          (window as any).gtag('event', 'conversion', {
            send_to: 'AW-CONVERSION_ID/CONVERSION_LABEL',
            value: 1.0,
