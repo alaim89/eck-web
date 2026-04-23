@@ -15,23 +15,30 @@ const DEFAULT_CONSENT: ConsentCategories = {
   externalMedia: false,
 };
 
+const getInitialConsent = (): ConsentCategories => {
+  if (typeof window === 'undefined') return DEFAULT_CONSENT;
+  const stored = getStoredConsent();
+
+  if (!stored) return DEFAULT_CONSENT;
+
+  return {
+    necessary: stored.necessary,
+    analytics: stored.analytics,
+    marketing: stored.marketing,
+    externalMedia: stored.externalMedia,
+  };
+};
+
+const getInitialVisibility = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  return !getStoredConsent();
+};
+
 export function CookieConsentBanner() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [consent, setConsent] = useState<ConsentCategories>(DEFAULT_CONSENT);
+  const [isVisible, setIsVisible] = useState(getInitialVisibility);
+  const [consent, setConsent] = useState<ConsentCategories>(getInitialConsent);
 
   useEffect(() => {
-    const stored = getStoredConsent();
-    if (!stored) {
-      setIsVisible(true);
-    } else {
-      setConsent({
-        necessary: stored.necessary,
-        analytics: stored.analytics,
-        marketing: stored.marketing,
-        externalMedia: stored.externalMedia,
-      });
-    }
-
     const handleOpen = () => setIsVisible(true);
     window.addEventListener('open-cookie-settings', handleOpen);
     return () => window.removeEventListener('open-cookie-settings', handleOpen);
