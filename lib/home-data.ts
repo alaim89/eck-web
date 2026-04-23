@@ -7,17 +7,23 @@ export const HERO_VARIANTS = [
     visualType: "monitoring" as const
   },
   {
-    subline: "Weniger Feuerlöschen, mehr Weitblick. Wir übernehmen die technische Verantwortung für Ihren IT-Betrieb, damit Sie sich wieder auf Ihr Kerngeschäft konzentrieren können.",
-    primaryCTA: { text: "Situation kurz einordnen", href: "/kontakt" },
-    secondaryCTA: { text: "Leistungsübersicht", href: "/solutions" },
-    visualType: "cloud" as const
+    subline: "Das Problem ist selten die Technik. Sondern fehlende Struktur und Entscheidungen. Wir bringen beides zusammen und sorgen dafür, dass Ihre IT wieder kontrollierbar wird.",
+    primaryCTA: { text: "Kurz abstimmen", href: "/kontakt" },
+    secondaryCTA: { text: "Einblicke ansehen", href: "/case-studies" },
+    visualType: "architecture" as const
   },
   {
-    subline: "Sicherheit, die im Alltag funktioniert. Von der M365-Governance bis zum Managed Backup - wir bauen Strukturen, die Angreifer draußen und Ihre Daten sicher halten.",
-    primaryCTA: { text: "IT-Risiko-Check anfordern", href: "/solutions/it-risiko-audit" },
-    secondaryCTA: { text: "Security-Lösungen", href: "/solutions/it-sicherheit" },
+    subline: "Die meisten IT-Systeme laufen. Aber nur mit Aufwand. Wir bringen Struktur rein und sorgen dafür, dass Betrieb, Sicherheit und Weiterentwicklung wieder zusammenpassen.",
+    primaryCTA: { text: "Kurz draufschauen", href: "/kontakt" },
+    secondaryCTA: { text: "Praxisbeispiele ansehen", href: "/case-studies" },
     visualType: "health" as const
-  }
+  },
+  {
+    subline: "Wenn Migrationen oder Cloud-Projekte feststecken, liegt es selten an der Technik. Wir gehen operativ rein, bringen Struktur rein und sorgen dafür, dass es wieder vorwärts geht.",
+    primaryCTA: { text: "Kurz abstimmen", href: "/kontakt" },
+    secondaryCTA: { text: "So gehen wir vor", href: "/solutions" },
+    visualType: "cloud" as const
+  },
 ];
 
 export const PROBLEM_CARDS = [
