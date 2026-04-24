@@ -1,6 +1,6 @@
 import { cookies, headers } from 'next/headers'
 import { type Role, roles } from '@/lib/iam/permissions'
-import { ADMIN_SIG_COOKIE, verifySessionSig } from '@/lib/iam/session'
+import { ADMIN_SIG_COOKIE, ADMIN_USER_COOKIE, ADMIN_ROLE_COOKIE, verifySessionSig } from '@/lib/iam/session'
 
 export type AuthUser = {
   email: string
@@ -16,8 +16,7 @@ export class AuthError extends Error {
 
 const DEFAULT_ROLE: Role = 'editor'
 const DEFAULT_EMAIL = 'anonymous@local'
-export const ADMIN_USER_COOKIE = 'admin_user_email'
-export const ADMIN_ROLE_COOKIE = 'admin_user_role'
+// Cookie names moved to @/lib/iam/session for consolidation
 
 const parseRole = (value: string | null): Role => {
   if (!value) return DEFAULT_ROLE

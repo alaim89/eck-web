@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
-import { ADMIN_ROLE_COOKIE, ADMIN_USER_COOKIE, ADMIN_SIG_COOKIE } from '@/lib/iam/auth'
+import { ADMIN_ROLE_COOKIE, ADMIN_USER_COOKIE, ADMIN_SIG_COOKIE } from '@/lib/iam/session'
 import { appendAuditLog } from '@/lib/ops/audit-log'
 
 export async function POST(request: Request) {

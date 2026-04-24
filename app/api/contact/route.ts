@@ -3,6 +3,7 @@ import nodemailer from 'nodemailer';
 import { z } from 'zod';
 import { logger } from '@/lib/logger';
 import { consumeRateLimit } from '@/lib/security/rate-limit';
+import { getClientIp } from '@/lib/security/ip';
 
 const CONTACT_RATE_LIMIT = 5;
 const CONTACT_RATE_WINDOW_MS = 60 * 60 * 1000;
@@ -26,8 +27,7 @@ function escapeHtml(str: string): string {
 }
 
 export async function POST(req: NextRequest) {
-  const forwarded = req.headers.get('x-forwarded-for');
-  const ip = forwarded ? forwarded.split(',')[0].trim() : 'unknown';
+  const ip = await getClientIp();
 
   const rate = consumeRateLimit({ key: `contact:${ip}`, limit: CONTACT_RATE_LIMIT, windowMs: CONTACT_RATE_WINDOW_MS });
   if (!rate.allowed) {

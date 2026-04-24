@@ -3,6 +3,7 @@ import { ZodError } from 'zod'
 import { queueLeadForCrmSync } from '@/lib/integrations/crm-sync'
 import { registerLeadSubmission, validateLeadPayload } from '@/lib/lead/intake'
 import { consumeRateLimit } from '@/lib/security/rate-limit'
+import { getClientIp } from '@/lib/security/ip'
 
 export async function POST(
   request: Request,
@@ -13,7 +14,7 @@ export async function POST(
   }
 ) {
   const { formId } = await context.params
-  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'local'
+  const ip = await getClientIp()
   const limit = Number(process.env.FORMS_RATE_LIMIT_PER_MINUTE || '30')
   const rate = consumeRateLimit({
     key: `form:${ip}:${formId}`,

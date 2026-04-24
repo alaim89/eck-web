@@ -6,8 +6,6 @@ export async function GET() {
   return NextResponse.json({
     status: 'ok',
     timestamp: new Date().toISOString(),
-    uptime: Math.floor(process.uptime()),
-    env: process.env.NODE_ENV ?? 'unknown',
-    version: process.env.npm_package_version ?? '0.1.0',
+    // VERSION and UPTIME removed for security hardening (BSI Grundschutz / OWASP)
   });
 }

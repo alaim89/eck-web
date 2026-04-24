@@ -1,12 +1,11 @@
 import { NextResponse } from 'next/server'
-import { headers } from 'next/headers'
 import { AuthError, getRequestUser } from '@/lib/iam/auth'
 import { hasPermission, type Permission } from '@/lib/iam/permissions'
 import { consumeRateLimit } from '@/lib/security/rate-limit'
+import { getClientIp } from '@/lib/security/ip'
 
 export const requirePermission = async (permission: Permission) => {
-  const requestHeaders = await headers()
-  const ip = requestHeaders.get('x-forwarded-for')?.split(',')[0]?.trim() || 'local'
+  const ip = await getClientIp()
   const limit = Number(process.env.ADMIN_RATE_LIMIT_PER_MINUTE || '120')
   const rate = consumeRateLimit({
     key: `admin:${ip}`,

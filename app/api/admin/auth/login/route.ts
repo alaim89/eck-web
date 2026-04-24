@@ -1,8 +1,7 @@
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
-import { ADMIN_ROLE_COOKIE, ADMIN_USER_COOKIE } from '@/lib/iam/auth'
+import { ADMIN_ROLE_COOKIE, ADMIN_USER_COOKIE, ADMIN_SIG_COOKIE, SESSION_COOKIE_OPTIONS, signSession } from '@/lib/iam/session'
 import { getDummyCredentials, verifyDummyCredential } from '@/lib/iam/dummy-credentials'
-import { ADMIN_SIG_COOKIE, SESSION_COOKIE_OPTIONS, signSession } from '@/lib/iam/session'
 import { appendAuditLog } from '@/lib/ops/audit-log'
 
 export async function POST(request: Request) {
