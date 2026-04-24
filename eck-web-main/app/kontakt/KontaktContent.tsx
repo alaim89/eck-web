@@ -1,0 +1,291 @@
+'use client';
+
+import { motion } from "motion/react";
+import { Mail, Phone, MessageSquare, Calendar, ArrowRight, CheckCircle2, Building2, Users, MessageCircle, AlertCircle } from "lucide-react";
+import Link from "next/link";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { useState } from "react";
+
+export default function KontaktContent() {
+  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormState('submitting');
+    setErrorMessage('');
+
+    const fd = new FormData(e.currentTarget);
+    const payload = {
+      name: fd.get('full-name') as string,
+      email: fd.get('email') as string,
+      company: fd.get('company') as string,
+      employees: fd.get('employees') as string,
+      message: fd.get('message') as string,
+      _gotcha: fd.get('_gotcha') as string,
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setErrorMessage(data.error ?? 'Ein unbekannter Fehler ist aufgetreten.');
+        setFormState('error');
+        return;
+      }
+
+      if (typeof window !== 'undefined' && window.gtag) {
+        // TODO: Replace AW-CONVERSION_ID/LABEL with actual Google Ads conversion action
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-CONVERSION_ID/LABEL',
+          value: 1.0,
+          currency: 'EUR',
+        });
+        window.gtag('event', 'generate_lead', {
+          event_category: 'Kontakt',
+          event_label: 'Formular abgeschickt',
+        });
+      }
+
+      setFormState('success');
+    } catch {
+      setErrorMessage('Netzwerkfehler. Bitte versuchen Sie es erneut.');
+      setFormState('error');
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-white text-black font-poppins selection:bg-primary/30">
+      <Header />
+
+      <main className="pt-48 pb-32 px-6">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="grid lg:grid-cols-2 gap-24">
+
+            {/* Left: Info & Direct Contact */}
+            <div>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-16"
+              >
+                <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1]">Lassen Sie uns über Ihre IT sprechen.</h1>
+                <p className="text-xl text-gray-600 leading-relaxed opacity-90 max-w-lg">
+                  Egal ob akute Projekt-Rettung oder langfristige Strategie-Begleitung - wir finden den richtigen Weg für Ihre Infrastruktur.
+                </p>
+              </motion.div>
+
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="flex items-start gap-6 p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:border-primary/20 transition-all group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <Mail className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">E-Mail</div>
+                    <a href="mailto:info@ecksolution-it.de" className="text-xl font-bold text-black hover:text-primary transition-colors">info@ecksolution-it.de</a>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="flex items-start gap-6 p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:border-primary/20 transition-all group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <Phone className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Telefon</div>
+                    <a href="tel:+4917634580607" className="text-xl font-bold text-black hover:text-primary transition-colors">+49 176 34580607</a>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="p-8 rounded-3xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white relative overflow-hidden group shadow-xl shadow-emerald-900/10"
+                >
+                  {/* Subtle Glow Effects */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-white/30 transition-colors duration-500" />
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-emerald-400/20 rounded-full blur-2xl -ml-12 -mb-12" />
+
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center mb-6 border border-white/20">
+                      <Calendar className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-4">Direkte Terminbuchung</h3>
+                    <p className="text-white/80 mb-8 leading-relaxed">Wählen Sie direkt einen passenden Termin für ein 15-minütiges Erstgespräch via Microsoft Bookings.</p>
+                    <Link
+                      href="https://outlook.office.com/book/EcksolutionITService@ecksolution-it.de/?ismsaljsauthenabled"
+                      target="_blank"
+                      className="inline-flex items-center gap-2 bg-white text-emerald-700 px-6 py-3 rounded-xl font-bold hover:bg-emerald-50 transition-all shadow-lg hover:-translate-y-0.5 active:scale-[0.98]"
+                    >
+                      Erstgespräch sichern <ArrowRight className="w-5 h-5" />
+                    </Link>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Right: Qualification Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="bg-white p-10 md:p-12 rounded-[3rem] border border-gray-100 shadow-2xl shadow-gray-100/50"
+            >
+              {formState === 'success' ? (
+                <div className="h-full flex flex-col items-center justify-center text-center py-20">
+                  <div className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center mb-8">
+                    <CheckCircle2 className="w-10 h-10 text-green-500" />
+                  </div>
+                  <h2 className="text-3xl font-bold mb-4">Anfrage gesendet!</h2>
+                  <p className="text-gray-600 mb-8">Vielen Dank für Ihr Vertrauen. Wir melden uns innerhalb der nächsten 24 Stunden bei Ihnen.</p>
+                  <button
+                    onClick={() => setFormState('idle')}
+                    className="text-primary font-bold hover:underline"
+                  >
+                    Weitere Nachricht senden
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  {/* Honeypot – invisible to real users, filled only by bots */}
+                  <input
+                    type="text"
+                    name="_gotcha"
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    autoComplete="off"
+                    style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0 }}
+                  />
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label htmlFor="full-name" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Name</label>
+                      <input
+                        id="full-name"
+                        name="full-name"
+                        type="text"
+                        required
+                        placeholder="Max Mustermann"
+                        className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">E-Mail</label>
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="max@unternehmen.de"
+                        className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="company" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Unternehmen</label>
+                    <div className="relative">
+                      <Building2 className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <input
+                        id="company"
+                        name="company"
+                        type="text"
+                        placeholder="Muster GmbH"
+                        className="w-full pl-14 pr-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="employees" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Mitarbeiteranzahl</label>
+                    <div className="relative">
+                      <Users className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <select
+                        id="employees"
+                        name="employees"
+                        className="w-full pl-14 pr-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none appearance-none"
+                      >
+                        <option value="1-5">1-5 Mitarbeiter</option>
+                        <option value="6-10">6-10 Mitarbeiter</option>
+                        <option value="10-50">10-50 Mitarbeiter</option>
+                        <option value="50-150">50-150 Mitarbeiter</option>
+                        <option value="150-250">150-250 Mitarbeiter</option>
+                        <option value="250+">250+ Mitarbeiter</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="message" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Ihr Anliegen</label>
+                    <div className="relative">
+                      <MessageCircle className="absolute left-6 top-6 w-5 h-5 text-gray-400" />
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={4}
+                        required
+                        placeholder="Beschreiben Sie kurz Ihre aktuelle IT-Herausforderung (z. B. Ausfälle, Migration, Sicherheit)..."
+                        className="w-full pl-14 pr-6 py-6 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none resize-none"
+                      />
+                    </div>
+                  </div>
+
+                  {formState === 'error' && (
+                    <div className="flex items-start gap-3 p-4 rounded-2xl bg-red-50 border border-red-100 text-red-700">
+                      <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
+                      <span className="text-sm">{errorMessage}</span>
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={formState === 'submitting'}
+                    onClick={() => {
+                      if (typeof window !== "undefined" && window.gtag) {
+                        window.gtag("event", "click", {
+                          event_category: "CTA",
+                          event_label: "Kontaktformular Button"
+                        });
+                      }
+                    }}
+                    className="w-full py-5 bg-primary hover:bg-primary/90 text-white rounded-2xl font-bold text-lg transition-all shadow-xl shadow-primary/20 active:scale-[0.99] disabled:opacity-70 flex items-center justify-center gap-3"
+                  >
+                    {formState === 'submitting' ? (
+                      <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    ) : (
+                      <>Kostenlose IT-Einschätzung anfordern <ArrowRight className="w-5 h-5" /></>
+                    )}
+                  </button>
+
+                  <div className="text-center text-xs text-gray-400 space-y-1">
+                    <p>• Antwort innerhalb von 24h</p>
+                    <p>• 100% unverbindlich</p>
+                    <p>• Keine Weitergabe Ihrer Daten</p>
+                  </div>
+                </form>
+              )}
+            </motion.div>
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}

@@ -1,15 +1,13 @@
-'use client';
-
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Calendar, Clock, User, Tag } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BLOG_POSTS } from "@/lib/blog-data";
+import { translations } from "@/lib/translations";
 
 export default function BlogContent() {
-  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
+  const t = translations.de;
   return (
     <div className="min-h-screen bg-white text-black font-poppins selection:bg-primary/30">
       <Header />
@@ -109,27 +107,17 @@ export default function BlogContent() {
               <p className="text-white/80 text-lg mb-10 leading-relaxed">
                 Erhalten Sie monatlich exklusive Einblicke in IT-Strategien und Technologietrends direkt in Ihr Postfach.
               </p>
-              {newsletterSubmitted ? (
-                <p className="text-white font-semibold text-lg">Danke! Wir melden uns bald.</p>
-              ) : (
-                <form
-                  className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto relative z-20"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setNewsletterSubmitted(true);
-                  }}
-                >
-                  <input
-                    type="email"
-                    placeholder="Ihre E-Mail-Adresse"
-                    className="flex-grow px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all backdrop-blur-sm"
-                    required
-                  />
-                  <button className="px-8 py-4 bg-white text-emerald-700 hover:bg-emerald-50 rounded-xl font-bold transition-all active:scale-[0.98] shadow-lg shadow-emerald-900/20">
-                    Anmelden
-                  </button>
-                </form>
-              )}
+              <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto relative z-20">
+                <input 
+                  type="email" 
+                  placeholder="Ihre E-Mail-Adresse"
+                  className="flex-grow px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all backdrop-blur-sm"
+                  required
+                />
+                <button className="px-8 py-4 bg-white text-emerald-700 hover:bg-emerald-50 rounded-xl font-bold transition-all active:scale-[0.98] shadow-lg shadow-emerald-900/20">
+                  Anmelden
+                </button>
+              </form>
               <p className="mt-8 text-xs text-white/50 font-medium tracking-wide">
                 Kein Spam. Abmeldung jederzeit möglich.
               </p>
