@@ -1,4 +1,7 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import fs from 'node:fs'
+import os from 'node:os'
+import path from 'node:path'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { appendAuditLog, getAuditLogSummary, listAuditLogs, resetAuditLogs } from '@/lib/ops/audit-log'
 
 describe('audit log', () => {
@@ -52,5 +55,41 @@ describe('audit log', () => {
 
     const byActor = listAuditLogs({ actor: 'alice@example.com' })
     expect(byActor).toHaveLength(2)
+  })
+})
+
+describe('audit log persistence', () => {
+  const previousMode = process.env.OPS_PERSISTENCE_MODE
+  const previousDir = process.env.OPS_DATA_DIR
+
+  beforeEach(() => {
+    vi.resetModules()
+  })
+
+  afterEach(() => {
+    process.env.OPS_PERSISTENCE_MODE = previousMode
+    process.env.OPS_DATA_DIR = previousDir
+  })
+
+  it('restores audit entries from file persistence after reload', async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'audit-log-'))
+    process.env.OPS_PERSISTENCE_MODE = 'file'
+    process.env.OPS_DATA_DIR = tempDir
+
+    const first = await import('@/lib/ops/audit-log')
+    first.resetAuditLogs()
+    first.appendAuditLog({
+      level: 'info',
+      actor: 'persist@example.com',
+      action: 'persist.test',
+      objectType: 'test',
+    })
+
+    vi.resetModules()
+
+    const second = await import('@/lib/ops/audit-log')
+    const logs = second.listAuditLogs()
+    expect(logs).toHaveLength(1)
+    expect(logs[0].action).toBe('persist.test')
   })
 })

@@ -1,4 +1,7 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import fs from 'node:fs'
+import os from 'node:os'
+import path from 'node:path'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import {
   getCrmSyncJobs,
   processNextCrmSyncJob,
@@ -94,5 +97,48 @@ describe('crm sync queue', () => {
     expect(summary.total).toBe(2)
     expect(summary.skippedTest).toBe(1)
     expect(summary.sent).toBe(1)
+  })
+})
+
+describe('crm sync queue persistence', () => {
+  const previousMode = process.env.OPS_PERSISTENCE_MODE
+  const previousDir = process.env.OPS_DATA_DIR
+
+  beforeEach(() => {
+    vi.resetModules()
+  })
+
+  afterEach(() => {
+    process.env.OPS_PERSISTENCE_MODE = previousMode
+    process.env.OPS_DATA_DIR = previousDir
+  })
+
+  it('restores queue state from file persistence after reload', async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'crm-sync-'))
+    process.env.OPS_PERSISTENCE_MODE = 'file'
+    process.env.OPS_DATA_DIR = tempDir
+
+    const first = await import('@/lib/integrations/crm-sync')
+    first.resetCrmSyncState()
+    first.queueLeadForCrmSync({
+      idempotencyKey: 'persist-idem-1',
+      leadReference: 'persist-ref-1',
+      payload: {
+        firstName: 'Persist',
+        lastName: 'Lead',
+        email: 'persist@example.com',
+        company: 'Persist GmbH',
+        message: 'Persist queue',
+        consent: true,
+        isTest: false,
+      },
+    })
+
+    vi.resetModules()
+
+    const second = await import('@/lib/integrations/crm-sync')
+    const jobs = second.getCrmSyncJobs()
+    expect(jobs).toHaveLength(1)
+    expect(jobs[0].idempotencyKey).toBe('persist-idem-1')
   })
 })
