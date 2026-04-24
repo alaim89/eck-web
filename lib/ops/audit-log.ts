@@ -88,14 +88,29 @@ export const appendAuditLog = (entry: Omit<AuditEntry, 'id' | 'createdAt'>) => {
   return enriched
 }
 
-export const listAuditLogs = (options?: { action?: string; actor?: string; limit?: number }) => {
+export const listAuditLogs = (options?: {
+  action?: string
+  actor?: string
+  limit?: number
+  includeSensitive?: boolean
+}) => {
   applyRetention()
   const limit = options?.limit ?? 100
 
-  return auditLogEntries
+  const records = auditLogEntries
     .filter((entry) => (options?.action ? entry.action === options.action : true))
     .filter((entry) => (options?.actor ? entry.actor === maskEmail(options.actor) : true))
     .slice(0, limit)
+
+  if (options?.includeSensitive) {
+    return records
+  }
+
+  return records.map((entry) => ({
+    ...entry,
+    objectId: entry.objectId ? `masked:${entry.objectType}` : undefined,
+    details: undefined,
+  }))
 }
 
 export const resetAuditLogs = () => {

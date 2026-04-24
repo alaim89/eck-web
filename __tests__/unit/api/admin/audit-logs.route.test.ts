@@ -51,6 +51,26 @@ describe('GET /api/admin/audit/logs', () => {
       action: 'admin.login.failed',
       actor: 'ops@example.com',
       limit: 500,
+      includeSensitive: false,
+    })
+  })
+
+  it('enables sensitive fields for users with pii.view permission', async () => {
+    requirePermissionMock.mockResolvedValueOnce({
+      ok: true,
+      user: { email: 'super@example.com', role: 'super_admin' },
+    })
+    listAuditLogsMock.mockReturnValueOnce([])
+
+    const request = new Request('http://localhost/api/admin/audit/logs')
+    const response = await GET(request)
+    expect(response.status).toBe(200)
+
+    expect(listAuditLogsMock).toHaveBeenCalledWith({
+      action: undefined,
+      actor: undefined,
+      limit: 100,
+      includeSensitive: true,
     })
   })
 })

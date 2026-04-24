@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { requirePermission } from '@/lib/iam/guard'
+import { hasPermission } from '@/lib/iam/permissions'
 import { listAuditLogs } from '@/lib/ops/audit-log'
 
 export async function GET(request: Request) {
@@ -21,6 +22,7 @@ export async function GET(request: Request) {
       action,
       actor,
       limit: Number.isFinite(limit) ? Math.min(Math.max(limit, 1), 500) : 100,
+      includeSensitive: hasPermission(access.user.role, 'pii.view'),
     }),
   })
 }
