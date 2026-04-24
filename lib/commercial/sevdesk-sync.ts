@@ -12,11 +12,20 @@ export type CommercialCandidate = {
 }
 
 export type CommercialSyncStatus =
-  | 'queued'
+  | 'awaiting_approval'
+  | 'approved'
+  | 'rejected'
   | 'processed'
   | 'blocked_test'
   | 'blocked_incomplete'
   | 'blocked_not_relevant'
+
+export type CommercialAction = {
+  actor: string
+  at: string
+  action: 'created' | 'approved' | 'rejected' | 'processed'
+  note?: string
+}
 
 export type CommercialSyncJob = {
   jobId: string
@@ -27,6 +36,7 @@ export type CommercialSyncJob = {
   sevdeskQuoteId?: string
   createdAt: string
   processedAt?: string
+  actionHistory: CommercialAction[]
 }
 
 const SEVDESK_FILE = 'sevdesk-sync-jobs.json'
@@ -66,7 +76,7 @@ export const evaluateCommercialRelevance = (candidate: CommercialCandidate) => {
 
   return {
     relevant: true,
-    status: 'queued' as CommercialSyncStatus,
+    status: 'awaiting_approval' as CommercialSyncStatus,
   }
 }
 
@@ -85,6 +95,14 @@ export const queueCommercialSync = (candidate: CommercialCandidate) => {
     status: evalResult.status,
     reason: evalResult.reason,
     createdAt: new Date().toISOString(),
+    actionHistory: [
+      {
+        actor: 'system',
+        at: new Date().toISOString(),
+        action: 'created',
+        note: evalResult.reason,
+      },
+    ],
   }
 
   jobs.unshift(job)
@@ -93,12 +111,12 @@ export const queueCommercialSync = (candidate: CommercialCandidate) => {
 }
 
 export const processNextCommercialJob = () => {
-  const next = jobs.find((job) => job.status === 'queued')
+  const next = jobs.find((job) => job.status === 'approved')
 
   if (!next) {
     return {
       processed: false as const,
-      reason: 'no_queued_jobs',
+      reason: 'no_approved_jobs',
     }
   }
 
@@ -106,6 +124,11 @@ export const processNextCommercialJob = () => {
   next.sevdeskContactId = `sev_contact_${next.jobId}`
   next.sevdeskQuoteId = `sev_quote_${next.jobId}`
   next.processedAt = new Date().toISOString()
+  next.actionHistory.unshift({
+    actor: 'system',
+    at: next.processedAt,
+    action: 'processed',
+  })
   persist()
 
   return {
@@ -115,6 +138,40 @@ export const processNextCommercialJob = () => {
 }
 
 export const listCommercialJobs = () => [...jobs]
+
+export const approveCommercialJob = (params: { jobId: string; actor: string }) => {
+  const job = jobs.find((entry) => entry.jobId === params.jobId)
+  if (!job) return { ok: false as const, reason: 'not_found' as const }
+  if (job.status !== 'awaiting_approval') {
+    return { ok: false as const, reason: 'invalid_state' as const }
+  }
+  job.status = 'approved'
+  job.actionHistory.unshift({
+    actor: params.actor,
+    at: new Date().toISOString(),
+    action: 'approved',
+  })
+  persist()
+  return { ok: true as const, job }
+}
+
+export const rejectCommercialJob = (params: { jobId: string; actor: string; note?: string }) => {
+  const job = jobs.find((entry) => entry.jobId === params.jobId)
+  if (!job) return { ok: false as const, reason: 'not_found' as const }
+  if (job.status !== 'awaiting_approval') {
+    return { ok: false as const, reason: 'invalid_state' as const }
+  }
+  job.status = 'rejected'
+  job.reason = params.note || 'rejected_by_approver'
+  job.actionHistory.unshift({
+    actor: params.actor,
+    at: new Date().toISOString(),
+    action: 'rejected',
+    note: params.note,
+  })
+  persist()
+  return { ok: true as const, job }
+}
 
 export const resetCommercialJobs = () => {
   jobs.length = 0

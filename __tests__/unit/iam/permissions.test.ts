@@ -17,4 +17,9 @@ describe('iam permissions', () => {
   it('prevents partner from managing users', () => {
     expect(hasPermission('partner', 'user.manage')).toBe(false)
   })
+
+  it('restricts pii.view to super_admin', () => {
+    expect(hasPermission('super_admin', 'pii.view')).toBe(true)
+    expect(hasPermission('admin', 'pii.view')).toBe(false)
+  })
 })

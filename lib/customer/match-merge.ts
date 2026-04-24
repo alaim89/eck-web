@@ -28,6 +28,13 @@ export type ReviewItem = {
   resolvedAt?: string
   resolution?: ReviewResolution
   resolvedBy?: string
+  actionHistory: Array<{
+    action: 'created' | 'resolved' | 'reopened' | 'rollback'
+    actor: string
+    at: string
+    from?: ReviewResolution
+    to?: ReviewResolution
+  }>
 }
 
 const REVIEW_FILE = 'customer-review-queue.json'
@@ -119,6 +126,13 @@ export const evaluateCustomerCandidate = (
     confidence: best.confidence,
     state: 'FLAG_FOR_REVIEW',
     createdAt: new Date().toISOString(),
+    actionHistory: [
+      {
+        action: 'created',
+        actor: 'system',
+        at: new Date().toISOString(),
+      },
+    ],
   }
 
   reviewQueue.set(reviewId, reviewItem)
@@ -151,12 +165,59 @@ export const resolveReviewItem = (params: {
   item.resolution = params.resolution
   item.resolvedBy = params.resolvedBy
   item.resolvedAt = new Date().toISOString()
+  item.actionHistory.unshift({
+    action: 'resolved',
+    actor: params.resolvedBy,
+    at: item.resolvedAt,
+    to: params.resolution,
+  })
   persist()
 
   return {
     ok: true as const,
     item,
   }
+}
+
+export const reopenReviewItem = (params: { reviewId: string; actor: string }) => {
+  const item = reviewQueue.get(params.reviewId)
+
+  if (!item) return { ok: false as const, reason: 'not_found' as const }
+
+  const previous = item.resolution
+  item.resolution = undefined
+  item.resolvedBy = undefined
+  item.resolvedAt = undefined
+  item.actionHistory.unshift({
+    action: 'reopened',
+    actor: params.actor,
+    at: new Date().toISOString(),
+    from: previous,
+  })
+  persist()
+  return { ok: true as const, item }
+}
+
+export const rollbackReviewResolution = (params: {
+  reviewId: string
+  actor: string
+  resolution: ReviewResolution
+}) => {
+  const item = reviewQueue.get(params.reviewId)
+  if (!item) return { ok: false as const, reason: 'not_found' as const }
+  const previous = item.resolution
+  item.resolution = params.resolution
+  item.resolvedBy = params.actor
+  item.resolvedAt = new Date().toISOString()
+  item.actionHistory.unshift({
+    action: 'rollback',
+    actor: params.actor,
+    at: item.resolvedAt,
+    from: previous,
+    to: params.resolution,
+  })
+  persist()
+  return { ok: true as const, item }
 }
 
 export const resetReviewQueue = () => {

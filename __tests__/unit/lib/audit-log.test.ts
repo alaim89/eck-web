@@ -2,7 +2,13 @@ import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { appendAuditLog, getAuditLogSummary, listAuditLogs, resetAuditLogs } from '@/lib/ops/audit-log'
+import {
+  appendAuditLog,
+  getAuditLogSummary,
+  listAuditLogs,
+  purgeAuditLogsBefore,
+  resetAuditLogs,
+} from '@/lib/ops/audit-log'
 
 describe('audit log', () => {
   beforeEach(() => {
@@ -26,8 +32,8 @@ describe('audit log', () => {
 
     const logs = listAuditLogs()
     expect(logs).toHaveLength(2)
-    expect(logs[0].actor).toBe('bob@example.com')
-    expect(logs[1].actor).toBe('alice@example.com')
+    expect(logs[0].actor).toBe('b***@example.com')
+    expect(logs[1].actor).toBe('a***@example.com')
 
     const summary = getAuditLogSummary()
     expect(summary.total).toBe(2)
@@ -55,6 +61,38 @@ describe('audit log', () => {
 
     const byActor = listAuditLogs({ actor: 'alice@example.com' })
     expect(byActor).toHaveLength(2)
+  })
+
+  it('hides sensitive fields unless explicitly requested', () => {
+    appendAuditLog({
+      level: 'info',
+      actor: 'privacy@example.com',
+      action: 'privacy.test',
+      objectType: 'lead',
+      objectId: 'lead-123',
+      details: { email: 'person@example.com' },
+    })
+
+    const masked = listAuditLogs()
+    expect(masked[0].details).toBeUndefined()
+    expect(masked[0].objectId).toBe('masked:lead')
+
+    const unmasked = listAuditLogs({ includeSensitive: true })
+    expect(unmasked[0].details).toBeDefined()
+    expect(unmasked[0].objectId).toBe('lead-123')
+  })
+
+  it('purges old entries by retention helper', () => {
+    appendAuditLog({
+      level: 'info',
+      actor: 'old@example.com',
+      action: 'old.action',
+      objectType: 'test',
+    })
+
+    const removed = purgeAuditLogsBefore(new Date(Date.now() + 1_000).toISOString())
+    expect(removed).toBe(1)
+    expect(listAuditLogs()).toHaveLength(0)
   })
 })
 

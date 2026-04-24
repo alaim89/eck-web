@@ -3,6 +3,7 @@ import os from 'node:os'
 import path from 'node:path'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import {
+  approveCommercialJob,
   evaluateCommercialRelevance,
   listCommercialJobs,
   processNextCommercialJob,
@@ -44,7 +45,13 @@ describe('sevdesk commercial sync', () => {
       contactEmail: 'sales@example.com',
     })
 
-    expect(queued.status).toBe('queued')
+    expect(queued.status).toBe('awaiting_approval')
+
+    const approval = approveCommercialJob({
+      jobId: queued.jobId,
+      actor: 'manager@example.com',
+    })
+    expect(approval.ok).toBe(true)
 
     const processed = processNextCommercialJob()
     expect(processed.processed).toBe(true)
