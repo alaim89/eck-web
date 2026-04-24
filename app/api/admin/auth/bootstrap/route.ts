@@ -1,7 +1,13 @@
+import crypto from 'node:crypto'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 import { ADMIN_ROLE_COOKIE, ADMIN_USER_COOKIE, getBootstrapRoleMap } from '@/lib/iam/auth'
 import { appendAuditLog } from '@/lib/ops/audit-log'
+
+const safeCompare = (a: string, b: string): boolean => {
+  if (a.length !== b.length) return false
+  return crypto.timingSafeEqual(Buffer.from(a), Buffer.from(b))
+}
 
 export async function POST(request: Request) {
   const formData = await request.formData()
@@ -9,7 +15,7 @@ export async function POST(request: Request) {
   const token = String(formData.get('token') || '').trim()
 
   const expectedToken = process.env.ADMIN_BOOTSTRAP_TOKEN
-  if (!expectedToken || token !== expectedToken) {
+  if (!expectedToken || !safeCompare(token, expectedToken)) {
     appendAuditLog({
       level: 'warn',
       actor: email || 'anonymous',

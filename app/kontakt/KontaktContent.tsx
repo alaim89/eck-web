@@ -40,13 +40,14 @@ export default function KontaktContent() {
         return;
       }
 
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'conversion', {
+      if (typeof window !== 'undefined' && window.gtag) {
+        // TODO: Replace AW-CONVERSION_ID/LABEL with actual Google Ads conversion action
+        window.gtag('event', 'conversion', {
           send_to: 'AW-CONVERSION_ID/LABEL',
           value: 1.0,
           currency: 'EUR',
         });
-        (window as any).gtag('event', 'generate_lead', {
+        window.gtag('event', 'generate_lead', {
           event_category: 'Kontakt',
           event_label: 'Formular abgeschickt',
         });
@@ -256,8 +257,8 @@ export default function KontaktContent() {
                     type="submit"
                     disabled={formState === 'submitting'}
                     onClick={() => {
-                      if (typeof window !== "undefined" && (window as any).gtag) {
-                        (window as any).gtag("event", "click", {
+                      if (typeof window !== "undefined" && window.gtag) {
+                        window.gtag("event", "click", {
                           event_category: "CTA",
                           event_label: "Kontaktformular Button"
                         });

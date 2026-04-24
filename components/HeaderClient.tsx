@@ -4,9 +4,12 @@
 import { ChevronDown, ArrowRight, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
+import type { translations } from "@/lib/translations";
+
+type Translations = typeof translations['de'];
 
 interface HeaderClientProps {
-  t: any;
+  t: Translations;
 }
 
 export function HeaderClient({ t }: HeaderClientProps) {
@@ -55,7 +58,7 @@ export function HeaderClient({ t }: HeaderClientProps) {
                   {t.megaMenu.core.badge}
                 </h3>
                 <div className="space-y-2">
-                  {t.megaMenu.core.items.map((item: any, idx: number) => (
+                  {t.megaMenu.core.items.map((item, idx: number) => (
                     <Link key={idx} href={item.href} onClick={() => setIsMenuOpen(false)} className="block group/item -mx-3 px-3 py-2.5 rounded-xl hover:bg-slate-50 transition-all">
                       <div className="text-slate-900 font-bold text-[13px] group-hover/item:text-primary transition-colors tracking-tight">{item.title}</div>
                       <div className="text-slate-400 text-[10px] leading-snug font-light line-clamp-1 mt-0.5">{item.desc}</div>
@@ -67,7 +70,7 @@ export function HeaderClient({ t }: HeaderClientProps) {
               <div>
                 <h3 className="text-[9px] font-bold uppercase tracking-[0.25em] text-slate-400 mb-6">{t.megaMenu.categories[0].title}</h3>
                 <div className="space-y-1">
-                  {t.megaMenu.categories[0].items.map((item: any, idx: number) => (
+                  {t.megaMenu.categories[0].items.map((item, idx: number) => (
                     <Link key={idx} href={item.href} onClick={() => setIsMenuOpen(false)} className="block group/link -mx-3 px-3 py-2 rounded-lg hover:bg-slate-50 transition-all">
                       <div className="text-slate-800 font-semibold text-[13px] group-hover/link:text-primary transition-colors tracking-tight">{item.title}</div>
                     </Link>
@@ -81,7 +84,7 @@ export function HeaderClient({ t }: HeaderClientProps) {
               <div>
                 <h3 className="text-[9px] font-bold uppercase tracking-[0.25em] text-slate-400 mb-6">{t.megaMenu.categories[1].title}</h3>
                 <div className="space-y-1">
-                  {t.megaMenu.categories[1].items.map((item: any, idx: number) => (
+                  {t.megaMenu.categories[1].items.map((item, idx: number) => (
                     <Link key={idx} href={item.href} onClick={() => setIsMenuOpen(false)} className="block group/link -mx-3 px-3 py-2 rounded-lg hover:bg-slate-50 transition-all">
                       <div className="text-slate-800 font-semibold text-[13px] group-hover/link:text-primary transition-colors tracking-tight">{item.title}</div>
                     </Link>
@@ -92,7 +95,7 @@ export function HeaderClient({ t }: HeaderClientProps) {
               <div>
                 <h3 className="text-[9px] font-bold uppercase tracking-[0.25em] text-slate-400 mb-6">{t.megaMenu.categories[2].title}</h3>
                 <div className="space-y-1">
-                  {t.megaMenu.categories[2].items.map((item: any, idx: number) => (
+                  {t.megaMenu.categories[2].items.map((item, idx: number) => (
                     <Link key={idx} href={item.href} onClick={() => setIsMenuOpen(false)} className="block group/link -mx-3 px-3 py-2 rounded-lg hover:bg-slate-50 transition-all">
                       <div className="text-slate-800 font-semibold text-[13px] group-hover/link:text-primary transition-colors tracking-tight">{item.title}</div>
                     </Link>
@@ -106,7 +109,7 @@ export function HeaderClient({ t }: HeaderClientProps) {
               <div>
                 <h3 className="text-[9px] font-bold uppercase tracking-[0.25em] text-slate-400 mb-6">{t.megaMenu.categories[3].title}</h3>
                 <div className="space-y-1">
-                  {t.megaMenu.categories[3].items.map((item: any, idx: number) => (
+                  {t.megaMenu.categories[3].items.map((item, idx: number) => (
                     <Link key={idx} href={item.href} onClick={() => setIsMenuOpen(false)} className="block group/link -mx-3 px-3 py-2 rounded-lg hover:bg-slate-50 transition-all">
                       <div className="text-slate-800 font-semibold text-[13px] group-hover/link:text-primary transition-colors tracking-tight">{item.title}</div>
                     </Link>
@@ -164,13 +167,13 @@ export function HeaderClient({ t }: HeaderClientProps) {
           <div className="space-y-6">
             <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">{t.nav.solutions}</div>
             <div className="pl-4 space-y-6 border-l border-slate-100">
-              {t.megaMenu.core.items.map((item: any, idx: number) => (
+              {t.megaMenu.core.items.map((item, idx: number) => (
                 <Link key={idx} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-slate-700 font-bold tracking-tight">{item.title}</Link>
               ))}
-              {t.megaMenu.categories.map((category: any, idx: number) => (
+              {t.megaMenu.categories.map((category, idx: number) => (
                 <div key={idx} className="space-y-4">
                   <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">{category.title}</div>
-                  {category.items.map((item: any, itemIdx: number) => (
+                  {category.items.map((item, itemIdx: number) => (
                     <Link key={itemIdx} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-slate-600 text-sm font-medium">{item.title}</Link>
                   ))}
                 </div>

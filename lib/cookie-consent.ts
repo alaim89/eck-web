@@ -1,7 +1,7 @@
 
-export const CONSENT_VERSION = '2';
-export const CONSENT_STORAGE_KEY = 'eeksolution_cookie_consent';
-export const CONSENT_LOG_KEY = 'eeksolution_consent_log';
+export const CONSENT_VERSION = '3';
+export const CONSENT_STORAGE_KEY = 'ecksolution_cookie_consent';
+export const CONSENT_LOG_KEY = 'ecksolution_consent_log';
 
 export type ConsentStatus = 'granted' | 'denied';
 
