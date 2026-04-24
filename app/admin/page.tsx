@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { AuthError, type AuthUser, getRequestUser } from '@/lib/iam/auth'
 
 const adminModules: Array<{ name: string; href: string }> = [
-  { name: 'Dashboard', href: '/admin' },
+  { name: 'Dashboard', href: '/admin/dashboard' },
   { name: 'Seiten / Landingpages', href: '/admin' },
   { name: 'Kampagnen', href: '/admin' },
   { name: 'Templates', href: '/admin' },
@@ -15,6 +15,8 @@ const adminModules: Array<{ name: string; href: string }> = [
   { name: 'Systemeinstellungen', href: '/admin' },
   { name: 'Sync-Logs / Integrationsstatus', href: '/admin/integrations' },
   { name: 'Audit Logs', href: '/admin/audit' },
+  { name: 'Setup Check', href: '/admin/setup-check' },
+  { name: 'Reconciliation', href: '/admin/reconciliation' },
 ]
 
 export default async function AdminPage() {

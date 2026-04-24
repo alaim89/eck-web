@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { AuthError, resolveUserFromHeaders } from '@/lib/iam/auth'
+import { AuthError, isAdminAuthDisabled, resolveUserFromHeaders } from '@/lib/iam/auth'
 import { type Role } from '@/lib/iam/permissions'
 
 const makeHeaders = (values: Record<string, string>) =>
@@ -38,5 +38,14 @@ describe('resolveUserFromHeaders', () => {
         }
       )
     ).toThrow(AuthError)
+  })
+})
+
+describe('admin auth flag', () => {
+  it('reads ADMIN_AUTH_DISABLED flag', () => {
+    const previous = process.env.ADMIN_AUTH_DISABLED
+    process.env.ADMIN_AUTH_DISABLED = 'true'
+    expect(isAdminAuthDisabled()).toBe(true)
+    process.env.ADMIN_AUTH_DISABLED = previous
   })
 })

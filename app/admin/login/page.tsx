@@ -1,3 +1,6 @@
+import { redirect } from 'next/navigation'
+import { isAdminAuthDisabled } from '@/lib/iam/auth'
+
 const errorMessages: Record<string, string> = {
   invalid_credentials: 'Ungültige Dummy-Kennung.',
   invalid_token: 'Ungültiger Bootstrap-Token.',
@@ -10,6 +13,10 @@ export default async function AdminLoginPage({
 }: {
   searchParams: Promise<{ error?: string }>
 }) {
+  if (isAdminAuthDisabled()) {
+    redirect('/admin')
+  }
+
   const params = await searchParams
   const error = params.error ? errorMessages[params.error] || 'Anmeldung fehlgeschlagen.' : null
 

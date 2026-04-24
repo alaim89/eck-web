@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { appendAuditLog, listAuditLogs, resetAuditLogs } from '@/lib/ops/audit-log'
+import { appendAuditLog, getAuditLogSummary, listAuditLogs, resetAuditLogs } from '@/lib/ops/audit-log'
 
 describe('audit log', () => {
   beforeEach(() => {
@@ -25,6 +25,10 @@ describe('audit log', () => {
     expect(logs).toHaveLength(2)
     expect(logs[0].actor).toBe('bob@example.com')
     expect(logs[1].actor).toBe('alice@example.com')
+
+    const summary = getAuditLogSummary()
+    expect(summary.total).toBe(2)
+    expect(summary.latestAction).toBe('admin.login.failed')
   })
 
   it('filters by actor and action', () => {
