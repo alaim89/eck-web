@@ -44,7 +44,8 @@ export const parseBootstrapRoleMap = (rawValue: string | undefined): Record<stri
 
 export const getBootstrapRoleMap = () => parseBootstrapRoleMap(process.env.IAM_BOOTSTRAP_ROLE_MAP)
 
-export const isAdminAuthDisabled = () => process.env.ADMIN_AUTH_DISABLED === 'true'
+export const isAdminAuthDisabled = () =>
+  process.env.ADMIN_AUTH_DISABLED === 'true' && process.env.NODE_ENV !== 'production'
 
 export const resolveUserFromHeaders = (
   requestHeaders: Pick<Headers, 'get'>,
@@ -64,8 +65,7 @@ export const resolveUserFromHeaders = (
   }
 
   const allowRoleHeader =
-    options?.allowRoleHeader ??
-    (process.env.IAM_ALLOW_ROLE_HEADER === 'true' || process.env.NODE_ENV !== 'production')
+    options?.allowRoleHeader ?? process.env.IAM_ALLOW_ROLE_HEADER === 'true'
 
   if (allowRoleHeader) {
     return {

@@ -2,23 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { z } from 'zod';
 import { logger } from '@/lib/logger';
+import { consumeRateLimit } from '@/lib/security/rate-limit';
 
-// In-memory rate limit: max 5 submissions per IP per hour
-const RATE_WINDOW_MS = 60 * 60 * 1000;
-const RATE_LIMIT_MAX = 5;
-const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
-
-function checkRateLimit(ip: string): boolean {
-  const now = Date.now();
-  const entry = rateLimitStore.get(ip);
-  if (!entry || now > entry.resetAt) {
-    rateLimitStore.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
-    return true;
-  }
-  if (entry.count >= RATE_LIMIT_MAX) return false;
-  entry.count += 1;
-  return true;
-}
+const CONTACT_RATE_LIMIT = 5;
+const CONTACT_RATE_WINDOW_MS = 60 * 60 * 1000;
 
 const contactSchema = z.object({
   name: z.string().min(2).max(100),
@@ -42,7 +29,8 @@ export async function POST(req: NextRequest) {
   const forwarded = req.headers.get('x-forwarded-for');
   const ip = forwarded ? forwarded.split(',')[0].trim() : 'unknown';
 
-  if (!checkRateLimit(ip)) {
+  const rate = consumeRateLimit({ key: `contact:${ip}`, limit: CONTACT_RATE_LIMIT, windowMs: CONTACT_RATE_WINDOW_MS });
+  if (!rate.allowed) {
     logger.warn('contact.rate_limited', { ip });
     return NextResponse.json(
       { error: 'Zu viele Anfragen. Bitte versuchen Sie es in einer Stunde erneut.' },

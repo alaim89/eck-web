@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { ZodError } from 'zod'
 import { queueLeadForCrmSync } from '@/lib/integrations/crm-sync'
 import { registerLeadSubmission, validateLeadPayload } from '@/lib/lead/intake'
 import { consumeRateLimit } from '@/lib/security/rate-limit'
@@ -40,9 +41,25 @@ export async function POST(
     )
   }
 
-  const payload = await request.json()
+  let payload: unknown
+  try {
+    payload = await request.json()
+  } catch {
+    return NextResponse.json({ error: 'invalid_json' }, { status: 400 })
+  }
 
-  const result = validateLeadPayload(payload)
+  let result
+  try {
+    result = validateLeadPayload(payload)
+  } catch (err) {
+    if (err instanceof ZodError) {
+      return NextResponse.json(
+        { error: 'validation_failed', issues: err.issues },
+        { status: 422 }
+      )
+    }
+    return NextResponse.json({ error: 'invalid_payload' }, { status: 400 })
+  }
 
   if (!result.consent) {
     return NextResponse.json(

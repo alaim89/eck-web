@@ -162,7 +162,7 @@ export default async function SolutionPage({
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {(solution as any).features.map((feature: string, i: number) => (
+              {solution.features.map((feature, i: number) => (
                 <div
                   key={i}
                   className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex items-center gap-4"
@@ -254,7 +254,7 @@ export default async function SolutionPage({
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {(solution as any).benefits.map((benefit: string, i: number) => (
+              {solution.benefits.map((benefit, i: number) => (
                 <div
                   key={i}
                   className="flex items-center gap-4 p-6 bg-white border border-gray-100 rounded-xl shadow-sm"

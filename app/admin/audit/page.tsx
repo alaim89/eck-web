@@ -1,5 +1,6 @@
+import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import { getRequestUser } from '@/lib/iam/auth'
+import { AuthError, getRequestUser } from '@/lib/iam/auth'
 import { hasPermission } from '@/lib/iam/permissions'
 import { listAuditLogs } from '@/lib/ops/audit-log'
 
@@ -8,7 +9,15 @@ export default async function AdminAuditPage({
 }: {
   searchParams: Promise<{ action?: string; actor?: string }>
 }) {
-  const user = await getRequestUser()
+  let user
+  try {
+    user = await getRequestUser()
+  } catch (err) {
+    if (err instanceof AuthError) {
+      redirect('/admin/login')
+    }
+    throw err
+  }
 
   if (!hasPermission(user.role, 'audit.view')) {
     return (
