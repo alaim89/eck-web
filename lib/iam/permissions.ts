@@ -19,6 +19,7 @@ export const permissions = {
   'user.manage': 'Manage users',
   'settings.manage': 'Manage platform settings',
   'audit.view': 'View audit logs',
+  'pii.view': 'View unmasked personal data',
   'integration.manage': 'Manage external integrations',
   'role.manage': 'Manage role definitions',
 } as const
@@ -41,7 +42,7 @@ const allPermissions = Object.keys(permissions) as Permission[]
 
 export const rolePermissionMap: Record<Role, Permission[]> = {
   super_admin: allPermissions,
-  admin: allPermissions.filter((permission) => permission !== 'role.manage'),
+  admin: allPermissions.filter((permission) => !['role.manage', 'pii.view'].includes(permission)),
   content_manager: [
     'page.create',
     'page.edit',

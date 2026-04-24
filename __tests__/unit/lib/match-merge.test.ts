@@ -4,6 +4,8 @@ import path from 'node:path'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import {
   evaluateCustomerCandidate,
+  reopenReviewItem,
+  rollbackReviewResolution,
   resolveReviewItem,
   resetReviewQueue,
   scoreCustomerMatch,
@@ -63,6 +65,40 @@ describe('customer match merge', () => {
     const summary = getReviewQueueSummary()
     expect(summary.total).toBe(1)
     expect(summary.resolved).toBe(1)
+  })
+
+  it('supports reopen and rollback flow with action history', () => {
+    const result = evaluateCustomerCandidate(
+      { email: 'flow@example.com' },
+      [{ customerId: 'cust-flow', email: 'flow@example.com' }]
+    )
+
+    expect(result.state).toBe('FLAG_FOR_REVIEW')
+    if (result.state !== 'FLAG_FOR_REVIEW') return
+
+    const resolved = resolveReviewItem({
+      reviewId: result.reviewId,
+      resolution: 'MATCH',
+      resolvedBy: 'a@example.com',
+    })
+    expect(resolved.ok).toBe(true)
+
+    const reopened = reopenReviewItem({
+      reviewId: result.reviewId,
+      actor: 'b@example.com',
+    })
+    expect(reopened.ok).toBe(true)
+
+    const rolledBack = rollbackReviewResolution({
+      reviewId: result.reviewId,
+      actor: 'c@example.com',
+      resolution: 'MERGE',
+    })
+    expect(rolledBack.ok).toBe(true)
+    if (rolledBack.ok) {
+      expect(rolledBack.item.resolution).toBe('MERGE')
+      expect(rolledBack.item.actionHistory.length).toBeGreaterThan(2)
+    }
   })
 
   it('returns ignore for test data and low score create candidates', () => {
