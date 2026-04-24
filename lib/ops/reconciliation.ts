@@ -16,7 +16,7 @@ export const getReconciliationOverview = () => {
 
   const sevdesk = {
     total: commercialJobs.length,
-    queued: commercialJobs.filter((job) => job.status === 'queued').length,
+    queued: commercialJobs.filter((job) => job.status === 'awaiting_approval').length,
     processed: commercialJobs.filter((job) => job.status === 'processed').length,
     blocked: commercialJobs.filter((job) => job.status.startsWith('blocked_')).length,
   }

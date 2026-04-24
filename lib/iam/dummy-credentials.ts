@@ -1,8 +1,9 @@
 import { type Role, roles } from '@/lib/iam/permissions'
+import { verifyPassword } from '@/lib/iam/password'
 
 export type DummyCredential = {
   email: string
-  password: string
+  passwordHash: string
   role: Role
 }
 
@@ -23,12 +24,15 @@ export const parseDummyCredentials = (rawValue: string | undefined): DummyCreden
     const parsed = JSON.parse(rawValue) as Array<Record<string, unknown>>
 
     return parsed
-      .map((entry) => ({
-        email: String(entry.email || '').trim().toLowerCase(),
-        password: String(entry.password || ''),
-        role: parseRole(entry.role),
-      }))
-      .filter((entry) => entry.email.length > 0 && entry.password.length > 0)
+      .map((entry) => {
+        const passwordHash = String(entry.passwordHash || entry.password || '')
+        return {
+          email: String(entry.email || '').trim().toLowerCase(),
+          passwordHash,
+          role: parseRole(entry.role),
+        }
+      })
+      .filter((entry) => entry.email.length > 0 && entry.passwordHash.length > 0)
   } catch {
     return []
   }
@@ -36,11 +40,26 @@ export const parseDummyCredentials = (rawValue: string | undefined): DummyCreden
 
 export const getDummyCredentials = () => parseDummyCredentials(process.env.ADMIN_DUMMY_USERS_JSON)
 
-export const verifyDummyCredential = (email: string, password: string) => {
+export const verifyDummyCredential = async (
+  email: string,
+  password: string
+): Promise<{ email: string; role: Role } | undefined> => {
   const normalizedEmail = email.trim().toLowerCase()
-  const credentials = getDummyCredentials()
 
-  return credentials.find(
-    (entry) => entry.email === normalizedEmail && entry.password === password
-  )
+  // Single-admin mode: ADMIN_USERNAME + ADMIN_PASSWORD_HASH
+  const adminUsername = process.env.ADMIN_USERNAME?.trim().toLowerCase()
+  const adminPasswordHash = process.env.ADMIN_PASSWORD_HASH?.trim()
+  if (adminUsername && adminPasswordHash && normalizedEmail === adminUsername) {
+    const ok = await verifyPassword(password, adminPasswordHash)
+    if (ok) return { email: normalizedEmail, role: 'super_admin' }
+    return undefined
+  }
+
+  // Multi-user mode: ADMIN_DUMMY_USERS_JSON with bcrypt hashes
+  const credentials = getDummyCredentials()
+  const entry = credentials.find((c) => c.email === normalizedEmail)
+  if (!entry) return undefined
+
+  const ok = await verifyPassword(password, entry.passwordHash)
+  return ok ? { email: normalizedEmail, role: entry.role } : undefined
 }

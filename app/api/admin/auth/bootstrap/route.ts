@@ -2,6 +2,7 @@ import crypto from 'node:crypto'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 import { ADMIN_ROLE_COOKIE, ADMIN_USER_COOKIE, getBootstrapRoleMap } from '@/lib/iam/auth'
+import { ADMIN_SIG_COOKIE, SESSION_COOKIE_OPTIONS, signSession } from '@/lib/iam/session'
 import { appendAuditLog } from '@/lib/ops/audit-log'
 
 const safeCompare = (a: string, b: string): boolean => {
@@ -42,21 +43,13 @@ export async function POST(request: Request) {
   }
 
   const cookieStore = await cookies()
-  cookieStore.set(ADMIN_USER_COOKIE, email, {
-    httpOnly: true,
-    sameSite: 'lax',
-    secure: process.env.NODE_ENV === 'production',
-    path: '/',
-    maxAge: 60 * 60 * 8,
-  })
+  cookieStore.set(ADMIN_USER_COOKIE, email, SESSION_COOKIE_OPTIONS)
+  cookieStore.set(ADMIN_ROLE_COOKIE, role, SESSION_COOKIE_OPTIONS)
 
-  cookieStore.set(ADMIN_ROLE_COOKIE, role, {
-    httpOnly: true,
-    sameSite: 'lax',
-    secure: process.env.NODE_ENV === 'production',
-    path: '/',
-    maxAge: 60 * 60 * 8,
-  })
+  const sig = signSession(email, role)
+  if (sig) {
+    cookieStore.set(ADMIN_SIG_COOKIE, sig, SESSION_COOKIE_OPTIONS)
+  }
 
   appendAuditLog({
     level: 'info',

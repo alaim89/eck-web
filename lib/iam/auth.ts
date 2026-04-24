@@ -1,5 +1,6 @@
 import { cookies, headers } from 'next/headers'
 import { type Role, roles } from '@/lib/iam/permissions'
+import { ADMIN_SIG_COOKIE, verifySessionSig } from '@/lib/iam/session'
 
 export type AuthUser = {
   email: string
@@ -101,11 +102,16 @@ export const getRequestUser = async (): Promise<AuthUser> => {
 
   const cookieEmail = requestCookies.get(ADMIN_USER_COOKIE)?.value?.toLowerCase()
   const cookieRole = requestCookies.get(ADMIN_ROLE_COOKIE)?.value || null
+  const cookieSig = requestCookies.get(ADMIN_SIG_COOKIE)?.value || ''
 
-  if (cookieEmail) {
+  if (cookieEmail && cookieRole) {
+    if (!verifySessionSig(cookieEmail, cookieRole, cookieSig)) {
+      throw new AuthError('Invalid session signature')
+    }
+
     const headerReader = createHeaderReader({
       'x-user-email': cookieEmail,
-      'x-user-role': cookieRole || requestHeaders.get('x-user-role'),
+      'x-user-role': cookieRole,
     })
 
     return resolveUserFromHeaders(headerReader, { allowRoleHeader: true })
@@ -113,3 +119,5 @@ export const getRequestUser = async (): Promise<AuthUser> => {
 
   return resolveUserFromHeaders(requestHeaders)
 }
+
+export { ADMIN_SIG_COOKIE }
