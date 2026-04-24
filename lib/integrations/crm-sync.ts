@@ -1,5 +1,6 @@
 import crypto from 'node:crypto'
 import { type LeadPayload } from '@/lib/lead/intake'
+import { readJsonFile, writeJsonFile } from '@/lib/ops/persistence'
 
 export type CrmSyncJobStatus = 'queued' | 'sent' | 'skipped_test'
 
@@ -14,8 +15,16 @@ export type CrmSyncJob = {
   processedAt?: string
 }
 
-const jobQueue: CrmSyncJob[] = []
-const jobsByIdempotency = new Map<string, CrmSyncJob>()
+const CRM_FILE = 'crm-sync-jobs.json'
+
+const jobQueue: CrmSyncJob[] = readJsonFile<CrmSyncJob[]>(CRM_FILE, [])
+const jobsByIdempotency = new Map<string, CrmSyncJob>(
+  jobQueue.map((job) => [job.idempotencyKey, job])
+)
+
+const persist = () => {
+  writeJsonFile(CRM_FILE, jobQueue)
+}
 
 const createJobId = (seed: string) =>
   crypto.createHash('sha256').update(seed).digest('hex').slice(0, 16)
@@ -45,6 +54,7 @@ export const queueLeadForCrmSync = (params: {
 
   jobsByIdempotency.set(params.idempotencyKey, job)
   jobQueue.push(job)
+  persist()
 
   return {
     duplicate: false as const,
@@ -65,6 +75,8 @@ export const processNextCrmSyncJob = () => {
   if (nextJob.payload.isTest) {
     nextJob.status = 'skipped_test'
     nextJob.processedAt = new Date().toISOString()
+    persist()
+
     return {
       processed: true as const,
       job: nextJob,
@@ -75,6 +87,7 @@ export const processNextCrmSyncJob = () => {
   nextJob.status = 'sent'
   nextJob.crmLeadId = crmLeadId
   nextJob.processedAt = new Date().toISOString()
+  persist()
 
   return {
     processed: true as const,
@@ -84,12 +97,11 @@ export const processNextCrmSyncJob = () => {
 
 export const getCrmSyncJobs = () => [...jobQueue]
 
-
 export const resetCrmSyncState = () => {
   jobQueue.length = 0
   jobsByIdempotency.clear()
+  persist()
 }
-
 
 export const getCrmSyncSummary = () => {
   const jobs = getCrmSyncJobs()

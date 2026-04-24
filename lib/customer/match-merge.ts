@@ -1,4 +1,5 @@
 import crypto from 'node:crypto'
+import { readJsonFile, writeJsonFile } from '@/lib/ops/persistence'
 
 export type MatchState = 'CREATE' | 'MATCH' | 'MERGE' | 'IGNORE' | 'FLAG_FOR_REVIEW'
 export type ReviewResolution = 'MATCH' | 'MERGE' | 'IGNORE'
@@ -29,7 +30,16 @@ export type ReviewItem = {
   resolvedBy?: string
 }
 
-const reviewQueue = new Map<string, ReviewItem>()
+const REVIEW_FILE = 'customer-review-queue.json'
+
+const persistedReviews = readJsonFile<ReviewItem[]>(REVIEW_FILE, [])
+const reviewQueue = new Map<string, ReviewItem>(
+  persistedReviews.map((item) => [item.reviewId, item])
+)
+
+const persist = () => {
+  writeJsonFile(REVIEW_FILE, Array.from(reviewQueue.values()))
+}
 
 const normalize = (value?: string) => (value || '').trim().toLowerCase()
 const normalizeCompany = (value?: string) =>
@@ -112,6 +122,7 @@ export const evaluateCustomerCandidate = (
   }
 
   reviewQueue.set(reviewId, reviewItem)
+  persist()
 
   return {
     state: 'FLAG_FOR_REVIEW' as MatchState,
@@ -140,6 +151,7 @@ export const resolveReviewItem = (params: {
   item.resolution = params.resolution
   item.resolvedBy = params.resolvedBy
   item.resolvedAt = new Date().toISOString()
+  persist()
 
   return {
     ok: true as const,
@@ -149,6 +161,7 @@ export const resolveReviewItem = (params: {
 
 export const resetReviewQueue = () => {
   reviewQueue.clear()
+  persist()
 }
 
 

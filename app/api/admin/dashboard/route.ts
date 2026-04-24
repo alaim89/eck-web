@@ -3,6 +3,7 @@ import { requirePermission } from '@/lib/iam/guard'
 import { getReviewQueueSummary } from '@/lib/customer/match-merge'
 import { getCrmSyncSummary } from '@/lib/integrations/crm-sync'
 import { getAuditLogSummary } from '@/lib/ops/audit-log'
+import { getOperationsHealth } from '@/lib/ops/health'
 
 export async function GET() {
   const access = await requirePermission('lead.view')
@@ -14,6 +15,7 @@ export async function GET() {
   const crm = getCrmSyncSummary()
   const review = getReviewQueueSummary()
   const audit = getAuditLogSummary()
+  const health = getOperationsHealth()
 
   return NextResponse.json({
     ok: true,
@@ -22,6 +24,7 @@ export async function GET() {
       crm,
       review,
       audit,
+      health,
     },
     widgets: [
       {

@@ -16,6 +16,7 @@ const adminModules: Array<{ name: string; href: string }> = [
   { name: 'Sync-Logs / Integrationsstatus', href: '/admin/integrations' },
   { name: 'Audit Logs', href: '/admin/audit' },
   { name: 'Setup Check', href: '/admin/setup-check' },
+  { name: 'Reconciliation', href: '/admin/reconciliation' },
 ]
 
 export default async function AdminPage() {

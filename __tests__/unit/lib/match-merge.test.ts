@@ -1,4 +1,7 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import fs from 'node:fs'
+import os from 'node:os'
+import path from 'node:path'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import {
   evaluateCustomerCandidate,
   resolveReviewItem,
@@ -91,5 +94,46 @@ describe('customer match merge', () => {
     )
 
     expect(score).toBe(1)
+  })
+})
+
+describe('customer match merge persistence', () => {
+  const previousMode = process.env.OPS_PERSISTENCE_MODE
+  const previousDir = process.env.OPS_DATA_DIR
+
+  beforeEach(() => {
+    vi.resetModules()
+  })
+
+  afterEach(() => {
+    process.env.OPS_PERSISTENCE_MODE = previousMode
+    process.env.OPS_DATA_DIR = previousDir
+  })
+
+  it('restores review queue items from file persistence on module init', async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'match-merge-'))
+    process.env.OPS_PERSISTENCE_MODE = 'file'
+    process.env.OPS_DATA_DIR = tempDir
+
+    const first = await import('@/lib/customer/match-merge')
+    first.resetReviewQueue()
+
+    const result = first.evaluateCustomerCandidate(
+      {
+        email: 'persisted@example.com',
+      },
+      [
+        {
+          customerId: 'cust-persisted',
+          email: 'persisted@example.com',
+        },
+      ]
+    )
+
+    expect(result.state).toBe('FLAG_FOR_REVIEW')
+    vi.resetModules()
+
+    const second = await import('@/lib/customer/match-merge')
+    expect(second.getReviewQueueSummary().total).toBe(1)
   })
 })

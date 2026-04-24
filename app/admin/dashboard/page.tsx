@@ -13,6 +13,11 @@ type DashboardResponse = {
     crm: Record<string, number>
     review: Record<string, number>
     audit: Record<string, string | number | null>
+    health: {
+      overallSeverity: string
+      checks: Array<{ key: string; severity: string; message: string }>
+      generatedAt: string
+    }
   }
 }
 
@@ -64,6 +69,20 @@ export default function AdminDashboardPage() {
             <pre className="mt-2 rounded bg-gray-50 p-3 text-xs">
               {JSON.stringify(state.data.metrics?.audit, null, 2)}
             </pre>
+          </article>
+
+          <article className="rounded-lg border border-gray-200 p-4 md:col-span-3">
+            <h2 className="text-sm font-semibold">Operations Health</h2>
+            <p className="mt-1 text-xs text-gray-600">
+              Severity: <strong>{state.data.metrics?.health?.overallSeverity || 'unknown'}</strong>
+            </p>
+            <ul className="mt-3 space-y-2 text-xs">
+              {(state.data.metrics?.health?.checks || []).map((check) => (
+                <li key={check.key} className="rounded bg-gray-50 px-3 py-2">
+                  <strong>{check.severity.toUpperCase()}</strong> · {check.key} · {check.message}
+                </li>
+              ))}
+            </ul>
           </article>
         </section>
       ) : null}
