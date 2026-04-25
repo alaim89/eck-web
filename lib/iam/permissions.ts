@@ -19,6 +19,7 @@ export const permissions = {
   'user.manage': 'Manage users',
   'settings.manage': 'Manage platform settings',
   'audit.view': 'View audit logs',
+  'analytics.view': 'View visitor analytics',
   'pii.view': 'View unmasked personal data',
   'integration.manage': 'Manage external integrations',
   'role.manage': 'Manage role definitions',
@@ -66,7 +67,7 @@ export const rolePermissionMap: Record<Role, Permission[]> = {
     'crm.sync',
     'customer.match.resolve',
   ],
-  seo_analyst: ['seo.edit', 'audit.view'],
+  seo_analyst: ['seo.edit', 'audit.view', 'analytics.view'],
   partner: ['campaign.edit', 'media.upload'],
 }
 
