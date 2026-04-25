@@ -1,9 +1,8 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { ADMIN_ROLE_COOKIE, ADMIN_USER_COOKIE } from '@/lib/iam/auth'
-import { ADMIN_SIG_COOKIE, verifySessionSig } from '@/lib/iam/session'
+import { ADMIN_SIG_COOKIE, ADMIN_ROLE_COOKIE, ADMIN_USER_COOKIE, verifySessionSigEdge } from '@/lib/iam/session-edge'
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   if (pathname === '/admin/login' || pathname.startsWith('/admin/login/')) {
@@ -20,7 +19,7 @@ export function middleware(request: NextRequest) {
   }
 
   // Verify signature to prevent spoofing
-  if (!verifySessionSig(emailCookie.value, roleCookie.value, sigCookie.value)) {
+  if (!(await verifySessionSigEdge(emailCookie.value, roleCookie.value, sigCookie.value))) {
     const loginUrl = new URL('/admin/login', request.url)
     loginUrl.searchParams.set('error', 'invalid_session')
     const response = NextResponse.redirect(loginUrl)
