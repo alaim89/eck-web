@@ -15,18 +15,26 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>('de');
 
   useEffect(() => {
-    const savedLang = localStorage.getItem('language') as Language;
-    if (savedLang && savedLang === 'de') {
-      if (savedLang !== language) {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setLanguage(savedLang);
+    try {
+      const savedLang = localStorage.getItem('language') as Language;
+      if (savedLang && savedLang === 'de') {
+        if (savedLang !== language) {
+          // eslint-disable-next-line react-hooks/set-state-in-effect
+          setLanguage(savedLang);
+        }
       }
+    } catch {
+      // Ignore storage access issues (e.g., strict privacy modes)
     }
   }, [language]);
 
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
-    localStorage.setItem('language', lang);
+    try {
+      localStorage.setItem('language', lang);
+    } catch {
+      // Ignore storage access issues (e.g., strict privacy modes)
+    }
   };
 
   const value = {

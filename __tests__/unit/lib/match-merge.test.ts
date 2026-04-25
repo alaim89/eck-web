@@ -50,8 +50,10 @@ describe('customer match merge', () => {
 
     expect(result.state).toBe('FLAG_FOR_REVIEW')
     if (result.state === 'FLAG_FOR_REVIEW') {
+      const { reviewId } = result
+      if (!reviewId) throw new Error('reviewId missing')
       const resolved = resolveReviewItem({
-        reviewId: result.reviewId,
+        reviewId,
         resolution: 'MERGE',
         resolvedBy: 'manager@example.com',
       })
@@ -75,22 +77,24 @@ describe('customer match merge', () => {
 
     expect(result.state).toBe('FLAG_FOR_REVIEW')
     if (result.state !== 'FLAG_FOR_REVIEW') return
+    const { reviewId } = result
+    if (!reviewId) throw new Error('reviewId missing')
 
     const resolved = resolveReviewItem({
-      reviewId: result.reviewId,
+      reviewId,
       resolution: 'MATCH',
       resolvedBy: 'a@example.com',
     })
     expect(resolved.ok).toBe(true)
 
     const reopened = reopenReviewItem({
-      reviewId: result.reviewId,
+      reviewId,
       actor: 'b@example.com',
     })
     expect(reopened.ok).toBe(true)
 
     const rolledBack = rollbackReviewResolution({
-      reviewId: result.reviewId,
+      reviewId,
       actor: 'c@example.com',
       resolution: 'MERGE',
     })

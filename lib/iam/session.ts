@@ -1,13 +1,5 @@
 import crypto from 'node:crypto'
-
-// Use __Host- prefix only if secure is true (requires HTTPS, Path=/, no Domain)
-// For dev compatibility, we conditionally add the prefix
-const isSecure = process.env.NODE_ENV === 'production' || process.env.VERCEL === '1' || !!process.env.NEXT_PUBLIC_GEMINI_API_KEY
-const prefix = isSecure ? '__Host-' : ''
-
-export const ADMIN_USER_COOKIE = `${prefix}admin_user_email`
-export const ADMIN_ROLE_COOKIE = `${prefix}admin_user_role`
-export const ADMIN_SIG_COOKIE = `${prefix}admin_session_sig`
+import { ADMIN_SIG_COOKIE, ADMIN_USER_COOKIE, ADMIN_ROLE_COOKIE, SESSION_COOKIE_OPTIONS } from '@/lib/iam/session-cookies'
 
 export const signSession = (email: string, role: string): string => {
   const secret = process.env.SESSION_SECRET
@@ -29,11 +21,4 @@ export const verifySessionSig = (email: string, role: string, sig: string): bool
     return false
   }
 }
-
-export const SESSION_COOKIE_OPTIONS = {
-  httpOnly: true,
-  sameSite: 'strict' as const, // Hardened to Strict
-  secure: isSecure,
-  path: '/',
-  maxAge: 60 * 60 * 8, // 8 hours
-}
+export { ADMIN_SIG_COOKIE, ADMIN_USER_COOKIE, ADMIN_ROLE_COOKIE, SESSION_COOKIE_OPTIONS }
