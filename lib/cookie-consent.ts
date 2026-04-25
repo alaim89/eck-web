@@ -46,8 +46,12 @@ export function setStoredConsent(
     timestamp: new Date().toISOString(),
   };
   if (typeof window === 'undefined') return full;
-  localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(full));
-  appendConsentLog({ consent: full, action, userAgent: navigator.userAgent });
+  try {
+    localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(full));
+    appendConsentLog({ consent: full, action, userAgent: navigator.userAgent });
+  } catch {
+    // ignore storage errors
+  }
   return full;
 }
 

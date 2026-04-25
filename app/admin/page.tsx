@@ -34,6 +34,12 @@ const allModules: AdminModule[] = [
     description: 'Offene CRM-, sevdesk- und Review-Aufgaben im Überblick',
   },
   {
+    name: 'Besucherstatistik',
+    href: '/admin/visitor-stats',
+    description: 'Live-Besucher, Trends, Top-Seiten und CSV-Export',
+    permission: 'analytics.view',
+  },
+  {
     name: 'Setup Check',
     href: '/admin/setup-check',
     description: 'Konfigurationsstatus für Auth, IAM und Session prüfen',
