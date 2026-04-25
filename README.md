@@ -1,45 +1,88 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Ecksolution-IT Website
 
-# Run and deploy your AI Studio app
+Professionelle Unternehmenswebsite von Ecksolution-IT auf Basis von **Next.js App Router** und **Tailwind CSS**.
 
-This contains everything you need to run your app locally.
+Die Seite fokussiert auf den **IT-Check** als primären Einstieg für Geschäftsführer, IT-Leitung und Projektverantwortliche. Zusätzlich enthält das Projekt einen geschützten Admin-Bereich für Operations- und Analytics-Übersichten.
 
-View your app in AI Studio: https://ai.studio/apps/ead20006-3ab8-4c1b-a103-5db5678970af
+## Tech Stack
 
-## Run Locally
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+- Vitest + Testing Library
+- Playwright (E2E)
 
-**Prerequisites:**  Node.js
+## Projektbereiche
 
+- `app/` – Seiten, Layouts, API-Routen (App Router)
+- `components/` – wiederverwendbare UI- und Inhaltskomponenten
+- `lib/` – Geschäftslogik, Datenmodelle, SEO/JSON-LD Utilities
+- `__tests__/` – Unit- und Komponenten-Tests
+- `e2e/` – End-to-End-Tests
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Kernfunktionen
 
-## Analytics (Admin Besucherstatistik)
+- IT-Check Landing Page mit klarer Entscheidungsführung
+- Solutions-, Blog- und Case-Study-Seiten
+- Kontaktformular + API-Endpunkte
+- Admin-Bereich für Dashboard, Integrationen, Reconciliation und Besucherstatistik
+- SEO-Bausteine (Metadata, Sitemap, Robots, JSON-LD)
 
-Das Analytics-Modul ist DSGVO-bewusst und funktioniert ohne eigene Tracking-Cookies:
+## Lokale Entwicklung
 
-- Client-Tracking erfolgt über `components/VisitorTracker.tsx` und sendet Events an `POST /api/track/visit`.
-- Tracking wird nur ausgeführt, wenn `analytics`-Consent vorliegt.
-- Gespeichert werden nur technische Felder (Session-ID, URL, Referrer, UTM, Gerät, Browser, Zeitstempel).
-- Es werden keine vollständigen IP-Adressen gespeichert; nur ein gehashter Wert (`ip_hash`) sofern verfügbar.
-- Aufbewahrung ist konfigurierbar über `ANALYTICS_RETENTION_DAYS` (Default: 90 Tage).
+### Voraussetzungen
 
-Admin-Endpunkte:
-- `GET /api/admin/analytics/visitors` (Live + Historie, nur mit `analytics.view`)
-- `GET /api/admin/analytics/visitors/export` (CSV-Export, nur mit `analytics.view`)
+- Node.js 20+
+- npm
 
-Interner Cleanup-Endpunkt (für Scheduler/Cron):
-- `POST /api/internal/analytics/cleanup`
-- Authentifizierung: `Authorization: Bearer $ANALYTICS_CRON_TOKEN`
+### Setup
 
-Empfohlene Betriebs-Variablen:
-- `OPS_PERSISTENCE_MODE=file`
-- `OPS_DATA_DIR=.ops-data` (oder persistentes Volume)
-- `ANALYTICS_RETENTION_DAYS=90`
-- `ANALYTICS_TRACK_RATE_LIMIT_PER_MINUTE=120`
-- `ANALYTICS_CRON_TOKEN=<starkes-geheimnis>`
+```bash
+npm install
+```
+
+### Development-Server starten
+
+```bash
+npm run dev
+```
+
+Anschließend öffnen: `http://localhost:3000`
+
+## Wichtige Befehle
+
+### TypeScript prüfen
+
+```bash
+npm run typecheck
+```
+
+### Linting
+
+```bash
+npm run lint
+```
+
+### Unit-/Komponententests
+
+```bash
+npm run test
+```
+
+### E2E-Tests
+
+```bash
+npm run test:e2e
+```
+
+### Produktionsbuild
+
+```bash
+npm run build
+npm run start
+```
+
+## Hinweis zu Analytics/Admin
+
+Der Admin-Bereich (`/admin/*`) ist geschützt. Analytics- und Operations-Funktionen werden über API-Routen im Projekt bereitgestellt und sind für den internen Betrieb gedacht.

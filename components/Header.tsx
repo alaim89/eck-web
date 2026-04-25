@@ -7,7 +7,7 @@ export function Header() {
   const t = translations.de;
 
   return (
-    <nav className="fixed top-0 w-full bg-white z-50 border-b border-slate-100/80 font-poppins">
+    <nav aria-label="Hauptnavigation" className="fixed top-0 w-full bg-white z-50 border-b border-slate-100/80 font-poppins">
       <div className="page-container h-20 flex items-center justify-between">
         {/* Brand Area */}
         <div className="flex items-center gap-10">
