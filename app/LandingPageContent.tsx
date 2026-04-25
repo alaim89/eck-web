@@ -73,6 +73,36 @@ const technologyChips = ['Microsoft 365', 'Azure', 'Entra ID', 'Intune', 'Veeam'
 const interactiveCardClass =
   'transition-all duration-300 hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-[0_20px_40px_-24px_rgba(0,95,107,0.35)] hover:-translate-y-0.5';
 
+function FlowBridge({ from, to }: { from: string; to: string }) {
+  return (
+    <div className="mb-5 rounded-xl border border-slate-200 bg-white/80 px-4 py-2">
+      <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+        <span>{from}</span>
+        <span aria-hidden="true" className="h-px flex-1 bg-gradient-to-r from-slate-300 to-primary/35" />
+        <span className="text-primary">{to}</span>
+      </div>
+    </div>
+  );
+}
+
+function ProgressRibbon() {
+  return (
+    <div className="mb-2 rounded-2xl border border-slate-200 bg-white/85 px-4 py-3">
+      <div className="grid grid-cols-3 gap-3 text-[11px] font-semibold uppercase tracking-[0.14em]">
+        <div className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-slate-600 text-center">
+          Unklar
+        </div>
+        <div className="rounded-lg border border-primary/25 bg-primary/[0.04] px-3 py-2 text-primary text-center">
+          Struktur
+        </div>
+        <div className="rounded-lg border border-primary/35 bg-primary/[0.08] px-3 py-2 text-primary text-center">
+          Verantwortung
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function LandingPageContent() {
   return (
     <div className="min-h-screen bg-white text-black font-poppins selection:bg-primary/30">
@@ -138,10 +168,20 @@ export default function LandingPageContent() {
           </div>
         </section>
 
-        <div className="max-w-[1200px] mx-auto px-6 space-y-24">
+        <div className="relative max-w-[1200px] mx-auto px-6 space-y-16">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none hidden lg:block absolute left-9 top-0 bottom-0 w-px bg-gradient-to-b from-primary/20 via-primary/25 to-primary/10"
+          />
+          <ProgressRibbon />
           {/* 2) Problem */}
-          <section aria-labelledby="problem-heading" className="scroll-mt-32">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Schritt 2 · Unklarheit sichtbar machen</p>
+          <section aria-labelledby="problem-heading" className="scroll-mt-32 relative lg:pl-14">
+            <span
+              aria-hidden="true"
+              className="hidden lg:block absolute left-[30px] top-[14px] h-4 w-4 rounded-full border border-primary/35 bg-white shadow-[0_0_0_6px_rgba(0,95,107,0.08)]"
+            />
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Schritt 2 · Von Symptomen zu Diagnosebedarf</p>
+            <FlowBridge from="Symptome" to="Diagnosebedarf" />
             <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
               <div className="p-8 rounded-[2rem] bg-white border border-slate-200 shadow-[0_18px_34px_-28px_rgba(15,23,42,0.45)]">
                 <h2 id="problem-heading" className="text-2xl font-bold tracking-tight mb-6">
@@ -172,8 +212,13 @@ export default function LandingPageContent() {
           </section>
 
           {/* 3) Routing / Self-selection */}
-          <section id="routing" aria-labelledby="routing-heading" className="scroll-mt-32">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Schritt 3 · Einstiegspunkt wählen</p>
+          <section id="routing" aria-labelledby="routing-heading" className="scroll-mt-32 relative lg:pl-14">
+            <span
+              aria-hidden="true"
+              className="hidden lg:block absolute left-[30px] top-[14px] h-4 w-4 rounded-full border border-primary/35 bg-white shadow-[0_0_0_6px_rgba(0,95,107,0.08)]"
+            />
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Schritt 3 · Von Diagnosebedarf zu Einstiegspfad</p>
+            <FlowBridge from="Diagnosebedarf" to="Einstiegspfad" />
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center">
                 <Route className="w-5 h-5 text-primary" />
@@ -218,8 +263,13 @@ export default function LandingPageContent() {
           </section>
 
           {/* 4) Workflow / Decision architecture */}
-          <section aria-labelledby="decision-heading" className="scroll-mt-32">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Schritt 4 · Entscheidungsarchitektur</p>
+          <section aria-labelledby="decision-heading" className="scroll-mt-32 relative lg:pl-14">
+            <span
+              aria-hidden="true"
+              className="hidden lg:block absolute left-[30px] top-[14px] h-4 w-4 rounded-full border border-primary/35 bg-white shadow-[0_0_0_6px_rgba(0,95,107,0.08)]"
+            />
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Schritt 4 · Von Pfad zu Entscheidungsarchitektur</p>
+            <FlowBridge from="Einstiegspfad" to="Entscheidungslogik" />
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center">
                 <Compass className="w-5 h-5 text-primary" />
@@ -263,11 +313,17 @@ export default function LandingPageContent() {
                 </article>
               ))}
             </div>
+            <p className="mt-6 text-sm text-slate-600">Damit wird aus Komplexität ein belastbarer Maßnahmenpfad.</p>
           </section>
 
           {/* 5) What we solve */}
-          <section aria-labelledby="solve-heading" className="scroll-mt-32">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Schritt 5 · Arbeitsfelder</p>
+          <section aria-labelledby="solve-heading" className="scroll-mt-32 relative lg:pl-14">
+            <span
+              aria-hidden="true"
+              className="hidden lg:block absolute left-[30px] top-[14px] h-4 w-4 rounded-full border border-primary/35 bg-white shadow-[0_0_0_6px_rgba(0,95,107,0.08)]"
+            />
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Schritt 5 · Von Struktur zu Umsetzung</p>
+            <FlowBridge from="Entscheidungslogik" to="Umsetzungsfelder" />
             <h2 id="solve-heading" className="text-2xl font-bold tracking-tight mb-8">
               Was wir konkret lösen
             </h2>
@@ -282,11 +338,17 @@ export default function LandingPageContent() {
                 </article>
               ))}
             </div>
+            <p className="mt-6 text-sm text-slate-600">Die Umsetzung startet nicht mit Tools, sondern mit klarer Reihenfolge und Verantwortung.</p>
           </section>
 
           {/* 6) Outcome */}
-          <section aria-labelledby="outcome-heading" className="scroll-mt-32">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Schritt 6 · Ergebnis</p>
+          <section aria-labelledby="outcome-heading" className="scroll-mt-32 relative lg:pl-14">
+            <span
+              aria-hidden="true"
+              className="hidden lg:block absolute left-[30px] top-[14px] h-4 w-4 rounded-full border border-primary/35 bg-white shadow-[0_0_0_6px_rgba(0,95,107,0.08)]"
+            />
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Schritt 6 · Von Chaos zu klarer Verantwortung</p>
+            <FlowBridge from="Umsetzungsfelder" to="Klarheit & Verantwortung" />
             <div className="p-8 rounded-3xl border border-slate-200 bg-slate-50/70">
               <h2 id="outcome-heading" className="text-2xl font-bold tracking-tight mb-6">
                 Was nach dem IT-Check klar ist
@@ -310,8 +372,13 @@ export default function LandingPageContent() {
           </section>
 
           {/* 7) Final CTA */}
-          <section aria-labelledby="cta-heading" className="scroll-mt-32">
+          <section aria-labelledby="cta-heading" className="scroll-mt-32 relative lg:pl-14">
+            <span
+              aria-hidden="true"
+              className="hidden lg:block absolute left-[30px] top-[14px] h-4 w-4 rounded-full border border-primary/35 bg-white shadow-[0_0_0_6px_rgba(0,95,107,0.08)]"
+            />
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Schritt 7 · Nächster Schritt</p>
+            <FlowBridge from="Klarheit & Verantwortung" to="IT-Check starten" />
             <div className="p-8 md:p-10 rounded-3xl bg-primary text-white shadow-[0_28px_48px_-28px_rgba(0,95,107,0.65)]">
               <div className="max-w-3xl">
                 <h2 id="cta-heading" className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
@@ -331,8 +398,13 @@ export default function LandingPageContent() {
           </section>
 
           {/* 8) Technologies (support only) */}
-          <section aria-labelledby="tech-heading" className="scroll-mt-32">
+          <section aria-labelledby="tech-heading" className="scroll-mt-32 relative lg:pl-14">
+            <span
+              aria-hidden="true"
+              className="hidden lg:block absolute left-[30px] top-[14px] h-4 w-4 rounded-full border border-primary/35 bg-white shadow-[0_0_0_6px_rgba(0,95,107,0.08)]"
+            />
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Schritt 8 · Technologien im Kontext</p>
+            <FlowBridge from="Maßnahmenpfad" to="Werkzeuge im Einsatz" />
             <div className="p-6 rounded-2xl border border-slate-200 bg-white">
               <h2 id="tech-heading" className="text-lg font-bold tracking-tight mb-4">
                 Technologien im Einsatz
