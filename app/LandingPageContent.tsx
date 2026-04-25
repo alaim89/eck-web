@@ -12,7 +12,6 @@ const realityPatterns = [
   'Migrationen werden verschoben, weil die Grundlage unklar ist.',
   'Tools sind vorhanden, aber Risiken bleiben unpriorisiert.',
 ];
-
 const outcomeGroups = [
   {
     title: 'Systeme',
@@ -35,6 +34,25 @@ const outcomeGroups = [
     points: ['Welcher Umsetzungspfad sinnvoll ist.', 'Wie dieser Pfad konkret gestartet wird.'],
   },
 ];
+
+const solutionPaths = [
+  'Umsetzung durch Ecksolution-IT',
+  'Sparring mit interner IT',
+  'Managed Service / Betrieb',
+  'Projektstabilisierung',
+];
+
+const decisionSteps = [
+  { title: 'Diagnose', consequence: 'Konsequenz: Symptome werden als belastbare Fakten sichtbar.' },
+  { title: 'Entscheidung', consequence: 'Konsequenz: Prioritäten werden verbindlich statt verhandelbar.' },
+  {
+    title: 'Routing in Verantwortung',
+    consequence: 'Konsequenz: Zuständigkeit wird übernommen und in Umsetzung überführt.',
+  },
+];
+
+const glowCard =
+  'transition-all duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-primary/[0.03] hover:-translate-y-[1px]';
 
 export default function LandingPageContent() {
   return (
