@@ -1,7 +1,6 @@
 'use client';
 
-import { motion } from "motion/react";
-import { ArrowLeft, Calendar, Clock, User, Tag, Share2, Linkedin, Twitter, Mail } from "lucide-react";
+import { ArrowLeft, User, Linkedin, Twitter, Mail } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
@@ -10,8 +9,10 @@ import { Footer } from "@/components/Footer";
 import { getArticleSchema } from "@/lib/jsonld";
 
 interface BlogPostContentProps {
+  slug: string;
   post: {
     title: string;
+    excerpt: string;
     date: string;
     readTime: string;
     author: string;
@@ -21,14 +22,14 @@ interface BlogPostContentProps {
   };
 }
 
-export default function BlogPostContent({ post }: BlogPostContentProps) {
+export default function BlogPostContent({ slug, post }: BlogPostContentProps) {
   const articleSchema = getArticleSchema({
     title: post.title,
-    description: post.title, // Fallback to title as description
+    description: post.excerpt,
     image: post.image,
     date: post.date,
     author: post.author,
-    url: `/blog`, // This is a bit simplified
+    url: `/blog/${slug}`,
   });
 
   return (
@@ -75,13 +76,22 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <button className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary">
+                <button
+                  aria-label="Artikel auf LinkedIn teilen"
+                  className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary"
+                >
                   <Linkedin className="w-5 h-5" />
                 </button>
-                <button className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary">
+                <button
+                  aria-label="Artikel auf X teilen"
+                  className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary"
+                >
                   <Twitter className="w-5 h-5" />
                 </button>
-                <button className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary">
+                <button
+                  aria-label="Artikel per E-Mail teilen"
+                  className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary"
+                >
                   <Mail className="w-5 h-5" />
                 </button>
               </div>
@@ -111,13 +121,22 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
               <div className="flex items-center gap-4">
                 <span className="text-sm font-bold text-gray-400 uppercase tracking-widest">Diesen Artikel teilen:</span>
                 <div className="flex items-center gap-2">
-                  <button className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary">
+                  <button
+                    aria-label="Artikel auf LinkedIn teilen"
+                    className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary"
+                  >
                     <Linkedin className="w-5 h-5" />
                   </button>
-                  <button className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary">
+                  <button
+                    aria-label="Artikel auf X teilen"
+                    className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary"
+                  >
                     <Twitter className="w-5 h-5" />
                   </button>
-                  <button className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary">
+                  <button
+                    aria-label="Artikel per E-Mail teilen"
+                    className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary"
+                  >
                     <Mail className="w-5 h-5" />
                   </button>
                 </div>
