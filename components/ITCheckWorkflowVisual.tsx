@@ -31,36 +31,28 @@ const boardRows = [
   },
 ] as const;
 
-const outcomeItems = [
-  'Kritische Systeme identifiziert',
-  'Verantwortung klar zugeordnet',
-  'Risiken priorisiert',
-  'Umsetzungspfad beschlossen',
-  'Betrieb belastbar aufgestellt',
-] as const;
-
 const interactiveNodeClass =
   'rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_16px_30px_-24px_rgba(15,23,42,0.28)] transition-all duration-300 hover:border-primary/30 hover:bg-primary/5 hover:shadow-[0_20px_40px_-24px_rgba(0,95,107,0.35)] hover:-translate-y-0.5';
 
 export function ITCheckWorkflowVisual() {
   return (
-    <div className="relative overflow-hidden rounded-[2.5rem] border border-slate-200/90 bg-white px-7 py-9 md:px-11 md:py-11 shadow-[0_34px_64px_-42px_rgba(15,23,42,0.35)]">
+    <div className="relative overflow-hidden rounded-[2.75rem] border border-primary/20 bg-white px-8 py-10 md:px-12 md:py-12 shadow-[0_44px_84px_-44px_rgba(15,23,42,0.45)]">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.09]"
+        className="pointer-events-none absolute inset-0 opacity-[0.12]"
         style={{
           backgroundImage:
             'linear-gradient(to right, rgba(148,163,184,0.14) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.14) 1px, transparent 1px)',
-          backgroundSize: '36px 36px',
+          backgroundSize: '34px 34px',
         }}
       />
 
-      <div className="relative mx-auto max-w-[620px]">
-        <p className="mb-7 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 text-center">Decision Board</p>
+      <div className="relative mx-auto max-w-[660px]">
+        <p className="mb-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 text-center">Decision Board</p>
 
-        <div aria-hidden="true" className="absolute left-7 top-12 bottom-10 w-px bg-gradient-to-b from-slate-300/80 via-primary/35 to-slate-300/80" />
+        <div aria-hidden="true" className="absolute left-7 top-12 bottom-10 w-px bg-gradient-to-b from-slate-300/90 via-primary/40 to-slate-300/90" />
 
-        <div className="space-y-4">
+        <div className="space-y-[18px]">
           {boardRows.map((row, idx) => {
             const focus = row.tone === 'focus';
             const primary = row.tone === 'primary';
@@ -68,12 +60,12 @@ export function ITCheckWorkflowVisual() {
             return (
               <article
                 key={row.title}
-                className={`relative ml-12 rounded-2xl border px-5 py-4 shadow-[0_12px_24px_-22px_rgba(15,23,42,0.25)] transition-all duration-200 ease-out hover:-translate-y-[1px] hover:border-[#005F6B]/30 hover:bg-[#005F6B]/[0.04] hover:shadow-[0_20px_40px_-24px_rgba(0,95,107,0.35)] ${
+                className={`relative ml-12 rounded-2xl border px-5 py-4 transition-all duration-200 ease-out hover:-translate-y-[1px] hover:border-[#005F6B]/28 hover:bg-[#005F6B]/[0.035] ${
                   focus
-                    ? 'border-primary/35 bg-primary/[0.03]'
+                    ? 'border-primary/35 bg-primary/[0.04]'
                     : primary
-                      ? 'border-primary/20 bg-white'
-                      : 'border-slate-200 bg-white'
+                      ? 'border-primary/18 bg-white'
+                      : 'border-slate-200/90 bg-white'
                 }`}
               >
                 <span
@@ -88,7 +80,7 @@ export function ITCheckWorkflowVisual() {
                 </span>
 
                 {focus && (
-                  <div aria-hidden="true" className="pointer-events-none absolute -inset-2 rounded-2xl bg-primary/10 blur-xl" />
+                  <div aria-hidden="true" className="pointer-events-none absolute -inset-2 rounded-2xl bg-primary/10 blur-lg" />
                 )}
 
                 <div className="relative z-10">
