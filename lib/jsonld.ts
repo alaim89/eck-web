@@ -58,9 +58,15 @@ export function getArticleSchema(post: {
   author: string;
   url: string;
 }) {
+  const articleUrl = post.url.startsWith("http")
+    ? post.url
+    : `${siteConfig.baseUrl}${post.url.startsWith("/") ? post.url : `/${post.url}`}`;
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
+    "url": articleUrl,
+    "mainEntityOfPage": articleUrl,
     "headline": post.title,
     "description": post.description,
     "image": [post.image],
