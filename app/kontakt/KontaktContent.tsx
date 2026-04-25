@@ -17,13 +17,14 @@ import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { useState } from 'react';
-import { useSearchParams } from 'next/navigation';
 
 type RequestType = 'it-check' | 'recruiter' | 'managed-service' | 'strategic-it';
 
-export default function KontaktContent() {
-  const searchParams = useSearchParams();
-  const initialRequestType: RequestType = searchParams.get('type') === 'recruiter' ? 'recruiter' : 'it-check';
+type KontaktContentProps = {
+  initialRequestType?: RequestType;
+};
+
+export default function KontaktContent({ initialRequestType = 'it-check' }: KontaktContentProps) {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [requestType, setRequestType] = useState<RequestType>(initialRequestType);
