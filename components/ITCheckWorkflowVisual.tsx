@@ -1,88 +1,98 @@
-import { motion } from 'motion/react';
-
-const responsibilityAreas = [
-  { title: 'Security', subline: 'Risiko' },
-  { title: 'Plattform', subline: 'M365 / Azure / Infrastruktur' },
-  { title: 'Prozesse', subline: 'CRM / Business Prozesse' },
-  { title: 'Betrieb', subline: 'Stabilität / Monitoring / Backup' },
+const boardRows = [
+  {
+    stage: 'Input',
+    title: 'Ausgangslage',
+    text: 'Systeme laufen, Zuständigkeit bleibt unklar.',
+    tone: 'neutral',
+  },
+  {
+    stage: 'Prozess',
+    title: 'Diagnose',
+    text: 'Fakten statt Vermutungen: Architektur, Risiken, Abhängigkeiten.',
+    tone: 'focus',
+  },
+  {
+    stage: 'Prozess',
+    title: 'Entscheidung & Routing',
+    text: 'Priorisierung und Verantwortungszuordnung auf belastbarer Grundlage.',
+    tone: 'focus',
+  },
+  {
+    stage: 'Prozess',
+    title: 'Maßnahmenplan',
+    text: 'Klarer Ablauf: Was zuerst, was später, was bewusst nicht.',
+    tone: 'primary',
+  },
+  {
+    stage: 'Output',
+    title: 'Umsetzung / Betrieb',
+    text: 'Klarheit, Verantwortung und priorisierte Maßnahmen im Alltag.',
+    tone: 'primary',
+  },
 ] as const;
 
 export function ITCheckWorkflowVisual() {
   return (
-    <div className="relative overflow-hidden rounded-[2.25rem] border border-slate-200/90 bg-white px-6 py-8 md:px-10 md:py-10">
+    <div className="relative overflow-hidden rounded-[2.75rem] border border-primary/20 bg-white px-8 py-10 md:px-12 md:py-12 shadow-[0_44px_84px_-44px_rgba(15,23,42,0.45)]">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.14]"
+        className="pointer-events-none absolute inset-0 opacity-[0.12]"
         style={{
           backgroundImage:
-            'linear-gradient(to right, rgba(148,163,184,0.18) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.18) 1px, transparent 1px)',
-          backgroundSize: '30px 30px',
+            'linear-gradient(to right, rgba(148,163,184,0.14) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.14) 1px, transparent 1px)',
+          backgroundSize: '34px 34px',
         }}
       />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-1/2 top-[22%] h-44 w-44 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"
-      />
 
-      <div className="relative z-10 mx-auto max-w-[920px]">
-        <p className="mb-6 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">Strategische Systemkarte</p>
+      <div className="relative mx-auto max-w-[660px]">
+        <p className="mb-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 text-center">Decision Board</p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45 }}
-          className="mx-auto w-fit rounded-full border border-slate-300 bg-white/90 px-6 py-2"
-        >
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-700">IT-Check</p>
-        </motion.div>
+        <div aria-hidden="true" className="absolute left-7 top-12 bottom-10 w-px bg-gradient-to-b from-slate-300/90 via-primary/40 to-slate-300/90" />
 
-        <div aria-hidden="true" className="mx-auto mt-3 h-10 w-px bg-gradient-to-b from-slate-300 to-primary/40" />
+        <div className="space-y-[18px]">
+          {boardRows.map((row, idx) => {
+            const focus = row.tone === 'focus';
+            const primary = row.tone === 'primary';
 
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.12 }}
-          className="relative mx-auto max-w-[520px] rounded-[1.75rem] border border-primary/35 bg-white px-6 py-6 md:px-7 md:py-7 shadow-[0_16px_30px_-24px_rgba(0,95,107,0.45)]"
-        >
-          <div aria-hidden="true" className="absolute inset-0 rounded-[1.75rem] border border-primary/10" />
-          <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">Diagnose & Routing</p>
-          <p className="mt-2 text-base font-semibold text-slate-900">Hier wird Komplexität in klare Verantwortung übersetzt.</p>
-          <p className="mt-3 text-sm text-slate-600">Ohne Diagnose bleibt Verantwortung unklar.</p>
-        </motion.div>
+            return (
+              <article
+                key={row.title}
+                className={`relative ml-12 rounded-2xl border px-5 py-4 transition-all duration-200 ease-out hover:-translate-y-[1px] hover:border-[#005F6B]/28 hover:bg-[#005F6B]/[0.035] ${
+                  focus
+                    ? 'border-primary/35 bg-primary/[0.04]'
+                    : primary
+                      ? 'border-primary/18 bg-white'
+                      : 'border-slate-200/90 bg-white'
+                }`}
+              >
+                <span
+                  aria-hidden="true"
+                  className={`absolute -left-[44px] top-1/2 h-6 w-6 -translate-y-1/2 rounded-full border text-[10px] font-semibold flex items-center justify-center ${
+                    focus || primary
+                      ? 'border-primary/40 bg-primary/10 text-primary'
+                      : 'border-slate-300 bg-white text-slate-500'
+                  }`}
+                >
+                  {idx + 1}
+                </span>
 
-        <div
-          aria-hidden="true"
-          className="mx-auto mt-4 grid w-full max-w-[760px] grid-cols-4 gap-3 px-2 md:px-6"
-        >
-          <span className="col-span-4 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-          <span className="mx-auto h-6 w-px bg-slate-300" />
-          <span className="mx-auto h-7 w-px bg-slate-300" />
-          <span className="mx-auto h-5 w-px bg-slate-300" />
-          <span className="mx-auto h-6 w-px bg-slate-300" />
+                {focus && (
+                  <div aria-hidden="true" className="pointer-events-none absolute -inset-2 rounded-2xl bg-primary/10 blur-lg" />
+                )}
+
+                <div className="relative z-10">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-500">{row.stage}</p>
+                  <h3 className="mt-1 text-base font-bold tracking-tight text-slate-900">{row.title}</h3>
+                  <p className="mt-1 text-sm text-slate-600 leading-[1.62]">{row.text}</p>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
-        <div className="mt-1 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
-          {responsibilityAreas.map((area, index) => (
-            <motion.div
-              key={area.title}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.22 + index * 0.07 }}
-              className={`rounded-2xl border border-slate-200 bg-white/95 px-4 py-4 ${
-                index === 1 ? 'lg:mt-3' : index === 2 ? 'lg:-mt-2' : ''
-              }`}
-            >
-              <p className="text-sm font-semibold text-slate-900">{area.title}</p>
-              <p className="mt-1 text-xs text-slate-600">{area.subline}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="mt-6 flex items-center justify-between gap-4 text-[11px] text-slate-500">
-          <span>Verantwortung unklar</span>
-          <span className="h-px flex-1 bg-slate-200" aria-hidden="true" />
-          <span className="text-primary">Verantwortung zugeordnet</span>
-        </div>
+        <p className="mt-6 text-center text-xs text-slate-600">
+          Wir sind nicht auf der Suche nach mehr Tools — wir schaffen Klarheit, damit Verantwortung möglich wird.
+        </p>
       </div>
     </div>
   );
