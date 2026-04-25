@@ -1,15 +1,41 @@
 'use client';
 
-import { motion } from "motion/react";
-import { Mail, Phone, MessageSquare, Calendar, ArrowRight, CheckCircle2, Building2, Users, MessageCircle, AlertCircle } from "lucide-react";
-import Link from "next/link";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { useState } from "react";
+import { motion } from 'motion/react';
+import {
+  Mail,
+  Phone,
+  Calendar,
+  ArrowRight,
+  CheckCircle2,
+  Building2,
+  Users,
+  MessageCircle,
+  AlertCircle,
+  Briefcase,
+} from 'lucide-react';
+import Link from 'next/link';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { useState } from 'react';
 
-export default function KontaktContent() {
+type RequestType = 'it-check' | 'recruiter' | 'managed-service' | 'strategic-it';
+
+type KontaktContentProps = {
+  initialRequestType?: RequestType;
+};
+
+export default function KontaktContent({ initialRequestType = 'it-check' }: KontaktContentProps) {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [requestType, setRequestType] = useState<RequestType>(initialRequestType);
+  const googleAdsSendTo = process.env.NEXT_PUBLIC_GOOGLE_ADS_SEND_TO;
+  const hasGoogleAdsConversionTarget = Boolean(
+    googleAdsSendTo &&
+      !googleAdsSendTo.includes('AW-CONVERSION_ID') &&
+      !googleAdsSendTo.includes('LABEL')
+  );
+
+  const isRecruiterRequest = requestType === 'recruiter';
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,7 +48,15 @@ export default function KontaktContent() {
       email: fd.get('email') as string,
       company: fd.get('company') as string,
       employees: fd.get('employees') as string,
+      requestType: fd.get('request-type') as string,
       message: fd.get('message') as string,
+      customerIndustry: fd.get('customer-industry') as string,
+      projectDescription: fd.get('project-description') as string,
+      roleGoal: fd.get('role-goal') as string,
+      duration: fd.get('duration') as string,
+      workMode: fd.get('work-mode') as string,
+      budgetRange: fd.get('budget-range') as string,
+      decisionStatus: fd.get('decision-status') as string,
       _gotcha: fd.get('_gotcha') as string,
     };
 
@@ -41,12 +75,13 @@ export default function KontaktContent() {
       }
 
       if (typeof window !== 'undefined' && window.gtag) {
-        // TODO: Replace AW-CONVERSION_ID/LABEL with actual Google Ads conversion action
-        window.gtag('event', 'conversion', {
-          send_to: 'AW-CONVERSION_ID/LABEL',
-          value: 1.0,
-          currency: 'EUR',
-        });
+        if (hasGoogleAdsConversionTarget && googleAdsSendTo) {
+          window.gtag('event', 'conversion', {
+            send_to: googleAdsSendTo,
+            value: 1.0,
+            currency: 'EUR',
+          });
+        }
         window.gtag('event', 'generate_lead', {
           event_category: 'Kontakt',
           event_label: 'Formular abgeschickt',
@@ -67,17 +102,14 @@ export default function KontaktContent() {
       <main className="pt-48 pb-32 px-6">
         <div className="max-w-[1200px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-24">
-
-            {/* Left: Info & Direct Contact */}
             <div>
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mb-16"
-              >
-                <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1]">Lassen Sie uns über Ihre IT sprechen.</h1>
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mb-16">
+                <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1]">
+                  Lassen Sie uns über Ihre IT sprechen.
+                </h1>
                 <p className="text-xl text-gray-600 leading-relaxed opacity-90 max-w-lg">
-                  Egal ob akute Projekt-Rettung oder langfristige Strategie-Begleitung - wir finden den richtigen Weg für Ihre Infrastruktur.
+                  Egal ob IT-Check, Projektanfrage oder langfristige Strategie-Begleitung - wir finden den richtigen
+                  Weg für Ihre Infrastruktur.
                 </p>
               </motion.div>
 
@@ -93,7 +125,9 @@ export default function KontaktContent() {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">E-Mail</div>
-                    <a href="mailto:info@ecksolution-it.de" className="text-xl font-bold text-black hover:text-primary transition-colors">info@ecksolution-it.de</a>
+                    <a href="mailto:info@ecksolution-it.de" className="text-xl font-bold text-black hover:text-primary transition-colors">
+                      info@ecksolution-it.de
+                    </a>
                   </div>
                 </motion.div>
 
@@ -108,7 +142,9 @@ export default function KontaktContent() {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Telefon</div>
-                    <a href="tel:+4917634580607" className="text-xl font-bold text-black hover:text-primary transition-colors">+49 176 34580607</a>
+                    <a href="tel:+4917634580607" className="text-xl font-bold text-black hover:text-primary transition-colors">
+                      +49 176 34580607
+                    </a>
                   </div>
                 </motion.div>
 
@@ -118,7 +154,6 @@ export default function KontaktContent() {
                   transition={{ delay: 0.3 }}
                   className="p-8 rounded-3xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white relative overflow-hidden group shadow-xl shadow-emerald-900/10"
                 >
-                  {/* Subtle Glow Effects */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-white/30 transition-colors duration-500" />
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-emerald-400/20 rounded-full blur-2xl -ml-12 -mb-12" />
 
@@ -127,7 +162,10 @@ export default function KontaktContent() {
                       <Calendar className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-xl font-bold mb-4">Direkte Terminbuchung</h3>
-                    <p className="text-white/80 mb-8 leading-relaxed">Wählen Sie direkt einen passenden Termin für ein 15-minütiges Erstgespräch via Microsoft Bookings.</p>
+                    <p className="text-white/80 mb-8 leading-relaxed">
+                      Wählen Sie direkt einen passenden Termin für ein 15-minütiges Erstgespräch via Microsoft
+                      Bookings.
+                    </p>
                     <Link
                       href="https://outlook.office.com/book/EcksolutionITService@ecksolution-it.de/?ismsaljsauthenabled"
                       target="_blank"
@@ -140,7 +178,6 @@ export default function KontaktContent() {
               </div>
             </div>
 
-            {/* Right: Qualification Form */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -153,17 +190,15 @@ export default function KontaktContent() {
                     <CheckCircle2 className="w-10 h-10 text-green-500" />
                   </div>
                   <h2 className="text-3xl font-bold mb-4">Anfrage gesendet!</h2>
-                  <p className="text-gray-600 mb-8">Vielen Dank für Ihr Vertrauen. Wir melden uns innerhalb der nächsten 24 Stunden bei Ihnen.</p>
-                  <button
-                    onClick={() => setFormState('idle')}
-                    className="text-primary font-bold hover:underline"
-                  >
+                  <p className="text-gray-600 mb-8">
+                    Vielen Dank für Ihr Vertrauen. Wir melden uns innerhalb der nächsten 24 Stunden bei Ihnen.
+                  </p>
+                  <button onClick={() => setFormState('idle')} className="text-primary font-bold hover:underline">
                     Weitere Nachricht senden
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-8">
-                  {/* Honeypot – invisible to real users, filled only by bots */}
                   <input
                     type="text"
                     name="_gotcha"
@@ -175,7 +210,9 @@ export default function KontaktContent() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="full-name" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Name</label>
+                      <label htmlFor="full-name" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">
+                        Name
+                      </label>
                       <input
                         id="full-name"
                         name="full-name"
@@ -186,7 +223,9 @@ export default function KontaktContent() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">E-Mail</label>
+                      <label htmlFor="email" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">
+                        E-Mail
+                      </label>
                       <input
                         id="email"
                         name="email"
@@ -199,7 +238,30 @@ export default function KontaktContent() {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="company" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Unternehmen</label>
+                    <label htmlFor="request-type" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">
+                      Anfragetyp
+                    </label>
+                    <div className="relative">
+                      <Briefcase className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <select
+                        id="request-type"
+                        name="request-type"
+                        value={requestType}
+                        onChange={(e) => setRequestType(e.target.value as RequestType)}
+                        className="w-full pl-14 pr-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none appearance-none"
+                      >
+                        <option value="it-check">IT-Check</option>
+                        <option value="recruiter">Projektanfrage / Recruiter</option>
+                        <option value="managed-service">Managed Service</option>
+                        <option value="strategic-it">Strategische IT-Betreuung</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="company" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">
+                      Unternehmen
+                    </label>
                     <div className="relative">
                       <Building2 className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                       <input
@@ -213,7 +275,9 @@ export default function KontaktContent() {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="employees" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Mitarbeiteranzahl</label>
+                    <label htmlFor="employees" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">
+                      Mitarbeiteranzahl
+                    </label>
                     <div className="relative">
                       <Users className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                       <select
@@ -231,8 +295,105 @@ export default function KontaktContent() {
                     </div>
                   </div>
 
+                  {isRecruiterRequest && (
+                    <div className="space-y-6 p-6 rounded-2xl bg-gray-50 border border-gray-100">
+                      <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Projektanfrage / Recruiter Details</p>
+
+                      <div className="space-y-2">
+                        <label htmlFor="customer-industry" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">
+                          Kunde / Branche
+                        </label>
+                        <input
+                          id="customer-industry"
+                          name="customer-industry"
+                          required={isRecruiterRequest}
+                          className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-100 focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none"
+                        />
+                      </div>
+
+                      <div className="space-y-2">
+                        <label htmlFor="project-description" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">
+                          Projektbeschreibung
+                        </label>
+                        <textarea
+                          id="project-description"
+                          name="project-description"
+                          rows={3}
+                          required={isRecruiterRequest}
+                          className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-100 focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none resize-none"
+                        />
+                      </div>
+
+                      <div className="space-y-2">
+                        <label htmlFor="role-goal" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">
+                          Rolle / Zielsetzung
+                        </label>
+                        <input
+                          id="role-goal"
+                          name="role-goal"
+                          required={isRecruiterRequest}
+                          className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-100 focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none"
+                        />
+                      </div>
+
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <label htmlFor="duration" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">
+                            Laufzeit
+                          </label>
+                          <input
+                            id="duration"
+                            name="duration"
+                            required={isRecruiterRequest}
+                            className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-100 focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none"
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <label htmlFor="work-mode" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">
+                            Remote / Vor Ort
+                          </label>
+                          <input
+                            id="work-mode"
+                            name="work-mode"
+                            required={isRecruiterRequest}
+                            className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-100 focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <label htmlFor="budget-range" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">
+                            Budget / Tagessatzrahmen
+                          </label>
+                          <input
+                            id="budget-range"
+                            name="budget-range"
+                            required={isRecruiterRequest}
+                            className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-100 focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none"
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <label htmlFor="decision-status" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">
+                            Entscheidungsstatus
+                          </label>
+                          <input
+                            id="decision-status"
+                            name="decision-status"
+                            required={isRecruiterRequest}
+                            className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-100 focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Ihr Anliegen</label>
+                    <label htmlFor="message" className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">
+                      Ihr Anliegen
+                    </label>
                     <div className="relative">
                       <MessageCircle className="absolute left-6 top-6 w-5 h-5 text-gray-400" />
                       <textarea
@@ -240,7 +401,7 @@ export default function KontaktContent() {
                         name="message"
                         rows={4}
                         required
-                        placeholder="Beschreiben Sie kurz Ihre aktuelle IT-Herausforderung (z. B. Ausfälle, Migration, Sicherheit)..."
+                        placeholder="Beschreiben Sie kurz Ihre aktuelle Situation und welches Ergebnis Sie erreichen möchten."
                         className="w-full pl-14 pr-6 py-6 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none resize-none"
                       />
                     </div>
@@ -257,10 +418,10 @@ export default function KontaktContent() {
                     type="submit"
                     disabled={formState === 'submitting'}
                     onClick={() => {
-                      if (typeof window !== "undefined" && window.gtag) {
-                        window.gtag("event", "click", {
-                          event_category: "CTA",
-                          event_label: "Kontaktformular Button"
+                      if (typeof window !== 'undefined' && window.gtag) {
+                        window.gtag('event', 'click', {
+                          event_category: 'CTA',
+                          event_label: 'Kontaktformular Button',
                         });
                       }
                     }}
@@ -269,7 +430,9 @@ export default function KontaktContent() {
                     {formState === 'submitting' ? (
                       <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                     ) : (
-                      <>Kostenlose IT-Einschätzung anfordern <ArrowRight className="w-5 h-5" /></>
+                      <>
+                        Anfrage absenden <ArrowRight className="w-5 h-5" />
+                      </>
                     )}
                   </button>
 
