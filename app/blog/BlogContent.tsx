@@ -8,6 +8,13 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BLOG_POSTS } from "@/lib/blog-data";
 
+const relatedSolutionBySlug: Record<string, string> = {
+  "entra-join-vpn-abloesen": "hybrid-it-infrastruktur",
+  "cloud-migration-mittelstand-2024": "azure-migration",
+  "it-sicherheit-praevention-vs-reaktion": "it-sicherheit",
+  "managed-services-vs-inhouse-it": "managed-it-service",
+};
+
 export default function BlogContent() {
   const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
   return (
@@ -19,22 +26,25 @@ export default function BlogContent() {
           {/* Header */}
           <div className="max-w-3xl mb-20">
             <div className="text-primary font-bold text-xs uppercase tracking-widest mb-4">
-              Wissen & Einblicke
+              Insights
             </div>
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-8 text-black leading-[1.1]">
-              IT-Strategie für Entscheider.
+              IT-Probleme verstehen.
+              <br />
+              Klar priorisieren.
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed opacity-90">
-              Praxisnahe Tipps, tiefgehende Analysen und aktuelle Trends aus den Bereichen Cloud-Architektur, IT-Sicherheit und digitale Transformation.
+              Jeder Beitrag behandelt ein konkretes Problem aus dem IT-Alltag im Mittelstand und zeigt den Weg von
+              Unsicherheit zu klarer Entscheidung mit IT-Check.
             </p>
           </div>
 
           {/* Featured Post */}
           <div className="mb-24">
-            <Link href={`/blog/${BLOG_POSTS[0].slug}`} className="group block relative overflow-hidden rounded-[2.5rem] bg-gray-50 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500">
+            <article className="group block relative overflow-hidden rounded-[2.5rem] bg-gray-50 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500">
               <div className="grid lg:grid-cols-2 items-center">
                 <div className="relative h-full min-h-[300px] overflow-hidden">
-                  <Image 
+                  <Image
                     src={BLOG_POSTS[0].image} 
                     alt={BLOG_POSTS[0].title}
                     fill
@@ -51,25 +61,35 @@ export default function BlogContent() {
                       <Calendar className="w-4 h-4" /> {BLOG_POSTS[0].date}
                     </span>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-6 group-hover:text-primary transition-colors leading-tight">
-                    {BLOG_POSTS[0].title}
-                  </h2>
+                  <Link href={`/blog/${BLOG_POSTS[0].slug}`}>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6 group-hover:text-primary transition-colors leading-tight">
+                      {BLOG_POSTS[0].title}
+                    </h2>
+                  </Link>
                   <p className="text-gray-600 text-lg leading-relaxed mb-8 opacity-80">
                     {BLOG_POSTS[0].excerpt}
                   </p>
-                  <div className="flex items-center gap-2 text-primary font-bold">
-                    Vollständigen Artikel lesen <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <div className="flex flex-wrap items-center gap-5">
+                    <Link href={`/blog/${BLOG_POSTS[0].slug}`} className="flex items-center gap-2 text-primary font-bold">
+                      Vollständigen Artikel lesen <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                    <Link href={`/solutions/${relatedSolutionBySlug[BLOG_POSTS[0].slug]}`} className="text-sm font-semibold text-gray-700 hover:text-primary transition-colors">
+                      Passende Lösung ansehen
+                    </Link>
+                    <Link href="/kontakt?type=it-check" className="text-sm font-semibold text-gray-700 hover:text-primary transition-colors">
+                      Zum IT-Check
+                    </Link>
                   </div>
                 </div>
               </div>
-            </Link>
+            </article>
           </div>
 
           {/* Grid */}
           <div className="grid md:grid-cols-2 gap-12">
             {BLOG_POSTS.slice(1).map((post, i) => (
               <div key={post.slug}>
-                <Link href={`/blog/${post.slug}`} className="group block h-full">
+                <article className="group block h-full">
                   <div className="relative aspect-[16/10] overflow-hidden rounded-3xl mb-8 bg-gray-100 border border-gray-100 shadow-sm transition-all duration-500 group-hover:shadow-xl">
                     <Image 
                       src={post.image} 
@@ -84,16 +104,26 @@ export default function BlogContent() {
                     <span>•</span>
                     <span>{post.date}</span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors leading-tight">
-                    {post.title}
-                  </h3>
+                  <Link href={`/blog/${post.slug}`}>
+                    <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors leading-tight">
+                      {post.title}
+                    </h3>
+                  </Link>
                   <p className="text-gray-600 leading-relaxed mb-6 opacity-80 line-clamp-2">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center gap-2 text-primary font-bold text-sm">
-                    Weiterlesen <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <div className="flex flex-wrap items-center gap-4">
+                    <Link href={`/blog/${post.slug}`} className="flex items-center gap-2 text-primary font-bold text-sm">
+                      Weiterlesen <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                    <Link href={`/solutions/${relatedSolutionBySlug[post.slug]}`} className="text-sm font-semibold text-gray-700 hover:text-primary transition-colors">
+                      Passende Lösung
+                    </Link>
+                    <Link href="/kontakt?type=it-check" className="text-sm font-semibold text-gray-700 hover:text-primary transition-colors">
+                      IT-Check
+                    </Link>
                   </div>
-                </Link>
+                </article>
               </div>
             ))}
           </div>

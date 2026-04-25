@@ -32,6 +32,29 @@ export function getOrganizationSchema() {
 }
 
 /**
+ * Generates LocalBusiness JSON-LD schema.
+ */
+export function getLocalBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": siteConfig.companyName,
+    "url": siteConfig.baseUrl,
+    "telephone": siteConfig.contact.phone,
+    "email": siteConfig.contact.email,
+    "areaServed": ["Niedersachsen", "Hannover"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": siteConfig.contact.address.street,
+      "postalCode": siteConfig.contact.address.zip,
+      "addressLocality": siteConfig.contact.address.city,
+      "addressRegion": "Niedersachsen",
+      "addressCountry": "DE"
+    }
+  };
+}
+
+/**
  * Generates Service JSON-LD schema.
  */
 export function getServiceSchema(name: string, description: string) {
@@ -58,9 +81,15 @@ export function getArticleSchema(post: {
   author: string;
   url: string;
 }) {
+  const articleUrl = post.url.startsWith("http")
+    ? post.url
+    : `${siteConfig.baseUrl}${post.url.startsWith("/") ? post.url : `/${post.url}`}`;
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
+    "url": articleUrl,
+    "mainEntityOfPage": articleUrl,
     "headline": post.title,
     "description": post.description,
     "image": [post.image],

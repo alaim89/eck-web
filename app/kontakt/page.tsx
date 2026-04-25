@@ -2,8 +2,8 @@ import { getMetadata } from "@/lib/seo";
 import KontaktContent from "./KontaktContent";
 
 export const metadata = getMetadata({
-  title: "Kostenlose IT-Einschätzung anfordern",
-  description: "Haben Sie Fragen zu Ihrer IT-Infrastruktur oder benötigen Sie Unterstützung bei einem Projekt? Fordern Sie jetzt Ihre kostenlose IT-Einschätzung an.",
+  title: "IT-Check für Unternehmen: Analyse, Prioritäten, Klarheit",
+  description: "IT-Probleme analysieren statt raten: Der IT-Check schafft Klarheit zu Risiken, Verantwortlichkeiten und nächsten Schritten – für Unternehmen in Niedersachsen und im Raum Hannover.",
   canonical: "/kontakt",
 });
 
