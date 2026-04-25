@@ -13,18 +13,19 @@ const securityHeaders = [
     key: 'Strict-Transport-Security',
     value: 'max-age=31536000; includeSubDomains; preload',
   },
-  {
-    key: 'Content-Security-Policy',
-    value: [
-      "default-src 'self'",
-      "script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com",
-      "style-src 'self' 'unsafe-inline'", // Optimization: unsafe-inline often needed for emotion/styled-components, but safe for styles
-      "img-src 'self' data: https: blob:",
-      "font-src 'self' data:",
-      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://*.sentry.io",
-      "frame-src 'none'",
-      "frame-ancestors 'none'",
-      "base-uri 'self'",
+      {
+        key: 'Content-Security-Policy',
+        value: [
+          "default-src 'self'",
+          // Next.js app-router hydration uses inline scripts; without unsafe-inline the app can render blank.
+          "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://vercel.live",
+          "style-src 'self' 'unsafe-inline'", // Optimization: unsafe-inline often needed for emotion/styled-components, but safe for styles
+          "img-src 'self' data: https: blob:",
+          "font-src 'self' data:",
+          "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://*.sentry.io https://vercel.live wss://*.pusher.com",
+          "frame-src 'none'",
+          "frame-ancestors 'none'",
+          "base-uri 'self'",
       "form-action 'self'",
       "upgrade-insecure-requests",
     ].join('; '),
