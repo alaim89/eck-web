@@ -160,5 +160,9 @@ export default withSentryConfig(nextConfig, {
   authToken: process.env.SENTRY_AUTH_TOKEN,
   sourcemaps: { disable: !process.env.SENTRY_AUTH_TOKEN },
   silent: true,
-  disableLogger: true,
+  webpack: {
+    treeshake: {
+      removeDebugLogging: true,
+    },
+  },
 });

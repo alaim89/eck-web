@@ -28,6 +28,12 @@ export default function KontaktContent({ initialRequestType = 'it-check' }: Kont
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [requestType, setRequestType] = useState<RequestType>(initialRequestType);
+  const googleAdsSendTo = process.env.NEXT_PUBLIC_GOOGLE_ADS_SEND_TO;
+  const hasGoogleAdsConversionTarget = Boolean(
+    googleAdsSendTo &&
+      !googleAdsSendTo.includes('AW-CONVERSION_ID') &&
+      !googleAdsSendTo.includes('LABEL')
+  );
 
   const isRecruiterRequest = requestType === 'recruiter';
 
@@ -69,11 +75,13 @@ export default function KontaktContent({ initialRequestType = 'it-check' }: Kont
       }
 
       if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'conversion', {
-          send_to: 'AW-CONVERSION_ID/LABEL',
-          value: 1.0,
-          currency: 'EUR',
-        });
+        if (hasGoogleAdsConversionTarget && googleAdsSendTo) {
+          window.gtag('event', 'conversion', {
+            send_to: googleAdsSendTo,
+            value: 1.0,
+            currency: 'EUR',
+          });
+        }
         window.gtag('event', 'generate_lead', {
           event_category: 'Kontakt',
           event_label: 'Formular abgeschickt',

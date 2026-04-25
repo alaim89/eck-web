@@ -2,7 +2,6 @@ import type {Metadata} from 'next';
 import { Suspense } from 'react';
 import './globals.css'; // Global styles
 import { LanguageProvider } from '@/context/LanguageContext';
-import Script from 'next/script';
 import { CookieConsentBanner } from '@/components/CookieConsent';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import { WebVitals } from '@/components/WebVitals';

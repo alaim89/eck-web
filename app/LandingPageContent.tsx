@@ -77,7 +77,7 @@ export default function LandingPageContent() {
                   IT-Probleme sichtbar machen. Prozesse verbinden. Lösungen automatisieren.
                 </h1>
                 <p className="text-lg text-gray-600 max-w-2xl leading-relaxed mb-10">
-                  Mit dem IT-Check analysieren wir IT, Microsoft 365, Azure, CRM und Vertriebsprozesse — und bauen
+                  Mit dem IT-Check analysieren wir IT, Microsoft 365, Azure, CRM und Vertriebsprozesse, und bauen
                   daraus einen klaren Workflow für Stabilität, Sicherheit und Wachstum.
                 </p>
 
