@@ -9,6 +9,9 @@ const flowSteps = [
   { title: 'Betrieb', text: 'Stabilität wird wiederholbar statt zufällig.', tone: 'base' },
 ] as const;
 
+const interactiveNodeClass =
+  'rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_16px_30px_-24px_rgba(15,23,42,0.28)] transition-all duration-300 hover:border-primary/30 hover:bg-primary/5 hover:shadow-[0_20px_40px_-24px_rgba(0,95,107,0.35)] hover:-translate-y-0.5';
+
 export function ITCheckWorkflowVisual() {
   return (
     <div className="relative overflow-hidden rounded-[2.75rem] border border-primary/20 bg-white px-6 py-10 md:px-10 md:py-14 shadow-[0_52px_96px_-44px_rgba(15,23,42,0.52)]">
