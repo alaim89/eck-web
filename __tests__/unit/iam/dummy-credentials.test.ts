@@ -9,7 +9,7 @@ describe('dummy credentials', () => {
 
     expect(parsed).toHaveLength(1)
     expect(parsed[0].email).toBe('admin@example.com')
-    expect(parsed[0].password).toBe('admin123')
+    expect(parsed[0].passwordHash).toBe('admin123')
     expect(parsed[0].role).toBe('super_admin')
   })
 
