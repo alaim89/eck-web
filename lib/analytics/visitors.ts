@@ -1,5 +1,7 @@
 import crypto from 'node:crypto'
+import * as Sentry from '@sentry/nextjs'
 import { readJsonFile, writeJsonFile } from '@/lib/ops/persistence'
+import { logger } from '@/lib/logger'
 
 const VISITOR_FILE = 'visitor-events.json'
 const ACTIVE_WINDOW_MS = 5 * 60 * 1000
@@ -26,8 +28,35 @@ export type VisitorEvent = {
 type RecordVisitInput = Omit<VisitorEvent, 'id' | 'created_at' | 'last_seen_at'>
 
 const visitorEvents: VisitorEvent[] = readJsonFile<VisitorEvent[]>(VISITOR_FILE, [])
+let analyticsDataVersion = 0
+const analyticsCache = new Map<
+  string,
+  {
+    version: number
+    cachedAt: number
+    value: ReturnType<typeof getVisitorAnalyticsUncached>
+  }
+>()
+const CACHE_TTL_MS = 30_000
 
-const persist = () => writeJsonFile(VISITOR_FILE, visitorEvents)
+const persist = () => {
+  try {
+    writeJsonFile(VISITOR_FILE, visitorEvents)
+    analyticsDataVersion += 1
+    if (analyticsCache.size > 200) analyticsCache.clear()
+    return true
+  } catch (error) {
+    logger.error('analytics.persistence.write_failed', {
+      file: VISITOR_FILE,
+      error: error instanceof Error ? error.message : String(error),
+    })
+    Sentry.captureException(error, {
+      tags: { module: 'analytics', operation: 'writeJsonFile' },
+      extra: { file: VISITOR_FILE },
+    })
+    return false
+  }
+}
 
 const getRetentionMs = () => {
   const raw = Number(process.env.ANALYTICS_RETENTION_DAYS || String(DEFAULT_RETENTION_DAYS))
@@ -58,13 +87,14 @@ const parseDate = (value: string) => {
   return Number.isFinite(timestamp) ? timestamp : 0
 }
 
-const pruneExpiredEvents = () => {
+export const pruneExpiredVisitorEvents = () => {
   const cutoff = Date.now() - getRetentionMs()
   const before = visitorEvents.length
   const kept = visitorEvents.filter((entry) => parseDate(entry.last_seen_at) >= cutoff)
-  if (kept.length === before) return
+  if (kept.length === before) return 0
   visitorEvents.splice(0, visitorEvents.length, ...kept)
   persist()
+  return before - kept.length
 }
 
 export const hashIp = (ip: string | null): string | null => {
@@ -74,7 +104,7 @@ export const hashIp = (ip: string | null): string | null => {
 }
 
 export const recordVisitorEvent = (input: RecordVisitInput): VisitorEvent => {
-  pruneExpiredEvents()
+  pruneExpiredVisitorEvents()
 
   const now = new Date().toISOString()
   const normalizedPage = normalizePageUrl(input.page_url)
@@ -122,7 +152,7 @@ export const recordVisitorEvent = (input: RecordVisitInput): VisitorEvent => {
 }
 
 export const getLiveVisitorSnapshot = () => {
-  pruneExpiredEvents()
+  pruneExpiredVisitorEvents()
 
   const cutoff = Date.now() - ACTIVE_WINDOW_MS
   const bySession = new Map<string, VisitorEvent>()
@@ -172,7 +202,7 @@ const bucketKeyForDate = (date: Date, granularity: 'day' | 'week' | 'month') => 
   return date.toISOString().slice(0, 10)
 }
 
-export const getVisitorAnalytics = ({
+const getVisitorAnalyticsUncached = ({
   from,
   to,
   granularity,
@@ -185,7 +215,7 @@ export const getVisitorAnalytics = ({
   page: number
   pageSize: number
 }) => {
-  pruneExpiredEvents()
+  pruneExpiredVisitorEvents()
 
   const fromTs = from.getTime()
   const toTs = to.getTime()
@@ -227,6 +257,32 @@ export const getVisitorAnalytics = ({
       .sort((a, b) => b.views - a.views)
       .slice(0, 15),
   }
+}
+
+export const getVisitorAnalytics = ({
+  from,
+  to,
+  granularity,
+  page,
+  pageSize,
+}: {
+  from: Date
+  to: Date
+  granularity: 'day' | 'week' | 'month'
+  page: number
+  pageSize: number
+}) => {
+  const key = `${from.toISOString()}|${to.toISOString()}|${granularity}|${page}|${pageSize}`
+  const cached = analyticsCache.get(key)
+  const now = Date.now()
+
+  if (cached && cached.version === analyticsDataVersion && now - cached.cachedAt <= CACHE_TTL_MS) {
+    return cached.value
+  }
+
+  const value = getVisitorAnalyticsUncached({ from, to, granularity, page, pageSize })
+  analyticsCache.set(key, { version: analyticsDataVersion, cachedAt: now, value })
+  return value
 }
 
 export const exportVisitorRowsCsv = (rows: VisitorEvent[]) => {

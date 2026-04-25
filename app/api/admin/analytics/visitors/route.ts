@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { requirePermission } from '@/lib/iam/guard'
 import { getLiveVisitorSnapshot, getVisitorAnalytics } from '@/lib/analytics/visitors'
+import { appendAuditLog } from '@/lib/ops/audit-log'
 
 const parseDateParam = (value: string | null, fallback: Date): Date => {
   if (!value) return fallback
@@ -28,6 +29,14 @@ export async function GET(request: Request) {
   const live = getLiveVisitorSnapshot()
   const historical = getVisitorAnalytics({ from, to, page, pageSize, granularity })
 
+  appendAuditLog({
+    level: 'info',
+    actor: access.user.email,
+    action: 'analytics.visitors.view',
+    objectType: 'analytics',
+    details: { from: from.toISOString(), to: to.toISOString(), granularity, page, pageSize },
+  })
+
   return NextResponse.json({
     ok: true,
     user: access.user,
@@ -47,4 +56,3 @@ export async function GET(request: Request) {
     },
   })
 }
-

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { requirePermission } from '@/lib/iam/guard'
 import { exportVisitorRowsCsv, getVisitorAnalytics } from '@/lib/analytics/visitors'
+import { appendAuditLog } from '@/lib/ops/audit-log'
 
 const parseDateParam = (value: string | null, fallback: Date): Date => {
   if (!value) return fallback
@@ -28,6 +29,14 @@ export async function GET(request: Request) {
   const csv = exportVisitorRowsCsv(analytics.rows)
   const fileName = `visitor-export-${from.toISOString().slice(0, 10)}_${to.toISOString().slice(0, 10)}.csv`
 
+  appendAuditLog({
+    level: 'info',
+    actor: access.user.email,
+    action: 'analytics.visitors.export_csv',
+    objectType: 'analytics',
+    details: { from: from.toISOString(), to: to.toISOString(), rows: analytics.rows.length },
+  })
+
   return new NextResponse(csv, {
     status: 200,
     headers: {
@@ -37,4 +46,3 @@ export async function GET(request: Request) {
     },
   })
 }
-

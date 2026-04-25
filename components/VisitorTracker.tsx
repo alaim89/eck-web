@@ -51,6 +51,7 @@ export function VisitorTracker() {
         utm_campaign: params.get('utm_campaign'),
         device_type: getDeviceType(),
         browser: getBrowser(),
+        event_ts: Date.now(),
       }
 
       const body = JSON.stringify(payload)
@@ -73,4 +74,3 @@ export function VisitorTracker() {
 
   return null
 }
-
