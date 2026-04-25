@@ -9,12 +9,13 @@ import { WebVitals } from '@/components/WebVitals';
 import { VisitorTracker } from '@/components/VisitorTracker';
 
 import { getMetadata } from '@/lib/seo';
-import { getOrganizationSchema } from '@/lib/jsonld';
+import { getLocalBusinessSchema, getOrganizationSchema } from '@/lib/jsonld';
 
 export const metadata = getMetadata();
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   const organizationSchema = getOrganizationSchema();
+  const localBusinessSchema = getLocalBusinessSchema();
 
   return (
     <html lang="de">
@@ -23,6 +24,11 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           id="organization-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <Script
+          id="local-business-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
         <LanguageProvider>
           {children}
