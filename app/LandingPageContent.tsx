@@ -51,6 +51,7 @@ export default function LandingPageContent() {
     </span>
   ));
 
+export default function LandingPageContent() {
   return (
     <div className="min-h-screen bg-white text-black font-poppins selection:bg-primary/30">
       <Header />
