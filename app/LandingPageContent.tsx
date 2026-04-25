@@ -1,216 +1,152 @@
 'use client';
 
-import { motion } from 'motion/react';
 import Link from 'next/link';
-import { ArrowRight, TriangleAlert, Workflow, Compass } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ITCheckWorkflowVisual } from '@/components/ITCheckWorkflowVisual';
+import { ITCheckSystemFlow } from '@/components/ITCheckSystemFlow';
 
-const integrationChips = ['Microsoft 365', 'Azure', 'CRM', 'Backup', 'Security', 'Monitoring', 'Automatisierung'];
-
-const symptoms = [
-  'Projekte werden gestartet, aber nie sauber abgeschlossen.',
-  'Systeme sind eingeführt, aber niemand verantwortet den Gesamtablauf.',
-  'Neue Tools wurden ergänzt, ohne die bestehende Komplexität zu reduzieren.',
-  'Entscheidungen werden vertagt, weil die technische Ausgangslage unklar bleibt.',
+const realityPatterns = [
+  'Die meisten Systeme funktionieren – aber niemand weiß, wer entscheidet.',
+  'Verantwortung ist oft verteilt, aber nicht geklärt.',
+  'Migrationen werden verschoben, weil die Grundlage unklar ist.',
+  'Tools sind vorhanden, aber Risiken bleiben unpriorisiert.',
 ];
 
-const contrarianStatements = [
-  'Die meisten IT-Probleme sind keine Technikprobleme.',
-  'Mehr Tools schaffen selten mehr Klarheit.',
-  'Projekte scheitern dort, wo Verantwortung nicht eindeutig ist.',
-];
-
-const checkpoints = [
+const outcomeGroups = [
   {
-    title: 'Eingang klären',
-    text: 'Welche Symptome sind operativ sichtbar und wie wirken sie auf Vertrieb, Projektgeschäft und Betrieb?',
+    title: 'Systeme',
+    points: ['Welche Systeme kritisch sind.', 'Welche Abhängigkeiten zuerst aufgelöst werden müssen.'],
   },
   {
-    title: 'Diagnose sichern',
-    text: 'Welche Ursachen sind technisch, welche organisatorisch, welche rein Entscheidungsfragen?',
+    title: 'Verantwortung',
+    points: ['Wer entscheidet.', 'Wer Umsetzung und Betrieb verbindlich trägt.'],
   },
   {
-    title: 'Verantwortung definieren',
-    text: 'Wer entscheidet, wer liefert zu, wer trägt die Umsetzung im Tagesgeschäft?',
+    title: 'Risiken',
+    points: ['Welche Risiken aktuell bestehen.', 'Welche Risiken zuerst reduziert werden.'],
   },
   {
-    title: 'Maßnahmen priorisieren',
-    text: 'Was reduziert Risiko sofort, was schafft Stabilität mittelfristig, was kann bewusst warten?',
+    title: 'Prioritäten',
+    points: ['Was zuerst entschieden wird.', 'Was bewusst zurückgestellt wird.'],
+  },
+  {
+    title: 'Nächster Pfad',
+    points: ['Welcher Umsetzungspfad sinnvoll ist.', 'Wie dieser Pfad konkret gestartet wird.'],
   },
 ];
 
 export default function LandingPageContent() {
-  const renderedIntegrationChips = integrationChips.map((chip) => (
-    <span
-      key={chip}
-      className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-[0_8px_16px_-14px_rgba(15,23,42,0.38)]"
-    >
-      {chip}
-    </span>
-  ));
-
   return (
     <div className="min-h-screen bg-white text-black font-poppins selection:bg-primary/30">
       <Header />
 
-      <main className="pt-28 pb-24">
-        <section className="px-6 pt-10 pb-16" aria-labelledby="hero-heading">
-          <div className="max-w-[1200px] mx-auto">
-            <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 xl:gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="pr-2"
+      <main className="pt-32 pb-24 relative overflow-hidden">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-24 h-[520px] bg-[radial-gradient(circle_at_25%_20%,rgba(0,95,107,0.12),transparent_45%),radial-gradient(circle_at_80%_0%,rgba(14,165,233,0.08),transparent_40%)]" />
+
+        {/* Hero */}
+        <section className="px-6 pt-10 pb-20 relative" aria-labelledby="hero-heading">
+          <div className="max-w-[1120px] mx-auto">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/85 backdrop-blur px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-primary mb-7">
+              <span className="h-2 w-2 rounded-full bg-primary" />
+              IT-Check Methodik
+            </div>
+            <h1 id="hero-heading" className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-[-0.03em] text-slate-950 mb-8 leading-[1.01]">
+              Ihre IT läuft.
+              <br />
+              Aber sie ist nicht unter Kontrolle.
+            </h1>
+
+            <p className="text-lg text-slate-600 max-w-3xl leading-[1.68]">
+              Microsoft 365 ist da, Azure ist angebunden, Backups und CRM existieren. Der Betrieb läuft weiter.
+              Unklar bleibt oft, wie alles zusammenhängt, wer entscheidet und welche Risiken wirklich Priorität
+              haben.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-5 mt-11">
+              <Link
+                href="/kontakt"
+                className="px-8 py-4 bg-primary hover:bg-primary/92 text-white rounded-xl font-semibold inline-flex items-center gap-2 transition-all duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-[0_24px_42px_-26px_rgba(0,95,107,0.56)] hover:shadow-[0_28px_46px_-28px_rgba(0,95,107,0.6)]"
               >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-gray-700 text-xs font-semibold uppercase tracking-wider mb-8 border border-gray-200 shadow-sm">
-                  <Workflow className="w-4 h-4 text-primary" />
-                  IT-Check für Mittelstand & Projektverantwortliche
-                </div>
-                <h1
-                  id="hero-heading"
-                  className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tighter mb-7 leading-[1.04]"
-                >
-                  IT-Probleme sichtbar machen. Prozesse verbinden. Lösungen automatisieren.
-                </h1>
-                <p className="text-lg text-gray-600 max-w-2xl leading-relaxed mb-10">
-                  Mit dem IT-Check analysieren wir IT, Microsoft 365, Azure, CRM und Vertriebsprozesse, und bauen
-                  daraus einen klaren Workflow für Stabilität, Sicherheit und Wachstum.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                  <Link
-                    href="/kontakt"
-                    className="px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-xl font-medium inline-flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                  >
-                    IT-Check starten <ArrowRight className="w-5 h-5" />
-                  </Link>
-                  <Link
-                    href="#system-map"
-                    className="px-8 py-4 rounded-xl text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors border border-gray-200 inline-flex items-center justify-center gap-2 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                  >
-                    So funktioniert der Ablauf
-                  </Link>
-                </div>
-
-                <div className="flex flex-wrap gap-3">
-                  {renderedIntegrationChips}
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1, duration: 0.5 }}
-                className="relative"
-              >
-                <div className="absolute -inset-6 bg-gradient-to-br from-primary/10 via-transparent to-sky-100/40 blur-3xl pointer-events-none" />
-                <ITCheckWorkflowVisual />
-              </motion.div>
+                IT-Check starten <ArrowRight className="w-5 h-5" />
+              </Link>
+              <a href="#reality-heading" className="text-sm font-semibold text-slate-600 hover:text-primary transition-colors">
+                Erst die Ausgangslage verstehen
+              </a>
             </div>
           </div>
         </section>
 
-        <div className="max-w-[1200px] mx-auto px-6 space-y-24">
-          <section aria-labelledby="realization-heading" className="scroll-mt-32">
-            <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
-              <div className="p-8 rounded-[2rem] bg-white border border-slate-200 shadow-[0_18px_34px_-28px_rgba(15,23,42,0.45)]">
-                <h2 id="realization-heading" className="text-2xl font-bold tracking-tight mb-6">
-                  Typische Lage vor einer Fehlentscheidung
-                </h2>
-                <ul className="space-y-4 text-slate-700">
-                  {symptoms.map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <TriangleAlert className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+        <ITCheckSystemFlow />
 
-              <aside className="p-8 rounded-[2rem] bg-slate-50 border border-slate-200">
-                <p className="text-xs font-bold text-slate-500 uppercase tracking-[0.18em] mb-5">Beobachtung aus der Praxis</p>
-                <div className="space-y-4">
-                  {contrarianStatements.map((statement) => (
-                    <p key={statement} className="text-slate-800 font-medium leading-relaxed">
-                      {statement}
-                    </p>
-                  ))}
-                </div>
-                <p className="text-slate-600 mt-6 leading-relaxed">
-                  Jede Verzögerung erhöht operative Kosten, bindet Management-Aufmerksamkeit und verschiebt notwendige
-                  Entscheidungen weiter nach hinten.
-                </p>
-              </aside>
+        <div className="max-w-[1120px] mx-auto px-6 space-y-24">
+          {/* Problem */}
+          <section aria-labelledby="reality-heading">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-4">Realität</p>
+            <h2 id="reality-heading" className="text-2xl md:text-3xl font-bold tracking-tight mb-7">
+              Wo Unklarheit im Alltag entsteht
+            </h2>
+            <div className="rounded-3xl bg-white border border-slate-200/80 p-8 md:p-10 shadow-[0_26px_48px_-36px_rgba(15,23,42,0.24)]">
+              <div className="space-y-4 text-slate-800">
+                {realityPatterns.map((line) => (
+                  <p key={line} className="text-lg leading-[1.58]">
+                    {line}
+                  </p>
+                ))}
+              </div>
             </div>
           </section>
 
-          <section id="system-map" aria-labelledby="system-map-heading" className="scroll-mt-32">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center">
-                <Compass className="w-5 h-5 text-primary" />
-              </div>
-              <h2 id="system-map-heading" className="text-2xl font-bold tracking-tight">
-                Entscheidungssystem statt Tool-Sammlung
-              </h2>
-            </div>
-
-            <div className="space-y-4">
-              {checkpoints.map((item, index) => (
-                <article key={item.title} className="p-6 rounded-2xl bg-white border border-slate-200 shadow-[0_12px_24px_-20px_rgba(15,23,42,0.45)] relative">
-                  <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-primary/50 via-primary/20 to-transparent" />
-                  <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold mb-4">
-                    {index + 1}
-                  </div>
-                  <h3 className="text-base font-bold tracking-tight text-slate-900 mb-2">{item.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{item.text}</p>
+          {/* Outcome */}
+          <section aria-labelledby="outcome-heading">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-4">Klarheit</p>
+            <h2 id="outcome-heading" className="text-2xl md:text-3xl font-bold tracking-tight mb-7">
+              Was nach dem IT-Check klar wird
+            </h2>
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-6 rounded-3xl bg-slate-50/65 p-4">
+              {outcomeGroups.map((group) => (
+                <article key={group.title} className="rounded-2xl bg-white p-5 border border-slate-200/70 shadow-[0_12px_26px_-24px_rgba(15,23,42,0.2)]">
+                  <h3 className="text-sm font-bold uppercase tracking-[0.12em] text-slate-700 mb-3">{group.title}</h3>
+                  <ul className="space-y-2 text-sm text-slate-600">
+                    {group.points.map((point) => (
+                      <li key={point} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </article>
               ))}
             </div>
           </section>
 
-          <section aria-labelledby="cta-heading" className="scroll-mt-32">
-            <div className="p-8 md:p-10 rounded-3xl bg-primary text-white shadow-[0_28px_48px_-28px_rgba(0,95,107,0.65)]">
+          {/* Final CTA */}
+          <section aria-labelledby="cta-heading">
+            <div className="relative overflow-hidden p-8 md:p-10 rounded-3xl bg-primary text-white shadow-[0_34px_60px_-30px_rgba(0,95,107,0.68)]">
+              <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
+              <div aria-hidden="true" className="pointer-events-none absolute -left-20 -bottom-20 h-44 w-44 rounded-full bg-cyan-300/20 blur-3xl" />
               <div className="max-w-3xl">
-                <p className="text-xs uppercase tracking-[0.18em] font-semibold text-white/80 mb-3">Nächster sinnvoller Schritt</p>
                 <h2 id="cta-heading" className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
-                  Wir sind nicht an Tools im Überfluss interessiert. Wir schaffen Entscheidungsfähigkeit.
+                  IT-Check starten
                 </h2>
                 <p className="text-white/90 leading-relaxed mb-8">
-                  Der IT-Check ist die Voraussetzung, um Risiken zu bewerten, Verantwortlichkeiten festzulegen und
-                  Umsetzung sicher zu priorisieren.
+                  Bevor Sie entscheiden: Erst klären.
                 </p>
                 <Link
                   href="/kontakt"
-                  className="px-8 py-4 bg-white text-primary rounded-xl font-semibold inline-flex items-center gap-2 hover:bg-gray-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                  className="px-8 py-4 bg-white text-primary rounded-xl font-semibold inline-flex items-center gap-2 transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
                 >
-                  IT-Check anfragen <ArrowRight className="w-5 h-5" />
+                  IT-Check starten <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>
             </div>
-          </section>
-
-          <section aria-labelledby="secondary-entry-heading" className="scroll-mt-32">
-            <div className="p-6 rounded-2xl border border-slate-200 bg-slate-50/70">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div>
-                  <h2 id="secondary-entry-heading" className="text-lg font-bold tracking-tight">
-                    Für projektbezogene Anfragen mit klarem Verantwortungsrahmen
-                  </h2>
-                  <p className="text-sm text-slate-600 mt-1">
-                    Sekundärer Einstieg für Recruiter und Projektanfragen.
-                  </p>
-                </div>
-                <Link
-                  href="/recruiter"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded"
-                >
-                  Zur Projektanfrage <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+            <p className="mt-6 text-sm text-slate-600">
+              Für Recruiter- und projektbezogene Anfragen steht ein separater Einstieg unter{' '}
+              <Link href="/recruiter" className="text-primary font-semibold hover:underline">
+                /recruiter
+              </Link>{' '}
+              bereit.
+            </p>
           </section>
         </div>
       </main>
