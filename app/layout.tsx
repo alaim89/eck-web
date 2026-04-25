@@ -6,6 +6,7 @@ import Script from 'next/script';
 import { CookieConsentBanner } from '@/components/CookieConsent';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import { WebVitals } from '@/components/WebVitals';
+import { VisitorTracker } from '@/components/VisitorTracker';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -26,6 +27,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         </LanguageProvider>
         
         <CookieConsentBanner />
+        <VisitorTracker />
         <WebVitals />
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
