@@ -51,8 +51,17 @@ const solutionPaths = [
   'Projektstabilisierung',
 ];
 
+const decisionSteps = [
+  { title: 'Diagnose', consequence: 'Konsequenz: Symptome werden als belastbare Fakten sichtbar.' },
+  { title: 'Entscheidung', consequence: 'Konsequenz: Prioritäten werden verbindlich statt verhandelbar.' },
+  {
+    title: 'Routing in Verantwortung',
+    consequence: 'Konsequenz: Zuständigkeit wird übernommen und in Umsetzung überführt.',
+  },
+];
+
 const glowCard =
-  'transition-all duration-200 ease-out hover:border-[#005F6B]/30 hover:bg-[#005F6B]/[0.04] hover:shadow-[0_20px_40px_-24px_rgba(0,95,107,0.35)] hover:-translate-y-[1px]';
+  'transition-all duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-primary/[0.03] hover:-translate-y-[1px]';
 
 export default function LandingPageContent() {
   return (
@@ -61,16 +70,16 @@ export default function LandingPageContent() {
 
       <main className="pt-32 pb-24">
         {/* Hero */}
-        <section className="px-6 pt-12 pb-24" aria-labelledby="hero-heading">
-          <div className="max-w-[1200px] mx-auto grid lg:grid-cols-[0.98fr_1.02fr] gap-12 xl:gap-16 items-center">
-            <div className="pr-2">
-              <h1 id="hero-heading" className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-[-0.025em] mb-8 leading-[1.03]">
+        <section className="px-6 pt-10 pb-28" aria-labelledby="hero-heading">
+          <div className="max-w-[1240px] mx-auto grid lg:grid-cols-[0.86fr_1.14fr] gap-14 xl:gap-20 items-center">
+            <div className="pr-2 lg:pr-8">
+              <h1 id="hero-heading" className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-[-0.028em] text-slate-950 mb-8 leading-[1.02]">
                 Ihre IT läuft.
                 <br />
                 Aber sie ist nicht unter Kontrolle.
               </h1>
 
-              <p className="text-lg text-gray-600 max-w-2xl leading-[1.66] mb-11">
+              <p className="text-lg text-gray-600 max-w-xl leading-[1.66] mb-12">
                 Microsoft 365 ist da, Azure ist angebunden, Backups und CRM existieren. Der Betrieb läuft weiter.
                 Unklar bleibt oft, wie alles zusammenhängt, wer entscheidet und welche Risiken wirklich Priorität
                 haben.
@@ -78,14 +87,14 @@ export default function LandingPageContent() {
 
               <Link
                 href="/kontakt"
-                className="px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-xl font-medium inline-flex items-center justify-center gap-2 transition-all duration-200 ease-out shadow-[0_24px_42px_-26px_rgba(0,95,107,0.55)] hover:shadow-[0_28px_48px_-28px_rgba(0,95,107,0.62)] hover:-translate-y-[1px] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                className="px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-xl font-medium inline-flex items-center justify-center gap-2 transition-all duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-[0_20px_36px_-24px_rgba(0,95,107,0.44)] hover:shadow-[0_24px_44px_-26px_rgba(0,95,107,0.48)] hover:-translate-y-[1px] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 IT-Check starten <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
 
-            <div className="relative py-2">
-              <div className="absolute -inset-6 bg-gradient-to-br from-primary/10 via-transparent to-sky-100/40 blur-3xl pointer-events-none" />
+            <div className="relative py-8 lg:py-12">
+              <div className="absolute -inset-10 bg-gradient-to-br from-primary/14 via-primary/5 to-sky-100/35 blur-3xl pointer-events-none" />
               <ITCheckWorkflowVisual />
             </div>
           </div>
@@ -94,20 +103,20 @@ export default function LandingPageContent() {
         <div className="relative max-w-[1200px] mx-auto px-6 space-y-24">
           <div
             aria-hidden="true"
-            className="pointer-events-none hidden lg:block absolute left-9 top-0 bottom-0 w-px bg-gradient-to-b from-primary/20 via-primary/30 to-primary/15"
+            className="pointer-events-none hidden lg:block absolute left-9 top-0 bottom-0 w-px bg-gradient-to-b from-primary/16 via-primary/24 to-primary/12"
           />
 
           {/* Reality */}
           <section aria-labelledby="reality-heading" className="relative lg:pl-14">
-            <span aria-hidden="true" className="hidden lg:block absolute left-[30px] top-[12px] h-4 w-4 rounded-full border border-primary/35 bg-white shadow-[0_0_0_6px_rgba(0,95,107,0.08)]" />
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Realität</p>
+            <span aria-hidden="true" className="hidden lg:block absolute left-[31px] top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white shadow-[0_0_0_5px_rgba(0,95,107,0.06)]" />
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-4">Realität</p>
             <h2 id="reality-heading" className="text-2xl md:text-3xl font-bold tracking-tight mb-7">
               Wo Unklarheit im Alltag entsteht
             </h2>
-            <div className="rounded-3xl border border-slate-200 bg-white p-8">
+            <div className="rounded-3xl bg-slate-100/90 p-8 md:p-9">
               <div className="space-y-4 text-slate-800">
                 {realityPatterns.map((line) => (
-                  <p key={line} className="text-lg leading-[1.65]">
+                  <p key={line} className="text-lg leading-[1.52]">
                     {line}
                   </p>
                 ))}
@@ -118,15 +127,15 @@ export default function LandingPageContent() {
 
           {/* Routing */}
           <section aria-labelledby="routing-heading" className="relative lg:pl-14">
-            <span aria-hidden="true" className="hidden lg:block absolute left-[30px] top-[12px] h-4 w-4 rounded-full border border-primary/35 bg-white shadow-[0_0_0_6px_rgba(0,95,107,0.08)]" />
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Einordnung</p>
+            <span aria-hidden="true" className="hidden lg:block absolute left-[31px] top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white shadow-[0_0_0_5px_rgba(0,95,107,0.06)]" />
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-4">Einordnung</p>
             <h2 id="routing-heading" className="text-2xl md:text-3xl font-bold tracking-tight mb-7">
               Wo stehen Sie gerade?
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
+            <div className="grid md:grid-cols-2 gap-5 mb-8">
               {routingSignals.map((signal) => (
-                <article key={signal} className={`rounded-2xl border border-slate-200 bg-white px-5 py-4 ${glowCard}`}>
+                <article key={signal} className={`rounded-2xl bg-slate-50 px-5 py-4 ${glowCard}`}>
                   <p className="text-sm font-medium text-slate-800 leading-[1.6]">{signal}</p>
                 </article>
               ))}
@@ -138,24 +147,25 @@ export default function LandingPageContent() {
 
           {/* Decision architecture */}
           <section aria-labelledby="architecture-heading" className="relative lg:pl-14">
-            <span aria-hidden="true" className="hidden lg:block absolute left-[30px] top-[12px] h-4 w-4 rounded-full border border-primary/35 bg-white shadow-[0_0_0_6px_rgba(0,95,107,0.08)]" />
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Struktur</p>
+            <span aria-hidden="true" className="hidden lg:block absolute left-[31px] top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white shadow-[0_0_0_5px_rgba(0,95,107,0.06)]" />
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-4">Struktur</p>
             <h2 id="architecture-heading" className="text-2xl md:text-3xl font-bold tracking-tight mb-7">
               Hier passiert der entscheidende Wechsel: von Komplexität zu Verantwortung.
             </h2>
-            <div className="rounded-3xl border border-slate-200 bg-slate-50/70 p-8">
+            <div className="rounded-3xl bg-slate-100/70 p-8 md:p-10">
               <div className="grid md:grid-cols-3 gap-6 relative">
                 {[1, 2].map((i) => (
                   <span
                     key={i}
                     aria-hidden="true"
-                    className={`hidden md:block absolute top-8 h-px w-[11%] bg-gradient-to-r from-slate-300 to-primary/35 ${i === 1 ? 'left-[30.8%]' : 'left-[64.2%]'}`}
+                    className={`hidden md:block absolute top-10 h-px w-[11%] bg-gradient-to-r from-slate-400/80 to-primary/35 ${i === 1 ? 'left-[30.8%]' : 'left-[64.2%]'}`}
                   />
                 ))}
-                {['Diagnose', 'Entscheidung', 'Routing in Verantwortung'].map((item, idx) => (
-                  <article key={item} className={`rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_12px_24px_-22px_rgba(15,23,42,0.22)] ${glowCard}`}>
+                {decisionSteps.map((step, idx) => (
+                  <article key={step.title} className={`rounded-2xl bg-white/90 p-6 md:p-7 ${glowCard}`}>
                     <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary mb-2">{idx + 1}</p>
-                    <p className="text-base font-bold tracking-tight text-slate-900">{item}</p>
+                    <p className="text-base font-bold tracking-tight text-slate-900">{step.title}</p>
+                    <p className="mt-2 text-sm text-slate-600 leading-[1.6]">{step.consequence}</p>
                   </article>
                 ))}
               </div>
@@ -164,14 +174,14 @@ export default function LandingPageContent() {
 
           {/* Outcome */}
           <section aria-labelledby="outcome-heading" className="relative lg:pl-14">
-            <span aria-hidden="true" className="hidden lg:block absolute left-[30px] top-[12px] h-4 w-4 rounded-full border border-primary/35 bg-white shadow-[0_0_0_6px_rgba(0,95,107,0.08)]" />
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Klarheit</p>
+            <span aria-hidden="true" className="hidden lg:block absolute left-[31px] top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white shadow-[0_0_0_5px_rgba(0,95,107,0.06)]" />
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-4">Klarheit</p>
             <h2 id="outcome-heading" className="text-2xl md:text-3xl font-bold tracking-tight mb-7">
               Was nach dem IT-Check klar wird
             </h2>
-            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-6 rounded-3xl bg-slate-50/45 p-1">
               {outcomeGroups.map((group) => (
-                <article key={group.title} className={`rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_12px_24px_-22px_rgba(15,23,42,0.2)] ${glowCard}`}>
+                <article key={group.title} className={`rounded-2xl bg-white/80 p-5 ${glowCard}`}>
                   <h3 className="text-sm font-bold uppercase tracking-[0.12em] text-slate-700 mb-3">{group.title}</h3>
                   <ul className="space-y-2 text-sm text-slate-600">
                     {group.points.map((point) => (
@@ -188,8 +198,8 @@ export default function LandingPageContent() {
 
           {/* Solution paths */}
           <section aria-labelledby="paths-heading" className="relative lg:pl-14">
-            <span aria-hidden="true" className="hidden lg:block absolute left-[30px] top-[12px] h-4 w-4 rounded-full border border-primary/35 bg-white shadow-[0_0_0_6px_rgba(0,95,107,0.08)]" />
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Handlung</p>
+            <span aria-hidden="true" className="hidden lg:block absolute left-[31px] top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white shadow-[0_0_0_5px_rgba(0,95,107,0.06)]" />
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-4">Handlung</p>
             <h2 id="paths-heading" className="text-2xl md:text-3xl font-bold tracking-tight mb-7">
               Was danach folgen kann
             </h2>
@@ -204,7 +214,7 @@ export default function LandingPageContent() {
 
           {/* Final CTA */}
           <section aria-labelledby="cta-heading" className="relative lg:pl-14">
-            <span aria-hidden="true" className="hidden lg:block absolute left-[30px] top-[12px] h-4 w-4 rounded-full border border-primary/35 bg-white shadow-[0_0_0_6px_rgba(0,95,107,0.08)]" />
+            <span aria-hidden="true" className="hidden lg:block absolute left-[31px] top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white shadow-[0_0_0_5px_rgba(0,95,107,0.06)]" />
             <div className="p-8 md:p-10 rounded-3xl bg-primary text-white shadow-[0_30px_54px_-30px_rgba(0,95,107,0.68)]">
               <div className="max-w-3xl">
                 <h2 id="cta-heading" className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
