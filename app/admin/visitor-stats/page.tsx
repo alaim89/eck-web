@@ -142,6 +142,7 @@ export default function VisitorStatsPage() {
           Diese Statistik speichert keine vollständigen IP-Adressen und keine personenbezogenen Daten. Tracking läuft
           ohne eigene Cookies; Erfassung erfolgt nur bei aktivierter Analytics-Einwilligung.
         </p>
+        <p>Retention: Analytics-Daten werden standardmäßig nach 90 Tagen automatisch bereinigt.</p>
       </section>
 
       <section className="mt-6 grid gap-3 md:grid-cols-3">

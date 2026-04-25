@@ -4,6 +4,7 @@ import { readJsonFile, writeJsonFile } from '@/lib/ops/persistence'
 const VISITOR_FILE = 'visitor-events.json'
 const ACTIVE_WINDOW_MS = 5 * 60 * 1000
 const SESSION_TOUCH_WINDOW_MS = 30 * 60 * 1000
+const DEFAULT_RETENTION_DAYS = 90
 
 export type DeviceType = 'desktop' | 'tablet' | 'smartphone'
 
@@ -28,6 +29,12 @@ const visitorEvents: VisitorEvent[] = readJsonFile<VisitorEvent[]>(VISITOR_FILE,
 
 const persist = () => writeJsonFile(VISITOR_FILE, visitorEvents)
 
+const getRetentionMs = () => {
+  const raw = Number(process.env.ANALYTICS_RETENTION_DAYS || String(DEFAULT_RETENTION_DAYS))
+  const days = Number.isFinite(raw) ? Math.max(1, raw) : DEFAULT_RETENTION_DAYS
+  return days * 24 * 60 * 60 * 1000
+}
+
 const clampString = (value: string | null | undefined, maxLength: number): string | null => {
   if (!value) return null
   return value.trim().slice(0, maxLength) || null
@@ -51,6 +58,15 @@ const parseDate = (value: string) => {
   return Number.isFinite(timestamp) ? timestamp : 0
 }
 
+const pruneExpiredEvents = () => {
+  const cutoff = Date.now() - getRetentionMs()
+  const before = visitorEvents.length
+  const kept = visitorEvents.filter((entry) => parseDate(entry.last_seen_at) >= cutoff)
+  if (kept.length === before) return
+  visitorEvents.splice(0, visitorEvents.length, ...kept)
+  persist()
+}
+
 export const hashIp = (ip: string | null): string | null => {
   if (!ip) return null
   const salt = process.env.ANALYTICS_IP_SALT || process.env.SESSION_SECRET || 'analytics'
@@ -58,6 +74,8 @@ export const hashIp = (ip: string | null): string | null => {
 }
 
 export const recordVisitorEvent = (input: RecordVisitInput): VisitorEvent => {
+  pruneExpiredEvents()
+
   const now = new Date().toISOString()
   const normalizedPage = normalizePageUrl(input.page_url)
 
@@ -104,6 +122,8 @@ export const recordVisitorEvent = (input: RecordVisitInput): VisitorEvent => {
 }
 
 export const getLiveVisitorSnapshot = () => {
+  pruneExpiredEvents()
+
   const cutoff = Date.now() - ACTIVE_WINDOW_MS
   const bySession = new Map<string, VisitorEvent>()
 
@@ -165,6 +185,8 @@ export const getVisitorAnalytics = ({
   page: number
   pageSize: number
 }) => {
+  pruneExpiredEvents()
+
   const fromTs = from.getTime()
   const toTs = to.getTime()
   const filtered = visitorEvents.filter((entry) => {
@@ -222,7 +244,11 @@ export const exportVisitorRowsCsv = (rows: VisitorEvent[]) => {
     'last_seen_at',
   ]
 
-  const escapeCsv = (value: string | null) => `"${(value || '').replaceAll('"', '""')}"`
+  const escapeCsv = (value: string | null) => {
+    const raw = (value || '').replaceAll('"', '""')
+    const sanitized = /^[=+\-@]/.test(raw) ? `'${raw}` : raw
+    return `"${sanitized}"`
+  }
 
   const lines = rows.map((entry) =>
     [
@@ -244,4 +270,3 @@ export const exportVisitorRowsCsv = (rows: VisitorEvent[]) => {
 
   return [header.join(','), ...lines].join('\n')
 }
-
