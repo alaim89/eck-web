@@ -8,6 +8,7 @@ const parseDateParam = (value: string | null, fallback: Date): Date => {
   const parsed = new Date(value)
   return Number.isNaN(parsed.getTime()) ? fallback : parsed
 }
+const MAX_RANGE_MS = 366 * 24 * 60 * 60 * 1000
 
 const parseGranularity = (value: string | null): 'day' | 'week' | 'month' => {
   if (value === 'week' || value === 'month') return value
@@ -22,19 +23,20 @@ export async function GET(request: Request) {
   const now = new Date()
   const from = parseDateParam(url.searchParams.get('from'), new Date(now.getTime() - 30 * 86400000))
   const to = parseDateParam(url.searchParams.get('to'), now)
+  const boundedFrom = new Date(Math.max(from.getTime(), to.getTime() - MAX_RANGE_MS))
   const page = Number(url.searchParams.get('page') || '1')
   const pageSize = Number(url.searchParams.get('page_size') || '25')
   const granularity = parseGranularity(url.searchParams.get('granularity'))
 
   const live = getLiveVisitorSnapshot()
-  const historical = getVisitorAnalytics({ from, to, page, pageSize, granularity })
+  const historical = getVisitorAnalytics({ from: boundedFrom, to, page, pageSize, granularity })
 
   appendAuditLog({
     level: 'info',
     actor: access.user.email,
     action: 'analytics.visitors.view',
     objectType: 'analytics',
-    details: { from: from.toISOString(), to: to.toISOString(), granularity, page, pageSize },
+    details: { from: boundedFrom.toISOString(), to: to.toISOString(), granularity, page, pageSize },
   })
 
   return NextResponse.json({
@@ -43,7 +45,7 @@ export async function GET(request: Request) {
     live,
     historical,
     filters: {
-      from: from.toISOString(),
+      from: boundedFrom.toISOString(),
       to: to.toISOString(),
       granularity,
       page: historical.page,

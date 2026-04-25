@@ -8,6 +8,7 @@ const parseDateParam = (value: string | null, fallback: Date): Date => {
   const parsed = new Date(value)
   return Number.isNaN(parsed.getTime()) ? fallback : parsed
 }
+const MAX_RANGE_MS = 366 * 24 * 60 * 60 * 1000
 
 export async function GET(request: Request) {
   const access = await requirePermission('analytics.view')
@@ -17,9 +18,10 @@ export async function GET(request: Request) {
   const now = new Date()
   const from = parseDateParam(url.searchParams.get('from'), new Date(now.getTime() - 30 * 86400000))
   const to = parseDateParam(url.searchParams.get('to'), now)
+  const boundedFrom = new Date(Math.max(from.getTime(), to.getTime() - MAX_RANGE_MS))
 
   const analytics = getVisitorAnalytics({
-    from,
+    from: boundedFrom,
     to,
     granularity: 'day',
     page: 1,
@@ -34,7 +36,7 @@ export async function GET(request: Request) {
     actor: access.user.email,
     action: 'analytics.visitors.export_csv',
     objectType: 'analytics',
-    details: { from: from.toISOString(), to: to.toISOString(), rows: analytics.rows.length },
+    details: { from: boundedFrom.toISOString(), to: to.toISOString(), rows: analytics.rows.length },
   })
 
   return new NextResponse(csv, {
