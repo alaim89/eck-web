@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Ecksolution IT",
   companyName: "Ecksolution IT Managed Services",
   domain: "ecksolution-it.de",
-  baseUrl: "https://ecksolution-it.de",
+  baseUrl: process.env.APP_URL ?? "https://ecksolution-it.de",
   defaultTitle: "IT-Betreuung & Managed Services für den Mittelstand",
   titleTemplate: "%s | Ecksolution IT",
   defaultDescription: "Professionelle IT-Betreuung, Cybersecurity und Cloud-Lösungen für den Mittelstand. Wir übernehmen die volle Verantwortung für Ihre IT - proaktiv und sicher.",
