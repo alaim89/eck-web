@@ -29,6 +29,7 @@ export function Footer() {
             <nav className="flex flex-col gap-3" aria-label="Unternehmens Links">
               <Link href="/kontakt" className="hover:text-primary transition-colors font-medium">{t.footer.links.contact}</Link>
               <Link href="/case-studies" className="hover:text-primary transition-colors font-medium">{t.footer.links.caseStudies}</Link>
+              <Link href="/recruiter" className="hover:text-primary transition-colors font-medium">Für Recruiter</Link>
             </nav>
           </div>
 
