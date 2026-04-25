@@ -180,6 +180,30 @@ export default function LandingPageContent() {
             </div>
           </section>
 
+          <section aria-labelledby="recruiter-heading" className="scroll-mt-32">
+            <div className="p-8 md:p-10 rounded-3xl bg-gray-50 border border-gray-100">
+              <h2 id="recruiter-heading" className="text-2xl md:text-3xl font-bold tracking-tight mb-4">
+                Sie suchen externe IT-Unterstützung für ein Projekt?
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-6 max-w-3xl">
+                Auch bei Projektanfragen starte ich nicht mit Verfügbarkeit, sondern mit Ziel, Problem und
+                Verantwortung.
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-8">
+                <li>IT-Projekte stabilisieren</li>
+                <li>Microsoft 365 / Azure strukturieren</li>
+                <li>CRM- und Vertriebsprozesse verbessern</li>
+                <li>Technische Verantwortung temporär übernehmen</li>
+              </ul>
+              <Link
+                href="/recruiter"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-xl font-medium transition-all shadow-lg shadow-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              >
+                Projektanfrage stellen <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          </section>
+
           <section aria-labelledby="pfade-heading" className="scroll-mt-32">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center">
