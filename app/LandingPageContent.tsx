@@ -82,6 +82,7 @@ export default function LandingPageContent() {
                     So funktioniert der Ablauf
                   </Link>
                 </div>
+              </motion.div>
 
                 <div className="flex flex-wrap gap-3">
                   {integrationChips.map((chip) => (
