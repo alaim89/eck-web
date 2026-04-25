@@ -1,34 +1,12 @@
-const boardRows = [
-  {
-    stage: 'Input',
-    title: 'Ausgangslage',
-    text: 'Systeme laufen, Zuständigkeit bleibt unklar.',
-    tone: 'neutral',
-  },
-  {
-    stage: 'Prozess',
-    title: 'Diagnose',
-    text: 'Fakten statt Vermutungen: Architektur, Risiken, Abhängigkeiten.',
-    tone: 'focus',
-  },
-  {
-    stage: 'Prozess',
-    title: 'Entscheidung & Routing',
-    text: 'Priorisierung und Verantwortungszuordnung auf belastbarer Grundlage.',
-    tone: 'focus',
-  },
-  {
-    stage: 'Prozess',
-    title: 'Maßnahmenplan',
-    text: 'Klarer Ablauf: Was zuerst, was später, was bewusst nicht.',
-    tone: 'primary',
-  },
-  {
-    stage: 'Output',
-    title: 'Umsetzung / Betrieb',
-    text: 'Klarheit, Verantwortung und priorisierte Maßnahmen im Alltag.',
-    tone: 'primary',
-  },
+const flowSteps = [
+  { title: 'Anfrage', text: 'Auslöser aus dem Alltag wird greifbar gemacht.', tone: 'base' },
+  { title: 'IT-Check', text: 'Systeme, Zuständigkeiten und Risiken werden aufgenommen.', tone: 'base' },
+  { title: 'Diagnose', text: 'Aus Symptomen werden belastbare Zusammenhänge.', tone: 'focus' },
+  { title: 'Entscheidung', text: 'Verantwortung, Priorität und Reihenfolge werden verbindlich.', tone: 'focus' },
+  { title: 'Routing', text: 'Der passende Umsetzungspfad wird klar zugeordnet.', tone: 'focus' },
+  { title: 'Maßnahmenplan', text: 'Nächste Schritte sind konkret und realistisch terminiert.', tone: 'base' },
+  { title: 'Umsetzung', text: 'Teams arbeiten entlang klarer Zuständigkeiten.', tone: 'base' },
+  { title: 'Betrieb', text: 'Stabilität wird wiederholbar statt zufällig.', tone: 'base' },
 ] as const;
 
 const interactiveNodeClass =
@@ -36,66 +14,51 @@ const interactiveNodeClass =
 
 export function ITCheckWorkflowVisual() {
   return (
-    <div className="relative overflow-hidden rounded-[2.75rem] border border-primary/20 bg-white px-8 py-10 md:px-12 md:py-12 shadow-[0_44px_84px_-44px_rgba(15,23,42,0.45)]">
+    <div className="relative overflow-hidden rounded-[2.75rem] border border-primary/20 bg-white px-6 py-10 md:px-10 md:py-14 shadow-[0_52px_96px_-44px_rgba(15,23,42,0.52)]">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.12]"
+        className="pointer-events-none absolute inset-0 opacity-[0.1]"
         style={{
           backgroundImage:
             'linear-gradient(to right, rgba(148,163,184,0.14) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.14) 1px, transparent 1px)',
-          backgroundSize: '34px 34px',
+          backgroundSize: '38px 38px',
         }}
       />
 
-      <div className="relative mx-auto max-w-[660px]">
-        <p className="mb-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 text-center">Decision Board</p>
+      <div className="relative mx-auto max-w-[760px]">
+        <p className="mb-10 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">Signature Flow</p>
 
-        <div aria-hidden="true" className="absolute left-7 top-12 bottom-10 w-px bg-gradient-to-b from-slate-300/90 via-primary/40 to-slate-300/90" />
+        <div aria-hidden="true" className="absolute left-1/2 top-8 bottom-8 hidden w-px -translate-x-1/2 bg-gradient-to-b from-primary/10 via-primary/45 to-primary/10 md:block" />
 
-        <div className="space-y-[18px]">
-          {boardRows.map((row, idx) => {
-            const focus = row.tone === 'focus';
-            const primary = row.tone === 'primary';
+        <div className="space-y-6 md:space-y-7">
+          {flowSteps.map((step, idx) => {
+            const focused = step.tone === 'focus';
 
             return (
               <article
-                key={row.title}
-                className={`relative ml-12 rounded-2xl border px-5 py-4 transition-all duration-200 ease-out hover:-translate-y-[1px] hover:border-[#005F6B]/28 hover:bg-[#005F6B]/[0.035] ${
-                  focus
-                    ? 'border-primary/35 bg-primary/[0.04]'
-                    : primary
-                      ? 'border-primary/18 bg-white'
-                      : 'border-slate-200/90 bg-white'
+                key={step.title}
+                className={`relative mx-auto max-w-[560px] rounded-2xl px-5 py-5 md:px-7 md:py-6 ${
+                  focused ? 'bg-primary/[0.06] ring-1 ring-primary/25' : 'bg-slate-50/75'
                 }`}
               >
                 <span
                   aria-hidden="true"
-                  className={`absolute -left-[44px] top-1/2 h-6 w-6 -translate-y-1/2 rounded-full border text-[10px] font-semibold flex items-center justify-center ${
-                    focus || primary
-                      ? 'border-primary/40 bg-primary/10 text-primary'
-                      : 'border-slate-300 bg-white text-slate-500'
+                  className={`absolute left-1/2 top-0 hidden h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rounded-full border md:block ${
+                    focused ? 'border-primary/50 bg-white' : 'border-slate-300 bg-white'
                   }`}
-                >
-                  {idx + 1}
-                </span>
+                />
 
-                {focus && (
-                  <div aria-hidden="true" className="pointer-events-none absolute -inset-2 rounded-2xl bg-primary/10 blur-lg" />
-                )}
-
-                <div className="relative z-10">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-500">{row.stage}</p>
-                  <h3 className="mt-1 text-base font-bold tracking-tight text-slate-900">{row.title}</h3>
-                  <p className="mt-1 text-sm text-slate-600 leading-[1.62]">{row.text}</p>
+                <div className="flex items-start gap-4">
+                  <span className="mt-0.5 text-xs font-bold tracking-[0.14em] text-primary/75">{String(idx + 1).padStart(2, '0')}</span>
+                  <div>
+                    <h3 className="text-lg font-bold tracking-tight text-slate-900">{step.title}</h3>
+                    <p className="mt-1 text-sm leading-[1.65] text-slate-600">{step.text}</p>
+                  </div>
                 </div>
               </article>
             );
           })}
         </div>
-
-        <p className="mt-6 text-center text-xs text-slate-600">
-          Wir sind nicht auf der Suche nach mehr Tools — wir schaffen Klarheit, damit Verantwortung möglich wird.
-        </p>
       </div>
     </div>
   );

@@ -45,70 +45,65 @@ const outcomeGroups = [
 ];
 
 const solutionPaths = [
-  'Umsetzung durch Ecksolution-IT',
-  'Sparring mit interner IT',
-  'Managed Service / Betrieb',
-  'Projektstabilisierung',
-];
-
-const decisionSteps = [
-  { title: 'Diagnose', consequence: 'Konsequenz: Symptome werden als belastbare Fakten sichtbar.' },
-  { title: 'Entscheidung', consequence: 'Konsequenz: Prioritäten werden verbindlich statt verhandelbar.' },
   {
-    title: 'Routing in Verantwortung',
-    consequence: 'Konsequenz: Zuständigkeit wird übernommen und in Umsetzung überführt.',
+    title: 'Microsoft 365 ist gewachsen.',
+    description: 'Struktur fehlt, Verantwortungen sind unklar.',
+  },
+  {
+    title: 'Azure ist angebunden.',
+    description: 'Abhängigkeiten und Reihenfolge sind nicht transparent.',
+  },
+  {
+    title: 'CRM ist vorhanden.',
+    description: 'Nutzung und Prozesswirkung bleiben im Alltag inkonsistent.',
+  },
+  {
+    title: 'Betrieb läuft stabil genug.',
+    description: 'Monitoring, Backup und Verantwortung sind nicht belastbar verankert.',
   },
 ];
-
-const glowCard =
-  'transition-all duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-primary/[0.03] hover:-translate-y-[1px]';
 
 export default function LandingPageContent() {
   return (
     <div className="min-h-screen bg-white text-black font-poppins selection:bg-primary/30">
       <Header />
 
-      <main className="pt-32 pb-24">
-        {/* Hero */}
-        <section className="px-6 pt-10 pb-28" aria-labelledby="hero-heading">
-          <div className="max-w-[1240px] mx-auto grid lg:grid-cols-[0.86fr_1.14fr] gap-14 xl:gap-20 items-center">
-            <div className="pr-2 lg:pr-8">
+      <main className="relative pt-32 pb-24">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none hidden lg:block absolute left-1/2 top-40 bottom-20 w-px -translate-x-1/2 bg-gradient-to-b from-primary/20 via-primary/35 to-primary/10"
+        />
+
+        {/* Hero + Signature workflow */}
+        <section className="px-6 pt-8 pb-20" aria-labelledby="hero-heading">
+          <div className="max-w-[1240px] mx-auto grid lg:grid-cols-[0.72fr_1.28fr] gap-12 xl:gap-16 items-start">
+            <div className="lg:pt-10">
               <h1 id="hero-heading" className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-[-0.028em] text-slate-950 mb-8 leading-[1.02]">
                 Ihre IT läuft.
                 <br />
                 Aber sie ist nicht unter Kontrolle.
               </h1>
 
-              <p className="text-lg text-gray-600 max-w-xl leading-[1.66] mb-12">
+              <p className="text-lg text-gray-600 max-w-xl leading-[1.66] mb-10">
                 Microsoft 365 ist da, Azure ist angebunden, Backups und CRM existieren. Der Betrieb läuft weiter.
                 Unklar bleibt oft, wie alles zusammenhängt, wer entscheidet und welche Risiken wirklich Priorität
                 haben.
               </p>
 
-              <Link
-                href="/kontakt"
-                className="px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-xl font-medium inline-flex items-center justify-center gap-2 transition-all duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-[0_20px_36px_-24px_rgba(0,95,107,0.44)] hover:shadow-[0_24px_44px_-26px_rgba(0,95,107,0.48)] hover:-translate-y-[1px] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-              >
-                IT-Check starten <ArrowRight className="w-5 h-5" />
-              </Link>
+              <p className="text-sm text-slate-500 uppercase tracking-[0.14em] font-semibold mb-5">Phase 01 · Ausgangslage → Diagnose</p>
             </div>
 
-            <div className="relative py-8 lg:py-12">
-              <div className="absolute -inset-10 bg-gradient-to-br from-primary/14 via-primary/5 to-sky-100/35 blur-3xl pointer-events-none" />
+            <div className="relative lg:pb-12">
+              <div className="absolute -inset-10 bg-gradient-to-br from-primary/14 via-primary/6 to-sky-100/28 blur-3xl pointer-events-none" />
               <ITCheckWorkflowVisual />
             </div>
           </div>
         </section>
 
-        <div className="relative max-w-[1200px] mx-auto px-6 space-y-24">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none hidden lg:block absolute left-9 top-0 bottom-0 w-px bg-gradient-to-b from-primary/16 via-primary/24 to-primary/12"
-          />
-
+        <div className="relative max-w-[1200px] mx-auto px-6 space-y-20">
           {/* Reality */}
-          <section aria-labelledby="reality-heading" className="relative lg:pl-14">
-            <span aria-hidden="true" className="hidden lg:block absolute left-[31px] top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white shadow-[0_0_0_5px_rgba(0,95,107,0.06)]" />
+          <section aria-labelledby="reality-heading" className="relative lg:pl-24">
+            <span aria-hidden="true" className="hidden lg:block absolute left-0 top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white" />
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-4">Realität</p>
             <h2 id="reality-heading" className="text-2xl md:text-3xl font-bold tracking-tight mb-7">
               Wo Unklarheit im Alltag entsteht
@@ -122,66 +117,38 @@ export default function LandingPageContent() {
                 ))}
               </div>
             </div>
-            <p className="mt-6 text-sm text-slate-600">Aus Symptomen wird im nächsten Schritt eine belastbare Einordnung.</p>
+            <p className="mt-6 text-sm text-slate-600">Vom Symptom zur Diagnose: Erst verstehen, dann entscheiden.</p>
           </section>
 
           {/* Routing */}
-          <section aria-labelledby="routing-heading" className="relative lg:pl-14">
-            <span aria-hidden="true" className="hidden lg:block absolute left-[31px] top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white shadow-[0_0_0_5px_rgba(0,95,107,0.06)]" />
+          <section aria-labelledby="routing-heading" className="relative lg:pl-24">
+            <span aria-hidden="true" className="hidden lg:block absolute left-0 top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white" />
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-4">Einordnung</p>
             <h2 id="routing-heading" className="text-2xl md:text-3xl font-bold tracking-tight mb-7">
-              Wo stehen Sie gerade?
+              Nach der Diagnose beginnt die Entscheidung.
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-5 mb-8">
+            <div className="space-y-3 mb-8">
               {routingSignals.map((signal) => (
-                <article key={signal} className={`rounded-2xl bg-slate-50 px-5 py-4 ${glowCard}`}>
-                  <p className="text-sm font-medium text-slate-800 leading-[1.6]">{signal}</p>
-                </article>
+                <p key={signal} className="text-slate-700 leading-relaxed border-l-2 border-slate-200 pl-4">
+                  {signal}
+                </p>
               ))}
             </div>
 
-            <h3 className="text-xl font-bold tracking-tight mb-5">Nach der Diagnose wird nicht geraten. Es wird geroutet.</h3>
             <ITCheckRoutingMap />
           </section>
 
-          {/* Decision architecture */}
-          <section aria-labelledby="architecture-heading" className="relative lg:pl-14">
-            <span aria-hidden="true" className="hidden lg:block absolute left-[31px] top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white shadow-[0_0_0_5px_rgba(0,95,107,0.06)]" />
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-4">Struktur</p>
-            <h2 id="architecture-heading" className="text-2xl md:text-3xl font-bold tracking-tight mb-7">
-              Hier passiert der entscheidende Wechsel: von Komplexität zu Verantwortung.
-            </h2>
-            <div className="rounded-3xl bg-slate-100/70 p-8 md:p-10">
-              <div className="grid md:grid-cols-3 gap-6 relative">
-                {[1, 2].map((i) => (
-                  <span
-                    key={i}
-                    aria-hidden="true"
-                    className={`hidden md:block absolute top-10 h-px w-[11%] bg-gradient-to-r from-slate-400/80 to-primary/35 ${i === 1 ? 'left-[30.8%]' : 'left-[64.2%]'}`}
-                  />
-                ))}
-                {decisionSteps.map((step, idx) => (
-                  <article key={step.title} className={`rounded-2xl bg-white/90 p-6 md:p-7 ${glowCard}`}>
-                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary mb-2">{idx + 1}</p>
-                    <p className="text-base font-bold tracking-tight text-slate-900">{step.title}</p>
-                    <p className="mt-2 text-sm text-slate-600 leading-[1.6]">{step.consequence}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </section>
-
           {/* Outcome */}
-          <section aria-labelledby="outcome-heading" className="relative lg:pl-14">
-            <span aria-hidden="true" className="hidden lg:block absolute left-[31px] top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white shadow-[0_0_0_5px_rgba(0,95,107,0.06)]" />
+          <section aria-labelledby="outcome-heading" className="relative lg:pl-24">
+            <span aria-hidden="true" className="hidden lg:block absolute left-0 top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white" />
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-4">Klarheit</p>
             <h2 id="outcome-heading" className="text-2xl md:text-3xl font-bold tracking-tight mb-7">
               Was nach dem IT-Check klar wird
             </h2>
-            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-6 rounded-3xl bg-slate-50/45 p-1">
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-6 rounded-3xl bg-slate-50/45 p-2">
               {outcomeGroups.map((group) => (
-                <article key={group.title} className={`rounded-2xl bg-white/80 p-5 ${glowCard}`}>
+                <article key={group.title} className="rounded-2xl bg-white/80 p-5">
                   <h3 className="text-sm font-bold uppercase tracking-[0.12em] text-slate-700 mb-3">{group.title}</h3>
                   <ul className="space-y-2 text-sm text-slate-600">
                     {group.points.map((point) => (
@@ -197,35 +164,36 @@ export default function LandingPageContent() {
           </section>
 
           {/* Solution paths */}
-          <section aria-labelledby="paths-heading" className="relative lg:pl-14">
-            <span aria-hidden="true" className="hidden lg:block absolute left-[31px] top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white shadow-[0_0_0_5px_rgba(0,95,107,0.06)]" />
+          <section aria-labelledby="paths-heading" className="relative lg:pl-24">
+            <span aria-hidden="true" className="hidden lg:block absolute left-0 top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white" />
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-4">Handlung</p>
             <h2 id="paths-heading" className="text-2xl md:text-3xl font-bold tracking-tight mb-7">
               Was danach folgen kann
             </h2>
-            <div className="space-y-3 rounded-3xl border border-slate-200 bg-white p-8 text-slate-700 leading-[1.65]">
+            <div className="space-y-5">
               {solutionPaths.map((path) => (
-                <p key={path} className="leading-relaxed">
-                  • {path}
-                </p>
+                <article key={path.title} className="border-b border-slate-200 pb-5">
+                  <h3 className="text-lg font-bold tracking-tight text-slate-900">{path.title}</h3>
+                  <p className="mt-1 text-slate-600">{path.description}</p>
+                </article>
               ))}
             </div>
           </section>
 
           {/* Final CTA */}
-          <section aria-labelledby="cta-heading" className="relative lg:pl-14">
-            <span aria-hidden="true" className="hidden lg:block absolute left-[31px] top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white shadow-[0_0_0_5px_rgba(0,95,107,0.06)]" />
+          <section aria-labelledby="cta-heading" className="relative lg:pl-24">
+            <span aria-hidden="true" className="hidden lg:block absolute left-0 top-[13px] h-3.5 w-3.5 rounded-full border border-primary/30 bg-white" />
             <div className="p-8 md:p-10 rounded-3xl bg-primary text-white shadow-[0_30px_54px_-30px_rgba(0,95,107,0.68)]">
               <div className="max-w-3xl">
                 <h2 id="cta-heading" className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
                   IT-Check starten
                 </h2>
                 <p className="text-white/90 leading-relaxed mb-8">
-                  Bevor Sie migrieren, erweitern oder neu investieren: Erst klären, was wirklich da ist.
+                  Bevor Sie entscheiden: Erst klären.
                 </p>
                 <Link
                   href="/kontakt"
-                  className="px-8 py-4 bg-white text-primary rounded-xl font-semibold inline-flex items-center gap-2 transition-all duration-200 ease-out hover:bg-gray-100 hover:-translate-y-[1px] hover:shadow-[0_18px_36px_-22px_rgba(0,0,0,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                  className="px-8 py-4 bg-white text-primary rounded-xl font-semibold inline-flex items-center gap-2 transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
                 >
                   IT-Check starten <ArrowRight className="w-5 h-5" />
                 </Link>
