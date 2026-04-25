@@ -2,8 +2,8 @@
 export const BLOG_POSTS = [
   {
     slug: "entra-join-vpn-abloesen",
-    title: "Weg mit dem VPN: Warum „Entra Join Only“ der neue Standard ist",
-    excerpt: "Warum klassische VPN-Lösungen ausbremsen und wie Microsoft Entra Join Unternehmen sicherer, flexibler und wartungsärmer macht.",
+    title: "VPN ablösen im Mittelstand: Wann Entra Join die bessere Lösung ist",
+    excerpt: "Wenn VPN den Alltag ausbremst: So prüfen Sie, ob Microsoft Entra Join für sichere Zugriffe, weniger Supportaufwand und eine moderne IT-Struktur passt.",
     date: "2024-03-28",
     readTime: "6 min",
     author: "Andreas Eckert",
@@ -12,8 +12,8 @@ export const BLOG_POSTS = [
   },
   {
     slug: "cloud-migration-mittelstand-2024",
-    title: "Cloud-Migration für den Mittelstand: Ein Leitfaden für 2024",
-    excerpt: "Erfahren Sie, wie mittelständische Unternehmen den Umstieg in die Cloud sicher und kosteneffizient gestalten können, ohne den laufenden Betrieb zu gefährden.",
+    title: "Cloud-Migration im Mittelstand: Reihenfolge, Risiken und erste Schritte",
+    excerpt: "Wie gelingt der Umstieg ohne Betriebsrisiko? Dieser Beitrag zeigt, wie Unternehmen in Niedersachsen und Hannover Cloud-Migration sauber priorisieren.",
     date: "2024-03-20",
     readTime: "8 min",
     author: "Andreas Eckert",
@@ -22,8 +22,8 @@ export const BLOG_POSTS = [
   },
   {
     slug: "it-sicherheit-praevention-vs-reaktion",
-    title: "IT-Sicherheit: Warum Prävention günstiger ist als jeder Notfalleinsatz",
-    excerpt: "Reaktive IT-Sicherheit kostet nicht nur Nerven, sondern auch bares Geld. Wir zeigen auf, warum proaktive Stabilität die beste Versicherung für Ihr Unternehmen ist.",
+    title: "IT-Sicherheitsprobleme priorisieren: Prävention statt Notfalleinsatz",
+    excerpt: "Welche Schwachstellen zuerst schließen? Der Beitrag zeigt, wie Unternehmen Sicherheitsrisiken strukturieren und teure Reaktionsarbeit vermeiden.",
     date: "2024-03-12",
     readTime: "6 min",
     author: "Andreas Eckert",
@@ -32,8 +32,8 @@ export const BLOG_POSTS = [
   },
   {
     slug: "managed-services-vs-inhouse-it",
-    title: "Managed Services vs. Inhouse-IT: Die richtige Balance finden",
-    excerpt: "Wann macht es Sinn, IT-Aufgaben auszulagern? Ein objektiver Vergleich zwischen internen Ressourcen und externer Expertise für maximale Effizienz.",
+    title: "IT-Betrieb überlastet: Wann Managed Services statt Inhouse sinnvoll sind",
+    excerpt: "Wenn interne Teams am Limit sind: Kriterien für die Entscheidung zwischen Inhouse-IT, Co-Managed-Modell und vollständigem Managed Service.",
     date: "2024-03-05",
     readTime: "7 min",
     author: "Andreas Eckert",

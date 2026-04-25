@@ -108,9 +108,17 @@ export default function KontaktContent({ initialRequestType = 'it-check' }: Kont
                   Lassen Sie uns über Ihre IT sprechen.
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed opacity-90 max-w-lg">
-                  Egal ob IT-Check, Projektanfrage oder langfristige Strategie-Begleitung - wir finden den richtigen
-                  Weg für Ihre Infrastruktur.
+                  IT-Probleme verstehen, sauber analysieren und in klare Prioritäten übersetzen:
+                  Genau dafür ist der IT-Check da - für Unternehmen in Niedersachsen und im Raum Hannover.
                 </p>
+                <div className="mt-8 flex flex-wrap items-center gap-4">
+                  <Link href="/solutions" className="text-sm font-semibold text-primary hover:underline">
+                    Zu den Lösungswegen
+                  </Link>
+                  <Link href="/blog" className="text-sm font-semibold text-primary hover:underline">
+                    Zu den Insights
+                  </Link>
+                </div>
               </motion.div>
 
               <div className="space-y-8">

@@ -1,87 +1,60 @@
-import { motion } from 'motion/react';
-
-const responsibilityAreas = [
-  { title: 'Security', subline: 'Risiko' },
-  { title: 'Plattform', subline: 'M365 / Azure / Infrastruktur' },
-  { title: 'Prozesse', subline: 'CRM / Business Prozesse' },
-  { title: 'Betrieb', subline: 'Stabilität / Monitoring / Backup' },
+const flowSteps = [
+  { title: 'Anfrage', text: 'Auslöser aus dem Alltag wird greifbar gemacht.', tone: 'base' },
+  { title: 'IT-Check', text: 'Systeme, Zuständigkeiten und Risiken werden aufgenommen.', tone: 'base' },
+  { title: 'Diagnose', text: 'Aus Symptomen werden belastbare Zusammenhänge.', tone: 'focus' },
+  { title: 'Entscheidung', text: 'Verantwortung, Priorität und Reihenfolge werden verbindlich.', tone: 'focus' },
+  { title: 'Routing', text: 'Der passende Umsetzungspfad wird klar zugeordnet.', tone: 'focus' },
+  { title: 'Maßnahmenplan', text: 'Nächste Schritte sind konkret und realistisch terminiert.', tone: 'base' },
+  { title: 'Umsetzung', text: 'Teams arbeiten entlang klarer Zuständigkeiten.', tone: 'base' },
+  { title: 'Betrieb', text: 'Stabilität wird wiederholbar statt zufällig.', tone: 'base' },
 ] as const;
 
 export function ITCheckWorkflowVisual() {
   return (
-    <div className="relative overflow-hidden rounded-[2.25rem] border border-slate-200/90 bg-white px-6 py-8 md:px-10 md:py-10">
+    <div className="relative overflow-hidden rounded-[2.75rem] border border-primary/20 bg-white px-6 py-10 md:px-10 md:py-14 shadow-[0_52px_96px_-44px_rgba(15,23,42,0.52)]">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.14]"
+        className="pointer-events-none absolute inset-0 opacity-[0.1]"
         style={{
           backgroundImage:
-            'linear-gradient(to right, rgba(148,163,184,0.18) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.18) 1px, transparent 1px)',
-          backgroundSize: '30px 30px',
+            'linear-gradient(to right, rgba(148,163,184,0.14) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.14) 1px, transparent 1px)',
+          backgroundSize: '38px 38px',
         }}
       />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-1/2 top-[22%] h-44 w-44 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"
-      />
 
-      <div className="relative z-10 mx-auto max-w-[920px]">
-        <p className="mb-6 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">Strategische Systemkarte</p>
+      <div className="relative mx-auto max-w-[760px]">
+        <p className="mb-10 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">Signature Flow</p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45 }}
-          className="mx-auto w-fit rounded-full border border-slate-300 bg-white/90 px-6 py-2"
-        >
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-700">IT-Check</p>
-        </motion.div>
+        <div aria-hidden="true" className="absolute left-1/2 top-8 bottom-8 hidden w-px -translate-x-1/2 bg-gradient-to-b from-primary/10 via-primary/45 to-primary/10 md:block" />
 
-        <div aria-hidden="true" className="mx-auto mt-3 h-10 w-px bg-gradient-to-b from-slate-300 to-primary/40" />
+        <div className="space-y-6 md:space-y-7">
+          {flowSteps.map((step, idx) => {
+            const focused = step.tone === 'focus';
 
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.12 }}
-          className="relative mx-auto max-w-[520px] rounded-[1.75rem] border border-primary/35 bg-white px-6 py-6 md:px-7 md:py-7 shadow-[0_16px_30px_-24px_rgba(0,95,107,0.45)]"
-        >
-          <div aria-hidden="true" className="absolute inset-0 rounded-[1.75rem] border border-primary/10" />
-          <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">Diagnose & Routing</p>
-          <p className="mt-2 text-base font-semibold text-slate-900">Hier wird Komplexität in klare Verantwortung übersetzt.</p>
-          <p className="mt-3 text-sm text-slate-600">Ohne Diagnose bleibt Verantwortung unklar.</p>
-        </motion.div>
+            return (
+              <article
+                key={step.title}
+                className={`relative mx-auto max-w-[560px] rounded-2xl px-5 py-5 md:px-7 md:py-6 ${
+                  focused ? 'bg-primary/[0.06] ring-1 ring-primary/25' : 'bg-slate-50/75'
+                }`}
+              >
+                <span
+                  aria-hidden="true"
+                  className={`absolute left-1/2 top-0 hidden h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rounded-full border md:block ${
+                    focused ? 'border-primary/50 bg-white' : 'border-slate-300 bg-white'
+                  }`}
+                />
 
-        <div
-          aria-hidden="true"
-          className="mx-auto mt-4 grid w-full max-w-[760px] grid-cols-4 gap-3 px-2 md:px-6"
-        >
-          <span className="col-span-4 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-          <span className="mx-auto h-6 w-px bg-slate-300" />
-          <span className="mx-auto h-7 w-px bg-slate-300" />
-          <span className="mx-auto h-5 w-px bg-slate-300" />
-          <span className="mx-auto h-6 w-px bg-slate-300" />
-        </div>
-
-        <div className="mt-1 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
-          {responsibilityAreas.map((area, index) => (
-            <motion.div
-              key={area.title}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.22 + index * 0.07 }}
-              className={`rounded-2xl border border-slate-200 bg-white/95 px-4 py-4 ${
-                index === 1 ? 'lg:mt-3' : index === 2 ? 'lg:-mt-2' : ''
-              }`}
-            >
-              <p className="text-sm font-semibold text-slate-900">{area.title}</p>
-              <p className="mt-1 text-xs text-slate-600">{area.subline}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="mt-6 flex items-center justify-between gap-4 text-[11px] text-slate-500">
-          <span>Verantwortung unklar</span>
-          <span className="h-px flex-1 bg-slate-200" aria-hidden="true" />
-          <span className="text-primary">Verantwortung zugeordnet</span>
+                <div className="flex items-start gap-4">
+                  <span className="mt-0.5 text-xs font-bold tracking-[0.14em] text-primary/75">{String(idx + 1).padStart(2, '0')}</span>
+                  <div>
+                    <h3 className="text-lg font-bold tracking-tight text-slate-900">{step.title}</h3>
+                    <p className="mt-1 text-sm leading-[1.65] text-slate-600">{step.text}</p>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </div>
