@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import { Suspense } from 'react';
+import Script from 'next/script';
 import './globals.css'; // Global styles
 import { LanguageProvider } from '@/context/LanguageContext';
 import { CookieConsentBanner } from '@/components/CookieConsent';
@@ -8,13 +9,21 @@ import { WebVitals } from '@/components/WebVitals';
 import { VisitorTracker } from '@/components/VisitorTracker';
 
 import { getMetadata } from '@/lib/seo';
+import { getOrganizationSchema } from '@/lib/jsonld';
 
 export const metadata = getMetadata();
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
+  const organizationSchema = getOrganizationSchema();
+
   return (
     <html lang="de">
       <body className="font-poppins antialiased" suppressHydrationWarning>
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <LanguageProvider>
           {children}
         </LanguageProvider>
