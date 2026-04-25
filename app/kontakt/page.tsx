@@ -7,7 +7,14 @@ export const metadata = getMetadata({
   canonical: "/kontakt",
 });
 
-export default function KontaktPage() {
-  return <KontaktContent />;
-}
+type KontaktPageProps = {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+};
 
+export default async function KontaktPage({ searchParams }: KontaktPageProps) {
+  const params = (await searchParams) ?? {};
+  const typeValue = Array.isArray(params.type) ? params.type[0] : params.type;
+  const initialRequestType = typeValue === 'recruiter' ? 'recruiter' : 'it-check';
+
+  return <KontaktContent initialRequestType={initialRequestType} />;
+}
