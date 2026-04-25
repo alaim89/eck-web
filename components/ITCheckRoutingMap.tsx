@@ -23,7 +23,7 @@ const paths = [
 
 export function ITCheckRoutingMap() {
   return (
-    <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
+    <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-[0_14px_28px_-24px_rgba(15,23,42,0.2)]">
       <div className="mx-auto max-w-[900px]">
         <div className="text-center mb-8">
           <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">Diagnosepfad</p>
@@ -41,10 +41,10 @@ export function ITCheckRoutingMap() {
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {paths.map((path) => (
-            <article key={path.title} className="rounded-2xl border border-slate-200 bg-slate-50/40 px-4 py-4">
+            <article key={path.title} className="rounded-2xl border border-slate-200 bg-slate-50/30 px-4 py-4">
               <p className="text-sm font-bold tracking-tight text-slate-900">{path.title}</p>
               <p className="mt-1 text-xs font-semibold uppercase tracking-[0.08em] text-primary">{path.subline}</p>
-              <p className="mt-3 text-xs leading-relaxed text-slate-600">{path.detail}</p>
+              <p className="mt-3 text-xs leading-[1.62] text-slate-600">{path.detail}</p>
             </article>
           ))}
         </div>
