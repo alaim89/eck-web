@@ -66,6 +66,74 @@ export default function SolutionsIndexContent() {
     featuredSlugs.includes(slug)
   );
 
+  const problemAreas = [
+    {
+      anchor: "it-betrieb-stabilisieren",
+      title: "Der IT-Betrieb läuft – aber nur noch reaktiv",
+      situation:
+        "Tickets stauen sich, Störungen wiederholen sich und niemand hat Zeit für saubere Priorisierung.",
+      reality:
+        "Das System funktioniert technisch, aber der Alltag ist von Unterbrechungen geprägt. Genau hier setzt der IT-Check an.",
+      supportTech: "Typischer Kontext: Netzwerk, Clients, Monitoring, Service Desk, Backups.",
+      slugs: [
+        "managed-it-service",
+        "netzwerk-management",
+        "hardware-client-management",
+        "managed-backup",
+      ],
+    },
+    {
+      anchor: "sicherheit-risiken-klaeren",
+      title: "Sicherheit ist vorhanden – aber nicht verifizierbar",
+      situation:
+        "Es gibt Security-Tools, Richtlinien und Backups, doch Prüfpfade, Nachweise und Prioritäten sind unklar.",
+      reality:
+        "Unternehmen suchen hier oft nach IT-Sicherheit im Mittelstand oder Risiko-Audit und brauchen zuerst Klarheit statt weiterer Tools.",
+      supportTech:
+        "Typischer Kontext: Firewall, Endpoint Security, Compliance in Microsoft 365, Disaster Recovery.",
+      slugs: [
+        "it-sicherheit",
+        "it-risiko-audit",
+        "endpoint-firewall-security",
+        "disaster-recovery",
+        "microsoft-365-compliance-betreuung",
+        "it-governance-risikomanagement",
+      ],
+    },
+    {
+      anchor: "cloud-migration-strukturieren",
+      title: "Azure oder Microsoft 365 ist aktiv – aber niemand sieht das Gesamtbild",
+      situation:
+        "Cloud-Dienste laufen bereits, doch Abhängigkeiten, Rollen und Projekt-Reihenfolge sind nicht transparent.",
+      reality:
+        "Die häufige Frage lautet: Wie priorisieren wir eine Cloud-Migration ohne Betriebsrisiko?",
+      supportTech:
+        "Typischer Kontext: Azure Migration, Microsoft 365 Migration, Hybrid Cloud, SLA-Projekte.",
+      slugs: [
+        "azure-migration",
+        "microsoft-365-migration",
+        "hybrid-cloud-transformation",
+        "azure-hybrid-betreuung",
+        "hybrid-it-infrastruktur",
+        "it-projekte-mit-slas",
+      ],
+    },
+    {
+      anchor: "verantwortung-it-organisation",
+      title: "CRM, Prozesse und Tools sind da – werden aber nicht wirksam genutzt",
+      situation:
+        "Systeme wurden eingeführt, aber Verantwortung, Nutzung und Wirkung im Alltag bleiben diffus.",
+      reality:
+        "Die Folge sind typische Engpässe: Entscheidungen dauern zu lange und Projekte verlieren Richtung.",
+      supportTech:
+        "Typischer Kontext: CRM-Anbindung, Governance, strategische IT-Verantwortung und Rollenklärung.",
+      slugs: [
+        "externer-it-verantwortlicher",
+        "strategische-it-betreuung",
+      ],
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white font-poppins text-black selection:bg-primary/20">
       <Header />
@@ -80,19 +148,20 @@ export default function SolutionsIndexContent() {
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1]">
-              IT-Lösungen für Unternehmen,
+              Ihre IT ist aufgebaut,
               <br />
-              deren Systeme nicht einfach nur laufen sollen
+              aber nicht wirklich steuerbar
             </h1>
 
             <p className="text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed">
               Wenn IT gewachsen ist, Projekte festhängen oder der Betrieb zu viel
               Reibung erzeugt, braucht es keine weitere Folie. Sondern eine klare
-              Lösung, die Sicherheit, Struktur und Alltag wieder zusammenbringt.
+              Lösung, die Sicherheit, Struktur und Alltag wieder zusammenbringt –
+              für Teams in Niedersachsen und im Raum Hannover.
             </p>
 
             <Link
-              href="/kontakt"
+              href="/it-check"
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all font-semibold text-lg shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5"
             >
               Situation kurz einordnen <ChevronRight className="w-5 h-5" />
@@ -100,50 +169,98 @@ export default function SolutionsIndexContent() {
           </div>
         </section>
 
-        {/* Solutions Grid */}
+        {/* Problem anchors */}
+        <section className="py-10 px-6 border-b border-gray-100 bg-white">
+          <div className="max-w-[1200px] mx-auto">
+            <p className="text-xs uppercase tracking-[0.16em] font-bold text-gray-500 mb-4">Direkt zum Problemfeld</p>
+            <div className="flex flex-wrap gap-3">
+              {problemAreas.map((area) => (
+                <Link
+                  key={area.anchor}
+                  href={`#${area.anchor}`}
+                  className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm font-semibold text-gray-700 hover:border-primary/30 hover:text-primary transition-colors"
+                >
+                  {area.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Solutions by search intent */}
         <section className="py-24 px-6">
           <div className="max-w-[1200px] mx-auto">
             <div className="max-w-3xl mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Typische Situationen, in denen wir als Team unterstützen
+                Typische Situationen statt Technologie-Liste
               </h2>
               <p className="text-gray-700 text-lg leading-relaxed">
-                Nicht alles ist ein großes Transformationsprojekt. Oft geht es
-                darum, gewachsene Strukturen wieder beherrschbar zu machen,
-                Risiken sichtbar zu bekommen und den Betrieb sauber aufzustellen.
+                Wir starten nicht mit Produkten, sondern mit Ihrer konkreten Lage:
+                Was ist aufgebaut, was ist unklar und was blockiert Entscheidungen?
+                Jede Situation führt bewusst zum gleichen nächsten Schritt: IT-Check.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {slugs.map((slug, i) => {
-                const solution = solutionsData[slug as keyof typeof solutionsData];
-                const Icon = iconMap[slug] || Activity;
+            <div className="space-y-20">
+              {problemAreas.map((area) => (
+                <section key={area.anchor} id={area.anchor} className="scroll-mt-36">
+                  <div className="max-w-4xl mb-8">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-3">{area.title}</h3>
+                    <p className="text-gray-700 leading-relaxed mb-2">{area.situation}</p>
+                    <p className="text-gray-700 leading-relaxed mb-2">{area.reality}</p>
+                    <p className="text-sm text-gray-500">{area.supportTech}</p>
+                  </div>
 
-                return (
-                  <div key={slug}>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {slugs
+                      .filter((slug) => area.slugs.includes(slug))
+                      .map((slug) => {
+                        const solution = solutionsData[slug as keyof typeof solutionsData];
+                        const Icon = iconMap[slug] || Activity;
+
+                        return (
+                          <div key={slug}>
+                            <Link
+                              href={`/solutions/${slug}`}
+                              className="group block h-full p-8 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+                            >
+                              <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                                <Icon className="w-6 h-6" />
+                              </div>
+
+                              <h4 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">
+                                {solution.title}
+                              </h4>
+
+                              <p className="text-gray-600 mb-8 line-clamp-3 leading-relaxed">
+                                {solution.description}
+                              </p>
+
+                              <div className="mt-auto flex items-center gap-2 text-primary font-bold text-sm">
+                                Mehr dazu <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                              </div>
+                            </Link>
+                          </div>
+                        );
+                      })}
+                  </div>
+
+                  <div className="mt-8 flex flex-wrap items-center gap-4">
                     <Link
-                      href={`/solutions/${slug}`}
-                      className="group block h-full p-8 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+                      href="/it-check"
+                      className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-bold hover:bg-primary/90 transition-all"
                     >
-                      <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                        <Icon className="w-6 h-6" />
-                      </div>
-
-                      <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">
-                        {solution.title}
-                      </h3>
-
-                      <p className="text-gray-600 mb-8 line-clamp-3 leading-relaxed">
-                        {solution.description}
-                      </p>
-
-                      <div className="mt-auto flex items-center gap-2 text-primary font-bold text-sm">
-                        Mehr dazu <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </div>
+                      Diese Situation im IT-Check klären <ChevronRight className="w-4 h-4" />
+                    </Link>
+                    <Link
+                      href="/blog"
+                      className="text-primary font-semibold hover:underline"
+                    >
+                      Passende Insights lesen
                     </Link>
                   </div>
-                );
-              })}
+                </section>
+              ))}
             </div>
 
             <div className="mt-12 text-center">
@@ -151,10 +268,29 @@ export default function SolutionsIndexContent() {
                 Klingt nach Ihrer Situation?
               </p>
               <Link
-                href="/kontakt"
+                href="/it-check"
                 className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-all active:scale-[0.98] shadow-lg shadow-primary/20"
               >
                 Einmal gemeinsam draufschauen
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 px-6 bg-gray-50 border-y border-gray-100">
+          <div className="max-w-[1200px] mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Technologie bleibt wichtig – aber als Unterstützung</h2>
+            <p className="text-gray-700 text-lg leading-relaxed max-w-4xl">
+              Microsoft 365, Azure, CRM, Security-Stacks oder Backup-Systeme sind wertvoll.
+              Entscheidend ist jedoch, wie diese Bausteine im Alltag zusammenspielen und
+              wer Verantwortung trägt. Deshalb beginnt der Weg immer mit einem IT-Check.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link href="/it-check" className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-bold hover:bg-primary/90 transition-all">
+                IT-Check starten <ChevronRight className="w-4 h-4" />
+              </Link>
+              <Link href="/blog" className="text-primary font-semibold hover:underline">
+                Relevante Insights lesen
               </Link>
             </div>
           </div>
@@ -165,7 +301,7 @@ export default function SolutionsIndexContent() {
           title="Nicht sicher, wo Sie anfangen sollen?"
           description="Oft reichen 15–30 Minuten, um zu sehen, wo es wirklich hakt und was zuerst angegangen werden sollte."
           buttonText="Kurz abstimmen"
-          buttonHref="/kontakt"
+          buttonHref="/it-check"
         />
       </main>
 
