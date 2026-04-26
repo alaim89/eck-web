@@ -14,10 +14,11 @@ const symptoms = [
   'Entscheidungen werden vertagt, weil die technische Ausgangslage unklar bleibt.',
 ];
 
-const contrarianStatements = [
-  'Die meisten IT-Probleme sind keine Technikprobleme.',
-  'Mehr Tools schaffen selten mehr Klarheit.',
-  'Projekte scheitern dort, wo Verantwortung nicht eindeutig ist.',
+const routingPaths = [
+  { area: 'M365', detail: 'Governance und Rollen werden verbindlich definiert.' },
+  { area: 'Azure', detail: 'Architektur und Umsetzungsreihenfolge werden strukturiert.' },
+  { area: 'CRM', detail: 'Prozesse und Nutzung werden klar geregelt.' },
+  { area: 'Betrieb', detail: 'Monitoring und Backup werden stabilisiert.' },
 ];
 
 const checkpoints = [
