@@ -19,7 +19,8 @@ export function Footer() {
               <span className="font-bold text-black text-lg tracking-tight">Ecksolution<span className="text-primary">-IT</span></span>
             </Link>
             <p className="text-gray-500 leading-relaxed">
-              {t.footer.description}
+              Ecksolution-IT schafft Klarheit für den Mittelstand: Wir machen Systeme, Risiken und
+              Verantwortlichkeiten sichtbar und übersetzen diese in einen umsetzbaren IT-Check.
             </p>
           </div>
 
@@ -62,16 +63,14 @@ export function Footer() {
           {/* Appointment CTA */}
           <div className="flex flex-col gap-6">
             <div className="space-y-2">
-              <h3 className="font-bold text-black uppercase tracking-widest text-[10px]">Beratung</h3>
-              <p className="text-gray-500 text-xs">{t.footer.cta.hint}</p>
+              <h3 className="font-bold text-black uppercase tracking-widest text-[10px]">IT-Check</h3>
+              <p className="text-gray-500 text-xs">Starten Sie mit einem klaren Einstieg in Verantwortung und Prioritäten.</p>
             </div>
             <Link 
-              href="https://outlook.office.com/book/EcksolutionITService@ecksolution-it.de/?ismsaljsauthenabled" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="/kontakt?type=it-check" 
               className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-primary text-white font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/10 active:scale-[0.98]"
             >
-              {t.footer.cta.button}
+              IT-Check starten
             </Link>
           </div>
         </div>

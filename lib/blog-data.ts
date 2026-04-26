@@ -1,6 +1,16 @@
 
 export const BLOG_POSTS = [
   {
+    slug: "vpn-abloesen-im-mittelstand-entra-join-only",
+    title: "VPN ablösen im Mittelstand",
+    excerpt: "Warum „Entra Join Only“ kein IT-Projekt ist – sondern eine Richtungsentscheidung für Identität, Zugriff und Sicherheit.",
+    date: "2026-04-26",
+    readTime: "9 min",
+    author: "Andreas Eckert",
+    category: "Cloud & Infrastruktur",
+    image: "https://picsum.photos/seed/entra-identity/800/500"
+  },
+  {
     slug: "entra-join-vpn-abloesen",
     title: "VPN ablösen im Mittelstand: Wann Entra Join die bessere Lösung ist",
     excerpt: "Wenn VPN den Alltag ausbremst: So prüfen Sie, ob Microsoft Entra Join für sichere Zugriffe, weniger Supportaufwand und eine moderne IT-Struktur passt.",

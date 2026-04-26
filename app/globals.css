@@ -99,3 +99,34 @@
 @utility premium-button {
   @apply px-8 py-4 rounded-xl font-bold transition-all active:scale-[0.97] shadow-lg hover:shadow-xl;
 }
+
+@utility premium-glow {
+  @apply absolute rounded-full bg-primary/15 blur-[90px] pointer-events-none;
+}
+
+@utility premium-surface {
+  @apply rounded-[2rem] border border-slate-200/75 bg-white/85 backdrop-blur-[2px] shadow-[0_26px_60px_-40px_rgba(15,23,42,0.35)];
+}
+
+@utility flowline {
+  @apply w-px bg-gradient-to-b from-slate-300 via-primary/45 to-slate-300;
+}
+
+@utility branch-line {
+  @apply h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent;
+}
+
+@utility premium-hover {
+  @apply transition-all duration-300 hover:border-primary/35 hover:shadow-[0_20px_34px_-26px_rgba(0,95,107,0.45)] hover:bg-white;
+}
+
+@utility section-soft-gradient {
+  @apply bg-gradient-to-b from-white via-slate-50/35 to-white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-hover,
+  .premium-button {
+    transition: none !important;
+  }
+}
