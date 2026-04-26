@@ -119,7 +119,7 @@ export function HeaderClient({ t }: HeaderClientProps) {
 
               <div className="pt-8 border-t border-slate-100/60">
                 <Link 
-                  href="/#contact" 
+                  href="/kontakt?type=it-check" 
                   onClick={() => setIsMenuOpen(false)} 
                   className="group/cta flex items-center justify-between p-4 rounded-xl bg-slate-50 border border-slate-100 hover:bg-primary/[0.02] hover:border-primary/10 transition-all"
                 >
@@ -131,8 +131,9 @@ export function HeaderClient({ t }: HeaderClientProps) {
           </div>
         </div>
 
+        <Link href="/it-check" className="hover:text-primary transition-colors py-4">IT-Check</Link>
         <Link href="/case-studies" className="hover:text-primary transition-colors py-4">{t.nav.caseStudies}</Link>
-        <Link href="/blog" className="hover:text-primary transition-colors py-4">Blog</Link>
+        <Link href="/blog" className="hover:text-primary transition-colors py-4">Insights</Link>
         <a 
           href="https://marketplace.ecksolution-it.de/" 
           target="_blank" 
@@ -145,7 +146,7 @@ export function HeaderClient({ t }: HeaderClientProps) {
       </div>
 
       <div className="flex items-center gap-4">
-        <Link href="/#contact" className="hidden md:inline-flex items-center justify-center px-5 py-2.5 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-all shadow-sm font-bold text-[11px] uppercase tracking-[0.15em] active:scale-[0.98]">
+        <Link href="/kontakt?type=it-check" className="hidden md:inline-flex items-center justify-center px-5 py-2.5 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-all shadow-sm font-bold text-[11px] uppercase tracking-[0.15em] active:scale-[0.98]">
           {t.nav.getAudit}
         </Link>
 
@@ -180,7 +181,8 @@ export function HeaderClient({ t }: HeaderClientProps) {
               ))}
             </div>
           </div>
-          <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block text-xl font-bold text-slate-900 tracking-tight">Blog</Link>
+          <Link href="/it-check" onClick={() => setIsMobileMenuOpen(false)} className="block text-xl font-bold text-slate-900 tracking-tight">IT-Check</Link>
+          <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="block text-xl font-bold text-slate-900 tracking-tight">Insights</Link>
           <Link href="/case-studies" onClick={() => setIsMobileMenuOpen(false)} className="block text-xl font-bold text-slate-900 tracking-tight">{t.nav.caseStudies}</Link>
           <a 
             href="https://marketplace.ecksolution-it.de/" 
@@ -192,7 +194,7 @@ export function HeaderClient({ t }: HeaderClientProps) {
             {t.nav.customerPortal}
           </a>
           <Link href="/kontakt" onClick={() => setIsMobileMenuOpen(false)} className="block text-xl font-bold text-slate-900 tracking-tight">{t.nav.contact}</Link>
-          <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full py-5 bg-primary text-white text-center rounded-2xl font-bold active:scale-[0.98] shadow-2xl shadow-primary/30">
+          <Link href="/kontakt?type=it-check" onClick={() => setIsMobileMenuOpen(false)} className="block w-full py-5 bg-primary text-white text-center rounded-2xl font-bold active:scale-[0.98] shadow-2xl shadow-primary/30">
             {t.nav.getAudit}
           </Link>
         </div>
