@@ -1,11 +1,10 @@
 'use client';
 
-import { motion } from 'motion/react';
 import Link from 'next/link';
-import { ArrowRight, TriangleAlert, Workflow, Compass } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ITCheckWorkflowVisual } from '@/components/ITCheckWorkflowVisual';
+import { ITCheckSystemFlow } from '@/components/ITCheckSystemFlow';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -26,22 +25,26 @@ const contrarianStatements = [
   'Projekte scheitern dort, wo Verantwortung nicht eindeutig ist.',
 ];
 
-const checkpoints = [
+const outcomeGroups = [
   {
-    title: 'Eingang klären',
-    text: 'Welche Symptome sind operativ sichtbar und wie wirken sie auf Vertrieb, Projektgeschäft und Betrieb?',
+    title: 'Systeme',
+    points: ['Welche Systeme kritisch sind.', 'Welche Abhängigkeiten zuerst aufgelöst werden müssen.'],
   },
   {
-    title: 'Diagnose sichern',
-    text: 'Welche Ursachen sind technisch, welche organisatorisch, welche rein Entscheidungsfragen?',
+    title: 'Verantwortung',
+    points: ['Wer entscheidet.', 'Wer Umsetzung und Betrieb verbindlich trägt.'],
   },
   {
-    title: 'Verantwortung definieren',
-    text: 'Wer entscheidet, wer liefert zu, wer trägt die Umsetzung im Tagesgeschäft?',
+    title: 'Risiken',
+    points: ['Welche Risiken aktuell bestehen.', 'Welche Risiken zuerst reduziert werden.'],
   },
   {
-    title: 'Maßnahmen priorisieren',
-    text: 'Was reduziert Risiko sofort, was schafft Stabilität mittelfristig, was kann bewusst warten?',
+    title: 'Prioritäten',
+    points: ['Was zuerst entschieden wird.', 'Was bewusst zurückgestellt wird.'],
+  },
+  {
+    title: 'Nächster Pfad',
+    points: ['Welcher Umsetzungspfad sinnvoll ist.', 'Wie dieser Pfad konkret gestartet wird.'],
   },
 ];
 
