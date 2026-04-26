@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { motion } from 'motion/react';
+import { ArrowRight, Compass, TriangleAlert, Workflow } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ITCheckSystemFlow } from '@/components/ITCheckSystemFlow';
+import { ITCheckWorkflowVisual } from '@/components/ITCheckWorkflowVisual';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -25,26 +26,22 @@ const contrarianStatements = [
   'Projekte scheitern dort, wo Verantwortung nicht eindeutig ist.',
 ];
 
-const outcomeGroups = [
+const checkpoints = [
   {
-    title: 'Systeme',
-    points: ['Welche Systeme kritisch sind.', 'Welche Abhängigkeiten zuerst aufgelöst werden müssen.'],
+    title: 'Struktur erfassen',
+    text: 'Systeme, Rollen und operative Engpässe werden transparent dokumentiert.',
   },
   {
-    title: 'Verantwortung',
-    points: ['Wer entscheidet.', 'Wer Umsetzung und Betrieb verbindlich trägt.'],
+    title: 'Abhängigkeiten klären',
+    text: 'Kritische Schnittstellen und Entscheidungswege werden belastbar priorisiert.',
   },
   {
-    title: 'Risiken',
-    points: ['Welche Risiken aktuell bestehen.', 'Welche Risiken zuerst reduziert werden.'],
+    title: 'Risiken reduzieren',
+    text: 'Sicherheits-, Betriebs- und Projekt-Risiken werden gezielt adressiert.',
   },
   {
-    title: 'Prioritäten',
-    points: ['Was zuerst entschieden wird.', 'Was bewusst zurückgestellt wird.'],
-  },
-  {
-    title: 'Nächster Pfad',
-    points: ['Welcher Umsetzungspfad sinnvoll ist.', 'Wie dieser Pfad konkret gestartet wird.'],
+    title: 'Umsetzung starten',
+    text: 'Ein klarer Pfad mit Verantwortlichkeiten und nächsten Schritten wird festgelegt.',
   },
 ];
 
