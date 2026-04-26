@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getMetadata } from "@/lib/seo";
 import BlogPostContent from "./BlogPostContent";
+import type { StructuredArticle } from "./ArticleDesignSystem";
 import { BLOG_POSTS } from "@/lib/blog-data";
 
 const BLOG_CONTENT_BY_SLUG: Record<string, string> = {
@@ -251,6 +252,110 @@ const BLOG_CONTENT_BY_SLUG: Record<string, string> = {
     `,
 };
 
+const STRUCTURED_ARTICLES_BY_SLUG: Record<string, StructuredArticle> = {
+  "entra-join-vpn-abloesen": {
+    hero: {
+      category: "Cloud & Infrastruktur",
+      title: "VPN ablösen im Mittelstand: Wann Entra Join die bessere Lösung ist",
+      excerpt:
+        "Dieser Beitrag ist kein Tool-Guide. Er ist ein Entscheidungsrahmen für Unternehmen, die vom Netzwerkdenken auf Identitäts- und Policy-basierten Zugriff umstellen wollen.",
+      readTime: "6 min",
+      updatedAt: "26. April 2026",
+    },
+    reality: {
+      heading: "Reality: Warum VPN in vielen Unternehmen noch dominiert",
+      paragraphs: [
+        "Microsoft 365 läuft, Azure ist eingeführt, die Endgeräte sind modern. Trotzdem hängt der Zugriff weiterhin am VPN.",
+        "Nicht weil es technisch elegant ist, sondern weil es historisch gewachsen ist und bislang ausgereicht hat.",
+      ],
+    },
+    problem: {
+      heading: "Problem: Das Modell passt nicht mehr zur Realität",
+      paragraphs: [
+        "Wenn Teams verteilt arbeiten, Partner eingebunden sind und Anwendungen in der Cloud liegen, skaliert Zugriff über Tunnel nur begrenzt.",
+        "Im Alltag entsteht Reibung, obwohl die eigentlichen Systeme bereits modernisiert wurden.",
+      ],
+      points: [
+        "„VPN ist langsam.“",
+        "„Zugriff geht gerade nicht.“",
+        "„Warum muss ich mich für Cloud-Anwendungen überhaupt einwählen?“",
+      ],
+    },
+    insight: {
+      heading: "Denkfehler sichtbar machen",
+      statement: "Das Problem ist oft nicht VPN. VPN ist das Symptom eines überholten Zugriffsmodells.",
+      supporting:
+        "Solange Zugriff primär über Netzgrenzen statt über Identität, Gerätezustand und Risiko gesteuert wird, bleibt Sicherheit operativ schwer steuerbar.",
+    },
+    model: {
+      heading: "System / Modell: Vom Netzwerk zur Identitätsschicht",
+      intro:
+        "Entra Join Only funktioniert dann, wenn Identität, Gerätemanagement, Conditional Access und Verantwortlichkeiten sauber zusammenarbeiten.",
+      oldFlow: ["User", "VPN", "Netzwerk", "System"],
+      newFlow: ["User", "Identität", "Policy", "Zugriff"],
+      notes: [
+        "Conditional Access bewertet Signale wie Benutzerrolle, Gerätestatus, Standort, Anwendung und Risiko.",
+        "Zugriff wird nicht pauschal geöffnet, sondern pro Anfrage kontrolliert.",
+      ],
+    },
+    compare: {
+      heading: "Vergleich: Altdenken vs. Entscheidungsfähiges Modell",
+      legacyLabel: "VPN-zentriertes Modell",
+      modernLabel: "Identitätszentriertes Modell",
+      legacyPoints: [
+        "Sicherheit über Perimeter und Tunnel",
+        "Einmal verbunden, oft breit freigeschaltet",
+        "Hohe Abhängigkeit von Netzqualität und Standort",
+      ],
+      modernPoints: [
+        "Zugriff über Identität, Gerät und Policy",
+        "Explizite Prüfung pro Zugriff (Zero-Trust-Prinzipien)",
+        "Bessere Steuerbarkeit für hybride Arbeitsrealitäten",
+      ],
+    },
+    practical: {
+      heading: "Praktische Anwendung: Was vor der Umsetzung geklärt sein muss",
+      intro:
+        "Der Wechsel gelingt nicht durch reine Feature-Aktivierung. Entscheidend ist eine belastbare Zielarchitektur mit klarer Verantwortung.",
+      groups: [
+        {
+          title: "Architekturfragen",
+          points: [
+            "Welche Ressourcen brauchen wirklich direkten Zugriff?",
+            "Wo ist Hybridbetrieb sinnvoll und wo nur historisch bedingt?",
+          ],
+        },
+        {
+          title: "Governance & Verantwortung",
+          points: [
+            "Wer definiert Compliance-Kriterien für Geräte?",
+            "Wer verantwortet Freigabelogik und Ausnahmen in Conditional Access?",
+          ],
+        },
+        {
+          title: "Risikobewertung",
+          points: [
+            "Welche Altpfade erhöhen die Angriffsfläche?",
+            "Welche Übergangsschritte reduzieren Risiko ohne Betriebsbruch?",
+          ],
+        },
+      ],
+    },
+    consequence: {
+      heading: "Konsequenz, wenn nichts verändert wird",
+      paragraphs: [
+        "Unternehmen bleiben in einem hybriden Zwischenzustand: moderne Tools vorne, alte Zugriffsmuster im Kern.",
+        "Das führt zu wiederkehrenden Tickets, unklaren Zuständigkeiten und langsameren Sicherheitsentscheidungen.",
+      ],
+    },
+    decision: {
+      heading: "Entscheidung: VPN beibehalten, hybrid fahren oder Entra Join Only?",
+      text:
+        "Ein IT-Check schafft dafür die nötige Klarheit: Wir bewerten Ihre Ausgangslage, machen Risiken sichtbar und definieren einen realistischen Pfad – ohne Aktionismus und ohne Architektur-Raten.",
+    },
+  },
+};
+
 export function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({ slug: post.slug }));
 }
@@ -301,6 +406,7 @@ export default async function BlogPostPage({
         ...post,
         date: formatGermanDate(post.date),
         content,
+        structuredArticle: STRUCTURED_ARTICLES_BY_SLUG[slug],
       }}
     />
   );

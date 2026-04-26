@@ -7,6 +7,7 @@ import Script from "next/script";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { getArticleSchema } from "@/lib/jsonld";
+import { BlogArticleLayout, type StructuredArticle } from "./ArticleDesignSystem";
 
 interface BlogPostContentProps {
   slug: string;
@@ -19,6 +20,7 @@ interface BlogPostContentProps {
     category: string;
     image: string;
     content: string;
+    structuredArticle?: StructuredArticle;
   };
 }
 
@@ -60,93 +62,103 @@ export default function BlogPostContent({ slug, post }: BlogPostContentProps) {
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Zurück zur Übersicht
           </Link>
 
-          {/* Header */}
-          <header className="mb-16">
-            <div className="flex items-center gap-4 mb-6 text-sm text-gray-500 font-bold uppercase tracking-widest">
-              <span className="text-primary">{post.category}</span>
-              <span>•</span>
-              <span>{post.date}</span>
-              <span>•</span>
-              <span>{post.readTime} Lesezeit</span>
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-12 text-black leading-[1.1]">
-              {post.title}
-            </h1>
-            
-            {/* Author */}
-            <div className="flex items-center justify-between py-8 border-y border-gray-100">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden">
-                  <User className="w-6 h-6 text-gray-400" />
+          {!post.structuredArticle && (
+            <>
+              {/* Header */}
+              <header className="mb-16">
+                <div className="flex items-center gap-4 mb-6 text-sm text-gray-500 font-bold uppercase tracking-widest">
+                  <span className="text-primary">{post.category}</span>
+                  <span>•</span>
+                  <span>{post.date}</span>
+                  <span>•</span>
+                  <span>{post.readTime} Lesezeit</span>
                 </div>
-                <div>
-                  <div className="font-bold text-black">{post.author}</div>
-                  <div className="text-xs text-gray-500 font-bold uppercase tracking-widest">IT-Architekt & Cloud Experte</div>
+                <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-12 text-black leading-[1.1]">
+                  {post.title}
+                </h1>
+
+                {/* Author */}
+                <div className="flex items-center justify-between py-8 border-y border-gray-100">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden">
+                      <User className="w-6 h-6 text-gray-400" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-black">{post.author}</div>
+                      <div className="text-xs text-gray-500 font-bold uppercase tracking-widest">IT-Architekt & Cloud Experte</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <button
+                      aria-label="Artikel auf LinkedIn teilen"
+                      className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </button>
+                    <button
+                      aria-label="Artikel auf X teilen"
+                      className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary"
+                    >
+                      <Twitter className="w-5 h-5" />
+                    </button>
+                    <button
+                      aria-label="Artikel per E-Mail teilen"
+                      className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary"
+                    >
+                      <Mail className="w-5 h-5" />
+                    </button>
+                  </div>
                 </div>
+              </header>
+
+              {/* Featured Image */}
+              <div className="relative aspect-[21/9] rounded-[2.5rem] overflow-hidden mb-16 shadow-2xl border border-gray-100">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                  referrerPolicy="no-referrer"
+                />
               </div>
-              <div className="flex items-center gap-4">
-                <button
-                  aria-label="Artikel auf LinkedIn teilen"
-                  className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </button>
-                <button
-                  aria-label="Artikel auf X teilen"
-                  className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary"
-                >
-                  <Twitter className="w-5 h-5" />
-                </button>
-                <button
-                  aria-label="Artikel per E-Mail teilen"
-                  className="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-gray-500 hover:text-primary"
-                >
-                  <Mail className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-          </header>
+            </>
+          )}
 
-          {/* Featured Image */}
-          <div className="relative aspect-[21/9] rounded-[2.5rem] overflow-hidden mb-16 shadow-2xl border border-gray-100">
-            <Image 
-              src={post.image} 
-              alt={post.title}
-              fill
-              className="object-cover"
-              referrerPolicy="no-referrer"
-            />
-          </div>
+          {post.structuredArticle ? (
+            <BlogArticleLayout article={post.structuredArticle} />
+          ) : (
+            <>
+              {/* Content */}
+              <div
+                className="prose prose-lg max-w-none prose-headings:text-black prose-p:text-gray-700 prose-p:leading-relaxed prose-strong:text-black prose-blockquote:border-primary"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
 
-          {/* Content */}
-          <div 
-            className="prose prose-lg max-w-none prose-headings:text-black prose-p:text-gray-700 prose-p:leading-relaxed prose-strong:text-black prose-blockquote:border-primary"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
-
-          <section className="mt-14 rounded-3xl border border-gray-100 bg-gray-50 p-8 md:p-10">
-            <h2 className="text-2xl font-bold tracking-tight mb-3">Nächster Schritt: IT-Probleme strukturiert klären</h2>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Wenn dieses Thema Ihre aktuelle Situation trifft, starten Sie mit einem IT-Check: Wir ordnen Risiken,
-              Abhängigkeiten und Prioritäten und machen daraus einen klaren Umsetzungsweg.
-            </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <Link
-                href="/kontakt?type=it-check"
-                className="px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-xl font-bold transition-all"
-              >
-                IT-Check anfragen
-              </Link>
-              {relatedSolution && (
-                <Link href={`/solutions/${relatedSolution}`} className="text-primary font-semibold hover:underline">
-                  Passende Lösung ansehen
-                </Link>
-              )}
-              <Link href="/blog" className="text-primary font-semibold hover:underline">
-                Weitere Insights lesen
-              </Link>
-            </div>
-          </section>
+              <section className="mt-14 rounded-3xl border border-gray-100 bg-gray-50 p-8 md:p-10">
+                <h2 className="text-2xl font-bold tracking-tight mb-3">Nächster Schritt: IT-Probleme strukturiert klären</h2>
+                <p className="text-gray-700 leading-relaxed mb-6">
+                  Wenn dieses Thema Ihre aktuelle Situation trifft, starten Sie mit einem IT-Check: Wir ordnen Risiken,
+                  Abhängigkeiten und Prioritäten und machen daraus einen klaren Umsetzungsweg.
+                </p>
+                <div className="flex flex-wrap items-center gap-4">
+                  <Link
+                    href="/kontakt?type=it-check"
+                    className="px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-xl font-bold transition-all"
+                  >
+                    IT-Check anfragen
+                  </Link>
+                  {relatedSolution && (
+                    <Link href={`/solutions/${relatedSolution}`} className="text-primary font-semibold hover:underline">
+                      Passende Lösung ansehen
+                    </Link>
+                  )}
+                  <Link href="/blog" className="text-primary font-semibold hover:underline">
+                    Weitere Insights lesen
+                  </Link>
+                </div>
+              </section>
+            </>
+          )}
 
           {/* Footer / Share */}
           <footer className="mt-24 pt-12 border-t border-gray-100">
