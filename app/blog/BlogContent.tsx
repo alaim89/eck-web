@@ -9,6 +9,7 @@ import { Footer } from "@/components/Footer";
 import { BLOG_POSTS } from "@/lib/blog-data";
 
 const relatedSolutionBySlug: Record<string, string> = {
+  "vpn-abloesen-im-mittelstand-entra-join-only": "hybrid-it-infrastruktur",
   "entra-join-vpn-abloesen": "hybrid-it-infrastruktur",
   "cloud-migration-mittelstand-2024": "azure-migration",
   "it-sicherheit-praevention-vs-reaktion": "it-sicherheit",

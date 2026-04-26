@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { ArrowRight, Workflow } from 'lucide-react';
+import { ArrowRight, Compass, TriangleAlert, Workflow } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ITCheckWorkflowVisual } from '@/components/ITCheckWorkflowVisual';
