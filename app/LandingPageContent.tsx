@@ -2,28 +2,33 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { ArrowRight, Compass, TriangleAlert, Workflow } from 'lucide-react';
+import { ArrowRight, Workflow } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ITCheckWorkflowVisual } from '@/components/ITCheckWorkflowVisual';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
-const integrationChips = [
-  'Microsoft 365', 'Azure', 'CRM', 'Backup', 'Security', 'Monitoring', 'Automatisierung',
+const missingThings = [
+  {
+    label: 'Verantwortung fehlt.',
+    text: 'Niemand trägt Verantwortung für den Gesamtablauf. Systeme laufen — aber niemand steuert.',
+  },
+  {
+    label: 'Entscheidungen fehlen.',
+    text: 'Prioritäten verschieben sich, weil die technische Ausgangslage nie klar dokumentiert wurde.',
+  },
+  {
+    label: 'Klarheit fehlt.',
+    text: 'Jedes neue Tool erhöht die Komplexität. Selten sinkt sie dadurch.',
+  },
 ];
 
-const symptoms = [
-  'Projekte werden gestartet, aber nie sauber abgeschlossen.',
-  'Systeme sind eingeführt, aber niemand verantwortet den Gesamtablauf.',
-  'Neue Tools wurden ergänzt, ohne die bestehende Komplexität zu reduzieren.',
-  'Entscheidungen werden vertagt, weil die technische Ausgangslage unklar bleibt.',
-];
-
-const contrarianStatements = [
-  'Die meisten IT-Probleme sind keine Technikprobleme.',
-  'Mehr Tools schaffen selten mehr Klarheit.',
-  'Projekte scheitern dort, wo Verantwortung nicht eindeutig ist.',
+const routingPaths = [
+  { area: 'M365', detail: 'Governance und Rollen werden verbindlich definiert.' },
+  { area: 'Azure', detail: 'Architektur und Umsetzungsreihenfolge werden strukturiert.' },
+  { area: 'CRM', detail: 'Prozesse und Nutzung werden klar geregelt.' },
+  { area: 'Betrieb', detail: 'Monitoring und Backup werden stabilisiert.' },
 ];
 
 const checkpoints = [
@@ -49,33 +54,28 @@ const checkpoints = [
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-// Stagger container: triggers sequential reveal of direct children
 const stagger = {
   hidden: {},
   show: { transition: { staggerChildren: 0.08, delayChildren: 0.06 } },
 };
 
-// Standard fade-up child
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
 };
 
-// Slide-in from left (symptoms list)
-const slideLeft = {
-  hidden: { opacity: 0, x: -10 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.4, ease } },
-};
+// ─── Animated flowline connector between sections ─────────────────────────────
 
-// ─── Flowline divider between sections ───────────────────────────────────────
-
-function Flowline({ from = 'transparent', via = 'primary/20', to = 'primary/30' }: {
-  from?: string; via?: string; to?: string;
-}) {
+function FlowConnector({ height = 'h-16' }: { height?: string }) {
   return (
-    <div aria-hidden className="flex justify-center py-4">
-      <div
-        className={`w-px h-12 bg-gradient-to-b from-${from} via-${via} to-${to}`}
+    <div aria-hidden className="flex justify-center py-2">
+      <motion.div
+        initial={{ scaleY: 0, opacity: 0 }}
+        whileInView={{ scaleY: 1, opacity: 1 }}
+        viewport={{ once: true, margin: '-20px' }}
+        transition={{ duration: 0.6, ease }}
+        style={{ originY: 0 }}
+        className={`w-px ${height} bg-gradient-to-b from-primary/25 via-primary/40 to-primary/60`}
       />
     </div>
   );
@@ -91,22 +91,20 @@ export default function LandingPageContent() {
       <main>
 
         {/* ════════════════════════════════════════════════════════════
-            HERO — open, strong
+            HERO — Diagnose als Anker
         ════════════════════════════════════════════════════════════ */}
         <section
           aria-labelledby="hero-heading"
-          className="relative px-6 pt-36 pb-12 overflow-hidden"
+          className="relative px-6 pt-36 pb-16 overflow-hidden"
         >
-          {/* Ambient teal glow — connects hero into the page below */}
           <div
             aria-hidden
             className="pointer-events-none absolute inset-x-0 top-0 h-[520px] bg-gradient-to-b from-primary/[0.05] via-primary/[0.02] to-transparent"
           />
 
           <div className="relative max-w-[1200px] mx-auto">
-            <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 xl:gap-16 items-center">
+            <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 xl:gap-20 items-center">
 
-              {/* Left: copy — staggered reveal on load */}
               <motion.div
                 initial="hidden"
                 animate="show"
@@ -125,21 +123,20 @@ export default function LandingPageContent() {
                   variants={fadeUp}
                   className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tighter mb-7 leading-[1.04]"
                 >
-                  IT-Probleme sichtbar machen. Prozesse verbinden. Lösungen automatisieren.
+                  Diagnose zuerst. Dann Entscheidung. Dann Umsetzung.
                 </motion.h1>
 
                 <motion.p
                   variants={fadeUp}
-                  className="text-lg text-gray-600 max-w-2xl leading-relaxed mb-10"
+                  className="text-lg text-gray-600 max-w-xl leading-relaxed mb-10"
                 >
-                  Mit dem IT-Check analysieren wir IT, Microsoft 365, Azure, CRM und
-                  Vertriebsprozesse, und bauen daraus einen klaren Workflow für Stabilität,
-                  Sicherheit und Wachstum.
+                  Der IT-Check analysiert Systeme, Verantwortlichkeiten und Risiken —
+                  und schafft die Grundlage für Entscheidungen, die tragen.
                 </motion.p>
 
                 <motion.div
                   variants={fadeUp}
-                  className="flex flex-col sm:flex-row gap-4 mb-10"
+                  className="flex flex-col sm:flex-row gap-4"
                 >
                   <Link
                     href="/kontakt"
@@ -148,29 +145,14 @@ export default function LandingPageContent() {
                     IT-Check starten <ArrowRight className="w-5 h-5" />
                   </Link>
                   <Link
-                    href="#system-map"
+                    href="#wie-es-funktioniert"
                     className="px-8 py-4 rounded-xl text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors border border-gray-200 inline-flex items-center justify-center gap-2 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                   >
                     So funktioniert der Ablauf
                   </Link>
                 </motion.div>
-
-                <motion.div
-                  variants={fadeUp}
-                  className="flex flex-wrap gap-3"
-                >
-                  {integrationChips.map((chip) => (
-                    <span
-                      key={chip}
-                      className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-[0_4px_12px_-8px_rgba(15,23,42,0.3)]"
-                    >
-                      {chip}
-                    </span>
-                  ))}
-                </motion.div>
               </motion.div>
 
-              {/* Right: workflow visual — no outer box, floats on ambient glow */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -186,176 +168,215 @@ export default function LandingPageContent() {
             </div>
           </div>
 
-          {/* Section exit: gradient fade — hero bleeds into next section */}
           <div
             aria-hidden
-            className="pointer-events-none absolute bottom-0 inset-x-0 h-28 bg-gradient-to-b from-transparent to-slate-50/50"
+            className="pointer-events-none absolute bottom-0 inset-x-0 h-24 bg-gradient-to-b from-transparent to-white/60"
           />
         </section>
 
-        {/* Flowline */}
-        <div aria-hidden className="flex justify-center bg-gradient-to-b from-slate-50/50 to-slate-50/30 pt-0 pb-2">
-          <div className="w-px h-12 bg-gradient-to-b from-primary/20 via-primary/15 to-transparent" />
-        </div>
+        <FlowConnector height="h-16" />
 
         {/* ════════════════════════════════════════════════════════════
-            REALITY — denser, sharper; no hard cards
+            REALITY — drei harte Wahrheiten; keine Boxen
         ════════════════════════════════════════════════════════════ */}
         <section
-          aria-labelledby="realization-heading"
-          className="relative px-6 py-20 bg-gradient-to-b from-slate-50/30 via-slate-50/20 to-white"
+          aria-labelledby="reality-heading"
+          className="relative px-6 py-20"
         >
-          <div className="max-w-[1200px] mx-auto">
+          <div className="max-w-[860px] mx-auto">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.4, ease }}
+              className="text-[10px] font-bold uppercase tracking-[0.28em] text-slate-400 mb-14"
+            >
+              Was diese Situation kennzeichnet
+            </motion.p>
+
             <motion.div
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, margin: '-80px' }}
+              viewport={{ once: true, margin: '-60px' }}
               variants={{
                 hidden: {},
-                show: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
+                show: { transition: { staggerChildren: 0.14, delayChildren: 0.06 } },
               }}
-              className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-start"
+              className="space-y-0"
             >
-              {/* Symptoms — left column */}
-              <motion.div variants={fadeUp}>
-                <h2
-                  id="realization-heading"
-                  className="text-2xl font-bold tracking-tight mb-8 text-slate-900"
-                >
-                  Typische Lage vor einer Fehlentscheidung
-                </h2>
-                <motion.ul
+              {missingThings.map((thing) => (
+                <motion.div
+                  key={thing.label}
                   variants={{
-                    hidden: {},
-                    show: { transition: { staggerChildren: 0.07 } },
+                    hidden: { opacity: 0, x: -20 },
+                    show: { opacity: 1, x: 0, transition: { duration: 0.6, ease } },
                   }}
-                  className="space-y-5"
+                  className="grid md:grid-cols-[1fr_1.3fr] gap-4 md:gap-14 items-baseline border-t border-slate-100 py-10 first:border-t-0 first:pt-0"
                 >
-                  {symptoms.map((item) => (
-                    <motion.li
-                      key={item}
-                      variants={slideLeft}
-                      className="flex items-start gap-3"
-                    >
-                      <TriangleAlert className="w-4 h-4 text-primary/70 mt-[3px] shrink-0" />
-                      <span className="text-slate-700 leading-relaxed">{item}</span>
-                    </motion.li>
-                  ))}
-                </motion.ul>
-              </motion.div>
-
-              {/* Contrarian statements — right column, pull-quote style */}
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 16 },
-                  show: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.1, ease } },
-                }}
-                className="pt-1"
-              >
-                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.22em] mb-7">
-                  Beobachtung aus der Praxis
-                </p>
-                <div className="space-y-5">
-                  {contrarianStatements.map((statement) => (
-                    <p
-                      key={statement}
-                      className="text-slate-800 font-medium leading-relaxed border-l-2 border-primary/30 pl-4"
-                    >
-                      {statement}
-                    </p>
-                  ))}
-                </div>
-                <p className="text-slate-500 mt-8 leading-relaxed text-sm">
-                  Jede Verzögerung erhöht operative Kosten, bindet Management-Aufmerksamkeit
-                  und verschiebt notwendige Entscheidungen weiter nach hinten.
-                </p>
-              </motion.div>
+                  <h2
+                    id={thing.label === missingThings[0].label ? 'reality-heading' : undefined}
+                    className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 leading-tight"
+                  >
+                    {thing.label}
+                  </h2>
+                  <p className="text-slate-600 leading-relaxed text-[15px]">
+                    {thing.text}
+                  </p>
+                </motion.div>
+              ))}
             </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.5, delay: 0.3, ease }}
+              className="mt-12 pt-10 border-t border-slate-100 text-slate-400 text-sm leading-relaxed max-w-md"
+            >
+              Jede Verzögerung erhöht operative Kosten, bindet Aufmerksamkeit
+              und verschiebt notwendige Entscheidungen weiter nach hinten.
+            </motion.p>
           </div>
         </section>
 
-        <Flowline from="transparent" via="primary/18" to="primary/30" />
+        <FlowConnector height="h-20" />
 
         {/* ════════════════════════════════════════════════════════════
-            CLARITY — vertical flowline timeline; no card grid
+            FLOW — Prozess und Routing; Flow ist die Struktur
         ════════════════════════════════════════════════════════════ */}
         <section
-          id="system-map"
-          aria-labelledby="system-map-heading"
+          id="wie-es-funktioniert"
+          aria-labelledby="flow-heading"
           className="relative px-6 py-16 scroll-mt-28"
         >
           <div className="max-w-[1200px] mx-auto">
+
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, ease }}
-              className="flex items-center gap-3 mb-12"
+              className="mb-16"
             >
-              <div className="w-8 h-8 rounded-lg bg-primary/[0.08] flex items-center justify-center shrink-0">
-                <Compass className="w-4 h-4 text-primary" />
-              </div>
-              <h2 id="system-map-heading" className="text-2xl font-bold tracking-tight">
-                Entscheidungssystem statt Tool-Sammlung
+              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-slate-400 mb-4">
+                Entscheidungssystem
+              </p>
+              <h2
+                id="flow-heading"
+                className="text-3xl md:text-4xl font-bold tracking-tight max-w-lg leading-tight"
+              >
+                Von der Diagnose zur klaren Umsetzung.
               </h2>
             </motion.div>
 
-            {/* Timeline — staggered scroll reveal */}
-            <motion.div
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: '-60px' }}
-              variants={{
-                hidden: {},
-                show: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
-              }}
-              className="relative max-w-[600px] space-y-9"
-            >
-              {/* Flowline rail */}
-              <div
-                aria-hidden
-                className="absolute left-[15px] top-3 bottom-6 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-transparent pointer-events-none"
-              />
+            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
-              {checkpoints.map((item, index) => (
-                <motion.article
-                  key={item.title}
-                  variants={fadeUp}
-                  className="relative pl-12"
-                >
-                  {/* Step node — sits on the flowline rail */}
-                  <div className="absolute left-0 top-0.5 w-[30px] h-[30px] rounded-full bg-white border border-primary/25 shadow-[0_0_0_4px_rgba(0,95,107,0.06)] flex items-center justify-center z-10">
-                    <span className="text-[11px] font-bold text-primary leading-none">
-                      {index + 1}
-                    </span>
-                  </div>
+              {/* Left: checkpoints — vertical timeline */}
+              <motion.div
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: '-60px' }}
+                variants={{
+                  hidden: {},
+                  show: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
+                }}
+                className="relative space-y-9"
+              >
+                <div
+                  aria-hidden
+                  className="absolute left-[15px] top-3 bottom-6 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-transparent pointer-events-none"
+                />
+                {checkpoints.map((item, index) => (
+                  <motion.article
+                    key={item.title}
+                    variants={fadeUp}
+                    className="relative pl-12"
+                  >
+                    <div className="absolute left-0 top-0.5 w-[30px] h-[30px] rounded-full bg-white border border-primary/25 shadow-[0_0_0_4px_rgba(0,95,107,0.06)] flex items-center justify-center z-10">
+                      <span className="text-[11px] font-bold text-primary leading-none">
+                        {index + 1}
+                      </span>
+                    </div>
+                    <h3 className="text-base font-bold text-slate-900 mb-1.5">{item.title}</h3>
+                    <p className="text-slate-600 leading-relaxed text-[15px]">{item.text}</p>
+                  </motion.article>
+                ))}
+              </motion.div>
 
-                  <h3 className="text-base font-bold text-slate-900 mb-1.5">{item.title}</h3>
-                  <p className="text-slate-600 leading-relaxed text-[15px]">{item.text}</p>
-                </motion.article>
-              ))}
-            </motion.div>
+              {/* Right: routing — der Differenzierer */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.6, delay: 0.15, ease }}
+              >
+                <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-primary mb-6">
+                  Routing nach Diagnose
+                </p>
+                <p className="text-xl font-bold text-slate-900 leading-snug mb-10 max-w-xs">
+                  Die Diagnose entscheidet, welcher Pfad der richtige ist.
+                </p>
+
+                <div className="space-y-7">
+                  {routingPaths.map((path, i) => (
+                    <motion.div
+                      key={path.area}
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.45, delay: 0.2 + i * 0.09, ease }}
+                      className="flex items-start gap-5"
+                    >
+                      <div className="w-16 shrink-0 pt-0.5">
+                        <span className="text-sm font-bold text-primary">{path.area}</span>
+                      </div>
+                      <div>
+                        <div aria-hidden className="h-px w-full bg-slate-100 mb-3" />
+                        <p className="text-slate-700 text-[15px] leading-relaxed">{path.detail}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
-        {/* Flowline → CTA: intensifies toward primary color */}
-        <div aria-hidden className="flex justify-center py-4">
-          <div className="w-px h-12 bg-gradient-to-b from-primary/20 via-primary/40 to-primary/60" />
+        {/* Intensifying connector into CTA */}
+        <div aria-hidden className="flex justify-center py-6">
+          <motion.div
+            initial={{ scaleY: 0, opacity: 0 }}
+            whileInView={{ scaleY: 1, opacity: 1 }}
+            viewport={{ once: true, margin: '-20px' }}
+            transition={{ duration: 0.7, ease }}
+            style={{ originY: 0 }}
+            className="w-px h-20 bg-gradient-to-b from-primary/30 via-primary/60 to-primary/90"
+          />
         </div>
 
         {/* ════════════════════════════════════════════════════════════
-            CTA — strong conclusion
+            CTA — unvermeidbar
         ════════════════════════════════════════════════════════════ */}
         <section aria-labelledby="cta-heading" className="px-6 pb-10">
           <div className="max-w-[1200px] mx-auto">
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.5, ease }}
+              className="text-center text-slate-400 text-sm mb-2 leading-relaxed"
+            >
+              Es gibt nur einen Weg, diesen Zustand zu durchbrechen.
+            </motion.p>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.55, ease }}
-              className="relative overflow-hidden p-8 md:p-12 rounded-3xl bg-primary text-white shadow-[0_32px_64px_-20px_rgba(0,95,107,0.55)]"
+              transition={{ duration: 0.55, ease, delay: 0.1 }}
+              className="relative overflow-hidden p-8 md:p-14 rounded-3xl bg-primary text-white shadow-[0_32px_64px_-20px_rgba(0,95,107,0.55)] mt-6"
             >
-              {/* Subtle dot texture */}
               <div
                 aria-hidden
                 className="absolute inset-0 pointer-events-none opacity-[0.035]"
@@ -364,20 +385,15 @@ export default function LandingPageContent() {
                   backgroundSize: '24px 24px',
                 }}
               />
-              <div className="relative max-w-3xl">
-                <p className="text-xs uppercase tracking-[0.18em] font-semibold text-white/70 mb-3">
-                  Nächster sinnvoller Schritt
-                </p>
+              <div className="relative max-w-2xl">
                 <h2
                   id="cta-heading"
-                  className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4 leading-[1.1]"
+                  className="text-3xl md:text-4xl xl:text-5xl font-bold tracking-tight text-white mb-5 leading-[1.07]"
                 >
-                  Wir sind nicht an Tools im Überfluss interessiert. Wir schaffen
-                  Entscheidungsfähigkeit.
+                  Wir schaffen Entscheidungsfähigkeit. Nicht mehr. Nicht weniger.
                 </h2>
-                <p className="text-white/80 leading-relaxed mb-8 max-w-xl">
-                  Der IT-Check ist die Voraussetzung, um Risiken zu bewerten,
-                  Verantwortlichkeiten festzulegen und Umsetzung sicher zu priorisieren.
+                <p className="text-white/70 leading-relaxed mb-8 max-w-md text-[15px]">
+                  Der IT-Check ist der erste Schritt — und die Voraussetzung für alles, was folgt.
                 </p>
                 <Link
                   href="/kontakt"
@@ -391,7 +407,7 @@ export default function LandingPageContent() {
         </section>
 
         {/* ════════════════════════════════════════════════════════════
-            SECONDARY ENTRY — understated, border-rule style
+            SECONDARY ENTRY — understated
         ════════════════════════════════════════════════════════════ */}
         <section aria-labelledby="secondary-entry-heading" className="px-6 py-12 pb-24">
           <div className="max-w-[1200px] mx-auto">
