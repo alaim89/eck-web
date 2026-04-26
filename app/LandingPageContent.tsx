@@ -134,6 +134,17 @@ export default function LandingPageContent() {
                 und verschiebt notwendige Entscheidungen weiter nach hinten.
               </motion.p>
             </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.5, delay: 0.3, ease }}
+              className="mt-12 pt-10 border-t border-slate-100 text-slate-400 text-sm leading-relaxed max-w-md"
+            >
+              Jede Verzögerung erhöht operative Kosten, bindet Aufmerksamkeit
+              und verschiebt notwendige Entscheidungen weiter nach hinten.
+            </motion.p>
           </div>
         </section>
 
