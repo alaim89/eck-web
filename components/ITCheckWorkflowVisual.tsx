@@ -1,102 +1,123 @@
-const boardRows = [
-  {
-    stage: 'Input',
-    title: 'Ausgangslage',
-    text: 'Systeme laufen, Zuständigkeit bleibt unklar.',
-    tone: 'neutral',
-  },
-  {
-    stage: 'Prozess',
-    title: 'Diagnose',
-    text: 'Fakten statt Vermutungen: Architektur, Risiken, Abhängigkeiten.',
-    tone: 'focus',
-  },
-  {
-    stage: 'Prozess',
-    title: 'Entscheidung & Routing',
-    text: 'Priorisierung und Verantwortungszuordnung auf belastbarer Grundlage.',
-    tone: 'focus',
-  },
-  {
-    stage: 'Prozess',
-    title: 'Maßnahmenplan',
-    text: 'Klarer Ablauf: Was zuerst, was später, was bewusst nicht.',
-    tone: 'primary',
-  },
-  {
-    stage: 'Output',
-    title: 'Umsetzung / Betrieb',
-    text: 'Klarheit, Verantwortung und priorisierte Maßnahmen im Alltag.',
-    tone: 'primary',
-  },
+'use client';
+
+import { motion } from 'motion/react';
+
+const branches = [
+  { label: 'Security',  sub: 'Risiko & Compliance' },
+  { label: 'Plattform', sub: 'M365 / Azure / Infra' },
+  { label: 'Prozesse',  sub: 'CRM / Vertrieb' },
+  { label: 'Betrieb',   sub: 'Monitoring / Backup' },
 ] as const;
 
-const interactiveNodeClass =
-  'rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_16px_30px_-24px_rgba(15,23,42,0.28)] transition-all duration-300 hover:border-primary/30 hover:bg-primary/5 hover:shadow-[0_20px_40px_-24px_rgba(0,95,107,0.35)] hover:-translate-y-0.5';
+// Organic staggered drop heights so branches don't feel like a table
+const stemH = ['h-[8px]', 'h-[20px]', 'h-[12px]', 'h-[16px]'];
+
+const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+function anim(delay: number) {
+  return {
+    initial: { opacity: 0, y: 12 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5, delay, ease },
+  };
+}
 
 export function ITCheckWorkflowVisual() {
   return (
-    <div className="relative overflow-hidden rounded-[2.75rem] border border-primary/20 bg-white px-8 py-10 md:px-12 md:py-12 shadow-[0_44px_84px_-44px_rgba(15,23,42,0.45)]">
+    <div className="relative flex flex-col items-center select-none py-2">
+
+      {/* Label */}
+      <motion.p
+        {...anim(0)}
+        className="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-400 mb-5"
+      >
+        Strategische Systemkarte
+      </motion.p>
+
+      {/* IT-Check top node */}
+      <motion.div {...anim(0.06)}>
+        <div className="px-7 py-2.5 rounded-full border border-primary/25 bg-white shadow-[0_0_0_5px_rgba(0,95,107,0.06),0_2px_12px_-4px_rgba(0,95,107,0.15)]">
+          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-700">
+            IT-Check
+          </span>
+        </div>
+      </motion.div>
+
+      {/* Vertical stem → Diagnose */}
       <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.12]"
-        style={{
-          backgroundImage:
-            'linear-gradient(to right, rgba(148,163,184,0.14) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.14) 1px, transparent 1px)',
-          backgroundSize: '34px 34px',
-        }}
+        aria-hidden
+        className="w-0.5 h-10 bg-gradient-to-b from-slate-300 to-primary/50 mt-0.5"
       />
 
-      <div className="relative mx-auto max-w-[660px]">
-        <p className="mb-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 text-center">Decision Board</p>
-
-        <div aria-hidden="true" className="absolute left-7 top-12 bottom-10 w-px bg-gradient-to-b from-slate-300/90 via-primary/40 to-slate-300/90" />
-
-        <div className="space-y-[18px]">
-          {boardRows.map((row, idx) => {
-            const focus = row.tone === 'focus';
-            const primary = row.tone === 'primary';
-
-            return (
-              <article
-                key={row.title}
-                className={`relative ml-12 rounded-2xl border px-5 py-4 transition-all duration-200 ease-out hover:-translate-y-[1px] hover:border-[#005F6B]/28 hover:bg-[#005F6B]/[0.035] ${
-                  focus
-                    ? 'border-primary/35 bg-primary/[0.04]'
-                    : primary
-                      ? 'border-primary/18 bg-white'
-                      : 'border-slate-200/90 bg-white'
-                }`}
-              >
-                <span
-                  aria-hidden="true"
-                  className={`absolute -left-[44px] top-1/2 h-6 w-6 -translate-y-1/2 rounded-full border text-[10px] font-semibold flex items-center justify-center ${
-                    focus || primary
-                      ? 'border-primary/40 bg-primary/10 text-primary'
-                      : 'border-slate-300 bg-white text-slate-500'
-                  }`}
-                >
-                  {idx + 1}
-                </span>
-
-                {focus && (
-                  <div aria-hidden="true" className="pointer-events-none absolute -inset-2 rounded-2xl bg-primary/10 blur-lg" />
-                )}
-
-                <div className="relative z-10">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-500">{row.stage}</p>
-                  <h3 className="mt-1 text-base font-bold tracking-tight text-slate-900">{row.title}</h3>
-                  <p className="mt-1 text-sm text-slate-600 leading-[1.62]">{row.text}</p>
-                </div>
-              </article>
-            );
-          })}
+      {/* Diagnose & Routing block */}
+      <motion.div {...anim(0.14)} className="relative w-full max-w-[400px]">
+        {/* Soft ambient glow — no hard border box */}
+        <div
+          aria-hidden
+          className="absolute inset-0 rounded-[1.25rem] bg-primary/[0.07] blur-2xl scale-110 pointer-events-none"
+        />
+        <div className="relative rounded-[1.25rem] border border-primary/[0.18] bg-white/95 px-6 py-5 shadow-[0_8px_32px_-12px_rgba(0,95,107,0.22),0_0_0_1px_rgba(0,95,107,0.05)]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-1.5">
+            Diagnose &amp; Routing
+          </p>
+          <p className="text-sm font-semibold text-slate-900 leading-snug">
+            Komplexität wird in klare Verantwortung übersetzt.
+          </p>
+          <p className="mt-1.5 text-xs text-slate-500 leading-relaxed">
+            Ohne Diagnose bleibt Verantwortung unklar.
+          </p>
         </div>
+      </motion.div>
 
-        <p className="mt-6 text-center text-xs text-slate-600">
-          Wir sind nicht auf der Suche nach mehr Tools — wir schaffen Klarheit, damit Verantwortung möglich wird.
-        </p>
+      {/* Branch connector: short stem → horizontal spread line */}
+      <div aria-hidden className="w-full max-w-[420px] flex flex-col items-center">
+        <div className="w-0.5 h-5 bg-gradient-to-b from-primary/40 to-primary/20" />
+        <div className="w-[86%] h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
       </div>
+
+      {/* Branch items */}
+      <div className="w-full max-w-[420px] grid grid-cols-4 gap-2 px-1">
+        {branches.map((branch, i) => (
+          <motion.div
+            key={branch.label}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.22 + i * 0.07, ease }}
+            className="flex flex-col items-center"
+          >
+            {/* Variable-height stem: creates branching feel, not a grid table */}
+            <div
+              aria-hidden
+              className={`w-px ${stemH[i]} bg-gradient-to-b from-primary/25 to-primary/10`}
+            />
+            <div className="w-full rounded-xl border border-slate-200/70 bg-white/80 px-2 py-2.5 hover:border-primary/25 hover:bg-white hover:shadow-[0_0_0_3px_rgba(0,95,107,0.07)] transition-all duration-300 cursor-default text-center">
+              <p className="text-[11px] font-semibold text-slate-900 leading-tight">
+                {branch.label}
+              </p>
+              <p className="text-[9px] text-slate-400 mt-0.5 leading-tight">
+                {branch.sub}
+              </p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Status bar */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.56, duration: 0.5 }}
+        className="mt-6 flex items-center gap-3 text-[10px] text-slate-400 w-full max-w-[420px]"
+      >
+        <span className="shrink-0">Verantwortung unklar</span>
+        <div
+          aria-hidden
+          className="h-px flex-1 bg-gradient-to-r from-slate-200 via-primary/35 to-primary/60"
+        />
+        <span className="shrink-0 text-primary/80 font-medium">
+          Verantwortung zugeordnet
+        </span>
+      </motion.div>
     </div>
   );
 }
