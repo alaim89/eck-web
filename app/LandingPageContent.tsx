@@ -14,10 +14,11 @@ const symptoms = [
   'Entscheidungen werden vertagt, weil die technische Ausgangslage unklar bleibt.',
 ];
 
-const contrarianStatements = [
-  'Die meisten IT-Probleme sind keine Technikprobleme.',
-  'Mehr Tools schaffen selten mehr Klarheit.',
-  'Projekte scheitern dort, wo Verantwortung nicht eindeutig ist.',
+const routingPaths = [
+  { area: 'M365', detail: 'Governance und Rollen werden verbindlich definiert.' },
+  { area: 'Azure', detail: 'Architektur und Umsetzungsreihenfolge werden strukturiert.' },
+  { area: 'CRM', detail: 'Prozesse und Nutzung werden klar geregelt.' },
+  { area: 'Betrieb', detail: 'Monitoring und Backup werden stabilisiert.' },
 ];
 
 const checkpoints = [
@@ -140,6 +141,17 @@ export default function LandingPageContent() {
                 und verschiebt notwendige Entscheidungen weiter nach hinten.
               </motion.p>
             </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.5, delay: 0.3, ease }}
+              className="mt-12 pt-10 border-t border-slate-100 text-slate-400 text-sm leading-relaxed max-w-md"
+            >
+              Jede Verzögerung erhöht operative Kosten, bindet Aufmerksamkeit
+              und verschiebt notwendige Entscheidungen weiter nach hinten.
+            </motion.p>
           </div>
         </section>
 
